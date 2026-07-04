@@ -198,11 +198,102 @@ select {
   gap: 1rem;
 }
 
+.file-tree,
 .course-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
   overflow: hidden;
+}
+
+.file-tree {
+  padding: 0.35rem;
+}
+
+.tree-folder {
+  border-radius: 8px;
+}
+
+.tree-folder + .tree-folder,
+.tree-file + .tree-folder,
+.tree-folder + .tree-file,
+.tree-file + .tree-file {
+  margin-top: 0.15rem;
+}
+
+.tree-folder-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.75rem;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.tree-folder-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree-folder-summary::before {
+  content: ">";
+  display: grid;
+  place-items: center;
+  width: 1rem;
+  color: var(--accent-strong);
+  transition: transform 0.16s ease;
+}
+
+.tree-folder[open] > .tree-folder-summary::before {
+  transform: rotate(90deg);
+}
+
+.tree-folder-summary:hover,
+.tree-file:hover {
+  background: rgba(31, 122, 140, 0.07);
+}
+
+.tree-folder-name,
+.tree-file-name {
+  overflow-wrap: anywhere;
+}
+
+.tree-count {
+  margin-left: auto;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: rgba(31, 122, 140, 0.10);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+}
+
+.tree-children {
+  margin-left: 1.1rem;
+  padding: 0.1rem 0 0.25rem 0.85rem;
+  border-left: 1px solid var(--line);
+}
+
+.tree-file {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem 0.65rem 2.4rem;
+  text-decoration: none;
+}
+
+.tree-file-main {
+  min-width: 0;
+}
+
+.tree-file-name {
+  display: block;
+  font-weight: 700;
 }
 
 .course-card header {
@@ -315,8 +406,18 @@ select {
     text-align: left;
   }
 
-  .resource {
+  .resource,
+  .tree-file {
     grid-template-columns: 1fr;
+  }
+
+  .tree-children {
+    margin-left: 0.55rem;
+    padding-left: 0.55rem;
+  }
+
+  .tree-file {
+    padding-left: 1.2rem;
   }
 
   .badge {

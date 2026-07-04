@@ -7,6 +7,8 @@ const state = {
   sort: "course",
 };
 
+const openFolders = new Set();
+
 const els = {
   totalCount: document.querySelector("#total-count"),
   courseCount: document.querySelector("#course-count"),
@@ -83,13 +85,97 @@ function sortItems(items) {
   return sorted;
 }
 
-function groupByCourse(items) {
-  return items.reduce((acc, item) => {
-    const key = `${item.semester} / ${item.course}`;
-    if (!acc.has(key)) acc.set(key, []);
-    acc.get(key).push(item);
-    return acc;
-  }, new Map());
+function createFolderNode(name = "root") {
+  return {
+    name,
+    folders: new Map(),
+    files: [],
+    count: 0,
+  };
+}
+
+function createTree(items) {
+  const root = createFolderNode();
+  items.forEach((item) => {
+    const parts = String(item.path || item.fileName || item.title).split("/").filter(Boolean);
+    const fileName = parts.pop() || item.fileName || item.title;
+    let node = root;
+    node.count += 1;
+
+    parts.forEach((part) => {
+      if (!node.folders.has(part)) node.folders.set(part, createFolderNode(part));
+      node = node.folders.get(part);
+      node.count += 1;
+    });
+
+    node.files.push({ ...item, displayName: fileName });
+  });
+  return root;
+}
+
+function getFolderKey(parentKey, name) {
+  return parentKey ? `${parentKey}/${name}` : name;
+}
+
+function shouldOpenFolder(key, depth) {
+  if (state.query.trim()) return true;
+  if (openFolders.size === 0) return depth < 2;
+  return openFolders.has(key);
+}
+
+function renderTreeNode(node, container, depth = 0, parentKey = "") {
+  const folders = [...node.folders.values()].sort((a, b) => a.name.localeCompare(b.name, "zh-CN"));
+  const files = sortItems(node.files);
+
+  folders.forEach((folder) => {
+    const folderKey = getFolderKey(parentKey, folder.name);
+    const details = document.createElement("details");
+    details.className = "tree-folder";
+    details.open = shouldOpenFolder(folderKey, depth);
+    details.dataset.key = folderKey;
+
+    const summary = document.createElement("summary");
+    summary.className = "tree-folder-summary";
+    summary.innerHTML = `
+      <span class="tree-folder-name">${folder.name}</span>
+      <span class="tree-count">${folder.count}</span>
+    `;
+    details.appendChild(summary);
+
+    const children = document.createElement("div");
+    children.className = "tree-children";
+    renderTreeNode(folder, children, depth + 1, folderKey);
+    details.appendChild(children);
+
+    details.addEventListener("toggle", () => {
+      if (details.open) {
+        openFolders.add(folderKey);
+      } else {
+        openFolders.delete(folderKey);
+      }
+    });
+
+    container.appendChild(details);
+  });
+
+  files.forEach((item) => {
+    const link = document.createElement("a");
+    link.className = "tree-file";
+    link.href = encodePath(item.path);
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.innerHTML = `
+      <span class="tree-file-main">
+        <span class="tree-file-name">${item.displayName}</span>
+        <span class="resource-meta">
+          <span>${formatBytes(item.size)}</span>
+          <span>${item.modified}</span>
+        </span>
+      </span>
+      <span class="badge">${item.type}</span>
+    `;
+    container.appendChild(link);
+  });
 }
 
 function renderResources(items) {
@@ -97,36 +183,12 @@ function renderResources(items) {
   els.empty.hidden = items.length > 0;
   els.title.textContent = state.query ? `搜索结果：${items.length} 个文件` : `全部资料：${items.length} 个文件`;
 
-  const groups = groupByCourse(sortItems(items));
-  groups.forEach((groupItems, courseName) => {
-    const card = document.createElement("article");
-    card.className = "course-card";
+  if (items.length === 0) return;
 
-    const list = groupItems.map((item) => `
-      <a class="resource" href="${encodePath(item.path)}" target="_blank" rel="noopener">
-        <span>
-          <span class="resource-title">${item.title}</span>
-          <span class="resource-meta">
-            <span>${item.fileName}</span>
-            <span>${formatBytes(item.size)}</span>
-            <span>${item.modified}</span>
-          </span>
-        </span>
-        <span class="badge">${item.type}</span>
-      </a>
-    `).join("");
-
-    card.innerHTML = `
-      <header>
-        <div>
-          <h3>${courseName}</h3>
-          <p>${groupItems.length} 个文件</p>
-        </div>
-      </header>
-      <div class="resource-list">${list}</div>
-    `;
-    els.grid.appendChild(card);
-  });
+  const tree = document.createElement("div");
+  tree.className = "file-tree";
+  renderTreeNode(createTree(sortItems(items)), tree);
+  els.grid.appendChild(tree);
 }
 
 function renderFilters() {

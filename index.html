@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YYH 课程笔记库</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Course Notes</p>
+        <h1>YYH 课程笔记库</h1>
+      </div>
+      <div class="stats" aria-label="资料统计">
+        <span><strong id="total-count">0</strong> 个文件</span>
+        <span><strong id="course-count">0</strong> 门课程</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" aria-label="筛选栏">
+        <label class="search">
+          <span>搜索资料</span>
+          <input id="search-input" type="search" placeholder="课程、文件名、类型..." autocomplete="off">
+        </label>
+
+        <section>
+          <h2>学期</h2>
+          <div id="semester-filters" class="filter-list"></div>
+        </section>
+
+        <section>
+          <h2>类型</h2>
+          <div id="type-filters" class="filter-list compact"></div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <div class="content-head">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2 id="result-title">全部资料</h2>
+          </div>
+          <select id="sort-select" aria-label="排序方式">
+            <option value="course">按课程排序</option>
+            <option value="modified">按更新时间排序</option>
+            <option value="type">按文件类型排序</option>
+            <option value="size">按文件大小排序</option>
+          </select>
+        </div>
+
+        <div id="course-grid" class="course-grid"></div>
+        <p id="empty-state" class="empty-state" hidden>没有找到匹配的资料。</p>
+      </section>
+    </main>
+
+    <script src="site-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

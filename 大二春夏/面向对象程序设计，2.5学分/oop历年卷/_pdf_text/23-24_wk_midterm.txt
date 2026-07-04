@@ -1,0 +1,887 @@
+OOP 23-24春夏 wk班期中
+由CC98 马二马纯上 整理自群友提供的资源
+
+
+
+
+第Ⅰ段
+
+
+判断题
+
+
+1. Order of initialization in the initial list is the order of their declaration in the list. (T/F)
+
+
+
+2. The output of the following C++ code is 6 . (T/F)
+
+
+  #include <iostream>
+  using namespace std;
+  class A {
+  public:
+       int x;
+       A(): x(6) {}
+       int &fun(int &n) {
+             x += n;
+             return n;
+       }
+  };
+  class B: public A {
+  public:
+       B() {}
+       int &fun(int &n, int &a) {
+             x += n + a;
+             return n;
+       }
+  };
+  int main()
+  {
+       B b;
+       b.fun(b.x);
+       cout << b.x;
+  }
+
+
+
+
+3. For any class in C++, there must be a constructor without any argument. (T/F)
+
+
+
+4. Destructors can not be overloaded. (T/F)
+5. In C++, inheritance allows a derived class to directly access all of the functions and data of its
+base class. (T/F)
+
+
+
+6. The following C++ code segment compiles but generates some runtime error. (T/F)
+
+
+  int main() { vector<float> v; v[0] = 2.5; }
+
+
+
+
+7. In C++, struct is actually the same thing as class , except for minor differences in usage. (T/F)
+
+
+
+8. Given the following C++ code segment:
+
+
+  class A {
+         int i;
+         virtual void f() {}
+  };
+
+
+If sizeof(int *) == sizeof(int) == 4 , then sizeof(A) == 8 . (T/F)
+
+
+
+
+单选题
+
+
+2. What is the output of the following C++ program?
+
+
+  #include <iostream>
+  using namespace std;
+  int& f(int &i)
+  {
+         i += 10;
+         return i ;
+  }
+  int main()
+  {
+         int k = 0;
+         int& m = f(k);
+         cout << k << "#";
+         f(m)++;
+         cout << k << endl;
+         return 0;
+  }
+
+
+A. 10#10
+
+B. 0#0
+
+C. None of the other options is correct.
+
+D. 10#21
+5. Among the following statements about new and malloc , which one is correct?
+
+A. new returns a void * pointer, which needs to be typecasted to the appropriate type.
+
+B. Both new and malloc call an appropriate constructor for object allocation.
+
+C. None of the other options is correct.
+
+D. new and malloc are both operators.
+
+
+
+10. Given:
+
+
+  class ResId {
+  public:
+        ResId(int Id);
+  };
+
+
+The expression ResId res = 5 means:
+
+A. An object of class Resld will be created by 5
+
+B. A temporary object of class Resld will be created by 5
+
+C. An object of class Resld will be created by a temporary object
+
+D. The object res will be assiged with the temporary object that was created by 5
+
+
+
+8. For an arbitrary class，the number of destructors can’t be greater than
+
+A. 2
+
+B. 0
+
+C. 3
+
+D. 1
+
+
+
+6. Suppose a class is defined without any keywords such as public, private and protected，all
+members default to
+
+A. public
+
+B. private
+
+C. protected
+
+D. static
+
+
+
+1. Among the following 3 operators, how many ones can be overloaded?
+
+       Operator1: ::
+
+       Operator2: ()
+       Operator3: ->
+
+A. 3
+
+B. 0
+
+C. 2
+
+D. 1
+
+
+
+11. In a C++ program, objects communicate each other by
+
+A. inheritance
+
+B. encapsulation
+
+C. function overloading
+
+D. calling member functions
+
+
+
+7. Who can access a private member of a class?
+
+A. Only member functions of that class and derived classes
+
+B. Only member functions of that class.
+
+C. Only member functions of that class and friend functions or member functions of friend classes
+
+D. None of the others
+
+
+
+9. Resolver :: is used to:
+
+A. Access a static member of a class
+
+B. All of the others
+
+C. Access a member of a namespace
+
+D. Define a member function outside class declaration
+
+
+
+4. For the code below:
+
+
+  class A {
+        static int i;
+        //...
+  };
+
+
+Which statement is NOT true?
+
+A. All objects of class A reserve a space for i
+
+B. i is a member variable of class A
+
+C. All objects of class A share the space of i
+
+D. i is allocated in global data space
+3. Which statement is correct about the following C++ code?
+
+
+  #include <iostream>
+  using namespace std;
+  class A {
+  public:
+       int x;
+       A(): x(6) {}
+       int fun() {
+            return x;
+       }
+  };
+  class B: public A {
+  public:
+       int fun() {
+            return A::fun() + x;
+       }
+  };
+  class C: public A {
+  public:
+       int fun() {
+            return A::fun() + x;
+       }
+  };
+  class D: public B, public C {
+  public:
+       int fun() {
+            return B::fun() + C::fun();
+       }
+  };
+  int main()
+  {
+       D d;
+       cout << d.fun();
+  }
+
+
+A. It compiles but throws some exception, causing a run-time error.
+
+B. It fails to compile due to the diamond inheritance and the ambiguity of d.x .
+
+C. It compiles and gives the result 24 .
+
+D. It fails to compile due to the lack of C'tors of class B , C and D .
+
+
+
+12. Among the following statements about C++, which is correct?
+A. All the static members of a class, both variables and functions included, need to be defined
+outside the class.
+
+B. Objects of polymorphic class type which has non-virtual C'tor might cause undefined behavior.
+
+C. The following C++ code segment leads some error when compiling since another.x is private.
+  class A {
+           int x;
+  public:
+           A(): x(0) {}
+           int fun(A &another) {another.x += this->x;}
+  };
+
+
+D. The const in the following C++ code segement imposes restriction on this .
+
+
+  class A {
+  public:
+           int x;
+           A(): x(0) {}
+           int fun(int i) const {return x + i;}
+  };
+
+
+
+
+输出填空题
+1. What is the output of the following C++ program?
+
+
+  #include <iostream>
+  using namespace std;
+
+
+  class A
+  {
+  public:
+       A(int i) : mi(i) {}
+       A(const A& rhs) : mi(rhs.mi)
+       {
+           cout << "A::A(&)" << endl;
+       }
+       A& operator=(const A&rhs)
+       {
+           mi = rhs.mi;
+           cout << "A::operator=()" << endl;
+           return *this;
+       }
+       virtual void f()
+       {
+           cout << "A::f(), " << mi << endl;
+       }
+  protected:
+       int mi;
+  };
+
+
+  class B : public A
+  {
+  public:
+       B(int i, int j) : A(i), mj(j) {}
+       void f()
+       {
+           cout << "B::f(), " << mi << ", " << mj << endl;
+       }
+  private:
+       int mj;
+  };
+
+
+  int main() {
+       A a1(1);
+       B b(3,4);
+
+
+       A& ra = b;
+       ra.f();
+       ra = a1;
+       ra.f();
+
+
+       A a2 = b;
+       a2.f();
+  }
+
+
+Line 1: ________ (1分)
+
+Line 2: ________ (1分)
+
+Line 3: ________ (1分)
+
+Line 4: ________ (1分)
+
+Line 5: ________ (1分)
+
+
+
+2. What is the output of the following C++ program?
+
+
+  #include <iostream>
+  using namespace std;
+  class MyClass {
+  public:
+           MyClass(int x): val(x) {}
+           void Print() const {cout << 1 << endl << val << endl;}
+           void Print() {cout << 2 << endl << val << endl;}
+  private:
+           int val;
+  };
+  int main()
+  {
+           const MyClass obj1(10);
+           MyClass obj2(20);
+           obj1.Print();
+           obj2.Print();
+           return 0;
+  }
+
+
+Line 1: ________ (1分)
+
+Line 2: ________ (1分)
+
+Line 3: ________ (1分)
+
+Line 4: ________ (1分)
+3. What is the output of the following C++ program?
+
+
+  #include <iostream>
+  using namespace std;
+
+
+  class B;
+
+
+  class A {
+  protected:
+       int x;
+  public:
+       A(int x = 0): x(x) {}
+       operator B();
+       int getx() {return x;}
+  };
+
+
+  class B: public A {
+  public:
+       B(int x = 0): A(x) {this->x++;}
+       B(const B &b): A(b.x) {this->x++;}
+  };
+
+
+  A::operator B() {return *new B(x + 1);}
+
+
+  int main()
+  {
+       A *p1 = new B(3);
+       A *p2 = new A(9);
+       B b0 = *p1;
+       B &r = b0;
+       B b1 = b0;
+       B b2 = *p2;
+       cout << p1->getx() << endl;
+       cout << p2->getx() << endl;
+       cout << b0.getx() << endl;
+       cout << r.getx() << endl;
+       cout << b1.getx() << endl;
+       cout << b2.getx() << endl;
+  }
+
+
+Line 1: ________ (1分)
+
+Line 2: ________ (1分)
+
+Line 3: ________ (1分)
+
+Line 4: ________ (1分)
+
+Line 5: ________ (1分)
+
+Line 6: ________ (1分)
+
+
+
+4. What is the output of the following C++ program?
+  #include <iostream>
+
+
+  struct X {
+       X() {
+            std::cout << "X::X()" << std::endl;
+       }
+       ~X() {
+            std::cout << "X::~X()" << std::endl;
+       }
+  };
+
+
+  struct Y : public X {
+       Y() {
+            std::cout << "Y::Y()" << std::endl;
+       }
+       ~Y() {
+            std::cout << "Y::~Y()" << std::endl;
+       }
+  };
+
+
+  struct Parent {
+       Parent() {
+            std::cout << "Parent::Parent()" << std::endl;
+       }
+       ~Parent() {
+            std::cout << "Parent::~Parent()" << std::endl;
+       }
+       X x;
+  };
+
+
+  struct Child : public Parent {
+       Child() {
+            std::cout << "Child::Child()" << std::endl;
+       }
+       ~Child() {
+            std::cout << "Child::~Child()" << std::endl;
+       }
+       Y y;
+  };
+
+
+  int main() {
+       Child c;
+  }
+
+
+Line 1: ________ (1分)
+
+Line 2: ________ (1分)
+
+Line 3: ________ (1分)
+
+Line 4: ________ (1分)
+
+Line 5: ________ (1分)
+
+Line 6: ________ (1分)
+
+Line 7: ________ (1分)
+Line 8: ________ (1分)
+
+Line 9: ________ (1分)
+
+Line 10: ________ (1分)
+
+
+
+
+程序填空题
+1. The following C++ program outputs a string ending with P1P3 . Please fill in the blanks in the
+code based on the given part of the output, and then write the output of the program.
+
+
+  #include <iostream>
+  using std::cout;
+  using std::endl;
+  class P
+  {
+  public:
+       static bool flag;
+       int x;
+       P *left, *right;
+       P(P* left=nullptr, P* right=nullptr)
+       :x(0), left(left), right(right){}
+       ~P()
+       {
+            if(flag)
+            {
+                   if(left!=nullptr){ delete left; }
+                   if(right!=nullptr){ delete right; }
+            }
+            else
+            {
+                   if(right!=nullptr){ delete right; }
+                   if(left!=nullptr){ delete left; }
+            }
+            cout<<"P"<<x;
+       }
+  };
+  class S : public P
+  {
+  public:
+       S(P* left=nullptr, P* right=nullptr)_______(2分){}
+       ~S()
+       {
+            cout<<"S"<<x;
+       }
+  };
+
+
+  ________(2分)
+
+
+  int main()
+  {
+       S* p1 = new S;
+       ________(2分)
+       S* p2 = new S;
+      p2->x = 2;
+      S s(p1, p2);
+      ________(2分)
+      return 0;
+  }
+
+
+The output of the program is: (Please write the entire output, including the P1P3 in the end of the
+output.) ________ (2分)
+
+
+
+
+第Ⅱ段
+
+函数题1 Arrays of Pointers to Vectors
+
+You are given an array of pointers to a specific type of elements, and the function
+printArrayInfo calculates and prints the minimum, maximum and average value (with 2 decimal
+places reserved) of the elements.
+
+In this problem, the elements, which pointers in the array point to, are two-dimensional vectors,
+the components of which are integers. The 2nd component of a two-dimensional vector is
+regarded as the order to compare, while the 1st component is the value to be casted to
+double for the calculation of the average value.
+
+To implement the two-dimensional vector, please complete the definition of class vec according
+to the main function, printArrayInfo function and the test cases.
+
+Format of Class:
+
+
+  class vec;
+
+
+Sample Program of Judge:
+
+
+  #include <iostream>
+  #include <iomanip>
+
+
+  #define MAXN 110
+
+
+  /* Your answer will be inserted here. Feel free to add anything needed here.*/
+
+
+  void printArrayInfo(vec **arr, int n)
+  {
+      vec *maxv = arr[0], *minv = arr[0];
+      double avg = 0;
+      for(int i = 0; i < n; ++i) {
+           vec *val = arr[i];
+           if(*val < *minv) minv = val;
+           if(*maxv < *val) maxv = val;
+           avg = avg + static_cast<double>(*val);
+      }
+      avg /= n;
+      std::cout << std::fixed << std::setprecision(2) <<            "min = " << *minv << ",
+  max = " << *maxv << ", avg = " << avg << std::endl;
+  }
+
+
+  int main()
+  {
+         vec *pool[MAXN];
+         int n;
+         int a, b;
+         std::cin >> n;
+         for (int i = 0; i < n; i++) {
+             std::cin >> a >> b;
+             pool[i] = new vec(a, b);
+         }
+         printArrayInfo(pool, n);
+         return 0;
+  }
+
+
+Sample Input:
+
+
+  4
+  9 1
+  8 2
+  7 3
+  6 4
+
+
+Sample Output:
+
+
+  min = (9,1), max = (6,4), avg = 7.50
+
+
+
+
+函数题2 Virtual Function and Interface : Area of Shape
+
+In C++, we usually use virtual function to declare interface for objects. This is because we can
+implement the interface with non-virtual function in the derived class.
+
+For convenience, we use an example to demostrate the power of virtual function, the area of the
+shape.
+
+Every 2-dimentional shape has its area, so if we represent a shape in computer, we must have the
+a method to evaluate the area of the shape. However, different shapes have different methods to
+calculate their area. We have already known the formular of the area of disk and rectangle. They
+are           and         , respectively.
+
+Now you need to write code of class Shape and class Rect according to class Disk .
+
+Sample program of judge:
+
+
+  #include <iostream>
+  using std::cin;
+  using std::cout;
+  using std::endl;
+  using std::string;
+
+
+  /* Your code will be put here */
+ class Disk : public Shape
+ {
+ double r;
+ public :
+      Disk(double r=0.):r(r){}
+      ~Disk(){}
+ public :
+      double area(){ return 3.14159*r*r; }
+ };
+ using Shape_ptr = Shape*; // pointer of Shape
+ int main()
+ {
+      int n;
+      string type;
+      cin>>n;
+      Shape_ptr shapes[n];
+      for(int i=0;i<n;++i)
+      {
+            cin>>type;
+            if(type=="disk")
+            {
+                double r;
+                cin>>r;
+                shapes[i] = new Disk(r);
+            }
+            else if(type=="rect")
+            {
+                double a, b;
+                cin>>a>>b;
+                shapes[i] = new Rect(a, b);
+            }
+      }
+      for(int i=0;i<n;++i)
+      {
+            Shape_ptr shape = shapes[i];
+            cout<<shape->area()<<" ";
+            delete shape;
+      }
+      cout<<endl;
+
+
+      return 0;
+ }
+
+
+Sample Input:
+
+
+ 3
+ disk 3
+ rect 2 5
+ rect 4.2 2
+
+
+Sample Output:
+
+
+ 28.2743 10 8.4
+编程题1 字符串排序--string类的使用
+
+先输入你要输入的字符串的个数。然后换行输入该组字符串。每个字符串以回车结束，每个字符串不多
+于一百个字符。
+
+如果在输入过程中输入的一个字符串为“stop”，也结束输入。
+
+然后将这输入的该组字符串按每个字符串的长度，由小到大排序，按排序结果输出字符串。如果存在多
+个字符串长度相同，则按照原始输入顺序输出。
+
+输入格式:
+
+字符串的个数，以及该组字符串。每个字符串以‘\n’结束。如果输入字符串为“stop”，也结束输入.
+
+输出格式:
+
+可能有多组测试数据，对于每组数据，将输入的所有字符串按长度由小到大排序输出(如果有“stop”，不
+输出“stop”)。
+
+输入样例:
+
+
+ 4
+ faeruhyytrjh tjytj
+ hsrthts     hjnshtgfhs
+ stop
+ 3
+ htrskbns
+ bsartanjsf tyjndyt
+ nsr jj jtey
+
+
+输出案例：
+
+
+ faeruhyytrjh tjytj
+ hsrthts     hjnshtgfhs
+ htrskbns
+ nsr jj jtey
+ bsartanjsf tyjndyt
+
+
+提示：根据输入的字符串个数来动态分配存储空间（采用new()函数）。每个字符串会少于100个字符。
+测试数据有多组，注意使用while()循环输入。
+
+来源：数据结构高分笔记
+
+
+
+编程题2 类、Map
+
+求和Map：计并实现一个MyMap类，要求至少含有以下两种方法
+
+一、insert方法：将一对（字符串，整数）的键值建立映射，若键已存在，则进行覆盖。
+
+二、sum方法：输入一个前缀字符串，输出以该前缀开头的键值总和
+
+输入格式：
+
+第一行输入一个N，表示接下来要操作的数量
+
+随后N行表示操作：
+insert方法后跟字符串与整数，通过空格隔开
+
+sum方法后跟字符串，通过空格隔开
+
+说明：假设不包含其他无效输入
+
+输出样例：
+
+输出以该前缀开头的键值总和，若无，则输出0
+
+输入样例:
+
+
+ 3
+ insert china 5
+ insert canada 3
+ sum c
+
+
+输出样例:
+
+
+ 8
+
+
+
+
+答案
+判断题
+
+FFFTF TTT
+
+单选题
+
+DC?DB CDCBA CD
+
+单选题第3题答案不能确定
+

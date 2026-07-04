@@ -1,0 +1,855 @@
+OOP 23-24春夏
+
+CC98 马二马纯上
+
+请勿用于商业用途，转载请与我取得联系
+
+
+
+
+单选题
+
+
+1. Copy constructor is a constructor which ________
+
+A. Creates an object by copying values from another object of another class
+
+B. Creates an object by copying values from any other object of same class
+
+C. Creates an object by initializing it with another previously created object of same class
+
+D. Creates an object by copying values from first object created for that class
+
+
+
+2. In multi-level inheritance(all public), the public members of parent/superclass will ________
+
+A. Will continue to get inherited subsequently
+
+B. Will not be available to be called outside class
+
+C. Will not be inherited after one subclass inheritance
+
+D. Will not be able to allocated with any memory space
+
+
+
+3. Which code below fails compilation?
+
+A.
+
+
+     struct U {};
+     struct V : public U {};
+     struct W : public U {};
+     int main()
+     {
+         U * p = new V;
+         W * q = static_cast<W*>(p);
+         return q == nullptr;
+     }
+
+
+B.
+     struct U { virtual void foo() {} };
+     struct V : public U {};
+     struct W {};
+     int main()
+     {
+         U * p = new V;
+         W * q = dynamic_cast<W*>(p);
+         return q == nullptr;
+     }
+
+
+C.
+
+
+     struct U { virtual void foo() {} };
+     struct V : public U {};
+     struct W : public U {};
+     int main()
+     {
+         U * p = new V;
+         W * q = dynamic_cast<W*>(p);
+         return q == nullptr;
+     }
+
+
+D.
+
+
+     struct U {};
+     struct V : public U {};
+     struct W {};
+     int main()
+     {
+         U * p = new V;
+         W * q = static_cast<W*>(p);
+         return q == nullptr;
+     }
+
+
+
+
+4. If programmer have defined parameterized constructor only, then ________
+
+A. Default constructor will not be created by the compiler implicitly
+
+B. Default constructor will not be created but called at runtime
+
+C. Default constructor will be created by the compiler implicitly
+
+D. Compile time error
+
+
+
+5. Which of the following operator cannot be used to overload when that function is declared as
+friend function?
+
+A. ||
+
+B. ==
+
+C. -=
+D. []
+
+
+
+6. If a class have default constructor defined in private access, and one parameter constructor in
+protected mode, how will it be possible to create instance of object?
+
+A. Directly create the object in the subclass
+
+B. Define a constructor in public access with different signature
+
+C. Directly create the object in main() function
+
+D. Not possible
+
+
+
+-- 马二马纯上 --
+
+
+
+7. Which programming paradigm below is not well supported in C++?
+
+A. Object-oriented programming
+
+B. Procedural programming
+
+C. Declarative programming
+
+D. Generic programming
+
+
+
+8. Which statement below is not a requirement for an object-oriented programming language?
+
+A. Objects have an associated type [class].
+
+B. Types [classes] may inherit attributes from supertypes [superclasses].
+
+C. It uses algorithms as its fundamental logical building blocks.
+
+D. It supports objects that are data abstractions with an interface of named operations and a
+hidden local state.
+
+
+
+9. Which among the following is multiple inheritance?
+
+A.
+
+
+     class student { };
+     class stream { };
+     class topper { };
+
+
+B.
+     class student {
+         public:
+          int marks;
+     } s;
+     class stream {
+          int total;
+     };
+     class topper : public student, public stream { };
+
+
+C.
+
+
+     class student {
+          int marks;
+     };
+     class stream { };
+     class topper : public student { };
+
+
+D.
+
+
+     class student {
+          int marks;
+     };
+     class stream : public student { };
+
+
+
+
+10. How many times is the destructor of class A called during execution?
+
+
+     #include <iostream>
+     using namespace std;
+
+
+     class A {
+         public:
+          A() { cout << "A()" << endl; }
+          ~A() { cout << "~A()" << endl; }
+     };
+
+
+     void foo(A a) {
+          A arr[5];
+          A *p = new A[3];
+          throw p;
+     }
+
+
+     int main()
+     {
+          try {
+              A a;
+              foo(a);
+          } catch (A *p) {
+              delete[] p;
+              cout << "catched" << endl;
+          }
+     }
+A. 5
+
+B. 7
+
+C. 10
+
+D. 3
+
+
+
+
+结果填空题
+1.
+
+
+     #include <iostream.h>
+     #include <string.h>
+     #include <cstdlib.h>
+     using namespace std;
+
+
+     void func(int a, int b)
+     {
+         if (b < 1) {
+             throw b;
+         }
+         else {
+             cout << "Product of " << a << " and " << b << " is: " << a*b << endl;
+         }
+     }
+
+
+     int main()
+     {
+         try
+         {
+             try
+             {
+                 func(5,-1);
+             }
+             catch (int b)
+             {
+                 if (b==0)
+                   throw "value of b is zero\n";
+                 else
+                   throw "value of b is less than zero\n";
+             }
+         }
+         catch (const char* e)
+         {
+             cout << e;
+         }
+     }
+
+
+Line 1: _________ （3分）
+
+
+
+-- CC98 马二马纯上 --
+2. The output of the code below is:
+
+
+  #include <iostream>
+  using namespace std;
+  class AnyError
+  {
+  public:
+        AnyError() {      }
+  };
+  class RangeError :public AnyError
+  {
+  public:
+        RangeError(int ID) { m_ID = ID; }
+        void print() { cout << "ID:" << m_ID << endl; }
+  protected:
+        int m_ID;
+  };
+  void FuncA(int ID)
+  {
+        if (ID > 8)
+              throw RangeError(ID);
+        cout << "FuncA" << endl;
+  }
+  void FuncB()
+  {
+        try
+        {
+              FuncA(4);
+              FuncA(10);
+        }
+        catch (RangeError& re)
+        {
+              cout << "FuncB" << endl;
+              re.print();
+              throw AnyError();
+        }
+  }
+  int main()
+  {
+        try {
+              FuncB();
+        }
+        catch (...)
+        {
+              cout << "Main" << endl;
+        }
+        return 0;
+  }
+
+
+       The first line is: _________ （1分）
+
+       The second line is: _________（1分）
+
+       The third line is: _________ （1分）
+          The fourth line is: _________ （1分）
+
+
+
+3.
+
+
+     #include <iostream>
+     using namespace std;
+
+
+     template <class T>
+     class A {
+
+
+     public:
+           A() { }
+           void print() const
+           {
+                 cout << "A<T>" << endl;
+           }
+     };
+     template <>
+     class A<double> {
+           double a1, a2, a3;
+     public:
+           A()
+           {}
+           void print() const
+           {
+                 cout << "A<double>" << endl;
+                 return;
+           }
+     };
+     template <>
+     class A<int> {
+           double a1, a2, a3;
+     public:
+           A()
+           {}
+           void print() const
+           {
+                 cout << "A<int>" << endl;
+                 return;
+           }
+     };
+     int main()
+     {
+           A<double> t1;
+           A<char>    t2;
+           A<int> t3;
+           t1.print();
+           t2.print();
+           t3.print();
+     }
+
+
+The output of this program should be:
+
+Line 1: _________ （1分）
+Line 2: _________ （1分）
+
+Line 3: _________ （1分）
+
+
+
+4. What is the output of the following code?
+
+
+     #include <iostream>
+     #include <string>
+     using namespace std;
+
+
+     class WeirdString
+     {
+         public:
+          WeirdString() = default;
+          WeirdString& operator++() {
+              s += "Hey";
+              return *this;
+          }
+          WeirdString operator++(int) {
+              WeirdString old = *this;
+              s += "Ho";
+              return old;
+          }
+          WeirdString& operator+=(const WeirdString& rhs) {
+              s += ("Ha" + rhs.str());
+              return *this;
+          }
+          string str() const { return s; }
+         private:
+          string s;
+     };
+
+
+     -- CC98 MaErMaChunShang --
+
+
+     int main()
+     {
+          WeirdString w;
+          WeirdString t = w++;
+          ++(w += (t++));
+          cout << w.str() << endl;
+     }
+
+
+Line 1: _________ （3分）
+
+
+
+5.
+
+Content of header file h1.h
+  // h1.h
+  #include <iostream.h>
+  using namespace std;
+  namespace A {
+      int func(int a) {
+          cout << "using namespace A";
+          return 2*a;
+      }
+  }
+
+
+Content of header file h2.h
+
+
+  // h2.h
+  #include <iostream.h>
+  using namespace std;
+  namespace B {
+      float func(float a) {
+          cout << "using namespace B";
+          return 2*a;
+      }
+  }
+
+
+Content of program.cpp
+
+
+  #include <iostream.h>
+  #include <string.h>
+  #include "h1.h"
+  #include "h2.h"
+
+
+  using namespace std;
+  using namespace A;
+  using namespace B;
+
+
+  int main(int argc, char const *argv[]) {
+      /* code */
+      int a = 10;
+      float b = 10.0;
+      cout << func(a) <<endl;
+      cout << func(b);
+      return 0;
+  }
+
+
+Line 1: _________ （2分）
+
+Line 2: _________ （2分）
+
+
+
+6. What will be the output of the following code?
+
+
+  #define __MaErMaChunShang_CC98__
+  #include <iostream>
+  using namespace std;
+  class C1
+  {
+  public:
+       C1() {
+            cout << "$C1()$";
+       }
+       C1(const C1& a) {
+            cout << "$C1(const C1&)$";
+       }
+       virtual ~C1() {
+            cout << "$~C1()$";
+       }
+  };
+  class C2 : public C1
+  {
+  public:
+       C2() {
+            cout << "$C2()$";
+       }
+       ~C2() {
+            cout << "$~C2()$";
+       }
+  };
+
+
+  int main()
+  {
+       C2* pC2 = new C2();
+       cout << endl;
+       {
+            C1 a = *pC2;
+            cout << endl;
+       }
+       C1* pC1 = pC2;
+       delete pC1;
+       cout << endl;
+  }
+
+
+The output is:
+
+Line 1: _________ （1分）
+
+Line 2: _________ （1分）
+
+Line 3: _________ （1分）
+
+
+
+
+程序填空题
+
+
+1. Array is a template that implements a dynamically expandable array. next is used to link to the
+next block of the array. Fill in the blanks to complete the code.
+
+
+  #include <iostream>
+  using namespace std;
+ template <typename T>
+ class Array {
+ public:
+      Array() {
+            data = new T[BLK_SIZE];
+            next = _______(1分) ;
+      }
+      ~Array() {
+            delete [] data;
+            delete next;
+      }
+      T& operator[](int i);
+      void iterate(void (*f)(T&));
+ private:
+      ________(2分) *data; // data of type T
+      static const int BLK_SIZE=32; // fixed block size
+      ________(1分) *next;     // the next array block
+ };
+
+
+ template <typename T>
+ T& ________(1分) operator[](int i) {
+      if (i < BLK_SIZE) {
+            return ________(2分);
+      } else {
+            if (next == NULL) {
+                next = new ________(2分);
+            }
+            return (*next)[i-BLK_SIZE];
+      }
+ }
+
+
+ template <typename T>
+ void ________(2分) iterate(void (*f)(T&)) {
+      for (int i = 0; i < BLK_SIZE; i++) {
+            f(data[i]);
+      }
+      if (next != NULL) {
+            next-> ________(2分);
+      }
+ }
+
+
+ int main()
+ {
+      Array ________(2分) a;
+      int size = 100;
+      cin >> size;
+      for (int i = 0; i < size; i++) {
+            a[i] = i;
+      }
+      a.iterate([](int &x) { cout << x << endl; });
+ }
+
+
+
+
+-- CC98 马二马纯上 --
+2. The function inner_product computes the inner product (i.e., sum of products) between the
+elements in the range [first1, last1) and those in the same size range beginning at first2 .
+Please fill in the blanks of the following code to finish the implementation.
+
+The code to complete:
+
+
+  #include <functional>
+  #include <iostream>
+  #include <vector>
+
+
+  ________(1分) <class InputIt1, class InputIt2, class T, class BinaryOp1, class
+  BinaryOp2>
+  T inner_product(InputIt1 first1, InputIt1 last1, InputIt2 first2, T init,
+  ________(3分) op1, ________(3分) op2)
+  {
+      while (first1 != last1)
+      {
+          init = ________(3分) (init, op2( _________(3分) ));
+          ++first1;
+          ________(2分) ;
+      }
+      return init;
+  }
+
+
+  int main()
+  {
+      std::vector<int> a{0, 1, 2, 3, 4};
+      std::vector<int> b{5, 4, 2, 3, 1};
+      int r1 = inner_product(a.begin(), a.end(), b.begin(), 0, std::plus<>(),
+  std::multiplies<>());
+      std::cout << "Inner product of a and b: " << r1 << '\n';
+
+
+      int r2 = inner_product(a.begin(), a.end(), b.begin(), 0, std::plus<>(),
+  std::equal_to<>());
+      std::cout << "Number of pairwise matches between a and b: " <<            r2 << '\n';
+  }
+
+
+Required output:
+
+
+  Inner product of a and b: 21
+  Number of pairwise matches between a and b: 2
+
+
+
+
+主观题
+The class hierarchy in this program design task is as follows:
+Note that the shapes are contained in the CShapeDocument , and they are read from the file using
+its member function parse(ifstream &ifs) . The text stored in the file to describe the shapes in
+the document are as follows:
+
+
+  Rectangle left-bottom 1.0 1.0 W&H 10.0 20.0
+  Circle center 10.0 10 radius          5.0
+  Ellipse center      9.0 9.0 radius       10.0 30.0
+
+
+The first string is the type of the shape and the rest texts describe its attributes. Specifically, left-
+bottom means 1 and 1 are the 2D coordinate of the rectangle, and W&H means 10 and 20 are the
+width and height of the rectangle. The descriptions of the circle and ellipse are similar.
+
+Suppose the following texts are stored in the D:\shapes.txt :
+
+
+  Rectangle left-bottom 20.0 50.0 W&H 20.0 40.0
+  Circle center 8.0 8.0 radius 7.0
+  Ellipse center 5.0 5.0 radius 10.0 2.0
+
+
+Please read the implementation of CShapeDocument and main function and implement the
+required shape classes, such as Rectangle , Ellipse and Circle such that the shapes are
+analyzed from the file D:\shapes.txt and stored in an object of the class CShapeDocument .
+
+
+  #include <iostream>
+  #include <fstream>
+  #include <vector>
+  using namespace std;
+
+
+  class shape
+  {
+  public:
+       virtual ~shape() {}
+
+
+       virtual void draw() = 0;
+       virtual bool parseattribute(ifstream &ifs) = 0;
+  };
+
+
+  class Rectangle : public shape
+  {
+  …
+};
+
+
+class Circle : public shape
+{
+…
+};
+
+
+class Ellipse : public shape
+{
+…
+};
+
+
+== CC98 马二马纯上 ==
+class CShapeDocument
+{
+public:
+     CShapeDocument() {}
+     ~CShapeDocument();
+public:
+     void draw();
+     void parse(ifstream& ifs);
+private:
+     std::vector<shape*> m_vShape;
+};
+
+
+CShapeDocument::~CShapeDocument()
+{
+     std::vector<shape*>::iterator itShape;
+
+
+     for (itShape = m_vShape.begin(); itShape != m_vShape.end(); itShape++)
+           delete* itShape;
+}
+
+
+void CShapeDocument::draw()
+{
+     std::vector<shape*>::iterator itShape;
+
+
+     for (itShape = m_vShape.begin(); itShape != m_vShape.end(); itShape++)
+           (*itShape)->draw();
+}
+
+
+template<class X>
+void parseattribute(ifstream& ifs, std::vector<shape*> &vShape)
+{
+     shape* pX = new X();
+     if (!pX->parseattribute(ifs))
+     {
+           delete pX;
+           return;
+     }
+     vShape.push_back(pX);
+}
+
+
+void CShapeDocument::parse(ifstream &ifs)
+{
+     std::string str;
+      while(1)
+      {
+           str = "";
+           ifs >> str;
+           if (str == "Rectangle")
+                parseattribute<Rectangle>(ifs, m_vShape);
+           else if (str == "Circle")
+                parseattribute<Circle>(ifs, m_vShape);
+           else if (str == "Ellipse")
+                parseattribute<Ellipse>(ifs, m_vShape);
+           else
+                break;
+      }
+  }
+
+
+  int main()
+  {
+      std::ifstream ifs("D:\\shape.txt");
+      CShapeDocument shapedoc;
+      shapedoc.parse(ifs);
+      shapedoc.draw();
+  }
+
+
+And the output of the program is as follows:
+
+
+  Rectangle 20 50 W&H 20 40
+  Circle 8 8 radius 7
+  Ellipse 5 5 radius 10 2
+
+
+
+
+单选题答案
+CADAD BCCBC
+
+注：单选第3题答案不能确定，待考
+
+
+
+马二马纯上 浙江大学校内论坛
+
+请勿用于商业用途，转载请与我取得联系
+

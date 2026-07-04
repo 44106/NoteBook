@@ -1,10 +1,17 @@
-const resources = Array.isArray(window.SITE_RESOURCES) ? window.SITE_RESOURCES : [];
+let resources = Array.isArray(window.SITE_RESOURCES) ? window.SITE_RESOURCES : [];
+
+const REPO_OWNER = "44106";
+const REPO_NAME = "NoteBook";
+const REPO_BRANCH = "main";
+const API_TREE_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1`;
+const IGNORED_INDEX_PATHS = new Set([".gitignore", "index.html", "app.js", "styles.css", "site-data.js"]);
 
 const state = {
   query: "",
   semester: "全部",
   type: "全部",
   sort: "course",
+  source: "静态索引",
 };
 
 const openFolders = new Set();
@@ -20,6 +27,60 @@ const els = {
   grid: document.querySelector("#course-grid"),
   empty: document.querySelector("#empty-state"),
 };
+
+function getFileType(fileName) {
+  const dotIndex = fileName.lastIndexOf(".");
+  if (dotIndex <= 0 || dotIndex === fileName.length - 1) return "file";
+  return fileName.slice(dotIndex + 1).toLowerCase();
+}
+
+function getTitle(fileName) {
+  const dotIndex = fileName.lastIndexOf(".");
+  return dotIndex > 0 ? fileName.slice(0, dotIndex) : fileName;
+}
+
+function getPathParts(path) {
+  return String(path || "").split("/").filter(Boolean);
+}
+
+function isIndexablePath(path) {
+  if (!path || IGNORED_INDEX_PATHS.has(path)) return false;
+  return !path.startsWith(".git/") && !path.startsWith(".agents/") && !path.startsWith(".codex/");
+}
+
+function resourceFromTreeItem(item) {
+  const parts = getPathParts(item.path);
+  const fileName = parts[parts.length - 1] || item.path;
+  return {
+    title: getTitle(fileName),
+    fileName,
+    path: item.path,
+    semester: parts[0] || "根目录",
+    course: parts[1] || "未分类",
+    type: getFileType(fileName),
+    size: item.size || 0,
+    modified: "仓库最新",
+  };
+}
+
+async function loadDynamicResources() {
+  const response = await fetch(`${API_TREE_URL}&t=${Date.now()}`, {
+    headers: { Accept: "application/vnd.github+json" },
+    cache: "no-store",
+  });
+  if (!response.ok) {
+    throw new Error(`GitHub API ${response.status}`);
+  }
+
+  const data = await response.json();
+  if (!Array.isArray(data.tree)) {
+    throw new Error("GitHub API response missing tree");
+  }
+
+  return data.tree
+    .filter((item) => item.type === "blob" && isIndexablePath(item.path))
+    .map(resourceFromTreeItem);
+}
 
 function formatBytes(bytes) {
   if (!Number.isFinite(bytes) || bytes <= 0) return "0 KB";
@@ -180,7 +241,9 @@ function renderTreeNode(node, container, depth = 0, parentKey = "") {
 function renderResources(items) {
   els.grid.innerHTML = "";
   els.empty.hidden = items.length > 0;
-  els.title.textContent = state.query ? `搜索结果：${items.length} 个文件` : `全部资料：${items.length} 个文件`;
+  els.title.textContent = state.query
+    ? `搜索结果：${items.length} 个文件`
+    : `全部资料：${items.length} 个文件 · ${state.source}`;
 
   if (items.length === 0) return;
 
@@ -216,7 +279,7 @@ function setStats() {
   els.courseCount.textContent = courses.size;
 }
 
-function init() {
+async function init() {
   setStats();
 
   els.search.addEventListener("input", (event) => {
@@ -230,6 +293,20 @@ function init() {
   });
 
   render();
+
+  try {
+    const dynamicResources = await loadDynamicResources();
+    if (dynamicResources.length > 0) {
+      resources = dynamicResources;
+      state.source = "仓库实时索引";
+      setStats();
+      render();
+    }
+  } catch (error) {
+    state.source = "静态索引";
+    console.warn("Using static site-data.js index:", error);
+    render();
+  }
 }
 
 init();

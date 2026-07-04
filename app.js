@@ -119,7 +119,6 @@ function getFolderKey(parentKey, name) {
 
 function shouldOpenFolder(key, depth) {
   if (state.query.trim()) return true;
-  if (openFolders.size === 0) return depth < 2;
   return openFolders.has(key);
 }
 

@@ -4,6 +4,7 @@ const REPO_OWNER = "44106";
 const REPO_NAME = "NoteBook";
 const REPO_BRANCH = "main";
 const API_TREE_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1`;
+const RAW_FILE_BASE_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}`;
 const IGNORED_INDEX_PATHS = new Set([".gitignore", "index.html", "app.js", "styles.css", "site-data.js"]);
 
 const state = {
@@ -99,6 +100,27 @@ function encodePath(path) {
     .split("/")
     .map((part) => encodeURIComponent(part))
     .join("/");
+}
+
+function getRawFileUrl(path) {
+  return `${RAW_FILE_BASE_URL}/${encodePath(path)}`;
+}
+
+async function downloadFile(item) {
+  const response = await fetch(getRawFileUrl(item.path));
+  if (!response.ok) {
+    throw new Error(`Download failed: ${response.status}`);
+  }
+
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = item.displayName || item.fileName || "download";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
 }
 
 function countBy(key) {
@@ -221,9 +243,23 @@ function renderTreeNode(node, container, depth = 0, parentKey = "") {
   files.forEach((item) => {
     const link = document.createElement("a");
     link.className = "tree-file";
-    link.href = encodePath(item.path);
-    link.target = "_blank";
-    link.rel = "noopener";
+    const isPng = item.type === "png";
+    link.href = isPng ? getRawFileUrl(item.path) : encodePath(item.path);
+    if (isPng) {
+      link.download = item.displayName || item.fileName || "";
+      link.addEventListener("click", async (event) => {
+        event.preventDefault();
+        try {
+          await downloadFile(item);
+        } catch (error) {
+          console.warn("PNG download failed, falling back to raw file URL:", error);
+          window.location.href = getRawFileUrl(item.path);
+        }
+      });
+    } else {
+      link.target = "_blank";
+      link.rel = "noopener";
+    }
     link.innerHTML = `
       <span class="tree-file-main">
         <span class="tree-file-name">${item.displayName}</span>

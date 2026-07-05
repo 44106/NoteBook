@@ -29,6 +29,8 @@ const els = {
   empty: document.querySelector("#empty-state"),
 };
 
+let markdownViewer = null;
+
 function getFileType(fileName) {
   const dotIndex = fileName.lastIndexOf(".");
   if (dotIndex <= 0 || dotIndex === fileName.length - 1) return "file";
@@ -121,6 +123,92 @@ async function downloadFile(item) {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
+}
+
+function ensureMarkdownViewer() {
+  if (markdownViewer) return markdownViewer;
+
+  const overlay = document.createElement("div");
+  overlay.className = "markdown-viewer";
+  overlay.hidden = true;
+  overlay.innerHTML = `
+    <div class="markdown-dialog" role="dialog" aria-modal="true" aria-labelledby="markdown-title">
+      <header class="markdown-header">
+        <div>
+          <p class="eyebrow">Markdown</p>
+          <h2 id="markdown-title"></h2>
+        </div>
+        <div class="markdown-actions">
+          <a class="markdown-raw-link" target="_blank" rel="noopener">原文</a>
+          <button class="markdown-close" type="button" aria-label="关闭">关闭</button>
+        </div>
+      </header>
+      <article class="markdown-body"></article>
+    </div>
+  `;
+
+  const close = () => {
+    overlay.hidden = true;
+    document.body.classList.remove("viewer-open");
+  };
+
+  overlay.querySelector(".markdown-close").addEventListener("click", close);
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) close();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!overlay.hidden && event.key === "Escape") close();
+  });
+
+  document.body.appendChild(overlay);
+  markdownViewer = {
+    overlay,
+    title: overlay.querySelector("#markdown-title"),
+    rawLink: overlay.querySelector(".markdown-raw-link"),
+    body: overlay.querySelector(".markdown-body"),
+  };
+  return markdownViewer;
+}
+
+function renderMarkdown(markdown) {
+  if (!window.marked || !window.DOMPurify) {
+    const escaped = markdown
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    return `<pre>${escaped}</pre>`;
+  }
+
+  window.marked.setOptions({
+    breaks: true,
+    gfm: true,
+  });
+  return window.DOMPurify.sanitize(window.marked.parse(markdown));
+}
+
+async function openMarkdownViewer(item) {
+  const viewer = ensureMarkdownViewer();
+  const rawUrl = getRawFileUrl(item.path);
+  viewer.title.textContent = item.displayName || item.fileName || item.title || "Markdown";
+  viewer.rawLink.href = rawUrl;
+  viewer.body.innerHTML = `<p class="markdown-loading">正在加载...</p>`;
+  viewer.overlay.hidden = false;
+  document.body.classList.add("viewer-open");
+
+  try {
+    const response = await fetch(rawUrl);
+    if (!response.ok) {
+      throw new Error(`Markdown fetch failed: ${response.status}`);
+    }
+    const markdown = await response.text();
+    viewer.body.innerHTML = renderMarkdown(markdown);
+  } catch (error) {
+    console.warn("Markdown render failed:", error);
+    viewer.body.innerHTML = `
+      <p class="markdown-error">Markdown 加载失败。</p>
+      <p><a href="${rawUrl}" target="_blank" rel="noopener">打开原文</a></p>
+    `;
+  }
 }
 
 function countBy(key) {
@@ -244,7 +332,8 @@ function renderTreeNode(node, container, depth = 0, parentKey = "") {
     const link = document.createElement("a");
     link.className = "tree-file";
     const isPng = item.type === "png";
-    link.href = isPng ? getRawFileUrl(item.path) : encodePath(item.path);
+    const isMarkdown = item.type === "md";
+    link.href = isPng || isMarkdown ? getRawFileUrl(item.path) : encodePath(item.path);
     if (isPng) {
       link.download = item.displayName || item.fileName || "";
       link.addEventListener("click", async (event) => {
@@ -255,6 +344,11 @@ function renderTreeNode(node, container, depth = 0, parentKey = "") {
           console.warn("PNG download failed, falling back to raw file URL:", error);
           window.location.href = getRawFileUrl(item.path);
         }
+      });
+    } else if (isMarkdown) {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        openMarkdownViewer(item);
       });
     } else {
       link.target = "_blank";

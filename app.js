@@ -108,6 +108,21 @@ function getRawFileUrl(path) {
   return `${RAW_FILE_BASE_URL}/${encodePath(path)}`;
 }
 
+function getSafeZipName(name) {
+  return `${String(name || "folder").replace(/[\\/:*?"<>|]+/g, "_")}.zip`;
+}
+
+function triggerBlobDownload(blob, fileName) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
 async function downloadFile(item) {
   const response = await fetch(getRawFileUrl(item.path));
   if (!response.ok) {
@@ -115,14 +130,7 @@ async function downloadFile(item) {
   }
 
   const blob = await response.blob();
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = item.displayName || item.fileName || "download";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
+  triggerBlobDownload(blob, item.displayName || item.fileName || "download");
 }
 
 function ensureMarkdownViewer() {
@@ -208,6 +216,57 @@ async function openMarkdownViewer(item) {
       <p class="markdown-error">Markdown 加载失败。</p>
       <p><a href="${rawUrl}" target="_blank" rel="noopener">打开原文</a></p>
     `;
+  }
+}
+
+function getFolderFiles(folderKey) {
+  const prefix = `${folderKey}/`;
+  return resources.filter((item) => item.path === folderKey || String(item.path || "").startsWith(prefix));
+}
+
+async function downloadFolder(folderKey, button) {
+  const files = getFolderFiles(folderKey);
+  if (files.length === 0) return;
+  if (!window.JSZip) {
+    window.alert("打包下载组件加载失败，请刷新页面后重试。");
+    return;
+  }
+
+  const originalText = button.textContent;
+  button.disabled = true;
+
+  try {
+    const zip = new window.JSZip();
+    for (let index = 0; index < files.length; index += 1) {
+      const item = files[index];
+      button.textContent = `${index + 1}/${files.length}`;
+      const response = await fetch(getRawFileUrl(item.path));
+      if (!response.ok) {
+        throw new Error(`${item.path} download failed: ${response.status}`);
+      }
+      const blob = await response.blob();
+      const relativePath = String(item.path).startsWith(`${folderKey}/`)
+        ? String(item.path).slice(folderKey.length + 1)
+        : item.fileName || item.title || `file-${index + 1}`;
+      zip.file(relativePath, blob);
+    }
+
+    button.textContent = "压缩中";
+    const blob = await zip.generateAsync({ type: "blob" });
+    triggerBlobDownload(blob, getSafeZipName(folderKey.split("/").pop()));
+    button.textContent = "完成";
+    window.setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1200);
+  } catch (error) {
+    console.warn("Folder download failed:", error);
+    button.textContent = "失败";
+    window.alert("打包下载失败，请稍后重试或减少文件数量。");
+    window.setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1600);
   }
 }
 
@@ -310,6 +369,17 @@ function renderTreeNode(node, container, depth = 0, parentKey = "") {
       <span class="tree-folder-name">${folder.name}</span>
       <span class="tree-count">${folder.count}</span>
     `;
+    const downloadButton = document.createElement("button");
+    downloadButton.className = "folder-download";
+    downloadButton.type = "button";
+    downloadButton.textContent = "打包下载";
+    downloadButton.title = `下载 ${folder.name} 文件夹`;
+    downloadButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      downloadFolder(folderKey, downloadButton);
+    });
+    summary.appendChild(downloadButton);
     details.appendChild(summary);
 
     const children = document.createElement("div");

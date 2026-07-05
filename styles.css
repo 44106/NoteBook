@@ -368,6 +368,29 @@ select {
   text-transform: uppercase;
 }
 
+.folder-download {
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.24rem 0.55rem;
+  background: #fff;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.folder-download:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.folder-download:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .empty-state {
   margin: 3rem 0;
   color: var(--muted);
@@ -607,6 +630,10 @@ select {
   .tree-file {
     grid-template-columns: 1fr;
     padding-left: 1.15rem;
+  }
+
+  .tree-folder-summary {
+    flex-wrap: wrap;
   }
 
   .tree-children {

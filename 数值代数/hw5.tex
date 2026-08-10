@@ -1,0 +1,186 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{array}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{document}
+
+\begin{center}
+    \Large\textbf{上机作业 ：两点边值问题的 Jacobi、Gauss-Seidel 与 SOR 迭代}
+\end{center}
+
+\section{问题与离散化}
+考虑两点边值问题
+\[
+    \varepsilon y''+y'=a,\qquad 0<a<1,\qquad y(0)=0,\quad y(1)=1.
+\]
+题目给出的精确解为
+\[
+    y(x)=\frac{1-a}{1-e^{-1/\varepsilon}}\left(1-e^{-x/\varepsilon}\right)+ax.
+\]
+将区间 $[0,1]$ 等分为 $n=100$ 份，$h=1/n=0.01$，内点为
+$x_i=ih,\ i=1,2,\ldots,n-1$。按照题目给出的差分格式
+\[
+    \varepsilon\frac{y_{i-1}-2y_i+y_{i+1}}{h^2}
+    +\frac{y_{i+1}-y_i}{h}=a,
+\]
+可化为
+\[
+    (\varepsilon+h)y_{i+1}-(2\varepsilon+h)y_i+\varepsilon y_{i-1}=ah^2.
+\]
+为了使系数矩阵具有正主对角元，程序整体乘以 $-1$，得到等价线性方程组
+\[
+    Ay=b,
+\]
+其中
+\[
+    A=\begin{bmatrix}
+    2\varepsilon+h & -(\varepsilon+h) \\
+    -\varepsilon & 2\varepsilon+h & -(\varepsilon+h) \\
+    & \ddots & \ddots & \ddots \\
+    &&-\varepsilon&2\varepsilon+h
+    \end{bmatrix}_{99\times99}.
+\]
+右端项为
+\[
+    b_i=-ah^2,\quad i=1,\ldots,98,\qquad
+    b_{99}=\varepsilon+h-ah^2,
+\]
+其中最后一项加入了右端边界值 $y(1)=1$ 的贡献。本次实验取 $a=1/2$，
+分别计算 $\varepsilon=1,0.1,0.01,0.0001$。
+
+\section{迭代方法}
+设 $A=D-L-U$，其中 $D$ 为主对角矩阵，$L$ 与 $U$ 分别表示下、上三角部分取相反数后的矩阵。三种迭代格式为
+\[
+    \text{Jacobi:}\qquad
+    y^{(k+1)}=D^{-1}(L+U)y^{(k)}+D^{-1}b,
+\]
+\[
+    \text{Gauss-Seidel:}\qquad
+    y^{(k+1)}=(D-L)^{-1}Uy^{(k)}+(D-L)^{-1}b,
+\]
+\[
+    \text{SOR:}\qquad
+    y^{(k+1)}=(D-\omega L)^{-1}\bigl((1-\omega)D+\omega U\bigr)y^{(k)}
+    +\omega(D-\omega L)^{-1}b.
+\]
+程序从零向量开始迭代。停止准则取
+\[
+    \frac{\|y^{(k+1)}-y^{(k)}\|_\infty}{\max\{\|y^{(k+1)}\|_\infty,1\}}<10^{-10}.
+\]
+这个准则比只要求四位有效数字更严格；表中的 ``linear err'' 是迭代解与
+\verb|numpy.linalg.solve| 直接求得的离散线性方程组解之间的无穷范数误差，用来检验线性方程组求解精度。
+
+SOR 松弛因子按 Jacobi 迭代矩阵 $B_J$ 的谱半径选取常用最优值
+\[
+    \omega_{\mathrm{opt}}=\frac{2}{1+\sqrt{1-\rho(B_J)^2}}.
+\]
+本题四个 $\varepsilon$ 对应的 $\rho(B_J)$ 与 $\omega_{\mathrm{opt}}$ 如表 \ref{tab:omega}。
+
+\begin{table}[H]
+\centering
+\caption{Jacobi 迭代矩阵谱半径与 SOR 松弛因子}
+\label{tab:omega}
+\begin{tabular}{ccc}
+\toprule
+$\varepsilon$ & $\rho(B_J)$ & $\omega_{\mathrm{opt}}$ \\
+\midrule
+1       & 0.999494 & 1.938357 \\
+0.1     & 0.998373 & 1.892101 \\
+0.01    & 0.942344 & 1.498524 \\
+0.0001  & 0.196959 & 1.009891 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{计算结果}
+表 \ref{tab:iterations} 给出三种迭代法的迭代次数、残差、相对离散线性方程组直接解的误差，以及相对微分方程精确解的误差。输出数字至少保留四位有效数字。
+
+\begin{table}[H]
+\centering
+\small
+\caption{三种迭代法求解结果}
+\label{tab:iterations}
+\begin{tabular}{clrrrr}
+\toprule
+$\varepsilon$ & 方法 & 迭代次数 & $\|b-A\hat y\|_\infty$ & linear err & exact err \\
+\midrule
+1 & Jacobi & 31376 & $2.010\times10^{-10}$ & $9.479\times10^{-8}$ & $3.002\times10^{-4}$ \\
+1 & G-S & 15677 & $1.009\times10^{-10}$ & $9.870\times10^{-8}$ & $3.002\times10^{-4}$ \\
+1 & SOR & 401 & $1.024\times10^{-11}$ & $1.304\times10^{-9}$ & $3.001\times10^{-4}$ \\
+\midrule
+0.1 & Jacobi & 11581 & $2.096\times10^{-11}$ & $2.825\times10^{-8}$ & $8.824\times10^{-3}$ \\
+0.1 & G-S & 5809 & $1.098\times10^{-11}$ & $3.058\times10^{-8}$ & $8.824\times10^{-3}$ \\
+0.1 & SOR & 272 & $7.912\times10^{-12}$ & $6.016\times10^{-10}$ & $8.824\times10^{-3}$ \\
+\midrule
+0.01 & Jacobi & 750 & $2.705\times10^{-12}$ & $8.707\times10^{-10}$ & $6.606\times10^{-2}$ \\
+0.01 & G-S & 423 & $1.990\times10^{-12}$ & $8.765\times10^{-10}$ & $6.606\times10^{-2}$ \\
+0.01 & SOR & 125 & $6.360\times10^{-13}$ & $6.558\times10^{-11}$ & $6.606\times10^{-2}$ \\
+\midrule
+0.0001 & Jacobi & 126 & $2.667\times10^{-13}$ & $2.875\times10^{-11}$ & $4.950\times10^{-3}$ \\
+0.0001 & G-S & 113 & $2.439\times10^{-14}$ & $2.615\times10^{-12}$ & $4.950\times10^{-3}$ \\
+0.0001 & SOR & 103 & $2.915\times10^{-15}$ & $2.852\times10^{-13}$ & $4.950\times10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+为了展示数值解与精确解的逐点差别，表 \ref{tab:samples} 列出 SOR 解在若干网格点上的值。完整的 99 个内点数值见程序生成的 \verb|hw5_solution_values.csv|。
+
+\begin{table}[H]
+\centering
+\small
+\caption{SOR 数值解与精确解的代表点比较}
+\label{tab:samples}
+\begin{tabular}{ccccc}
+\toprule
+$\varepsilon$ & $x_i$ & SOR $y_i$ & 精确解 $y(x_i)$ & 绝对误差 \\
+\midrule
+1 & 0.01 & 0.0128543 & 0.0128705 & $1.614\times10^{-5}$ \\
+1 & 0.25 & 0.299707 & 0.299966 & $2.591\times10^{-4}$ \\
+1 & 0.50 & 0.560938 & 0.561230 & $2.919\times10^{-4}$ \\
+1 & 0.75 & 0.792166 & 0.792352 & $1.856\times10^{-4}$ \\
+1 & 0.99 & 0.992067 & 0.992076 & $8.390\times10^{-6}$ \\
+\midrule
+0.1 & 0.01 & 0.0504578 & 0.0525835 & $2.126\times10^{-3}$ \\
+0.1 & 0.25 & 0.578885 & 0.583978 & $5.093\times10^{-3}$ \\
+0.1 & 0.50 & 0.745777 & 0.746654 & $8.769\times10^{-4}$ \\
+0.1 & 0.75 & 0.874643 & 0.874746 & $1.030\times10^{-4}$ \\
+0.1 & 0.99 & 0.994996 & 0.994998 & $1.241\times10^{-6}$ \\
+\midrule
+0.01 & 0.01 & 0.255000 & 0.321060 & $6.606\times10^{-2}$ \\
+0.01 & 0.25 & 0.625000 & 0.625000 & $1.489\times10^{-8}$ \\
+0.01 & 0.50 & 0.750000 & 0.750000 & $9.326\times10^{-15}$ \\
+0.01 & 0.75 & 0.875000 & 0.875000 & $4.774\times10^{-15}$ \\
+0.01 & 0.99 & 0.995000 & 0.995000 & $1.110\times10^{-16}$ \\
+\midrule
+0.0001 & 0.01 & 0.500050 & 0.505000 & $4.950\times10^{-3}$ \\
+0.0001 & 0.25 & 0.625000 & 0.625000 & $6.550\times10^{-15}$ \\
+0.0001 & 0.50 & 0.750000 & 0.750000 & $4.774\times10^{-15}$ \\
+0.0001 & 0.75 & 0.875000 & 0.875000 & $2.776\times10^{-15}$ \\
+0.0001 & 0.99 & 0.995000 & 0.995000 & $1.110\times10^{-16}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{结果分析}
+从表 \ref{tab:iterations} 可以看出，三种方法都收敛到了离散线性方程组的四位有效数字以上。
+Jacobi 方法每步只使用上一轮分量，因此迭代次数最多；Gauss-Seidel 方法立即使用已经更新的分量，
+迭代次数大致为 Jacobi 的一半。SOR 方法通过松弛因子加速，特别是在 $\varepsilon=1$ 与
+$0.1$ 时，Jacobi 迭代矩阵谱半径非常接近 1，普通 Jacobi 和 G-S 收敛很慢，而 SOR 只需数百步。
+
+同时也要注意，``linear err'' 很小只说明迭代法已经准确求解了差分方程组；它不等于微分方程精确解误差。
+当 $\varepsilon$ 很小时，精确解在 $x=0$ 附近存在边界层，变化尺度约为 $\varepsilon$。
+本题固定 $h=0.01$，当 $\varepsilon=0.01$ 或 $0.0001$ 时，网格不足以细致解析边界层，
+因此 exact err 主要由差分离散误差决定，继续收紧迭代停止准则也不会显著降低该误差。
+
+\section{结论}
+本次实验按题目差分格式构造了 $99$ 阶三对角线性方程组，并分别用 Jacobi、Gauss-Seidel 和 SOR 迭代法求解。
+在 $10^{-10}$ 的相邻迭代相对改变量停止准则下，所有方法相对离散线性方程组解均达到四位有效数字要求。
+收敛速度方面，SOR 明显最快，Gauss-Seidel 次之，Jacobi 最慢。与连续精确解比较时，
+误差随 $\varepsilon$ 变化明显，尤其在小 $\varepsilon$ 时受边界层和固定步长 $h=0.01$ 的限制。
+
+\end{document}

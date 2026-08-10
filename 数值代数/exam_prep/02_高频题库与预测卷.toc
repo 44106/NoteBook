@@ -1,0 +1,26 @@
+\contentsline {section}{一、高频题库}{2}{section*.1}%
+\contentsline {subsection}{1. 范数证明}{2}{section*.2}%
+\contentsline {subsection}{2. LU / PLU / 全主元}{2}{section*.3}%
+\contentsline {subsection}{3. 正定性与平方根法}{2}{section*.4}%
+\contentsline {subsection}{4. 最小二乘与正则方程}{3}{section*.5}%
+\contentsline {subsection}{5. Householder 与 Givens}{3}{section*.6}%
+\contentsline {subsection}{6. Jacobi / Gauss-Seidel / SOR}{4}{section*.7}%
+\contentsline {subsection}{7. 共轭梯度法}{5}{section*.8}%
+\contentsline {subsection}{8. Hessenberg / QR / Schur / SVD}{5}{section*.9}%
+\contentsline {section}{二、今年最可能的预测卷}{6}{section*.10}%
+\contentsline {subsection}{题 1}{6}{section*.11}%
+\contentsline {subsection}{题 2}{6}{section*.12}%
+\contentsline {subsection}{题 3}{6}{section*.13}%
+\contentsline {subsection}{题 4}{6}{section*.14}%
+\contentsline {subsection}{题 5}{6}{section*.15}%
+\contentsline {subsection}{题 6}{6}{section*.16}%
+\contentsline {subsection}{题 7}{7}{section*.17}%
+\contentsline {subsection}{题 8}{7}{section*.18}%
+\contentsline {subsection}{题 9}{7}{section*.19}%
+\contentsline {subsection}{题 10}{7}{section*.20}%
+\contentsline {section}{三、书后习题加练（谨慎参考）}{7}{section*.21}%
+\contentsline {subsection}{1. 第 74-75 页}{7}{section*.22}%
+\contentsline {subsection}{2. 第 136 页}{7}{section*.23}%
+\contentsline {subsection}{3. 第 158-159 页}{7}{section*.24}%
+\contentsline {subsection}{4. 第 197-199 页}{8}{section*.25}%
+\contentsline {section}{四、最短背诵版}{8}{section*.26}%

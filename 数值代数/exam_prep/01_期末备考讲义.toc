@@ -1,0 +1,41 @@
+\contentsline {section}{使用方式}{3}{section*.1}%
+\contentsline {section}{总框架}{3}{section*.2}%
+\contentsline {section}{一、直接法：LU、PLU、平方根法}{3}{section*.3}%
+\contentsline {subsection}{1. LU 分解}{3}{section*.4}%
+\contentsline {subsection}{2. 列主元 PLU}{3}{section*.5}%
+\contentsline {subsection}{3. 高频母题：[[1,4,7],[2,5,8],[3,6,10]]}{4}{section*.6}%
+\contentsline {subsection}{4. 平方根法与改进平方根法}{4}{section*.7}%
+\contentsline {subsection}{5. 追赶法}{5}{section*.8}%
+\contentsline {section}{二、范数、条件数、误差}{5}{section*.9}%
+\contentsline {subsection}{1. 向量范数}{5}{section*.10}%
+\contentsline {subsection}{2. 矩阵范数}{6}{section*.11}%
+\contentsline {subsection}{3. 谱范数}{6}{section*.12}%
+\contentsline {subsection}{4. 条件数与误差}{6}{section*.13}%
+\contentsline {section}{三、最小二乘与正交化}{7}{section*.14}%
+\contentsline {subsection}{1. 最小二乘标准问题}{7}{section*.15}%
+\contentsline {subsection}{2. 投影矩阵}{7}{section*.16}%
+\contentsline {subsection}{3. QR 解最小二乘}{7}{section*.17}%
+\contentsline {subsection}{4. Householder}{8}{section*.18}%
+\contentsline {subsection}{5. Givens}{8}{section*.19}%
+\contentsline {section}{四、定常迭代法}{9}{section*.20}%
+\contentsline {subsection}{1. 统一分裂}{9}{section*.21}%
+\contentsline {subsection}{2. 常用充分条件}{9}{section*.22}%
+\contentsline {subsection}{3. 参数矩阵模板}{9}{section*.23}%
+\contentsline {subsection}{4. 3 阶矩阵写 Jacobi 迭代矩阵}{10}{section*.24}%
+\contentsline {section}{五、共轭梯度法}{10}{section*.25}%
+\contentsline {subsection}{1. A-共轭向量线性无关}{11}{section*.26}%
+\contentsline {subsection}{2. 逆矩阵展开式}{11}{section*.27}%
+\contentsline {subsection}{3. 小矩阵 CG 手算}{11}{section*.28}%
+\contentsline {section}{六、特征值问题}{12}{section*.29}%
+\contentsline {subsection}{1. 幂法}{12}{section*.30}%
+\contentsline {subsection}{2. Householder 上 Hessenberg 化}{12}{section*.31}%
+\contentsline {subsection}{3. QR 迭代}{13}{section*.32}%
+\contentsline {subsection}{4. Schur 分解}{13}{section*.33}%
+\contentsline {subsection}{5. SVD 与 Moore-Penrose 逆}{13}{section*.34}%
+\contentsline {section}{七、证明题统一套路}{14}{section*.35}%
+\contentsline {subsection}{范数证明}{14}{section*.36}%
+\contentsline {subsection}{收敛证明}{14}{section*.37}%
+\contentsline {subsection}{正定证明}{14}{section*.38}%
+\contentsline {subsection}{最小二乘证明}{14}{section*.39}%
+\contentsline {subsection}{正交变换证明}{14}{section*.40}%
+\contentsline {section}{八、常见失分点}{14}{section*.41}%

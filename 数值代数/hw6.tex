@@ -1,0 +1,176 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{array}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{document}
+
+\begin{center}
+    \Large\textbf{上机作业 ：Jacobi、Gauss-Seidel 与共轭梯度法}
+\end{center}
+
+\section{算法说明}
+本次实验按照教材第 4.1 节的矩阵分裂写法，设
+\[
+    A=D-L-U,
+\]
+其中 $D$ 为主对角矩阵，$L$ 与 $U$ 分别为下、上三角部分取相反数后的矩阵。Jacobi 与
+Gauss-Seidel 迭代分别为
+\[
+    x_k=D^{-1}(L+U)x_{k-1}+D^{-1}b,
+\]
+\[
+    x_k=(D-L)^{-1}Ux_{k-1}+(D-L)^{-1}b.
+\]
+程序中逐分量实现为
+\[
+    x_i^{(k+1)}
+    =\frac{b_i-\sum_{j\ne i}a_{ij}x_j^{(k)}}{a_{ii}},
+\]
+以及
+\[
+    x_i^{(k+1)}
+    =
+    \frac{b_i-\sum_{j<i}a_{ij}x_j^{(k+1)}
+    -\sum_{j>i}a_{ij}x_j^{(k)}}{a_{ii}}.
+\]
+
+共轭梯度法采用教材算法 5.3.1 的实用递推形式。给定 $x_0$ 后令
+\[
+    r=b-Ax,\qquad \rho=r^Tr.
+\]
+当 $\sqrt{\rho}>\varepsilon\|b\|_2$ 且未达到最大迭代次数时，按
+\[
+    p=r \quad (k=1),\qquad
+    p=r+\beta p,\quad \beta=\frac{\rho}{\tilde\rho}\quad (k>1),
+\]
+\[
+    w=Ap,\qquad \alpha=\frac{\rho}{p^Tw},\qquad
+    x\leftarrow x+\alpha p,\qquad r\leftarrow r-\alpha w
+\]
+更新，其中 $\tilde\rho$ 是上一轮的 $r^Tr$。实验统一从零向量开始迭代，停止准则取
+\[
+    \frac{\|b-Ax_k\|_2}{\|b\|_2}<10^{-10}.
+\]
+
+\section{Hilbert 型矩阵测试共轭梯度法}
+题目给出的矩阵为
+\[
+    a_{ij}=\frac{1}{i+j+1},\qquad
+    b_i=\frac13\sum_{j=1}^n a_{ij},\qquad 1\le i,j\le n.
+\]
+因此
+\[
+    b=A\left(\frac13\mathbf 1\right),
+\]
+若 $A$ 非奇异，则精确解为
+\[
+    x_\ast=\frac13(1,1,\ldots,1)^T.
+\]
+该矩阵是对称正定的，因为任意非零向量 $z$ 满足
+\[
+    z^TAz=\int_0^1\left(\sum_{i=1}^n z_i t^i\right)^2\,dt>0,
+\]
+所以可以直接使用共轭梯度法。
+
+\begin{table}[H]
+\centering
+\small
+\caption{Hilbert 型矩阵的共轭梯度法测试结果}
+\label{tab:hilbert}
+\begin{tabular}{rrrrrrr}
+\toprule
+$n$ & $\kappa_2(A)$ & 迭代次数 & 相对残量 & $\|r\|_2$ & $\|\hat x-x_\ast\|_\infty$ & 直接解误差 \\
+\midrule
+4  & $1.239\times10^5$  & 5 & $2.338\times10^{-13}$ & $1.151\times10^{-13}$ & $3.408\times10^{-12}$ & $2.464\times10^{-12}$ \\
+6  & $1.671\times10^8$  & 7 & $5.729\times10^{-13}$ & $4.053\times10^{-13}$ & $5.106\times10^{-5}$  & $2.999\times10^{-11}$ \\
+8  & $2.051\times10^{11}$ & 6 & $4.241\times10^{-11}$ & $3.813\times10^{-11}$ & $1.573\times10^{-4}$  & $2.075\times10^{-6}$ \\
+10 & $2.424\times10^{14}$ & 8 & $2.034\times10^{-11}$ & $2.183\times10^{-11}$ & $4.998\times10^{-5}$  & $6.906\times10^{-4}$ \\
+12 & $5.427\times10^{17}$ & 8 & $5.062\times10^{-12}$ & $6.242\times10^{-12}$ & $8.695\times10^{-5}$  & $7.660\times10^{-1}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表 \ref{tab:hilbert} 中的 ``直接解误差'' 是用 \verb|numpy.linalg.solve| 求解后相对精确解
+$x_\ast=\frac13\mathbf 1$ 的误差，只作为病态性参照。可以看到，随着 $n$ 增大，
+$\kappa_2(A)$ 极快增长。共轭梯度法能把残量降到很小，但前向误差并不必然同步变小；
+这是 Hilbert 型矩阵严重病态造成的结果。$n=12$ 时直接解的前向误差已经很大，也说明只看残量不足以判断病态方程组的真实求解精度。
+另外，理论上共轭梯度法在精确算术中至多 $n$ 步终止；实际双精度计算中由于舍入误差和共轭性损失，迭代次数可能略有偏离。
+
+\section{题 3 方程组的三种迭代求解}
+题 3 的线性方程组为
+\[
+\begin{bmatrix}
+10&1&2&3&4\\
+1&9&-1&2&-3\\
+2&-1&7&3&-5\\
+3&2&3&12&-1\\
+4&-3&-5&-1&15
+\end{bmatrix}
+\begin{bmatrix}x_1\\x_2\\x_3\\x_4\\x_5\end{bmatrix}
+=
+\begin{bmatrix}12\\-27\\14\\-17\\12\end{bmatrix}.
+\]
+直接求解可得精确解
+\[
+    x_\ast=(1,-2,3,-2,1)^T.
+\]
+该矩阵是对称正定矩阵，其特征值约为
+\[
+    1.6553,\ 6.9948,\ 9.3656,\ 15.8089,\ 19.1754,
+\]
+因此可使用共轭梯度法。其二范数条件数约为 $11.5845$，远小于 Hilbert 测试矩阵。
+Jacobi 与 G-S 迭代矩阵的谱半径分别为
+\[
+    \rho(B_J)=0.826786,\qquad \rho(B_{GS})=0.684558,
+\]
+均小于 $1$，所以两种定常迭代都收敛；且 G-S 的谱半径更小，预期收敛更快。
+
+\begin{table}[H]
+\centering
+\small
+\caption{题 3 方程组的三种迭代法结果}
+\label{tab:problem3}
+\begin{tabular}{lrrrr}
+\toprule
+方法 & 迭代次数 & 相对残量 & $\|r\|_2$ & $\|\hat x-x_\ast\|_\infty$ \\
+\midrule
+Jacobi & 107 & $9.118\times10^{-11}$ & $3.534\times10^{-9}$  & $1.354\times10^{-9}$ \\
+G-S    & 57  & $7.672\times10^{-11}$ & $2.973\times10^{-9}$  & $9.633\times10^{-10}$ \\
+CG     & 5   & $1.025\times10^{-16}$ & $3.972\times10^{-15}$ & $4.441\times10^{-16}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+三种方法得到的数值解分别为
+\[
+\begin{aligned}
+x_{\mathrm{Jacobi}}&=(1.000000001,\ -2.000000001,\ 2.999999999,\ -2.000000000,\ 0.999999999)^T,\\
+x_{\mathrm{G-S}}&=(1.000000001,\ -2.000000001,\ 2.999999999,\ -2.000000000,\ 0.9999999994)^T,\\
+x_{\mathrm{CG}}&=(1,\ -2,\ 3,\ -2,\ 1)^T.
+\end{aligned}
+\]
+
+\section{结果分析}
+题 3 中 Jacobi 与 G-S 都收敛，是因为对应迭代矩阵谱半径均小于 $1$。G-S 每次更新分量后立即在本轮后续分量中使用新值，
+因此相对 Jacobi 有更强的信息利用，谱半径也更小，实际迭代次数从 107 次降到 57 次。
+
+共轭梯度法明显更快，原因有两点。首先，题 3 的矩阵对称正定，满足 CG 的适用条件；其次，该矩阵条件数不大，
+Krylov 子空间迭代很快捕捉到解的主要分量。由于矩阵阶数为 $5$，在精确算术中 CG 至多 5 步得到精确解；
+本实验中双精度计算也在第 5 步达到机器精度量级。
+
+Hilbert 型矩阵测试则说明了另一个现象：残量很小并不等价于前向误差很小。随着 $n$ 增大，矩阵条件数急剧增大，
+输入和舍入误差会被病态矩阵显著放大。因此，对于 Hilbert 这类病态问题，应同时报告残量、前向误差和条件数，
+不能只凭 $\|b-A\hat x\|$ 很小就断言解的所有有效数字都可靠。
+
+\section{结论}
+本次实验完成了共轭梯度法程序，并用题目给出的 Hilbert 型矩阵进行了测试；同时对题 3 方程组分别使用 Jacobi、
+Gauss-Seidel 与共轭梯度法求解。实验结果与理论一致：Jacobi 与 G-S 的收敛性由迭代矩阵谱半径决定，
+且 G-S 快于 Jacobi；对于对称正定且条件数适中的方程组，共轭梯度法远快于定常迭代法。对于 Hilbert 型病态矩阵，
+共轭梯度法可以获得很小残量，但前向误差受条件数限制，需要结合条件数和已知精确解一起判断结果质量。
+
+\end{document}

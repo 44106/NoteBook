@@ -1,0 +1,137 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{graphicx}
+\geometry{left=2.4cm, right=2.4cm, top=2.4cm, bottom=2.4cm}
+\newcommand{\file}[1]{\texttt{\small #1}}
+
+\begin{document}
+
+\begin{center}
+    \Large\textbf{上机作业 9：经典 Jacobi 方法求实对称三对角矩阵特征对}
+\end{center}
+
+\section{题目与计算任务}
+教材第 244 页上机习题 1 要求先编写一个利用经典 Jacobi 方法求实对称三对角矩阵全部特征值和特征向量的通用子程序，再用该子程序计算
+\[
+    A_n=
+    \begin{bmatrix}
+    4&1&&&\\
+    1&4&1&&\\
+     &\ddots&\ddots&\ddots&\\
+     &&1&4&1\\
+     &&&1&4
+    \end{bmatrix},\qquad n=50,51,\ldots,100
+\]
+的全部特征值和特征向量。本次程序文件为 \file{hw9.py}。结果文件包括：
+\begin{itemize}
+    \item \file{hw9\_summary.csv}：各阶矩阵的摘要误差和迭代次数；
+    \item \file{hw9\_eigenpairs.csv}：全部特征值、残差和对应特征向量；
+    \item \file{hw9\_results.md}：便于快速查看的 Markdown 摘要。
+\end{itemize}
+
+\section{经典 Jacobi 方法}
+设当前矩阵为实对称矩阵 $A=[a_{ij}]$。经典 Jacobi 方法每一步选取绝对值最大的非对角元
+\[
+    |a_{pq}|=\max_{1\le i<j\le n}|a_{ij}|
+\]
+作为旋转平面。若 $a_{pq}\ne 0$，令
+\[
+    \tau=\frac{a_{qq}-a_{pp}}{2a_{pq}},\qquad
+    t=\frac{\operatorname{sign}(\tau)}
+    {|\tau|+\sqrt{1+\tau^2}},
+\]
+当 $\tau=0$ 时取 $t=1$。再令
+\[
+    c=\frac1{\sqrt{1+t^2}},\qquad s=tc .
+\]
+用只在第 $p,q$ 个坐标平面上作用的正交 Jacobi 旋转 $J$ 作相似变换
+\[
+    A\leftarrow J^T A J .
+\]
+按教材公式，除第 $p,q$ 行列外的元素更新为
+\[
+    a'_{ip}=c a_{ip}-s a_{iq},\qquad
+    a'_{iq}=s a_{ip}+c a_{iq}\quad (i\ne p,q),
+\]
+并且
+\[
+    a'_{pp}=a_{pp}-t a_{pq},\qquad
+    a'_{qq}=a_{qq}+t a_{pq},\qquad
+    a'_{pq}=a'_{qp}=0 .
+\]
+程序同时累计特征向量矩阵
+\[
+    V\leftarrow VJ,\qquad V_0=I .
+\]
+迭代结束后，$A$ 的对角元即为特征值近似，$V$ 的列向量即为对应的单位正交特征向量。
+
+停止准则采用非对角 Frobenius 范数
+\[
+    E(A)=\left(\sum_{i\ne j}a_{ij}^2\right)^{1/2}.
+\]
+本实验令
+\[
+    E(A_k)\le 10^{-12}\max(E(A_0),1)
+\]
+时停止。所有输出还用后验残差
+\[
+    r_j=\frac{\|A_nv_j-\lambda_jv_j\|_\infty}
+    {\max(\|A_n\|_\infty\|v_j\|_\infty,1)}
+\]
+和正交性误差 $\|V^TV-I\|_\infty$ 检验。
+
+\section{解析校验公式}
+对 Toeplitz 三对角矩阵 $A_n=\operatorname{tridiag}(1,4,1)$，有解析特征对
+\[
+    \lambda_k=4+2\cos\frac{k\pi}{n+1},\qquad
+    q_j^{(k)}=\sqrt{\frac{2}{n+1}}\sin\frac{jk\pi}{n+1},
+    \quad 1\le j,k\le n .
+\]
+程序把 Jacobi 结果按特征值从小到大排序，并统一特征向量符号后，与上述解析公式比较。因此除了数值残差外，还能给出特征值最大绝对误差和特征向量夹角误差。
+
+\section{数值结果}
+完整的 $n=50,\ldots,100$ 共 51 个矩阵的全部特征对已经写入 \file{hw9\_eigenpairs.csv}。表 \ref{tab:summary} 列出若干代表性阶数的摘要结果。
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{经典 Jacobi 方法计算 $A_n=\operatorname{tridiag}(1,4,1)$ 的代表性结果}
+\label{tab:summary}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{rrrrrrrrr}
+\toprule
+$n$ & $\lambda_{\min}$ & $\lambda_{\max}$ & 旋转次数 & 轮数 & $E(A_k)$ & 最大残差 & 正交误差 & 解析误差\\
+\midrule
+50  & 2.003793342526 & 5.996206657474 & 4456  & 3.64 & $9.835\times10^{-12}$ & $1.319\times10^{-13}$ & $1.554\times10^{-14}$ & $6.217\times10^{-15}$\\
+60  & 2.002651820230 & 5.997348179770 & 6345  & 3.58 & $1.079\times10^{-11}$ & $1.164\times10^{-13}$ & $1.986\times10^{-14}$ & $6.217\times10^{-15}$\\
+70  & 2.001957546960 & 5.998042453040 & 8616  & 3.57 & $1.168\times10^{-11}$ & $1.149\times10^{-13}$ & $2.290\times10^{-14}$ & $7.105\times10^{-15}$\\
+80  & 2.001504094992 & 5.998495905008 & 11301 & 3.58 & $1.249\times10^{-11}$ & $1.209\times10^{-13}$ & $2.617\times10^{-14}$ & $7.994\times10^{-15}$\\
+90  & 2.001191718898 & 5.998808281102 & 14313 & 3.57 & $1.331\times10^{-11}$ & $1.120\times10^{-13}$ & $3.100\times10^{-14}$ & $9.770\times10^{-15}$\\
+100 & 2.000967435416 & 5.999032564584 & 17659 & 3.57 & $1.403\times10^{-11}$ & $1.348\times10^{-13}$ & $3.324\times10^{-14}$ & $1.155\times10^{-14}$\\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+对全部 51 个测试矩阵统计可得：最大后验特征残差为
+$1.870\times10^{-13}$，最大正交性误差为 $3.380\times10^{-14}$，与解析特征值的最大差为
+$1.421\times10^{-14}$。这说明程序得到的特征值达到双精度舍入误差附近；特征向量矩阵也保持了很好的正交性。
+
+\section{结果分析}
+从表中可见，随着 $n$ 从 50 增至 100，最小特征值逐渐逼近 $2$，最大特征值逐渐逼近 $6$。这与
+\[
+    \lambda_k=4+2\cos\frac{k\pi}{n+1}
+\]
+完全一致：当 $n$ 增大时，$\frac{k\pi}{n+1}$ 在 $(0,\pi)$ 中取得的点更接近端点，从而余弦值更接近 $\pm 1$。
+
+经典 Jacobi 方法每步只消去一个最大的非对角元，但每个旋转都是正交相似变换，因此特征值不变且特征向量正交性稳定。实际计算中约 $3.6$ 个全扫描轮数即可达到本实验的停止准则，说明对本题这种结构规整、谱分布简单的实对称三对角矩阵，经典 Jacobi 方法虽然不是最高效算法，但能可靠地产生全部高精度正交特征向量。
+
+\section{结论}
+本次作业完成了教材要求的经典 Jacobi 通用子程序，并将其用于 $n=50,\ldots,100$ 阶三对角矩阵的全部特征对计算。程序没有调用库函数直接求特征值，而是按教材公式逐步选最大非对角元、构造 Jacobi 旋转并累计特征向量。数值残差、正交性误差以及与解析解的比较都表明结果可靠，满足上机作业对全部特征值和特征向量的计算要求。
+
+\end{document}

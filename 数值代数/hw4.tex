@@ -1,0 +1,185 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{document}
+
+\begin{center}
+    \Large\textbf{上机作业 ：QR 分解求解线性方程组与最小二乘问题}
+\end{center}
+
+\section{算法说明}
+本次实验编写了基于 Householder 变换的 QR 分解通用子程序。教材算法 3.2.1 对向量
+$x=(x_1,\ldots,x_n)^T$ 构造
+\[
+    H=I-\beta vv^T,
+\]
+使得 $Hx$ 的后 $n-1$ 个分量为零。程序采用教材中的稳定写法：先令
+\[
+    \sigma=x_2^2+\cdots+x_n^2,\qquad
+    \alpha=\sqrt{x_1^2+\sigma},
+\]
+再按 $x_1$ 的符号选择 $v_1$，避免两个接近数直接相减造成有效数字损失。随后按算法 3.3.1
+逐列对 $A(j:m,j:n)$ 作变换
+\[
+    A(j:m,j:n)\leftarrow A(j:m,j:n)-\beta v\bigl(v^T A(j:m,j:n)\bigr).
+\]
+分解后若 $A$ 为方阵，则由
+\[
+    Ax=b,\quad A=QR
+\]
+得到
+\[
+    Rx=Q^Tb.
+\]
+若 $A\in\mathbb{R}^{m\times n}$ 且 $m>n$，则线性最小二乘问题
+\[
+    \min_x \|Ax-b\|_2
+\]
+化为
+\[
+    R_{1:n,1:n}x=(Q^Tb)_{1:n}.
+\]
+程序文件 \verb|hw4.py| 中的 \verb|qr_solve| 用于方程组，\verb|qr_least_squares| 用于最小二乘，
+\verb|solve_by_qr| 则按矩阵形状自动选择对应过程。
+
+\section{第一章三个线性方程组的 QR 求解}
+第一章上机题中的三个方程组分别为：
+\begin{itemize}
+    \item 84 阶非对称三对角方程组，主对角元为 $6$，次下对角元为 $8$，次上对角元为 $1$，
+    右端项为 $(7,15,\ldots,15,14)^T$，精确解为全 $1$ 向量；
+    \item 100 阶对称正定三对角方程组，主对角元为 $10$，上、下次对角元为 $1$。右端项沿用前面作业的
+    随机种子 $42$ 生成；
+    \item 40 阶 Hilbert 方程组，$a_{ij}=1/(i+j-1)$，$b_i=\sum_{j=1}^{40}1/(i+j-1)$，精确解为全 $1$ 向量。
+\end{itemize}
+
+表中误差为 $\|\hat x-x_\ast\|_\infty$，残量为 $\|b-A\hat x\|_\infty$。100 阶随机方程组没有显式精确解，
+因此以双精度 \verb|numpy.linalg.solve| 的结果作为比较基准。
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+方程组 & 方法 & $\|r\|_\infty$ & $\|\hat x-x_\ast\|_\infty$ & 状态 \\
+\midrule
+84 阶三对角 & Householder QR & $6.04\times10^{-14}$ & $2.92\times10^{-1}$ & 可解 \\
+84 阶三对角 & Gauss 无主元 & $5.96\times10^{-8}$ & $5.37\times10^{8}$ & 严重失真 \\
+84 阶三对角 & Gauss 列主元 & $1.78\times10^{-15}$ & $2.80\times10^{-6}$ & 稳定 \\
+\midrule
+100 阶三对角 & Householder QR & $4.44\times10^{-16}$ & $4.16\times10^{-17}$ & 稳定 \\
+100 阶三对角 & Gauss 无主元 & $1.11\times10^{-16}$ & $2.08\times10^{-17}$ & 稳定 \\
+100 阶三对角 & Gauss 列主元 & $1.11\times10^{-16}$ & $2.08\times10^{-17}$ & 稳定 \\
+100 阶三对角 & Cholesky & $3.33\times10^{-16}$ & $2.78\times10^{-17}$ & 稳定 \\
+100 阶三对角 & LDL$^T$ & $2.22\times10^{-16}$ & $1.39\times10^{-17}$ & 稳定 \\
+\midrule
+40 阶 Hilbert & Householder QR & $5.33\times10^{-15}$ & $9.74\times10^{1}$ & 前向误差大 \\
+40 阶 Hilbert & Gauss 无主元 & $2.44\times10^{-15}$ & $1.36\times10^{2}$ & 前向误差大 \\
+40 阶 Hilbert & Gauss 列主元 & $2.66\times10^{-15}$ & $1.69\times10^{2}$ & 前向误差大 \\
+40 阶 Hilbert & Cholesky & -- & -- & 出现非正主元 \\
+40 阶 Hilbert & LDL$^T$ & -- & -- & 出现非正主元 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+从比较可见，84 阶三对角矩阵在双精度下条件数约为 $2.95\times10^{16}$，是高度病态问题。
+无主元 Gauss 消去中乘子反复放大舍入误差，最终给出完全错误的解；列主元 Gauss 利用换行控制乘子，
+在该特殊方程组上表现最好。Householder QR 的正交变换使残量保持在 $10^{-14}$ 量级，但由于该矩阵的
+数值秩已经接近双精度极限，前向误差仍明显大于列主元 Gauss。
+
+100 阶对称正定三对角问题条件数约为 $1.50$，各种方法都能得到接近机器精度的结果。对这类问题，
+Cholesky 和 LDL$^T$ 能利用对称正定结构，运算量和存储量均优于一般 QR；QR 的优势主要在于正交变换
+带来的稳定性和对最小二乘问题的通用性。
+
+40 阶 Hilbert 矩阵条件数约为 $9.87\times10^{18}$，残量很小并不代表解准确。QR、Gauss 方法的残量都在
+$10^{-15}$ 左右，但前向误差达到 $10^2$ 量级；Cholesky 和 LDL$^T$ 在浮点运算中出现非正主元。
+这说明病态矩阵的精确求解不能仅依赖双精度直接法，必要时应使用高精度运算或正则化。
+
+\section{表 3.2 数据的二次最小二乘拟合}
+设
+\[
+    y = at^2+bt+c.
+\]
+由表 3.2 构造设计矩阵
+\[
+    A=\begin{bmatrix}
+    t_1^2&t_1&1\\
+    \vdots&\vdots&\vdots\\
+    t_7^2&t_7&1
+    \end{bmatrix}.
+\]
+用 QR 最小二乘子程序求得
+\[
+    (a,b,c)^T=(1.000000,\;1.000000,\;1.000000)^T,
+\]
+残量二范数为
+\[
+    \|A(a,b,c)^T-y\|_2=1.51\times10^{-15}.
+\]
+因此拟合多项式为
+\[
+    \boxed{y=t^2+t+1}.
+\]
+表 3.2 的七个数据点恰好落在该二次多项式上，残量仅为舍入误差。
+
+\section{房产估价线性模型的最小二乘结果}
+将表 3.3 的 28 个房价作为向量 $y$，将表 3.4 的 11 个变量加上一列常数项构成矩阵
+\[
+    A=\begin{bmatrix}
+    1&a_{11}&a_{12}&\cdots&a_{1,11}\\
+    \vdots&\vdots&\vdots&&\vdots\\
+    1&a_{28,1}&a_{28,2}&\cdots&a_{28,11}
+    \end{bmatrix}.
+\]
+令参数向量为
+\[
+    c=(c_0,c_1,\ldots,c_{11})^T,
+\]
+则模型为
+\[
+    y\approx c_0+c_1a_1+c_2a_2+\cdots+c_{11}a_{11}.
+\]
+QR 最小二乘计算得到的参数如下：
+
+\begin{table}[H]
+\centering
+\begin{tabular}{crcr}
+\toprule
+参数 & 数值 & 参数 & 数值 \\
+\midrule
+$c_0$ & $ 2.310490$ & $c_6$  & $-0.880710$ \\
+$c_1$ & $ 0.722168$ & $c_7$  & $-0.577300$ \\
+$c_2$ & $ 9.485986$ & $c_8$  & $-0.076947$ \\
+$c_3$ & $ 0.139318$ & $c_9$  & $ 1.015991$ \\
+$c_4$ & $13.738963$ & $c_{10}$ & $ 1.358896$ \\
+$c_5$ & $ 1.989140$ & $c_{11}$ & $ 2.894569$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+即
+\[
+\begin{aligned}
+\hat y={}&2.310490+0.722168a_1+9.485986a_2+0.139318a_3+13.738963a_4\\
+&+1.989140a_5-0.880710a_6-0.577300a_7-0.076947a_8\\
+&+1.015991a_9+1.358896a_{10}+2.894569a_{11}.
+\end{aligned}
+\]
+该最小二乘问题中矩阵秩为 $12$，二范数条件数约为 $5.72\times10^2$，残量为
+\[
+    \|Ac-y\|_2=1.630089\times10^1,\qquad
+    \|Ac-y\|_\infty=7.043962.
+\]
+与 Hilbert 方程组相比，该设计矩阵并不严重病态，因此 Householder QR 可以稳定地给出模型参数。
+
+\section{结论}
+Householder QR 的核心优点是使用正交变换，通常不会像无主元消去那样直接放大误差，因此尤其适合最小二乘问题。
+对良态方程组，QR、Gauss、Cholesky 和 LDL$^T$ 都能得到高精度结果；对对称正定问题，平方根类方法更节省计算量。
+对病态问题，QR 能保持较小残量，但前向误差仍受条件数控制，不能把病态问题变成良态问题。实际计算中应同时考察
+残量、前向误差或条件数，而不能只看方程是否被“近似满足”。
+
+\end{document}

@@ -1,0 +1,10 @@
+﻿Status: running
+Started: 2026-05-16 01:04:37
+Now: 2026-05-16 01:38:47
+Elapsed: 34.18 minutes
+Files scanned: 1615400
+Directories scanned: 413973
+Bytes accounted from readable files: 744.14 GB
+Skipped reparse points: 1089
+Access/read errors: 79
+Current free space on C: 39.27 GB

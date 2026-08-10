@@ -1,0 +1,31 @@
+                                      第〸讲：迭代法
+
+                                    ∑
+                                    n
+                                              a
+1.         ：    A = (aij )                   | aijii | < 1, j = 1, . . . , n,   Jacobi 迭代法   Gauss-Seidel
+                                  i=1,i̸=j
+     迭代法             .
+
+2.         ：    A                                                                     Gauss-Seidel 迭代法
+
+
+
+3.         ：    A                                                                            ω ∈ (0, 1],
+           迭代
+
+4.         ：A ∈ R2×2                                 Jacobi 迭代
+
+5.
+                                              {
+                                                  x1 +ρx2 = b1
+                                                                                                      (0.1)
+                                                  ρx1 +2x2 = b2
+
+     (1)         ρ           , Gauss-Seidel 迭代               .
+     (2)                                            迭代           .
+
+
+
+      第 136     : 第 (1)       .
+

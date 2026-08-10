@@ -1,0 +1,49 @@
+page	chars	images	drawings	preview
+01	158	0	5	Mass-Storage Structure | Computer System III | Wenbo Shen | Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU and Henri Casanova@Hawaii.
+02	154	0	3	2 | Content | • Overview of Mass Storage Structure | • Disk Structure | • Disk Scheduling | • Disk Management | • Swap-Space Management | • RAID Structure
+03	487	0	3	3 | Overview | • Magnetic disks provide bulk of secondary storage of computer  | system | • Hard disk is most popular; some magnetic disks could be  | removable | • Driver attached to computer via I/O buses (e.g., usb, s
+04	35	2	3	4 | The First Commercial Disk Drive
+05	558	0	3	5 | Disk Structure | • Disk drives are addressed as a 1-dimensional arrays of logical  | blocks (LBA) | • Logical block is the smallest unit of transfer | • Logical blocks are mapped into sectors of the disk sequentially
+06	29	2	3	6 | Moving-head Magnetic Disk
+07	17	1	3	7 | Magnetic Disk
+08	625	1	3	8 | Magnetic Disk | • Positioning time is time to move disk arm to desired sector | • Positioning time includes seek time and rotational latency | • Seek time: move disk to the target cylinder | • Rotational latency: for
+09	467	1	3	9 | Magnetic Disk | • Average access time = average seek time + average latency | • For fastest disk 3ms + 2ms = 5ms;  | • For slow disk 9ms + 5.56ms = 14.56ms | • Average I/O time: average access time + (data to transfe
+10	407	0	3	10 | Disk Scheduling | • OS is responsible for using hardware efficiently | • For the disk drives: a fast access time and high disk bandwidth | • Access time: seek time (roughly linear to seek distance) +  | rotational l
+11	740	0	3	11 | Disk Scheduling | • Disk scheduling chooses which pending disk request to service next | • Concurrent sources of disk I/O requests include OS, system/user processes | • Idle disk can immediately work on a request, o
+12	365	0	3	12 | Disk Scheduling | • Disk scheduling usually tries to minimize seek time | • Rotational latency is difficult for OS to calculate | • There are many disk scheduling algorithms | • FCFS | • SSTF | • SCAN, C-SCAN | • LO
+13	296	1	3	13 | FCFS | • First-come first-served, simplest scheduling algorithm | • Total head movements of 640 cylinders | Advantage: | • Every request gets a fair chance | • No indefinite postponement | Disadvantages: | • Does no
+14	306	11	3	14 | SSTF | • SSTF: shortest seek time first  | • Selects the request with minimum seek time from the current | head position | • SSTF scheduling is a form of SJF scheduling, starvation may exist | • Unlike SJF, SSTF may
+15	320	8	3	15 | SCAN | • SCAN algorithm sometimes is called the elevator algorithm | • Disk arm starts at one end of the disk, and moves toward the  | other end | • Service requests during the movement until it gets to the other  |
+16	358	4	3	16 | C-SCAN | • Circular-scan is designed to provides a more uniform wait time | • Head moves from one end to the other, servicing requests while  | going | • When the head reaches the end, it immediately returns to the 
+17	238	5	3	17 | LOOK/C-LOOK | • SCAN and C-SCAN moves head end to end, even no I/O in between | • In implementation, head only goes as far as last request in each  | direction | • LOOK is a version of SCAN, C-LOOK is a version of C
+18	498	0	3	18 | Selecting Disk-Scheduling Algorithm | • Disk scheduling performance depends on the # and types of  | requests | • Disk-scheduling should be written as a separate, replaceable,  | module | • SSTF is common and is a r
+19	557	0	3	19 | Nonvolatile Memory Devices | • | If disk-drive like, then called solid-state disks (SSDs) | • | Other forms include USB drives (thumb drive, flash drive), DRAM disk  | replacements, surface-mounted on motherboards, 
+20	552	1	3	20 | Nonvolatile Memory Devices | • Have characteristics that present  | challenges | • Read and written in “page” increments (think sector)  | but can’t overwrite in place | • Must first be erased, and erases happen in 
+21	530	2	3	21 | NAND Flash Controller Algorithms | • With no overwrite, pages end up with mix of valid and invalid data | • To track which logical blocks are valid, controller maintains flash translation  | layer (FTL) table | • Al
+22	384	1	3	22 | Magnetic Tape | • Tape was early type of secondary storage, now mostly for backup | • Large capacity: 200GB to 1.5 TB | • Slow access time, especially for random access | • Seek time is much higher than disks | • On
+23	688	0	3	23 | Disk Management | • Physical formatting: divide disk into sectors for controller to  | read/write | • Each sector can hold header information, plus data, plus error correction  | code (ECC) | • Usually 512 bytes of 
+24	511	0	3	24 | Disk Management-Device names | • | By convention, IDE(Integrated Drive Electronics) drives will be given  | device names /dev/hda to /dev/hdd.  | • Hard Drive A (/dev/hda) is the first drive | • Hard Drive C (/dev/h
+25	202	2	4	25 | Disk Management-Partition | • | There are at most 4 primary partitions on a disk | • | If we need to have more than 4 partitions, we need to use the logical  | partition - number starts from 5 | ……
+26	567	0	3	26 | Disk Management | • Root partition contains the OS, other partitions can hold other OSes, other  | file systems, or be raw | • Mounted at boot time | • Other partitions can mount automatically or manually | • At mou
+27	374	2	3	27 | Disk Management | • | Raw disk access for apps that want to do  | their own block management, keep OS  | out of the way (databases for example) | • | Boot block initializes system | • | The bootstrap is stored in RO
+28	612	1	3	28 | Swap Space Management | • Used for moving entire processes (swapping), or pages (paging), from DRAM  | to secondary storage when DRAM not large enough for all processes | • Operating system provides swap space manag
+29	189	0	3	29 | Disk Attachment | • Disks can be attached to the computer as: | • host-attached storage | • hard disk, RAID arrays, CD, DVD, tape… | • network-attached storage | • storage area network
+30	674	0	3	30 | Host-Attached Storage | • Disks can be attached to the computers directly via an I/O bus | • e.g., SCSI （Small Computer System Interface）is a bus architecture, up to  | 16 devices on one cable,  | • SCSI initiator r
+31	31	1	3	31 | A Typical PC Bus Structure
+32	373	1	3	32 | Network-Attached Storage | • NAS is storage made available over a network instead of a local bus | • client can remotely attach to file systems on the server | • NFS, CIFS, and iSCSI are common protocols | • usually
+33	507	2	3	33 | Storage Area Network | • SAN is a private network connecting servers and storage units | • SAN consumes high bandwidth on the data network, separation is needed | • TCP/IP stack less efficient for storage access | •
+34	31	1	3	34 | Disks are becoming cheaper
+35	423	2	3	35 | RAID | • | Disks are unreliable, slow, but cheap | • | Simple idea: let’s use redundancy | • Increases reliability | • If one fails, you have another one  | • Increases speed | • Aggregate disk bandwidth if data is 
+36	426	0	3	36 | RAID | • | Data Mirroring | • Keep the same data on multiple disks | • Every write is to each mirror, which takes time | • | Data Striping | • Keep data split across multiple disks to allow parallel reads | • e.g., 
+37	270	0	3	37 | RAID Levels | • | Combinations of the techniques are called  “levels” | • More of a marketing tool, really | • | You should know about common RAID levels, i.e.: 0, 1, 1+0, 5, 5+0,  | 6, 6+0 | • The book talks about 
+38	387	0	3	38 | RAID 0 | • RAID 0: splits data evenly across two or more disks without parity  | bits （No redundancy） | • Data is striped across multiple disks | • Using a fixed strip size | • Gives the illusion of a larger disk wi
+39	87	0	61	39 | RAID 0 Example | • | Fixed strip size | • | 5 files of various sizes | • | 4 disks
+40	432	0	3	40 | RAID 1 | • An exact copy (or mirror) of a set of data on two disks | • | Mirroring (also called shadowing) | • | Write every written byte to 2 disks | • Uses twice as many disks as RAID 0 | • | Reliability is ensure
+41	64	0	38	41 | RAID 1 Example | • | 5 files of various sizes | • | 4 disks
+42	173	1	3	42 | RAID2 | • RAID 2: stripes data at the bit-level; uses Hamming code for error  | correction (not used) | • hamming code (4bit data+3bit parity) allows 7 disks to be used
+43	883	0	3	43 | RAID3 | • | Bit-interleaved parity | • | Data is striped across multiple disks, with one dedicated parity disk that stores the  | parity information for all the data disks | • | Each write goes to all disks, with ea
+44	372	1	3	44 | RAID 4，5，6 | • RAID 4: Basically, like RAID 3, but  | interleaving it with strips (blocks) | • A (small) read involves only one disk | • RAID 5: Like RAID 4, but parity is spread all  | over the disks as opposed to 
+45	536	0	3	45 | RAID and File Systems | • RAID can only detect/recover from disk failures | • It does not prevent or detect data corruption or other errors | • File systems like Solaris ZFS add additional checks to detect errors | 
+46	18	1	3	46 | ZFS Checksums
+47	35	1	3	47 | Traditional and Pooled Storage
+48	116	0	3	48 | Takeaway | • | Disk structure | • | Disk scheduling | • FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK | • RAID | • 0-6

@@ -1,0 +1,48 @@
+page	chars	images	drawings	preview
+01	120	0	5	I/O Systems | Computer System III | Wenbo Shen | Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU
+02	445	0	3	2 | Review | • Disk: platter, cylinder, sector, track | • Time: positioning time = seek time + rotational latency | • Disk structure, Disk attachment: host- ,network-, storage area network | • Disk scheduling: FCFS, SSTF
+03	42	0	22	3 | Overview | Memory | I/O | System | CPU
+04	209	0	3	4 | Outline | • | Overview | • | I/O Hardware | • | Application I/O Interface | • | Kernel I/O Subsystem | • | Transforming I/O Requests to Hardware Operations | • | Performance | • | Example: Linux tty device
+05	404	0	3	5 | Overview | • I/O management is a major component of OS design and operation | • Important aspect of computer operation | • I/O device is the way computer to interact with user and other systems | • I/O devices vary g
+06	503	0	3	6 | I/O Hardware | • Incredible variety of I/O devices | • Storage, communication, human-interface | • Common concepts: signals from I/O devices interface with computer | • Bus: an interconnection between components (inc
+07	30	1	3	7 | A Typical PC Bus Structure
+08	628	0	3	8 | I/O Hardware | • Some CPU architecture has dedicated I/O instructions | • x86: in, out, ins, outs | • Devices usually provide registers for data and control I/O of device | • Device driver places (pointers to) comman
+09	30	1	3	9 | I/O Ports on PCs (Partial)
+10	431	0	3	10 | Polling | • | For each I/O operation: | • | Busy-wait if device is busy (status register) | • | Cannot accept any command if busy | • | Send the command to the device controller (command register) | • | Read status 
+11	616	0	3	11 | Interrupts | • Polling requires busy-wait, inefficient use of CPU resource | • Interrupts can avoid busy-wait | • device driver (part of OS) send a command to the controller (on device),  | and return | • OS can sch
+12	31	1	3	12 | Interrupt-Driven I/O Cycle
+13	41	1	3	13 | Intel Pentium Interrupt Vector Table
+14	274	2	5	14 | Linux vector table on ARM64 | • | Define vector table | • | Set the value to VBAR | • | Vector Base Address  | Register | https://elixir.bootlin.com/linux/v4.4/source/arch/arm64/kernel/entry.S | https://elixir.bootl
+15	383	2	5	15 | Linux vector table on RISC-V64 | • | Define vector table | • | Set the value of  | handle_exception to stvec | • | Supervisor Trap Vector  | Base Address Register | • | Handle_exception jumps to  | entries of except
+16	336	0	3	16 | Interrupts | • Interrupt is also used for exceptions | • protection error for access violation | • page fault for memory access error | • software interrupt for system calls | • Multi-CPU systems can process interru
+17	836	0	3	17 | SMP IRQ Affinity | • | Starting with the 2.4 kernel, Linux has gained the ability to assign certain  | IRQs to specific processors (or groups of processors).   | • | This is known as SMP IRQ affinity, and it allows 
+18	549	0	3	18 | Direct Memory Access | • DMA transfer data directly between I/O device and memory | • OS only needs to issue commands, data transfers bypass the CPU | • No programmed I/O (one byte at a time), data transferred in la
+19	28	1	3	19 | Steps of a DMA Transfer
+20	403	0	3	20 | Application I/O Interface | • I/O system calls encapsulate device behaviors in generic classes | • in Linux, devices can be accessed as files; low-level access  | with ioctl | • Device-driver layer hides differences
+21	30	1	3	21 | Application I/O Interface
+22	18	1	3	22 | I/O Structure
+23	265	0	3	23 | Characteristics of I/O Devices | • Devices vary in many dimensions | • character-stream or block | • sequential or random-access | • synchronous or asynchronous (or both) | • sharable or dedicated | • speed of opera
+24	35	1	3	24 | Characteristics of I/O Devices
+25	349	0	3	25 | Characteristics of I/O Devices | • Broadly, I/O devices can be grouped by the OS into | • block I/O: read, write, seek | • character I/O (Stream) | • memory-mapped file access | • network sockets | • OSs have usuall
+26	353	0	3	26 | Block and Character Devices | • Block devices access data in blocks, such as disk drives… | • commands include read, write, seek | • raw I/O, direct I/O, or file-system access | • memory-mapped file access possible 
+27	343	0	3	27 | Network Devices | • Varying enough from block and character to have own  | interface | • very different from pipe, mailbox… | • Popular interface for network access is the socket interface | • it separates network p
+28	247	0	3	28 | Clocks and Timers | • Clocks and timers can be considered as character devices | • very important devices as they provide current time,  | elapsed time, timer | • Normal resolution about 1/60 second, some OS provide
+29	631	0	3	29 | Synchronous/Asynchronous I/O | • Synchronous I/O includes blocking and non-blocking I/O | • blocking I/O: process suspended until I/O completed | • easy to use and understand, but may be less efficient | • insuffici
+30	20	1	3	30 | Two I/O Methods
+31	451	0	3	31 | Kernel I/O Subsystem | • I/O scheduling | • to queue I/O requests via per-device queue | • to schedule I/O for fairness and quality of service | • Buffering - store data in memory while transferring between  | devic
+32	482	0	3	32 | Kernel I/O Subsystem | • Caching: hold a copy of data for fast access | • key to performance | • sometimes combined with buffering | • Buffer in memory is also used as caching for file operations | • Spooling: A spo
+33	414	0	3	34 | Error Handling | • | Some OSes try to recover from errors | • | e.g., device unavailable, transient write failures | • | sometimes via retrying the read or write | • | some systems have more advanced error handling 
+34	379	0	3	35 | I/O Protection | • OS needs to protect I/O devices | • e.g., keystrokes can be stolen by a keylogger if keyboard is  | not protected | • always assume user may attempt to obtain illegal I/O access | • To protect I/O
+35	35	1	3	36 | Use System Call to Perform I/O
+36	470	0	3	37 | Kernel Data Structures | • Kernel keeps state info for I/O components | • e.g., open file tables, network connections, character device state | • many data structures to track buffers, memory allocation, “dirty”  | 
+37	180	1	5	38 | UNIX I/O Kernel Structure | https://elixir.bootlin.com/linux/v6.0/source/include/linux/sched.h#L1079 | https://elixir.bootlin.com/linux/v6.0/source/include/linux/fdtable.h#L49
+38	369	0	3	39 | I/O Requests to Hardware | • System resource access needs to be mapped to hardware | • Consider reading a file from disk for a process: | • determine device holding file  | • translate name to device representation 
+39	33	1	3	40 | Life Cycle of An I/O Request
+40	226	0	3	41 | Performance | • I/O is a major factor in system performance: | • CPU to execute device driver, kernel I/O code | • context switches due to interrupts | • data buffering and copying | • network traffic especially str
+41	190	1	3	42 | Network Communications: high context switch | • | A remote login from one machine to another | • | Each character typed on the local machine must be transported to the remote  | machine
+42	353	0	3	43 | Improve Performance | • | Reduce number of context switches | • | Reduce data copying | • | Reduce interrupts by using large transfers, smart controllers, polling | • | Use DMA | • | Use smarter hardware devices | •
+43	164	1	4	44 | Linux IO – Device initialization | • | /dev/tty | • tty_init https://elixir.bootlin.com/linux/v6.6.6/source/drivers/tty/tty_io.c#L3618 | • Create /dev/tty file
+44	129	2	5	45 | Linux IO – Device write (write system call) | • | Write (echo) to the file reach vfs_write, which eventually calls tty_write
+45	52	1	3	46 | Linux ioctl system call | • | ioctl system call
+46	164	2	5	47 | Linux ioctl system call | • | ioctl system call implementation | • ioctl syscall -> vfs_ioctl -> indirect call -> tty_ioctl | • Leads to many security problems
+47	147	0	3	48 | Takeaway | • | IO hardware | • | IO access | • polling, interrupt | • | Device types | • | Application I/O Interface | • | Kernel IO subsystem

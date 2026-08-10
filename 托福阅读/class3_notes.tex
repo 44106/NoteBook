@@ -1,0 +1,101 @@
+\documentclass[UTF8,zihao=-4]{ctexart}
+
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\renewcommand{\arraystretch}{1.25}
+\setlist[itemize]{leftmargin=2.2em,itemsep=0.2em,topsep=0.2em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{第 \thepage 页 / 共 \pageref*{LastPage} 页}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\title{\heiti 托福阅读 Class 3 课堂笔记}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+本节课继续以托福阅读中的词根词缀为主线，重点整理医学与生理学词缀、表示“看”的词根 \texttt{spec/spic} 与 \texttt{vis/vid}，以及若干高频学术词、逻辑表达和同义替换词群。整理时保留课堂笔记中的核心拆解和常见用法，方便在阅读中快速推断生词含义。
+
+\section*{一、医学、生理学词缀与疾病命名}
+
+医学类词汇中，\texttt{-ia / -sia} 常表示“疾病、病症、异常状态”。\texttt{-em- / -haem-} 表示“血”，因此 \texttt{anemia} 是“贫血症”，可拆为 \texttt{an-} “无、缺乏” + \texttt{-em-} “血” + \texttt{-ia} “病症”；\texttt{leukemia} 是“白血病”，其中 \texttt{leuko-} 表示“白色”；\texttt{uremia} 是“尿毒症”，其中 \texttt{ur-} 与“尿液”有关；\texttt{hypoglycemia} 是“低血糖”，其中 \texttt{hypo-} 表示“过低”，\texttt{glyc-} 与“糖”有关。
+
+神经与认知类疾病中，\texttt{schizophrenia} 表示“精神分裂症”，可拆为 \texttt{schizo-} “分裂” + \texttt{phren-} “精神、心智” + \texttt{-ia}；\texttt{dementia} 表示“痴呆症”，其中 \texttt{de-} 有“剥夺、向下”之意，\texttt{ment-} 与“心智”有关；\texttt{amnesia} 表示“失忆症”，其中 \texttt{a-} 表示“无”，\texttt{mne-} 与“记忆”有关；\texttt{aphasia} 表示“失语症”，其中 \texttt{phas-} 与“说话、语言”有关；\texttt{dyslexia} 表示“阅读障碍症”，其中 \texttt{dys-} 表示“不良、困难”，\texttt{lex-} 与“词汇”有关；\texttt{insomnia} 表示“失眠症”，其中 \texttt{somn-} 与“睡眠”有关。
+
+情绪与心理病症中，\texttt{paranoia} 表示“偏执狂、妄想症”，\texttt{para-} 有“偏离、异常”之意；\texttt{melancholia} 表示“忧郁症”，其中 \texttt{melan-} 表示“黑色”，\texttt{chol-} 与“胆汁”有关；\texttt{hypochondria} 表示“疑病症”，即过度担心自己患有重病；\texttt{pedophilia} 表示“恋童癖”，其中 \texttt{pedo-} 表示“儿童”，\texttt{phil-} 表示“爱、强烈倾向”。
+
+\texttt{-phobia} 表示“极度恐惧”。\texttt{hydrophobia} 表示“恐水症，也可指狂犬病相关症状”，\texttt{xenophobia} 表示“仇外、恐外症”，其中 \texttt{xeno-} 表示“外来的、陌生的”；\texttt{acrophobia} 表示“恐高症”，其中 \texttt{acro-} 表示“高处、顶点”。其他机体病症包括：\texttt{achromatopsia} “全色盲”，其中 \texttt{chromat-} 表示“颜色”，\texttt{ops-} 表示“视觉”；\texttt{pneumonia} “肺炎”，其中 \texttt{pneumon-} 与“肺、呼吸”有关；\texttt{glycosuria} “糖尿症”，其中 \texttt{glyco-} 为“糖”，\texttt{ur-} 为“尿”；\texttt{adynamia} “乏力症”，其中 \texttt{dynam-} 表示“力量、动力”。
+
+生理结构词中，\texttt{cerebrum} 表示“大脑”，\texttt{cerebellum} 表示“小脑”，\texttt{ventricles} 表示“脑室、心室”，\texttt{pituitary gland} 表示“脑垂体”，\texttt{hypothalamus} 表示“下丘脑”，\texttt{duodenum} 表示“十二指肠”。传染病范围词中，核心词根 \texttt{dem} 表示“人群”：\texttt{epidemic} 表示“流行病、爆发性的”，通常指某地区病例突然增加；\texttt{pandemic} 表示“全球大流行病”；\texttt{endemic} 表示“地方病、某地特有的”。
+
+\section*{二、表示“看”的核心词根}
+
+\texttt{spec / spic} 表示“看”。具象层面，\texttt{spectator} 表示“观众、旁观者”，\texttt{spectacle} 表示“奇观、壮观景象，也可指眼镜”，\texttt{spectacular} 表示“壮观的、引人注目的”，\texttt{prism} 表示“棱镜”，\texttt{spectrum} 表示“光谱、范围、幅度”，常见搭配为 \texttt{a full/wide spectrum of}，表示“各种各样的、范围广泛的”，复数形式为 \texttt{spectra}。
+
+结合前缀后，\texttt{spec} 常转为抽象的“看、审视、判断”。\texttt{inspect} 表示“检查、视察”，\texttt{introspect} 表示“内省、反省”，\texttt{retrospect} 表示“回顾”，\texttt{prospect} 表示“前景、展望、勘探”，\texttt{circumspect} 表示“小心谨慎的”，\texttt{speculate} 表示“推测、猜测，也可表示投机”，\texttt{suspect} 表示“怀疑”，\texttt{suspicious} 表示“可疑的”，\texttt{despicable} 表示“卑劣的、令人鄙视的”。高阶词中，\texttt{auspicious} 表示“吉祥的、有利的”，\texttt{auspices} 表示“赞助、支持、庇护”，\texttt{perspicacious} 表示“有洞察力的、敏锐的”，\texttt{insight} 表示“洞察力”。
+
+\texttt{vis / vid} 同样表示“看”。\texttt{evident} 表示“明显的、明白的”，\texttt{visualize} 表示“使形象化、在脑海中想象”，\texttt{envision} 表示“设想、展望”，\texttt{visionary} 可表示“有远见的人，也可表示空想家”，\texttt{vista} 表示“远景、壮丽景色”，\texttt{provident} 表示“有远见的、未雨绸缪的、节俭的”，\texttt{revise} 表示“复习、修订”，\texttt{improvise} 表示“即兴创作、临时凑合”。
+
+与“描绘、视角”相关的高频词也需要掌握。\texttt{perspective} 表示“观点、视角，也可表示透视法”；\texttt{delineate} 表示“描绘、勾勒、详细解释”；\texttt{depict} 和 \texttt{describe} 都可表示“描述、描绘”。\texttt{per-} 可表示“完全地、彻底地”，如 \texttt{perfect} 中的 \texttt{per-} 有完成、完全之意。
+
+\section*{三、托福高频词根、形近词与逻辑表达}
+
+\texttt{literal}、\texttt{literary}、\texttt{literate}、\texttt{liberal}、\texttt{lateral} 是一组容易混淆的形近词。\texttt{literal} 表示“字面上的、原义的”，\texttt{literary} 表示“文学的”，\texttt{literate} 表示“能读会写的、有文化修养的”，\texttt{liberal} 表示“自由主义的、慷慨的、开明的”，\texttt{lateral} 表示“侧面的、横向的”。
+
+\texttt{solv / solu} 表示“松开、解开、溶解”。\texttt{dissolve} 表示“溶解、解散、消失”，\texttt{dissolution} 表示“溶解、解散、崩溃”，\texttt{solution} 表示“解决办法、溶液”，\texttt{solvent} 表示“溶剂，也可表示有偿付能力的”，\texttt{resolve} 表示“解决、下定决心、分解”，\texttt{resolution} 表示“决心、决议、分辨率”，\texttt{absolve} 表示“赦免、免除责任或罪过”。
+
+\texttt{volv / volu} 表示“卷、滚、转”。\texttt{involve} 表示“卷入、牵涉、包含”，\texttt{involuted} 表示“内卷的、错综复杂的”，\texttt{revolve} 表示“旋转、围绕……转动”，\texttt{convoluted} 表示“复杂的、令人费解的”。
+
+\texttt{sed / sid / sess} 表示“坐、降落、沉淀”。\texttt{sediment} 表示“沉淀物、沉积物”，\texttt{sedimentary} 表示“沉积的”，常见搭配为 \texttt{sedimentary rocks} “沉积岩”；\texttt{subside} 表示“平息、减退、下沉”，\texttt{residue} 表示“残留物、残渣”，\texttt{sedate} 表示“镇静的、从容的，也可作动词表示给……服镇静剂”；\texttt{assiduous} 表示“刻苦的、勤勉的”，\texttt{preside} 表示“主持、负责”，\texttt{reside} 表示“居住”，\texttt{resident} 表示“居民”，\texttt{dissident} 表示“异见分子、持不同政见者”，\texttt{insidious} 表示“潜伏的、暗中为害的”，\texttt{subsidiary} 表示“附属的、次要的，也可指子公司”，\texttt{sedan} 表示“轿车”。
+
+托福阅读中常见的逻辑词和短语包括：\texttt{instrumental} 表示“起重要作用的、有帮助的”，\texttt{inasmuch as} 表示“因为、由于、就……而言”，\texttt{a body of} 表示“大量的、一套体系”，\texttt{a curve wrecker} 可理解为“学霸、破坏拉分曲线的人”。在因果和触发关系中，\texttt{stimulate} 表示“刺激、激励”，\texttt{arouse} 表示“唤醒、引起”，\texttt{evoke} 表示“唤起、引发记忆或情感”，\texttt{trigger} 表示“触发”，\texttt{catalyze} 表示“催化、促进”，\texttt{fuel} 表示“助长、加剧”，\texttt{kindle} 表示“点燃、激起”，\texttt{ignite} 表示“引燃、引爆、引发激烈反应”。
+
+\section*{四、补充词汇与课堂总结}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{4.6cm} >{\raggedright\arraybackslash}p{9.9cm}}
+\toprule
+\textbf{单词或表达} & \textbf{含义} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{单词或表达} & \textbf{含义} \\
+\midrule
+\endhead
+\texttt{opponent} & 反对者，对手 \\
+\texttt{proponent} & 支持者，倡导者 \\
+\texttt{eminent} & 杰出的，著名的 \\
+\texttt{preeminent} & 卓越的，无与伦比的 \\
+\texttt{minute} & 作形容词时表示“极小的、微细的” \\
+\texttt{supplant} & 取代，代替 \\
+\texttt{replace} & 替换，代替 \\
+\texttt{incubate} & 孵化；潜伏 \\
+\texttt{predator} & 掠食者 \\
+\texttt{intimidate} & 恐吓，威胁 \\
+\texttt{scrape} & 刮，擦；\texttt{scrape by} 表示勉强维持或勉强通过 \\
+\texttt{ever-watchful} & 始终警惕的 \\
+\texttt{mermaid / merlion} & 美人鱼 / 鱼尾狮；其中 \texttt{mer-} 与海洋有关 \\
+\texttt{Mercury} & 水星；墨丘利神，与商业、贸易词源有关 \\
+\bottomrule
+\end{longtable}
+
+\end{document}

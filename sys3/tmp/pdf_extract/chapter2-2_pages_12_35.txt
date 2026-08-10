@@ -1,0 +1,591 @@
+
+===== PAGE 12 =====
+Tomasulo with Reorder Buffer - Cycle 0
+         Busy    Op             Vj                        Vk                Qj      Qk   Dest       A
+ Add1    No
+ Add2    No
+ Add3    No                                                                                               Reservation Stations
+Mult1    No
+Mult2    No
+
+          Busy        Instruction         Status        Object              Value                       Busy       Instruction
+
+   1       no                                                                               Load1
+   2       no                                                                               Load2
+   3       no                                                                               Load3
+   4       no
+   5       no                                                                              Reorder Buffer
+   6       no
+
+                 F0       F2         F4            F6             F8              F10       …            F30
+
+  ROB
+  Busy           no       no         no              3 — Pipelining no
+                                             Chapterno              and ILP— 12   no        …            no
+
+===== PAGE 13 =====
+Tomasulo with Reorder Buffer - Cycle 1
+         Busy    Op               Vj                       Vk                 Qj      Qk   Dest       A
+ Add1    No
+ Add2    No
+                                                                                                           Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    No
+
+          Busy         Instruction          Status        Dest                Value                       Busy    Instruction
+
+   1       Yes        FLD F6, 34(R2)        Issue          F6                                 Load1       Yes    34 + Regs[R2]
+   2       no                                                                                 Load2
+   3       no                                                                                 Load3
+   4       no
+   5       no                                                                                Reorder Buffer
+   6       no
+
+                 F0         F2         F4            F6             F8              F10       …            F30
+
+  ROB                                                #1
+  Busy           no         no         no      Chapter 3 — Pipelining no
+                                                     Yes              and ILP— 13   no        …            no
+
+===== PAGE 14 =====
+Tomasulo with Reorder Buffer - Cycle 2
+         Busy    Op               Vj                       Vk                 Qj      Qk   Dest       A
+ Add1    No
+ Add2    No
+                                                                                                           Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    No
+
+          Busy         Instruction          Status        Dest                Value                       Busy    Instruction
+
+   1       Yes        FLD F6, 34(R2)        Issue          F6             Mem[load1]          Load1       Yes    34 + Regs[R2]
+   2       Yes        FLD F2, 45(R3)        Issue          F2                                 Load2       Yes    45 + Regs[R3]
+   3       no                                                                                 Load3
+   4       no
+   5       no                                                                                Reorder Buffer
+   6       no
+
+                 F0         F2         F4            F6             F8              F10       …            F30
+
+  ROB                       #2                       #1
+  Busy           no         Yes        no      Chapter 3 — Pipelining no
+                                                     Yes              and ILP— 14   no        …            no
+
+===== PAGE 15 =====
+Tomasulo with Reorder Buffer - Cycle 3
+         Busy     Op                Vj                          Vk                Qj      Qk   Dest         A
+ Add1    No
+ Add2    No
+                                                                                                                 Reservation Stations
+ Add3    No
+Mult1    Yes     Mul                                          Regs[F4]            #2           #3
+Mult2    No
+
+          Busy            Instruction           Status         Dest               Value                         Busy    Instruction
+
+   1       Yes          FLD F6, 34(R2)           Ex1            F6            Mem[load1]            Load1       Yes    34 + Regs[R2]
+   2       Yes          FLD F2, 45(R3)          Issue           F2            Mem[load2]            Load2       Yes    45 + Regs[R3]
+   3       Yes         FMUL.D F0, F2, F4        Issue           F0                                  Load3
+   4       no
+   5       no                                                                                    Reorder Buffer
+   6       no
+
+                 F0            F2          F4            F6              F8             F10         …            F30
+
+  ROB            #3           #2                         #1
+  Busy           Yes          Yes          no      Chapter 3 — Pipelining no
+                                                         Yes              and ILP— 15   no          …            no
+
+===== PAGE 16 =====
+Tomasulo with Reorder Buffer - Cycle 4
+         Busy     Op                    Vj                             Vk              Qj      Qk   Dest         A
+ Add1    Yes      Sub                Regs[F6]                 Mem[45+Regs[R3]]                      #4
+ Add2    No
+                                                                                                                      Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                       #3
+Mult2    No
+
+          Busy             Instruction               Status           Dest             Value                         Busy    Instruction
+
+   1       Yes           FLD F6, 34(R2)              write             F6            Mem[load1]          Load1       Yes    34 + Regs[R2]
+   2       Yes           FLD F2, 45(R3)               Ex1              F2            Mem[load2]          Load2       Yes    45 + Regs[R3]
+   3       Yes          FMUL.D F0, F2, F4            Issue             F0                                Load3
+   4       Yes          FSUB.D F8, F6, F2            Issue             F8
+   5       no                                                                                         Reorder Buffer
+   6       no
+
+                 F0             F2              F4              F6              F8           F10         …            F30
+
+  ROB            #3            #2                               #1              #4
+  Busy           Yes           Yes              no      Chapter 3 — PipeliningYes
+                                                              Yes              and ILP— 16   no          …            no
+
+===== PAGE 17 =====
+Tomasulo with Reorder Buffer - Cycle 5
+         Busy     Op                     Vj                             Vk               Qj      Qk   Dest         A
+ Add1    Yes      Sub                 Regs[F6]                 Mem[45+Regs[R3]]                       #4
+ Add2    No
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                         Regs[F4]                        #3
+Mult2    Yes      Div                                                 Regs[F6]           #3           #5
+
+          Busy             Instruction                Status           Dest              Value                         Busy    Instruction
+
+   1       no            FLD F6, 34(R2)               commit            F6            Mem[load1]           Load1       no
+   2       Yes           FLD F2, 45(R3)               write             F2            Mem[load2]           Load2       no
+   3       Yes          FMUL.D F0, F2, F4              Issue            F0                                 Load3
+   4       Yes          FSUB.D F8, F6, F2              Issue            F8
+   5       Yes          FDIV.D F10, F0, F6             Issue            F10                             Reorder Buffer
+   6       no
+
+                 F0             F2               F4              F6              F8            F10         …            F30
+
+  ROB            #3             #2                                               #4            #5
+  Busy           Yes            Yes              no               3 — PipeliningYes
+                                                          Chapterno              and ILP— 17   Yes         …            no
+
+===== PAGE 18 =====
+Tomasulo with Reorder Buffer - Cycle 6
+         Busy     Op                    Vj                             Vk               Qj      Qk   Dest         A
+ Add1    Yes      Sub                Regs[F6]                 Mem[45+Regs[R3]]                       #4
+ Add2    Yes     Add                                                 Regs[F2]           #4           #6
+                                                                                                                       Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                        #3
+Mult2    Yes      Div                                                Regs[F6]           #3           #5
+
+          Busy             Instruction               Status           Dest              Value                         Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]           Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]           Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex1              F0                                 Load3
+   4       Yes          FSUB.D F8, F6, F2             Ex1              F8
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                             Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2             Issue            F6
+
+                 F0             F2              F4              F6              F8            F10         …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 18   Yes         …            no
+
+===== PAGE 19 =====
+Tomasulo with Reorder Buffer - Cycle 7
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    Yes     Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex2              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2             Ex2              F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2             Issue            F6
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 19   Yes          …            no
+
+===== PAGE 20 =====
+Tomasulo with Reorder Buffer - Cycle 8
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    Yes     Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex3              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2             Issue            F6
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 20   Yes          …            no
+
+===== PAGE 21 =====
+Tomasulo with Reorder Buffer - Cycle 9
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    Yes     Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex4              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2             Ex1              F6              #4 + F2
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 21   Yes          …            no
+
+===== PAGE 22 =====
+Tomasulo with Reorder Buffer - Cycle 10
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    Yes     Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex5              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2             Ex2              F6              #4 + F2
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 22   Yes          …            no
+
+===== PAGE 23 =====
+Tomasulo with Reorder Buffer - Cycle 11
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    No      Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex6              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6              #4 + F2
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 23   Yes          …            no
+
+===== PAGE 24 =====
+Tomasulo with Reorder Buffer - Cycle 12
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    No      Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex7              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6              #4 + F2
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 24   Yes          …            no
+
+===== PAGE 25 =====
+Tomasulo with Reorder Buffer - Cycle 13
+         Busy     Op                    Vj                             Vk               Qj       Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                        #4
+ Add2    No      Add                   #4                            Regs[F2]                         #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                         #3
+Mult2    Yes      Div                                                Regs[F6]           #3            #5
+
+          Busy             Instruction               Status           Dest              Value                          Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]            Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]            Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex8              F0                                  Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8              F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                              Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6              #4 + F2
+
+                 F0             F2              F4              F6              F8            F10          …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 25   Yes          …            no
+
+===== PAGE 26 =====
+Tomasulo with Reorder Buffer - Cycle 14
+         Busy     Op                    Vj                             Vk               Qj        Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                         #4
+ Add2    No      Add                   #4                            Regs[F2]                          #6
+                                                                                                                         Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                          #3
+Mult2    Yes      Div           #2 * Regs[F4]                        Regs[F6]           #3             #5
+
+          Busy             Instruction               Status           Dest              Value                           Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]             Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]             Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex9              F0            #2 * Regs[F4]          Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8               F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                               Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6               #4 + F2
+
+                 F0             F2              F4              F6              F8            F10           …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 26   Yes           …            no
+
+===== PAGE 27 =====
+Tomasulo with Reorder Buffer - Cycle 15
+         Busy     Op                    Vj                             Vk               Qj        Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                         #4
+ Add2    No      Add                   #4                            Regs[F2]                          #6
+                                                                                                                         Reservation Stations
+ Add3    No
+Mult1    Yes     Mul         Mem(45+Regs[R3])                        Regs[F4]                          #3
+Mult2    Yes      Div           #2 * Regs[F4]                        Regs[F6]           #3             #5
+
+          Busy             Instruction               Status           Dest              Value                           Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]             Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]             Load2       no
+   3       Yes          FMUL.D F0, F2, F4             Ex10             F0            #2 * Regs[F4]          Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8               F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                               Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6               #4 + F2
+
+                 F0             F2              F4              F6              F8            F10           …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 27   Yes           …            no
+
+===== PAGE 28 =====
+Tomasulo with Reorder Buffer - Cycle 16
+         Busy     Op                    Vj                             Vk               Qj        Qk   Dest         A
+ Add1    No       Sub                Regs[F6]                 Mem[45+Regs[R3]]                         #4
+ Add2    No      Add                   #4                            Regs[F2]                          #6
+                                                                                                                         Reservation Stations
+ Add3    No
+Mult1    No      Mul         Mem(45+Regs[R3])                        Regs[F4]                          #3
+Mult2    Yes      Div           #2 * Regs[F4]                        Regs[F6]           #3             #5
+
+          Busy             Instruction               Status           Dest              Value                           Busy    Instruction
+
+   1       no            FLD F6, 34(R2)              commit            F6            Mem[load1]             Load1       no
+   2       no            FLD F2, 45(R3)              commit            F2            Mem[load2]             Load2       no
+   3       Yes          FMUL.D F0, F2, F4            write             F0            #2 * Regs[F4]          Load3
+   4       Yes          FSUB.D F8, F6, F2            write             F8               F6 - #2
+   5       Yes          FDIV.D F10, F0, F6            Issue            F10                               Reorder Buffer
+   6       Yes          FADD.D F6, F8, F2            write             F6               #4 + F2
+
+                 F0             F2              F4              F6              F8            F10           …            F30
+
+  ROB            #3                                             #6              #4            #5
+  Busy           Yes            no              no       Chapter 3 — PipeliningYes
+                                                               Yes              and ILP— 28   Yes           …            no
+
+===== PAGE 29 =====
+Tomasulo with Reorder Buffer - Cycle 17
+         Busy    Op                    Vj                             Vk               Qj        Qk   Dest         A
+ Add1    No      Sub                Regs[F6]                 Mem[45+Regs[R3]]                         #4
+ Add2    No      Add                  #4                            Regs[F2]                          #6
+                                                                                                                        Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    Yes     Div           #2 * Regs[F4]                        Regs[F6]           #3             #5
+
+          Busy            Instruction               Status           Dest              Value                           Busy    Instruction
+
+   1       no           FLD F6, 34(R2)              commit            F6            Mem[load1]             Load1       no
+   2       no           FLD F2, 45(R3)              commit            F2            Mem[load2]             Load2       no
+   3       no          FMUL.D F0, F2, F4            commit            F0            #2 * Regs[F4]          Load3
+   4       Yes         FSUB.D F8, F6, F2            write             F8               F6 - #2
+   5       Yes         FDIV.D F10, F0, F6            Ex1              F10                               Reorder Buffer
+   6       Yes         FADD.D F6, F8, F2            write             F6               #4 + F2          Need 39 more EX cycles for DIV to finish
+                 F0            F2              F4              F6              F8           F10            …            F30
+
+  ROB                                                          #6              #4            #5
+  Busy           no            no              no      Chapter 3 — PipeliningYes
+                                                             Yes              and ILP— 29   Yes            …            no
+
+===== PAGE 30 =====
+Tomasulo with Reorder Buffer - Cycle 18
+         Busy    Op                  Vj                             Vk                Qj       Qk   Dest         A
+ Add1    No
+ Add2    No      Add                 #4                           Regs[F2]                          #6
+                                                                                                                      Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    Yes     Div           #2 * Regs[F4]                      Regs[F6]            #3            #5
+
+          Busy            Instruction               Status         Dest               Value                          Busy    Instruction
+
+   1       no           FLD F6, 34(R2)              commit          F6            Mem[load1]             Load1       no
+   2       no           FLD F2, 45(R3)              commit          F2            Mem[load2]             Load2       no
+   3       no          FMUL.D F0, F2, F4            commit          F0            #2 * Regs[F4]          Load3
+   4       no          FSUB.D F8, F6, F2            commit          F8               F6 - #2
+   5       Yes         FDIV.D F10, F0, F6            Ex2            F10                               Reorder Buffer
+   6       Yes         FADD.D F6, F8, F2            write           F6               #4 + F2          Need 38 more EX cycles for DIV to finish
+                 F0            F2              F4            F6              F8             F10          …            F30
+
+  ROB                                                        #6                             #5
+  Busy           no            no              no      Chapter 3 — Pipelining no
+                                                             Yes              and ILP— 30   Yes          …            no
+
+===== PAGE 31 =====
+Tomasulo with Reorder Buffer - Cycle 56
+         Busy    Op                  Vj                             Vk                Qj       Qk   Dest         A
+ Add1    No
+ Add2    No      Add                 #4                           Regs[F2]                          #6
+                                                                                                                      Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    Yes     Div           #2 * Regs[F4]                      Regs[F6]            #3            #5
+
+          Busy            Instruction               Status         Dest               Value                          Busy    Instruction
+
+   1       no           FLD F6, 34(R2)              commit          F6            Mem[load1]             Load1       no
+   2       no           FLD F2, 45(R3)              commit          F2            Mem[load2]             Load2       no
+   3       no          FMUL.D F0, F2, F4            commit          F0            #2 * Regs[F4]          Load3
+   4       no          FSUB.D F8, F6, F2            commit          F8               F6 - #2
+   5       Yes         FDIV.D F10, F0, F6            Ex40           F10                               Reorder Buffer
+   6       Yes         FADD.D F6, F8, F2            write           F6               #4 + F2
+
+                 F0            F2              F4            F6              F8             F10          …            F30
+
+  ROB                                                        #6                             #5
+  Busy           no            no              no      Chapter 3 — Pipelining no
+                                                             Yes              and ILP— 31   Yes          …            no
+
+===== PAGE 32 =====
+Tomasulo with Reorder Buffer - Cycle 57
+         Busy    Op                  Vj                             Vk                Qj       Qk   Dest         A
+ Add1    No
+ Add2    No      Add                 #4                           Regs[F2]                          #6
+                                                                                                                      Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    No      Div           #2 * Regs[F4]                      Regs[F6]            #3            #5
+
+          Busy            Instruction               Status         Dest               Value                          Busy    Instruction
+
+   1       no           FLD F6, 34(R2)              commit          F6            Mem[load1]             Load1       no
+   2       no           FLD F2, 45(R3)              commit          F2            Mem[load2]             Load2       no
+   3       no          FMUL.D F0, F2, F4            commit          F0            #2 * Regs[F4]          Load3
+   4       no          FSUB.D F8, F6, F2            commit          F8               F6 - #2
+   5       Yes         FDIV.D F10, F0, F6           write           F10               #3/F6           Reorder Buffer
+   6       Yes         FADD.D F6, F8, F2            write           F6               #4 + F2
+
+                 F0            F2              F4            F6              F8             F10          …            F30
+
+  ROB                                                        #6                             #5
+  Busy           no            no              no      Chapter 3 — Pipelining no
+                                                             Yes              and ILP— 32   Yes          …            no
+
+===== PAGE 33 =====
+Tomasulo with Reorder Buffer - Cycle 58
+         Busy    Op                  Vj                          Vk                Qj       Qk   Dest         A
+ Add1    No
+ Add2    No      Add                 #4                        Regs[F2]                          #6
+                                                                                                                   Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    No
+
+          Busy            Instruction            Status         Dest               Value                          Busy    Instruction
+
+   1       no           FLD F6, 34(R2)           commit          F6            Mem[load1]             Load1       no
+   2       no           FLD F2, 45(R3)           commit          F2            Mem[load2]             Load2       no
+   3       no          FMUL.D F0, F2, F4         commit          F0            #2 * Regs[F4]          Load3
+   4       no          FSUB.D F8, F6, F2         commit          F8               F6 - #2
+   5       no          FDIV.D F10, F0, F6        commit          F10               #3/F6           Reorder Buffer
+   6       Yes         FADD.D F6, F8, F2         write           F6               #4 + F2
+
+                 F0            F2           F4            F6              F8             F10          …            F30
+
+  ROB                                                     #6
+  Busy           no            no           no      Chapter 3 — Pipelining no
+                                                          Yes              and ILP— 33   no           …            no
+
+===== PAGE 34 =====
+Tomasulo with Reorder Buffer - Cycle 59
+         Busy    Op                 Vj                         Vk                 Qj       Qk   Dest       A
+ Add1    No
+ Add2    No
+                                                                                                                Reservation Stations
+ Add3    No
+Mult1    No
+Mult2    No
+
+          Busy           Instruction            Status        Dest                Value                        Busy    Instruction
+
+   1       no          FLD F6, 34(R2)           commit         F6             Mem[load1]           Load1       no
+   2       no          FLD F2, 45(R3)           commit         F2             Mem[load2]           Load2       no
+   3       no         FMUL.D F0, F2, F4         commit         F0             #2 * Regs[F4]        Load3
+   4       no         FSUB.D F8, F6, F2         commit         F8                F6 - #2
+   5       no         FDIV.D F10, F0, F6        commit        F10                 #3/F6           Reorder Buffer
+   6       no         FADD.D F6, F8, F2         commit         F6                #4 + F2
+
+                 F0           F2           F4            F6             F8              F10        …            F30
+
+  ROB
+  Busy           no           no           no              3 — Pipelining no
+                                                   Chapterno              and ILP— 34   no         …            no
+
+===== PAGE 35 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Tomasulo with Reorder Buffer - Summary
+                     Instruction       Issue   Exec Comp   Writeback   Commit
+                    FLD F6, 34(R2)      1         3           4          5
+                    FLD F2, 45(R3)      2         4           5          6
+                  FMUL.D F0, F2, F4     3        6-15         16         17
+                  FSUB.D F8, F6, F2     4         6-7         8          18
+                  FDIV.D F10, F0, F6    5        17-56        57         58
+                  FADD.D F6, F8, F2     6        9-10         11         59
+
+
+
+
+        • In-order Issue/Commit, Out-of-Order Execution/Writeback

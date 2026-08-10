@@ -1,0 +1,1595 @@
+Computer System III
+
+
+
+
+                          Chapter 3
+
+                      Memory Hierarchy
+• Technology Trend and Memory Hierarchy
+
+• Four Questions for Cache Designers
+
+• Memory System Performance
+   • Improve Cache Performance
+
+
+• CPU vulnerabilities
+§3.1 Introduction
+
+
+
+        Memory
+                     • Mechanical memory
+                        • Acoustic wave/torque wave delay line memory
+        • Register      • Magnetic Drum Memory
+                        • Magnetic core memory
+
+        • Cache      • Electronic memory
+                        • SRAM
+                        • DRAM
+                           • SDRAM
+        • Memory        • Flash
+                        • ROM
+                           • PROM
+        • Storage          • EPROM
+                     • Optical memory
+§3.1 Introduction
+
+
+
+
+             Temporal locality (locality in time): if an item is referenced, it
+             will tend to be referenced again soon. If you recently brought
+             a book to your desk to look at, you will probably need to look
+             at it again soon.
+
+
+             Spatial locality (locality in space): if an item is referenced,
+             items whose addresses are close by will tend to be referenced
+             soon.
+§3.1 Introduction
+
+
+
+        Memory?
+
+
+        • Load      R2, 0(R1)
+
+        • Store     R2, 0(R1)
+§3.1 Introduction
+§3.1 Introduction
+
+
+
+        Data processing & temporary storage
+
+            CPU
+          Register
+
+           Register
+           reference
+§3.1 Introduction
+
+
+
+        Temporary storage
+
+                       Memory
+            CPU          Bus
+                                Memory
+          Register
+
+           Register             Memory
+           reference            reference
+§3.1 Introduction
+
+
+
+        Faster temporary storage
+
+                       Memory
+            CPU          Bus
+                                Memory      Storage
+          Register
+
+           Register             Memory      Flash
+           reference            reference   memory
+                                            reference
+
+        Size
+        Speed
+§3.1 Introduction
+
+
+
+        Faster temporary storage
+
+                                   Memory
+            CPU                      Bus
+                       Cache                Memory      Storage
+          Register
+
+           Register    Cache                Memory      Flash
+           reference   reference            reference   memory
+                                                        reference
+
+        Size
+        Speed
+§3.1 Introduction
+
+
+
+        Memory Hierarchy
+
+                                                  Memory
+            CPU            L1          L2           Bus
+                                                           Memory                    Storage
+                          Cache       Cache
+          Register
+
+           Register       Level 1     Level 2              Memory                     Flash
+           reference      Cache       Cache                reference                  memory
+                          reference   reference                                       reference
+
+        Size：1000 bytes      64KB       256KB                1-2GB                       4-64GB
+        Speed: 300ps          1ns       5-10ns              50-100ns                    25-50us
+
+                          Memory hierarchy for a personal mobile device
+                                                            *1000 picoseconds = 1 nanosecond = 10 -6 millisecond
+§3.1 Introduction
+
+
+
+           Memory Hierarchy
+
+                                                                 Memory
+              CPU             L1          L2          L3           Bus
+                                                                          Memory       Storage
+                             Cache       Cache       Cache
+             Register
+
+             Register        Level 1     Level 2     Level 3               Memory      Flash
+             reference       Cache       Cache       Cache                 reference   memory
+                             reference   reference   reference                         reference
+
+ Laptop
+           Size：1000 bytes      64KB       256KB     4-8MB                 4-16GB      256GB-1TB
+           Speed: 300ps          1ns       5-10ns    10-20ns              50-100ns     50-100us
+           Size：2000 bytes      64KB       256KB     8-32MB                8-64GB      256GB-2TB
+ Desktop
+           Speed: 300ps          1ns       5-10ns    10-20ns              50-100ns     50-100us
+
+                                Memory hierarchy for a laptop or a desktop
+§3.1 Introduction
+
+
+
+        Memory Hierarchy
+
+                                                                                                 Disk
+                                                              Memory                I/O
+            CPU                                                                                storage
+                           L1          L2          L3           Bus                 Bus
+                                                                       Memory
+                          Cache       Cache       Cache                                         Flash
+          Register
+                                                                                               storage
+           Register       Level 1     Level 2     Level 3               Memory            Disk      Flash
+           reference      Cache       Cache       Cache                 reference         memory memory
+                          reference   reference   reference                               reference reference
+
+        Size：4000 bytes      64KB       256KB     16-64MB              32-256GB           16-64TB 1-16TB
+        Speed: 200ps          1ns       3-10ns    10-20ns              50-100ns           5-10ms 100-200us
+
+                             Memory hierarchy for server
+§3.1 Introduction
+
+
+
+
+        Wait, but what’s cache?
+§3.1 Introduction
+
+
+
+
+                                  data request?
+
+
+
+                                                   program/
+        Wait, but what’s cache?                   instructions
+
+                                    in / out?
+§3.1 Introduction
+
+
+
+
+                                  data request?
+
+
+
+                                                   program/
+        Wait, but what’s cache?                   instructions
+
+                                    in / out?
+§3.1 Introduction
+
+
+
+
+                                    data request?
+
+
+
+                                                     program/
+        Wait, but what’s cache?                     instructions
+
+                    optimization?     in / out?
+§3.1 Introduction
+
+
+
+
+        So, what’s cache?
+§3.1 Introduction
+
+
+
+        So, what’s cache?
+
+
+        • Cache: a safe place for hiding or storing things.
+
+                                       Webster’s New World Dictionary of the
+                                                         American Language
+                                                Second College Edition (1976)
+§3.1 Introduction
+
+
+
+        Cache
+
+                                       Memory             I/O
+                     CPU                 Bus              Bus      I/O
+                               Cache            Memory
+                                                                 Devices
+                    Register
+
+
+
+        • The highest or first level of the memory hierarchy encountered
+          once the addr leaves the processor
+        • Employ buffering to reuse commonly occurring items
+§3.1 Introduction
+
+
+
+        Cache Hit/Miss
+
+
+        • When the processor can/cannot find
+          a requested data item in the cache
+
+
+           hit rate   miss rate
+
+
+           hit time   miss penalty
+§3.1 Introduction
+
+
+
+        Block/Line Run
+        • A fixed-size collection of data containing the requested word,
+          retrieved from the main memory and placed into the cache
+
+                                        cache
+
+
+
+
+                       requested word
+                                                     memory
+§3.1 Introduction
+
+
+
+        Block/Line Run
+        • A fixed-size collection of data containing the requested word,
+          retrieved from the main memory and placed into the cache
+
+                                        cache
+                       requested word
+
+
+
+
+                       requested word
+                                                     memory
+§3.1 Introduction
+
+
+
+        Block/Line Run
+        • A fixed-size collection of data containing the requested word,
+          retrieved from the main memory and placed into the cache
+
+                                         cache
+                       requested word
+                            in a block
+
+
+
+                       requested word
+                            in a block               memory
+§3.2 Technology Trend and Memory Hierarchy
+§3.2 Technology Trend and Memory Hierarchy
+
+                                                                                      SRAM (static random access memory)
+                                                                                      DRAM (dynamic random access memory)
+                                                                                      SDRAM (Synchronous DRAM)
+                                                                                      Double Data Rate (DDR) SDRAM
+
+
+
+
+                                                                                                Core    L1
+                             Memory                          Cache    DDR                      Core           L2      DDR
+                 CPU         （SRAM,              CPU
+                                                             (SRAM)
+                             DRAM)                                                                      L1
+
+
+
+                                                Storage                                       Storage
+                Storage
+
+
+
+
+                                                       HBM                                              HBM
+                             Core
+                            Core
+                                      L1
+                                           L2
+                                                                              Core
+                                                                             Core
+                                                                                         L1                        DCPMM
+                                                                                               L2
+                                      L1               DDR                                              DDR         （ Intel®
+                                                                                         L1
+                                                                                                                   Optane DC
+                                                                                                                    persistent
+                           Storage                                                                                 memory）
+                                                                            Storage
+
+
+
+
+                          HBM (High Bandwidth Memory)
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Memory/Storage
+
+                                                                                       Today’s Focus
+                                                             DRAM
+                     MEMORY
+                               Improving memory capacity
+
+                            Improving SSD performance
+
+                              Delivering efficient
+                             and scalable storage            SSD
+                     STORAGE
+                                                                        Intel® 3D Nand SSD
+
+                                                           HDD/TAPE
+
+
+    Flash Memory: electrically erasable programmable read-only memory
+    (EEPROM).
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Processor-Memory Performance Gap
+
+                                               Memory
+            CPU                                  Bus
+                                   Cache                Memory      Storage
+          Register
+
+           Register                Cache                Memory      Flash
+           reference               reference            reference   memory
+                                                                    reference
+
+       Size
+       Speed
+§3.2 Technology Trend and Memory Hierarchy
+
+
+       Memory Hierarchy of a Modern Computer
+       System
+       By taking advantage of the principle of locality:
+            • Present the user with as much memory as is available in the cheapest
+              technology.
+            • Provide access at the speed offered by the fastest technology.
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Cache Locality
+       • Temporal locality
+         need the requested word again soon
+
+       • Spatial locality
+         likely need other data within the same block soon
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Cache Miss
+       • Time required for cache miss depends on:
+            ➢ Latency: the time to retrieve the first word of the block
+            ➢ Bandwidth: the time to retrieve the rest of this block
+
+       • Causes of Cache misses
+            ➢Compulsory: first reference to a block
+            ➢Capacity: blocks discarded and later retrieved
+            ➢Conflict: program makes repeated references to multiple addresses from
+             different blocks that map to the same location in the cache
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Enhance performance
+       By taking advantage of the principle of locality:
+            • most programs do not access all code or data uniformly
+            • Temporal Locality (Locality in Time):
+            • If an item is referenced, the same item will tend to be referenced again
+              soon
+                • Keep most recently accessed data items closer to the processor
+            • Spatial Locality (Locality in Space):
+            • If an item is referenced, nearby items will tend to be referenced soon
+                • Move recently accessed groups of contiguous words(block) closer to processor.
+§3.2 Technology Trend and Memory Hierarchy
+
+
+       Three classes of computers with different
+       concerns in memory hierarchy
+       • Desktop computers:
+            • Are primarily running one application for single user
+            • Are concerned more with average latency from the memory hierarchy.
+
+
+       • Server computers:
+            • May typically have hundreds of users running potentially dozens of
+              applications simultaneously.
+            • Are concerned about memory bandwidth.
+§3.2 Technology Trend and Memory Hierarchy
+
+
+       Three classes of computers with different
+       concerns in memory hierarchy
+       • Embedded computers:
+            • Real-time applications.
+                • Worst-case performance vs Best case performance
+            • Are concerned more about power and battery life.
+                • Hardware vs software
+            • Running single app & use simple OS
+                • The protection role of the memory hierarchy is often diminished.
+            • Main memory is very small
+                • often no disk storage
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       36 terms of Cache
+                              Cache              full associative   write allocate
+                         Virtual memory             dirty bit       unified cache
+                       Memory stall cycles            block          block offset
+                      misses per instruction     direct mapped       write back
+                             Valid bit             data cache          locality
+                          Block address             hit time        address trace
+                          Write through            cache miss            set
+                        Instruction cache          page fault         miss rate
+                       random replacement          index field        cache hit
+                   Average memory access time         page            tag field
+                       n-way set associative    no-write allocate   miss penalty
+                       Least-recently used        write buffer       write stall
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       What is a cache?
+       • Small, fast storage used to improve
+         average access time to slow memory.
+       • In computer architecture, almost
+         everything is a cache!
+            • Registers “a cache” on variables – software
+              managed
+            • First-level cache a cache on second-level
+              cache
+            • Second-level cache a cache on memory
+            • Memory a cache on disk (virtual memory)
+            • TLB a cache on page table
+            • Branch-prediction a cache on prediction
+              information?
+§3.2 Technology Trend and Memory Hierarchy
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+
+                            A typical multi-level cache organization
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Split vs. unified caches
+       • Unified cache
+            • All memory requests go through a single cache.
+            • This requires less hardware, but also has lower performance
+       • Split I & D cache
+            • A separate cache is used for instructions and data.
+            • This uses additional hardware, though there are some simplifications (the I
+              cache is read-only).
+                                 Proc
+                                             I-Cache-1        Proc   D-Cache-1
+                              Unified
+                              Cache-1
+                                                         Unified
+                                                         Cache-2
+                            Unified
+                            Cache-2
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+
+                                     Intel Pentium cache organization
+§3.3 Four Questions for Cache Designers
+
+
+ The cache just before and just after a reference to a word Xn that is not initially in the cache.
+
+
+
+
+                                                                             This reference causes
+                                                                             a miss that forces the
+                                                                             cache to fetch Xn
+                                                                             from memory and
+                                                                             insert into the cache.
+
+
+
+
+                            How do we know if a data item is in the cache？
+                            Moreover, if it is, how do we find it?
+§3.2 Technology Trend and Memory Hierarchy
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+
+                           Lines (i.e., blocks) of data are copied from memory to the cache.
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Memory Access without Cache
+       • Load word instruction: lw t0, 0(t1)
+       • t1 contains 102210, Memory[1022]=99
+           • Processor issues address 102210 to Memory
+            • Memory reads word at address 102210(99)
+            • Memory sends 99 to Processor
+            • Processor loads 99 into register t0
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Memory Access with Cache
+       • Load word instruction: lw t0, 0(t1)
+       • t1 contains 102210, Memory[1022]=99
+       • With cache (similar to a hash)
+           • Processor issues address 102210 to Cache
+            • Cache checks to see if has copy of data at address 102210
+                • If finds a match (cache hit): cache reads 99, sends to process
+                • Not match(cache miss):cache sends address to 102210 Memory
+                     • Memory reads 99 at address 102210
+                     • Memory sends 99 to Cache
+                     • Cache replaces word with new 99
+                     • Cache sends 99 into process
+            • Processor loads 99 into register t0
+§3.2 Technology Trend and Memory Hierarchy
+
+
+
+       Memory Access with Cache
+       • When reading memory, three things can happen:
+       • Cache hit
+            • Cache block is valid and contains proper address, so read desired word
+       • Cache miss
+            • Nothing in cache in appropriate block, so fetch from memory
+       • Cache miss, block replacement
+            • Wrong data is in cache at appropriate block, so discard it and fetch desired data
+              from memory (cache always copy)
+§3.3 Four Questions for Cache Designers
+
+
+
+        Four Questions for Cache Designers
+        Caching is a general concept used in processors, operating systems, file systems, and applications.
+        There are Four Questions for Cache/Memory Hierarchy Designers
+        • Q1: Where can a block be placed in the upper level/main memory?
+                                                                (Block placement)
+           • Fully Associative, Set Associative, Direct Mapped
+        • Q2: How is a block found if it is in the upper level/main memory?
+                                                                (Block identification)
+           • Tag/Block
+        • Q3: Which block should be replaced on a Cache/main memory miss?
+                                                                (Block replacement)
+           • Random, LRU,FIFO
+        • Q4: What happens on a write?
+                                                                (Write strategy)
+           • Write Back or Write Through (with Write Buffer)
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q1: Block Placement
+         Direct mapped
+     (Block address) modulo (Number of blocks in the cache)
+
+   i：                                          j
+
+                                             m bit
+
+
+
+
+   A cache structure in which each memory
+   location is mapped to exactly one location
+   in the cache.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q1: Block Placement
+         Direct mapped
+     (Block address) modulo (Number of blocks in the cache)
+
+   i：                                          j
+
+                                             m bit
+
+
+
+
+   A cache structure in which each memory
+   location is mapped to exactly one location
+   in the cache.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Fully-associative
+
+
+
+
+                                          A cache structure in which a block can be
+                                          placed in any location in the cache.
+§3.3 Four Questions for Cache Designers
+
+
+
+        2-way Set-associative
+
+
+
+      i：                                   k
+
+                                          g bit
+
+
+
+
+        A cache that has a fixed number of
+        locations (at least two) where each block
+        can be placed.
+§3.3 Four Questions for Cache Designers
+
+
+
+        4-way Set-associative
+
+
+
+
+          Why Index With the Middle Bits?
+
+        If the high-order bits are used as an index, then some
+        contiguous memory blocks will map to the same cache set.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q1: Block Placement
+        • Direct mapped
+             • Block can only go in one place in the cache
+                   •NoteUsually  address
+                           that direct   MOD Number
+                                       mapped   is the of blocks
+                                                       same   as in cache set
+                                                                  1-way
+        • Fully associative
+                   associative, and fully associative is m-way set-associative
+                                 Blockm
+                   (for a cache with     blocks).
+                                       can go anywhere in cache.
+        • Set associative
+             • Block can go in one of a set of places in the cache.
+             • A set is a group of blocks in the cache.
+                                 Block address MOD Number of sets in the cache
+             • If sets have n blocks, the cache is said to be n-way set associative.
+§3.3 Four Questions for Cache Designers
+                                          n sets => n-way set associative
+                                             Direct-mapped cache => one block per set
+        8-32 Block Placement                 Fully associative => one set
+§3.3 Four Questions for Cache Designers
+
+
+
+        N-way Set-associative
+        • The higher the degree of association, the higher the utilization of cache
+          space, the lower the probability of block collision and the lower the
+          failure rate.
+
+                                               n                   G
+                          Full-associative    M                     1
+                          Direct mapped        1                   M
+                          Set-associative    1<n<M               1<G<M
+
+        • Most Cache: n ≤ 4
+        • Question：Is the greater the number n, the better?
+§3.3 Four Questions for Cache Designers
+
+
+
+        Four Questions for Cache Designers
+        Caching is a general concept used in processors, operating systems, file systems, and applications.
+        There are Four Questions for Cache/Memory Hierarchy Designers
+        • Q1: Where can a block be placed in the upper level/main memory?
+                                                                (Block placement)
+           • Fully Associative, Set Associative, Direct Mapped
+        • Q2: How is a block found if it is in the upper level/main memory?
+                                                                (Block identification)
+           • Tag/Block
+        • Q3: Which block should be replaced on a Cache/main memory miss?
+                                                                (Block replacement)
+           • Random, LRU,FIFO
+        • Q4: What happens on a write?
+                                                                (Write strategy)
+           • Write Back or Write Through (with Write Buffer)
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q2: Block Identification
+        • Every block has an address tag that stores the main memory
+          address of the data stored in the block.
+
+        • When checking the cache, the processor will compare the
+          requested memory address to the cache tag -- if the two are equal,
+          then there is a cache hit and the data is present in the cache
+
+        • Often, each cache block also has a valid bit that tells if the
+          contents of the cache block are valid
+§3.3 Four Questions for Cache Designers
+
+
+
+        The Format of the Physical Address
+        • The Index field selects
+             • The set, in case of a set-associative cache
+             • The block, in case of a direct-mapped cache
+             • Has as many bits as log2(#sets) for set-associative caches, or log2(#blocks)
+               for direct-mapped caches
+        • The Byte Offset field selects
+             • The byte within the block
+             • Has as many bits as log2(size of block)
+        • The Tag is used to find the matching block within a set or in the
+          cache
+             • Has as many bits as Address_size – Index_size – Byte_Offset_Size
+§3.3 Four Questions for Cache Designers
+
+
+
+                          Line Matching and Word Selection
+
+
+
+
+                                          direct-mapped cache
+§3.3 Four Questions for Cache Designers
+
+
+
+        Direct-mapped Cache Example (1-word Blocks)
+§3.3 Four Questions for Cache Designers
+
+
+
+                          Line Matching and Word Selection
+
+
+
+
+                                          set associative cache
+§3.3 Four Questions for Cache Designers
+
+
+
+        Fully-Associative Cache example (1-word Blocks)
+        • Assume cache has 4 blocks
+§3.3 Four Questions for Cache Designers
+
+
+
+                          Line Matching and Word Selection
+
+
+
+
+                                          fully associative cache
+§3.3 Four Questions for Cache Designers
+
+
+
+        2-Way Set-Associative Cache
+        • Assume cache has 4 blocks and each block is 1 word
+        • 2 blocks per set, hence 2 sets per cache
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 64
+What is a cache?
+• Small, fast storage used to improve
+  average access time to slow memory.
+• In computer architecture, almost
+  everything is a cache!
+   • Registers “a cache” on variables – software
+     managed
+   • First-level cache a cache on second-level
+     cache
+   • Second-level cache a cache on memory
+   • Memory a cache on disk (virtual memory)
+   • TLB a cache on page table
+   • Branch-prediction a cache on prediction
+     information?
+Using a Finite-State Machine to Control a Simple Cache
+
+finite-state machine
+A sequential logic function consisting of a set
+of inputs and outputs, next-state function that
+maps the current state and the inputs to a
+new state, and an output function that maps
+the current state and possibly the inputs to a
+set of asserted outputs.
+
+next-state function
+A combinational function that, given the inputs and
+the current state, determines the next state of a
+finite-state machine.
+Using a Finite-State Machine to Control a Simple Cache
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • 16KB of data, direct-mapped, 4 words blocks
+        • Read 4 addresses:
+             • 0x00000014
+             • 0x0000001C
+             • 0x00000034
+             • 0x00008014
+        • Memory values here:
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 68
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • 16KB of data, direct-mapped, 4 words blocks
+        • Read 4 addresses:
+             • 0x00000014
+             • 0x0000001C
+             • 0x00000034
+             • 0x00008014
+        • Memory values here:
+        • 4 addresses divided into Tag, Index, Byte Offset
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 69
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Valid bit: determines whether anything is stored in
+          that row (when computer initially powered up, all
+          entries invalid)
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 70
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000014
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 71
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000014, read block 1 (0000000001)
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 72
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000014, no valid data
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 73
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000014, load that data into cache,
+          setting tag, valid
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 74
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000014, read from cache at offset,
+          return word b
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 75
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x0000001C
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 76
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x0000001C, index is valid
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 77
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x0000001C, index is valid, tag matches
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 78
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x0000001C, index is valid, tag matches,
+          return d
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 79
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000034, read block 3, no valid data
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 80
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00000034, load that cache block, return
+          word f
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 81
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00008014, read cache block 1, data is valid,
+          cache block 1 tag does not match (0!=2)
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 82
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00008014, miss, replace block 1 with new
+          data & tag
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 83
+§3.3 Four Questions for Cache Designers
+
+
+
+        Access data in a direct mapped cache
+        • Read 0x00008014, return word j
+
+
+
+
+                                          Chapter 4 — Memory Hierarchy— 84
+§3.3 Four Questions for Cache Designers
+
+
+
+        Homework
+                                          Cache 16KB of data, direct-mapped, 4 words blocks   Memory
+
+
+
+
+        (1) Read address 0x00000030, what happens?
+        (2) Read address 0x0000001c, what happens?
+          Please present cache hit or miss, the index, tag
+        match or mismatch, offset, and the return value.
+                                                 Chapter 4 — Memory Hierarchy— 85
+§3.3 Four Questions for Cache Designers
+
+
+
+        Four Questions for Cache Designers
+        Caching is a general concept used in processors, operating systems, file systems, and applications.
+        There are Four Questions for Cache/Memory Hierarchy Designers
+        • Q1: Where can a block be placed in the upper level/main memory?
+                                                                (Block placement)
+           • Fully Associative, Set Associative, Direct Mapped
+        • Q2: How is a block found if it is in the upper level/main memory?
+                                                                (Block identification)
+           • Tag/Block
+        • Q3: Which block should be replaced on a Cache/main memory miss?
+                                                                (Block replacement)
+           • Random, LRU,FIFO
+        • Q4: What happens on a write?
+                                                                (Write strategy)
+           • Write Back or Write Through (with Write Buffer)
+§3.3 Four Questions for Cache Designers   tag: A field in a table used for a memory hierarchy that contains the address
+                                          information required to identify whether the associated block in the hierarchy
+                                          corresponds to a requested word.
+
+
+
+
+            Direct-mapped cache                                  Set selection in a direct-mapped cache
+
+
+
+
+            Set associative cache                                Set selection in a set associative cache
+
+
+
+
+          Fully set associative cache                            Set selection in a fully associative cache
+§3.3 Four Questions for Cache Designers
+                                                                                   The size of the block was one word (4 bytes).
+
+                                                                                  • 64-bit addresses
+                                                                                  •  A direct-mapped cache
+                                                                                  • The cache size is 2n blocks, so n bits are used
+                                                                                    for the index
+                                                                                  • The block size is
+                                                                                      ✓ 2m words (2m+2 bytes = 2m+5 bits)
+                                                                                      ✓ m bits are used for the word within the
+                                                                                          block, and two bits are used for the byte
+                                                                                          part of the address
+                                                                                   tag    64 − (n + m + 2)
+
+                                                                                   cache 2n×(block size+ tag size + Valid size).
+                                                                                         = 2n×(2m ×32 + (64 − n − m − 2) +1)
+                                                                                         = 2n ×(2m ×32 + 63 − n − m).
+
+                                                                                     actual size/complete cache size
+
+
+                                    4 KiB cache = 1024 words
+                                                Chapter 3— Memory Hierarchy— 88
+§3.3 Four Questions for Cache Designers
+
+
+
+        Bits in a Cache
+        Example 1: How many total bits are required for a direct-mapped
+        cache with 16 KiB of data and four-word blocks, assuming a 64-bit
+        address?
+        Answers:
+        16 KiB = 4096 words =212 words
+        The block size is 4 words = 22 words, so m=2
+        212 / 22 = 1024 blocks, so n=10
+        Each block has 4*32 =128 bits of data plus a tag, plus a valid bit
+        tag = 64-(n+m+2) = 64-(10+2+2) =50 bits
+        Cache size = 2n×(block size+ tag size + Valid size)
+                    = 210 ×(4*32 + 50Chapter
+                                       +1)=179          Kib      =22.375
+                                             4 — Memory Hierarchy— 89
+                                                                         KiB
+§3.3 Four Questions for Cache Designers
+
+
+
+  Mapping an Address to a Multiword Cache Block
+        Example 2: Consider a cache with 64 blocks and a block size of 16
+        bytes. To what block number does byte address 1200 map?
+        Answers:
+        The cache block number
+        = (Block address) modulo (Number of blocks in the cache)
+        Block address = Byte address/ Bytes per block = 1200 /16 =75
+        75 modulo 64 =11
+
+        In fact, this block maps all addresses between 1200 and 1215.
+                                          Chapter 4 — Memory Hierarchy— 90
+§3.3 Four Questions for Cache Designers
+
+
+
+        Four Questions for Cache Designers
+        Caching is a general concept used in processors, operating systems, file systems, and applications.
+        There are Four Questions for Cache/Memory Hierarchy Designers
+        • Q1: Where can a block be placed in the upper level/main memory?
+                                                                (Block placement)
+           • Fully Associative, Set Associative, Direct Mapped
+        • Q2: How is a block found if it is in the upper level/main memory?
+                                                                (Block identification)
+           • Tag/Block
+        • Q3: Which block should be replaced on a Cache/main memory miss?
+                                                                (Block replacement)
+           • Random, LRU,FIFO
+        • Q4: What happens on a write?
+                                                                (Write strategy)
+           • Write Back or Write Through (with Write Buffer)
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q3: Block Replacement
+        • In a direct-mapped cache, there is only one block that can be replaced
+§3.3 Four Questions for Cache Designers
+
+
+
+
+      10110       11010        10110      11010         10000             00011   10000   10010   10000
+       miss        miss          hit       hit            miss             miss    hit     miss    hit
+                                              Chapter 3 — Memory Hierarchy— 93
+§3.3 Four Questions for Cache Designers
+
+
+
+
+               cache hit          If the cache reports a hit, the computer continues using
+                                  the data as if nothing happened.
+
+
+               cache miss For a cache miss, we can stall the entire processor,
+                                  essentially freezing the contents of the temporary and
+                                  programmer-visible registers, while we wait for memory.
+§3.3 Four Questions for Cache Designers
+
+
+
+
+          We can now define the steps to be taken on an instruction cache miss:
+
+          1. Send the original PC value to the memory. （PC-4）
+          2. Instruct main memory to perform a read and wait for the memory to
+          complete its access.
+          3. Write the cache entry, putting the data from memory in the data portion
+          of the entry, writing the upper bits of the address (from the ALU) into the
+          tag field, and turning the valid bit on.
+          4. Restart the instruction execution at the first step, which will refetch the
+          instruction, this time finding it in the cache.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Q3: Block Replacement
+        • In a direct-mapped cache, there is only one block that can be replaced
+        • In set-associative and fully-associative caches, there are N blocks (where
+          N is the degree of associativity)
+§3.3 Four Questions for Cache Designers
+
+
+
+        Strategy of Block Replacement
+        • Several different replacement policies can be used
+             • Random replacement - randomly pick any block
+                 • Easy to implement in hardware, just requires a random number generator
+                 • Spreads allocation uniformly across cache
+                 • May evict a block that is about to be accessed
+
+             • Least-Recently Used (LRU) - pick the block in the set which was least recently
+               accessed
+                 • Assumed more recently accessed blocks more likely to be referenced again
+                 • This requires extra bits in the cache to keep track of accesses.
+
+             • First In, First Out(FIFO)-Choose a block from the set which was first came into the
+               cache
+§3.3 Four Questions for Cache Designers
+
+
+
+        Strategy of Block Replacement
+        Suppose:
+
+        • Cache block size is 3, and access sequence is shown as follows.
+
+                 2, 3, 2, 1, 5, 2, 4, 5, 3, 4
+
+        • FIFO, LRU and OPT are used to simulate the use and replacement of
+          cache block.
+§3.3 Four Questions for Cache Designers
+
+
+
+        FIFO
+
+                              Time        1   2   3     4    5    6    7   8     9    10
+
+                         Sequence         2   3   2     1    5    2    4   5     3    4
+
+
+                        253               2   2   2     2*   5    5    5* 5*     3    3
+                                              3   3     3    3*   2    2 2       2*   2*
+                        32                                                       4
+                                                        1    1    1*   4 4            4
+                        14
+                                                  hit                      hit        hit
+§3.3 Four Questions for Cache Designers
+
+
+
+        LRU
+
+                               Time       1   2   3     4   5   6     7   8     9    10
+
+                           Sequence       2   3   2     1   5   2     4   5     3    4
+
+
+                          23              2   2   2     2 2*    2     2 2*      3    3
+                                              3   3     3* 5    5     5* 5      5    5*
+                          35                                                    4*
+                                                        1  1    1*    4 4            4
+                          41
+                                                  hit           hit       hit        hit
+§3.3 Four Questions for Cache Designers
+
+
+
+        OPT
+
+                            Time          1   2   3     4    5    6     7   8     9     10
+
+                        Sequence          2   3   2     1    5    2     4   5     3     4
+
+
+                       24                 2   2   2     2    2    2*    4* 4      4     4
+                                              3   3     3    3*   3     3 3       3     3
+                       3
+                                                        1*   5    5     5 5       5     5
+                       15
+                                                  hit             hit       hit   hit   hit
+
+
+                             The hit rate is related to the replacement algorithm.
+§3.3 Four Questions for Cache Designers
+
+
+
+
+                      Time           1    2   3    4    5    6     7     8     thrashing
+                    Sequence         1    2   3    4    1    2     3     4
+                       FIFO          1    1   1*   4    4    4*    3     3
+                                          2   2    2*   1    1     1*    4      No hit
+                         n=3
+                                              3    3    3*   2     2     2*
+                       LRU           1    1   1* 14     14    1
+                                                             4*    31    31
+                                          2   2  2*     21   12     2
+                                                                   1*    42     No4hit
+                                                                               Hit  times
+                         n=4
+                                              33 3      3* 23      23    2*3
+                                                  4      41* 41     41
+                        OPT          1    1   1   1                       14
+                                          2   2   2       2   2*   3*    3     Hit 3 times
+
+                                              3* 4*       4   4    4     4*
+                ➢Hit rate is related to cache sequence.
+                                        accessblock size.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Stack replacement algorithm
+        • Bt(n) represents the set of access sequences contained in a cache block
+          of size n at time t.
+
+        • Bt(n) is the subset of Bt(n＋1).
+§3.3 Four Questions for Cache Designers
+
+
+        LRU replacement algorithm is stack
+        replacement algorithm
+                 Time        1      2     3    4    5    6    7    8    9    10   11   12
+               Sequence 1          2      3    4    1    2    5    1    2    3    4    5
+                   LRU       1     1      1*   4    4    4*   5    5    5*   3    3    3*
+                   n=3             2      2    2*   1    1    1*   1    1    1*   4    4
+                   Bt(n)                  3    3    3*   2    2    2*   2    2    2*   5
+
+                                                              1
+                  LRU 1            1      1    1*   1    1         1         1    1*   5
+                                                                        1
+
+                 n+1=4             2      2    2    2*   2    2    2    2    2    2    2*
+                 Bt(n+1)                  3    3    3    3*   5    5    5    5*   4    4
+                                               4    4    4    4*   4*   4*   3    3     3
+§3.3 Four Questions for Cache Designers
+
+
+
+
+                  Time        1     2     3    4    5    6    7    8    9    10   11   12
+                Sequence 1          2     3    4    1    2    5    1    2    3    4    5
+                    FIFO 1         1      1*   4    4    4*   5    5    5    5    5*   5*
+                    n=3            2      2    2*   1    1    1*   1*   1*   3    3    3
+                                          3    3    3*   2    2    2    2    2*   4    4
+
+
+                  FIFO       1      1     1    1*   1*   1*   5    5    5    5*   4    4
+                  n+1=4             2     2    2    2    2    2*   1    1    1    1*   5
+                                          3    3    3    3    3    3*   2    2    2    2*
+                                               4    4    4    4    4    4*   3    3     3
+§3.3 Four Questions for Cache Designers
+
+
+
+        Using LRU
+
+                          Time    1       2    3     4   5   6     7   8   9   10
+                         Sequence 2       3     2    1   5   2     4   5   3    2
+
+                          St(1)           2     3    2   1   5     2   4   5    3
+                          St(2)                 2    3   2   1     5   2   4    5
+                          St(3)                          3   2     1   5   2    4
+                          St(4)                              3     3   1   1    2
+                          St(5)                                        3   3    1
+                          St(6)
+
+                        N=5
+                        N=1
+                        N=2
+                        N=4
+                        N=3                   Hit
+                                               Hit
+                                              Hit
+                                              Hit            Hit
+                                                             HIt       Hit Hit Hit
+§3.3 Four Questions for Cache Designers
+§3.3 Four Questions for Cache Designers
+
+
+        For LRU algorithm, the hit ratio always
+        increases with the increase of cache block.
+                    Time        1     2   3    4    5    6    7    8   9   10   11   12
+                  Sequence 1          2   3    4    1    2    5    1   2   3    4    5
+                  LRU     1          1    1*   4    4    4* 5 5* 3
+                                                              5                 3    3*
+                  n=3                2    2    2*   1    1  1 1*1   1*          4    4
+              Hit 2 times                 3    3    3*   2    2
+                                                            2* 2    2           2*   5
+                                                            Hit Hit
+                               1     1    1    1* 1   1   1 1    1  1           1*   5
+                 LRU
+                  n=4                2    2    2  2* 2    2 2    2  2           2    2*
+              Hit 4 times                 3    3  3   3* 5  5    5  5*          4    4
+                                               4  4   4 4* 4* 4* 3              3    3
+                                                  Hit Hit   Hit Hit
+§3.3 Four Questions for Cache Designers
+
+
+
+                                                        Belady
+
+                  Time        1     2     3    4    5     6      7    8   9   10   11   12
+                Sequence 1          2     3    4    1     2    5      1   2   3    4    5
+
+               FIFO      1         1      1*   4    4     4*     5  5   5     5    5*   5*
+                n=3                2      2    2*   1     1      1* 1* 1*     3    3    3
+             Hit 3 times                  3    3    3*    2      2  2   2     2*   4    4
+                                                                    Hit Hit             Hit
+              FIFO       1          1     1    1*   1* 1*        5 5     5    5*   4    4
+              n+1=4                 2     2    2    2   2        2* 1   1     1    1*   5
+             Hit 2 times                  3    3    3   3        3  3* 2      2    2    2*
+                                               4     4  4        4  4 4*      3    3    3
+                                                    Hit Hit
+§3.3 Four Questions for Cache Designers
+
+
+
+        LRU
+        • How can I implement the LRU replacement algorithm with only ordinary
+          gates and triggers?
+
+        • Comparison Pair Method
+
+        • Basic idea: Let each cache block be combined in pairs, use a comparison
+          pair flip-flop to record the order in which the two cache blocks have
+          been accessed in the comparison pair, and then use a gate circuit to
+          combine the state of each comparison pair flip-flop, you can find the
+          block to be replaced according to the LRU algorithm.
+§3.3 Four Questions for Cache Designers
+
+
+
+        Example
+        • There are three cache blocks (A, B, and C), which can be combined into
+          6 pairs (AB, BA, AC, CA, BC, and CB). Among them, AB and BA, AC and
+          CA, BC and CB are repeated, so only take AB, AC, BC.
+
+        • The access sequence of each pair is represented by “comparison pair
+          flip-flops” TAB, TAC, and TBC respectively. TAB is "1", which means that A
+          has been accessed more recently than B; TAB is "0", which means that B
+          has been accessed more recently than A. TAC and TBC are similarly
+          defined.
+§3.3 Four Questions for Cache Designers
+
+
+
+        • If the most recently accessed block is A and C is the block that has not
+          been accessed for the longest time, the three flip-flops’ states must be
+          respectively: TAB=1, TAC=1, and TBC=1.
+        • If the most recently accessed block is B and C is the block that has not
+          been accessed for the longest time, the three flip-flops’ states must be
+          respectively: TAB=0, TAC=1, and TBC=1.
+        • Therefore, the block C that has not been accessed for the longest will be
+          replaced. In that, the Boolean algebra expression must be:
+
+                        CLRU = TAB • TAC • TBC + TAB • TAC • TBC = TAC • TBC
+                           BLRU = TAB • TBC           ALRU = TAB • TAC
+§3.3 Four Questions for Cache Designers
+
+
+
+
+        • Change the state of the flip-flop after each access.
+             • After accessing block A: TAB=1, TAC=1
+             • After accessing block B: TAB=0, TBC=1
+             • After accessing block C: TAC=0, TBC=0
+§3.3 Four Questions for Cache Designers
+
+
+        Hardware usage analysis (if p is the number
+        of cache blocks)
+        • Since each block may be replaced, its signal needs to be generated with
+          an AND gate, so the number of AND gates will be equal to p.
+        • Each AND gate receives inputs from its related flip-flops, for example,
+          ALRU AND gates must have inputs from TAB and TAC, BLRU must have inputs
+          from TAB and TBC, and the number of comparison pair flip-flops is the
+          block number minus 1, so the input number of the AND gate is p - 1.
+        • If p is the block number, for pairwise combination, the number of
+          comparison pair flip-flops should be 𝐶𝑝2 , which is p·(p-1)/2.
+§3.3 Four Questions for Cache Designers
+
+
+
+         The Relationship between the Block Number
+         and Required Hardware for Comparison Pair
+
+                   Block Number           3   4   6    8    16     64     256
+
+                 Number of Flip-flop      3   6   15   28   120   2016   32640
+
+                Number of And-Gate        3   4   6    8    16     64     256
+
+               Input Number of And-       2   3   5    7    15     63     255
+                       Gate
+§3.3 Four Questions for Cache Designers
+
+
+                                          Homework
+      For a direct-mapped cache design with a 64-bit address, the following bits of the
+      address are used to access the cache.
+                             Tag                     Index                       Offset
+                            63-10                     9-5                            4-0
+      (1) What is the cache block size (in words)?
+      (2) How many blocks does the cache have?
+      (3) What is the ratio between total bits required for such a cache implementation over
+          the data storage bits?
+      Beginning from the power on, the following byte-addressed cache references are
+      recorded.                                  Address
+                      Hex    00     04    10   84    E8      A0    400    1E   8C          C1C   B4    884
+                      Dec     0     4     16   132   232     160   1024   30   140     3100      180   2180
+
+      (1) For each reference, list i) its tag, index, and offset, ii) whether it is a hit or a miss,
+          and iii) which bytes were replaced (if any).
+      (2) What is the hit ratio?
+

@@ -1,0 +1,382 @@
+
+===== PAGE 34 =====
+§1.1 Introduction
+
+
+
+        Von Neumann Structure
+
+        • Von Neumann structure: data and programs are in memory.
+
+        • CPU takes instructions and data from memory for operation and puts
+          the results into memory
+
+
+
+
+                               Chapter 1 —Fundamentals of computer system— 34
+
+===== PAGE 35 =====
+§1.1 Introduction
+
+
+
+        Von Neumann Structure
+                                                                                              Data path
+                                                  Storage
+                                                                                              Control path
+
+                                                     外 存 储器
+
+
+
+                    Input                                                         Output
+
+                                                  Memory
+                                                     ÄÚ´æ´¢Æ÷
+
+
+                      ÊäÈëÉè±¸                                                     Êä³öÒÛ±¸
+
+
+
+
+                                      ¿ØÖÆÆ÷                          ÔËËãÆ÷
+
+
+
+
+                                        Controller                 Computer
+                                                      CPU
+
+                                 Chapter 1 —Fundamentals of computer system— 35
+
+===== PAGE 36 =====
+§1.1 Introduction
+
+
+
+        The Computer Revolution
+       • Progress in computer technology
+            • Underpinned by Moore’s Law
+       • Makes novel applications feasible
+            • Computers in automobiles
+            • Cell phones
+            • Human genome project
+            • World Wide Web
+            • Search Engines
+            • Large Language Model
+       • Computers are pervasive
+
+                                   Chapter 1 —Fundamentals of computer system— 36
+
+===== PAGE 37 =====
+§1.1 Introduction
+
+
+
+        How you will learn?
+        • Possibility:
+            • standing on the shoulder of giants.
+        • Concepts, Ideas and Principles
+        • Quantitative approaches
+        • Hit the problem and right way to solve problem
+
+        • As a man sows, so he shall reap.
+
+
+                                     Chapter 1 —Fundamentals of computer design — 37
+
+===== PAGE 38 =====
+§1.1 Introduction
+
+
+
+        Big Men (1)
+                                    • John Leroy Hennessy
+                                    • Hennessy is one of the founders of MIPS
+                                      Computer Systems Inc. as well as Atheros and
+                                      served as the tenth President of Stanford
+                                      University.
+                                    • Hennessy announced that he would step
+                                      down in the summer of 2016. He was
+                                      succeeded as President by Marc Tessier-
+                                      Lavigne.
+                                    • Marc Andreessen called him "the godfather
+                                      of Silicon Valley."
+
+                      Chapter 1 —Fundamentals of computer system— 38
+
+===== PAGE 39 =====
+§1.1 Introduction
+
+
+
+        Big Men (2)
+        • David Andrew Patterson
+
+        • An American computer pioneer and academic
+          who has held the position of professor
+          of computer science at the University of
+          California, Berkeley since 1976.
+
+
+        • He currently is Vice Chair of the Board of                             one big thing at a time
+          Directors of the RISC-V Foundation, and the
+          Pardee Professor of Computer Science,
+          Emeritus at UC Berkeley.
+                                    Chapter 1 —Fundamentals of computer system— 39
+
+===== PAGE 40 =====
+§1.1 Introduction
+
+
+
+        Big Men (2)
+
+
+
+
+             • Turing Award for pioneering a systematic, quantitative approach to the design
+               and evaluation of computer architectures with enduring impact on the
+               microprocessor industry.
+             • Hennessy and Patterson created a systematic and quantitative approach to
+               designing faster, lower power, and reduced instruction set computer (RISC)
+               microprocessors.       Chapter 1 —Fundamentals of computer system— 40
+
+===== PAGE 41 =====
+§1.1 Introduction
+
+
+
+        Big Men (3)
+                                         • 1999 ACM Turing Award
+                                         • landmark contributions to computer
+                                           architecture, operating systems, and
+                                           software engineering."
+                                           2004 Eckert-Mauchly Award
+                                           "For the definition of computer architecture and
+                                           contributions to the concept of computer families
+                                           and to the principles of instruction set design; for
+                                           seminal contributions in instruction sequencing,
+           Frederick P. Brooks             including interrupt systems and execute
+           http://www.cs.unc.edu/~br       instructions; and for contributions to the
+           ooks/                           IBM 360 instruction set architecture."
+                                 Chapter 1 —Fundamentals of computer system— 41
+
+===== PAGE 42 =====
+§1.1 Introduction
+
+
+
+        Big Men (4)
+                               • Robert Marco Tomasulo
+
+                               • A computer scientist, and the inventor of
+                                 the Tomasulo algorithm.
+
+
+                               • Tomasulo was the recipient of the
+                                 1997 Eckert–Mauchly Award "or the
+                                 ingenious Tomasulo algorithm, which enabled
+                                 out-of-order execution processors to be
+                                 implemented."
+
+
+                      Chapter 1 —Fundamentals of computer system— 42
+
+===== PAGE 43 =====
+§1.1 Introduction
+
+
+
+        Big Men (5)
+                      • Seymour Cray
+                      • For a career of achievements that have advanced
+                        supercomputing design.
+
+
+                      • In 1958, the world's first transistor-based supercomputer
+                        was designed and built.
+
+
+                      • At the same time, he has made significant contributions
+                        to the production of reduced instruction (RISC) high-end
+                        microprocessors, and is one of the most important figures
+                        in the field of high-performance computers.
+                        Chapter 1 —Fundamentals of computer system— 43
+
+===== PAGE 44 =====
+§1.1 Introduction
+
+
+
+        Big Men (6)
+        • Amdahl, Gene M.
+
+        • For outstanding innovations in
+          computer architecture, including
+          pipelining, instruction look-ahead,
+          and cache memory.
+
+          In 1975, Dr. Amdahl stands beside the
+          Wisconsin Integrally Synchronized
+          Computer (WISC), which he designed in
+          1950. It was built in 1952. (Image courtesy
+          of Dr. Gene M. Amdahl.)
+
+                                         Chapter 1 —Fundamentals of computer system— 44
+
+===== PAGE 45 =====
+§1.1 Introduction
+
+
+
+        Big Men (7)
+        • Mateo Valero
+            • http://personals.ac.upc.edu/mateo/
+
+
+        • For important contributions to
+          instruction level parallelism and
+          superscalar processor design.
+
+
+
+
+                                   Chapter 1 —Fundamentals of computer system— 45
+
+===== PAGE 46 =====
+§1.1 Introduction
+
+
+
+        Big Men (8)
+
+                               • Yale Patt
+
+                               • For important contributions to instruction
+                                 level parallelism and superscalar processor
+                                 design.
+
+
+
+
+                      Chapter 1 —Fundamentals of computer system— 46
+
+===== PAGE 47 =====
+§1.1 Introduction
+
+
+
+        Big Men (9)
+
+                        • Michael J. Flynn
+
+                        • http://www.cpe.calpoly.edu/IAB/flynn.html
+                        • For his important and seminal contributions to
+                          processor organization and classification,
+                          computer arithmetic and performance
+                          evaluation.
+
+
+                      Chapter 1 —Fundamentals of computer system— 47
+
+===== PAGE 48 =====
+§1.2 Classes of Computers
+
+                                                                                                        SM
+                                                                                                DS1
+
+        Classed By Flynn                                                              PU1
+
+                                                                                                DS2
+                                                                                                        MM1
+
+                                                                                      PU2               MM2
+                                                                               CS
+                             IS                                     CU
+                                                                                       …                …
+
+                    CS                 DS                                                     DSn       MMm
+             CU           PU                  MM                                      PUn
+                                                                          IS                                  IS：Instruction stream
+                    （a）SISD 计算机                                                     （b）SIMD 计算机               DS：Data stream
+                                                                                                        SM
+                                                                                                              CS：Control stream
+                                       DS
+                   CS1                                                               CS1          DS1
+             CU1         PU1
+                                                                    IS1
+                                                                               CU1          PU1               CU：Control unit
+                                                                                                        MM1
+                   CS2                                 SM
+                                                                    IS2              CS2          DS2         PU：Process unit
+             CU2         PU2                                                   CU2          PU2         MM2
+                                       MM1     MM2 … MMm                                                      MM&SM：Memory
+             …           …                                                     …            …           …
+                   CSn                             …                 ISn             CSn          DSn   MMm
+             CUn         PUn                 ISn       IS2 IS1                 CUn          PUn
+                                  DS
+                                                                                                        …
+
+                    （c）MISD 计算机                                              （d）MIMD 计算机
+                                                         Chapter 1 —Fundamentals of computer design — 48
+
+===== PAGE 49 =====
+§1.2 Classes of Computers
+
+
+
+        Classes of Computers
+        • Desktop computers (or Personal Computers)
+            • General purpose, variety of software
+            • Emphasize good performance for a single user at relatively low
+              cost.
+            • Mostly execute third-party software
+        • Server computers
+            • Emphasize great performance for a few complex applications.
+            • Or emphasize reliable performance for many users at once.
+            • Greater computing, storage, or network capacity than personal
+              computers.
+        • Embedded computers
+            • Largest class and most diverse.
+            • Hidden as components of systems.
+            • Stringent power/performance/cost constraints.
+                                         Chapter 1 —Fundamentals of computer design — 49
+
+===== PAGE 50 =====
+§1.2 Classes of Computers
+
+
+
+        Classes of Computers
+        • Personal Mobile Devices
+            • Smartphones
+            • Tablet/iPad
+            • generally have the same design requirements as PCs
+
+
+        • Supercomputer
+            • Computer cluster
+            • High capacity, performance, reliability
+            • Range to building sized
+
+                                     Chapter 1 —Fundamentals of computer design — 50
+
+===== PAGE 51 =====
+§1.2 Classes of Computers
+
+
+
+        What You Will Learn
+        • How programs are translated into the machine language
+            • And how the hardware executes them
+        • The hardware/software interface
+        • What determines program performance
+            • And how it can be improved
+        • How hardware designers improve performance
+        • What is parallel processing
+
+
+                                   Chapter 1 —Fundamentals of computer design — 51

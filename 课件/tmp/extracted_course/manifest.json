@@ -1,0 +1,748 @@
+[
+  {
+    "lecture": 1,
+    "source": "1 Introduction.pptx",
+    "kind": "pptx",
+    "page_count": 43,
+    "markdown": "tmp\\extracted_course\\texts\\01-1 Introduction.md",
+    "total_chars": 4800,
+    "low_text_pages": [
+      {
+        "page": 5,
+        "char_count": 16,
+        "line_count": 1
+      },
+      {
+        "page": 6,
+        "char_count": 16,
+        "line_count": 1
+      },
+      {
+        "page": 11,
+        "char_count": 9,
+        "line_count": 1
+      },
+      {
+        "page": 12,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 14,
+        "char_count": 15,
+        "line_count": 1
+      },
+      {
+        "page": 20,
+        "char_count": 13,
+        "line_count": 1
+      },
+      {
+        "page": 22,
+        "char_count": 13,
+        "line_count": 1
+      },
+      {
+        "page": 31,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 32,
+        "char_count": 0,
+        "line_count": 0
+      }
+    ]
+  },
+  {
+    "lecture": 2,
+    "source": "2 Using Objects.pdf",
+    "kind": "pdf",
+    "page_count": 87,
+    "markdown": "tmp\\extracted_course\\texts\\02-2 Using Objects.md",
+    "total_chars": 15647,
+    "low_text_pages": [
+      {
+        "page": 3,
+        "char_count": 11,
+        "line_count": 1
+      },
+      {
+        "page": 13,
+        "char_count": 12,
+        "line_count": 1
+      },
+      {
+        "page": 21,
+        "char_count": 19,
+        "line_count": 1
+      },
+      {
+        "page": 58,
+        "char_count": 9,
+        "line_count": 1
+      },
+      {
+        "page": 59,
+        "char_count": 19,
+        "line_count": 1
+      },
+      {
+        "page": 63,
+        "char_count": 19,
+        "line_count": 1
+      },
+      {
+        "page": 67,
+        "char_count": 12,
+        "line_count": 1
+      },
+      {
+        "page": 70,
+        "char_count": 5,
+        "line_count": 1
+      },
+      {
+        "page": 72,
+        "char_count": 9,
+        "line_count": 1
+      },
+      {
+        "page": 83,
+        "char_count": 11,
+        "line_count": 1
+      }
+    ]
+  },
+  {
+    "lecture": 3,
+    "source": "3 Class.pdf",
+    "kind": "pdf",
+    "page_count": 48,
+    "markdown": "tmp\\extracted_course\\texts\\03-3 Class.md",
+    "total_chars": 9093,
+    "low_text_pages": [
+      {
+        "page": 7,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 21,
+        "char_count": 18,
+        "line_count": 1
+      },
+      {
+        "page": 44,
+        "char_count": 8,
+        "line_count": 1
+      },
+      {
+        "page": 48,
+        "char_count": 17,
+        "line_count": 1
+      }
+    ]
+  },
+  {
+    "lecture": 4,
+    "source": "4 Object Interaction.pdf",
+    "kind": "pdf",
+    "page_count": 104,
+    "markdown": "tmp\\extracted_course\\texts\\04-4 Object Interaction.md",
+    "total_chars": 19264,
+    "low_text_pages": [
+      {
+        "page": 6,
+        "char_count": 13,
+        "line_count": 1
+      },
+      {
+        "page": 12,
+        "char_count": 15,
+        "line_count": 1
+      },
+      {
+        "page": 14,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 24,
+        "char_count": 18,
+        "line_count": 1
+      },
+      {
+        "page": 53,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 64,
+        "char_count": 16,
+        "line_count": 1
+      },
+      {
+        "page": 71,
+        "char_count": 13,
+        "line_count": 1
+      },
+      {
+        "page": 78,
+        "char_count": 15,
+        "line_count": 1
+      },
+      {
+        "page": 92,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 97,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 98,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 99,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 100,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 101,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 102,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 103,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 104,
+        "char_count": 0,
+        "line_count": 0
+      }
+    ]
+  },
+  {
+    "lecture": 5,
+    "source": "5 Composition and Inheritance.pdf",
+    "kind": "pdf",
+    "page_count": 60,
+    "markdown": "tmp\\extracted_course\\texts\\05-5 Composition and Inheritance.md",
+    "total_chars": 8833,
+    "low_text_pages": [
+      {
+        "page": 5,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 6,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 7,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 13,
+        "char_count": 11,
+        "line_count": 1
+      },
+      {
+        "page": 17,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 18,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 19,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 20,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 21,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 22,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 23,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 24,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 25,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 26,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 27,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 28,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 29,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 30,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 31,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 32,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 33,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 34,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 35,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 36,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 37,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 38,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 39,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 50,
+        "char_count": 17,
+        "line_count": 1
+      }
+    ]
+  },
+  {
+    "lecture": 6,
+    "source": "6 Polymorphism.pdf",
+    "kind": "pdf",
+    "page_count": 40,
+    "markdown": "tmp\\extracted_course\\texts\\06-6 Polymorphism.md",
+    "total_chars": 9907,
+    "low_text_pages": [
+      {
+        "page": 9,
+        "char_count": 12,
+        "line_count": 1
+      },
+      {
+        "page": 17,
+        "char_count": 15,
+        "line_count": 1
+      },
+      {
+        "page": 37,
+        "char_count": 0,
+        "line_count": 0
+      }
+    ]
+  },
+  {
+    "lecture": 7,
+    "source": "7 Copy Constructor.pdf",
+    "kind": "pdf",
+    "page_count": 96,
+    "markdown": "tmp\\extracted_course\\texts\\07-7 Copy Constructor.md",
+    "total_chars": 11487,
+    "low_text_pages": [
+      {
+        "page": 32,
+        "char_count": 19,
+        "line_count": 1
+      },
+      {
+        "page": 40,
+        "char_count": 6,
+        "line_count": 1
+      },
+      {
+        "page": 52,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 57,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 62,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 63,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 64,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 65,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 66,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 67,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 68,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 69,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 70,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 71,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 72,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 73,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 74,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 75,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 76,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 77,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 78,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 79,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 80,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 81,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 82,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 83,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 84,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 85,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 86,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 87,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 88,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 89,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 90,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 91,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 92,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 93,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 94,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 95,
+        "char_count": 0,
+        "line_count": 0
+      },
+      {
+        "page": 96,
+        "char_count": 0,
+        "line_count": 0
+      }
+    ]
+  },
+  {
+    "lecture": 8,
+    "source": "8 Overloaded Operators.pdf",
+    "kind": "pdf",
+    "page_count": 73,
+    "markdown": "tmp\\extracted_course\\texts\\08-8 Overloaded Operators.md",
+    "total_chars": 17096,
+    "low_text_pages": [
+      {
+        "page": 5,
+        "char_count": 0,
+        "line_count": 0
+      }
+    ]
+  },
+  {
+    "lecture": 9,
+    "source": "9 Streams.pdf",
+    "kind": "pdf",
+    "page_count": 27,
+    "markdown": "tmp\\extracted_course\\texts\\09-9 Streams.md",
+    "total_chars": 7797,
+    "low_text_pages": []
+  },
+  {
+    "lecture": 10,
+    "source": "10 Template.pdf",
+    "kind": "pdf",
+    "page_count": 47,
+    "markdown": "tmp\\extracted_course\\texts\\10-10 Template.md",
+    "total_chars": 10966,
+    "low_text_pages": [
+      {
+        "page": 2,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 22,
+        "char_count": 15,
+        "line_count": 1
+      }
+    ]
+  },
+  {
+    "lecture": 11,
+    "source": "11 STL.pdf",
+    "kind": "pdf",
+    "page_count": 29,
+    "markdown": "tmp\\extracted_course\\texts\\11-11 STL.md",
+    "total_chars": 8103,
+    "low_text_pages": []
+  },
+  {
+    "lecture": 12,
+    "source": "12 Iterators.pdf",
+    "kind": "pdf",
+    "page_count": 48,
+    "markdown": "tmp\\extracted_course\\texts\\12-12 Iterators.md",
+    "total_chars": 13298,
+    "low_text_pages": []
+  },
+  {
+    "lecture": 13,
+    "source": "13 Exceptions.pdf",
+    "kind": "pdf",
+    "page_count": 60,
+    "markdown": "tmp\\extracted_course\\texts\\13-13 Exceptions.md",
+    "total_chars": 12507,
+    "low_text_pages": [
+      {
+        "page": 12,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 22,
+        "char_count": 14,
+        "line_count": 1
+      },
+      {
+        "page": 35,
+        "char_count": 7,
+        "line_count": 1
+      },
+      {
+        "page": 48,
+        "char_count": 18,
+        "line_count": 1
+      },
+      {
+        "page": 53,
+        "char_count": 19,
+        "line_count": 1
+      }
+    ]
+  },
+  {
+    "lecture": 14,
+    "source": "14 Smart Pointers.pdf",
+    "kind": "pdf",
+    "page_count": 31,
+    "markdown": "tmp\\extracted_course\\texts\\14-14 Smart Pointers.md",
+    "total_chars": 7508,
+    "low_text_pages": []
+  },
+  {
+    "lecture": 15,
+    "source": "15 Miscellaneous Points.pdf",
+    "kind": "pdf",
+    "page_count": 46,
+    "markdown": "tmp\\extracted_course\\texts\\15-15 Miscellaneous Points.md",
+    "total_chars": 11228,
+    "low_text_pages": [
+      {
+        "page": 14,
+        "char_count": 16,
+        "line_count": 1
+      },
+      {
+        "page": 21,
+        "char_count": 19,
+        "line_count": 1
+      }
+    ]
+  }
+]

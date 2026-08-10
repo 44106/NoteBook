@@ -1,0 +1,1772 @@
+
+
+===== PAGE 1 =====
+
+Computer System III
+
+
+
+
+                  What are you take away from
+                     computer system III?
+
+
+===== PAGE 2 =====
+
+Computer System III
+
+
+      In the age of AI, is a deep understanding
+      of the computer system still important?
+
+
+===== PAGE 3 =====
+
+Computer System III
+
+
+
+
+                  Seriously, you take away your
+                           own system.
+
+
+===== PAGE 4 =====
+
+编译器
+Code                                                                                            系统
+(C...)                                                操作系统（OS）
+          解释器                                                                                   软件
+            ……
+
+           ISA：RISC-V 指令系统
+                                                                                                体系
+           程序执行的基本原理
+                                                                                                结构
+          单周期与冯诺依曼架构
+
+
+
+
+                                                                                          MUX
+                               控制器                                    寄存器组
+
+
+
+
+                                                                                    运算
+         Memory
+
+
+
+
+                                                                                    器
+                                                                                                系统
+
+
+
+
+                                                                              MUX
+                                                                      Imm
+                                           下一地址逻辑                     Gen                       硬件
+                                      PC
+                                                     MUX
+          Disk
+系统1
+                                               ADD
+
+
+
+
+                                                           ADD
+          I/O
+                                           4
+         Device                                                                          CPU
+
+                                                                                                门级
+         数值表示与门电路            组合逻辑电路    时序逻辑电路                    基本运算电路      计算机硬件组成（硬件模块设计）
+                                                                                                电路
+
+
+===== PAGE 5 =====
+
+System Call
+          编译器
+Code                 进程管理                                                                                       系统
+(C...)    解释器                                                   中断与
+                          进程调度          CPU调度                                                                   软件
+                                                                 时钟
+                          进程通信     同步、互斥、死锁
+            ……
+
+           ISA：RISC-V 指令系统             软硬件协同（OS加载）
+                                                                                                                体系
+           程序执行的基本原理                   流水线实现与性能分析
+                                                                                                                结构
+          单周期与冯诺依曼架构                    流水线冲突与处理
+
+
+
+
+                                                                                                          MUX
+                                 控制器            冒险检测                          寄存器组
+
+
+
+
+                                                                                            运算
+         Memory
+
+
+
+
+                                                                                            器
+                                                中断控制
+                                                                                                                系统
+
+
+
+
+                                                                                      MUX
+                                                                              Imm
+                    BUS                         下一地址逻辑                        Gen                               硬件
+                                          PC
+                                                          MUX                 CSR
+          Disk
+系统1
+                                                    ADD
+
+
+
+
+                                                                ADD
+                                                                                            Forwarding
+          I/O                                                                                  Unit
+                                                4
+         Device                                                                                          CPU
+系统2
+
+                                                                                                                门级
+         数值表示与门电路            组合逻辑电路        时序逻辑电路                     基本运算电路         计算机硬件组成（硬件模块设计）
+                                                                                                                电路
+
+
+===== PAGE 6 =====
+
+System Call
+          编译器
+Code                 进程管理                                                      内存管理               存储管理                             系统
+(C...)    解释器                                                        中断与
+                          进程调度               CPU调度                                  主存            设备           文件       磁盘         软件
+                                                                      时钟
+                          进程通信        同步、互斥、死锁                                     虚拟内存           管理           系统       管理
+            ……
+
+           ISA：RISC-V 指令系统              软硬件协同（OS加载）                                   定量分析方法                     虚拟存储器设计
+                                                                                                                                   体系
+           程序执行的基本原理                    流水线实现与性能分析
+                                                                                    ILP     DLP    TLP       Cache设计与性能分析          结构
+          单周期与冯诺依曼架构                         流水线冲突与处理
+
+
+
+
+                                                                                                                             MUX
+                                  控制器                冒险检测                                 寄存器组
+
+
+
+
+                                                                                                           运算
+         Memory
+
+
+
+
+                                                                                                           器
+                                                     中断控制
+                                                                                            RAT
+                                                                                                                                   系统
+
+
+
+
+                                                                                                    MUX
+                                                                                          Imm
+                    BUS                              下一地址逻辑                                                                        硬件
+
+
+
+
+                                                                                                           运算
+                                                                                                           器-2
+                                                                                          Gen
+
+
+
+
+                                                                                                                   RS
+                                               PC
+                              Cache
+
+
+
+
+                                      MMU                      MUX                        CSR
+          Disk                                                                                       ROB
+系统1                                   /TLB
+                                                         ADD
+
+
+
+
+                                                                     ADD
+          I/O                                                        BPU                                   Forwarding
+                                                     4                                                        Unit
+         Device                                                                                                          CPU
+系统2
+
+                                                                                                                                   门级
+         数值表示与门电路            组合逻辑电路             时序逻辑电路                     基本运算电路                 计算机硬件组成（硬件模块设计）
+系统3                                                                                                                                电路
+
+
+===== PAGE 7 =====
+
+系统贯通实验部分结构设计
+
+
+                     操作系统（OS）                                系统       RISC-V
+                                                             软件      toolchain
+
+
+                     RISC-V 指令集与汇编
+
+
+                                             单周期 CPU
+                                                                                        基础
+                                                SCPU 数据通路                               工具链
+                                                             系统
+                流水线 CPU                                           Spike          QEMU
+                                                             硬件
+                                                SCPU 控制单元
+
+系统1
+
+      组合逻辑电路                      时序逻辑电路                                  Vivado
+       多路选择器/七段数码管   加法器               有限状态机/乘法器       计数器   门级
+                                                                      Verilator
+                                                             电路
+                          Verilog 语言                                      FPGA
+
+
+===== PAGE 8 =====
+
+系统贯通实验部分结构设计
+                                                                软硬件
+                进程管理
+                                                                协同综合
+        内核
+        启动         RISC-V 时钟中断处理
+        逻辑
+                                               虚拟化技术            系统         RISC-V
+       与运行         内核线程管理与调度                                    软件        toolchain
+
+
+                          RISC-V 指令集与汇编
+
+
+      流水线 CPU                                   单周期 CPU
+
+                         Pipeline 基础/阶段寄存器                                                   基础
+                                                   SCPU 数据通路                                 工具链
+                        冒险处理 Forwarding 技术                      系统
+                                                                       Spike          QEMU
+        流水线性能优化                                                 硬件
+                         AXI4-Lite 总线模型与使用
+                                                   SCPU 控制单元
+                        CSR寄存器/中断与异常处理
+系统1
+
+      组合逻辑电路                         时序逻辑电路                                    Vivado
+系统2
+       多路选择器/七段数码管       加法器              有限状态机/乘法器       计数器   门级
+                                                                           Verilator
+                                                                电路
+                             Verilog 语言                                        FPGA
+
+
+===== PAGE 9 =====
+
+系统贯通实验部分结构设计
+                                                                  软硬件
+                进程管理                       虚拟化
+                                                                  协同综合
+        内核                                    SV39 分页/虚拟内存管理
+        启动          RISC-V 时钟中断处理
+        逻辑                                  用户态进程实现与用户态切换         系统         RISC-V
+       与运行          内核线程管理与调度                                     软件        toolchain
+                                              缺页异常处理与 fork 机制
+
+                           RISC-V 指令集与汇编
+
+
+      流水线 CPU                                     单周期 CPU
+         基于 BHT/BTB 的     Pipeline 基础/阶段寄存器                                                    基础
+          动态分支预测                                     SCPU 数据通路                                 工具链
+                         冒险处理 Forwarding 技术                       系统
+                                                                         Spike          QEMU
+         内存 Cache 设计                                              硬件
+                          AXI4-Lite 总线模型与使用
+        内存管理单元 MMU                                   SCPU 控制单元
+         虚拟地址转换          CSR寄存器/中断与异常处理
+系统1
+
+      组合逻辑电路                          时序逻辑电路                                     Vivado
+系统2
+       多路选择器/七段数码管        加法器              有限状态机/乘法器        计数器   门级
+                                                                             Verilator
+                                                                  电路
+                              Verilog 语言                                         FPGA
+系统3
+
+
+===== PAGE 10 =====
+
+Computer System III
+
+
+
+
+                 What is more? Anything else?
+
+
+===== PAGE 11 =====
+
+What is more?   Your own CPU.
+
+
+
+
+    ZJV 1.0 技术指标——微结构设计
+
+
+===== PAGE 12 =====
+
+What is more?   Your own CPU.
+
+
+
+
+    ZJV 1.0 技术指标——微结构设计
+
+
+===== PAGE 13 =====
+
+What is more?                  Your own CPU.
+
+
+
+
+     Chapter 1 — Computer Abstractions and Technology — 13
+
+
+===== PAGE 14 =====
+
+What is more?                      Your own CPU.
+
+• 自主搭建的差分测试框架dtqemu                                                     操作系统移植
+  • 模拟RAM和串口等外设
+                                                                                 支持pmon的全部指令运行
+  • 同步中断
+                                                                                 支持ucore的运行
+  • 比对qemu和AMipsel的寄存器
+                                                                                 完成Linux的启动流程到用户态
+• 便捷Linux的调试
+
+
+
+
+                         Chapter 1 — Computer Abstractions and Technology — 14
+
+
+===== PAGE 15 =====
+
+ZJV1.0——流片成果（一生一芯二期）
+
+
+===== PAGE 16 =====
+
+ZJV2.0 ——流片成果（一生一芯三期）
+
+
+===== PAGE 17 =====
+
+What is more?   Your own CPU + system.
+
+
+
+
+                        逐梦杯总决赛：
+
+                        • 自主设计优化，获得1789性能分
+                        • 面向通用系统，启动Linux 发行版
+                        • 着眼安全特性，保护数据完整性和机密性
+
+
+
+
+                                               17
+
+
+===== PAGE 18 =====
+
+What is more?   Your own CPU + system.
+
+
+===== PAGE 19 =====
+
+What is more?      Our idea (not only CPU)
+
+                      ZJV = ZheJiang University + RISC-V
+
+
+
+ZJV 1.0     Amipsel      ZJV 2.0
+                                   ZJV 2.0
+                                    plus
+                                              MMM     。。。              ZJV
+                                                                      求是I号
+                                                      2023.08
+                                                     龙芯杯个人赛
+                                                       一等奖
+
+      2020.12     2021.08    2021.12 2022        2022.08         2024.04     2024.12
+     第一次投片      龙芯杯一等奖     ZJV 2.0投片 逐梦杯       龙芯杯二等奖          ZJV 2.0回片 ZJV 浙大安全芯
+                （性能第一名） ZJV 1.0第二次投片全国冠军       （性能第一名）         ZJV 1.0回片 求是I号投片
+                                                                           2025.03回片
+                                                 2022.08
+                                                龙芯杯个人赛
+                                                  一等奖
+
+
+===== PAGE 20 =====
+
+Computer System III
+
+
+
+
+      Let’s begin the class from the problem.
+
+
+===== PAGE 21 =====
+
+problem
+
+
+
+
+electrons
+
+
+===== PAGE 22 =====
+
+problem
+algorithm
+
+
+
+
+electrons
+
+
+===== PAGE 23 =====
+
+problem
+algorithm
+ program
+
+
+
+
+electrons
+
+
+===== PAGE 24 =====
+
+problem
+      algorithm
+       program
+runtime system
+ (VM, OS, MM)
+
+
+
+
+      electrons
+
+
+===== PAGE 25 =====
+
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+
+
+
+
+          electrons
+
+
+===== PAGE 26 =====
+
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+
+
+
+          electrons
+
+
+===== PAGE 27 =====
+
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+               logic
+
+
+          electrons
+
+
+===== PAGE 28 =====
+
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+               logic
+            circuits
+          electrons
+
+
+===== PAGE 29 =====
+
+Computer System
+                             problem
+                           algorithm
+                             program
+                    runtime system
+                     (VM, OS, MM)
+                  ISA (architecture)
+                  microarchitecture
+                                 logic
+                              circuits
+                            electrons
+
+
+===== PAGE 30 =====
+
+Computer System   challenging
+                                  runtime system
+                                   (VM, OS, MM)
+                                ISA (architecture)
+                                microarchitecture
+                                               logic
+
+
+===== PAGE 31 =====
+
+How about computer system competency?
+• Computer science and technology
+  • Computing Curricula 2020
+                                程序设计与实
+
+                               算法 现能力
+            算法设                    4%                        系统开发能力
+   计算思                         设计               系统设计能力
+            计与分                                                28%
+   维能力                         与分                 23%
+            析能力
+                               析能
+   程序设                          力        系统能力
+            系统能                10%        75%
+   计与实
+             力                                  系统认知能力
+   现能力
+                                                  7%
+                                                         系统应用能力
+                               计算思维能力                      17%
+                                 11%
+
+
+===== PAGE 32 =====
+
+How about computer system competency?
+• Cyber Security / Information Security
+   • CSEC 2017
+   • Cyber2yr 2020
+
+
+
+
+                                          CSEC2017
+
+                                                     Cyber2yr2020
+
+
+===== PAGE 33 =====
+
+Computer System III
+
+
+
+
+                             Chapter 1
+
+         Fundamentals of computer system
+
+
+
+                      Chapter 1 —Fundamentals of computer system— 33
+
+
+===== PAGE 34 =====
+
+§1.1 Introduction
+
+
+
+        Von Neumann Structure
+
+        • Von Neumann structure: data and programs are in memory.
+
+        • CPU takes instructions and data from memory for operation and puts
+          the results into memory
+
+
+
+
+                               Chapter 1 —Fundamentals of computer system— 34
+
+
+===== PAGE 35 =====
+
+§1.1 Introduction
+
+
+
+        Von Neumann Structure
+                                                                                              Data path
+                                                  Storage
+                                                                                              Control path
+
+                                                     外 存 储器
+
+
+
+                    Input                                                         Output
+
+                                                  Memory
+                                                     ÄÚ´æ´¢Æ÷
+
+
+                      ÊäÈëÉè±¸                                                     Êä³öÒÛ±¸
+
+
+
+
+                                      ¿ØÖÆÆ÷                          ÔËËãÆ÷
+
+
+
+
+                                        Controller                 Computer
+                                                      CPU
+
+                                 Chapter 1 —Fundamentals of computer system— 35
+
+
+===== PAGE 36 =====
+
+§1.1 Introduction
+
+
+
+        The Computer Revolution
+       • Progress in computer technology
+            • Underpinned by Moore’s Law
+       • Makes novel applications feasible
+            • Computers in automobiles
+            • Cell phones
+            • Human genome project
+            • World Wide Web
+            • Search Engines
+            • Large Language Model
+       • Computers are pervasive
+
+                                   Chapter 1 —Fundamentals of computer system— 36
+
+
+===== PAGE 37 =====
+
+§1.1 Introduction
+
+
+
+        How you will learn?
+        • Possibility:
+            • standing on the shoulder of giants.
+        • Concepts, Ideas and Principles
+        • Quantitative approaches
+        • Hit the problem and right way to solve problem
+
+        • As a man sows, so he shall reap.
+
+
+                                     Chapter 1 —Fundamentals of computer design — 37
+
+
+===== PAGE 38 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (1)
+                                    • John Leroy Hennessy
+                                    • Hennessy is one of the founders of MIPS
+                                      Computer Systems Inc. as well as Atheros and
+                                      served as the tenth President of Stanford
+                                      University.
+                                    • Hennessy announced that he would step
+                                      down in the summer of 2016. He was
+                                      succeeded as President by Marc Tessier-
+                                      Lavigne.
+                                    • Marc Andreessen called him "the godfather
+                                      of Silicon Valley."
+
+                      Chapter 1 —Fundamentals of computer system— 38
+
+
+===== PAGE 39 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (2)
+        • David Andrew Patterson
+
+        • An American computer pioneer and academic
+          who has held the position of professor
+          of computer science at the University of
+          California, Berkeley since 1976.
+
+
+        • He currently is Vice Chair of the Board of                             one big thing at a time
+          Directors of the RISC-V Foundation, and the
+          Pardee Professor of Computer Science,
+          Emeritus at UC Berkeley.
+                                    Chapter 1 —Fundamentals of computer system— 39
+
+
+===== PAGE 40 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (2)
+
+
+
+
+             • Turing Award for pioneering a systematic, quantitative approach to the design
+               and evaluation of computer architectures with enduring impact on the
+               microprocessor industry.
+             • Hennessy and Patterson created a systematic and quantitative approach to
+               designing faster, lower power, and reduced instruction set computer (RISC)
+               microprocessors.       Chapter 1 —Fundamentals of computer system— 40
+
+
+===== PAGE 41 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (3)
+                                         • 1999 ACM Turing Award
+                                         • landmark contributions to computer
+                                           architecture, operating systems, and
+                                           software engineering."
+                                           2004 Eckert-Mauchly Award
+                                           "For the definition of computer architecture and
+                                           contributions to the concept of computer families
+                                           and to the principles of instruction set design; for
+                                           seminal contributions in instruction sequencing,
+           Frederick P. Brooks             including interrupt systems and execute
+           http://www.cs.unc.edu/~br       instructions; and for contributions to the
+           ooks/                           IBM 360 instruction set architecture."
+                                 Chapter 1 —Fundamentals of computer system— 41
+
+
+===== PAGE 42 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (4)
+                               • Robert Marco Tomasulo
+
+                               • A computer scientist, and the inventor of
+                                 the Tomasulo algorithm.
+
+
+                               • Tomasulo was the recipient of the
+                                 1997 Eckert–Mauchly Award "or the
+                                 ingenious Tomasulo algorithm, which enabled
+                                 out-of-order execution processors to be
+                                 implemented."
+
+
+                      Chapter 1 —Fundamentals of computer system— 42
+
+
+===== PAGE 43 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (5)
+                      • Seymour Cray
+                      • For a career of achievements that have advanced
+                        supercomputing design.
+
+
+                      • In 1958, the world's first transistor-based supercomputer
+                        was designed and built.
+
+
+                      • At the same time, he has made significant contributions
+                        to the production of reduced instruction (RISC) high-end
+                        microprocessors, and is one of the most important figures
+                        in the field of high-performance computers.
+                        Chapter 1 —Fundamentals of computer system— 43
+
+
+===== PAGE 44 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (6)
+        • Amdahl, Gene M.
+
+        • For outstanding innovations in
+          computer architecture, including
+          pipelining, instruction look-ahead,
+          and cache memory.
+
+          In 1975, Dr. Amdahl stands beside the
+          Wisconsin Integrally Synchronized
+          Computer (WISC), which he designed in
+          1950. It was built in 1952. (Image courtesy
+          of Dr. Gene M. Amdahl.)
+
+                                         Chapter 1 —Fundamentals of computer system— 44
+
+
+===== PAGE 45 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (7)
+        • Mateo Valero
+            • http://personals.ac.upc.edu/mateo/
+
+
+        • For important contributions to
+          instruction level parallelism and
+          superscalar processor design.
+
+
+
+
+                                   Chapter 1 —Fundamentals of computer system— 45
+
+
+===== PAGE 46 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (8)
+
+                               • Yale Patt
+
+                               • For important contributions to instruction
+                                 level parallelism and superscalar processor
+                                 design.
+
+
+
+
+                      Chapter 1 —Fundamentals of computer system— 46
+
+
+===== PAGE 47 =====
+
+§1.1 Introduction
+
+
+
+        Big Men (9)
+
+                        • Michael J. Flynn
+
+                        • http://www.cpe.calpoly.edu/IAB/flynn.html
+                        • For his important and seminal contributions to
+                          processor organization and classification,
+                          computer arithmetic and performance
+                          evaluation.
+
+
+                      Chapter 1 —Fundamentals of computer system— 47
+
+
+===== PAGE 48 =====
+
+§1.2 Classes of Computers
+
+                                                                                                        SM
+                                                                                                DS1
+
+        Classed By Flynn                                                              PU1
+
+                                                                                                DS2
+                                                                                                        MM1
+
+                                                                                      PU2               MM2
+                                                                               CS
+                             IS                                     CU
+                                                                                       …                …
+
+                    CS                 DS                                                     DSn       MMm
+             CU           PU                  MM                                      PUn
+                                                                          IS                                  IS：Instruction stream
+                    （a）SISD 计算机                                                     （b）SIMD 计算机               DS：Data stream
+                                                                                                        SM
+                                                                                                              CS：Control stream
+                                       DS
+                   CS1                                                               CS1          DS1
+             CU1         PU1
+                                                                    IS1
+                                                                               CU1          PU1               CU：Control unit
+                                                                                                        MM1
+                   CS2                                 SM
+                                                                    IS2              CS2          DS2         PU：Process unit
+             CU2         PU2                                                   CU2          PU2         MM2
+                                       MM1     MM2 … MMm                                                      MM&SM：Memory
+             …           …                                                     …            …           …
+                   CSn                             …                 ISn             CSn          DSn   MMm
+             CUn         PUn                 ISn       IS2 IS1                 CUn          PUn
+                                  DS
+                                                                                                        …
+
+                    （c）MISD 计算机                                              （d）MIMD 计算机
+                                                         Chapter 1 —Fundamentals of computer design — 48
+
+
+===== PAGE 49 =====
+
+§1.2 Classes of Computers
+
+
+
+        Classes of Computers
+        • Desktop computers (or Personal Computers)
+            • General purpose, variety of software
+            • Emphasize good performance for a single user at relatively low
+              cost.
+            • Mostly execute third-party software
+        • Server computers
+            • Emphasize great performance for a few complex applications.
+            • Or emphasize reliable performance for many users at once.
+            • Greater computing, storage, or network capacity than personal
+              computers.
+        • Embedded computers
+            • Largest class and most diverse.
+            • Hidden as components of systems.
+            • Stringent power/performance/cost constraints.
+                                         Chapter 1 —Fundamentals of computer design — 49
+
+
+===== PAGE 50 =====
+
+§1.2 Classes of Computers
+
+
+
+        Classes of Computers
+        • Personal Mobile Devices
+            • Smartphones
+            • Tablet/iPad
+            • generally have the same design requirements as PCs
+
+
+        • Supercomputer
+            • Computer cluster
+            • High capacity, performance, reliability
+            • Range to building sized
+
+                                     Chapter 1 —Fundamentals of computer design — 50
+
+
+===== PAGE 51 =====
+
+§1.2 Classes of Computers
+
+
+
+        What You Will Learn
+        • How programs are translated into the machine language
+            • And how the hardware executes them
+        • The hardware/software interface
+        • What determines program performance
+            • And how it can be improved
+        • How hardware designers improve performance
+        • What is parallel processing
+
+
+                                   Chapter 1 —Fundamentals of computer design — 51
+
+
+===== PAGE 52 =====
+
+§1.3 Performance
+
+
+
+           Defining Performance
+           • Which airplane has the best performance?
+    Boeing 777
+                                                        Boeing 777                                                   Boeing 777
+
+    Boeing 747                                          Boeing 747                                                   Boeing 747
+
+      BAC/Sud                                             BAC/Sud                                                     BAC/Sud
+      Concorde                                            Concorde                                                    Concorde
+                                                        Douglas DC-                                                    Douglas
+    Douglas DC-                                            8-50                                                        DC-8-50
+       8-50
+                                                                      0    2000   4000   6000   8000 10000                        0     500       1000       1500
+                  0   100    200    300     400   500
+                                                                             Cruising Range (miles)                                   Cruising Speed (mph)
+                          Passenger Capacity
+
+
+
+
+     Boeing 777
+
+
+     Boeing 747                                                       Aircraft                        Passenger   Cruising                     Cruishing            Passengers
+       BAC/Sud
+       Concorde                                                        type                            Capacity Range(miles)                  Speed(mph)              *mph
+    Douglas DC-
+       8-50
+
+                  0   100000 200000 300000 400000
+
+                         Passengers x mph
+
+
+
+
+                                                                          Chapter 1 —Fundamentals of computer design — 52
+
+
+===== PAGE 53 =====
+
+§1.3 Performance
+
+
+
+       Understanding Performance
+       • Algorithm
+           • Determines number of operations executed
+       • Programming language, compiler, architecture
+           • Determine number of machine instructions executed per operation
+       • Processor and memory system
+           • Determine how fast instructions are executed
+       • I/O system (including OS)
+           • Determines how fast I/O operations are executed
+
+
+                                   Chapter 1 —Fundamentals of computer design — 53
+
+
+===== PAGE 54 =====
+
+§1.3 Performance
+
+
+
+       Measuring Performance
+       • Single users on a PC
+           • A minimization of response time (Latency/elapse)
+               • is the time between the start and completion of an event
+               • How long it takes to do a task
+           • A minimization of execution time
+       • Large data
+           • A maximization of throughput
+               • is the total amount of work done in a given period of time
+               • Total work done per unit time
+                   • e.g., tasks/transactions/… per hour
+
+
+
+
+                                          Chapter 1 —Fundamentals of computer design — 54
+
+
+===== PAGE 55 =====
+
+§1.3 Performance
+
+
+
+       Measuring Performance
+       • Response time (Elapsed time)
+           • Total response time, including all aspects
+               • Processing, I/O, OS overhead, idle time
+           • Determines system performance
+       • Execution time (CPU time)
+           • Time spent processing a given job
+               • Discounts I/O time, other jobs’ shares
+           • Comprises user CPU time and system CPU time
+               • User CPU time : CPU time spent in the program itself
+               • System CPU time: CPU time spent in the OS, performing tasks on behalf of the program.
+           • Different programs are affected differently by CPU and system performance
+
+                                        Chapter 1 —Fundamentals of computer design — 55
+
+
+===== PAGE 56 =====
+
+§1.3 Performance
+
+
+
+       Performance
+       • Define Performance = 1/Execution Time
+       • “X is n time faster than Y”
+                          Performanc e X Performanc e Y
+                          = Execution time Y Execution time X = n
+
+       • Example: time taken to run a program
+           • 10s on A, 15s on B
+           • Execution TimeB / Execution TimeA
+             = 15s / 10s = 1.5
+           • So A is 1.5 times faster than B
+
+                                   Chapter 1 —Fundamentals of computer design — 56
+
+
+===== PAGE 57 =====
+
+§1.3 Performance
+
+
+
+       Performance
+
+
+
+
+                     Chapter 1 —Fundamentals of computer design — 57
+
+
+===== PAGE 58 =====
+
+§1.4 Quantitative approaches
+
+
+
+
+                               Quantitative approaches
+                                   CPU performance formula
+
+
+                                              Amdahl’s Law
+
+
+
+
+                                   Chapter 1 —Fundamentals of computer design — 58
+
+
+===== PAGE 59 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Measuring Data Size
+
+
+
+
+                               Chapter 1 —Fundamentals of computer design — 59
+
+
+===== PAGE 60 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPU Performance
+
+
+
+
+                               Chapter 1 —Fundamentals of computer design — 60
+
+
+===== PAGE 61 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPU Clocking
+        • Operation of digital hardware governed by a constant-rate clock
+
+
+
+
+        • Clock period: duration of a clock cycle
+            • e.g., 250ps = 0.25ns = 250×10–12s
+        • Clock frequency (rate): cycles per second
+            • e.g., 4.0GHz = 4000MHz = 4.0×109Hz
+                                    Chapter 1 —Fundamentals of computer design — 61
+
+
+===== PAGE 62 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPU Time
+        CPU Time = CPU Clock Cycles  Clock Cycle Time
+                        CPU Clock Cycles
+                    =
+                          Clock Rate
+
+        • Performance improved by
+            • Reducing number of clock cycles
+            • Increasing clock rate
+            • Hardware designer must often trade off clock rate against cycle count
+
+
+
+
+                                           Chapter 1 —Fundamentals of computer design — 62
+
+
+===== PAGE 63 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPU Time Example
+        • Computer A: 2GHz clock, 10s CPU time
+        • Designing Computer B
+            • Aim for 6s CPU time
+            • Can do faster clock, but causes 1.2 × clock cycles
+        • How fast must Computer B clock be?
+                           Clock Cycles B 1.2  Clock Cycles A
+          Clock Rate B =                 =
+                            CPU Time B             6s
+       Clock Cycles A = CPU Time A  Clock Rate A
+                       = 10s  2GHz = 20  109
+                         1.2  20  109 24  109
+          Clock Rate B =               =         = 4GHz
+                               6s         6s
+                                           Chapter 1 —Fundamentals of computer design — 63
+
+
+===== PAGE 64 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Instruction Count and CPI
+        • Instruction Count for a program
+            • Determined by program, ISA and compiler
+        • Average cycles per instruction（CPI）
+            • Determined by CPU hardware
+            • If different instructions have different CPI
+                 • Average CPI affected by instruction mix
+
+
+
+
+                                          Chapter 1 —Fundamentals of computer design — 64
+
+
+===== PAGE 65 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Components of CPU performance
+
+
+
+
+                               Chapter 1 —Fundamentals of computer design — 65
+
+
+===== PAGE 66 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPI Example
+        • Computer A: Cycle Time = 250ps, CPI = 2.0
+        • Computer B: Cycle Time = 500ps, CPI = 1.2
+        • Same ISA
+            • Which is faster, and by how much?
+        CPU Time       = Instructio n Count  CPI  Cycle Time
+                   A                               A           A
+                       = I  2.0  250ps = I  500ps
+        CPU Time       = Instructio n Count  CPI  Cycle Time
+                   B                               B           B
+                       = I  1.2  500ps = I  600ps
+        CPU Time
+                 B = I  600ps = 1.2
+        CPU Time     I  500ps
+                 A
+                                            Chapter 1 —Fundamentals of computer design — 66
+
+
+===== PAGE 67 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPI in More Detail
+        • If different instruction classes take different numbers of cycles
+                                                      n
+                               Clock Cycles =  (CPIi  Instructio n Count i )
+                                                     i=1
+
+
+        • Weighted average CPI
+
+                             Clock Cycles      n
+                                                         Instructio n Count i 
+                     CPI =                   =   CPIi                       
+                           Instructio n Count i=1         Instructio n Count 
+
+                                                                                            Relative frequency
+                                          Chapter 1 —Fundamentals of computer design — 67
+
+
+===== PAGE 68 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPI Example
+        • Alternative compiled code sequences using instructions in classes
+          A, B, C
+                           Class                               A                   B         C
+                           CPI for class                        1                  2         3
+                           IC in sequence 1                     2                  1         2
+                           IC in sequence 2                     4                  1         1
+
+
+        • Sequence 1: IC = 5 Clock Cycles = 2×1 + 1×2 + 2×3 = 10
+            • Avg. CPI = 10/5 = 2.0
+        • Sequence 2: IC = 6 Clock Cycles = 4×1 + 1×2 + 1×3 = 9
+            • Avg. CPI = 9/6 = 1.5
+                                           Chapter 1 —Fundamentals of computer design — 68
+
+
+===== PAGE 69 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Performance Summary
+        The BIG Picture
+                   Instructio ns Clock cycles   Seconds
+        CPU Time =                           
+                     Program      Instructio n Clock cycle
+
+        • Performance depends on
+            • Algorithm: affects IC, possibly CPI
+            • Programming language: affects IC, CPI
+            • Compiler: affects IC, CPI
+            • Instruction set architecture: affects IC, CPI, Tc
+
+                                       Chapter 1 —Fundamentals of computer design — 69
+
+
+===== PAGE 70 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Multiprocessors
+        • Multicore microprocessors
+            • More than one processor per chip
+
+
+        • Requires explicitly parallel programming
+            • Compare with instruction level parallelism
+                 • Hardware executes multiple instructions at once
+                 • Hidden from the programmer
+            • Hard to do
+                 • Programming for performance
+                 • Load balancing
+                 • Optimizing communication and synchronization
+
+                                         Chapter 1 —Fundamentals of computer design — 70
+
+
+===== PAGE 71 =====
+
+§1.4 Quantitative approaches
+
+
+
+
+                               Quantitative approaches
+                                   CPU performance formula
+
+
+                                              Amdahl’s Law
+
+
+
+
+                                   Chapter 1 —Fundamentals of computer design — 71
+
+
+===== PAGE 72 =====
+
+§1.4 Quantitative approaches
+
+
+
+        CPU Time
+
+
+
+
+        IC and CPI depend on: Algorithm, Programming language, Compiler, Instruction set architecture
+        Clock Period or Clock Rate depends on: Instruction set architecture
+
+
+
+
+                                          Chapter 1 —Fundamentals of computer design — 72
+
+
+===== PAGE 73 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+
+
+
+
+                               Chapter 1 —Fundamentals of computer design — 73
+
+
+===== PAGE 74 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • Improving an aspect of a computer and expecting a proportional
+          improvement in overall performance
+
+                                                  Taf f ected
+                               Timprov ed =                     + Tunaf f ected
+                                            improvemen t factor
+
+        • Example: multiply accounts for 80s/100s
+            • How much improvement in multiply performance to get 5× overall?
+
+                             80
+                        20 =    + 20                         Can’t be done!
+                              n
+                                        Chapter 1 —Fundamentals of computer design — 74
+
+
+===== PAGE 75 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • The system performance acceleration rate is limited by the
+          percentage of the execution time of the component to the total
+          execution time in the system.
+        • Amdahl’s law defines the speedup that can be gained by using a
+          particular feature.
+                                   Performance for entire task Using Enhancement
+                    Speedup =
+                                   Performance for entire task Without Enhancement
+
+                                   Total Execution Time Without Enhancement
+                               =
+                                   Total Execution Time Using Enhancement
+                                      Chapter 1 —Fundamentals of computer design — 75
+
+
+===== PAGE 76 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+      • Fractionenhanced
+          • It is always less than or equal to 1.
+          • For example, the execution time of a whole program is 60 seconds, 20 seconds for calculation can be
+            improved, then the fraction is 20/60.
+      • Speedupenhanced
+          • It is always more than 1.
+          • For example, the execution time was 5 seconds before, and the execution time is 2 seconds after
+            improvement, then the speedup is 5/2.
+
+
+
+
+                                         Chapter 1 —Fundamentals of computer design — 76
+
+
+===== PAGE 77 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • The basic idea :
+
+            Execution time new = Execution time can not be enhance+ Execution time enhanced
+
+
+
+
+                                      Chapter 1 —Fundamentals of computer design — 77
+
+
+===== PAGE 78 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+     • Example 1.1 Increasing the processing speed of a certain function in the computer
+       system to 20 times the original, but the processing time of this function only accounts
+       for 40% of the running time of the entire system. After adopting this method to improve
+       performance, how much can the performance of the entire system improve?
+
+
+     Answer:
+        • Fraction enhanced = 40%
+        • Speedup enhanced = 20
+
+
+
+
+                                    Chapter 1 —Fundamentals of computer design — 78
+
+
+===== PAGE 79 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+     • Example 1.2 After a computer system adopts floating-point arithmetic components, the
+       floating-point arithmetic speed is increased by 20 times, and the overall performance of
+       a certain program of the system is increased by 5 times. Try to calculate the proportion
+       of the floating-point operations in this program.
+
+
+     Answer:
+        • Speedup overall = 5
+        • Speedup enhanced = 20
+
+         Fraction = 84.2%
+
+
+
+                                   Chapter 1 —Fundamentals of computer design — 79
+
+
+===== PAGE 80 =====
+
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+
+
+
+      • Important inference:
+
+                               Speedupoverall < 1/ (1- Fractionenhanced)
+
+
+
+                                     Chapter 1 —Fundamentals of computer design — 80
+
+
+===== PAGE 81 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+
+                            Great Architecture Ideas
+
+
+
+
+                                 Chapter 1 —Fundamentals of computer design — 81
+
+
+===== PAGE 82 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+       • There are 8 great architectural ideas that have been applied in the
+         design of computers for over half a century now.
+
+       • As we cover the material of this course, we should stop to think
+         every now and then which ideas are in play and how they are
+         being applied in the current context.
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 82
+
+
+===== PAGE 83 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 83
+
+
+===== PAGE 84 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 84
+
+
+===== PAGE 85 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Why learn architecture?
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 85
+
+
+===== PAGE 86 =====
+
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Concluding Remarks
+
+       • Cost/performance is improving
+           • Due to underlying technology development
+       • Hierarchical layers of abstraction
+           • In both hardware and software
+       • Instruction set architecture
+           • The hardware/software interface
+       • Execution time: the best performance measure
+       • 8 great architectural ideas
+
+                                  Chapter 1 —Fundamentals of computer design — 86

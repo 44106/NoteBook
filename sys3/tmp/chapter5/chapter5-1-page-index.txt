@@ -1,0 +1,157 @@
+001: Review SysIII-Lab | 动态分支预测 | 带Cache的流水线CPU设计实现 | RV64 虚拟内存管理 | RV64 用户模式
+002: knowledge map
+006: 裸机运行时环境 | 符号计算 | GraphComputing SymbolicReasoning | 通用 | 计算
+007: 编译器 | Code 系统 | (C...) 操作系统（OS） | 解释器 软件 | ……
+008: System Call | 编译器 | Code 进程管理 系统 | (C...) 解释器 中断与 | 进程调度 CPU调度 软件
+009: System Call | 编译器 | Code 进程管理 内存管理 存储管理 系统 | (C...) 解释器 中断与 | 进程调度 CPU调度 主存 设备 文件 磁盘 软件
+010: DLP and TLP
+011: Flynn
+012: §5.1 SIMD: vector processor | Vector Processor & Scalar Processor | • A pipeline processor, in which the vector data representation and | the corresponding vector instructions are set, is called the vector | processor.
+013: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • The particularity of vector pipeline: | The elements in the vector are rarely correlated during operations. | • Improper vector handling can also cause related problem and
+014: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • (1) Horizontal processing method: | • Vector calculations are performed horizontally from left to right in a row. | • (2) Vertical processing method:
+015: 1 SIMD: vector processor | Vector Processor & Scalar Processor | Example: D = A × (B + C) A, B, C, D ── vector of length N | 1. Horizontal processing method | • Vector calculations are performed horizontally from left to right in a row-
+016: 1 SIMD: vector processor | Vector Processor & Scalar Processor | Example: D = A × (B + C) A, B, C, D ── vector of length N | 1. Horizontal processing method | Problems with horizontal processing:
+017: 1 SIMD: vector processor | Vector Processor & Scalar Processor | Example: D = A × (B + C) A, B, C, D ── vector of length N | 2. Vertical processing method | Problems with Vertical processing:
+018: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • Requirements for processor structure: memory-memory structure | • The source vector and destination vector of the vector instruction are | stored in the memory, and the intermediate result of the operation needs
+019: 1 SIMD: vector processor | Vector Processor & Scalar Processor | 3. Vertical and horizontal (grouping) processing method | • Divide the vector into several groups, process them in a vertical manner, | and process each group in turn.
+020: 1 SIMD: vector processor | Vector Processor & Scalar Processor | 3. Vertical and horizontal (grouping) processing method | • The calculation process is: | • Calculate the first group: 𝑑1~𝑛 ← 𝑎1~𝑛 × (𝑏1~𝑛 + 𝑐1~𝑛 )
+021: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • Requirements for processor structure: register-register structure | • Set up vector registers that can be accessed quickly to store source | vectors, destination vectors, and intermediate results, so that the input
+022: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • Typical register-vector processor with register structure | American CRAY-1, my country's YH-1 supercomputer, GRAP-3, earth simulator | Vector processor SX-8
+023: 1 SIMD: vector processor | Vector Processor & Scalar Processor | • The structure of the vector pipeline processing machine varies from | machine to machine. | • Take the vector pipeline processing part in CRAY-1 as an example to
+024: 1 SIMD: vector processor | CRAY-1 | Control Signal | Vector | Length CRAY-1
+025: 1 SIMD: vector processor | CRAY-1 | 8 Vector Registers | 8 * 64 * 64 | Buffer Buffer
+026: 1 SIMD: vector processor | Features of CRAY-1 Vector Processor | • Each vector register Vi has a separate bus connected to 6 vector functional units. | • Each vector function unit also has a bus that returns the result of the operation | to the vector register bus.
+027: 1 SIMD: vector processor | Features of CRAY-1 Vector Processor | • Vi conflict: The source vector or result vector of each vector instruction working | in parallel uses the same Vi. | • Writing and reading data related:
+028: 1 SIMD: vector processor | Features of CRAY-1 Vector Processor | • Functional conflict: Each vector instruction working in parallel must use the | same functional unit. | • For example: (all need to use multiplication feature)
+029: 1 SIMD: vector processor | Instruction Types of CRAY-1 1 | Functional 2 | Vi 2 Si Functional | Component Component 3
+030: 1 SIMD: vector processor | Improve the Performance of Vector Processor | • Set up multiple functional components and make them work in parallel. | • Use vector chaining technology to speed up the execution of a string of | vector instructions.
+031: 1 SIMD: vector processor | Improve the Performance of Vector Processor | 1. Set up multiple functional units and make them work in parallel. | • These components can work in parallel, and each work in a pipeline manner, | thus forming multiple parallel operation pipelines.
+032: 1 SIMD: vector processor | Improve the Performance of Vector Processor | 2. Use vector chaining technology to speed up the execution of a string of vector | instructions. | • Vector chaining feature: It has two related instructions that are written first and
+033: 1 SIMD: vector processor | Improve the Performance of Vector Processor | Example: Use vector chaining technology to perform vector operations on CRAY-1 | • D=A×(B+C) | • Assuming that the vector length is N ≤ 64, the vector elements are floating
+034: 1 SIMD: vector processor | Improve the Performance of Vector Processor | Hypothesis: It takes one beat to send vector data elements to the vector function | unit and to store the result in the vector register, and one beat time to send data | from the memory to the fetch function unit.
+035: 1 SIMD: vector processor | Improve the Performance of Vector Processor | V0 1 | Memory | V1 3
+036: 1 SIMD: vector processor | Improve the Performance of Vector Processor | • Calculate D=A·(B+C), A, B, C, D are all N elements Vector, vector length N≤64, | complete operation with 3 instructions, | • (1). 𝑉3 ← 𝐴
+037: 1 SIMD: vector processor | Improve the Performance of Vector Processor | V0 1 | • Let the vector length be N Memory | V1 3
+038: 1 SIMD: vector processor | Improve the Performance of Vector Processor | V0 1 | • Let the vector length be N Memory | V1 3
+039: 1 SIMD: vector processor | Improve the Performance of Vector Processor | V0 1 | • Let the vector length be N Memory | V1 3
+040: 1 SIMD: vector processor | Improve the Performance of Vector Processor | 3. Segmented Vector | What should I do if the length of the vector is greater than the length of the vector | register?
+041: 1 SIMD: vector processor | Improve the Performance of Vector Processor | 4. Adopt multi-processor system | Many new vector processor systems have adopted a multi-processor system | structure. E.g.
+042: 1* SIMD: vector processor | RV64V | • Loosely based on Cray-1 | • 32 62-bit vector registers | • Register file has 16 read ports and 8 write ports
+043: 1* SIMD: vector processor | Example: DAXPY (Double Precision a*X plus Y) | RISC-V (scalar): | RV64V code:
+044: 1* SIMD: vector processor | Multiple Lanes: Beyond One Element per | Clock Cycle | • Element n of vector register A is “hardwired” to | element n of vector register B
+045: Flynn
+046: §5.2 SIMD: array processor | Array Processor | • N processing elements PE0 to PEN-1 are repeatedly set. | • Interconnect in a certain way to form an array. | • Under the control of a single control unit, the operations specified by the same
+047: 2 SIMD: array processor | ILLIAC IV
+048: 2 SIMD: array processor | Basic Structure | According to the composition of the memory in the system, the array processor can | be divided into two basic structures: | • Distributed memory
+049: 2 SIMD: array processor | Distributed memory | N Memories | N Processors
+050: 2 SIMD: array processor | Distributed memory | Control Signal | SC | CU
+051: 2 SIMD: array processor | Centralized shared memory | N Processors | K Memories
+052: 2 SIMD: array processor | Centralized shared memory | Control Signal Control Signal | CU SC | The difference with distributed
+053: 2 SIMD: array processor | Question | • If a direct connection path is required between n processing units, how many | pairs of connections are required? | 𝑛(𝑛 − 1)
+054: 2 SIMD: array processor | Parallel computer design | • The communication architecture of the parallel computer is the core of the | system | • The underlying interconnection network;
+055: 2 SIMD: array processor | Parallel computer design | • The interconnection network is inside the parallel computer system | • Definition: A network composed of switching units according to a certain | topology and control mode to realize the interconnection between multiple
+056: 2 SIMD: array processor | Interconnection network | • The interconnection network generally consists of the following five parts: | CPU, memory, interface, link and switch node | • Interface: It is a device that obtains information from CPU and memory and sends
+057: 2 SIMD: array processor | Some key points | • Topology of interconnection network | • Static topology | • Dynamic topology
+058: 2 SIMD: array processor | Classification of interconnection network | • Static network | • Static Networks refer to networks with fixed connection paths between nodes and this | connection remains unchanged during program execution.
+059: 2 SIMD: array processor | Goal of interconnection network | • Through a limited number of connection methods, any two PEs can | achieve information transmission in one step or a few steps to | complete a certain problem-solving algorithm.
+060: 2 SIMD: array processor | Goal of interconnection network | • Single-stage interconnection network: There are only a limited number of | connections at the only level to realize information transmission between any | two processing units.
+061: 2 SIMD: array processor | Goal of interconnection network | • For all N input terminals (0, 1, ..., j, ..., N-1) of the interconnection network, there | is a functional correspondence between the input terminal j and the output | terminal f(j).
+062: 2 SIMD: array processor | Single-stage interconnection network
+063: 2 SIMD: array processor | Cube single-stage interconnection network | • The N inputs and outputs are encoded with n-bit (n = log2N) binary code Pn- | 1...Pi...P1P0. | • There are n different interconnection functions:
+064: 2 SIMD: array processor | Cube single-stage interconnection network | 000 000 | Example: 001 001 | • In a cube single-stage 010 010
+065: 2 SIMD: array processor | Cube single-stage interconnection network | 000 000 | Example: 001 001 | 010 010
+066: 2 SIMD: array processor | Cube single-stage interconnection network | 000 000 | Example: 001 001 | 010 010
+067: 2 SIMD: array processor | Cube single-stage interconnection network | y | • The 3D cube can transfer Cube0 010 011 | data between any two 110 111
+068: 2 SIMD: array processor | Hyper cube interconnection network | • When the dimension n > 3, it is called a hyper cube network. | Cubei ( Pn − 1    Pi    P1P 0) = Pn − 1    Pi    P1P 0 | • 0 ≤ I ≤ n-1, Pi is the i-th bit of the binary code of the input port number.
+069: 2 SIMD: array processor | PM2I single-stage interconnection network | • PM2I (Plus Minus 2i) single-stage network | • Interconnection Function(2n): | 𝑷𝑴𝟐+𝒊 𝒋 = 𝒋 + 𝟐𝒊 𝒎𝒐𝒅 𝑵 𝑎𝑛𝑑 𝑷𝑴𝟐−𝒊 𝒋 = 𝒋 − 𝟐𝒊 𝒎𝒐𝒅 𝑵
+070: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Interconnection Function(i = 0): | 𝑷𝑴𝟐+𝟎 𝒋 = 𝒋 + 𝟐𝟎 𝒎𝒐𝒅 𝟖
+071: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Interconnection Function(i = 0): | 𝑷𝑴𝟐−𝟎 𝒋 = 𝒋 − 𝟐𝟎 𝒎𝒐𝒅 𝟖
+072: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Interconnection Function(i = 1): | 𝑷𝑴𝟐+𝟏 𝒋 = 𝒋 + 𝟐𝟏 𝒎𝒐𝒅 𝑵
+073: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Interconnection Function(i = 1): | 𝑷𝑴𝟐−𝟏 𝒋 = 𝒋 − 𝟐𝟏 𝒎𝒐𝒅 𝑵
+074: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Interconnection Function(i = 2): | 𝑷𝑴𝟐±𝟐 𝒋 = 𝒋 ± 𝟐𝟐 𝒎𝒐𝒅 𝑵
+075: 2 SIMD: array processor | PM2I single-stage interconnection network | Example: N = 8 | • Node 0 can reach nodes 1, 2, 4, 6, 7 in 1 step | • Node 0 can reach nodes 3, 5 in 2 steps
+076: 2 SIMD: array processor | ILLIAC Ⅳ array processor | 0 1 2 3 | • It uses PM2±0 and PM2±n/2 to | form its interconnection 4 5 6 7
+077: 2 SIMD: array processor | Shuffle exchange network | • Composed of two parts: Shuffle + Exchange | • N-dimension shuffle function: | 𝒔𝒉𝒖𝒇𝒇𝒍𝒆 𝑷𝒏−𝟏 𝑷𝒏−𝟐 … 𝑷𝟏 𝑷𝟎 = 𝑷𝒏−𝟐 … 𝑷𝟏 𝑷𝟎 𝑷𝒏−𝟏
+078: 2 SIMD: array processor | Example: 8 PEs 0 0 | Shuffle function: 𝒔𝒉𝒖𝒇𝒇𝒍𝒆 𝑷𝟐 𝑷𝟏 𝑷𝟎 = 𝑷𝟏 𝑷𝟎 𝑷𝟐 1 1 | 2 2 | Initial Code Before Shuffle After 1st Shuffle Connected PE
+079: 2 SIMD: array processor | Example: 8 PEs | Shuffle function: 𝒔𝒉𝒖𝒇𝒇𝒍𝒆 𝑷𝟐 𝑷𝟏 𝑷𝟎 = 𝑷𝟏 𝑷𝟎 𝑷𝟐 | Initial Code Before Shuffle After 1st Shuffle Connected PE After 2nd Shuffle Connected PE | 0 000 000 0 000 0
+080: 2 SIMD: array processor | Example: 8 PEs | Shuffle function: 𝒔𝒉𝒖𝒇𝒇𝒍𝒆 𝑷𝟐 𝑷𝟏 𝑷𝟎 = 𝑷𝟏 𝑷𝟎 𝑷𝟐 | Initial Code Before Shuffle After 2nd Shuffle Connected PE After 3rd Shuffle Connected PE | 0 000 000 0 000 0
+081: 2 SIMD: array processor | Shuffle exchange network | An important feature of the Shuffle function: | • After N times of shuffling, all N PEs are restored to the initial arrangement order. | 𝒔𝒉𝒖𝒇𝒇𝒍𝒆 𝑷𝟐 𝑷𝟏 𝑷𝟎 = 𝑷𝟏 𝑷𝟎 𝑷𝟐
+082: 2 SIMD: array processor | Shuffle exchange network | The maximum distance of shuffle exchange network | • From the nodes numbered all “0” to all “1”, the data transmission needs to go | through at most:
+083: 2 SIMD: array processor | Features of single-stage interconnection | networks | • Simple structure and low cost | • Flexible connection to meet the needs of algorithms and applications
+084: 2 SIMD: array processor | Single-stage interconnection network
+085: 2 SIMD: array processor | Linear array | • For a linear array of N nodes, there are N-1 links, the diameter is N-1 (the | maximum distance between any two points), the degree is 2, asymmetry, and the | equal division width is 1.
+086: 2 SIMD: array processor | Circular array | • For a ring of N nodes, consider the data | transfer direction of adjacent nodes: | • Two-way ring: The number of links is N, the
+087: 2 SIMD: array processor | Loop with chord array | • For the two-way loop with chord with 12 | nodes in the figure | • Node degree is 3: The number of links is 18,
+088: 2 SIMD: array processor | Tree array | • A K-level complete binary tree should have N | = 2K-1 nodes, the maximum node degree is 3, | and the diameter is 2(K-1) (that is, any leaf
+089: 2 SIMD: array processor | Extensions of tree array | Tree with loop Binary fat tree
+090: 2 SIMD: array processor | Star array | • The star array is actually a two-level tree (as | shown on the right). | • A star network with N nodes has N-1 links, a
+091: 2 SIMD: array processor | Grid | • An r*r network with N nodes has 2N-2r links, | a diameter of 2(r-1), a node degree of 4, | asymmetrical, and an equal division width of
+092: 2 SIMD: array processor | 2D torus | • An r*r network with N nodes has 2N links, a | diameter of 𝟐 𝒓/𝟐 , a node degree of 4, | asymmetrical.
+093: 2 SIMD: array processor | Hypercube | • An n-cube consists of N = 2n nodes, which are distributed in n dimensions, with two | nodes in each dimension. The diameter is n, the degree is n, symmetrical. | 3-cube 4-cube
+094: 2 SIMD: array processor | Cube with loop | • An n-cube with loop is composed of N = 2n | node rings, each node ring is a ring with n | nodes, so the total number of nodes is n2n, the
+095: 2 SIMD: array processor | Summary | Scale Degree Diameter Width Symmetry Link | Linear N 2 N-1 1 No N-1 | Circular N 2 𝑁/2 1 Yes N
+096: 2 SIMD: array processor | Network characteristics | • The connection in the dynamic network is not fixed and can be changed as | needed during the execution of the program. | • The switching elements of the network are active, and the link can be
+097: 2 SIMD: array processor | • Bus | • The bus is actually a set of wires and sockets that connect peripheral devices such as | processors, memories, and I/O. | • It can only be used to transfer data between a pair of source and destination at a certain time.
+098: 2 SIMD: array processor | A multiprocessor system connected by bus
+099: 2 SIMD: array processor | Crosspoint switches
+100: 2 SIMD: array processor | Multi-stage interconnection network | • Switch unit: a switch unit with m | inputs and m outputs is recorded as | a switch unit of mm, m = 2k.
+101: 2 SIMD: array processor | Multi-stage interconnection network
+102: 2 SIMD: array processor | Multi-stage interconnection network | In order to realize the connection between any PEs, you can use: | • Circular interconnection network: | • A single-stage network can be used to cycle through multiple times
+103: 2 SIMD: array processor | Multi-stage interconnection network | The differences between different multi-level networks are: | • Switch function | • Switch control method
+104: 2 SIMD: array processor | Switching unit | • A switching unit with two inputs and two outputs is the basic | component of various multi-level interconnection networks. | • Regardless of input and output, the one located above are represented
+105: 2 SIMD: array processor | Multi-stage interconnection network | • Two-function switching unit | • Straight and exchange unit only | • Four-function switching unit
+106: 2 SIMD: array processor | Multi-stage interconnection network | • Multi-end switching unit | • Add broadcast and multicast module | Broadcast Multicast
+107: 2 SIMD: array processor | Multi-stage interconnection network | • Topology: The mode in which the input/output ends of the switches at | all levels are connected to each other. | • Multi-stage cube
+108: 2 SIMD: array processor | Characteristics of multi-stage cube | interconnection network | • Switch unit: two-function switch unit | • Control mode: stage, part stage and unit control
+109: 2 SIMD: array processor | Multi-stage cube interconnection network | • N-unit multi-stage cube network topology diagram | • From n = log2N, find the number n of the multi-stage cube network | • The stage number is set from input to output as 0, 1, ..., n-1
+110: 2 SIMD: array processor | Three-stage cube interconnection network | 0 0 0 0 0 0 | 0 0 | 1 A 1 2 E 2 4 I 4 1
+111: 2 SIMD: array processor | Multi-stage cube interconnection network | The multi-level cube network can be divided into: | • Switched network | STARAN Network
+112: 2 SIMD: array processor | Multi-stage cube interconnection network | Flip Network | • The multi-stage cube network that adopts the stage control mode is | called the switching network, which can only realize the function of the
+113: Stage control signal (K2K1K0)，Ki: ith stage (0=connect, 1=exchange) | N=8 | 000 001 010 011 100 101 110 111 | 0 0 1 2 3 4 5 6 7 | 1 1 0 3 2 5 4 7 6
+114: 2 SIMD: array processor | Multi-stage cube interconnection network | Flip Network | • The multi-stage cube network that adopts the stage control mode is | called the switching network, which can only realize the function of the
+115: 2 SIMD: array processor | Multi-stage cube interconnection network | The parallel processor has 16 processors. To achieve the function | equivalent of 4 groups of 4-element exchanges, 2 groups of 8-element | exchanges, and a set of 16-element exchanges, the requirements are:
+116: 2 SIMD: array processor | Multi-stage cube interconnection network | • Input number sequence: | 0123 4567 89AB CDEF | Exchange 4 group * 4 elements
+117: 2 SIMD: array processor | Multi-stage cube interconnection network | • Interconnection function: | (0 B) (1 A) (2 9) (3 8) | (4 F) (5 E) (6 D) (7 C)
+118: 2 SIMD: array processor | 𝑓 𝑃3 𝑃2 𝑃1 𝑃0 = 𝑃3 𝑃2 𝑃1 𝑃0 | 0 0 0 0 0 0 | 1 1 2 4 8 1 | 1 1 1
+119: 2 SIMD: array processor | Multi-stage shuffle exchange network | • Multi-level shuffle exchange network is also called Omega network. | Features: | • The switch function has four functions
+120: 2 SIMD: array processor | N = 8 Omega Network | 0 0 0 | 0 0 | A E I
+121: 2 SIMD: array processor | Multi-stage shuffle exchange network | 1. Number of stages n = log2N | 2. The stage number from input to output is n-1,..., 1, 0 | 3. Number of units N/2
+122: 2 SIMD: array processor | If the switching unit of the Omega network is restricted to only use the | "direct connect" and ”exchange" functions, it becomes the inverse | network of the n-cube network.
+123: 2 SIMD: array processor | Example of multi-stage full array network | (Benes network) | Compress to 1 stage | 0 0
+124: 2 SIMD: array processor | Omega network and n-cube network | The difference between Omega network and n-cube network: | • 1. The level of Omega network data flow: n-1, n-2,..., 1, 0. | The level of n-cube network data flow: 0, 1,..., n-1.
+125: 2 SIMD: array processor | Omega network | 0 0 0 0 | 4 A 2 E 1 I 1 | 2 1 4 2
+126: 2 SIMD: array processor | n-cube network | Cube0 Cube1 Cube2 | 0 0 0 0 0 0 | 0 0
+127: 2 SIMD: array processor | Omega network and n-cube network | 0 0 0 0 | A E 0 | 1 4 2 1 I 1
+128: 2 SIMD: array processor | Comparison of dynamic interconnection | networks | Bus System Multi-stage Network Crosspoint Switches | Bandwidth O(w/n) to O(w) O(w) to O(nw) O(w) to O(nw)
+129: Summary | Advantages of SIMD | • SIMD architectures can exploit significant data-level parallelism for: | • Matrix-oriented scientific computing | • Media-oriented image and sound processors
+130: §Supplement 1: DLP in GPU | Graphical Processing Units | • Basic idea: | • Heterogeneous execution model | • CPU is the host, GPU is the device
+131: §Supplement 1: DLP in GPU | Graphical Processing Units | CPU GPU | • Many but small cores | • Suitable for parallelism
+132: §Supplement 1: DLP in GPU | Programming the GPU: CUDA | • CUDA: Compute Unified Device Architecture | • NVIDIA decided that the unifying theme of all these forms of | parallelism is the CUDA Thread. We call the hardware that executes a
+133: §Supplement 1: DLP in GPU | Example: DAXPY | • C code: | • CUDA code: | CPU (Host)
+134: §Supplement 1: DLP in GPU | Grid, Thread Blocks and Threads | • A thread is associated with each data | element | • Threads are organized into blocks
+135: §Supplement 1: DLP in GPU | GPU memory structures | • GPU memory is shared by all Grids | (vectorized loops). | • Local memory is shared by all threads of
+136: §Supplement 1: DLP in GPU | GPU memory structures
+137: §Supplement 1: DLP in GPU | GPU memory structures
+138: §Supplement 1: DLP in GPU | GPU memory structures
+139: §Supplement 1: DLP in GPU | GPU memory structures
+140: §Supplement 1: DLP in GPU | Memory Hierarchy in GPU | • Add a cache between GPU and DRAM | • Spatial Locality & Temporal Locality
+141: §Supplement 1: DLP in GPU | Memory Hierarchy in GPU | Two-Level Cache: | • Utilize the spatial locality in SM | • Fit Core - SM - GPU architecture
+142: §Supplement 1: DLP in GPU | Memory Hierarchy in GPU
+143: §Supplement 1: DLP in GPU | GPU Organization and an example (NVIDIA Tesla) | • Core | • SM(Streaming | Multiprocessor)
+144: §Supplement 1: DLP in GPU | GPU Organization and an example (Fermi) | • Integrated L1 and Shared Memory | • More cores in SM
+145: §Supplement 1: DLP in GPU | GPU Organization and an example (Kepler) | • Giant SM: with 192 cores | • But larger SM means better?
+146: §Supplement 1: DLP in GPU | GPU Organization and an example (Maxwell) | • Split SM into 4 blocks | • Flexible scheduling and power | control
+147: §Supplement 1: DLP in GPU | GPU Organization and an example (Pascal GPU) | Larger L2 (4MB), 7x larger than previous one
+148: §Supplement 1: DLP in GPU | GPU Organization and an example (Volt) | • Integrate L1 and Shared Memory again | • Instruction buffer -> L0 Instruction Cache
+149: §Supplement 1: DLP in GPU | GPU Organization and an example (Ampere) | • Larger L2 again: 40MB | • Additional data path between global and shared memory
+150: §Supplement 1: DLP in GPU | GPU Organization and an example (Hopper)
+151: §Supplement 1: DLP in GPU | GPU Organization and summary
+152: §Supplement 1: DLP in GPU | GPU Organization and an example (Pascal GPU)
+153: §Supplement 1: DLP in GPU | NVIDIA GPU (right) and vector machine (left)
+154: §Supplement 1: DLP in GPU | NVIDIA GPU and vector machines | • Similarities to vector machines: | • Works well with data-level parallel problems | • Scatter-gather transfers
+155: §Supplement 2: LLP | Loop-Level Parallelism | • Loops in programs are the fountainhead of many of the types of | parallelism | • Finding and manipulating loop-level parallelism is critical to exploiting
+156: §Supplement 2: LLP | Loop-Level Parallelism | • Focuses on determining whether data accesses in later iterations are | dependent on data values produced in earlier iterations | • Loop-carried dependence
+157: §Supplement 2: LLP | Loop-Level Parallelism | • Example 2: | for (i=0; i<100; i=i+1) { | A[i+1] = A[i] + C[i]; /* S1 */
+158: §Supplement 2: LLP | Loop-Level Parallelism | • Example 3: | • S1 uses value computed by S2 in previous iteration but dependence is not | circular so loop is parallel.
+159: §Supplement 2: LLP | Loop-Level Parallelism | • Practice: | for (i=0; i<100; i=i+1) { for (i=0; i<100; i=i+1) { | Y[i] = X[i]/c; /* S1 */ T[i] = X[i]/c; /* S1 */
+160: §Supplement 2: LLP | Vector Chaining Technology | • Practice: | Assuming there is a Vector machine, having 2 load/store units with 10 clock cycles function unit time, 1 | multiplier with 7 clock cycles function unit time, and 1 adder with 4 clock cycles function unit time. All the

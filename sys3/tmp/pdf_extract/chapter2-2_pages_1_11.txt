@@ -1,0 +1,221 @@
+
+===== PAGE 1 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+                                                           From instruction unit
+
+
+                                                    Instruction                       FP registers
+                                                      queue
+
+                                            load/store
+                                            operations
+                                                                         FP operations
+                                                                                                      Operand buses
+                           Store buffers   Address unit
+                                                  Load buffers
+                                                     6
+                                                     5                             Operation bus
+                                                     4
+                                                     3                                Reservation
+                                                           3                           stations
+                                                     2                                                                2
+                                                           2
+                                                     1     1                                                          1
+
+                           Data                  Address
+
+                                  Memory unit                       FP adder                         FP multiplier
+
+                                                                                   Common data bus（CDB）
+
+
+                          The basic structure of a floating-point unit using Tomasulo’s algorithm
+
+===== PAGE 2 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+        Cache for uncommitted instruction results:
+        3 fields: instruction type, destination address, value
+        1. When the program execution phase is completed,
+        replace the value in RS with the number of ROB                           Reorder
+                                                                     FP           Buffer
+        2. Increase instruction submission stage                     Op
+        3. ROB provides the number of operations in the             Queue        FP Regs
+        completion phase and the commit phase
+        4. Once the operand is submitted, the result is written
+        to the register                                         Res Stations   Res Stations
+                                                                   FP Adder     FP Adder
+        5. In this way, when the prediction fails, it is easy to
+        restore the inferred execution instruction, or when an
+        exception occurs, it is easy to restore the state
+
+===== PAGE 3 =====
+§2.2 Hardware-Based Speculation
+
+                                                                                                    ROB
+                                                                        From instruction unit
+
+
+
+
+                                                                                                        Reg #   Data
+                                                                Instruction
+     The basic structure of a                       load/store
+                                                                  queue
+                                                                                                                    FP registers
+     FP unit using Tomasulo’s                       operations
+                                                                                       FP
+                                                                                    operations
+     algorithm and extended                         Address unit                                                Operand buses
+
+     to handle speculation.                                  Load buffers
+                                                                6
+                                                                5                               Operation bus
+                                                                4
+                                                                3     3
+                                                                2     2                                                            2
+                                                Store           1     1                                                            1
+                                  Store data    address
+                                                              Address
+                                               Memory unit                      FP adder                         FP multiplier
+
+                                                    Load data                               Common data bus（CDB）
+
+===== PAGE 4 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+
+        1. Issue—get instruction from FP Op Queue
+
+        2. Execution—operate on operands (EX)
+
+        3. Write result—finish execution (WB)
+
+        4. Commit—update register with reorder result
+
+===== PAGE 5 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+        • Hardware-based speculation combines three key ideas
+
+            • dynamic branch prediction to choose which instructions to execute
+
+            • speculation to allow the execution of instructions before the control
+              dependences are resolved (with the ability to undo the effects of an
+              incorrectly speculated sequence)
+
+            • dynamic scheduling to deal with the scheduling of different combinations
+              of basic blocks
+
+===== PAGE 6 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+        • WB
+            • The ROB holds the result of an instruction between the time the operation
+              associated with the instruction completes and the time the instruction
+              commits
+            • The ROB is a source of operands for instructions, just as the reservation
+              stations provide operands in Tomasulo’s algorithm.
+        • instruction commit
+            • The key idea behind implementing speculation is to allow instructions to
+              execute out of order but to force them to commit in order and to prevent
+              any irrevocable action (such as updating state or taking an exception) until
+              an instruction commits.
+            • The reorder buffer (ROB) provides additional registers in the same way as
+              the reservation stations in Tomasulo’s algorithm extend the register set.
+
+===== PAGE 7 =====
+§2.2 Hardware-Based Speculation
+
+
+        Show what the status tables look like when
+        the FMUL.D is ready to commit
+                                  FLD      F6,34(R2)
+                                  FLD      F2,45(R3)
+                                  FMUL.D   F0,F2,F4
+                                  FSUB.D   F8,F6,F2
+                                  FDIV.D   F10,F0,F6
+                                  FADD.D   F6,F8,F2
+
+===== PAGE 8 =====
+§2.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+
+                                          Reservation Station
+      Name       Busy      Op        Vj               Vk          Qj   Qk   Dest   A
+       Add1        no
+       Add2        no
+       Add3        no
+      Mult1        no     MUL Mem[45+Reg[R2]]       Regs[F4]                #3
+      Mult2       yes      DIV                  Mem[34+Reg[R2]]   #3        #5
+
+===== PAGE 9 =====
+§2.2 Hardware-Based Speculation
+
+
+                                                              ROB
+          NO.       Busy             Instruction             Status       Object        Value
+            1         no           FLD F6, 34(R2)         Commit           F6      Mem[34+Regs[R2]]
+            2         no           FLD F2, 45(R3)         Commit           F2      Mem[45+Regs[R3]]
+            3        yes          FMUL.D F0, F2, F4           WB           F0        #2 × Regs[F4]
+            4        yes          FSUB.D F8, F6, F2           WB           F8           #1 - #2
+            5        yes          FDIV.D F10, F0, F6          EX           F10
+            6        yes          FADD.D F6, F8, F2           WB           F6           #4 + #2
+
+                Name                                   Register Status
+                            F0         F2      F4        F6         F8      F10     …     F30
+                 ROB        3                            6            4      5
+                Busy       yes         no      no       yes        yes      yes     …      no
+
+===== PAGE 10 =====
+Practice in Class
+
+Suppose：
+Add instruction needs 2 clock cycles. Multiply instruction needs 10 clock cycles.
+Division instruction needs 40 clock cycles. LD instruction need 1 clock cycles.
+            FLD           F6, 34（R2）
+            FLD           F2, 45（R3）
+           FMUL.D         F0, F2, F4
+           FSUB.D         F8, F2, F6
+           FDIV.D         F10, F0, F6
+           FADD.D         F6, F8, F2
+How many cycles does it take to finish each instruction by hardware-based
+speculation?
+
+===== PAGE 11 =====
+§4.2 Hardware-Based Speculation
+
+
+
+        Hardware-Based Speculation
+        Suppose：
+        • Add instruction needs 2 clock cycles. Multiply instruction needs 10 clock
+          cycles. Division instruction needs 40 clock cycles. LD instruction need 1 clock
+          cycles.
+                 FLD              F6, 34(R2)
+                 FLD              F2, 45(R3)
+                 FMUL.D           F0, F2, F4
+                 FSUB.D           F8, F2, F8
+                 FDIV.D           F10, F0, F6
+                 FADD.D           F6, F8, F2
+        • How many cycles does it take to finish each instruction using Hardware-Based
+          Speculation?

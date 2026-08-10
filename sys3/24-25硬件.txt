@@ -1,0 +1,71 @@
+选择题
+
+下面哪个会产生 consistent result, no matter which machine is the reference
+arithmetic mean
+weighted arithmetic mean
+normalized geometric mean
+harmonic mean
+
+带投机的Tomasulo，在____（保留站中有空余/ROB中有空余/ROB与保留站中有空余/ROB或保留站中有空余）情况下可以Issue，Issue后，可以从____（ROB/寄存器/ROB和寄存器/ROB或寄存器）读取operand值到_____（保留站/FU）。
+
+考虑一个Correlating Branches Prediction Buffer。假如说它使用 (2,2) predictor 且有 4K 条指令，问这个硬件会占用多少bits。
+
+一个2-bit predictor预测一个loop，其中第3n+1和3n+2次会跳转，第3n次则不会。（n为整数。）问miss rate是多少。
+
+一个processor的时钟频率从1.8GHz变为2.2GHz，CPI从1.2变为1.5，问性能提升了百分之多少。
+
+选择题 vector 三连（与cr ppt的例题差别不大）
+vector长度为64，fetch（还是什么，忘了）时间为1，充分流水线化的FU中，add运算时间为7，load & store运算时间为4，mul运算时间为10
+给一段程序
+vld v1, x1
+vadd v3, v1, v2
+vld v4, x2
+vmul v5, v4, v3
+vsd v5, x3
+（1）没有vector link的情况下计算总共运行时间
+（2）有vector link下进行了几次convey
+（3）有vector link下计算总共运行时间（假设link时间为1）
+
+其他选择题记不起来了，请参考11L
+
+大题第一道
+（1）word为4byte，cache大小为8KB，1024set，4-way set-associative，问cache line大小，以及是否满足temperal & spatial locality
+（2）那个已经见过无数次的5.4和6.6【一个学期以后我已经不记得这个是啥了，求补充】
+
+大题第二道（基本是cr & cwz PPT原题）
+（1）判断这段程序中是否存在loop-carried dependence
+for (i=0; i<100; i=i+1) {
+    A[i+1] = A[i] + C[i]; /* S1 */
+    B[i+1] = B[i] + A[i+1]; /* S2 */
+}
+（2）给定一段程序，找出其中的三种data依赖，并使用寄存器重命名重写程序，以消除output dependence和anti-dependence
+for (i=0; i<99; i=i+1) {
+    A[i] = A[i] * B[i]; /* S1 */
+    B[i] = A[i] + c; /* S2 */
+    A[i] = C[i] * c; /* S3 */
+    C[i] = D[i] + A[i]; /* S4 */
+}
+（3）重写程序，使得它可以向量化并行执行
+for (i=0; i<99; i=i+1) {
+    A[i] = A[i] + B[i]; /* S1 */
+    B[i+1] = C[i] + D[i]; /* S2 */
+}
+
+大题第三道
+（1）MESI的四个状态的全名分别是什么
+（2）给定MESI的四个状态的转移图。四个processor初始情况下均为I状态，求以下五步的每一步四个processor的对应状态
+P0 read a
+P1 read a
+P2 read a
+P3 write a
+P0 read a
+
+大题第四道
+LD F2, 0(R0)
+LD F4, 0(R1)
+MULTD F6, F2, F4 
+ADDD F8, F0, F2
+SD F2, 0(R0)
+SD F4, 0(R1)
+（1）当程序执行到第一个load指令位于WR阶段时，Scoreboard的Instruction Status、Functional Unit Status和Register Result Status的状态
+（2）当程序执行到第一个load指令位于WR阶段的下一周期时，Scoreboard的Instruction Status的状态

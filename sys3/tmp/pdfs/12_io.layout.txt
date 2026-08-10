@@ -1,0 +1,549 @@
+ I/O Systems
+
+Computer System III
+   Wenbo Shen
+
+
+
+
+                  Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU.
+Review
+• Disk: platter, cylinder, sector, track
+
+• Time: positioning time = seek time + rotational latency
+
+• Disk structure, Disk attachment: host- ,network-, storage area network
+
+• Disk scheduling: FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK
+
+• Disk management: physical formatting, partition disk, logical formatting
+
+• RAID: redundant array of inexpensive disk
+
+  • RAID 0: split, RAID 1: mirror, RAID4/RAID 5/RAID 6: block with parity
+
+
+
+
+                                           2
+    Overview
+
+
+
+
+CPU            Memory
+
+
+
+
+    I/O
+  System
+
+
+
+           3
+Outline
+•   Overview
+•   I/O Hardware
+•   Application I/O Interface
+•   Kernel I/O Subsystem
+•   Transforming I/O Requests to Hardware Operations
+•   Performance
+•   Example: Linux tty device
+
+
+
+
+                                     4
+Overview
+• I/O management is a major component of OS design and operation
+  • Important aspect of computer operation
+     • I/O device is the way computer to interact with user and other systems
+  • I/O devices vary greatly
+     • Various methods to control them
+     • Performance varies
+     • Device drivers encapsulate device details; present an uniform interface
+  • New types of devices frequently emerge
+
+
+
+
+                                       5
+I/O Hardware
+• Incredible variety of I/O devices
+  • Storage, communication, human-interface
+• Common concepts: signals from I/O devices interface with computer
+  • Bus: an interconnection between components (including CPU)
+  • Port: connection point for device
+  • Controller: component that control the device
+     • Can be integrated to device or separate circuit board
+     • Usually contains processor, microcode, private memory, bus controller,
+       etc
+• I/O access can use polling or interrupt
+
+
+
+
+                                      6
+A Typical PC Bus Structure
+
+
+
+
+                        7
+I/O Hardware
+• Some CPU architecture has dedicated I/O instructions
+  • x86: in, out, ins, outs
+• Devices usually provide registers for data and control I/O of device
+  • Device driver places (pointers to) commands and data to register
+  • Registers include data-in/data-out, status, control ( or command) register
+  • Typically 1-4 bytes, or FIFO buffer
+• Devices are assigned addresses for registers or on-device memory
+  • Direct I/O instructions
+    • To access (mostly) registers
+  • Memory-mapped I/O
+    • Data and command registers mapped to memory address space
+    • To access (large) on-device memory (graphics)
+
+
+
+
+                                       8
+I/O Ports on PCs (Partial)
+
+
+
+
+                         9
+Polling
+• For each I/O operation:
+  • Busy-wait if device is busy (status register)
+     • Cannot accept any command if busy
+  • Send the command to the device controller (command register)
+  • Read status register until it indicates command has been executed
+  • Read execution status, and possibly reset device status
+• Polling requires busy wait
+  • Reasonable if device is fast; inefficient if device slow
+
+
+
+
+                                     10
+Interrupts
+• Polling requires busy-wait, inefficient use of CPU resource
+• Interrupts can avoid busy-wait
+  • device driver (part of OS) send a command to the controller (on device),
+     and return
+  • OS can schedule other activities
+  • device will interrupt the processor when command has been executed
+  • OS retrieves the result by handling the interrupt
+• Interrupt-based I/O requires context switch at start and end
+  • if interrupt frequency is extremely high, context switch wastes CPU time
+  • solution: use polling instead
+     • example: NAPI in Linux enables polling under very high network load
+
+
+
+
+                                      11
+Interrupt-Driven I/O Cycle
+
+
+
+
+                        12
+Intel Pentium Interrupt Vector Table
+
+
+
+
+                       13
+Linux vector table on ARM64
+•   Define vector table
+•   Set the value to VBAR
+     •   Vector Base Address
+         Register
+
+
+
+
+                                    https://elixir.bootlin.com/linux/v4.4/source/arch/arm64/kernel/entry.S
+                               14   https://elixir.bootlin.com/linux/v4.4/source/arch/arm64/kernel/head.S#L630
+Linux vector table on RISC-V64
+•   Define vector table
+•   Set the value of
+    handle_exception to stvec
+     •   Supervisor Trap Vector
+         Base Address Register
+•   Handle_exception jumps to
+    entries of exception table
+
+
+
+
+                                       https://elixir.bootlin.com/linux/v6.6.6/source/arch/riscv/kernel/entry.S
+                                  15   https://elixir.bootlin.com/linux/v6.6.6/source/arch/riscv/kernel/entry.S#L21
+Interrupts
+• Interrupt is also used for exceptions
+   • protection error for access violation
+   • page fault for memory access error
+   • software interrupt for system calls
+• Multi-CPU systems can process interrupts concurrently
+   • sometimes a CPU may be dedicated to handle interrupts
+   • interrupts can also have CPU affinity
+
+
+
+
+                                  16
+SMP IRQ Affinity
+• Starting with the 2.4 kernel, Linux has gained the ability to assign certain
+  IRQs to specific processors (or groups of processors).
+• This is known as SMP IRQ affinity, and it allows you control how your
+  system will respond to various hardware events.
+• It allows you to restrict or repartition the work load that you server must
+  do so that it can more efficiently do it's job.
+  • "balance" out multiple NICs in a multi-processor machine. By tying a
+      single NIC to a single CPU, you should be able to scale the amount of
+      traffic your server can handle nicely.
+  • database servers (or servers with lots of disk storage) that also have
+      heavy network loads can dedicate a CPU to their disk controller and
+      assign another to deal with the NIC to help improve response times.
+
+
+
+
+                                      17
+Direct Memory Access
+• DMA transfer data directly between I/O device and memory
+  • OS only needs to issue commands, data transfers bypass the CPU
+  • No programmed I/O (one byte at a time), data transferred in large blocks
+  • It requires DMA controller in the device or system
+• OS issues commands to the DMA controller
+  • A command includes: operation, memory address for data, count of
+    bytes…
+  • Usually it is the pointer of the command written into the command
+    register
+  • When done, device interrupts CPU to signal completion
+
+
+
+
+                                     18
+Steps of a DMA Transfer
+
+
+
+
+                      19
+Application I/O Interface
+• I/O system calls encapsulate device behaviors in generic classes
+  • in Linux, devices can be accessed as files; low-level access
+    with ioctl
+• Device-driver layer hides differences among I/O controllers from
+  kernel
+  • each OS has its own I/O subsystem and device driver
+    frameworks
+  • new devices talking already-implemented protocols need no
+    extra work
+
+
+
+
+                                  20
+Application I/O Interface
+
+
+
+
+                        21
+I/O Structure
+
+
+
+
+                22
+Characteristics of I/O Devices
+
+• Devices vary in many dimensions
+   • character-stream or block
+   • sequential or random-access
+   • synchronous or asynchronous (or both)
+   • sharable or dedicated
+   • speed of operation
+   • read-write, read only, or write only
+
+
+
+
+                            23
+Characteristics of I/O Devices
+
+
+
+
+                        24
+Characteristics of I/O Devices
+• Broadly, I/O devices can be grouped by the OS into
+   • block I/O: read, write, seek
+   • character I/O (Stream)
+   • memory-mapped file access
+   • network sockets
+• OSs have usually an escape/back door that passes any IO
+  commands from app to device
+   • Linux’s ioctl call to send commands to a device driver
+
+
+
+
+                                 25
+Block and Character Devices
+• Block devices access data in blocks, such as disk drives…
+  • commands include read, write, seek
+  • raw I/O, direct I/O, or file-system access
+  • memory-mapped file access possible (e.g., memory-mapped
+     files)
+  • DMA
+• Character devices include keyboards, mice, serial ports…
+  • very diverse types of devices
+
+
+
+
+                                 26
+Network Devices
+
+• Varying enough from block and character to have own
+  interface
+  • very different from pipe, mailbox…
+• Popular interface for network access is the socket interface
+  • it separates network protocol from detailed network
+    operation
+  • some non-network operations are implemented as sockets
+    • e.g., Unix socket
+
+
+
+
+                               27
+Clocks and Timers
+
+• Clocks and timers can be considered as character devices
+   • very important devices as they provide current time,
+     elapsed time, timer
+• Normal resolution about 1/60 second, some OS provides
+  higher-resolution ones
+
+
+
+
+                             28
+Synchronous/Asynchronous I/O
+• Synchronous I/O includes blocking and non-blocking I/O
+  • blocking I/O: process suspended until I/O completed
+    • easy to use and understand, but may be less efficient
+    • insufficient for some needs
+  • non-blocking I/O: I/O calls return as much data as available
+    • process does not block, returns whatever existing data (read or write)
+    • use select to find if data is ready, then use read or write to transfer data
+• Asynchronous I/O: process runs while I/O executes,
+  • I/O subsystem signals process when I/O completed via signal or callback
+  • difficult to use but very efficient
+
+
+
+
+                                          29
+Two I/O Methods
+
+
+
+
+                  30
+Kernel I/O Subsystem
+• I/O scheduling
+  • to queue I/O requests via per-device queue
+  • to schedule I/O for fairness and quality of service
+• Buffering - store data in memory while transferring between
+  devices
+  • to cope with device speed mismatch: receive from network and
+    write to ssd, double buffering
+  • to cope with device transfer size mismatch: network buffer
+    reassembly of message
+  • to maintain “copy semantics”: write()
+
+
+                                   31
+Kernel I/O Subsystem
+• Caching: hold a copy of data for fast access
+  • key to performance
+  • sometimes combined with buffering
+     • Buffer in memory is also used as caching for file operations
+• Spooling: A spool is a buffer that holds the output (device’s input) if
+  device can serve only one request at a time
+  • i.e., printing
+• Device reservation: provides exclusive access to a device
+  • system calls for allocation and de-allocation
+  • watch out for deadlock
+
+
+                                    32
+Error Handling
+• Some OSes try to recover from errors
+  • e.g., device unavailable, transient write failures
+  • sometimes via retrying the read or write
+  • some systems have more advanced error handling
+    • track error frequencies, stop using device with high error frequency
+
+• Some OSes just return an error number or code when I/O request fails
+  • system error logs hold problem reports
+
+
+
+
+                                     34
+I/O Protection
+
+• OS needs to protect I/O devices
+  • e.g., keystrokes can be stolen by a keylogger if keyboard is
+    not protected
+  • always assume user may attempt to obtain illegal I/O access
+• To protect I/O devices:
+  • define all I/O instructions to be privileged
+    • I/O must be performed via system calls
+  • memory-mapped I/O and I/O ports must be protected too
+
+
+
+                                35
+Use System Call to Perform I/O
+
+
+
+
+                       36
+Kernel Data Structures
+• Kernel keeps state info for I/O components
+  • e.g., open file tables, network connections, character device state
+  • many data structures to track buffers, memory allocation, “dirty”
+    blocks
+    • sometimes very complicated
+• Some OS uses message passing to implement I/O, e.g., Windows
+  • message with I/O information passed from user mode into kernel
+  • message modified as it flows through to device driver and back to
+    process
+
+
+
+
+                                   37
+UNIX I/O Kernel Structure
+
+
+
+
+                            https://elixir.bootlin.com/linux/v6.0/source/include/linux/sched.h#L1079
+                       38    https://elixir.bootlin.com/linux/v6.0/source/include/linux/fdtable.h#L49
+I/O Requests to Hardware
+
+• System resource access needs to be mapped to hardware
+• Consider reading a file from disk for a process:
+  • determine device holding file
+  • translate name to device representation
+    • FAT, UNIX: major/minor
+  • physically read data from disk into buffer
+  • make data available to requesting process
+  • return control to process
+
+
+
+
+                                39
+Life Cycle of An I/O Request
+
+
+
+
+                        40
+Performance
+
+• I/O is a major factor in system performance:
+   • CPU to execute device driver, kernel I/O code
+   • context switches due to interrupts
+   • data buffering and copying
+      • network traffic especially stressful
+
+
+
+
+                               41
+Network Communications: high context switch
+
+• A remote login from one machine to another
+   • Each character typed on the local machine must be transported to the remote
+     machine
+
+
+
+
+                                         42
+Improve Performance
+• Reduce number of context switches
+• Reduce data copying
+• Reduce interrupts by using large transfers, smart controllers, polling
+• Use DMA
+• Use smarter hardware devices
+• Balance CPU, memory, bus, and I/O performance for highest
+  throughput
+• Move user-mode processes / daemons to kernel threads
+
+
+
+
+                                     43
+Linux IO – Device initialization
+• /dev/tty
+   • tty_init https://elixir.bootlin.com/linux/v6.6.6/source/drivers/tty/tty_io.c#L3618
+
+   • Create /dev/tty file
+
+
+
+
+                                                 44
+Linux IO – Device write (write system call)
+• Write (echo) to the file reach vfs_write, which eventually calls tty_write
+
+
+
+
+                                       45
+Linux ioctl system call
+• ioctl system call
+
+
+
+
+                          46
+Linux ioctl system call
+• ioctl system call implementation
+    • ioctl syscall -> vfs_ioctl -> indirect call -> tty_ioctl
+    • Leads to many security problems
+
+
+
+
+                                        47
+Takeaway
+• IO hardware
+• IO access
+    • polling, interrupt
+• Device types
+• Application I/O Interface
+• Kernel IO subsystem
+
+
+
+
+                              48
+

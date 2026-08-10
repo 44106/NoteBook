@@ -1,0 +1,16 @@
+课件/** -text
+深度学习导论/** -text
+AI芯片/** -text
+sys3/** -text
+托福阅读/** -text
+数值代数/** -text
+
+深度学习导论/第十一章-大语言模型架构.pptx filter=lfs diff=lfs merge=lfs -text
+数值代数/第八讲[[:space:]]正交化方法.pdf filter=lfs diff=lfs merge=lfs -text
+深度学习导论/lab3/data/oxford-iiit-pet/images.tar.gz filter=lfs diff=lfs merge=lfs -text
+AI芯片/output/pdf/人工智能芯片与系统_全PPT截图附录_1708页.pdf filter=lfs diff=lfs merge=lfs -text
+AI芯片/output/pdf/人工智能芯片与系统_完整期末复习讲义_含关键图.pdf filter=lfs diff=lfs merge=lfs -text
+深度学习导论/第10章-语言模型.pptx filter=lfs diff=lfs merge=lfs -text
+深度学习导论/第七章-视觉模型2.pptx filter=lfs diff=lfs merge=lfs -text
+深度学习导论/lab3/data/cifar-10-python.tar.gz filter=lfs diff=lfs merge=lfs -text
+深度学习导论/第十二课[[:space:]]检索增强.pptx filter=lfs diff=lfs merge=lfs -text

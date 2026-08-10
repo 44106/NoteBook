@@ -1,0 +1,412 @@
+File and Directory in Practice
+
+        Computer System III
+           Wenbo Shen
+
+
+
+
+                          Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU.
+Two Key Abstractions
+• File
+  • A linear array of bytes, with each you can read/write
+  • Has a low-level name (user does not know) - inode number
+  • Usually OS does not know the exact type of the file
+• Directory
+  • Has a low-level name
+  • Its content is quite specific: contains a list of user-readable name to low-
+    level name. Like (“foo”, inode number 10)
+  • Each entry either points to file or other directory
+
+
+
+
+                                       2
+Two Key Abstractions
+• File
+  • External name (visible to user) must be symbolic
+     • In hierarchical file system, unique external names are given as
+       pathnames (path from root to the file)
+  • Internal names (low-level names): i-node in UNIX
+     • Stores information about file system object: file, directory, socket, …
+     • Index into array of file descriptors/headers for a volume
+• Directory: translation from external to internal name
+
+
+
+
+                                      3
+File System Interface
+• Create file
+
+
+
+    • O_CREAT: create the file if not exists (not O_CREATE)
+    • O_WRONLY: can only write to the file
+    • O_TRUNC: if the file exists, truncate it to zero bytes
+
+
+
+
+                                             4
+File Descriptor
+
+
+
+
+                  5
+One example
+• Stdin, stdout, stderr
+
+
+
+
+                          6
+The cat example
+• strace cat main.c
+• What is the file descriptor of main.c?
+
+
+
+
+                                     7
+write and fsync
+• write():
+    • Write this data to persistent storage, at some point in the future
+    • The ﬁle system, for performance reasons, will buffer such writes in
+      memory for some time (say 5 seconds, or 30); at that later point in
+      time, the write(s) will actually be issued to the storage device
+• fsync(): forces all dirty (not yet written) data to disk
+
+       int fd = open ("foo", _CREAT | O_WRONLY | O_TRUNC);
+       assert (fd > -1);
+
+       int rc = write (fd, buffer, size);
+       assert (rc == size) ;
+
+       rc = fsync (fd) ;
+       assert (rc == 0) ;
+
+
+
+
+                                       8
+Getting Information about Files
+• Information is kept in struct stat
+
+
+
+
+                                   9
+Removing Files
+• Why we just “remove” or “delete” the file, but using “unlinkat”?
+
+
+
+
+                                    10
+Hard link vs soft link
+• Link
+   • A file may be known by more than one name in one or more
+      directories. Such multiple names are known as links.
+   • Two kinds of links are also known as hard links and soft links.
+• Hard link
+   • A hard link is a directory entry that associates with a file
+   • The file name “.” in a directory is a hard link to the directory itself
+   • The file name “..” is a hard link to the parent directory
+• Soft link (a.k.a., Symbolic link or symlink)
+   • A symbolic link is a file containing the path name of another file
+   • Soft links, unlike hard links, may point to directories and may cross
+      file-system boundaries
+
+
+
+
+                                     11
+Hard link
+• Directory is a file
+• A hard link is a directory entry
+             inode
+                                               Directory
+
+                               数据块
+
+
+
+
+  inode   目录项   文件名
+                         文件名
+                                     inode   目录项   文件名
+                                                           文件名   …
+    号     长度    长度                     号     长度    长度
+
+
+                目录项           Hard link
+
+
+
+                                      12
+Soft link
+• A soft link is a file containing the path name of another file
+
+
+                    inode
+
+
+                                                    数据块
+                                           ../xxx/path to target file
+
+
+
+
+                                      13
+Hard link
+• link() system call: system call takes two arguments, an old pathname
+  and a new one
+    • Another way to refer to the same ﬁle
+    • Same inode number
+
+
+
+
+                                   14
+Hard link
+• link() system call: system call takes two arguments, an old pathname
+  and a new one
+    • Even an empty directory has two entries
+        • Which two?
+
+
+
+
+                                   15
+Why removing a file calls unlink
+• Create a file
+    • making a structure (the inode) that will track virtually all relevant
+      information about the ﬁle
+    • linking a human-readable name to that ﬁle (or inode), and putting
+      that link into a directory
+• To remove a file, we unlink it
+
+
+
+
+                                      16
+Reference count
+•   rm: unlink the file, and check the reference count of the inode
+
+
+
+
+                                        17
+Soft links
+•   Hard link number does not increase
+•   Different inode
+•   rm the target file, the link will be invalided
+
+
+
+
+                                          18
+Two different aspects of FS
+• VFS data structure
+   • inode
+
+
+• In-memory data structure
+   • ext2_inode_info
+   • Contain both ext2_inode and
+     inode
+
+
+• On-disk data structure
+   • ext2_inode
+
+
+
+
+                                   19
+Two different aspects of FS
+• (on-disk) Structure about FS
+    • vs in-memory structure about FS
+• Access methods
+    • how does the FS maps the calls (open/read/write) onto its
+      structures
+       • inode->i_fops
+
+
+
+
+                                   20
+An Example of FS Organization
+• Suppose we have a serial of blocks
+    • Block size: 4KB
+    • 64 blocks
+
+
+
+
+                                   21
+Data Region
+• We reserve some blocks for data
+   • 56 of 64 blocks
+
+
+
+
+                                    22
+Inodes
+• inode table: contains inodes
+• 5 of 64 blocks are reserved for inodes
+    • Suppose inodes are 256 bytes, 4 KB block can hold 16 inodes, then
+      5 blocks -> 80 inodes -> 80 files (directories)
+
+
+
+
+                         D: data block
+                         I: inode table
+
+                                     23
+Bitmap
+• Suppose we use bitmap to manage the free space
+   • One bitmap for free inodes
+   • One bitmap for free data region
+
+
+
+
+                D: Data block
+                I: inode
+                i: inode bitmap
+                d: data region bitmap
+                                   24
+Superblock
+• Superblock
+   • Contains information about this file system: how many inodes/data
+     blocks, where the inode table begins, where the data region begins,
+     and a magic number
+
+
+
+
+                     D: Data block
+                     I: inode
+                     i: inode bitmap
+                     d: data region bitmap
+                     S: superblock
+                                    25
+inode address calculation
+• Suppose inodes are 256 bytes, 4 KB block can hold 16 inodes, then 5
+  blocks -> 80 inodes -> 80 files (directories)
+• Each inode is identified by a number(inumber)
+• To read inode number No. 32
+    • 32 * sizeof(inode) = 8KB
+    • Address: 4k(super block) + 8k(BITMAP) + 8k = 20KB
+
+
+
+
+                                   26
+Linux ext2_inode
+
+
+
+
+                   27
+Multi-Level index in inode
+• To support bigger file, we need multi-level index for the nodes
+
+
+
+
+                                    28
+Directory Implementation
+• Directory is a special file
+    • Store the mapping from file name to its inode
+             inode
+
+
+                                数据块
+
+
+
+
+  inode   目录项   文件名
+                          文件名
+                                  inode    目录项   文件名
+                                                       文件名   …
+    号     长度    长度                  号      长度    长度
+
+
+                目录项
+
+
+
+
+                                      29
+Read /foo/bar
+• Suppose foo is a directory, bar is a file in it
+• / + foo/ + bar
+
+
+
+
+                                                       Read dir entry of foo
+
+                                                              Read dir entry of bar
+
+
+
+
+                                                Update access time
+
+
+
+
+                                       30
+Write to Disk: /foo/bar
+
+
+
+                                                    Find bar not exist
+
+
+                                                   Write dir entry of bar to foo
+
+
+                               Update metadata, such as count, access time
+
+
+
+
+                          31
+Caching and Buffering
+• Without caching, each file open would require two reads for each level
+  of the directory
+    • One for the inode, and one for data
+• Early system allocate a fixed-size cache to hold popular blocks
+• Modern systems use a unified page cache for both virtual memory
+  pages and file system pages
+• Write buffering: does not write to disk immediately, instead sync to
+  disk for like 5 - 30 seconds
+• Database: direct IO with raw data
+
+
+
+
+                                      32
+Takeaway
+•   File interfaces
+     • External name
+     • Internal name (low-level name): inode
+•   Directory
+     • Translate from external name to internal name
+•   Hard link vs soft link
+•   On-disk layout of FS
+
+
+
+
+                                           33
+

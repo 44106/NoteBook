@@ -1,0 +1,360 @@
+
+===== PAGE 58 =====
+§2.2 Hardware-Based Speculation
+
+                                                                                                    ROB
+                                                                        From instruction unit
+
+
+
+
+                                                                                                        Reg #   Data
+                                                                Instruction
+     The basic structure of a                       load/store
+                                                                  queue
+                                                                                                                    FP registers
+     FP unit using Tomasulo’s                       operations
+                                                                                       FP
+                                                                                    operations
+     algorithm and extended                         Address unit                                                Operand buses
+
+     to handle speculation.                                  Load buffers
+                                                                6
+                                                                5                               Operation bus
+                                                                4
+                                                                3     3
+                                                                2     2                                                            2
+                                                Store           1     1                                                            1
+                                  Store data    address
+                                                              Address
+                                               Memory unit                      FP adder                         FP multiplier
+
+                                                    Load data                               Common data bus（CDB）
+
+===== PAGE 59 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         Superscalar & VLIM                                                                    Multi-issue technology
+                                                                                               based on static scheduling
+ Pipeline based on
+ static scheduling
+                                                                                                Multi-issue technology
+ Pipeline based on
+                                                                                                based on dynamic
+ dynamic scheduling
+                                                                                                scheduling
+                           0   1     2   3     4   5   6   7 T0   1   2   3   4   5    6   T
+                                   Normal Pipeline                    Superscalar
+
+
+                                                                                      3 Operations
+                                                                                                       static scheduling
+
+
+
+                           0   1     2   3     4   5   6   7T 0   1   2   3   4   5    6       T
+                                    Super pipeline                        VLIW
+
+===== PAGE 60 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+         Very long instruction word technology(VLIW)
+         • Assemble multiple instructions that can be executed in parallel into a very
+           long instruction (more than 100 bits to hundreds of bits).
+         • Set up multiple features.
+         • The instruction word is divided into several fields, and each field is called an
+           operation slot, which directly and independently controls a functional unit.
+         • In the VLIW processor, all processing and instruction arrangement are
+           completed by the compiler.
+         • At compile time, multiple unrelated or unrelated operations that can be
+           executed in parallel are combined to form a very long instruction word with
+           multiple operation segments.
+
+===== PAGE 61 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+                                                                   VLIW
+                                  Unit
+
+                                                                                   N=3
+
+                            WB                                         1       2       3       4
+                                       3                       1       2       3       4
+                            EX         2                       1       2       3       4
+                                       1                       1       2       3       4
+                            ID                         1       2       3       4
+                            IF                 1       2       3       4
+                                           0       1       2       3       4       5       6       7
+                                                                                                       ⊿t
+
+===== PAGE 62 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+         Very long instruction word technology(VLIW)
+           Show an unrolled version of the loop X[i] = x[i] + s.
+
+===== PAGE 63 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+         Very long instruction word technology(VLIW)
+         Some problems with VLIW
+         • Program code length increased
+              • A large number of loop unrolling to improve parallelism.
+              • The operation slot in the instruction word cannot always be filled.
+              • Solution: Use the method of command sharing the immediate digital field, or use the
+                method of command compression storage, transfer to Cache or expansion during
+                decoding.
+         • Lockstep mechanism
+              • When any operating part is paused, the entire processor must be paused.
+         • Machine code incompatibility
+
+===== PAGE 64 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+         Very long instruction word technology(VLIW)
+
+         What are the limitations of the instruction multi-flow processor?
+         • Mainly affected by the following three aspects:
+              • Instruction-level parallelism inherent in the program.
+              • Difficulties in hardware implementation.
+              • Technical limitations inherent in superscalar and super long instruction word processors.
+
+===== PAGE 65 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         Superscalar & VLIM                                                                    Multi-issue technology
+                                                                                               based on static scheduling
+ Pipeline based on
+ static scheduling
+                                                                                                Multi-issue technology
+ Pipeline based on
+                                                                                                based on dynamic
+ dynamic scheduling
+                                                                                                scheduling
+                           0   1     2   3     4   5   6   7 T0   1   2   3   4   5    6   T
+                                   Normal Pipeline                    Superscalar
+
+
+                                                                                      3 Operations
+                                                                                                       static scheduling
+
+
+
+                           0   1     2   3     4   5   6   7T 0   1   2   3   4   5    6       T
+                                    Super pipeline                        VLIW
+
+===== PAGE 66 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+         Super pipelined
+         • Each pipeline stage is further subdivided, so that multiple instructions can be
+           time-shared in one clock cycle. This kind of processor is called a super-
+           pipelined processor.
+         • For a super-pipelined computer that can flow out n instructions per clock
+           cycle, these n instructions are not flowed out at the same time, but one
+           instruction is flowed out every 1/n clock cycle.
+              • In fact, the pipeline cycle of the super-pipeline computer is 1/n clock cycles.
+         • The time-space diagram of a super-pipelined computer that issues two
+           instructions in time-sharing every clock cycle.
+
+===== PAGE 67 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+
+                                1                   2                   3               4          5          6          7
+                      I1        IF              ID                  EX                 MEM        WB                          Time
+                           I2             IF              ID                  EX             MEMB      WB
+                                     I3             IF              ID                 EX         MEMB      WB
+                                               I4             IF              ID             EX        MEMB       WB
+                                                         I5             IF             ID         EX        MEMB       WB
+                                                                   I6             IF         ID        EX         MEMB       WB
+                                                                             I7         IF        ID        EX         MEMB       WB
+                           Instruction
+                                                                                                                                  B
+
+===== PAGE 68 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+===== PAGE 69 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         Superpipelining processor
+         • A pipeline processor with 8 or more instruction pipeline stages is
+           called a superpipelining processor.
+         • Typical superpipelining processor: SGI's MIPS series R4000
+              • There are 2 Caches in the R4000 microprocessor chip:
+                   • Instruction Cache and Data Cache
+                   • The capacity is 8 KB
+                   • The data width of each Cache is 64 b
+              • R4000's core processing components: integer components
+                   • A 32×32 bit general register bank
+                   • An arithmetic logic unit (ALU)
+                   • A dedicated multiplication/division unit
+
+===== PAGE 70 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                Inst Memory                    Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+        • IF—First half of instruction fetch; PC selection actually happens here,
+          together with initiation of instruction cache access.
+
+===== PAGE 71 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                Inst Memory                    Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+       • IS—Second half of instruction fetch, complete instruction cache
+         access.
+
+===== PAGE 72 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                Inst Memory                    Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+       • RF—Instruction decode and register fetch, hazard checking, and
+         instruction cache hit detection.
+
+===== PAGE 73 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                Inst Memory                    Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+       • EX—Execution, which includes effective address calculation, ALU
+         operation, and branch-target computation and condition evaluation.
+
+===== PAGE 74 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                 Inst Memory                   Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+               • DF—Data fetch, first half of data cache access.
+               • DS—Second half of data fetch, completion of data cache access.
+
+===== PAGE 75 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         R4000 Pipeline Structure
+
+          IF          IS               RF            EX     DF       DS        TC   WB
+
+
+
+
+                 Inst Memory                   Reg               Data Memory        Reg
+
+
+
+
+                                                      ALU
+               • TC—Tag check, to determine whether the data cache access hit.
+               • WB—Write-back for loads and register-register operations.
+
+===== PAGE 76 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+
+   Spatiotemporal Diagram of MIPS R4000 Pipeline
+
+===== PAGE 77 =====
+§2.3 Exploiting ILP Using Multiple Issue and
+Static Scheduling
+
+
+         Two Clock Cycles for Load Delay

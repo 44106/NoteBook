@@ -1,0 +1,264 @@
+===== chapter 3-1: 117 extracted pages =====
+3-1 p001: Computer System III | Chapter 3 | Memory Hierarchy
+3-1 p002: • Technology Trend and Memory Hierarchy | • Four Questions for Cache Designers | • Memory System Performance | • Improve Cache Performance
+3-1 p003: §3.1 Introduction | Memory | • Mechanical memory | • Acoustic wave/torque wave delay line memory
+3-1 p004: §3.1 Introduction | Temporal locality (locality in time): if an item is referenced, it | will tend to be referenced again soon. If you recently brought | a book to your desk to look at, you will probably need to look
+3-1 p005: §3.1 Introduction | Memory? | • Load R2, 0(R1) | • Store R2, 0(R1)
+3-1 p006: §3.1 Introduction
+3-1 p007: §3.1 Introduction | Data processing & temporary storage | CPU | Register
+3-1 p008: §3.1 Introduction | Temporary storage | Memory | CPU Bus
+3-1 p009: §3.1 Introduction | Faster temporary storage | Memory | CPU Bus
+3-1 p010: §3.1 Introduction | Faster temporary storage | Memory | CPU Bus
+3-1 p011: §3.1 Introduction | Memory Hierarchy | Memory | CPU L1 L2 Bus
+3-1 p012: §3.1 Introduction | Memory Hierarchy | Memory | CPU L1 L2 L3 Bus
+3-1 p013: §3.1 Introduction | Memory Hierarchy | Disk | Memory I/O
+3-1 p014: §3.1 Introduction | Wait, but what’s cache?
+3-1 p015: §3.1 Introduction | data request? | program/ | Wait, but what’s cache? instructions
+3-1 p016: §3.1 Introduction | data request? | program/ | Wait, but what’s cache? instructions
+3-1 p017: §3.1 Introduction | data request? | program/ | Wait, but what’s cache? instructions
+3-1 p018: §3.1 Introduction | So, what’s cache?
+3-1 p019: §3.1 Introduction | So, what’s cache? | • Cache: a safe place for hiding or storing things. | Webster’s New World Dictionary of the
+3-1 p020: §3.1 Introduction | Cache | Memory I/O | CPU Bus Bus I/O
+3-1 p021: §3.1 Introduction | Cache Hit/Miss | • When the processor can/cannot find | a requested data item in the cache
+3-1 p022: §3.1 Introduction | Block/Line Run | • A fixed-size collection of data containing the requested word, | retrieved from the main memory and placed into the cache
+3-1 p023: §3.1 Introduction | Block/Line Run | • A fixed-size collection of data containing the requested word, | retrieved from the main memory and placed into the cache
+3-1 p024: §3.1 Introduction | Block/Line Run | • A fixed-size collection of data containing the requested word, | retrieved from the main memory and placed into the cache
+3-1 p025: §3.2 Technology Trend and Memory Hierarchy
+3-1 p026: §3.2 Technology Trend and Memory Hierarchy | SRAM (static random access memory) | DRAM (dynamic random access memory) | SDRAM (Synchronous DRAM)
+3-1 p027: §3.2 Technology Trend and Memory Hierarchy | Memory/Storage | Today’s Focus | DRAM
+3-1 p028: §3.2 Technology Trend and Memory Hierarchy | Processor-Memory Performance Gap | Memory | CPU Bus
+3-1 p029: §3.2 Technology Trend and Memory Hierarchy | Memory Hierarchy of a Modern Computer | System | By taking advantage of the principle of locality:
+3-1 p030: §3.2 Technology Trend and Memory Hierarchy | Cache Locality | • Temporal locality | need the requested word again soon
+3-1 p031: §3.2 Technology Trend and Memory Hierarchy | Cache Miss | • Time required for cache miss depends on: | ➢ Latency: the time to retrieve the first word of the block
+3-1 p032: §3.2 Technology Trend and Memory Hierarchy | Enhance performance | By taking advantage of the principle of locality: | • most programs do not access all code or data uniformly
+3-1 p033: §3.2 Technology Trend and Memory Hierarchy | Three classes of computers with different | concerns in memory hierarchy | • Desktop computers:
+3-1 p034: §3.2 Technology Trend and Memory Hierarchy | Three classes of computers with different | concerns in memory hierarchy | • Embedded computers:
+3-1 p035: §3.2 Technology Trend and Memory Hierarchy | 36 terms of Cache | Cache full associative write allocate | Virtual memory dirty bit unified cache
+3-1 p036: §3.2 Technology Trend and Memory Hierarchy | What is a cache? | • Small, fast storage used to improve | average access time to slow memory.
+3-1 p037: §3.2 Technology Trend and Memory Hierarchy
+3-1 p038: §3.2 Technology Trend and Memory Hierarchy | A typical multi-level cache organization
+3-1 p039: §3.2 Technology Trend and Memory Hierarchy | Split vs. unified caches | • Unified cache | • All memory requests go through a single cache.
+3-1 p040: §3.2 Technology Trend and Memory Hierarchy | Intel Pentium cache organization
+3-1 p041: §3.3 Four Questions for Cache Designers | The cache just before and just after a reference to a word Xn that is not initially in the cache. | This reference causes | a miss that forces the
+3-1 p042: §3.2 Technology Trend and Memory Hierarchy
+3-1 p043: §3.2 Technology Trend and Memory Hierarchy | Lines (i.e., blocks) of data are copied from memory to the cache.
+3-1 p044: §3.2 Technology Trend and Memory Hierarchy | Memory Access without Cache | • Load word instruction: lw t0, 0(t1) | • t1 contains 102210, Memory[1022]=99
+3-1 p045: §3.2 Technology Trend and Memory Hierarchy | Memory Access with Cache | • Load word instruction: lw t0, 0(t1) | • t1 contains 102210, Memory[1022]=99
+3-1 p046: §3.2 Technology Trend and Memory Hierarchy | Memory Access with Cache | • When reading memory, three things can happen: | • Cache hit
+3-1 p047: §3.3 Four Questions for Cache Designers | Four Questions for Cache Designers | Caching is a general concept used in processors, operating systems, file systems, and applications. | There are Four Questions for Cache/Memory Hierarchy Designers
+3-1 p048: §3.3 Four Questions for Cache Designers | Q1: Block Placement | Direct mapped | (Block address) modulo (Number of blocks in the cache)
+3-1 p049: §3.3 Four Questions for Cache Designers | Q1: Block Placement | Direct mapped | (Block address) modulo (Number of blocks in the cache)
+3-1 p050: §3.3 Four Questions for Cache Designers | Fully-associative | A cache structure in which a block can be | placed in any location in the cache.
+3-1 p051: §3.3 Four Questions for Cache Designers | 2-way Set-associative | i： k | g bit
+3-1 p052: §3.3 Four Questions for Cache Designers | 4-way Set-associative | Why Index With the Middle Bits? | If the high-order bits are used as an index, then some
+3-1 p053: §3.3 Four Questions for Cache Designers | Q1: Block Placement | • Direct mapped | • Block can only go in one place in the cache
+3-1 p054: §3.3 Four Questions for Cache Designers | n sets => n-way set associative | Direct-mapped cache => one block per set | 8-32 Block Placement Fully associative => one set
+3-1 p055: §3.3 Four Questions for Cache Designers | N-way Set-associative | • The higher the degree of association, the higher the utilization of cache | space, the lower the probability of block collision and the lower the
+3-1 p056: §3.3 Four Questions for Cache Designers | Four Questions for Cache Designers | Caching is a general concept used in processors, operating systems, file systems, and applications. | There are Four Questions for Cache/Memory Hierarchy Designers
+3-1 p057: §3.3 Four Questions for Cache Designers | Q2: Block Identification | • Every block has an address tag that stores the main memory | address of the data stored in the block.
+3-1 p058: §3.3 Four Questions for Cache Designers | The Format of the Physical Address | • The Index field selects | • The set, in case of a set-associative cache
+3-1 p059: §3.3 Four Questions for Cache Designers | Line Matching and Word Selection | direct-mapped cache
+3-1 p060: §3.3 Four Questions for Cache Designers | Direct-mapped Cache Example (1-word Blocks)
+3-1 p061: §3.3 Four Questions for Cache Designers | Line Matching and Word Selection | set associative cache
+3-1 p062: §3.3 Four Questions for Cache Designers | Fully-Associative Cache example (1-word Blocks) | • Assume cache has 4 blocks
+3-1 p063: §3.3 Four Questions for Cache Designers | Line Matching and Word Selection | fully associative cache
+3-1 p064: §3.3 Four Questions for Cache Designers | 2-Way Set-Associative Cache | • Assume cache has 4 blocks and each block is 1 word | • 2 blocks per set, hence 2 sets per cache
+3-1 p065: What is a cache? | • Small, fast storage used to improve | average access time to slow memory. | • In computer architecture, almost
+3-1 p066: Using a Finite-State Machine to Control a Simple Cache | finite-state machine | A sequential logic function consisting of a set | of inputs and outputs, next-state function that
+3-1 p067: Using a Finite-State Machine to Control a Simple Cache
+3-1 p068: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • 16KB of data, direct-mapped, 4 words blocks | • Read 4 addresses:
+3-1 p069: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • 16KB of data, direct-mapped, 4 words blocks | • Read 4 addresses:
+3-1 p070: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Valid bit: determines whether anything is stored in | that row (when computer initially powered up, all
+3-1 p071: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000014 | Chapter 4 — Memory Hierarchy— 71
+3-1 p072: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000014, read block 1 (0000000001) | Chapter 4 — Memory Hierarchy— 72
+3-1 p073: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000014, no valid data | Chapter 4 — Memory Hierarchy— 73
+3-1 p074: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000014, load that data into cache, | setting tag, valid
+3-1 p075: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000014, read from cache at offset, | return word b
+3-1 p076: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x0000001C | Chapter 4 — Memory Hierarchy— 76
+3-1 p077: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x0000001C, index is valid | Chapter 4 — Memory Hierarchy— 77
+3-1 p078: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x0000001C, index is valid, tag matches | Chapter 4 — Memory Hierarchy— 78
+3-1 p079: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x0000001C, index is valid, tag matches, | return d
+3-1 p080: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000034, read block 3, no valid data | Chapter 4 — Memory Hierarchy— 80
+3-1 p081: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00000034, load that cache block, return | word f
+3-1 p082: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00008014, read cache block 1, data is valid, | cache block 1 tag does not match (0!=2)
+3-1 p083: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00008014, miss, replace block 1 with new | data & tag
+3-1 p084: §3.3 Four Questions for Cache Designers | Access data in a direct mapped cache | • Read 0x00008014, return word j | Chapter 4 — Memory Hierarchy— 84
+3-1 p085: §3.3 Four Questions for Cache Designers | Homework | Cache 16KB of data, direct-mapped, 4 words blocks Memory | (1) Read address 0x00000030, what happens?
+3-1 p086: §3.3 Four Questions for Cache Designers | Four Questions for Cache Designers | Caching is a general concept used in processors, operating systems, file systems, and applications. | There are Four Questions for Cache/Memory Hierarchy Designers
+3-1 p087: §3.3 Four Questions for Cache Designers tag: A field in a table used for a memory hierarchy that contains the address | information required to identify whether the associated block in the hierarchy | corresponds to a requested word. | Direct-mapped cache Set 
+3-1 p088: §3.3 Four Questions for Cache Designers | The size of the block was one word (4 bytes). | • 64-bit addresses | • A direct-mapped cache
+3-1 p089: §3.3 Four Questions for Cache Designers | Bits in a Cache | Example 1: How many total bits are required for a direct-mapped | cache with 16 KiB of data and four-word blocks, assuming a 64-bit
+3-1 p090: §3.3 Four Questions for Cache Designers | Mapping an Address to a Multiword Cache Block | Example 2: Consider a cache with 64 blocks and a block size of 16 | bytes. To what block number does byte address 1200 map?
+3-1 p091: §3.3 Four Questions for Cache Designers | Four Questions for Cache Designers | Caching is a general concept used in processors, operating systems, file systems, and applications. | There are Four Questions for Cache/Memory Hierarchy Designers
+3-1 p092: §3.3 Four Questions for Cache Designers | Q3: Block Replacement | • In a direct-mapped cache, there is only one block that can be replaced
+3-1 p093: §3.3 Four Questions for Cache Designers | 10110 11010 10110 11010 10000 00011 10000 10010 10000 | miss miss hit hit miss miss hit miss hit | Chapter 3 — Memory Hierarchy— 93
+3-1 p094: §3.3 Four Questions for Cache Designers | cache hit If the cache reports a hit, the computer continues using | the data as if nothing happened. | cache miss For a cache miss, we can stall the entire processor,
+3-1 p095: §3.3 Four Questions for Cache Designers | We can now define the steps to be taken on an instruction cache miss: | 1. Send the original PC value to the memory. （PC-4） | 2. Instruct main memory to perform a read and wait for the memory to
+3-1 p096: §3.3 Four Questions for Cache Designers | Q3: Block Replacement | • In a direct-mapped cache, there is only one block that can be replaced | • In set-associative and fully-associative caches, there are N blocks (where
+3-1 p097: §3.3 Four Questions for Cache Designers | Strategy of Block Replacement | • Several different replacement policies can be used | • Random replacement - randomly pick any block
+3-1 p098: §3.3 Four Questions for Cache Designers | Strategy of Block Replacement | Suppose: | • Cache block size is 3, and access sequence is shown as follows.
+3-1 p099: §3.3 Four Questions for Cache Designers | FIFO | Time 1 2 3 4 5 6 7 8 9 10 | Sequence 2 3 2 1 5 2 4 5 3 4
+3-1 p100: §3.3 Four Questions for Cache Designers | LRU | Time 1 2 3 4 5 6 7 8 9 10 | Sequence 2 3 2 1 5 2 4 5 3 4
+3-1 p101: §3.3 Four Questions for Cache Designers | OPT | Time 1 2 3 4 5 6 7 8 9 10 | Sequence 2 3 2 1 5 2 4 5 3 4
+3-1 p102: §3.3 Four Questions for Cache Designers | Time 1 2 3 4 5 6 7 8 thrashing | Sequence 1 2 3 4 1 2 3 4 | FIFO 1 1 1* 4 4 4* 3 3
+3-1 p103: §3.3 Four Questions for Cache Designers | Stack replacement algorithm | • Bt(n) represents the set of access sequences contained in a cache block | of size n at time t.
+3-1 p104: §3.3 Four Questions for Cache Designers | LRU replacement algorithm is stack | replacement algorithm | Time 1 2 3 4 5 6 7 8 9 10 11 12
+3-1 p105: §3.3 Four Questions for Cache Designers | Time 1 2 3 4 5 6 7 8 9 10 11 12 | Sequence 1 2 3 4 1 2 5 1 2 3 4 5 | FIFO 1 1 1* 4 4 4* 5 5 5 5 5* 5*
+3-1 p106: §3.3 Four Questions for Cache Designers | Using LRU | Time 1 2 3 4 5 6 7 8 9 10 | Sequence 2 3 2 1 5 2 4 5 3 2
+3-1 p107: §3.3 Four Questions for Cache Designers
+3-1 p108: §3.3 Four Questions for Cache Designers | For LRU algorithm, the hit ratio always | increases with the increase of cache block. | Time 1 2 3 4 5 6 7 8 9 10 11 12
+3-1 p109: §3.3 Four Questions for Cache Designers | Belady | Time 1 2 3 4 5 6 7 8 9 10 11 12 | Sequence 1 2 3 4 1 2 5 1 2 3 4 5
+3-1 p110: §3.3 Four Questions for Cache Designers | LRU | • How can I implement the LRU replacement algorithm with only ordinary | gates and triggers?
+3-1 p111: §3.3 Four Questions for Cache Designers | Example | • There are three cache blocks (A, B, and C), which can be combined into | 6 pairs (AB, BA, AC, CA, BC, and CB). Among them, AB and BA, AC and
+3-1 p112: §3.3 Four Questions for Cache Designers | • If the most recently accessed block is A and C is the block that has not | been accessed for the longest time, the three flip-flops’ states must be | respectively: TAB=1, TAC=1, and TBC=1.
+3-1 p113: §3.3 Four Questions for Cache Designers | • Change the state of the flip-flop after each access. | • After accessing block A: TAB=1, TAC=1 | • After accessing block B: TAB=0, TBC=1
+3-1 p114: §3.3 Four Questions for Cache Designers | Hardware usage analysis (if p is the number | of cache blocks) | • Since each block may be replaced, its signal needs to be generated with
+3-1 p115: §3.3 Four Questions for Cache Designers | The Relationship between the Block Number | and Required Hardware for Comparison Pair | Block Number 3 4 6 8 16 64 256
+3-1 p116: §3.3 Four Questions for Cache Designers | Homework | For a direct-mapped cache design with a 64-bit address, the following bits of the | address are used to access the cache.
+===== chapter 3-2: 23 extracted pages =====
+3-2 p001: Computer System III | Chapter 3 | Memory Hierarchy
+3-2 p002: §3.3 Four Questions for Cache Designers | Four Questions for Cache Designers | Caching is a general concept used in processors, operating systems, file systems, and applications. | There are Four Questions for Cache/Memory Hierarchy Designers
+3-2 p003: §3.3 Four Questions for Cache Designers | Q4: Write Strategy-- Write Hit | • write-through | • On a write hit, data is written simultaneously to both the cache and the main
+3-2 p004: §3.3 Four Questions for Cache Designers | Q4: Write Strategy-- Write Hit | • write-back | • On a write hit, data is written only to the cache.
+3-2 p005: §3.3 Four Questions for Cache Designers | Q4: Write Strategy | • Dirty Bit | • A status bit associated with a cache line that indicates whether the data in the
+3-2 p006: §3.3 Four Questions for Cache Designers | Q4: Write Strategy-- Write miss | • Write allocate | • On a write miss, the system loads the missed block from main memory into the
+3-2 p007: §3.3 Four Questions for Cache Designers | Q4: Write Strategy-- Write miss | • no write allocate (Write around) | • On a write miss, data is written directly to main memory without loading the
+3-2 p008: §3.3 Four Questions for Cache Designers | Q4: Write Strategy-- Write miss | • write-back + write-allocate | • On a write miss, the block containing the target address (e.g., 0x1000) is first
+3-2 p009: §3.3 Four Questions for Cache Designers | Write stall & Write buffer | • Write stall | • When the CPU must wait for writes to complete during write through
+3-2 p010: §3.3 Four Questions for Cache Designers | Write buffer | Write Buffer
+3-2 p011: §3.3 Four Questions for Cache Designers | A Write-Through cache with No-Write Allocation A Write-Back cache with Write Allocation | Read allocate Read allocate
+3-2 p012: §3.3 Four Questions for Cache Designers | Example | （1）Which strategy updates both the cache and main memory on a write hit? | A. Write-Back
+3-2 p013: §3.3 Four Questions for Cache Designers | Example | （3）Consider two cache write strategies: | • Strategy A: Write-Back + Write-Allocate
+3-2 p014: §3.3 Four Questions for Cache Designers | Example | • (5) Assume a fully associative write-back cache with many cache entries that | starts empty below is a sequence of five memory operations(the address is in
+3-2 p015: §3.3 Four Questions for Cache Designers | Example | • Assume a fully associative write-back cache with many cache entries that | starts empty below is a sequence of five memory operations(the address is in
+3-2 p016: §3.3 Four Questions for Cache Designers | Summary | Read Cache Write Cache | hit miss
+3-2 p017: §3.3 Four Questions for Cache Designers | Memory Hierarchy
+3-2 p018: §3.3 Four Questions for Cache Designers | Memory Hierarchy | addr
+3-2 p019: §3.3 Four Questions for Cache Designers | Memory Hierarchy | addr | Larger memory for more processes?
+3-2 p020: §3.3 Four Questions for Cache Designers | Virtual Memory | +
+3-2 p021: §3.3 Four Questions for Cache Designers | Virtual Memory | Program uses | • discontiguous memory locations
+3-2 p022: §3.3 Four Questions for Cache Designers | How memory hierarchy works? | Questions: Four Questions | • Q1. Where can a block be placed in main memory?
+===== chapter 3-3: 35 extracted pages =====
+3-3 p001: §3.4 CPU vulnerabilities | CPU漏洞实战分析 | Meltdown & Spectre
+3-3 p002: 相关背景 | 缓存（Cache）：CPU 和主存之间数据交互的桥梁 | • 存储敏感数据、密钥等信息而不易被察觉 CPU寄存器 | • 一旦受攻击，敏感信息易被泄露 高速缓存
+3-3 p003: 漏洞介绍 | Meltdown 能够在linux、macos、windows等主流OS上，利用intel的CPU漏洞， | 来突破内存独立性的限制，能够通过用户程序去访问整个内核空间和其他用户其他程 | 序的空间。其问题的根源在于利用了Intel CPU的乱序执行技术，通过对内存的响应时
+3-3 p004: CPU缓存缺陷分析 | 对于具有预测执行能力的处理器，在实 | 际CPU执行过程中指令4所需的内存加载环 | 节不依赖于指令3是否能够正常执行，而且
+3-3 p005: CPU缓存缺陷分析 | CPU缓存过程对于用户是不可访问的，只有将具体的数据放到CPU寄存器中用户才拥有访问权限，同时用 | 户态程序也没有权限访问内核内存中的数据，因此CPU采用这种逻辑是没有问题的，但是如果有方法可以得到 | CPU缓存中的数据，那么这种逻辑就存在缺陷。
+3-3 p006: 侧信道攻击缓存 | 多核之间实现cache数据共享，从而有效改 | 善了CPU与内存访问速度之间的矛盾。而cache | 命中和失效对应响应时间有差别，缓存侧信道攻
+3-3 p007: Meltdown
+3-3 p008: Meltdown 漏洞原理 | Meltdown攻击利用现代CPU中乱序执行（out-of-order execution）的特性，彻底攻 | 破原本由硬件保证的内存隔离，使得一个仅仅具有普通进程权限的攻击者可以用简单的 | 方法来读取内核内存。
+3-3 p009: Meltdown 攻击过程 每个阶段执行的操作如下： | 1）获取指令，解码后存放到执行缓冲区Reservations | Stations； | 2）乱序执行指令，结果保存在一个结果序列中；
+3-3 p010: Meltdown 攻击示例 | Meltdown漏洞的利用过程有4个步骤： | 1) 指令获取解码； | 2) 乱序执行3条指令，指令4和指令5要等指令3中的读取内存地址的内容完成后才开始执行，指令5
+3-3 p011: 漏洞验证
+3-3 p012: 缓解措施 | KAISER：一种内核修改，无需内核映射到用户空间。 | 问题：存在一些限制。由于x86架构的设计，需要在用户空间中映射多个权限内存位置。 | 这会留下Meltdown的残留攻击面，即，这些存储位置仍然可以从用户空间读取。
+3-3 p013: Spectre
+3-3 p014: Spectre 漏洞原理 | Spectre攻击利用了CPU的预测执行对系统进行攻击。预测执行是另外一种CPU优化特 | 性。在分支指令执行时，由于分支指令执行可能需要内存读取（上百个CPU周期），在分 | 支指令执行结束之前，CPU会预测哪一个分支会被运行，提取相应的指令代码并执行，以
+3-3 p015: Spectre 攻击过程 | Spectre攻击主要分为三个阶段： | ➢ 训练CPU的分支预测单元（BPU），使其在运行漏洞利用代码时会进行特定的预测执行； | ➢ 预测执行使得CPU将要访问的地址的内容读取到CPU Cache中；
+3-3 p016: 漏洞验证
+3-3 p017: 缓解措施 | 1）序列化指令：限制预测执行。 | 问题：无法在所有CPU或系统配置中工作。 | 2）插入推测执行阻止指令：在每个条件分支及其目标之后的指令处插入此指令。
+3-3 p018: Meltdown & Specter | 1） Meltdown ： 依赖乱序执行 | Spectre ： 使用分支预测来实现推测执行 | 2） Meltdown ： 利用了Intel处理器特有的提权漏洞，该漏洞导致推测性执行的指令可以绕过
+3-3 p019: 漏洞复现
+3-3 p020: 工具清单 | 虚拟机 VMware Workstation11.0.0 | 实验环境 系统镜像1 | 内核版本1
+3-3 p021: 工具清单 | 虚拟机 VMware Workstation11.0.0 | 实验环境 系统镜像1 | 内核版本1
+3-3 p022: 漏洞检测 | CentOS系统下检测结果 | 操作系统内核的差异直 | 接影响了CPU漏洞对系统的
+3-3 p023: Spectre漏洞复现 | POC代码复现 | Meltdown漏洞复现 | CentOS系统下POC代码执行结果, POC 在CentOS系统 下，该proc攻击 利用了CPU的预 测执行
+3-3 p024: 攻击结果 | 在实际的攻击场景中，攻击者利用这些漏洞在一定条件下可以做到： | ➢ 泄露出本地操作系统底层运作信息，秘钥信息等； | ➢ 通过获取泄露的信息，成功绕过内核、虚拟机超级管理器HyperVisor的隔离防护；
+3-3 p025: 其他新场景下的攻击 | 安全机制场景下的 | 基于硬件特性的攻击 性能驱动下的攻击 | 攻击
+3-3 p026: 攻击分布情况 | 各类攻击在商用处理器中的分布情况 | 针对LLC的攻击 新场景下的攻击 | 基于建
+3-3 p027: Cache安全增强
+3-3 p028: http://mdsattacks.com/ diagram
+3-3 p029: Cache安全增强方案 | 商用处理器Cache安全增强方案 | 攻击类型 Intel采用的防御方法 ARM采用的防御方法 | 边界检查绕过 内存屏障指令：LFENCE 新内存屏障指令：CSDB
+3-3 p030: Cache安全增强方案 | 针对Cache攻击的防御方案分析——基于软件的防御机制 | 漏洞检测方法 用户级防御措施 系统级防御措施 | 在漏洞检测的基础上增 从操作系统/虚拟机管理
+3-3 p031: Cache安全增强方案 | 针对Cache攻击的防御方案分析——基于硬件的防御机制 | 缓存分组方法 | 受保护进程 其他进程
+3-3 p032: Cache安全增强方案 | 针对Cache攻击的防御方案分析——基于硬件的防御机制 | 缓存随机化方法 | 消除特定地址在缓存中的固定映射，使攻击者难以推断受害者的访存地址
+3-3 p033: Cache安全增强方案 | 针对Cache攻击的防御方案分析——其他防御策略 | 针对目录结构的防御方法 完善软件硬件协作关系 | 专门防御针对目录结构的攻击 重新思考软硬件协作关系，
+3-3 p034: Summary | 1. Trend and Memory Hierarchy | • Processor-Memory Performance Gap | • Cache Locality
+===== chapter 3-4: 89 extracted pages =====
+3-4 p001: §3.5 Memory System Performance | Table of Contents | 01 02 | Introduction to Cache
+3-4 p002: §3.5 Memory System Performance | 01. Introduction to Cache Performance | U nde rstan din g t he Basi cs and Me tr ics
+3-4 p003: §3.5 Memory System Performance | Memory System Performance | CPU Execution time | • CPU Execution time
+3-4 p004: §3.5 Memory System Performance | Average Memory Access Time | • Average Memory Access Time |  AluOps MemAccess 
+3-4 p005: §3.5 Memory System Performance | Key Metrics of Cache Performance | Hit Rate:The probability that the CPU finds the | Hit Time:The access time when the cache is hit.
+3-4 p006: §3.5 Memory System Performance | 02. Basic Optimization Methods | Reducing Miss Rate & Miss Penalty & Hit time
+3-4 p007: 1. Larger Block Size to Reduce Miss Rate | 核心原理 | 利用空间局部性，一次加载更多连续数据，减少首次访问的 | 强制性失效次数。
+3-4 p008: 1. Larger Block Size to Reduce Miss Rate
+3-4 p009: 2. Larger Caches to Reduce Miss Rate | 原理 Principle | 提供更大空间容纳数据，减少容量失效与冲突失效的 | 发生。
+3-4 p010: 3. Higher Associativity to Reduce Miss Rate | 原理 (Principle) | 允许内存块映射到缓存中的多个位置（如2路/4路组相联），而非单一固定位 | 置，从而分散冲突风险。
+3-4 p011: 3. Higher Associativity to Reduce Miss Rate | How CPU Cache Works
+3-4 p012: 3. Higher Associativity to Reduce Miss Rate | How CPU Cache Works
+3-4 p013: 3. Higher Associativity to Reduce Miss Rate | □ Compulsory Miss | • Cold fact of life, First time data is referenced | • Run billions of instructions, become insignificant
+3-4 p014: 3. Higher Associativity to Reduce Miss Rate | □ 2:1 Cache Rule: | • Miss Rate of direct-mapped cache (size N) ≈ Miss Rate of 2-way associative cache (size | N/2)Types of misses
+3-4 p015: 3. Higher Associativity to Reduce Miss Rate | • Relative Miss Rate Absolute Miss Rate
+3-4 p016: 3. Higher Associativity to Reduce Miss Rate | • Avg. Memory Access Time vs. Miss Rate | • Assume Cache Cycle Time (CCT): | • 1.00 (1-way), 1.10 (2-way), 1.12 (4-way), 1.14 (8-way)
+3-4 p017: 3. Higher Associativity to Reduce Miss Rate | • Advantages: | • Reduces conflict misses | • Better hit rate in many workloads
+3-4 p018: 3. Higher Associativity to Reduce Miss Rate | • Simulation Results (4KB, 8B Block Size)
+3-4 p019: 3. Higher Associativity to Reduce Miss Rate | • Simulation Results (4KB, 8B Block Size)
+3-4 p020: 3. Higher Associativity to Reduce Miss Rate | • 4-way to 8-way associativity offers a good | trade-off between performance and | complexity.
+3-4 p021: 3. Higher Associativity to Reduce Miss Rate | • 4-way to 8-way associativity offers a good | trade-off between performance and | complexity.
+3-4 p022: 3. Higher Associativity to Reduce Miss Rate | • Real-World Cache Designs | • Intel Core i7 (example): | • L1: 32KB, 8-way set associative
+3-4 p023: 3. Higher Associativity to Reduce Miss Rate | • Cache associativity significantly impacts miss rate. | • Set-associative caches reduce conflict misses effectively. | • Higher associativity must be balanced with hardware cost.
+3-4 p024: 4. Multilevel Caches to Reduce Miss Penalty | Core Principle | Add L1/L2/L3 caches between CPU and main memory. On L1 | miss, check faster L2/L3 first to avoid slow main memory
+3-4 p025: 5. Giving Priority to Read Misses over Writes | to Reduce Miss Penalty | 核心原理 | 写操作入缓冲区等待，读失效时优先处理读请求，减少
+3-4 p026: strategies to handle | 01 read miss and write miss
+3-4 p027: 01 rea d m is s s t rat eg ie s | Read Through 不常用 | Read the contents directly from Main Memory to the CPU without | going through the cache.
+3-4 p028: 01 w ri t e m i s s s t ra t e gi e s | PENALTY | Write Allocate | First, load the data to be written from the Main Memory to the Cache, and the
+3-4 p029: Basic idea of giving reads 02 | priority over write
+3-4 p030: 02 basic idea | ➢ a cache consistency strategy that emphasizes | in the processor’s cache system | ➢ read operations should be given higher
+3-4 p031: 02 write buf fer | When a write miss occurs... | Write Allocate | ➢ first load the block into the cache for writing and set the
+3-4 p032: 03 Implementation
+3-4 p033: 03 example | Assume a direct-mapped cache that maps 512 and 1024 to the same block, and a | four-word write buffer that is not checked on a read miss. | Will the value in R2 always be equal to the value in R3?
+3-4 p034: 03 solution | Read miss | ➢ simplest way: read miss to wait until the write buffer is empty. | ---- greatly reduces CPU performance
+3-4 p035: Performence analysis 04
+3-4 p036: 04 performance analysis
+3-4 p037: 04 read m iss
+3-4 p038: 04 write miss
+3-4 p039: 04 performance analysis
+3-4 p040: 04 performance analysis
+3-4 p041: 6. Avoiding Address Translation During | Indexing of the Cache to Reduce Hit Time | Core Principle | Use virtual addresses for cache indexing instead
+3-4 p042: 03. Advanced Optimization Methods | Advance d Te chnique s & C ompiler Sup port
+3-4 p043: 7. Pipelined L1 Caches With Virtual Indexing | and Set Associativity | 核心原理 | 将缓存访问（译码、比较、读取）拆分为流水线阶段，允
+3-4 p044: 7. Pipelined L1 Caches With Virtual Indexing | and Set Associativity | Example: Using the data in Table in P8 and Figure in P15, determine whether a 32 KiB four-way | set associative L1 cache has a faster memory access time than a 32 KiB two-way set
+3-4 p045: 8. Multiple Banks and Ports to Increase the | Bandwidth of L1 D-Caches | 核心原理：将缓存划分为多个独立存储体(Banks)，各Bank拥 | 有独立读写端口，支持CPU并行访问以提升总带宽。
+3-4 p046: 8. Multiple Banks and Ports to Increase the | Bandwidth of L1 D-Caches | Four-way interleaved cache banks using block addressing. Assuming 64 bytes per | block, each of these addresses would be multiplied by 64 to get byte addressing.
+3-4 p047: 9. Reducing the Miss Rate With Better | Replacement Policies | 核心原理 (Mechanism) | 使用LRU（最近最少使用）或LFU（最不经常使用）等智能
+3-4 p048: 10. Multibanked L2 and L3 Caches to Decrease | Power and Latency, and Increase Bandwidth | 核心原理 Multibanked Cache Architecture | 将大容量L2/L3缓存划分为多个独立Bank。仅 Processing Cores (L1 Private)
+3-4 p049: 11. Nonblocking Caches to Increase Cache | Bandwidth | 核心原理 | 允许CPU在处理缓存失效时继续执行后续指令，计算与失效处理
+3-4 p050: 12. Critical Word First and Early Restart to | Reduce Miss Penalty | 工作原理 (Mechanism) 显著降低有效失效开销 | 通过减少CPU的无效等待时间，提升整体执行效率。
+3-4 p051: 13. Compiler Optimizations to Reduce Miss Rate | 核心原理 主要优点 | 优化代码结构与数据访问模式，提升时间与空间局部 | 纯软件层面优化，无需修改硬件设施，实施成本低，
+3-4 p052: Instruction Miss | • Reorder procedures in memory to reduce | conflict misses | • Profiling to look at conflicts
+3-4 p053: Instruction | Miss | PART ONE
+3-4 p054: Reorder procedures in memory to reduce conflict misses | 将连续调用的函数相邻存放，存到同一个Cache line（对应内存的一个block)中，提升空间局部性。 | 将条件分支的Hot Path连续布局，减少跳转导致的缓存行替换。即在存在分支情况下，Hot Path这条路径极大概率 | 是连续调用的，那么就要相邻存放。这涉及到编译器的冷热代码分离技术。
+3-4 p055: Reorder procedures in memory to reduce conflict misses | 将高频调用的函数存放在不同缓存组，减少冲突。如果不在一个block中，那就尽可能在不同的缓存组(Cache Set) | 中，避免高频调用的函数的缓存行相互驱逐。 | 冲突情况 进行重排
+3-4 p056: Profiling to look at conflicts | 动态分析(profiling): 收集执行轨迹，记录程序运行的指令访问模式、缓存未命中事件等 | 动态分析 | 冲突检测(Conflict Detection):通过时间关系图，分析代码段交替访问模式，标记高频交
+3-4 p057: Data Miss | PART TWO
+3-4 p058: Merging Arrays | • 假设需要读取val[]、key[]的值，若作为两个array存放，二者之间交替访问会造成大量的cache miss；而融合之后， | 就避免了内存的交替访问，增加了命中率。 | • 利用空间相邻方便数据读取，将同时要读的数据在内存中放在一起，可以节省内存访问。
+3-4 p059: Loop Interchange | change nesting of loops (storage methods of data in memory): | • 二维数组在内存中的存储方式为行主序，如下图。 | • 如果先以col作为外部循环，再以row作为内部循环，访问顺序就是x[0][0]，x[1][0]，x[2][0]... 相隔太远会导致较
+3-4 p060: Loop distribution | • 将不相关 / 矛盾的操作划分为不同的循环 | for (i = 0; i < n ; i++){ | for (j = 0; j < n; j++){
+3-4 p061: Blocking | /* Before */ | 循环分块是指通过增加循环嵌套的维度来提升数据局 for (i = 0; i < N; i = i+1) | for (j = 0; j < N; j = j+1){
+3-4 p062: Blocking
+3-4 p063: Blocking
+3-4 p064: Blocking | z[k][j] | y[i][k]
+3-4 p065: Blocking
+3-4 p066: Blocking
+3-4 p067: Blocking
+3-4 p068: Blocking
+3-4 p069: Blocking
+3-4 p070: Blocking | J | K B | I K
+3-4 p071: Blocking | J | K B | I
+3-4 p072: Blocking cache | K J B | K | I
+3-4 p073: Blocking cache | K J B | K | I
+3-4 p074: Blocking | /* Before */ | for (i = 0; i < N; i = i+1) | • 在计算时间复杂度上， for (j = 0; j < N; j = j+1){
+3-4 p075: Blocking测试程序 | 实际上，L1 Cache大小能包含矩阵多行的数据，所以实际结果会比理论结果小 | 测试要点 | 测试要点:
+3-4 p076: 14. Hardware Prefetching | 15. Compiler-Controlled Prefetching | to Reduce Miss Penalty or Miss Rate | Hardware Prefetching Pros, Cons & Scenarios
+3-4 p077: 16. Multiple Memory Buses and Memory Modules | to Increase Bandwidth | Parallel Access Architecture 核心原理 主要优点 | 增加内存总线数量，CPU通过多条
+3-4 p078: 16. Multiple Memory Buses and Memory Modules | to Increase Bandwidth | Performance speedup running the | SPECrate benchmark for the Loh-Hill
+3-4 p079: §3.5 Memory System Performance | How to Improve | Hence, there are more than 20 cache optimizations into these categories: | 1.Reduce the miss penalty
+3-4 p080: §3.5 Memory System Performance | 1. Reduce the miss penalty | • multilevel caches | • critical word first
+3-4 p081: §3.5 Memory System Performance | 2. Reduce the miss rate | • larger block size | • large cache size
+3-4 p082: §3.5 Memory System Performance | 3. Reduce the time to hit in the cache | • small and simple caches | • avoiding address translation
+3-4 p083: §3.5 Memory System Performance | 4. Reduce the miss penalty and miss rate via parallelism | • non-blocking caches | • hardware prefetching
+3-4 p084: §3.5 Memory System Performance | How to Improve | 核心目标：降低 AMAT 多维优化策略 | 缓存性能优化的核心在于降低平均访存时间，这是衡 涵盖降低失效率、减少失效开销、提升命中速度及增
+3-4 p085: §3.5 Memory System Performance | Example: Impact on Performance | • Assume : | • all instructions usually take 1.0 clock cycles (ignoring memory stalls).
+3-4 p086: §3.5 Memory System Performance | Summary of Cache Optimization Technology
+3-4 p087: §3.5 Memory System Performance | Summary of Cache Optimization Technology
+3-4 p088: Summary | • Memory hierarchy | • From single level to multi level | • Evaluate the performance

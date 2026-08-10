@@ -1,0 +1,1216 @@
+Virtual Memory
+
+Computer System III
+   Wenbo Shen
+
+
+
+
+                 Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU.
+Review
+• Logical vs physical address
+• Memory allocation
+  • Contiguous allocation: first-, best-, worst-fit
+  • Fragmentation: external vs internal
+• Paging: page number + page offset
+   • Hierarchical page table, hashed page table, inverted page table
+   • 1-level vs 2-level, why save memory, page table walk
+• Swapping
+• MMU
+   • TLB
+
+
+
+
+                                     2
+Outline
+• Demand paging
+• Copy-on-write
+• Page replacement algorithm
+    • FIFO, optimal, LRU, …
+• Allocation of frames
+• Thrashing
+• Linux memory management
+
+
+
+
+                               3
+Background
+• Code needs to be in memory to execute, but entire program
+  rarely needed or used at the same time
+   • Unused code: error handling code, unusual routines
+   • Unused data: large data structures
+• Consider ability to execute partially-loaded program
+   • Program no longer constrained by limits of physical memory
+   • Programs could be larger than physical memory
+
+
+
+
+                                4
+Background
+• Virtual memory: separation of logical memory from physical memory
+    • Only part of the program needs to be in memory for execution
+       • Logical address space can be much larger than physical address space
+       • More programs can run concurrently
+       • Less I/O needed to load or swap processes (part of it)
+    • Allows memory (e.g., Shared library) to be shared by several processes
+       • Better IPC performance
+    • Allows for more efficient process forking (copy-on-write)
+• Virtual memory can be implemented via:
+  • Paging
+
+
+
+
+                                      5
+Virtual Memory Larger Than Physical Memory
+•   Virtual memory is larger than physical memory
+     • Virtual memory is just address ranges, all storage is backed by physical memory
+
+
+
+
+                                             6
+Virtual-address Space
+• Usually design virtual address space for stack to start at Max logical
+  address and grow “down” while heap grows “up”
+  • Maximizes address space use
+  • Unused address space between the two is hole
+    • No physical memory needed until heap or stack grows to a given
+       new page
+
+• Enables sparse address spaces with holes left for growth, dynamically
+  linked libraries, etc
+
+• System libraries shared via mapping into virtual address space
+
+• Pages can be shared during fork(), speeding process creation: COW
+
+
+
+
+                                              7
+Shared Library Using Virtual Memory
+
+
+
+
+                       8
+Shared Library Using Virtual Memory
+
+
+
+
+                       9
+Demand Paging
+• Demand paging brings a page into memory only when it is demanded
+  • Demand means access (read/write)
+  • If page is invalid (error) ➠ abort the operation
+  • If page is valid but not in memory ➠ bring it to memory
+     • Memory here means physical memory
+     • This is called page fault
+     • Via swapping for swapped pages
+     • Via mapping for new page
+     • No unnecessary I/O, less memory needed, slower response, more apps
+
+
+
+
+                                          10
+Demand Paging
+• Demand paging vs page fault
+   • What is the relationship?
+
+
+• What causes page fault?
+   • User space program accesses an address
+• Which hardware issues page fault?
+   • MMU
+• Who handles page fault?
+   • Operating system
+
+
+
+
+                                 11
+What causes page fault?
+• User space program accesses an address
+
+
+
+
+                                   12
+MMU issues page fault
+• How does MMU know the physical frame is not mapped?
+• Each page table entry has a valid–invalid (present) bit
+  • v ➠ frame mapped, i ➠ frame not mapped
+  • Initially, valid–invalid bit is set to i on all entries
+  • During address translation, if the entry is invalid, it will trigger a page fault
+• Example of a page table snapshot:
+
+
+
+
+                                             13
+Who handles page fault?
+• Linux implementation
+   • First check vma to decide fault type
+      • Address in vm_area
+      • Address out of vm_area
+         – Error, abort
+
+   • Then map physical frame
+
+
+
+
+                                   14
+Memory Layout of a C Program
+
+
+
+
+                     15
+Page Faults
+
+
+
+
+              16
+Page Table (Mem pages are not all in memory)
+
+•   Executable file
+
+
+
+
+                            17
+Page Fault Handling
+•   Page fault for code
+
+
+
+
+                          18
+Page Fault
+• First reference to a non-present page will trap to kernel: page
+  fault
+• Operating system looks at memory mapping to decide:
+  • Invalid reference ➠ deliver an exception to the process
+     • Via check vma in linux
+  • Valid but not in physical memory ➠ bring in
+     • Get an empty physical frame
+     • Bring page into frame via disk operation
+     • Set page table entry to indicate the page is now in memory
+     • Restart the instruction that caused the page fault
+
+
+
+
+                                 19
+Page Fault - swapper
+• Lazy swapper: never swaps a page in memory unless it will be needed
+  • The swapper that deals with pages is also caller a pager
+• Pre-paging: pre-page all or some of pages a process will need, before they
+  are referenced
+  • It can reduce the number of page faults during execution
+  • If pre-paged pages are unused, I/O and memory was wasted
+    • Although it reduces page faults, total I/O# likely is higher
+
+
+
+
+                                        20
+Page Fault
+• Extreme case: start process with no frames in memory (aka. Pure demand
+  paging)
+  • OS sets instruction pointer to first instruction of process
+    • Invalid page ➠ page fault
+  • Every page is paged in on first access
+    • Program locality reduces the overhead
+  • An instruction could access multiple pages ➠ multiple page faults
+    • e.g., Instruction, data, and page table entries for them
+• Demand paging needs hardware support
+  • Page table entries with valid / invalid bit
+  • Backing storage (usually disks)
+  • Instruction restart
+
+
+
+
+                                    21
+Page Fault – Get Free Frame
+• When a page fault occurs, the operating system must bring the desired page
+  from secondary storage into main memory.
+
+• Most operating systems maintain a free-frame list -- a pool of free frames
+  for satisfying such requests.
+
+
+
+
+• Operating system typically allocate free frames using a technique known as
+  zero-fill-on-demand -- the content of the frames zeroed-out before being
+  allocated.
+
+• When a system starts up, all available memory is placed on the free-frame
+  list.
+
+
+                                      22
+Stages in Demand Paging – Worse Case
+• 1. Trap to the operating system
+• 2. Save the user registers and process state
+• 3. Determine that the interrupt was a page fault
+    • 3.1 Check that the page reference was legal
+• 4. Find a free frame
+• 5. Determine the location of the page on the disk, issue a read from the disk
+  to the free frame:
+  • 5.1 Wait in a queue for this device until the read request is serviced
+  • 5.2 Wait for the device seek and/or latency time
+  • 5.3 Begin the transfer of the page to a free frame
+
+
+
+
+                                       23
+Stages in Demand Paging – Worse Case
+• 6. While waiting, allocate the CPU to other process
+• 7. Receive an interrupt from the disk I/O subsystem (I/O completed)
+   • 7.1 Determine that the interrupt was from the disk
+   • 7.2 Mark page fault process ready
+• 8. Wait for the CPU to be allocated to this process again
+   • 8.1 Save registers and process state for other process
+   • 8.2 Context switch to page fault process
+• 9. Correct the page table, mapping new frame
+• 10. Return to user: restore the user registers, process state, and new page
+  table, and then resume the interrupted instruction
+
+
+
+
+                                       24
+ Stages in Demand Paging – Worse Case
+ • Assume a page fault happen in Process 0
+ • While waiting for disk, the CPU is allocated to Process 1
+                 Interrupt: MMU
+              triggers a page fault
+                                               Interrupt: disk      Interrupt:
+                                                IO complete           timer
+  Process 0
+
+  Process 1
+
+
+user mode
+kernel mode
+
+  Interrupt handler –>         Read disk                                         page fault handler:
+   page fault handler                                                              fix page table,
+                                                                                    return to user
+
+
+
+                                context_switch()                    context_switch()
+
+                                               Interrupt handler: mark
+                                                      P0 ready
+      Time
+                                                        25
+Demand Paging: EAT
+• Page fault rate: 0 ≤ p ≤ 1
+  • if p = 0 no page faults
+  • if p = 1, every reference is a fault
+
+• Effective Access Time (EAT):
+  (1 – p) x memory access + p x (
+     page fault overhead +
+     swap page out + swap page in +
+     instruction restart overhead)
+
+
+
+
+                                           26
+Demand Paging Example
+• Assume memory access time: 200 nanoseconds, average page-
+  fault service time: 8 milliseconds
+  • EAT = (1 – p) x 200 + p x (8 milliseconds)
+        = (1 – p) x 200 + p x 8,000,000
+        = 200 + p x 7,999,800
+  • If one out of 1,000 causes a page fault, then EAT = 8.2
+    microseconds
+    • A slowdown by a factor of 41000
+       –   8.2 ms / 0.2 us = 41000
+  • If want < 10 percent, less than one page fault in every 400,000
+    accesses
+
+
+                                     27
+Demand Paging Optimizations
+• Swap space I/O faster than file system I/O even if on the same device
+    • Swap allocated in larger chunks, less management needed than file
+      system
+• Copy entire process image from disk to swap space at process load
+  time
+    • Then page in and out of swap space
+    • Used in older BSD Unix
+
+
+
+
+                                    28
+Demand Paging Optimizations
+• Demand page in from program binary on disk, but discard rather than
+  paging out when freeing frame (and reload from disk next time)
+   • Following cases still need to write to swap space
+      • Pages not associated with a file (like stack and heap) – anonymous
+         memory
+      • Pages modified in memory but not yet written back to the file system
+
+• Mobile systems
+   • Typically don’t support swapping
+   • Instead, demand page from file system and reclaim read-only pages
+     (such as code)
+
+
+
+
+                                     29
+Copy-on-Write
+• Copy-on-write (COW) allows parent and child processes to initially share the same
+  pages in memory
+  • The page is shared as long as no process modifies it
+  • If either process modifies a shared page, only then is the page copied
+
+• COW allows more efficient process creation
+  • No need to copy the parent memory during fork
+  • Only changed memory will be copied later
+
+• vfork syscall optimizes the case that child calls exec immediately after fork
+  • Parent is suspended until child exits or calls exec
+  • Child shares the parent resource, including the heap and the stack
+    • Child cannot return from the function or call exit, should call _exit
+  • vfork could be fragile, it is invented when COW has not been implemented
+
+
+
+
+                                           30
+Before Process 1 Modifies Page C
+
+
+
+
+                       31
+After Process 1 Modifies Page C
+
+
+
+
+                       32
+What Happens if There is no Free Frame?
+
+• Used up by process pages
+• Also in demand from the kernel, I/O buffers, etc
+• How much to allocate to each?
+• Page replacement – find some page in memory, but not really in
+  use, page it out
+    • Algorithm – terminate? swap out? replace the page?
+    • Performance – want an algorithm which will result in minimum number
+      of page faults
+• Same page may be brought into memory several times
+
+
+
+
+                                    33
+Page Replacement
+• Memory is an important resource, system may run out of memory
+• To prevent out-of-memory, swap out some pages
+  • Page replacement usually is a part of the page fault handler
+  • Policies to select victim page require careful design
+    • Need to reduce overhead and avoid thrashing
+  • Use modified (dirty) bit to reduce number of pages to swap out
+    • Only modified pages are written to disk
+  • Select some processes to kill (last resort)
+• Page replacement completes separation between logical memory and
+  physical memory – large virtual memory can be provided on a smaller physical
+  memory
+
+
+
+
+                                      34
+Need For Page Replacement
+
+
+
+
+                     35
+Page Fault Handler (with Page Replacement)
+
+• To page in a page:
+  • Find the location of the desired page on disk
+  • Find a free frame:
+    • If there is a free frame, use it
+    • If there is none, use a page replacement policy to pick a victim
+       frame, write victim frame to disk if dirty
+  • Bring the desired page into the free frame; update the page tables
+  • Restart the instruction that caused the trap
+• Note now potentially 2 page I/O for one page fault ➠ increase EAT
+
+
+
+
+                                    36
+Page Replacement
+
+
+
+
+                   37
+Page Replacement Algorithms
+• Page-replacement algorithm should have lowest page-fault rate on
+  both first access and re-access
+  • FIFO, optimal, LRU, LFU, MFU…
+• To evaluate a page replacement algorithm:
+  • Run it on a particular string of memory references (reference string)
+    • String is just page numbers, not full addresses
+  • Compute the number of page faults on that string
+    • Repeated access to the same page does not cause a page fault
+  • In all our examples, the reference string is
+      7,0,1,2,0,3,0,4,2,3,0,3,0,3,2,1,2,0,1,7,0,1
+
+
+
+                                     38
+Page Faults v.s. Number of Frames
+
+
+
+
+                       39
+First-In-First-Out (FIFO)
+• FIFO: replace the first page loaded
+  • Similar to sliding a window of n in the reference string
+  • Our reference string 7,0,1,2,0,3,0,4,2,3,0,3,0,3,2,1,2,0,1,7,0,1
+     • Will cause 15 page faults with 3 frames
+  • How about reference string of 1,2,3,4,1,2,5,1,2,3,4,5 /w 3 or 4 frames?
+• For FIFO, adding more frames can cause more page faults!
+  • Belady’s Anomaly
+
+
+
+
+                                      15 page faults
+
+
+
+                                                40
+FIFO Illustrating Belady’s Anomaly
+
+
+
+
+               123412512345
+
+
+                        41
+ Belady’s Anomaly
+
+head
+(old)    1   1   1   2   3   4   1           2        5
+
+             2   2   3   4   1   2           5        3       9 page faults
+
+  tail           3   4   1   2   5           3        4
+(new)
+         1 2 3 4 1 2 5 1 2 3 4 5
+head
+(old)
+         1   1   1   1           2   3   4   5        1   2
+
+             2   2   2           3   4   5   1        2   3
+                                                              10 page faults!
+                 3   3           4   5   1   2        3   4
+
+                     4           5   1   2   3        4   5
+  tail
+(new)
+
+
+
+
+                                                 42
+Optimal Algorithm
+• Optimal : replace page that will not be used for the longest time
+  • 9-page-fault is optimal for the example on previous slide
+• How do you know which page will not be used for the longest time?
+  • Can’t read the future
+  • Used for measuring how well your algorithm performs
+
+
+
+
+                                       43
+Least Recently Used (LRU)
+• LRU replaces pages that have not been used for the longest time
+  • Associate time of last use with each page, select pages w/ oldest timestamp
+  • Generally good algorithm and frequently used
+  • 12 faults for our example, better than FIFO but worse than OPT
+• LRU and OPT do NOT have Belady’s anomaly
+• How to implement LRU?
+  • Counter-based
+  • Stack-based
+
+
+
+
+                                             44
+LRU Implementation
+• Counter-based implementation
+  • Every page table entry has a counter
+  • Every time page is referenced, copy the clock into the counter
+  • When a page needs to be replaced, search for page with smallest counter
+    • Min-heap can be used
+• Stack-based implementation
+  • Keep a stack of page numbers (in double linked list)
+  • When a page is referenced, move it to the top of the stack
+  • Each update is more expensive, but no need to search for replacement
+
+
+
+
+                                     45
+Stack-based LRU
+
+
+
+
+                  46
+LRU Approximation Implementation
+
+• Counter-based and stack-based LRU have high performance overhead
+• Hardware provides a reference bit
+• LRU approximation with a reference bit
+  • Associate with each page a reference bit, initially set to 0
+  • When page is referenced, set the bit to 1 (done by the hardware)
+  • Replace any page with reference bit = 0 (if one exists)
+    • We do not know the order, however
+
+
+
+
+                                         47
+Additional-Reference-Bits Algorithm
+• Reordering the bits at regular intervals
+    • Suppose we have 8-bits byte for each page
+    • During a time interval (100ms), shifts bit rights by 1 bit, sets the
+      high bit if used, and then discards the low-order bits
+    • 00000000 => has not been used in 8 time intervals
+    • 11111111 => has been used in all time intervals
+    • 11000100 vs 01110111 : which one is used more recently?
+
+
+
+
+                                      48
+LRU Implementation
+• Second-chance algorithm
+   • Generally FIFO, plus hardware-provided reference bit
+   • Clock replacement
+   • If page to be replaced has
+       • Reference bit = 0 -> replace it
+       • Reference bit = 1 then:
+          – Set reference bit 0, leave page in memory
+
+          – Replace next page, subject to same rules
+
+
+
+
+                                       49
+Second-chance (clock) Page-replacement Algorithm
+
+
+
+
+                            50
+Enhanced Second-Chance Algorithm
+• Improve algorithm by using reference bit and modify bit (if available) in concert
+
+• Take ordered pair (reference, modify):
+  • (0, 0) neither recently used not modified – best page to replace
+  • (0, 1) not recently used but modified – not quite as good, must write out before
+    replacement
+  • (1, 0) recently used but clean – probably will be used again soon
+  • (1, 1) recently used and modified – probably will be used again soon and need to write
+    out before replacement
+
+• When page replacement called for, use the clock scheme but use the four classes
+  replace page in lowest non-empty class
+
+  • Might need to search circular queue several times
+
+
+
+
+                                            51
+Counting-based Page Replacement
+• Keep the number of references made to each page
+• Least frequently used (LFU) replaces page with the smallest counter
+    • A page is heavily used during process initialization and then never used
+• Most frequently used (MFU) replaces page with the largest counter
+    • Based on the argument that page with the smallest count was probably
+      just brought in and has yet to be used
+• LFU and MFU are not common
+
+
+
+
+                                      52
+Page-Buffering Algorithms
+• Keep a pool of free frames, always
+  • Frame available when needed, no need to find at fault time
+  • Read page into free frames without waiting for victims to write out
+    • Restart as soon as possible
+  • When convenient, evict victim
+• Possibly, keep list of modified pages
+  • When disk idles, write pages there and set to non-dirty: this page can be
+    replaced without writing pages to backing store
+• Possibly, keep free frame contents intact and note what is in them - a kind of
+  cache
+  • If referenced again before reused, no need to load contents again from
+    disk
+    • Cache hit
+
+
+
+                                       53
+Applications and Page Replacement
+• All of these algorithms have OS guessing about future page access
+• Some applications have better knowledge – i.e., databases
+• Memory intensive applications can cause double buffering - a waste of
+  memory
+  • OS keeps copy of page in memory as I/O buffer
+  • Application keeps page in memory for its own work
+• Operating system can given direct access to the disk, getting out of the way
+  of the applications
+  • Raw disk mode
+• Bypasses buffering, locking, etc
+
+
+
+
+                                       54
+Allocation of Frames
+• Each process needs minimum number of frames -according to instructions
+  semantics
+• Example: IBM 370 – 6 pages to handle SS MOVE instruction:
+  • Instruction is 6 bytes, might span 2 pages
+  • 2 pages to handle from
+  • 2 pages to handle to
+• Maximum of course is total frames in the system
+• Two major allocation schemes for process memory allocation
+  • Equal allocation
+  • Proportional allocation
+
+
+
+
+                                      55
+Frame Allocation
+• Equal allocation
+   • For example, if there are 100 frames (after allocating frames for the OS)
+     and 5 processes, give each process 20 frames
+   • Keep some as free frame buffer pool
+
+• Proportional allocation
+   • Allocate according to the size of process
+   • Dynamic as degree of multiprogramming, process sizes change
+
+                                          62
+
+
+
+
+                                     56
+Global vs. Local Allocation
+• Global replacement – process selects a replacement frame from the
+  set of all frames; one process can take a frame from another
+   • But then process execution time can vary greatly - depends on
+     others
+   • But greater throughput so more common
+• Local replacement – each process selects from only its own set of
+  allocated frames
+   • More consistent per-process performance
+   • But possibly underutilized memory
+
+
+
+
+                                  57
+Reclaiming Pages
+• A strategy to implement global page-replacement policy
+• All memory requests are satisfied from the free-frame list
+• Rather than waiting for the list to drop to zero before we begin
+  selecting pages for replacement, page replacement is triggered when
+  the list falls below a certain threshold.
+• This strategy attempts to ensure there is always sufficient free
+  memory to satisfy new requests.
+
+
+
+
+                                    58
+Reclaiming Pages Example
+
+
+
+
+                      59
+What happens if memory is below the minimum threshold
+
+• Reclaim pages aggressively
+   • Kill some processes
+       • According to OOM score
+       • How likely it is to be terminated in case of low available memory
+
+
+
+
+                                    60
+Major and minor page faults
+• Major: page is referenced but not in memory
+    • Can only be satisfied by disk
+    • do_anonymous_page is not major
+• Minor: mapping does not exist, but the page is in memory
+    • Shared library
+    • Reclaimed and not freed yet
+
+
+
+
+                Thanks to shared libraries!
+                                      61
+Non-Uniform Memory Access
+• So far all memory accessed equally
+• Many systems are NUMA – speed of access to memory varies
+
+  • Consider system boards containing CPUs and memory, interconnected over a
+    system bus
+
+• NUMA multiprocessing architecture
+
+
+
+
+                                       62
+Non-Uniform Memory Access (Cont.)
+• Optimal performance comes from allocating memory “close to” the
+  CPU on which the thread is scheduled
+   • And modifying the scheduler to schedule the thread on the same
+     system board when possible
+   • Linux
+       • Kernel maintains scheduling domains: does not allow threads to
+         migrate across domains
+       • A separate free-frame list for each NUMA node - allocating
+         memory from the node it is running
+
+
+
+
+                                   63
+Thrashing
+• If a process doesn’t have “enough” pages（frames）, page-fault rate
+  may be high
+  • Page fault to get page, replace some existing frame
+  • But quickly need replaced frame back
+  • This leads to: low CPU utilization ➠ kernel thinks it needs to
+     increase the degree of multiprogramming to maximize CPU
+     utilization ➠ more processes added to the system
+• Thrashing: a process is busy swapping pages in and out
+
+
+
+
+                                 64
+Thrashing
+
+
+
+
+            65
+Demand Paging and Thrashing
+• Why does demand paging work?
+   • Process memory access has high locality
+   • Process migrates from one locality to another, localities may
+     overlap
+• Why does thrashing occur?
+   • Total memory size < total size of locality
+
+
+
+
+                                  66
+Resolve thrashing - Option I
+• Limit thrashing effects by using local page replacement
+   • One process starts thrashing does not affect others -> it cannot
+     cause other processes thrashing
+      • Select swap out page from the same process
+
+
+
+
+                                 67
+Resolve thrashing - Option II
+•   Provide a process with as many
+    frames as it needs. How?
+    •   Time (a), the locality is the set
+        of pages {18-24, 29-33}.
+    •   Time (b), the locality changes
+        to {18-20, 24-29, 31-33}
+    •   18, 19, and 20 are part of both
+        localities
+
+
+
+
+                                            68
+Working-Set Model
+• Working-set window(Δ): a fixed number of page references
+  • If Δ too small ➠ will not include entire locality
+  • If Δ too large ➠ will include several localities
+  • If Δ = ∞ ➠ will include entire program
+• Working set of process pi (WSSi): total number of pages referenced in
+  the most recent Δ (varies in time)
+• Total working sets: D = ∑ WSSi
+  • Approximation of total locality
+  • If D > m ➠ possibility of thrashing
+  • To avoid thrashing: if D > m, suspend or swap out some processes
+
+
+
+
+                                     69
+Working-Set Model
+• Working-set window Δ = 10
+
+
+
+
+                              70
+Challenge: Keeping Track of the Working Set
+
+• Approximate with interval timer + a reference bit per page
+   • The reference bit is set to 1 by hardware when accessing a page
+• Example: Δ = 10,000 time units
+  • Timer interrupts after every 5000 time units
+  • Keep 2 memory bits in memory for each page
+  • Whenever a timer interrupts
+     • OS copies the reference bit (to memory bits [0] or [1]) and sets the values of
+        all reference bits to 0
+  • If one of the memory bits = 1 ➠ page in working set
+• Why is this not completely accurate?
+   • 2 memory bits can only record two interrupts
+   • Can not tell when (in 5000 time unites) the access occurs
+• Improvement = 10 bits and interrupt every 1000 time units
+
+
+
+
+                                         71
+Working Sets and Page Fault Rates
+• Assumes there is no thrashing
+• Direct relationship between working set of a process and its page-fault rate
+• Working set changes over time
+• Peaks and valleys over time
+
+
+
+
+                  Page fault increases due to new locality
+
+
+
+
+                                             72
+Page-Fault Frequency
+• More direct approach than WSS
+
+• Establish “acceptable” page-fault frequency (PFF) rate
+  • If actual rate too low, process loses frame
+  • If actual rate too high, process gains frame
+
+• Need to swap out a process if no free fames are available
+
+
+
+
+                                      73
+Kernel Memory Allocation
+• Kernel memory allocation is treated differently from user memory,
+  it is often allocated from a free-memory pool
+   • kernel requests memory for structures of varying sizes ->
+     minimize waste due to fragmentation
+   • Some kernel memory needs to be physically contiguous
+       • e.g., for device I/O
+
+
+
+
+                                 74
+Other Considerations
+• Prepaging
+• Page size
+• TLB reach
+• Program structure
+• I/O interlock and page locking
+
+
+
+
+                                   75
+Prepaging
+•   To reduce the large number of page faults that occurs at process startup
+    • Prepage all or some of the pages a process will need, before they are
+       referenced
+    • But if prepaged pages are unused, I/O and memory was wasted
+
+•   Assume s pages are prepaged and a fraction α of these pages is used
+    • Is cost of s * α save pages faults > or < than the cost of prepaging
+    • s * (1- α) unnecessary pages?
+    • α near zero -> prepaging loses
+
+
+
+
+                                           76
+Page Size
+• Sometimes OS designers have a choice
+  • Especially if running on custom-built CPU
+• Page size selection must take into consideration:
+  • Fragmentation -> small page size
+  • Page table size -> large page size
+  • Resolution -> small page size
+  • I/O overhead -> large page size
+  • Number of page faults -> large page size
+  • Locality -> small page size
+  • TLB size and effectiveness -> large page size
+• Always power of 2, usually in the range 212 (4,096 bytes) to 222 (4,194,304
+  bytes)
+• On average, growing over time
+
+
+
+
+                                              77
+TLB Reach
+• TLB reach: the amount of memory accessible from the TLB
+  • TLB reach = (TLB size) X (page size)
+
+• Ideally, the working set of each process is stored in the TLB
+  • Otherwise there is a high degree of TLB misses
+
+• Increase the page size to reduce TLB pressure
+  • It may increase fragmentation as not all applications require large page
+    sizes
+  • Multiple page sizes allow applications that require larger page sizes to use
+    them without an increase in fragmentation
+
+
+
+
+                                      78
+Other Issues: Program Structure
+• Program structure can affect page faults
+  • int[128,128] data;
+  • Assume page size is 512B; each row is stored in one page;
+  • Assume system has 127 physical frames
+  • Program 1:
+        for (j = 0; j <128; j++)
+            for (i = 0; i < 128; i++)
+               data[i,j] = 0;
+       128 x 128 = 16,384 page faults
+  • Program 2:
+        for (i = 0; i < 128; i++)
+            for (j = 0; j < 128; j++)
+                data[i,j] = 0;
+       128 page faults
+
+
+
+                                            79
+I/O interlock
+
+• I/O Interlock – Pages must sometimes be locked
+  into memory
+• Consider I/O - Pages that are used for copying a file
+  from a device must be locked from being
+  selected for eviction by a page replacement
+  algorithm
+
+
+
+
+                                     80
+Windows XP
+• Uses demand paging with clustering
+  • Clustering brings in pages surrounding the faulting page: locality
+• Processes are assigned working set minimum and set maximum
+  • wsmin: minimum number of pages the process is guaranteed to have
+  • wsmax: a process may be assigned as many pages up to its wsmax
+• When the amount of free memory in the system falls below a threshold:
+  • Automatic working set trimming to restore the amount of free memory
+  • It removes pages from processes that have more pages than the wsmin
+
+
+
+
+                                      81
+Memory management in Linux
+• mm_struct
+   •   https://elixir.bootlin.com/linux/v6.0/source/include/linux/mm_types.h#L486
+
+   • Where is page table?
+   • Where is kernel page table?
+   • Code walk through
+
+
+
+
+                                                 82
+Page fault handling in Linux
+• do_page_fault
+   •   https://elixir.bootlin.com/linux/v6.0/source/arch/arm64/mm/fault.c#L519
+
+   • Code walk through
+• __handle_mm_fault
+   •   https://elixir.bootlin.com/linux/v6.0/source/mm/memory.c#L4967
+   •   Page table walk
+
+
+
+
+                                                 83
+Linux Buddy System
+• Memory allocated using power-of-2 allocator
+  • Memory is allocated in units of the size of power of 2
+    • Round up a request to the closest allocation unit
+    • Split the unit into two “buddies” until a proper sized chunk is available
+  • Assume only 256KB chunk is available, kernel requests 21KB
+    • Split it into al and ar of 128KB each
+    • Further split an 128KB chunk into bl and br of 64KB
+    • Again, split a 64KB chunk into cl and cr of 32KB each
+    • Give one chunk for the request
+• Advantage: it can quickly merge unused chunks into larger chunk
+• Disadvantage: internal fragmentation
+  • 21k request -> 32k segment
+
+
+
+
+                                        84
+Buddy System Allocator
+
+
+
+
+                         85
+Slab Allocator
+• Slab allocator is a cache of objects
+  • A cache in a slab allocator consists of one or more slabs
+  • A slab contains one or more pages, divided into equal-sized objects
+  • Kernel uses one cache for each unique kernel data structure
+    • When cache created, allocate a slab, divided the slab into free objects
+    • Objects for the data structure is allocated from free objects in the slab
+    • If a slab is full of used objects, next object comes from an empty/new slab
+
+• Benefits: no fragmentation and fast memory allocation
+  • Some of the object fields may be reusable; no need to initialize again
+
+
+
+
+                                             86
+Slab Allocation
+
+
+
+
+     A 12k slab (3 pages) can store 4 3k objects.
+
+                          87
+Slab Allocator in Linux
+• For example process descriptor is of type struct task_struct
+    • Approx. 1.7KB of memory (some old linux version)
+
+• New task -> allocate new struct from cache
+    • Will use existing free struct task_struct
+
+• A slab can be in three possible states
+    • Full – all used
+    • Empty – all free
+    • Partial – mix of free and used
+
+• Upon request, slab allocator
+    • Uses free struct in partial slab
+    • If none, takes one from empty slab
+    • If no empty slab, create new empty
+
+
+
+
+                                              88
+Slab in Linux
+
+
+
+
+                89
+Slab Allocator in Linux (Cont.)
+• Slab started in Solaris, now wide-spread for both kernel mode and user
+  memory in various OSes
+• Linux 2.2 had SLAB, now has both SLOB and SLUB allocators
+    • SLOB for systems with limited memory
+       • Simple List of Blocks – maintains 3 list objects for small, medium,
+         large objects
+• SLUB is performance-optimized SLAB removes per-CPU queues,
+  metadata stored in page structure
+
+
+
+
+                                    90
+Takeaway
+• Page fault
+   • Valid virtual address, invalid physical address
+• Page replacement
+   • FIFO, optimal, LRU, 2nd chance
+• Thrashing and working set
+• Buddy system
+• Slab
+
+
+
+
+                                  91
+Memory management summary
+• Partition
+• Segmentation
+• Paging
+   • Page table
+   • Demand paging
+   • Page replacement
+   • Working set
+• Linux memory mapping
+   • 32-bit
+   • 64-bit
+
+
+
+                         92
+

@@ -1,0 +1,302 @@
+
+===== PAGE 52 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        A major limitation of simple pipelining techniques is that:
+        • they use in-order instruction issue and execution
+        • For example, consider this code:
+                FDIV.D          F4, F0, F2
+                FSUB.D          F10, F4, F6
+                FADD.D          F12, F6, F14
+
+        The FADD.D instruction cannot execute because the dependence of FSUB.D on
+        FDIV.D causes the pipeline to stall; yet, FADD.D is not data dependent on
+        anything in the pipeline.
+        Instructions are issued in program order, and if an instruction is stalled in the
+        pipeline no later instructions can proceed.
+
+===== PAGE 53 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • Out-of-order execution introduces the possibility of WAR and WAW
+          hazards, which do not exist in the five-stage integer pipeline and its
+          logical extension to an in-order floating-point pipeline.
+            • Consider the following RISC-V floating-point code sequence:
+                          FDIV.D   F10, F0, F2
+                 WAW
+                          FSUB.D F10, F4, F6
+                                                 WAR
+                          FADD.D F6, F8, F14
+
+
+        • Scoreboard algorithm is an approach to schedule the instructions.
+        • Robert Tomasulo introduces register renaming in hardware to minimize
+          WAW and WAR hazards, named Tomasulo’s Approach.
+
+===== PAGE 54 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard
+
+===== PAGE 55 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • A Simple Implementation of RISC-V
+
+
+                                       Check structural hazards
+                                       Check data hazards
+
+        • When an instruction could execute without hazards, it was issued
+          from ID knowing that all data hazards had been resolved.
+
+===== PAGE 56 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • To allow out-of-order execution, we essentially split the ID pipe
+          stage of our simple five-stage pipeline into two stages：
+
+            • Issue(IS): Decode instructions, check for structural hazards. (in-order issue)
+            • Read Operands(RO): Wait until no data hazards, then read operands. (out
+              of order execution)
+
+
+
+                                            IS         RO
+
+
+                Check structural hazards                          Check data hazards
+
+===== PAGE 57 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+                                                                          IS
+
+                                                                               ID
+
+                                                                          RO
+
+
+
+                                                                          EX
+
+
+
+                                                                          WB
+
+                          The basic structure of a processor with scoreboard
+
+===== PAGE 58 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+        • Show what the information tables look like for the following code
+          sequence when only the first load has completed and written its
+          result:
+
+                 FLD       F6, 34（R2）
+                 FLD       F2, 45（R3）
+                 FMUL.D    F0, F2, F4
+                 FSUB.D    F8, F6, F2
+                 FDIV.D    F10, F0, F6
+                 FADD.D    F6, F8, F2
+
+===== PAGE 59 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction               Instruction Status
+                                       IS   RO                   EX   WB
+            FLD       F6, 34(R2)       √     √                   √    √
+            FLD       F2, 45(R3)       √     √                   √
+            FMUL.D F0, F2, F4          √
+            FSUB.D F8, F6, F2          √
+            FDIV.D    F10, F0, F6      √
+            FADD.D        F6, F8, F2
+
+===== PAGE 60 =====
+§2.1 Dynamic Scheduling
+
+
+                   Name                                    Function Component Status
+                             Busy        Op          Fi         Fj         Fk          Qj            Qk       Rj     Rk
+                   Integer    yes        Load        F2         R3                                            no
+                   Mult1      yes        MUL         F0         F2         F4     Integer                     no     yes
+                   Mult2      no
+                    Add       yes        SUB         F8         F6         F2                   Integer       yes    no
+                   Divide     yes        DIV         F10        F0         F6        Mult1                    no     yes
+
+
+                           Rj, Rk :       “ yes” ——operand is ready but not read;
+                                          “no” & “Qj = null” ——operand is read；
+                                          “no” & “Qj != null” ——operand is not ready.
+                                                                     Register Status
+                                    F0          F2         F4         F6        F8           F10          …         F30
+                      Qi       Mult1       Integer                              Add         Divide
+
+===== PAGE 61 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction                                  Instruction Status
+                                              IS                RO                  EX           WB
+            FLD       F6, 34(R2)              √                 √                   √              √
+            FLD       F2, 45(R3)              √                 √                   √              √
+            FMUL.D F0, F2, F4                 √                 √                   √
+            FSUB.D F8, F6, F2                 √                 √                   √              √
+            FDIV.D    F10, F0, F6             √
+            FADD.D        F6, F8, F2          √                 √                   √
+
+                   Show what the status tables look like when the FMUL.D is ready to write its result.
+
+===== PAGE 62 =====
+§2.1 Dynamic Scheduling
+
+
+
+
+                   Name                                  Function Component Status
+                             Busy       Op         Fi         Fj         Fk          Qj            Qk       Rj    Rk
+                   Integer   no
+                   Mult1     yes        MUL        F0         F2         F4                                 no    no
+                   Mult2     no
+                    Add      yes        ADD        F6         F8         F2                                 no    no
+                   Divide    yes        DIV        F10        F0         F6        Mult1                    no    yes
+
+
+                                                                   Register Status
+                                   F0         F2         F4         F6        F8           F10          …        F30
+                      Qi      Mult1                                Add                    Divide
+
+
+                  Show what the status tables look like when the FMUL.D is ready to write its result.
+
+===== PAGE 63 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction                                    Instruction Status
+                                               IS                 RO                  EX            WB
+            FLD         F6, 34(R2)              √                 √                   √              √
+            FLD         F2, 45(R3)              √                 √                   √              √
+            FMUL.D F0, F2, F4                   √                 √                   √              √
+            FSUB.D F8, F6, F2                   √                 √                   √              √
+            FDIV.D      F10, F0, F6             √                 √                   √
+            FADD.D        F6, F8, F2            √                 √                   √              √
+
+                     Show what the status tables look like when the FDIV.D is ready to write its result.
+
+===== PAGE 64 =====
+§2.1 Dynamic Scheduling
+
+
+
+
+                    Name                              Function Component Status
+                             Busy     Op        Fi         Fj         Fk          Qj            Qk       Rj    Rk
+                   Integer   no
+                    Mult1    no
+                    Mult2    no
+                     Add     no
+                   Divide    yes     DIV        F10        F0         F6                                 no    no
+
+
+                                                                Register Status
+                               F0          F2         F4         F6        F8           F10          …        F30
+                      Qi                                                               Divide
+
+
+                   Show what the status tables look like when the FDIV.D is ready to write its result.
+
+===== PAGE 65 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard
+
+===== PAGE 66 =====
+Practice in class
+Suppose：
+Add instruction needs 2 clock cycles. Multiply instruction needs 10 clock cycles.
+Division instruction needs 40 clock cycles. LD instruction need 1 clock cycles.
+            FLD           F6, 34（R2）
+            FLD           F2, 45（R3）
+           FMUL.D         F0, F2, F4
+           FSUB.D         F8, F6, F2
+           FDIV.D         F10, F0, F6
+           FADD.D         F6, F8, F2
+How many clock cycles does it take to finish each instruction using scoreboard
+algorithm?
+
+===== PAGE 67 =====
+Scoreboard algorithm
+                       inst    Fi    Fj      Fk   is   ro   ex      wb
+                       L.D     F6    34+R2        1    2    3       4
+                       L.D     F2    45+R3        5    6    7       8
+                       MUL.D   F0    F2      F4   6    9    10~19   20
+                       SUB.D   F8    F2      F6   7    9    10~11   12
+                       DIV.D   F10   F0      F6   8    21   22~61   62
+                       ADD.D   F6    F8      F2   13   14   15~16   22
+
+===== PAGE 68 =====
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard

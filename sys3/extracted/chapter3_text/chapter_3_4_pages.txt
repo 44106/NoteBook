@@ -1,0 +1,978 @@
+§3.5 Memory System Performance
+
+
+     Table of Contents
+
+                 01                              02
+                 Introduction to Cache
+                                                 Basic Optimization Methods
+                 Performance
+
+
+
+                 03                              04
+
+                 Advanced Optimization Methods   Summary and Conclusion
+§3.5 Memory System Performance
+
+
+
+
+                    01. Introduction to Cache Performance
+
+                                 U nde rstan din g t he Basi cs and Me tr ics
+§3.5 Memory System Performance
+
+
+
+       Memory System Performance
+       CPU Execution time
+       • CPU Execution time
+       = (CPU clock cycles + Memory stall cycles)×Clock cycle time
+      Memory stall cycles = IC×MemAccess refs per instructions × Miss rate × Miss penalty
+                                                MemAccess                          
+                CPUtime = IC   CPI           +            MissRate  MissPenalty   CycleTime
+                                    Execution     Inst                             
+                                                MemMisses               
+                CPUtime = IC   CPI           +            MissPenalty   CycleTime
+                                    Execution     Inst                  
+
+
+
+       • CPI Execution includes ALU and Memory instructions
+§3.5 Memory System Performance
+
+
+
+       Average Memory Access Time
+       • Average Memory Access Time
+
+
+
+
+                              AluOps                    MemAccess        
+              CPUtime = IC           CPI            +            AMAT   CycleTime
+                              Inst                        Inst           
+                                              AluOps
+§3.5 Memory System Performance
+
+
+     Key Metrics of Cache Performance
+
+
+
+           Hit Rate:The probability that the CPU finds the
+                                                                       Hit Time:The access time when the cache is hit.
+           requested data in the cache.
+
+
+
+           Miss Rate:1 - Hit Rate, the probability that the            Miss Penalty:The time to load data from main
+           CPU needs to access main memory.                            memory to the cache on a miss.
+
+
+
+
+                          AMAT:Hit Time + Miss Rate × Miss Penalty. The core metric for measuring performance.
+§3.5 Memory System Performance
+
+
+
+
+                          02. Basic Optimization Methods
+
+                                 Reducing Miss Rate & Miss Penalty & Hit time
+1. Larger Block Size to Reduce Miss Rate
+   核心原理
+   利用空间局部性，一次加载更多连续数据，减少首次访问的
+   强制性失效次数。
+
+
+   主要优点
+   显著降低失效率，尤其对具备良好空间局部性的程序效果明
+   显。
+
+
+   潜在缺点
+   增大失效开销（传输更多数据），且可能因映射冲突增加冲
+   突失效概率。
+
+
+   适用场景
+   数据访问具有强空间局部性的应用，如矩阵运算、数组遍历
+   等。
+                                小块与大块缓存访问模式对比
+1. Larger Block Size to Reduce Miss Rate
+2. Larger Caches to Reduce Miss Rate
+  原理 Principle
+  提供更大空间容纳数据，减少容量失效与冲突失效的
+  发生。
+
+
+
+  优点 Pros
+  显著降低缓存失效率，优化效果通常直观且明显。
+
+
+
+  缺点 Cons
+  命中时间延长，同时增加硬件成本与功耗开销。
+
+
+
+  场景 Scenarios
+  处理大型数据集的应用，如数据库查询、科学计算等
+  。
+3. Higher Associativity to Reduce Miss Rate
+                 原理 (Principle)
+                 允许内存块映射到缓存中的多个位置（如2路/4路组相联），而非单一固定位
+                 置，从而分散冲突风险。
+
+
+                 优点 (Advantages)
+                 显著降低冲突失效（Conflict Misses），在数据访问模式复杂或存在大量共享
+                 数据时效果尤为明显。
+
+
+  不同相联度的缓存结构对比   缺点 (Disadvantages)
+                 硬件复杂度提升（需并行比较多个标签），可能导致缓存命中时间（Hit Time
+                 ）略有增加。
+
+
+                 适用场景 (Scenarios)
+                 适用于数据访问模式易引发冲突失效的程序，例如数值计算、矩阵运算等科学
+                 计算类应用。
+3. Higher Associativity to Reduce Miss Rate
+
+
+
+
+               How CPU Cache Works
+3. Higher Associativity to Reduce Miss Rate
+
+
+
+
+               How CPU Cache Works
+3. Higher Associativity to Reduce Miss Rate
+□ Compulsory Miss
+     • Cold fact of life, First time data is referenced
+     • Run billions of instructions, become insignificant
+□ Conflict Miss
+     • Multiple memory locations mapped to the same location
+     • One set fills up, but space in other cache sets
+     • Solution 1: increase cache size
+     • Solution 2: increase associative indexes
+□ Capacity Miss
+     • Working set is larger than cache size
+     • Solution: increase cache size
+
+                                         3C Summary
+3. Higher Associativity to Reduce Miss Rate
+□ 2:1 Cache Rule:
+     • Miss Rate of direct-mapped cache (size N) ≈ Miss Rate of 2-way associative cache (size
+       N/2)Types of misses
+□ Implication:
+     • Higher associativity reduces conflict misses.
+     • Helps achieve same miss rate with smaller cache.
+□ Caution – Execution Time Matters
+     • Miss rate is not the only metric!
+     • Higher associativity may increase cache hit time.
+     • As per Hill (1988):
+         • External cache hit time increases by ~10%
+         • Internal cache by ~2% for 2-way vs. 1-way
+3. Higher Associativity to Reduce Miss Rate
+• Relative Miss Rate           Absolute Miss Rate
+3. Higher Associativity to Reduce Miss Rate
+• Avg. Memory Access Time vs. Miss Rate
+• Assume Cache Cycle Time (CCT):
+  • 1.00 (1-way), 1.10 (2-way), 1.12 (4-way), 1.14 (8-way)
+  • AMAT (Access Time) across
+     cache sizes and associativities
+  • Red cells: No more benefit
+     from increasing associativity
+3. Higher Associativity to Reduce Miss Rate
+
+• Advantages:
+  • Reduces conflict misses
+  • Better hit rate in many workloads
+• Disadvantages:
+  • More complex hardware (tag comparators)
+  • Slightly longer access latency
+  • Increased power and area usage
+3. Higher Associativity to Reduce Miss Rate
+• Simulation Results (4KB, 8B Block Size)
+3. Higher Associativity to Reduce Miss Rate
+• Simulation Results (4KB, 8B Block Size)
+3. Higher Associativity to Reduce Miss Rate
+
+                      • 4-way to 8-way associativity offers a good
+                        trade-off between performance and
+                        complexity.
+                      • Excessively high associativity (>8-way)
+                        increases hardware cost with limited gain.
+3. Higher Associativity to Reduce Miss Rate
+
+                      • 4-way to 8-way associativity offers a good
+                        trade-off between performance and
+                        complexity.
+                      • Excessively high associativity (>8-way)
+                        increases hardware cost with limited gain.
+
+
+
+
+                                                                     21
+3. Higher Associativity to Reduce Miss Rate
+• Real-World Cache Designs
+   • Intel Core i7 (example):
+      • L1: 32KB, 8-way set associative
+      • L2: 256KB, 4-way
+      • L3: 8MB, 16-way shared
+   • Design choices balance performance and cost.
+• Pseudo-Associativity
+   • How to combine fast hit time of Direct Mapped and have the lower conflict misses
+     of 2-way SA cache?
+   • Divide cache: on a miss, check other half of cache to see if there, if so have a
+     pseudo-hit (slow hit)
+   • Drawback: CPU pipeline is hard if hit takes 1 or 2 cycles
+      • Better for caches not tied directly to processor (L2)
+      • Used in MIPS R1000 L2 cache, similar in UltraSPARC
+3. Higher Associativity to Reduce Miss Rate
+
+• Cache associativity significantly impacts miss rate.
+• Set-associative caches reduce conflict misses effectively.
+• Higher associativity must be balanced with hardware cost.
+• Real systems typically use 2 to 8-way associativity.
+
+
+
+
+                                                               23
+4. Multilevel Caches to Reduce Miss Penalty
+
+  Core Principle
+  Add L1/L2/L3 caches between CPU and main memory. On L1
+  miss, check faster L2/L3 first to avoid slow main memory
+  access.
+
+
+  Advantages
+  Significantly reduces miss penalty; standard in modern
+  processors.
+
+
+  Disadvantages
+  Increases hardware complexity and manufacturing cost.
+
+                                                             Hierarchy of Multilevel Caches
+  Application
+  All modern high-performance processors and computing
+  systems.
+5. Giving Priority to Read Misses over Writes
+to Reduce Miss Penalty
+  核心原理
+  写操作入缓冲区等待，读失效时优先处理读请求，减少
+  CPU等待读数据的阻塞时间。
+
+
+  主要优点
+  显著降低有效失效开销，在读取密集型场景下性能提升
+  尤为明显。
+
+
+  潜在缺点
+  可能会增加写操作的延迟，但由于写操作通常对实时性
+  不敏感，此影响较小。
+
+
+  适用场景
+                             图：读请求优先处理流程示意图
+  读操作频率远高于写操作的应用程序，如数据分析、搜
+  索引擎等。
+     strategies to handle
+01   read miss and write miss
+01   rea d m is s s t rat eg ie s
+
+
+ Read Through         不常用
+
+Read the contents directly from Main Memory to the CPU without
+going through the cache.
+
+
+                     PENALTY
+ Read Allocate
+
+First read the data from the Main Memory to the Cache, and then
+read the data from the Cache to the CPU.
+01   w ri t e m i s s s t ra t e gi e s
+
+
+                       PENALTY
+ Write Allocate
+
+First, load the data to be written from the Main Memory to the Cache, and the
+CPU writes the data to the Cache.
+Subsequently, flush the data from the Cache to the Main Memory.
+
+
+Write Around           PENALTY
+
+
+Data is modified in the Main Memory and written directly from the CPU to the
+Main Memory. It is not loaded into the Cache.
+Basic idea of giving reads   02
+priority over write
+02   basic idea
+
+
+
+                     ➢ a cache consistency strategy that emphasizes
+                        in the processor’s cache system
+                     ➢ read operations should be given higher
+                        priority for handling cache misses
+                     ➢ core concept: reduce CPU time waiting for
+                        data to be written to memory
+
+
+                  RAW conflict?
+02   write buf fer
+                       When a write miss occurs...
+
+                            Write Allocate
+
+                            ➢ first load the block into the cache for writing and set the
+                               dirty bit to 1.
+                            ➢ The dirty block is moved to the write buffer for
+                               asynchronous writing to memory when it is replaced.
+
+                            Write Around
+
+                            ➢ directly write the content to the write buffer for
+     “in the background”       asynchronous writing to memory.
+03   Implementation
+03   example
+
+
+
+
+Assume a direct-mapped cache that maps 512 and 1024 to the same block, and a
+four-word write buffer that is not checked on a read miss.
+Will the value in R2 always be equal to the value in R3?
+
+
+                                                               Main
+       RAW Conflict!!!            CPU           Cache
+                                                              Memory
+                                                                a=R
+
+
+
+                                                     a=R3
+
+                                              write buffer
+03   solution
+
+
+      Read miss
+
+
+➢ simplest way: read miss to wait until the write buffer is empty.
+---- greatly reduces CPU performance
+
+➢ Giving reads priority over writes: check the contents of the write buffer first:
+      conflict happens: retrieve data from the write buffer
+      no conflicts: let the memory access continue
+---- avoid waiting for the process of writing memory
+Performence analysis   04
+04   performance analysis
+04   read m iss
+04   write miss
+04   performance analysis
+04   performance analysis
+6. Avoiding Address Translation During
+Indexing of the Cache to Reduce Hit Time
+  Core Principle
+  Use virtual addresses for cache indexing instead
+  of physical addresses, bypassing TLB lookups on
+  the critical path.
+
+  Advantages
+  Significantly reduces cache hit time and allows for
+  higher CPU clock frequencies due to reduced
+  latency.
+
+  Drawbacks
+  Risk of cache aliasing (multiple virtual addresses
+  mapping to same physical address), requiring
+  special hardware solutions.
+                                                        Virtual vs. Physical Indexing Flow Comparison
+  Use Cases
+  High-performance processor designs where every
+  cycle of latency must be minimized for peak
+  efficiency.
+03. Advanced Optimization Methods
+   Advance d Te chnique s & C ompiler Sup port
+7. Pipelined L1 Caches With Virtual Indexing
+and Set Associativity
+   核心原理
+   将缓存访问（译码、比较、读取）拆分为流水线阶段，允
+   许CPU每个周期发起新请求，提升带宽。
+
+
+   主要优势
+   显著增加缓存带宽，支持更高的CPU时钟频率，提升连续
+   访问的吞吐量。
+
+
+   潜在代价
+   增加了单次访问的命中时间（延迟），数据需流经多个流
+   水线阶段才能返回。                    Estimated access times generally increase as
+                                 cache size and associativity are increased
+   适用场景
+   适用于高频率、高带宽需求的现代高性能处理器架构。
+7. Pipelined L1 Caches With Virtual Indexing
+and Set Associativity
+Example: Using the data in Table in P8 and Figure in P15, determine whether a 32 KiB four-way
+set associative L1 cache has a faster memory access time than a 32 KiB two-way set
+associative L1 cache. Assume the miss penalty to L2 is 15 times the access time for the faster
+L1 cache. Ignore misses beyond L2. Which has the faster average memory access time?
+Answer:
+Let the access time for the two-way set associative cache be 1.
+Then, for the two way cache,
+Average memory access time2 way=Hit time + Miss rate ×Miss penalty
+                                  =1+0 038 × 15 =1.38
+For the four-way cache,
+the access time is 1.4 times longer. The elapsed time of the miss penalty is 15/1.4 =10.1. Assume 10 for
+simplicity:
+Average memory access time4 way =Hit time2 way × 1 4 + Miss rate × Miss penalty
+                                  =1.4 +0 037 × 10 =1.77
+8. Multiple Banks and Ports to Increase the
+Bandwidth of L1 D-Caches
+                   核心原理：将缓存划分为多个独立存储体(Banks)，各Bank拥
+                   有独立读写端口，支持CPU并行访问以提升总带宽。
+
+
+                   技术优势：显著增加缓存带宽，完美适配多核处理器或乱序执
+                   行CPU的高并发数据访问需求。
+
+
+                   潜在挑战：引入了更复杂的硬件控制逻辑，增加了芯片设计与
+                   验证的复杂度。
+  缓存多体并行访问结构示意
+
+
+                   适用场景：高性能多核处理器架构、图形处理单元(GPU)及其
+                   他需要极高内存带宽的应用。
+8. Multiple Banks and Ports to Increase the
+Bandwidth of L1 D-Caches
+
+
+
+    Four-way interleaved cache banks using block addressing. Assuming 64 bytes per
+    block, each of these addresses would be multiplied by 64 to get byte addressing.
+
+
+
+                                                   CACTI estimated access times for
+                                                   a 32 KiB, 4-way set associative
+                                                   cache with 32 B blocks varying
+                                                   the number of banks and ports.
+9. Reducing the Miss Rate With Better
+Replacement Policies
+  核心原理 (Mechanism)
+使用LRU（最近最少使用）或LFU（最不经常使用）等智能
+算法预测未来访问模式，优先替换无用数据，优于简单的
+FIFO策略。
+
+
+  优缺点 (Pros & Cons)
+优点：显著降低缓存失效率。
+缺点：增加硬件复杂度与实现开销。
+
+
+
+  适用场景 (Scenarios)             图示：FIFO与LRU缓存替换策略对比
+缓存容量受限，且数据访问模式具有较强局部性与可预测
+性的场景。
+10. Multibanked L2 and L3 Caches to Decrease
+ Power and Latency, and Increase Bandwidth
+    核心原理                        Multibanked Cache Architecture
+将大容量L2/L3缓存划分为多个独立Bank。仅               Processing Cores (L1 Private)
+激活被访问的Bank，增加带宽的同时降低功
+耗与延迟。
+
+
+    优势分析                               Shared L3 Cache (Partitioned Banks)
+显著降低功耗，大幅提高缓存带宽，减少访问
+延迟。
+                              Bank 0       Bank 1        Bank 2        Bank 3
+
+    潜在挑战
+多Bank的管理逻辑增加了硬件设计的复杂度       Each request accesses only one bank, reducing power
+。                                              consumption.
+
+
+    适用：现代高性能多核处理器的L2/L3缓存
+    设计。
+11. Nonblocking Caches to Increase Cache
+Bandwidth
+  核心原理
+  允许CPU在处理缓存失效时继续执行后续指令，计算与失效处理
+  重叠，降低开销。
+
+  主要优点
+  显著降低有效失效开销，充分利用CPU的乱序执行能力，提升整
+  体吞吐量。
+
+  潜在缺点                                  The effectiveness of a nonblocking
+  大大增加了缓存控制器和CPU的硬件设计复杂度，带来更高的制
+                                        cache is evaluated by allowing 1, 2,
+  造成本。                                  or 64 hits under a cache miss with 9
+                                        SPECINT (on the left) and 9
+  适用场景                                  SPECFP (on the right) benchmarks.
+  适用于追求极致性能、支持乱序执行（Out-of-Order）的高端处理
+  器架构。
+12. Critical Word First and Early Restart to
+Reduce Miss Penalty
+工作原理 (Mechanism)                      显著降低有效失效开销
+                                      通过减少CPU的无效等待时间，提升整体执行效率。
+当缓存失效时，内存控制器优先将CPU急需的关键数
+据字 (Critical Word)发送给CPU。CPU收到后立即恢复
+执行，无需等待整个数据块传输完成。
+                                      增加硬件复杂度
+                                      内存控制器需要更复杂的逻辑来处理非连续的数据请求
+                                      和乱序传输。
+                     Early Restart:
+                     优先发送关键字，
+ CPU
+            Main     减少等待延迟           高延迟敏感型应用
+           Memory
+                                      适用于对访存延迟极其敏感，且经常访问大块数据中随
+                                      机位置的程序。
+
+
+
+                    核心价值：以硬件复杂度的提升换取CPU计算资源的高效利用
+13. Compiler Optimizations to Reduce Miss Rate
+
+   核心原理                      主要优点
+ 优化代码结构与数据访问模式，提升时间与空间局部
+                           纯软件层面优化，无需修改硬件设施，实施成本低，
+ 性，减少缓存失效。常见手段包括循环交换、循环分
+                           易于部署和维护。
+ 块等。
+
+
+
+
+   潜在局限                      适用场景
+
+ 效果高度依赖编译器的智能优化能力，同时也受限于   适用于各类应用程序，尤其在科学计算、大数据分析
+ 程序员编写的原始代码结构质量。           等数据密集型程序中效果显著。
+                Instruction Miss
+                •   Reorder procedures in memory to reduce
+                    conflict misses
+                •   Profiling to look at conflicts
+
+                Data Miss
+目录 / CONTENTS
+                •   Merging arrays
+                •   Loop Interchange
+                •   Loop Fusion
+                •   Loop Distribution
+                •   Blocking
+   Instruction
+      Miss
+PART ONE
+Reorder procedures in memory to reduce conflict misses
+
+将连续调用的函数相邻存放，存到同一个Cache line（对应内存的一个block)中，提升空间局部性。
+
+将条件分支的Hot Path连续布局，减少跳转导致的缓存行替换。即在存在分支情况下，Hot Path这条路径极大概率
+是连续调用的，那么就要相邻存放。这涉及到编译器的冷热代码分离技术。
+ Reorder procedures in memory to reduce conflict misses
+
+ 将高频调用的函数存放在不同缓存组，减少冲突。如果不在一个block中，那就尽可能在不同的缓存组(Cache Set)
+ 中，避免高频调用的函数的缓存行相互驱逐。
+
+
+
+冲突情况                                            进行重排
+
+                                                          函数B
+                             函数B
+
+
+
+
+                             函数A
+
+
+
+
+                                                          函数A
+  Profiling to look at conflicts
+
+动态分析(profiling): 收集执行轨迹，记录程序运行的指令访问模式、缓存未命中事件等
+                                                          动态分析
+冲突检测(Conflict Detection):通过时间关系图，分析代码段交替访问模式，标记高频交
+替访问且映射到同一缓存组的地址对。
+                                                          冲突检测
+优化策略生成(Optimization Strategy):
+• 对连续调用链函数，启用函数重排序或内联(将函数的代码直接插入到每个调用函数位置) 优
+• 对条件分支的 Hot Path，基于分支概率重排基本块，冷热代码分离，隔离低频代码； 化
+• 高频函数/循环体地址对齐，并分散到不同缓存组；                    效
+                                                     果   优化策略生成
+                                                     不
+实施优化（Implementation）可能有链接脚本控制调整关键函数地址等手动干预           佳
+
+验证反馈（Validation & Feedback）优化效果不佳则重启流程
+                                                          实施优化
+
+
+
+                                                          实施优化
+
+
+
+
+                                                         优化效果理想
+  Data Miss
+PART TWO
+    Merging Arrays
+
+•   假设需要读取val[]、key[]的值，若作为两个array存放，二者之间交替访问会造成大量的cache miss；而融合之后，
+    就避免了内存的交替访问，增加了命中率。
+•   利用空间相邻方便数据读取，将同时要读的数据在内存中放在一起，可以节省内存访问。
+
+
+
+
+           图1: merging arrays
+    Loop Interchange
+
+change nesting of loops (storage methods of data in memory):
+•   二维数组在内存中的存储方式为行主序，如下图。
+•   如果先以col作为外部循环，再以row作为内部循环，访问顺序就是x[0][0]，x[1][0]，x[2][0]... 相隔太远会导致较
+    大的miss rate。
+•   而如果先以row作为外部循环，访问顺序就是x[0][0]，x[0][1]... 相邻者可一并读取，降低Miss Rate。
+
+
+
+
+        图2:二元数组的存储方式
+
+
+
+
+    Loop Fusion
+
+•   合并具有相同循环且某些变量重叠的独立循环
+•   独立：融合后逻辑关系不会发生改变
+•   有变量重合：减少该变量内存访问次数
+    Loop distribution
+
+•   将不相关 / 矛盾的操作划分为不同的循环
+
+    for (i = 0; i < n ; i++){
+            for (j = 0; j < n; j++){
+               val[i][j]++;
+               key[j][i]++;
+            }
+        }
+
+
+•   上述代码块中，val与key均希望能以row作为外部循环，但在此处会产生冲突，因此需要将二者分割，以得到最低的
+    cache miss rate
+  Blocking
+                          /* Before */
+循环分块是指通过增加循环嵌套的维度来提升数据局       for (i = 0; i < N; i = i+1)
+                                  for (j = 0; j < N; j = j+1){
+部性的循环变换技术，是对多重循环的迭代空间进行               r = 0;
+重新划分的过程。                              for (k = 0; k < N; k = k+1)
+                                          r = r + y[i][k]*z[k][j]; // 关键点：z[k][j]的访问
+                                      x[i][j] = r;
+右以矩阵的乘法为例：                        }
+
+
+                          /* After */
+                          for (int kk = 0; kk < n; kk += B) {
+                                  int k_end = min(kk + B, n);
+                                  for (int ii = 0; ii < n; ii += B) {
+                                      int i_end = min(ii + B, n);
+                                      for (int jj = 0; jj < n; jj += B) {
+                                          int j_end = min(jj + B, n);
+                                          // 上面三个循环用于遍历分块
+                                          // 处理分块内部计算
+                                          for (int k = kk; k < k_end; ++k) {
+                                              for (int i = ii; i < i_end; ++i) {
+                                                  float yval = y[i *n + k];
+                                                  for (int j = jj; j < j_end; ++j) {
+                                                      x[i*n + j] += yval * z[k*n + j];
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+Blocking
+Blocking
+    Blocking
+
+
+               z[k][j]
+
+
+
+
+y[i][k]
+Blocking
+Blocking
+Blocking
+Blocking
+Blocking
+    Blocking
+                   J
+     K                 B
+I              K
+    Blocking
+                   J
+          K            B
+I
+
+               K
+    Blocking   cache
+
+         K                 J   B
+
+
+                       K
+I
+    Blocking   cache
+
+         K                 J   B
+
+
+                       K
+I
+Blocking
+                      /* Before */
+                          for (i = 0; i < N; i = i+1)
+• 在计算时间复杂度上，                  for (j = 0; j < N; j = j+1){
+                                  r = 0;
+  两者相同，都是𝑂 𝑁 3                    for (k = 0; k < N; k = k+1)
+                                      r = r + y[i][k]*z[k][j]; // 关键点：z[k][j]的访问
+• 简单估算一下Miss次数，                   x[i][j] = r;
+                              }
+  从𝑂 𝑁 3 变为𝑂 𝑁 3 /𝐵
+                      /* After */
+                      for (int kk = 0; kk < n; kk += B) {
+                              int k_end = min(kk + B, n);
+                              for (int ii = 0; ii < n; ii += B) {
+                                  int i_end = min(ii + B, n);
+                                  for (int jj = 0; jj < n; jj += B) {
+                                      int j_end = min(jj + B, n);
+                                      // 上面三个循环用于遍历分块
+                                      // 处理分块内部计算
+                                      for (int k = kk; k < k_end; ++k) {
+                                          for (int i = ii; i < i_end; ++i) {
+                                              float yval = y[I *n + k];
+                                              for (int j = jj; j < j_end; ++j) {
+                                                  x[i*n + j] += yval * z[k*n + j];
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+  Blocking测试程序
+
+实际上，L1 Cache大小能包含矩阵多行的数据，所以实际结果会比理论结果小
+
+
+
+
+                                               测试要点
+                             测试要点:
+                              • 使用windows api中的高精度计时器
+                             •    QueryPerformanceFrequency()和
+                                 使用windows   api中的高精度计时器
+                                  QueryPerformanceCounter()
+                                 QueryPerformanceFrequency()和
+                               • QueryPerformanceCounter()
+                                  阻止编译器优化 `#pragma optimize("", off)`
+                             • • 阻止编译器优化        `#pragma optimize("", off)`
+                                  按照一维数组方式构建二维数组，保证Row                  Major
+                             • 按照一维数组方式构建二维数组，保证Row Major
+                                  Order的特性
+                                 Order的特性
+                             • • 禁用自动向量化，禁用编译器内联优化等
+                                  禁用自动向量化，禁用编译器内联优化等
+                             • • 内存64位对齐，减少跨缓存行访问对实验造成的干扰
+                                  内存64位对齐，减少跨缓存行访问对实验造成的
+                                  干扰
+14. Hardware Prefetching
+15. Compiler-Controlled Prefetching
+to Reduce Miss Penalty or Miss Rate
+   Hardware Prefetching                 Pros, Cons & Scenarios
+ 硬件自动检测数据访问模式（如顺序访问），并提前             Advantages:主动将数据预取到缓存，有效降低缓存
+ 将未来可能需要的数据预取到缓存中，无需程序员干             失效率和失效开销，提升程序运行速度。
+ 预。
+                                     Disadvantages:预测错误会引入不必要的内存访问，
+                                     浪费总线带宽和CPU功耗，反而降低性能。
+   Compiler-Controlled Prefetching
+                                     Scenarios:适用于具有高度可预测访问模式的程序，
+ 编译器在分析代码后，显式地插入预取指令，指示              例如数组遍历、矩阵运算等顺序或步长访问场景。
+ CPU提前加载特定数据，需要对代码进行静态分析。
+
+
+
+
+               “核心思想：兵马未动，粮草先行 —— 在CPU真正需要数据前提前加载”
+16. Multiple Memory Buses and Memory Modules
+to Increase Bandwidth
+       Parallel Access Architecture                    核心原理               主要优点
+                                                     增加内存总线数量，CPU通过多条
+                                                                        显著增加内存带宽，有效缓解CPU
+                                                     总线并行访问不同模块，提升总带
+                                                                        与内存之间的数据传输瓶颈。
+                                                     宽。
+
+
+
+                                                       潜在缺点               适用场景
+                                                                        适用于对内存带宽有极高需求的服
+                                                     硬件成本上升，同时增加了主板布
+ CPU accessing multiple modules via separate buses                      务器、工作站及高性能计算(HPC)
+                                                     线和设计的复杂度。
+                                                                        系统。
+
+
+
+
+       关键总结：内存总线如同数据高速公路，增加车道（多总线）是解决高并发数据访问拥堵的有效手段。
+16. Multiple Memory Buses and Memory Modules
+to Increase Bandwidth
+                           Performance speedup running the
+                           SPECrate benchmark for the Loh-Hill
+                           scheme, an SRAM tag scheme, an alloy
+                           cache, and an ideal LLC (Ideal); a
+                           speedup of 1 indicates no improvement
+                           with the L4 LLC, and a speedup of 2
+                           would be achievable if L4 were perfect
+                           and took no access time.
+§3.5 Memory System Performance
+
+
+
+       How to Improve
+       Hence, there are more than 20 cache optimizations into these categories:
+
+       1.Reduce the miss penalty
+            ——multilevel caches, critical word first, read miss before write miss, merging write buffers, and victim
+            caches
+       2. Reduce the miss rate
+            ——larger block size, large cache size, higher associativity, way prediction and pseudo-associativity,
+            and compiler optimizations
+       3. Reduce the time to hit in the cache
+            ——small and simple caches, avoiding address translation, pipelined cache access, and trace caches3.
+       4. Reduce the miss penalty and miss rate via parallelism
+            ——non-blocking caches, hardware prefetching, and compiler prefetching
+§3.5 Memory System Performance
+
+
+
+
+     1. Reduce the miss penalty
+     • multilevel caches
+     • critical word first
+     • read miss before write miss
+     • merging write buffers
+     • victim caches
+§3.5 Memory System Performance
+
+
+
+
+     2. Reduce the miss rate
+     • larger block size
+     • large cache size
+     • higher associativity
+     • way prediction and pseudo-associativity
+     • compiler optimizations
+§3.5 Memory System Performance
+
+
+
+
+     3. Reduce the time to hit in the cache
+     • small and simple caches
+     • avoiding address translation
+     • pipelined cache access
+     • trace caches3
+§3.5 Memory System Performance
+
+
+
+
+     4. Reduce the miss penalty and miss rate via parallelism
+     • non-blocking caches
+     • hardware prefetching
+     • compiler prefetching
+§3.5 Memory System Performance
+
+
+
+       How to Improve
+
+            核心目标：降低 AMAT              多维优化策略
+            缓存性能优化的核心在于降低平均访存时间，这是衡   涵盖降低失效率、减少失效开销、提升命中速度及增
+            量系统效率的关键指标。               加带宽等多种维度的技术手段。
+
+
+
+
+            权衡与场景 (Trade-off)         组合拳效应
+            每种优化技术都有其利弊，实际设计中需根据应用场   现代高性能处理器极少依赖单一技术，而是通过多种
+            景进行取舍与平衡。                 技术的有机结合来达到极致性能。
+§3.5 Memory System Performance
+
+
+
+       Example: Impact on Performance
+       • Assume :
+           • all instructions usually take 1.0 clock cycles (ignoring memory stalls).
+           • cache miss penalty is 200 clock cycles                                     With a cache    CPI =7
+           • the average miss rate is 2%                                                Without a cache CPI = 1.0+200 ×1.5=301
+           • there is an average of 1.5 memory references per instruction
+           • the average number of cache misses per 1000 instructions is 30
+       • What is the impact on performance when behavior of the cache is included? Calculate the impact
+         using both misses per instruction and miss rate.
+       Answer: CPU time= (CPU clock cycles + IC × memory stall cycles/Inst)×CycleTime
+                        = IC ×(CPI + memory stall cycles/Inst) ×CycleTime
+                        = IC ×[1.0+(30/1000×200)] ×clock cycle =IC ×7.00 ×clock cycle
+       • Now calculating performance using miss rate, first compute memory stall cycles：
+§3.5 Memory System Performance
+
+
+
+       Summary of Cache Optimization Technology
+§3.5 Memory System Performance
+
+
+
+       Summary of Cache Optimization Technology
+Summary
+• Memory hierarchy
+   • From single level to multi level
+   • Evaluate the performance
+• Cache basic knowledge
+   • Mapping rules
+   • Access method                      Reduce miss rate
+   • Replacement algorithm
+   • Write strategy                     Reduce miss penalty
+   • Cache performance analysis
+• Cache Security                        Reduce hit time
+

@@ -1,0 +1,269 @@
+
+===== PAGE 71 =====
+§1.4 Quantitative approaches
+
+
+
+
+                               Quantitative approaches
+                                   CPU performance formula
+
+
+                                              Amdahl’s Law
+
+
+
+
+                                   Chapter 1 —Fundamentals of computer design — 71
+
+===== PAGE 72 =====
+§1.4 Quantitative approaches
+
+
+
+        CPU Time
+
+
+
+
+        IC and CPI depend on: Algorithm, Programming language, Compiler, Instruction set architecture
+        Clock Period or Clock Rate depends on: Instruction set architecture
+
+
+
+
+                                          Chapter 1 —Fundamentals of computer design — 72
+
+===== PAGE 73 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+
+
+
+
+                               Chapter 1 —Fundamentals of computer design — 73
+
+===== PAGE 74 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • Improving an aspect of a computer and expecting a proportional
+          improvement in overall performance
+
+                                                  Taf f ected
+                               Timprov ed =                     + Tunaf f ected
+                                            improvemen t factor
+
+        • Example: multiply accounts for 80s/100s
+            • How much improvement in multiply performance to get 5× overall?
+
+                             80
+                        20 =    + 20                         Can’t be done!
+                              n
+                                        Chapter 1 —Fundamentals of computer design — 74
+
+===== PAGE 75 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • The system performance acceleration rate is limited by the
+          percentage of the execution time of the component to the total
+          execution time in the system.
+        • Amdahl’s law defines the speedup that can be gained by using a
+          particular feature.
+                                   Performance for entire task Using Enhancement
+                    Speedup =
+                                   Performance for entire task Without Enhancement
+
+                                   Total Execution Time Without Enhancement
+                               =
+                                   Total Execution Time Using Enhancement
+                                      Chapter 1 —Fundamentals of computer design — 75
+
+===== PAGE 76 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+      • Fractionenhanced
+          • It is always less than or equal to 1.
+          • For example, the execution time of a whole program is 60 seconds, 20 seconds for calculation can be
+            improved, then the fraction is 20/60.
+      • Speedupenhanced
+          • It is always more than 1.
+          • For example, the execution time was 5 seconds before, and the execution time is 2 seconds after
+            improvement, then the speedup is 5/2.
+
+
+
+
+                                         Chapter 1 —Fundamentals of computer design — 76
+
+===== PAGE 77 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+        • The basic idea :
+
+            Execution time new = Execution time can not be enhance+ Execution time enhanced
+
+
+
+
+                                      Chapter 1 —Fundamentals of computer design — 77
+
+===== PAGE 78 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+     • Example 1.1 Increasing the processing speed of a certain function in the computer
+       system to 20 times the original, but the processing time of this function only accounts
+       for 40% of the running time of the entire system. After adopting this method to improve
+       performance, how much can the performance of the entire system improve?
+
+
+     Answer:
+        • Fraction enhanced = 40%
+        • Speedup enhanced = 20
+
+
+
+
+                                    Chapter 1 —Fundamentals of computer design — 78
+
+===== PAGE 79 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+     • Example 1.2 After a computer system adopts floating-point arithmetic components, the
+       floating-point arithmetic speed is increased by 20 times, and the overall performance of
+       a certain program of the system is increased by 5 times. Try to calculate the proportion
+       of the floating-point operations in this program.
+
+
+     Answer:
+        • Speedup overall = 5
+        • Speedup enhanced = 20
+
+         Fraction = 84.2%
+
+
+
+                                   Chapter 1 —Fundamentals of computer design — 79
+
+===== PAGE 80 =====
+§1.4 Quantitative approaches
+
+
+
+        Amdahl’s Law
+
+
+
+      • Important inference:
+
+                               Speedupoverall < 1/ (1- Fractionenhanced)
+
+
+
+                                     Chapter 1 —Fundamentals of computer design — 80
+
+===== PAGE 81 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+
+                            Great Architecture Ideas
+
+
+
+
+                                 Chapter 1 —Fundamentals of computer design — 81
+
+===== PAGE 82 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+       • There are 8 great architectural ideas that have been applied in the
+         design of computers for over half a century now.
+
+       • As we cover the material of this course, we should stop to think
+         every now and then which ideas are in play and how they are
+         being applied in the current context.
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 82
+
+===== PAGE 83 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 83
+
+===== PAGE 84 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Great Architecture Ideas
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 84
+
+===== PAGE 85 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Why learn architecture?
+
+
+
+
+                                Chapter 1 —Fundamentals of computer design — 85
+
+===== PAGE 86 =====
+§1.5 GREAT ARCHITECTURE IDEAS
+
+
+
+       Concluding Remarks
+
+       • Cost/performance is improving
+           • Due to underlying technology development
+       • Hierarchical layers of abstraction
+           • In both hardware and software
+       • Instruction set architecture
+           • The hardware/software interface
+       • Execution time: the best performance measure
+       • 8 great architectural ideas
+
+                                  Chapter 1 —Fundamentals of computer design — 86

@@ -1,0 +1,361 @@
+
+===== PAGE 26 =====
+Review
+
+
+
+         Example: Branch Taken
+
+===== PAGE 27 =====
+Review
+
+
+
+         Example: Branch Taken   What is the original
+                                  instruction here?
+
+===== PAGE 28 =====
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of 2nd or 3rd preceding ALU
+           instruction
+
+
+
+
+         • forwarding
+
+===== PAGE 29 =====
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of preceding ALU instruction
+           or 2nd preceding load instruction
+            • Need 1 stall cycle
+
+===== PAGE 30 =====
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of immediately preceding
+           load instruction
+            • Need 2 stall cycles
+
+===== PAGE 31 =====
+Review
+
+
+
+         Delay slot
+                    Branch i             IF        ID    EX       MEM        WB
+
+    Branch        (Delay slot)                     IF        ID    EX       MEM        WB
+                 instruction i+1
+    Not taken
+                 instruction i+2                             IF        ID    EX       MEM   WB
+                 instruction i+3                                       IF        ID    EX   MEM   WB
+                 instruction i+4                                                 IF    ID    EX   MEM   WB
+
+                    Branch i        IF        ID        EX        MEM WB
+
+    Branch         (Delay slot)               IF        ID        EX        MEM WB
+                 instruction i+1
+    Taken
+                 Branch target j                        IF        ID        EX        MEM WB
+                Branch target j+1                                 IF        ID        EX    MEM WB
+                Branch target j+2                                           IF        ID    EX    MEM WB
+
+===== PAGE 32 =====
+Review
+
+
+
+         Question: Is delay slot a really good design?
+
+         • “A RISC-V ISA is defined as a base integer ISA, which must be present
+           in any implementation, plus optional extensions to the base ISA.
+
+         • The base integer ISAs are very similar to that of the early RISC
+           processors except with no branch delay slots and with support for
+           optional variable-length instruction encodings. ”
+
+                                ——The RISC-V Instruction Set Manual Volume I
+
+===== PAGE 33 =====
+Review
+
+
+
+         Dynamic Branch Prediction
+         • In deeper and superscalar pipelines, branch penalty is more
+           significant
+         • Use dynamic prediction
+            • Branch prediction buffer (aka branch history table)
+            • Indexed by recent branch instruction addresses
+            • Stores outcome (taken/not taken)
+            • To execute a branch
+               • Check table, expect the same outcome
+               • Start fetching from fall-through or target
+               • If wrong, flush pipeline and flip prediction
+
+===== PAGE 34 =====
+Review
+
+
+
+         Branch History Table(BHT)
+
+
+                                      Branch
+          Branch    History: 1
+                                     not taken   History: 0            Branch
+           taken    Predict: Taken               Predict: Not taken   not taken
+                                     Branch
+                                      taken
+
+===== PAGE 35 =====
+Review
+
+
+
+         1-Bit Predictor: Shortcoming
+         • Inner loop branches mispredicted twice!
+                       outer: …
+                              …
+                       inner: …
+                              …
+                              beq …, …, inner
+                              …
+                              beq …, …, outer
+
+         • Mispredict as taken on last iteration of inner loop
+         • Then mispredict as not taken on first iteration of inner loop next
+           time around
+
+===== PAGE 36 =====
+Review
+
+
+
+         2-Bit Predictor
+                           Taken
+                                        Not taken
+                                   11               10
+                                          Taken
+                            Taken                    Not taken
+                                        Not taken
+                                   01               00    Not taken
+                                         Taken
+
+===== PAGE 37 =====
+Review
+
+
+
+         2-Bit Predictor: Example
+         • Inner loop branches mispredicted only once!
+
+                        outer: …
+                               …
+                        inner: …
+                               …
+                               beq …, …, inner
+                               …
+                               beq …, …, outer
+
+          ◼   Only mispredict as taken on last iteration of inner loop
+
+===== PAGE 38 =====
+Review
+
+
+
+
+         Buffer plays an important role
+           in Computer Architecture.
+
+===== PAGE 39 =====
+Review
+
+
+
+         Overlapping execution
+         • Conflict in access memory
+            • Instruction memory & data memory
+            • Instruction cache & data cache (same memory): Harvard structure
+            • Multibody cross structure (same memory with limitations)
+            • Adding instruction buffer between memory and instruction decode unit
+
+
+                Instruction Buffer
+                    Structure
+
+===== PAGE 40 =====
+Review
+
+
+
+         Single Overlapping execution
+
+
+
+
+                          The structure of processor with advance control
+
+         Common features: They work by FIFO, and are composed of a group of several
+         storage units that can be accessed quickly and related control logic.
+                                        Chapter 2 — Pipelining— 40
+
+===== PAGE 41 =====
+Review
+
+
+         Advanced Techniques for Instruction Delivery
+         and Speculation
+         • Increasing Instruction Fetch Bandwidth
+
+            • Branch-Target Buffers
+
+
+         • Specialized Branch Predictors: Predicting Procedure Returns,
+           Indirect Jumps, and Loop Branches
+
+            • Integrated Instruction Fetch Units
+
+===== PAGE 42 =====
+Review
+
+
+
+         Branch History Table(BHT)
+          1-Bit Predictor
+          2-Bit Predictor
+
+         Branch-Target Buffers
+
+===== PAGE 43 =====
+Review
+
+
+
+         Integrated Instruction Fetch Units
+         • An integrated instruction fetch unit that
+           integrates several functions:
+
+            • Integrated branch prediction
+            • Instruction prefetch
+            • Instruction memory access and buffering
+
+
+         • Instruction fetch as a simple single pipe stage
+           given the complexities of multiple issue is no
+           longer valid.
+
+===== PAGE 44 =====
+Review
+
+
+
+         Calculating the Branch Target
+         • Even with predictor, still need to calculate the target address
+            • 1-cycle penalty for a taken branch
+
+===== PAGE 45 =====
+Review
+
+
+
+         Calculating the Branch Target
+         • Even with predictor, still need to calculate the target address
+            • 1-cycle penalty for a taken branch
+
+
+         • Branch target buffer
+            • Cache of target addresses
+            • Indexed by PC when instruction fetched
+               • If hit and instruction is branch predicted taken, can fetch target immediately
+
+===== PAGE 46 =====
+Review
+
+
+
+         Branch-Target Buffer/Branch-Target Cache
+
+             Is instruction in BTB？    Predict     Reality    Delay cycle
+
+                      Yes              Taken       Taken          0
+
+                      Yes              Taken      Not taken       2
+
+                      No              Not taken    Taken          2
+
+                      No              Not taken Not taken         0
+
+===== PAGE 47 =====
+Review
+
+
+
+         Branch-Target Buffer/Branch-Target Cache
+         Benefit
+         • Get instructions at branch target faster
+         • It can provide multiple instructions at the branch target once,
+           which is necessary for the multi processor;
+         • branch folding
+            • It is possible to achieve unconditional branching without delay, or
+              sometimes conditional branching without delay.
+
+===== PAGE 48 =====
+Review
+
+===== PAGE 49 =====
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+
+
+
+
+               IF     ID      EX   MEM   WB
+
+===== PAGE 50 =====
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+         • A Simple Implementation of RISC-V       Dependences are a property of programs.
+         • Instructions Dependences             • Pipeline Hazards
+
+            • Data Dependences                      • Data Hazards
+            • Name Dependences                         • RAW
+               • Anti-dependence                       • WAR
+               • Output-dependence                     • WAW
+            • Control Dependences                   • Branch Hazards
+                                                    • Structural Hazards
+           Hazard are properties of the pipeline organization.
+
+===== PAGE 51 =====
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+         Consider this code:
+
+         FADD.D R1，R2，R4
+         FADD.D R2，R1，1
+         FSUB.D R1，R4，R5
+
+         (1) Point out all the pipeline Hazards (RAW, WAR, WAW).
+         (2) Analyze the hazards and give your solutions.

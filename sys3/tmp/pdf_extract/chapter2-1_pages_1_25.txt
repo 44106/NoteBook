@@ -1,0 +1,484 @@
+
+===== PAGE 1 =====
+Computer System III
+
+
+
+
+                       Chapter 2
+
+          Instruction-Level Parallelism (ILP)
+
+===== PAGE 2 =====
+Review
+
+===== PAGE 3 =====
+Review
+
+
+
+         Data Dependences
+
+         • FLD      F0,   0(R1)
+
+         • FADD.D   F4,   F0,     F2
+
+===== PAGE 4 =====
+Review
+
+
+
+         Name Dependences
+         FDIV.D        F2, F6, F4    FDIV.D        F2, F6, F4
+         FADD.D        F6, F0, F12   FADD.D        F6, F0, F12
+         FSUB.D        F8, F6, F14   FSUB.D        F2, F6, F14
+         DIV&ADD: Anti-dependence    DIV&SUB: Output-dependence
+         Change F6 as S:             Change F2 as S:
+         FDIV.D        F2, F6, F4    FDIV.D        F2, F0, F4
+         FADD.D        S, F0, F12    FADD.D        F6, F0, F12
+         FSUB.D        F8, S, F14    FSUB.D        S, F6, F14
+
+===== PAGE 5 =====
+Review
+
+
+
+         Control Dependences
+         if p1 {
+                   Statement 1
+             }
+         Statement
+         if p2 {
+                   Statement 2
+             }
+
+===== PAGE 6 =====
+Review
+
+
+
+         Hazards
+         • Situations that prevent starting the next instruction in the next cycle
+         • Structure hazards
+            • A required resource is busy
+         • Data hazard
+            • Need to wait for previous instruction to complete its data read/write
+         • Control hazard
+            • Deciding on control action depends on previous instruction
+
+===== PAGE 7 =====
+Review
+
+
+
+         Data Hazards
+                                    FADD.D   F6，F0，F12
+         • Read after write: RAW
+                                    FSUB.D   F8，F6，F14
+
+
+
+         • Write after read: WAR    FDIV.D   F2，F6，F4
+                                    FADD.D   F6，F0，F12
+
+
+
+         • Write after write: WAW   FDIV.D   F2，F0，F4
+                                    FSUB.D   F2，F6，F14
+
+===== PAGE 8 =====
+Review
+
+
+
+         Data Hazards
+                             Time
+                                    1   2     3     4     5     6
+
+
+
+
+                                              ALU
+              DADD R1，R2，R3     IM      Reg         DM    Reg
+
+
+
+
+                                                    ALU
+              DSUB R4，R1，R5             IM    Reg         DM    Reg
+
+
+
+
+                                                          ALU
+              XOR R6，R1，R7                    IM    Reg         DM
+
+
+
+
+                                                                ALU
+              AND R8，R1，R9                          IM    Reg
+
+
+
+              OR R10，R1，R11                               IM    Reg
+
+
+
+         Forwarding (aka Bypassing)
+
+===== PAGE 9 =====
+Review
+
+
+
+         Data Hazards
+                       Time
+                         1       2     3     4     5     6
+             DSUB R1，R2，R3
+
+
+
+
+                                       ALU
+                            IM   Reg         DM    Reg
+
+
+
+
+                                             ALU
+             LD R5，0(R1)         IM    Reg         DM    Reg
+
+
+
+
+                                                   ALU
+             SD R5，12(R1)              IM    Reg         DM
+
+
+
+
+         Forwarding (aka Bypassing)
+
+===== PAGE 10 =====
+Review
+
+
+
+         Data Hazards
+                       Time
+                              1    2     3     4     5     6
+
+
+
+
+                                         ALU
+             LD R1，0(R2)      IM   Reg         DM    Reg
+
+
+
+
+                                               ALU
+             DADD R4，R1，R5         IM    Reg         DM    Reg
+
+
+
+
+                                                     ALU
+             AND R6，R1，R7                IM    Reg         DM
+
+
+
+
+                                                           ALU
+             XOR R8，R1，R9                      IM    Reg
+
+
+
+         Forwarding (aka Bypassing)
+
+===== PAGE 11 =====
+Review
+
+
+
+         Data Hazards
+                       Time
+                            1   2     3      4       5     6
+
+
+
+
+                                      ALU
+             LD R1，0(R2)   IM   Reg          DM      Reg
+
+
+
+
+                                                     ALU
+             DADD R4，R1，R5      IM    Reg   Bubble         DM
+
+
+
+
+                                                           ALU
+             AND R6，R1，R7             IM    Bubble   Reg
+
+
+
+             XOR R8，R1，R9                   Bubble   IM    Reg
+
+
+
+          Forwarding with bubble
+
+===== PAGE 12 =====
+Review
+
+
+
+         Data Hazards
+            LD R1，0（R2）     IF   ID   EX   MEM     WB
+            DADD R4，R1，R5        IF   ID    EX     MEM   WB
+            AND R6，R1，R7              IF    ID     EX    MEM   WB
+            XOR R8，R1，R9                    IF     ID    EX    MEM   WB
+
+
+            LD R1，0（R2）     IF   ID   EX   MEM     WB
+            DADD R4，R1，R5        IF   ID   stall   EX    MEM   WB
+
+            AND R6，R1，R7              IF   stall    ID   EX    MEM   WB
+
+            XOR R8，R1，R9                   stall    IF   ID    EX    MEM
+
+          Forwarding with bubble
+
+===== PAGE 13 =====
+Review
+
+
+
+         Data Hazards
+
+                                   A=B+C
+         LD Rb，B         IF   ID   EX   MEM   WB
+
+         LD Rc，C              IF   ID   EX    MEM     WB
+
+         DADD Ra，Rb，Rc             IF   ID    stall   EX   MEM   WB
+
+         SD Ra ，A                        IF   stall   ID   EX    MEM   WB
+
+
+
+
+          Code Scheduling to Avoid Stalls
+
+===== PAGE 14 =====
+Review
+
+
+
+         Data Hazards
+
+                        Before Scheduling   After Scheduling
+                        LD   Rb，B           LD   Rb，B
+                        LD   Rc，C           LD   Rc，C
+            A=B+C       DADD Ra，Rb，Rc       LD   Re，E
+                        SD   Ra，A           DADD Ra，Rb，Rc
+            D=E-F
+                        LD   Re，E           LD   Rf，F
+                        LD   Rf，F           SD   Ra，A
+                        DSUB Rd，Re，Rf       DSUB Rd，Re，Rf
+                        SD   Rd，D           SD   Rd，D
+
+
+         Code Scheduling to Avoid Stalls
+
+===== PAGE 15 =====
+Review
+
+
+
+         Data Hazards
+         • Reorder code to avoid use of load result in the next instruction
+         • C code for A = B + E; C = B + F;
+                             lw $t1, 0($t0)         lw $t1, 0($t0)
+                             lw $t2, 4($t0)         lw $t2, 4($t0)
+                    stall    add $t3, $t1, $t2      lw $t4, 8($t0)
+                             sw $t3, 12($t0)        add $t3, $t1, $t2
+                             lw $t4, 8($t0)         sw $t3, 12($t0)
+                    stall    add $t5, $t1, $t4      add $t5, $t1, $t4
+                             sw $t5, 16($t0)        sw $t5, 16($t0)
+                                   13 cycles              11 cycles
+
+
+          Code Scheduling to Avoid Stalls
+
+===== PAGE 16 =====
+Review
+
+
+
+         Control Hazards
+         • Branch determines flow of control
+            • Fetching next instruction depends on branch outcome
+            • Pipelining can’t always fetch correct instruction
+               • Still working on ID stage of branch
+         • In RISC-V pipelining
+            • Need to compare registers and compute target early in the pipelining
+            • Add hardware to do it in ID stage
+                    Unconditional Jump                 Conditional Branch
+
+                    Jal - Jump and Link
+
+                    Jalr - Jump and Link-Register
+
+===== PAGE 17 =====
+Review
+
+
+
+         Stall on Branch
+                                     Branch taken
+         Branch            IF   ID    EX      MEM       WB
+         Target                 IF   stall    stall     IF   ID   EX   MEM   WB
+         Target+1                                            IF   ID   EX    MEM   WB
+         Target+2                                                 IF   ID    EX    MEM
+         Target+3                                                       IF   ID    EX
+
+                                     Branch not taken
+         Branch            IF   ID    EX      MEM       WB
+         Instruction i          IF   stall    stall     IF   ID   EX   MEM   WB
+         Instruction i+1                                     IF   ID   EX    MEM   WB
+         Instruction i+2                                          IF   ID    EX    MEM
+         Instruction i+3                                                IF   ID    EX
+
+===== PAGE 18 =====
+Review
+
+
+
+         Stall on Branch
+
+                                     Branch causes a stall
+
+         Branch            IF   ID      EX     MEM     WB
+         Instruction i          IF      IF       ID    EX    MEM   WB
+         Instruction i+1                         IF    ID    EX    MEM   WB
+         Instruction i+2                                IF   ID    EX    MEM   WB
+         Instruction i+3                                      IF   ID    EX    MEM   WB
+
+===== PAGE 19 =====
+Review
+
+
+
+         Control Hazards
+         • Wait until branch outcome determined before fetching next
+           instruction
+
+===== PAGE 20 =====
+Review
+
+
+
+         Branch Prediction
+         • Longer pipelines can’t readily determine branch outcome early
+            • Stall penalty becomes unacceptable
+         • Predict outcome of branch
+            • Only stall if prediction is wrong
+         • In RISC-V pipeline
+            • Can predict branches not taken
+            • Fetch instruction after branch, with no delay
+
+===== PAGE 21 =====
+Review
+
+
+         Control Hazards:
+               More-Realistic Branch Prediction
+         • Static branch prediction
+            • Based on typical branch behavior
+            • Example: loop and if-statement branches
+               • Predict backward branches taken
+               • Predict forward branches not taken
+         • Dynamic branch prediction
+            • Hardware measures actual branch behavior
+               • e.g., record recent history of each branch
+            • Assume future behavior will continue the trend
+               • When wrong, stall while re-fetching, and update history
+
+===== PAGE 22 =====
+Review
+
+
+
+         Reducing Branch Delay
+
+         • Predict branch taken
+
+         • Predict branch not taken
+
+         • Delayed Branch
+
+===== PAGE 23 =====
+Review
+
+
+
+         Predict not taken
+          Branch i（taken）       IF   ID   EX      MEM     WB
+          Instruction i+1            IF   stall   stall   stall   stall
+          Branch target j                  IF      ID     EX      MEM     WB
+          Branch target j+1                        IF      ID     EX      MEM   WB
+          Branch target j+2                                IF      ID     EX    MEM   WB
+
+
+          Branch i（not taken）   IF   ID   EX      MEM     WB
+          Instruction i+1            IF    ID     EX      MEM     WB
+          Instruction i+2                  IF      ID     EX      MEM     WB
+          Instruction i+3                          IF      ID     EX      MEM   WB
+          Instruction i+4                                  IF      ID     EX    MEM   WB
+
+===== PAGE 24 =====
+Review
+
+
+
+         RISC-V with Predict Not Taken
+
+             Prediction   add x4, x5, x6
+
+              correct     beq x1, x2, 40
+
+                          lw x3, 300(x0)
+
+
+
+
+             Prediction
+                          add x4, x5, x6
+              incorrect
+                          beq x1, x2, 40
+
+
+
+                                 or x7, x8, x9
+
+===== PAGE 25 =====
+Review
+
+
+
+         How to Reduce Branch Delay
+         • Example: branch taken
+             36:   sub   x10, x4, x8
+             40:   beq   x1, x3, 16    // PC-relative branch
+                                       // to 40+16*2=72
+             44:   and   x12, x2, x5
+             48:   or    x13, x2, x6
+             52:   add   x14, x4, x2
+             56:   sub   x15, x6, x7
+                   ...
+             72:   ld    x4, 50(x7)

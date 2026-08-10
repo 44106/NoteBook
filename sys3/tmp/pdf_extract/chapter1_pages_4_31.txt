@@ -1,0 +1,529 @@
+
+===== PAGE 4 =====
+编译器
+Code                                                                                            系统
+(C...)                                                操作系统（OS）
+          解释器                                                                                   软件
+            ……
+
+           ISA：RISC-V 指令系统
+                                                                                                体系
+           程序执行的基本原理
+                                                                                                结构
+          单周期与冯诺依曼架构
+
+
+
+
+                                                                                          MUX
+                               控制器                                    寄存器组
+
+
+
+
+                                                                                    运算
+         Memory
+
+
+
+
+                                                                                    器
+                                                                                                系统
+
+
+
+
+                                                                              MUX
+                                                                      Imm
+                                           下一地址逻辑                     Gen                       硬件
+                                      PC
+                                                     MUX
+          Disk
+系统1
+                                               ADD
+
+
+
+
+                                                           ADD
+          I/O
+                                           4
+         Device                                                                          CPU
+
+                                                                                                门级
+         数值表示与门电路            组合逻辑电路    时序逻辑电路                    基本运算电路      计算机硬件组成（硬件模块设计）
+                                                                                                电路
+
+===== PAGE 5 =====
+System Call
+          编译器
+Code                 进程管理                                                                                       系统
+(C...)    解释器                                                   中断与
+                          进程调度          CPU调度                                                                   软件
+                                                                 时钟
+                          进程通信     同步、互斥、死锁
+            ……
+
+           ISA：RISC-V 指令系统             软硬件协同（OS加载）
+                                                                                                                体系
+           程序执行的基本原理                   流水线实现与性能分析
+                                                                                                                结构
+          单周期与冯诺依曼架构                    流水线冲突与处理
+
+
+
+
+                                                                                                          MUX
+                                 控制器            冒险检测                          寄存器组
+
+
+
+
+                                                                                            运算
+         Memory
+
+
+
+
+                                                                                            器
+                                                中断控制
+                                                                                                                系统
+
+
+
+
+                                                                                      MUX
+                                                                              Imm
+                    BUS                         下一地址逻辑                        Gen                               硬件
+                                          PC
+                                                          MUX                 CSR
+          Disk
+系统1
+                                                    ADD
+
+
+
+
+                                                                ADD
+                                                                                            Forwarding
+          I/O                                                                                  Unit
+                                                4
+         Device                                                                                          CPU
+系统2
+
+                                                                                                                门级
+         数值表示与门电路            组合逻辑电路        时序逻辑电路                     基本运算电路         计算机硬件组成（硬件模块设计）
+                                                                                                                电路
+
+===== PAGE 6 =====
+System Call
+          编译器
+Code                 进程管理                                                      内存管理               存储管理                             系统
+(C...)    解释器                                                        中断与
+                          进程调度               CPU调度                                  主存            设备           文件       磁盘         软件
+                                                                      时钟
+                          进程通信        同步、互斥、死锁                                     虚拟内存           管理           系统       管理
+            ……
+
+           ISA：RISC-V 指令系统              软硬件协同（OS加载）                                   定量分析方法                     虚拟存储器设计
+                                                                                                                                   体系
+           程序执行的基本原理                    流水线实现与性能分析
+                                                                                    ILP     DLP    TLP       Cache设计与性能分析          结构
+          单周期与冯诺依曼架构                         流水线冲突与处理
+
+
+
+
+                                                                                                                             MUX
+                                  控制器                冒险检测                                 寄存器组
+
+
+
+
+                                                                                                           运算
+         Memory
+
+
+
+
+                                                                                                           器
+                                                     中断控制
+                                                                                            RAT
+                                                                                                                                   系统
+
+
+
+
+                                                                                                    MUX
+                                                                                          Imm
+                    BUS                              下一地址逻辑                                                                        硬件
+
+
+
+
+                                                                                                           运算
+                                                                                                           器-2
+                                                                                          Gen
+
+
+
+
+                                                                                                                   RS
+                                               PC
+                              Cache
+
+
+
+
+                                      MMU                      MUX                        CSR
+          Disk                                                                                       ROB
+系统1                                   /TLB
+                                                         ADD
+
+
+
+
+                                                                     ADD
+          I/O                                                        BPU                                   Forwarding
+                                                     4                                                        Unit
+         Device                                                                                                          CPU
+系统2
+
+                                                                                                                                   门级
+         数值表示与门电路            组合逻辑电路             时序逻辑电路                     基本运算电路                 计算机硬件组成（硬件模块设计）
+系统3                                                                                                                                电路
+
+===== PAGE 7 =====
+系统贯通实验部分结构设计
+
+
+                     操作系统（OS）                                系统       RISC-V
+                                                             软件      toolchain
+
+
+                     RISC-V 指令集与汇编
+
+
+                                             单周期 CPU
+                                                                                        基础
+                                                SCPU 数据通路                               工具链
+                                                             系统
+                流水线 CPU                                           Spike          QEMU
+                                                             硬件
+                                                SCPU 控制单元
+
+系统1
+
+      组合逻辑电路                      时序逻辑电路                                  Vivado
+       多路选择器/七段数码管   加法器               有限状态机/乘法器       计数器   门级
+                                                                      Verilator
+                                                             电路
+                          Verilog 语言                                      FPGA
+
+===== PAGE 8 =====
+系统贯通实验部分结构设计
+                                                                软硬件
+                进程管理
+                                                                协同综合
+        内核
+        启动         RISC-V 时钟中断处理
+        逻辑
+                                               虚拟化技术            系统         RISC-V
+       与运行         内核线程管理与调度                                    软件        toolchain
+
+
+                          RISC-V 指令集与汇编
+
+
+      流水线 CPU                                   单周期 CPU
+
+                         Pipeline 基础/阶段寄存器                                                   基础
+                                                   SCPU 数据通路                                 工具链
+                        冒险处理 Forwarding 技术                      系统
+                                                                       Spike          QEMU
+        流水线性能优化                                                 硬件
+                         AXI4-Lite 总线模型与使用
+                                                   SCPU 控制单元
+                        CSR寄存器/中断与异常处理
+系统1
+
+      组合逻辑电路                         时序逻辑电路                                    Vivado
+系统2
+       多路选择器/七段数码管       加法器              有限状态机/乘法器       计数器   门级
+                                                                           Verilator
+                                                                电路
+                             Verilog 语言                                        FPGA
+
+===== PAGE 9 =====
+系统贯通实验部分结构设计
+                                                                  软硬件
+                进程管理                       虚拟化
+                                                                  协同综合
+        内核                                    SV39 分页/虚拟内存管理
+        启动          RISC-V 时钟中断处理
+        逻辑                                  用户态进程实现与用户态切换         系统         RISC-V
+       与运行          内核线程管理与调度                                     软件        toolchain
+                                              缺页异常处理与 fork 机制
+
+                           RISC-V 指令集与汇编
+
+
+      流水线 CPU                                     单周期 CPU
+         基于 BHT/BTB 的     Pipeline 基础/阶段寄存器                                                    基础
+          动态分支预测                                     SCPU 数据通路                                 工具链
+                         冒险处理 Forwarding 技术                       系统
+                                                                         Spike          QEMU
+         内存 Cache 设计                                              硬件
+                          AXI4-Lite 总线模型与使用
+        内存管理单元 MMU                                   SCPU 控制单元
+         虚拟地址转换          CSR寄存器/中断与异常处理
+系统1
+
+      组合逻辑电路                          时序逻辑电路                                     Vivado
+系统2
+       多路选择器/七段数码管        加法器              有限状态机/乘法器        计数器   门级
+                                                                             Verilator
+                                                                  电路
+                              Verilog 语言                                         FPGA
+系统3
+
+===== PAGE 10 =====
+Computer System III
+
+
+
+
+                 What is more? Anything else?
+
+===== PAGE 11 =====
+What is more?   Your own CPU.
+
+
+
+
+    ZJV 1.0 技术指标——微结构设计
+
+===== PAGE 12 =====
+What is more?   Your own CPU.
+
+
+
+
+    ZJV 1.0 技术指标——微结构设计
+
+===== PAGE 13 =====
+What is more?                  Your own CPU.
+
+
+
+
+     Chapter 1 — Computer Abstractions and Technology — 13
+
+===== PAGE 14 =====
+What is more?                      Your own CPU.
+
+• 自主搭建的差分测试框架dtqemu                                                     操作系统移植
+  • 模拟RAM和串口等外设
+                                                                                 支持pmon的全部指令运行
+  • 同步中断
+                                                                                 支持ucore的运行
+  • 比对qemu和AMipsel的寄存器
+                                                                                 完成Linux的启动流程到用户态
+• 便捷Linux的调试
+
+
+
+
+                         Chapter 1 — Computer Abstractions and Technology — 14
+
+===== PAGE 15 =====
+ZJV1.0——流片成果（一生一芯二期）
+
+===== PAGE 16 =====
+ZJV2.0 ——流片成果（一生一芯三期）
+
+===== PAGE 17 =====
+What is more?   Your own CPU + system.
+
+
+
+
+                        逐梦杯总决赛：
+
+                        • 自主设计优化，获得1789性能分
+                        • 面向通用系统，启动Linux 发行版
+                        • 着眼安全特性，保护数据完整性和机密性
+
+
+
+
+                                               17
+
+===== PAGE 18 =====
+What is more?   Your own CPU + system.
+
+===== PAGE 19 =====
+What is more?      Our idea (not only CPU)
+
+                      ZJV = ZheJiang University + RISC-V
+
+
+
+ZJV 1.0     Amipsel      ZJV 2.0
+                                   ZJV 2.0
+                                    plus
+                                              MMM     。。。              ZJV
+                                                                      求是I号
+                                                      2023.08
+                                                     龙芯杯个人赛
+                                                       一等奖
+
+      2020.12     2021.08    2021.12 2022        2022.08         2024.04     2024.12
+     第一次投片      龙芯杯一等奖     ZJV 2.0投片 逐梦杯       龙芯杯二等奖          ZJV 2.0回片 ZJV 浙大安全芯
+                （性能第一名） ZJV 1.0第二次投片全国冠军       （性能第一名）         ZJV 1.0回片 求是I号投片
+                                                                           2025.03回片
+                                                 2022.08
+                                                龙芯杯个人赛
+                                                  一等奖
+
+===== PAGE 20 =====
+Computer System III
+
+
+
+
+      Let’s begin the class from the problem.
+
+===== PAGE 21 =====
+problem
+
+
+
+
+electrons
+
+===== PAGE 22 =====
+problem
+algorithm
+
+
+
+
+electrons
+
+===== PAGE 23 =====
+problem
+algorithm
+ program
+
+
+
+
+electrons
+
+===== PAGE 24 =====
+problem
+      algorithm
+       program
+runtime system
+ (VM, OS, MM)
+
+
+
+
+      electrons
+
+===== PAGE 25 =====
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+
+
+
+
+          electrons
+
+===== PAGE 26 =====
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+
+
+
+          electrons
+
+===== PAGE 27 =====
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+               logic
+
+
+          electrons
+
+===== PAGE 28 =====
+problem
+         algorithm
+           program
+  runtime system
+   (VM, OS, MM)
+ISA (architecture)
+microarchitecture
+               logic
+            circuits
+          electrons
+
+===== PAGE 29 =====
+Computer System
+                             problem
+                           algorithm
+                             program
+                    runtime system
+                     (VM, OS, MM)
+                  ISA (architecture)
+                  microarchitecture
+                                 logic
+                              circuits
+                            electrons
+
+===== PAGE 30 =====
+Computer System   challenging
+                                  runtime system
+                                   (VM, OS, MM)
+                                ISA (architecture)
+                                microarchitecture
+                                               logic
+
+===== PAGE 31 =====
+How about computer system competency?
+• Computer science and technology
+  • Computing Curricula 2020
+                                程序设计与实
+
+                               算法 现能力
+            算法设                    4%                        系统开发能力
+   计算思                         设计               系统设计能力
+            计与分                                                28%
+   维能力                         与分                 23%
+            析能力
+                               析能
+   程序设                          力        系统能力
+            系统能                10%        75%
+   计与实
+             力                                  系统认知能力
+   现能力
+                                                  7%
+                                                         系统应用能力
+                               计算思维能力                      17%
+                                 11%

@@ -1,0 +1,27 @@
+信号量同步， 病人取号就医，20个座位， 有座位则取号入座等待，无座则不取号干等着（乐）。 医生有空就看病。代码：
+    smaphore seats=20;
+    smaphore mutex = 1;
+    smaphore patient = 0;
+    Patient:
+        ___________________(1)  
+        get queue number
+        ___________________(2)
+       wait to be called on
+        ___________________(3)
+       get service at disk
+     Doctor:
+      while(true):
+         ___________________(4)
+         call an existing queue number
+         serve the respective patient
+
+王道原题（仅仅改了数据）（位置：2023年操作系统王道， 324页，第6题， 2010统考真题）
+王道原题（两题缝合+改数据）（位置：2023年操作系统王道，219页，13题 2023年操作系统王道，222页，21题（2020统考真题））
+
+
+补图(王道)： 2. 
+
+3. 
+
+
+

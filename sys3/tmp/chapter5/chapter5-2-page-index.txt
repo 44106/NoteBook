@@ -1,0 +1,84 @@
+001: DLP and TLP
+002: Flynn
+003: 3 MIMD: Tread-level Parallelism
+004: 3 MIMD: Tread-level Parallelism
+005: 3 MIMD: Tread-level Parallelism
+006: 3 MIMD: Tread-level Parallelism | From ILP to TLP | • Thread-level parallelism is identified at a high level by software | system or programmer; | • The threads consist of hundreds to millions of instructions that may
+007: 3 MIMD: Tread-level Parallelism | From TLP to MIMD Architecture | • TLP implies the existence of multiple program counters. | • Thus TLP is exploited primarily through MIMDs
+008: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Multi-processor system——based on shared memory | • There is only a unique address space in the system, and all processors share | this address space.
+009: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Multi-processor system——based on shared memory | • There is only a unique address space in the system, and all processors share | this address space.
+010: 3 MIMD: Tread-level Parallelism | Shared Memory System | CPU | Shared | Memory
+011: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Multi-processor system——based on shared memory | • There is only a unique address space in the system, and all processors share | this address space.
+012: 3 MIMD: Tread-level Parallelism | Multi-computer system based on message | passing
+013: 3 MIMD: Tread-level Parallelism | Multi-computer memory access model | • NORMA (No-Remote Memory Access) | M M M | P P …… P
+014: 3 MIMD: Tread-level Parallelism | Multi-computer system based on message | passing | • General multi-computer architecture | • Each node is composed of one or more CPUs, RAMs, disks and other
+015: Flynn
+016: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+017: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+018: 3 MIMD: Tread-level Parallelism | UMA | P1 P2 …… Pn | ICN | (Bus、Crossbar、Multistage Network)
+019: 3 MIMD: Tread-level Parallelism | UMA Multi-processor system | • UMA system features | • Physical memory is uniformly shared by all processors | • It takes the same time for all processors to access any memory word
+020: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+021: 3 MIMD: Tread-level Parallelism | NUMA | LM1 P1 | LM2 P2 ICN | …… …… ……
+022: 3 MIMD: Tread-level Parallelism | NUMA CPU Memory CPU Memory CPU Memory | • NC-NUMA MMU | Local Bus | MMU
+023: 3 MIMD: Tread-level Parallelism | NUMA | • NUMA system features | • All CPUs share an uniform address space | • Use LOAD and STORE instructions to access remote memory
+024: 3 MIMD: Tread-level Parallelism | UMA and NUMA | • UMA is also called symmetric (shared-memory) multiprocessors | (SMP) or centralized shared-memory multiprocessors. | • NUMA is called distributed shared-memory multiprocessor (DSP).
+025: §5.3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+026: 3 MIMD: Tread-level Parallelism | COMA | ICN | D D D | C C …… C
+027: 3 MIMD: Tread-level Parallelism | COMA | Characteristics of COMA | • COMA is a special case of NUMA. There is no storage hierarchy in each | processor node, and all caches form a uniform address space.
+028: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+029: 3 MIMD: Tread-level Parallelism | MPP | • The MPP system is a massively parallel computer system composed | of hundreds of processors. | • In the past, it was mainly used for calculation-oriented occasions
+030: 3 MIMD: Tread-level Parallelism | Characteristics of MPP | • MPP systems generally use standard commercial CPUs as their | processors. | • The MPP system uses a high-performance private interconnection
+031: 3 MIMD: Tread-level Parallelism | MPP | LM：Local Memory | NIC：Network interface circuit | MB：Memory Bus
+032: 3 MIMD: Tread-level Parallelism | MIMD Architecture | • Different memory access models of MIMD multiprocessor system | • Uniform Memory Access (UMA) | • Non Uniform Memory Access (NUMA)
+033: 3 MIMD: Tread-level Parallelism | COW | • The COW system is composed of a large number of PCs or | workstations connected together through a commercial network. | • COW can be assembled completely using commercially available
+034: 3 MIMD: Tread-level Parallelism | COW | B：Storage Bus and I/O Bus LD：Local Disk IOB：I/O Bus | MB MB | P/C P/C
+035: 3 MIMD: Tread-level Parallelism | COW Architecture | Parallel Application | Serial Application Parallel Application Environment | Cluster system middleware
+036: 3 MIMD: Tread-level Parallelism | Challenges of Parallel Processing | The application of multiprocessors ranges from running independent tasks | with essentially no communication to running parallel programs where | threads must communicate to complete the task.
+037: 3 MIMD: Tread-level Parallelism | Challenges of Parallel Processing | Example： | Suppose you want to achieve a speedup of 80 with 100 processors. What | fraction of the original computation can be sequential?
+038: 3 MIMD: Tread-level Parallelism | Challenges of Parallel Processing | Example： | Suppose we have an application running on a 100-processor multiprocessor, and assume | that application can use 1, 50, or 100 processors. If we assume that 95% of the time we
+039: 3 MIMD: Tread-level Parallelism | Challenges of Parallel Processing | Example： | Suppose we have an application running on a 32-processor multiprocessor that has a | 100 ns delay to handle a reference to a remote memory. For this application, assume
+040: §Complement 3*: Cache Coherence | Challenges of Multi-process system based | on Shared Memory
+041: §Complement 3*: Cache Coherence | Challenges of Multi-process system based | on Shared Memory | Core 1 Core 2 CPU1 CPU2 P1 P2 P3 | Cache Cache Cache
+042: §5.4 Cache Coherence | Memory Consistency and Cache Coherence | • Memory Consistency Need Memory Consistency Model | • When a written value will be returned by a read | • If a processor writes location A followed by location B, any processor that
+043: §Complement 3*: Cache Coherence | Cache Coherence | ■ Migration: A data item can be moved to a local cache and used there in a | transparent fashion. Migration reduces both the latency to access a shared | data item that is allocated remotely and the bandwidth demand on the
+044: §Complement 3*: Cache Coherence | Cache Coherence | • Causes of Cache coherence problems | • In modern parallel computers, processors often have Cache. Memory data | may have multiple copies in the entire system. This leads to the cache
+045: §Complement 3*: Cache Coherence | Cache Coherence | • For UMA: Snoopy coherence protocols | • In the snoopy coherence protocols, all processors snoop the bus. When a | processor modifies the data in the private cache, it broadcasts invalid
+046: §Complement 3*: Cache Coherence | Cache Coherence | • For NUMA: Directory protocol | • The directory protocol uses a directory to record which processors in the | system have copies of certain storage blocks in the cache. When a processor
+047: §Complement 3*: Cache Coherence | Cache Coherence | A Write-Through cache with No-Write Allocation A Write-Back cache with Write Allocation
+048: §Complement 3*: Cache Coherence | Snoopy Coherence Protocols | • Write-through | • While writing the data in the cache line, the content in the corresponding | memory is also modified, and the data in the memory is kept up to date at
+049: §Complement 3*: Cache Coherence | Write-through Cache Coherency Protocol | • Four situations when the monitoring cache performs read and write | operations according to this protocol | Local Request Remote Request
+050: §Complement 3*: Cache Coherence | Snoopy Coherence Protocols | • Write invalidate protocol | It invalidates other copies on a write. | An invalidation protocol works on a snooping bus for a single cache block (X) with write-back caches.
+051: §Complement 3*: Cache Coherence | Snoopy Coherence Protocols | • Write invalidate protocol | It invalidates other copies on a write. | • Write update / write broadcast protocol
+052: §Complement 3*: Cache Coherence | Snoopy Coherence Protocols | • Write invalidate protocol | Implementation | three block states (MSI protocol)
+053: §Complement 3*: Cache Coherence | Write Invalidation Protocol（write back）
+054: §Complement 3*: Cache Coherence | Write Invalidation Protocol（write back）
+055: §Complement 3*: Cache Coherence | Write Invalidation Protocol （write back）
+056: §Complement 3*: Cache Coherence | MSI protocol | The initial cache and memory state for a shared memory multi-processor system are shown in the following figure. | Each core processor has a 4-line direct-mapped write back cache. Basic write invalidation snooping protocol is | used. Please show the action results (ie. updated parts in the caches and memory) for the three action as that in the
+057: §Complement 3*: Cache Coherence | MSI protocol | The initial cache and memory state for a shared memory multi-processor system are shown in the following figure. | Each core processor has a 4-line direct-mapped write back cache. Basic write invalidation snooping protocol is | used. Please show the action results (ie. updated parts in the caches and memory) for the three action as that in the
+058: §Complement 3*: Cache Coherence | MSI protocol | The initial cache and memory state for a shared memory multi-processor system are shown in the following figure. | Each core processor has a 4-line direct-mapped write back cache. Basic write invalidation snooping protocol is | used. Please show the action results (ie. updated parts in the caches and memory) for the three action as that in the
+059: §Complement 3*: Cache Coherence | MSI protocol | The initial cache and memory state for a shared memory multi-processor system are shown in the following figure. | Each core processor has a 4-line direct-mapped write back cache. Basic write invalidation snooping protocol is | used. Please show the action results (ie. updated parts in the caches and memory) for the three action as that in the
+060: §Complement 3*: Cache Coherence | MSI Protocol Extensions | • MESI | exclusive: indicates when a cache block is resident only in a single | cache but is clean
+061: §Complement 3*: Cache Coherence | MSI Protocol Extensions (write back) | • MESI protocol: It is named after the initial letter of the four states | used in the protocol. Each item in this protocol is in one of the | following four states:
+062: §Complement 3*: Cache Coherence | MESI protocol state transition rules | Read Snooping Hit | Write Snooping Hit | Invalid Read Miss (with sharing)
+063: §Complement 3*: Cache Coherence | MESI protocol state transition rules
+064: §Complement 3*: Cache Coherence | MESI protocol working process | 1 2 3 | CPU CPU CPU CPU CPU CPU | M M
+065: §Complement 3*: Cache Coherence Cache state diagram in processor P1 with the state transitions induced by the local | processor shown in solid lines and by the remote processor shown in dashed lines. | Local read/write misses are merged to simplify the diagram (For local read miss, if | MESI protocol there exist shared copies in other caches, local copy set to S or else set to E). | P1 read hit
+066: §Complement 3*: Cache Coherence | MSI Extensions | • MOESI | owned: indicates that the associated block is owned by that cache | and out-of-date in memory
+067: §Complement 3*: Cache Coherence | Directory protocol | A directory is added to each node to implement cache coherence in a distributed-memory multiprocessor. | A directory keeps the state of every block that may be cached. information in the directory includes which caches | have copies of the block, whether it is dirty, and so on.
+068: §Complement 3*: Cache Coherence | Directory protocol | • For each block, maintain state: | • Shared | • One or more nodes have the block cached, value in memory is up-to-date
+069: §Complement 3*: Cache Coherence | Directory protocol | • State transition diagram for an | individual cache block in a | directory-based system.
+070: §Complement 3*: Cache Coherence | Directory protocol | • The state transition diagram for the | directory has the same states and | structure as the transition diagram
+071: §Complement 3*: Cache Coherence | Directory protocol | • For uncached block: | • Read miss | • Requesting node is sent the requested data and is made the only sharing node, block is now
+072: §Complement 3*: Cache Coherence | Directory protocol | • For exclusive block: | • Read miss | • The owner is sent a data fetch message, block becomes shared, owner sends data to the
+073: §Complement 3*: Cache Coherence | Memory Consistency and Cache Coherence | • Memory Consistency Need Memory Consistency Model | • When a written value will be returned by a read | • If a processor writes location A followed by location B, any processor that
+074: §Complement 3*: Cache Coherence | Memory Consistency | • Example: | Processor 1: Processor 2: | A=0 B=0
+075: §Complement 3*: Cache Coherence | Relaxed Consistency Models | • Key idea: allow reads and writes to complete out of order, but to use | synchronization operations to enforce ordering
+076: §Complement 3*: Cache Coherence | Relaxed Consistency Models | • Rules: | • X→Y | • Operation X must complete before operation Y is done
+077: §Complement 3*: DSA | Domain-Specific Architectures | • Moore’s Law enabled: | • Deep memory hierarchy | • Wide SIMD units
+078: §Complement 3*: DSA | Guidelines for DSAs | • Use dedicated memories to minimize data movement | • Invest resources into more arithmetic units or bigger memories | • Use the easiest form of parallelism that matches the domain
+079: §Complement 3*: DSA | Example: Convolutional Neural Network | Abstraction in Computer Architecture View | • Batches: | • Reuse weights once fetched from memory across multiple inputs
+080: §Complement 3*: DSA | Tensor Processing Unit | • Google’s DNN ASIC | • 256 x 256 8-bit matrix multiply unit | • Large software-managed scratchpad
+081: §Complement 3*: DSA | TPU ISA | • Read_Host_Memory | • Reads memory from the CPU memory into the unified buffer | • Read_Weights
+082: §Complement 3*: DSA | Matrix Calculations in TPU
+083: §Complement 3*: DSA | The TPU and the Guidelines | • Use dedicated memories | • 24 MiB dedicated buffer, 4 MiB accumulator buffers | • Invest resources in arithmetic units and dedicated memories
+084: Summary

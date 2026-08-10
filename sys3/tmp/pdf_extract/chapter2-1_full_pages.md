@@ -1,0 +1,1813 @@
+
+
+===== PAGE 1 =====
+
+Computer System III
+
+
+
+
+                       Chapter 2
+
+          Instruction-Level Parallelism (ILP)
+
+
+===== PAGE 2 =====
+
+Review
+
+
+===== PAGE 3 =====
+
+Review
+
+
+
+         Data Dependences
+
+         • FLD      F0,   0(R1)
+
+         • FADD.D   F4,   F0,     F2
+
+
+===== PAGE 4 =====
+
+Review
+
+
+
+         Name Dependences
+         FDIV.D        F2, F6, F4    FDIV.D        F2, F6, F4
+         FADD.D        F6, F0, F12   FADD.D        F6, F0, F12
+         FSUB.D        F8, F6, F14   FSUB.D        F2, F6, F14
+         DIV&ADD: Anti-dependence    DIV&SUB: Output-dependence
+         Change F6 as S:             Change F2 as S:
+         FDIV.D        F2, F6, F4    FDIV.D        F2, F0, F4
+         FADD.D        S, F0, F12    FADD.D        F6, F0, F12
+         FSUB.D        F8, S, F14    FSUB.D        S, F6, F14
+
+
+===== PAGE 5 =====
+
+Review
+
+
+
+         Control Dependences
+         if p1 {
+                   Statement 1
+             }
+         Statement
+         if p2 {
+                   Statement 2
+             }
+
+
+===== PAGE 6 =====
+
+Review
+
+
+
+         Hazards
+         • Situations that prevent starting the next instruction in the next cycle
+         • Structure hazards
+            • A required resource is busy
+         • Data hazard
+            • Need to wait for previous instruction to complete its data read/write
+         • Control hazard
+            • Deciding on control action depends on previous instruction
+
+
+===== PAGE 7 =====
+
+Review
+
+
+
+         Data Hazards
+                                    FADD.D   F6，F0，F12
+         • Read after write: RAW
+                                    FSUB.D   F8，F6，F14
+
+
+
+         • Write after read: WAR    FDIV.D   F2，F6，F4
+                                    FADD.D   F6，F0，F12
+
+
+
+         • Write after write: WAW   FDIV.D   F2，F0，F4
+                                    FSUB.D   F2，F6，F14
+
+
+===== PAGE 8 =====
+
+Review
+
+
+
+         Data Hazards
+                             Time
+                                    1   2     3     4     5     6
+
+
+
+
+                                              ALU
+              DADD R1，R2，R3     IM      Reg         DM    Reg
+
+
+
+
+                                                    ALU
+              DSUB R4，R1，R5             IM    Reg         DM    Reg
+
+
+
+
+                                                          ALU
+              XOR R6，R1，R7                    IM    Reg         DM
+
+
+
+
+                                                                ALU
+              AND R8，R1，R9                          IM    Reg
+
+
+
+              OR R10，R1，R11                               IM    Reg
+
+
+
+         Forwarding (aka Bypassing)
+
+
+===== PAGE 9 =====
+
+Review
+
+
+
+         Data Hazards
+                       Time
+                         1       2     3     4     5     6
+             DSUB R1，R2，R3
+
+
+
+
+                                       ALU
+                            IM   Reg         DM    Reg
+
+
+
+
+                                             ALU
+             LD R5，0(R1)         IM    Reg         DM    Reg
+
+
+
+
+                                                   ALU
+             SD R5，12(R1)              IM    Reg         DM
+
+
+
+
+         Forwarding (aka Bypassing)
+
+
+===== PAGE 10 =====
+
+Review
+
+
+
+         Data Hazards
+                       Time
+                              1    2     3     4     5     6
+
+
+
+
+                                         ALU
+             LD R1，0(R2)      IM   Reg         DM    Reg
+
+
+
+
+                                               ALU
+             DADD R4，R1，R5         IM    Reg         DM    Reg
+
+
+
+
+                                                     ALU
+             AND R6，R1，R7                IM    Reg         DM
+
+
+
+
+                                                           ALU
+             XOR R8，R1，R9                      IM    Reg
+
+
+
+         Forwarding (aka Bypassing)
+
+
+===== PAGE 11 =====
+
+Review
+
+
+
+         Data Hazards
+                       Time
+                            1   2     3      4       5     6
+
+
+
+
+                                      ALU
+             LD R1，0(R2)   IM   Reg          DM      Reg
+
+
+
+
+                                                     ALU
+             DADD R4，R1，R5      IM    Reg   Bubble         DM
+
+
+
+
+                                                           ALU
+             AND R6，R1，R7             IM    Bubble   Reg
+
+
+
+             XOR R8，R1，R9                   Bubble   IM    Reg
+
+
+
+          Forwarding with bubble
+
+
+===== PAGE 12 =====
+
+Review
+
+
+
+         Data Hazards
+            LD R1，0（R2）     IF   ID   EX   MEM     WB
+            DADD R4，R1，R5        IF   ID    EX     MEM   WB
+            AND R6，R1，R7              IF    ID     EX    MEM   WB
+            XOR R8，R1，R9                    IF     ID    EX    MEM   WB
+
+
+            LD R1，0（R2）     IF   ID   EX   MEM     WB
+            DADD R4，R1，R5        IF   ID   stall   EX    MEM   WB
+
+            AND R6，R1，R7              IF   stall    ID   EX    MEM   WB
+
+            XOR R8，R1，R9                   stall    IF   ID    EX    MEM
+
+          Forwarding with bubble
+
+
+===== PAGE 13 =====
+
+Review
+
+
+
+         Data Hazards
+
+                                   A=B+C
+         LD Rb，B         IF   ID   EX   MEM   WB
+
+         LD Rc，C              IF   ID   EX    MEM     WB
+
+         DADD Ra，Rb，Rc             IF   ID    stall   EX   MEM   WB
+
+         SD Ra ，A                        IF   stall   ID   EX    MEM   WB
+
+
+
+
+          Code Scheduling to Avoid Stalls
+
+
+===== PAGE 14 =====
+
+Review
+
+
+
+         Data Hazards
+
+                        Before Scheduling   After Scheduling
+                        LD   Rb，B           LD   Rb，B
+                        LD   Rc，C           LD   Rc，C
+            A=B+C       DADD Ra，Rb，Rc       LD   Re，E
+                        SD   Ra，A           DADD Ra，Rb，Rc
+            D=E-F
+                        LD   Re，E           LD   Rf，F
+                        LD   Rf，F           SD   Ra，A
+                        DSUB Rd，Re，Rf       DSUB Rd，Re，Rf
+                        SD   Rd，D           SD   Rd，D
+
+
+         Code Scheduling to Avoid Stalls
+
+
+===== PAGE 15 =====
+
+Review
+
+
+
+         Data Hazards
+         • Reorder code to avoid use of load result in the next instruction
+         • C code for A = B + E; C = B + F;
+                             lw $t1, 0($t0)         lw $t1, 0($t0)
+                             lw $t2, 4($t0)         lw $t2, 4($t0)
+                    stall    add $t3, $t1, $t2      lw $t4, 8($t0)
+                             sw $t3, 12($t0)        add $t3, $t1, $t2
+                             lw $t4, 8($t0)         sw $t3, 12($t0)
+                    stall    add $t5, $t1, $t4      add $t5, $t1, $t4
+                             sw $t5, 16($t0)        sw $t5, 16($t0)
+                                   13 cycles              11 cycles
+
+
+          Code Scheduling to Avoid Stalls
+
+
+===== PAGE 16 =====
+
+Review
+
+
+
+         Control Hazards
+         • Branch determines flow of control
+            • Fetching next instruction depends on branch outcome
+            • Pipelining can’t always fetch correct instruction
+               • Still working on ID stage of branch
+         • In RISC-V pipelining
+            • Need to compare registers and compute target early in the pipelining
+            • Add hardware to do it in ID stage
+                    Unconditional Jump                 Conditional Branch
+
+                    Jal - Jump and Link
+
+                    Jalr - Jump and Link-Register
+
+
+===== PAGE 17 =====
+
+Review
+
+
+
+         Stall on Branch
+                                     Branch taken
+         Branch            IF   ID    EX      MEM       WB
+         Target                 IF   stall    stall     IF   ID   EX   MEM   WB
+         Target+1                                            IF   ID   EX    MEM   WB
+         Target+2                                                 IF   ID    EX    MEM
+         Target+3                                                       IF   ID    EX
+
+                                     Branch not taken
+         Branch            IF   ID    EX      MEM       WB
+         Instruction i          IF   stall    stall     IF   ID   EX   MEM   WB
+         Instruction i+1                                     IF   ID   EX    MEM   WB
+         Instruction i+2                                          IF   ID    EX    MEM
+         Instruction i+3                                                IF   ID    EX
+
+
+===== PAGE 18 =====
+
+Review
+
+
+
+         Stall on Branch
+
+                                     Branch causes a stall
+
+         Branch            IF   ID      EX     MEM     WB
+         Instruction i          IF      IF       ID    EX    MEM   WB
+         Instruction i+1                         IF    ID    EX    MEM   WB
+         Instruction i+2                                IF   ID    EX    MEM   WB
+         Instruction i+3                                      IF   ID    EX    MEM   WB
+
+
+===== PAGE 19 =====
+
+Review
+
+
+
+         Control Hazards
+         • Wait until branch outcome determined before fetching next
+           instruction
+
+
+===== PAGE 20 =====
+
+Review
+
+
+
+         Branch Prediction
+         • Longer pipelines can’t readily determine branch outcome early
+            • Stall penalty becomes unacceptable
+         • Predict outcome of branch
+            • Only stall if prediction is wrong
+         • In RISC-V pipeline
+            • Can predict branches not taken
+            • Fetch instruction after branch, with no delay
+
+
+===== PAGE 21 =====
+
+Review
+
+
+         Control Hazards:
+               More-Realistic Branch Prediction
+         • Static branch prediction
+            • Based on typical branch behavior
+            • Example: loop and if-statement branches
+               • Predict backward branches taken
+               • Predict forward branches not taken
+         • Dynamic branch prediction
+            • Hardware measures actual branch behavior
+               • e.g., record recent history of each branch
+            • Assume future behavior will continue the trend
+               • When wrong, stall while re-fetching, and update history
+
+
+===== PAGE 22 =====
+
+Review
+
+
+
+         Reducing Branch Delay
+
+         • Predict branch taken
+
+         • Predict branch not taken
+
+         • Delayed Branch
+
+
+===== PAGE 23 =====
+
+Review
+
+
+
+         Predict not taken
+          Branch i（taken）       IF   ID   EX      MEM     WB
+          Instruction i+1            IF   stall   stall   stall   stall
+          Branch target j                  IF      ID     EX      MEM     WB
+          Branch target j+1                        IF      ID     EX      MEM   WB
+          Branch target j+2                                IF      ID     EX    MEM   WB
+
+
+          Branch i（not taken）   IF   ID   EX      MEM     WB
+          Instruction i+1            IF    ID     EX      MEM     WB
+          Instruction i+2                  IF      ID     EX      MEM     WB
+          Instruction i+3                          IF      ID     EX      MEM   WB
+          Instruction i+4                                  IF      ID     EX    MEM   WB
+
+
+===== PAGE 24 =====
+
+Review
+
+
+
+         RISC-V with Predict Not Taken
+
+             Prediction   add x4, x5, x6
+
+              correct     beq x1, x2, 40
+
+                          lw x3, 300(x0)
+
+
+
+
+             Prediction
+                          add x4, x5, x6
+              incorrect
+                          beq x1, x2, 40
+
+
+
+                                 or x7, x8, x9
+
+
+===== PAGE 25 =====
+
+Review
+
+
+
+         How to Reduce Branch Delay
+         • Example: branch taken
+             36:   sub   x10, x4, x8
+             40:   beq   x1, x3, 16    // PC-relative branch
+                                       // to 40+16*2=72
+             44:   and   x12, x2, x5
+             48:   or    x13, x2, x6
+             52:   add   x14, x4, x2
+             56:   sub   x15, x6, x7
+                   ...
+             72:   ld    x4, 50(x7)
+
+
+===== PAGE 26 =====
+
+Review
+
+
+
+         Example: Branch Taken
+
+
+===== PAGE 27 =====
+
+Review
+
+
+
+         Example: Branch Taken   What is the original
+                                  instruction here?
+
+
+===== PAGE 28 =====
+
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of 2nd or 3rd preceding ALU
+           instruction
+
+
+
+
+         • forwarding
+
+
+===== PAGE 29 =====
+
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of preceding ALU instruction
+           or 2nd preceding load instruction
+            • Need 1 stall cycle
+
+
+===== PAGE 30 =====
+
+Review
+
+
+
+         Data Hazards for Branches
+         • If a comparison register is a destination of immediately preceding
+           load instruction
+            • Need 2 stall cycles
+
+
+===== PAGE 31 =====
+
+Review
+
+
+
+         Delay slot
+                    Branch i             IF        ID    EX       MEM        WB
+
+    Branch        (Delay slot)                     IF        ID    EX       MEM        WB
+                 instruction i+1
+    Not taken
+                 instruction i+2                             IF        ID    EX       MEM   WB
+                 instruction i+3                                       IF        ID    EX   MEM   WB
+                 instruction i+4                                                 IF    ID    EX   MEM   WB
+
+                    Branch i        IF        ID        EX        MEM WB
+
+    Branch         (Delay slot)               IF        ID        EX        MEM WB
+                 instruction i+1
+    Taken
+                 Branch target j                        IF        ID        EX        MEM WB
+                Branch target j+1                                 IF        ID        EX    MEM WB
+                Branch target j+2                                           IF        ID    EX    MEM WB
+
+
+===== PAGE 32 =====
+
+Review
+
+
+
+         Question: Is delay slot a really good design?
+
+         • “A RISC-V ISA is defined as a base integer ISA, which must be present
+           in any implementation, plus optional extensions to the base ISA.
+
+         • The base integer ISAs are very similar to that of the early RISC
+           processors except with no branch delay slots and with support for
+           optional variable-length instruction encodings. ”
+
+                                ——The RISC-V Instruction Set Manual Volume I
+
+
+===== PAGE 33 =====
+
+Review
+
+
+
+         Dynamic Branch Prediction
+         • In deeper and superscalar pipelines, branch penalty is more
+           significant
+         • Use dynamic prediction
+            • Branch prediction buffer (aka branch history table)
+            • Indexed by recent branch instruction addresses
+            • Stores outcome (taken/not taken)
+            • To execute a branch
+               • Check table, expect the same outcome
+               • Start fetching from fall-through or target
+               • If wrong, flush pipeline and flip prediction
+
+
+===== PAGE 34 =====
+
+Review
+
+
+
+         Branch History Table(BHT)
+
+
+                                      Branch
+          Branch    History: 1
+                                     not taken   History: 0            Branch
+           taken    Predict: Taken               Predict: Not taken   not taken
+                                     Branch
+                                      taken
+
+
+===== PAGE 35 =====
+
+Review
+
+
+
+         1-Bit Predictor: Shortcoming
+         • Inner loop branches mispredicted twice!
+                       outer: …
+                              …
+                       inner: …
+                              …
+                              beq …, …, inner
+                              …
+                              beq …, …, outer
+
+         • Mispredict as taken on last iteration of inner loop
+         • Then mispredict as not taken on first iteration of inner loop next
+           time around
+
+
+===== PAGE 36 =====
+
+Review
+
+
+
+         2-Bit Predictor
+                           Taken
+                                        Not taken
+                                   11               10
+                                          Taken
+                            Taken                    Not taken
+                                        Not taken
+                                   01               00    Not taken
+                                         Taken
+
+
+===== PAGE 37 =====
+
+Review
+
+
+
+         2-Bit Predictor: Example
+         • Inner loop branches mispredicted only once!
+
+                        outer: …
+                               …
+                        inner: …
+                               …
+                               beq …, …, inner
+                               …
+                               beq …, …, outer
+
+          ◼   Only mispredict as taken on last iteration of inner loop
+
+
+===== PAGE 38 =====
+
+Review
+
+
+
+
+         Buffer plays an important role
+           in Computer Architecture.
+
+
+===== PAGE 39 =====
+
+Review
+
+
+
+         Overlapping execution
+         • Conflict in access memory
+            • Instruction memory & data memory
+            • Instruction cache & data cache (same memory): Harvard structure
+            • Multibody cross structure (same memory with limitations)
+            • Adding instruction buffer between memory and instruction decode unit
+
+
+                Instruction Buffer
+                    Structure
+
+
+===== PAGE 40 =====
+
+Review
+
+
+
+         Single Overlapping execution
+
+
+
+
+                          The structure of processor with advance control
+
+         Common features: They work by FIFO, and are composed of a group of several
+         storage units that can be accessed quickly and related control logic.
+                                        Chapter 2 — Pipelining— 40
+
+
+===== PAGE 41 =====
+
+Review
+
+
+         Advanced Techniques for Instruction Delivery
+         and Speculation
+         • Increasing Instruction Fetch Bandwidth
+
+            • Branch-Target Buffers
+
+
+         • Specialized Branch Predictors: Predicting Procedure Returns,
+           Indirect Jumps, and Loop Branches
+
+            • Integrated Instruction Fetch Units
+
+
+===== PAGE 42 =====
+
+Review
+
+
+
+         Branch History Table(BHT)
+          1-Bit Predictor
+          2-Bit Predictor
+
+         Branch-Target Buffers
+
+
+===== PAGE 43 =====
+
+Review
+
+
+
+         Integrated Instruction Fetch Units
+         • An integrated instruction fetch unit that
+           integrates several functions:
+
+            • Integrated branch prediction
+            • Instruction prefetch
+            • Instruction memory access and buffering
+
+
+         • Instruction fetch as a simple single pipe stage
+           given the complexities of multiple issue is no
+           longer valid.
+
+
+===== PAGE 44 =====
+
+Review
+
+
+
+         Calculating the Branch Target
+         • Even with predictor, still need to calculate the target address
+            • 1-cycle penalty for a taken branch
+
+
+===== PAGE 45 =====
+
+Review
+
+
+
+         Calculating the Branch Target
+         • Even with predictor, still need to calculate the target address
+            • 1-cycle penalty for a taken branch
+
+
+         • Branch target buffer
+            • Cache of target addresses
+            • Indexed by PC when instruction fetched
+               • If hit and instruction is branch predicted taken, can fetch target immediately
+
+
+===== PAGE 46 =====
+
+Review
+
+
+
+         Branch-Target Buffer/Branch-Target Cache
+
+             Is instruction in BTB？    Predict     Reality    Delay cycle
+
+                      Yes              Taken       Taken          0
+
+                      Yes              Taken      Not taken       2
+
+                      No              Not taken    Taken          2
+
+                      No              Not taken Not taken         0
+
+
+===== PAGE 47 =====
+
+Review
+
+
+
+         Branch-Target Buffer/Branch-Target Cache
+         Benefit
+         • Get instructions at branch target faster
+         • It can provide multiple instructions at the branch target once,
+           which is necessary for the multi processor;
+         • branch folding
+            • It is possible to achieve unconditional branching without delay, or
+              sometimes conditional branching without delay.
+
+
+===== PAGE 48 =====
+
+Review
+
+
+===== PAGE 49 =====
+
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+
+
+
+
+               IF     ID      EX   MEM   WB
+
+
+===== PAGE 50 =====
+
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+         • A Simple Implementation of RISC-V       Dependences are a property of programs.
+         • Instructions Dependences             • Pipeline Hazards
+
+            • Data Dependences                      • Data Hazards
+            • Name Dependences                         • RAW
+               • Anti-dependence                       • WAR
+               • Output-dependence                     • WAW
+            • Control Dependences                   • Branch Hazards
+                                                    • Structural Hazards
+           Hazard are properties of the pipeline organization.
+
+
+===== PAGE 51 =====
+
+Review
+
+
+
+ The Classic Five-Stage Pipeline for a RISC Processor
+         Consider this code:
+
+         FADD.D R1，R2，R4
+         FADD.D R2，R1，1
+         FSUB.D R1，R4，R5
+
+         (1) Point out all the pipeline Hazards (RAW, WAR, WAW).
+         (2) Analyze the hazards and give your solutions.
+
+
+===== PAGE 52 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        A major limitation of simple pipelining techniques is that:
+        • they use in-order instruction issue and execution
+        • For example, consider this code:
+                FDIV.D          F4, F0, F2
+                FSUB.D          F10, F4, F6
+                FADD.D          F12, F6, F14
+
+        The FADD.D instruction cannot execute because the dependence of FSUB.D on
+        FDIV.D causes the pipeline to stall; yet, FADD.D is not data dependent on
+        anything in the pipeline.
+        Instructions are issued in program order, and if an instruction is stalled in the
+        pipeline no later instructions can proceed.
+
+
+===== PAGE 53 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • Out-of-order execution introduces the possibility of WAR and WAW
+          hazards, which do not exist in the five-stage integer pipeline and its
+          logical extension to an in-order floating-point pipeline.
+            • Consider the following RISC-V floating-point code sequence:
+                          FDIV.D   F10, F0, F2
+                 WAW
+                          FSUB.D F10, F4, F6
+                                                 WAR
+                          FADD.D F6, F8, F14
+
+
+        • Scoreboard algorithm is an approach to schedule the instructions.
+        • Robert Tomasulo introduces register renaming in hardware to minimize
+          WAW and WAR hazards, named Tomasulo’s Approach.
+
+
+===== PAGE 54 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard
+
+
+===== PAGE 55 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • A Simple Implementation of RISC-V
+
+
+                                       Check structural hazards
+                                       Check data hazards
+
+        • When an instruction could execute without hazards, it was issued
+          from ID knowing that all data hazards had been resolved.
+
+
+===== PAGE 56 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+        • To allow out-of-order execution, we essentially split the ID pipe
+          stage of our simple five-stage pipeline into two stages：
+
+            • Issue(IS): Decode instructions, check for structural hazards. (in-order issue)
+            • Read Operands(RO): Wait until no data hazards, then read operands. (out
+              of order execution)
+
+
+
+                                            IS         RO
+
+
+                Check structural hazards                          Check data hazards
+
+
+===== PAGE 57 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+                                                                          IS
+
+                                                                               ID
+
+                                                                          RO
+
+
+
+                                                                          EX
+
+
+
+                                                                          WB
+
+                          The basic structure of a processor with scoreboard
+
+
+===== PAGE 58 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+        • Show what the information tables look like for the following code
+          sequence when only the first load has completed and written its
+          result:
+
+                 FLD       F6, 34（R2）
+                 FLD       F2, 45（R3）
+                 FMUL.D    F0, F2, F4
+                 FSUB.D    F8, F6, F2
+                 FDIV.D    F10, F0, F6
+                 FADD.D    F6, F8, F2
+
+
+===== PAGE 59 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction               Instruction Status
+                                       IS   RO                   EX   WB
+            FLD       F6, 34(R2)       √     √                   √    √
+            FLD       F2, 45(R3)       √     √                   √
+            FMUL.D F0, F2, F4          √
+            FSUB.D F8, F6, F2          √
+            FDIV.D    F10, F0, F6      √
+            FADD.D        F6, F8, F2
+
+
+===== PAGE 60 =====
+
+§2.1 Dynamic Scheduling
+
+
+                   Name                                    Function Component Status
+                             Busy        Op          Fi         Fj         Fk          Qj            Qk       Rj     Rk
+                   Integer    yes        Load        F2         R3                                            no
+                   Mult1      yes        MUL         F0         F2         F4     Integer                     no     yes
+                   Mult2      no
+                    Add       yes        SUB         F8         F6         F2                   Integer       yes    no
+                   Divide     yes        DIV         F10        F0         F6        Mult1                    no     yes
+
+
+                           Rj, Rk :       “ yes” ——operand is ready but not read;
+                                          “no” & “Qj = null” ——operand is read；
+                                          “no” & “Qj != null” ——operand is not ready.
+                                                                     Register Status
+                                    F0          F2         F4         F6        F8           F10          …         F30
+                      Qi       Mult1       Integer                              Add         Divide
+
+
+===== PAGE 61 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction                                  Instruction Status
+                                              IS                RO                  EX           WB
+            FLD       F6, 34(R2)              √                 √                   √              √
+            FLD       F2, 45(R3)              √                 √                   √              √
+            FMUL.D F0, F2, F4                 √                 √                   √
+            FSUB.D F8, F6, F2                 √                 √                   √              √
+            FDIV.D    F10, F0, F6             √
+            FADD.D        F6, F8, F2          √                 √                   √
+
+                   Show what the status tables look like when the FMUL.D is ready to write its result.
+
+
+===== PAGE 62 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+
+                   Name                                  Function Component Status
+                             Busy       Op         Fi         Fj         Fk          Qj            Qk       Rj    Rk
+                   Integer   no
+                   Mult1     yes        MUL        F0         F2         F4                                 no    no
+                   Mult2     no
+                    Add      yes        ADD        F6         F8         F2                                 no    no
+                   Divide    yes        DIV        F10        F0         F6        Mult1                    no    yes
+
+
+                                                                   Register Status
+                                   F0         F2         F4         F6        F8           F10          …        F30
+                      Qi      Mult1                                Add                    Divide
+
+
+                  Show what the status tables look like when the FMUL.D is ready to write its result.
+
+
+===== PAGE 63 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Scoreboard algorithm
+
+                  Instruction                                    Instruction Status
+                                               IS                 RO                  EX            WB
+            FLD         F6, 34(R2)              √                 √                   √              √
+            FLD         F2, 45(R3)              √                 √                   √              √
+            FMUL.D F0, F2, F4                   √                 √                   √              √
+            FSUB.D F8, F6, F2                   √                 √                   √              √
+            FDIV.D      F10, F0, F6             √                 √                   √
+            FADD.D        F6, F8, F2            √                 √                   √              √
+
+                     Show what the status tables look like when the FDIV.D is ready to write its result.
+
+
+===== PAGE 64 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+
+                    Name                              Function Component Status
+                             Busy     Op        Fi         Fj         Fk          Qj            Qk       Rj    Rk
+                   Integer   no
+                    Mult1    no
+                    Mult2    no
+                     Add     no
+                   Divide    yes     DIV        F10        F0         F6                                 no    no
+
+
+                                                                Register Status
+                               F0          F2         F4         F6        F8           F10          …        F30
+                      Qi                                                               Divide
+
+
+                   Show what the status tables look like when the FDIV.D is ready to write its result.
+
+
+===== PAGE 65 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard
+
+
+===== PAGE 66 =====
+
+Practice in class
+Suppose：
+Add instruction needs 2 clock cycles. Multiply instruction needs 10 clock cycles.
+Division instruction needs 40 clock cycles. LD instruction need 1 clock cycles.
+            FLD           F6, 34（R2）
+            FLD           F2, 45（R3）
+           FMUL.D         F0, F2, F4
+           FSUB.D         F8, F6, F2
+           FDIV.D         F10, F0, F6
+           FADD.D         F6, F8, F2
+How many clock cycles does it take to finish each instruction using scoreboard
+algorithm?
+
+
+===== PAGE 67 =====
+
+Scoreboard algorithm
+                       inst    Fi    Fj      Fk   is   ro   ex      wb
+                       L.D     F6    34+R2        1    2    3       4
+                       L.D     F2    45+R3        5    6    7       8
+                       MUL.D   F0    F2      F4   6    9    10~19   20
+                       SUB.D   F8    F2      F6   7    9    10~11   12
+                       DIV.D   F10   F0      F6   8    21   22~61   62
+                       ADD.D   F6    F8      F2   13   14   15~16   22
+
+
+===== PAGE 68 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling
+
+        Idea: Dynamic Scheduling
+
+        Method: out-of-order execution
+
+
+
+
+                                         Dynamic Scheduling with a Scoreboard
+
+
+===== PAGE 69 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: The Idea
+        • Consider the following RISC-V floating-point code sequence:
+
+                          FDIV.D F0, F2, F4
+    Anti-dependence       FADD.D F6, F0, F8
+      WAR hazards                               Output-dependence
+                          FSD     F6, 0(R1)
+          (F8)                                     WAW hazards
+                          FSUB.D F8, F10, F14          (F6)
+                          FMUL.D F6, F10, F8
+
+
+===== PAGE 70 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        • These name dependences can all be eliminated by register
+          renaming.
+            • Assume the existence of two temporary registers, S and T.
+            • The sequence can be rewritten without any dependences as：
+
+                 FDIV.D F0, F2, F4
+                 FADD.D S, F0, F8
+                 FSD    S, 0(R1)      F6 change as S     Who finish the register
+                 FSUB.D T, F10, F14                      renaming and how?
+                                      F8 change as T
+                 FMUL.D F6, F10, T
+
+
+===== PAGE 71 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+                                                           From instruction unit
+
+
+                                                    Instruction                       FP registers
+                                                      queue
+
+                                            load/store
+                                            operations
+                                                                         FP operations
+                                                                                                      Operand buses
+                           Store buffers   Address unit
+                                                  Load buffers
+                                                     6
+                                                     5                             Operation bus
+                                                     4
+                                                     3                                Reservation
+                                                           3                           stations
+                                                     2                                                                2
+                                                           2
+                                                     1     1                                                          1
+
+                           Data                  Address
+
+                                  Memory unit                       FP adder                         FP multiplier
+
+                                                                                   Common data bus（CDB）
+
+
+                          The basic structure of a floating-point unit using Tomasulo’s algorithm
+
+
+===== PAGE 72 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach: Main Idea
+
+        • It tracks when operands for instructions are available to minimize
+          RAW hazards;
+
+        • It introduces register renaming in hardware to minimize WAW and
+          WAR hazards.
+
+
+===== PAGE 73 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        • Let’s look at the three steps an instruction goes through：
+            • Issue：Get the next instruction from the head of the instruction queue (FIFO)
+            • If there is a matching reservation station that is empty, issue the instruction to
+              the station with the operand values, if they are currently in the registers.
+            • If there is not an empty reservation station, then there is a structural hazard
+              and the instruction stalls until a station or buffer is freed.
+            • If the operands are not in the registers, keep track of the functional units that
+              will produce the operands.
+
+
+        • This step renames registers, eliminating WAR and WAW hazards not
+          in the registers.
+
+
+===== PAGE 74 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        Execute
+
+        • When all the operands are available, the operation can be executed at
+          the corresponding functional unit.
+
+        • Load and store require a two-step execution process：
+            • It computes the effective address when the base register is available.
+            • The effective address is then placed in the load or store buffer.
+
+
+===== PAGE 75 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        Write results
+
+        • When the result is available, write it on the CDB and from there into
+          the registers and into any reservation stations (including store buffers).
+
+        • Stores are buffered in the store buffer until both the value to be
+          stored and the store address are available, then the result is written
+          as soon as the memory unit is free.
+
+
+===== PAGE 76 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+                                    From instruction unit
+                                                                 FP registers
+
+                                                                                Register status Qi
+                          Instruction
+                            queue                            F6 c
+                                        ADD F2，F0，F6         F4 b
+                                        MUL F0，F2，F4         F2 a
+                                                             F0
+                                FP operations
+
+                                                  Operand buses
+
+
+                                                       Operation bus
+
+
+                            ADD3
+                                                              MULT2
+                            ADD2
+                            ADD1                              MULT1
+                                                            Reservation
+                                                             stations
+                                           FP adder                             FP multiplier
+
+                                                       Common data bus（CDB）
+
+
+===== PAGE 77 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+                                    From instruction unit
+                                                                FP registers
+
+                                                                               Register status Qi
+                          Instruction
+                            queue                            F6 c
+                                                             F4 b
+                                        ADD F2，F0，F6         F2 a
+                                                             F0                      MULT1
+                                FP operations
+
+                                                  Operand buses
+
+
+                                                       Operation bus
+
+
+                            ADD3
+                            ADD2                              MULT2
+                            ADD1                              MULT1 MUL          a       b
+                                                            Reservation
+                                                             stations
+                                           FP adder                            FP multiplier
+
+                                                       Common data bus（CDB）
+
+
+===== PAGE 78 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach         From instruction unit
+                                                                   FP registers
+
+                                                                                  Register status Qi
+                          Instruction
+                            queue                              F6 c
+                                                               F4 b
+                                                               F2 a                     ADD1
+                                                               F0                       MULT1
+                                FP operations
+
+                                                   Operand buses
+
+
+                                                          Operation bus
+
+
+                            ADD3
+                            ADD2                               MULT2
+                            ADD1 ADD       MULT1      c        MULT1 MUL            a       b
+                                                             Reservation
+                                                              stations
+                                           FP adder                               FP multiplier
+
+                                                      Common data bus（CDB）
+
+
+===== PAGE 79 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach         From instruction unit
+                                                                 FP registers
+
+                                                                                Register status Qi
+                          Instruction
+                            queue                            F6 c
+                                                             F4 b
+                                                             F2 a                     ADD1
+                                                             F0                         e
+                                FP operations
+
+                                                    Operand buses
+
+
+                                                      Operation bus
+
+
+                            ADD3
+                            ADD2                              MULT2
+                            ADD1 ADD            e     c       MULT1
+                                                            Reservation
+                                                             stations
+                                           FP adder                             FP multiplier
+
+                                                      Common data bus（CDB）             broadcast
+
+
+===== PAGE 80 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        There are three tables for Tomasulo’s Approach.
+        • Instruction status table: This table is included only to help you
+          understand the algorithm; it is not actually a part of the hardware.
+        • Reservation stations table: The reservation station keeps the state
+          of each operation that has issued.
+        • Register status table (Field Qi): The number of the reservation
+          station that contains the operation whose result should be stored
+          into this register.
+
+
+===== PAGE 81 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+        Each reservation station has seven fields:
+        Op: The operation to perform on source operands.
+        Qj, Qk: The reservation stations that will produce the corresponding
+        source operand.
+        Vj, Vk: The value of the source operands.
+        Busy: Indicates that this reservation station and its accompanying
+        functional unit are occupied.
+        A: Used to hold information for the memory address calculation for
+        a load or store.
+
+
+===== PAGE 82 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Algorithm and Examples
+        • Show what the information tables look like for the following code
+          sequence when only the first load has completed and written its
+          result:
+
+                 FLD       F6, 34（R2）
+                 FLD       F2, 45（R3）
+                 FMUL.D    F0, F2, F4
+                 FSUB.D    F8, F6, F2
+                 FDIV.D    F10, F0, F6
+                 FADD.D    F6, F8, F2
+
+
+===== PAGE 83 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Tomasulo’s algorithm
+                          Instruction              Instruction Status
+                                           Issue        Execute         Write Result
+                   FLD       F6, 34(R2)     √               √                √
+                   FLD       F2, 45(R3)     √               √
+                   FMUL.D F0, F2, F4        √
+                   FSUB.D F8, F6, F2        √
+                   FDIV.D    F10, F0, F6    √
+                   FADD.D F6, F8, F2        √
+
+
+===== PAGE 84 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+            Name                                               Function Component Status
+                           Busy          Op          Vj                   Vk                Qj        Qk             A
+            Load1          No
+            Load2          Yes           Load                                                                    45+Regs[R3]
+            Add1           Yes           SUB                    Mem[34+Regs[R2]]         Load2
+            Add2           Yes           ADD                                             Add1        Load2
+            Add3           No
+            Mult1          Yes           MUL                            Reg[F4]          Load2
+            Mult2          Yes           DIV                    Mem[34+Regs[R2]]         Mult1
+
+                                                                  Register Status
+                                  F0            F2        F4       F6           F8    F10        …         F30
+                      Qi         Mult1     Load2                  Add2         Add1   Mult2
+
+
+===== PAGE 85 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Dynamic Scheduling: Tomasulo’s algorithm
+                          Instruction                         Instruction Status
+                                                   Issue            Execute        Write Result
+                   FLD       F6, 34(R2)              √                 √                 √
+                   FLD       F2, 45(R3)              √                 √                 √
+                   FMUL.D F0, F2, F4                 √                 √
+                   FSUB.D F8, F6, F2                 √                 √                 √
+                   FDIV.D    F10, F0, F6             √
+                   FADD.D F6, F8, F2                 √                 √                 √
+
+                  Show what the status tables look like when the FMUL.D is ready to write its result.
+
+
+===== PAGE 86 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Name                                   Function Component Status
+                    Busy    Op            Vj                        Vk            Qj     Qk    A
+        Load1        No
+        Load2        No
+        Add1         No
+        Add2         No
+        Add3         No
+        Mult1        Yes   MUL     Mem[45+Regs[R3]]            Reg[F4]
+        Mult2        Yes   DIV                            Mem[34+Regs[R2]]       Mult1
+
+                                                    Register Status
+                            F0      F2     F4        F6        F8        F10      …      F30
+                      Qi   Mult1                                         Mult2
+
+
+===== PAGE 87 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Summary
+        1. The main contributions of Tomasulo’s Algorithm
+
+            • Dynamic scheduling
+            • Register renaming---eliminating WAW and WAR hazards
+            • Load/store disambiguation
+            • Better than Scoreboard Algorithm
+
+
+===== PAGE 88 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Summary
+        2. Shortcomings of Tomasulo’s Algorithm
+            • Structural complexity.
+            • Its performance is limited by Common Data Bus.
+            • A load and a store can safely be done out of order, provided they access
+              different addresses. If a load and a store access the same address, then
+              either:
+                 • The load is before the store in program order and interchanging them results in a
+                   WAR hazard, or
+                 • The store is before the load in program order and interchanging them results in a
+                   RAW hazard
+                 • Interchanging two stores to the same address results in a WAW hazard
+
+
+===== PAGE 89 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Summary
+        3. The limitations on ILP approaches directly led to the movement to
+        multicore.
+
+
+        Question
+        Does out-of-order execution mean out-of-order completion?
+
+
+===== PAGE 90 =====
+
+Practice in class
+
+Suppose：
+Add instruction needs 2 clock cycles. Multiply instruction needs 10 clock cycles.
+Division instruction needs 40 clock cycles. LD instruction need 1 clock cycles.
+            FLD           F6, 34（R2）
+            FLD           F2, 45（R3）
+           FMUL.D         F0, F2, F4
+           FSUB.D         F8, F6, F2
+           FDIV.D         F10, F0, F6
+           FADD.D         F6, F8, F2
+How many cycles does it take to finish each instruction using Tomasulo's
+approach?
+
+
+===== PAGE 91 =====
+
+Tomasulo's approach
+                      inst    Fi    Fj      Fk   is   ex      wb
+                      L.D     F6    34+R2        1    3       4
+                      L.D     F2    45+R3        2    4       5
+                      MUL.D   F0    F2      F4   3    6~15    16
+                      SUB.D   F8    F2      F6   4    6~7     8
+                      DIV.D   F10   F0      F6   5    17~56   57
+                      ADD.D   F6    F8      F2   6    9~10    11
+
+
+===== PAGE 92 =====
+
+§2.1 Dynamic Scheduling
+
+
+
+        Tomasulo’s Approach
+                                                           From instruction unit
+
+
+                                                    Instruction                       FP registers
+                                                      queue
+
+                                            load/store
+                                            operations
+                                                                         FP operations
+                                                                                                      Operand buses
+                           Store buffers   Address unit
+                                                  Load buffers
+                                                     6
+                                                     5                             Operation bus
+                                                     4
+                                                     3                                Reservation
+                                                           3                           stations
+                                                     2                                                                2
+                                                           2
+                                                     1     1                                                          1
+
+                           Data                  Address
+
+                                  Memory unit                       FP adder                         FP multiplier
+
+                                                                                   Common data bus（CDB）
+
+
+                          The basic structure of a floating-point unit using Tomasulo’s algorithm

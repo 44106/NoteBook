@@ -1,0 +1,562 @@
+File System Interface
+
+   Computer System III
+      Wenbo Shen
+
+
+
+
+                     Acknowledgement: some pages are based on the slides from Yajin Zhou@ZJU.
+Review
+• Mass storage
+• Disk structure
+• Disk scheduling
+  • FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK
+• IO hardware
+• IO access
+   • polling, interrupt
+• Device types
+• Kernel IO subsystem
+
+
+
+
+                                   2
+Outline
+• File concept
+• Access methods
+• Directory structure
+• Protection
+
+
+
+
+                        3
+How to use storage
+• Now we have mass storage and IO
+   • But how to use?
+   • Think as a computer scientist in 1950s
+
+
+   • Use disk directly
+
+
+
+
+                                   4
+How to use storage
+• Now we have mass storage and IO
+   • But how to use?
+
+
+• File System
+   • File system vs. Disk
+       • File system presents abstraction of disk
+       • File à Track/sector
+   • To user process
+       • File system provides coherent view of a group of files
+       • File: a contiguous block of bytes (Unix)
+   • File system provides protection
+
+
+                                     5
+Abstraction
+• CPU is abstracted to ____.
+• Memory is abstracted to ____.
+• Storage is abstracted to ____.
+
+
+
+
+                  CPU                   Memory
+
+
+
+
+                             I/O
+                           System
+                                    6
+Inquiry-based Learning
+• How to use file system?
+   • How to use file?
+   • How to use directory?
+• How to implement file system?
+   • How to implement file?
+   • How to implement directory?
+
+
+
+
+                                   7
+File Concept
+
+• File is a contiguous logical space for storing information
+   • database, audio, video, web pages…
+• There are different types of file:
+   • data: character, binary, and application-specific
+   • program
+   • special one: proc file system - use file-system interface
+     to retrieve system information
+
+
+
+
+                               8
+File Attributes
+• Name – only information kept in human-readable form
+• Identifier – unique tag (number) identifies file within file system
+• Type – needed for systems that support different types
+• Location – pointer to file location on device
+• Size – current file size
+• Protection – controls who can do reading, writing, executing
+• Time, date, and user identification – data for protection, security,
+  and usage monitoring
+• Information about files are kept in the directory structure, which is
+  maintained on the disk
+• Many variations, including extended file attributes such as file
+  checksum
+
+
+                                   9
+File info on Linux
+
+
+
+
+                     10
+File Operations
+• OS provides file operations to
+   • create:
+      • space in the file system should be found
+      • an entry must be allocated in the directory
+   • open: most operations need to file to be opened first
+      • return a handler for other operations
+   • read/write: need to maintain a pointer
+   • reposition within file – seek
+   • close
+   • delete
+      • Release file space
+      • Hardlink: maintain a counter - delete the file until the last link is
+        deleted
+   • truncate: empty a file but maintains its attributes
+• Other operations can be implemented using these ones
+   • Copying: create and read/write
+
+                                       11
+Open Files
+• Several data are needed to manage open files:
+    • Open-file table: tracks open files
+    • File pointer: pointer to last read/write location, per process that
+      has the file open
+    • File-open count: counter of number of times a file is open – to
+      allow removal of data from open-file table when last processes
+      closes it
+    • Disk location of the file: cache of data access information
+    • Access rights: per-process access mode information
+
+
+
+
+                                     12
+Open Files
+• Some file systems provide file lock to mediates access to a file
+• Two types of lock
+  • Shared lock - multiple processes can acquire the lock concurrently
+  • Exclusive lock - one process can acquire such an lock
+
+• Two locking mechanisms
+  • mandatory lock: access is denied depending on locks held and
+    requested
+  • advisory lock: processes can find status of locks and decide what to do
+
+
+
+
+                                     13
+File Types
+• as part of the file names - file extension
+• magic number of the file - elf
+
+
+
+
+                                      14
+File Structure
+• A file can have different structures, determined by OS or program
+  • No structure: a stream of bytes or words
+    • Linux dumps
+  • Simple record structure
+    • Lines of records, fixed length or variable length
+    • e.g., Database
+  • Complex structures
+    • e.g., Word document, relocatable program file
+• Usually user programs are responsible for identifying file structure
+
+
+
+
+                                       15
+Outline
+• File concept
+• Access methods
+• Directory structure
+• Protection
+
+
+
+
+                        16
+Access Methods
+• Sequential access
+  • a group of elements is access in a predetermined order
+  • for some media types, the only access mode (e.g., tape)
+
+• Direct access
+  • access an element at an arbitrary position in a sequence in
+    (roughly) equal time, independent of sequence size
+    • it is possible to emulate random access in a tape, but access time
+      varies
+  • sometime called random access
+
+
+
+
+                                   17
+Sequential-access File
+
+
+
+
+                         18
+Sequential Access on Direct-access File
+
+
+
+
+                        19
+Other methods
+• Based on direct-access method
+• An index for the file points to blocks
+    • Find a record in the file, first search the index and then use the
+      pointer to access the block
+    • We may use multiple layers of index
+
+
+
+
+                                   20
+Outline
+• File concept
+• Access methods
+• Directory structure
+• Protection
+
+
+
+
+                        21
+Disk and file system
+• Disk can be subdivided into partitions
+  • partitions also known as minidisks, slices
+  • different partitions can have different file systems
+    • a partition containing file system is known as a volume
+    • each volume tracks file system info in the volume’s table of
+       contents
+    • a file system can be general purpose or special purpose
+  • disk or partition can be used raw (without a file system)
+    • applications such as database prefer raw disks
+
+
+
+
+                                 22
+A Typical File-system Organization
+
+
+
+
+                        23
+Directory Structure
+
+• Directory is a collection of nodes containing information
+  about all files
+
+
+
+
+          Both the directory structure and the files reside on disk
+
+
+
+                                   24
+Operations Performed on Directory
+
+• Create a file: new files need to be created and added to
+  directory
+• Delete a file: remove a file from directory
+• List a directory: list all files in directory
+• Search for a file: pattern matching
+• Traverse the file system: access every directory and file
+  within a directory
+• …
+
+
+
+                                   25
+Directory Organization
+• Organize directories to achieve
+  • Efficiency: to locate a file quickly
+  • Naming: organize the directory structure to be convenient to
+    users
+    • Two users can have same name for different files
+    • The same file can have several different names
+  • …
+
+
+
+
+                                    26
+Single-Level Directory
+
+• A single directory for all users
+  • Naming problems and grouping problems
+     • Two users want to have same file names
+
+
+
+
+                             27
+Two-Level Directory
+• Separate directory for each user
+ • Different user can have the same name for different files
+   • Each user has his own user file directory (UFD), it is in the
+      master file directory (MFD)
+ • Efficient to search
+ • How to share files between different users?
+    • Path concept
+
+
+
+
+                                   28
+Tree-Structured Directories
+• Files organized into trees
+  • efficient in searching, can group files, convenient naming
+
+
+
+
+                               29
+Tree-Structured Directories
+• File can be accessed using absolute or relative path name
+   • absolute path name: /home/alice/..
+   • relative path is relative to the current directory (pwd)
+• Creating a new file: touch <file-name>
+• Delete a file: rm <file-name>
+• Creating a new subdirectory
+  • Example: if in current directory /mail
+     mkdir count
+
+
+
+    • e.g., if current directory is /mail, a mkdir command will create
+      /mail/count
+  • How to share a file/directory? -> it’s not allowed
+
+                                   30
+Tree-Structured Directories
+• Delete directory
+   • If directory is empty, then it’s easy to handle
+   • If not
+      • Option I: directory cannot be deleted, unless it’s empty
+      • Option II: delete all the files, directories and sub-directories
+      • sudo rm -rf /
+
+
+
+
+                                  31
+Acyclic-Graph Directories
+• Organize directories into acyclic-graphs
+  • allow links to a directory entry/files for aliasing (no longer a tree)
+• Dangling pointer problem:
+  • e.g., if delete file /dict/all, /dict/w/list and /spell/words/list are dangling
+    pointers
+  • Solution: back pointers/reference counter
+    • Back pointers record all the pointers to the entity, a variable size record
+    • Or count # of links to it and only (physically) delete it when counter is zero
+
+
+
+
+                                        x
+                                         32
+Acyclic-Graph Directories
+• Share files
+    • Hardlink
+       • Reference count
+    • Softlink
+
+
+
+
+                           33
+General Graph Directory
+• Allowing arbitrary links may generate cycles in the directory structure
+• Solution
+  • allow cycles, but use garbage collection to reclaim disk spaces
+  • every time a new link is added use a cycle detection algorithm
+
+
+
+
+                                    34
+File System Mounting
+• A file system must be mounted before it can be accessed
+  • mounting links a file system to the system, usually forms a single
+    name space
+  • the location of the file system being mounted is call the mount
+    point
+  • a mounted file system makes the old directory at the mount
+    point invisible
+
+
+
+
+                                  35
+File System Mounting
+
+• a: existing file system
+• b: an unmounted partition
+• c: the partition mounted at /users
+
+
+
+
+                              36
+Mounting a file system
+
+
+
+
+                         37
+File Sharing
+
+• Sharing of files on multi-user systems is desirable
+  • Sharing must be done through a protection scheme
+    • User IDs identify users, allowing protections to be per-user
+    • Group IDs allow users to be in groups, permitting group
+      access rights
+• On distributed systems, files may be shared across a
+  network
+  • Network File System (NFS) is a common distributed file-sharing
+    method
+
+
+
+
+                                 38
+Remote File Sharing
+• Use networking to allow file system access between systems
+  • Manually via programs like FTP
+  • Automatically, seamlessly using distributed file systems
+  • Semi automatically via the world wide web
+• Client-server model allows clients to mount remote FS from
+  servers
+  • A server can serve multiple clients
+  • Client and user-on-client identification is complicated
+    • Server cannot assume the client is trusted
+    • Standard OS file calls are translated into remote calls
+  • NFS is standard UNIX file sharing protocol, CIFS is standard for
+    windows
+
+
+
+                                 39
+Outline
+• File concept
+• Access methods
+• Directory structure
+• Protection
+
+
+
+
+                        40
+Protection
+
+• File owner/creator should be able to control
+  • what can be done
+  • by whom
+
+• Types of access
+  •   read, write, append
+  •   execute
+  •   delete
+  •   list
+
+
+
+
+                              41
+ACL
+• Assign each file and directory with an access control list (ACL)
+• Advantages: fine-grained control
+• Disadvantages
+    • How to construct the list
+    • How to store the list in directory
+
+
+
+
+                                   42
+Windows 8 File Access-Control
+
+
+
+
+                      43
+Unix Access Control
+• Three modes of access: read, write, execute (encoded in three bits)
+• Three classes of users: owner, group, and others
+                           RWX
+     a) owner access: 7    111
+     b) group access: 6    110
+     c) others access: 1   001
+
+• To grant access to users, create a group and change its access mode
+  • in Linux, use chmod and chgrp
+
+
+
+
+                                    44
+A Sample UNIX Directory Listing
+
+
+
+
+                       45
+ACL in practice
+
+
+
+
+                  46
+Takeaway
+• File system
+• File operations
+   • Create, open, read/write, close
+• File type
+• File structure
+• File access
+• Directory structure
+   • Single level, two-level, tree, acyclic-graph, general graph
+• Protection
+   • ACL
+
+
+
+
+                                  47
+

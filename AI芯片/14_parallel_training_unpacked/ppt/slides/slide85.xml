@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="36865" name="Title 1">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{7214619D-F0A1-1741-BD16-E551CA42E048}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="title"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="228600" y="152400"/>
+            <a:ext cx="8610600" cy="1066800"/>
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" altLang="zh-CN" spc="-6" dirty="0"/>
+              <a:t>Summary</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" altLang="en-US" dirty="0">
+              <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="36867" name="Slide Number Placeholder 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{C91F2A39-5E9F-DB45-8C99-DA578DF604B7}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldNum" sz="quarter" idx="11"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:noFill/>
+          <a:ln/>
+          <a:extLst>
+            <a:ext uri="{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}">
+              <a14:hiddenFill xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+              </a14:hiddenFill>
+            </a:ext>
+            <a:ext uri="{91240B29-F687-4F45-9708-019B960494DF}">
+              <a14:hiddenLine xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" w="9525">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+                <a:miter lim="800000"/>
+                <a:headEnd/>
+                <a:tailEnd/>
+              </a14:hiddenLine>
+            </a:ext>
+          </a:extLst>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle>
+            <a:lvl1pPr eaLnBrk="0" hangingPunct="0">
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+            <a:lvl2pPr marL="742950" indent="-285750" eaLnBrk="0" hangingPunct="0">
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl2pPr>
+            <a:lvl3pPr marL="1143000" indent="-228600" eaLnBrk="0" hangingPunct="0">
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl3pPr>
+            <a:lvl4pPr marL="1600200" indent="-228600" eaLnBrk="0" hangingPunct="0">
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl4pPr>
+            <a:lvl5pPr marL="2057400" indent="-228600" eaLnBrk="0" hangingPunct="0">
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl5pPr>
+            <a:lvl6pPr marL="2514600" indent="-228600" eaLnBrk="0" fontAlgn="base" hangingPunct="0">
+              <a:spcBef>
+                <a:spcPct val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPct val="0"/>
+              </a:spcAft>
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl6pPr>
+            <a:lvl7pPr marL="2971800" indent="-228600" eaLnBrk="0" fontAlgn="base" hangingPunct="0">
+              <a:spcBef>
+                <a:spcPct val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPct val="0"/>
+              </a:spcAft>
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl7pPr>
+            <a:lvl8pPr marL="3429000" indent="-228600" eaLnBrk="0" fontAlgn="base" hangingPunct="0">
+              <a:spcBef>
+                <a:spcPct val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPct val="0"/>
+              </a:spcAft>
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl8pPr>
+            <a:lvl9pPr marL="3886200" indent="-228600" eaLnBrk="0" fontAlgn="base" hangingPunct="0">
+              <a:spcBef>
+                <a:spcPct val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPct val="0"/>
+              </a:spcAft>
+              <a:defRPr sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Arial" panose="020B0604020202020204" pitchFamily="34" charset="0"/>
+                <a:ea typeface="ＭＳ Ｐゴシック" panose="020B0600070205080204" pitchFamily="34" charset="-128"/>
+              </a:defRPr>
+            </a:lvl9pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:pPr eaLnBrk="1" hangingPunct="1"/>
+            <a:fld id="{C07FBD78-40B0-A443-B155-25A18DC37E4A}" type="slidenum">
+              <a:rPr lang="en-US" altLang="en-US" sz="1600">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+                <a:latin typeface="Garamond" panose="02020404030301010803" pitchFamily="18" charset="0"/>
+              </a:rPr>
+              <a:pPr eaLnBrk="1" hangingPunct="1"/>
+              <a:t>85</a:t>
+            </a:fld>
+            <a:endParaRPr lang="en-US" altLang="en-US" sz="1600">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Garamond" panose="02020404030301010803" pitchFamily="18" charset="0"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="object 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{98C054C3-F60C-4562-A0FF-F10A0F5D90AC}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="76200" y="881007"/>
+            <a:ext cx="8915400" cy="5669216"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="square" lIns="0" tIns="79728" rIns="0" bIns="0" rtlCol="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="332313" indent="-318908">
+              <a:spcBef>
+                <a:spcPts val="628"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="332313" algn="l"/>
+                <a:tab pos="333019" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Networks </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>and </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>dataset </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>are </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>getting larger to </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>set new state of art</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-50" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>results</a:t>
+            </a:r>
+            <a:endParaRPr sz="2400" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="332313" indent="-318908">
+              <a:spcBef>
+                <a:spcPts val="522"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="332313" algn="l"/>
+                <a:tab pos="333019" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Scale-out enables these </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>neural </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>networks to </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>be</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-17" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>trained</a:t>
+            </a:r>
+            <a:endParaRPr sz="2400" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="332313" indent="-318908">
+              <a:spcBef>
+                <a:spcPts val="517"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="332313" algn="l"/>
+                <a:tab pos="333019" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Success </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>requires many optimized</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" spc="-22" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2400" b="1" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>components:</a:t>
+            </a:r>
+            <a:endParaRPr sz="2400" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="713310" lvl="1" indent="-319613">
+              <a:spcBef>
+                <a:spcPts val="572"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="713310" algn="l"/>
+                <a:tab pos="714015" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2000" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Hardware</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>:</a:t>
+            </a:r>
+            <a:endParaRPr sz="2000" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1031511" lvl="2" indent="-186970">
+              <a:spcBef>
+                <a:spcPts val="639"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="1032217" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Fast accelerators </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>for</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-17" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>DL</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1031511" lvl="2" indent="-186970">
+              <a:spcBef>
+                <a:spcPts val="622"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="1032217" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>High-bandwidth, low-latency</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-56" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-11" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>interconnects</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1408980" lvl="3" indent="-254703">
+              <a:spcBef>
+                <a:spcPts val="850"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buSzPct val="150000"/>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="▪"/>
+              <a:tabLst>
+                <a:tab pos="1408980" algn="l"/>
+                <a:tab pos="1409686" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Topologies matter (must match communication</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-106" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>patterns)</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1408980" lvl="3" indent="-254703">
+              <a:spcBef>
+                <a:spcPts val="839"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buSzPct val="150000"/>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="▪"/>
+              <a:tabLst>
+                <a:tab pos="1408980" algn="l"/>
+                <a:tab pos="1409686" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Network switches with math capabilities </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>free up </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>DL accelerators </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>to </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>do</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-189" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>compute</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" spc="-6" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1408980" lvl="3" indent="-254703">
+              <a:spcBef>
+                <a:spcPts val="839"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buSzPct val="150000"/>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="▪"/>
+              <a:tabLst>
+                <a:tab pos="1408980" algn="l"/>
+                <a:tab pos="1409686" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-CN" sz="1600" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>SmartNIC for offloaded compression/decompression</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="713310" lvl="1" indent="-319613">
+              <a:spcBef>
+                <a:spcPts val="556"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="713310" algn="l"/>
+                <a:tab pos="714015" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2000" b="1" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Software</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>:</a:t>
+            </a:r>
+            <a:endParaRPr sz="2000" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1031511" lvl="2" indent="-186970">
+              <a:spcBef>
+                <a:spcPts val="639"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="1032217" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Math libraries </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>(CUDNN, </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>CUBLAS, MKL,</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" altLang="zh-CN" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>CANN</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-50" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>…)</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1031511" lvl="2" indent="-186970">
+              <a:spcBef>
+                <a:spcPts val="628"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="1032217" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Collective communication libraries (NCCL, </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0" err="1">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Horovod</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>,</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-83" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>…)</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="1031511" lvl="2" indent="-186970">
+              <a:spcBef>
+                <a:spcPts val="628"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="1032217" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Training frameworks </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>(</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-CN" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>MindSpore</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>, PyTorch, TensoFlow, HugeCTR,</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-144" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>…)</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="713310" lvl="1" indent="-319613">
+              <a:spcBef>
+                <a:spcPts val="566"/>
+              </a:spcBef>
+              <a:buClr>
+                <a:srgbClr val="B2B2B2"/>
+              </a:buClr>
+              <a:buFont typeface="Arial"/>
+              <a:buChar char="•"/>
+              <a:tabLst>
+                <a:tab pos="713310" algn="l"/>
+                <a:tab pos="714015" algn="l"/>
+              </a:tabLst>
+            </a:pPr>
+            <a:r>
+              <a:rPr sz="2000" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>Proper choice </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="-11" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>of </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>parallelism (manual, MeshTensorFlow, Gshard,</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="178" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" spc="-6" dirty="0" err="1">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>ZeRO</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr sz="2000" spc="-6" dirty="0">
+                <a:latin typeface="Trebuchet MS"/>
+                <a:cs typeface="Trebuchet MS"/>
+              </a:rPr>
+              <a:t>)</a:t>
+            </a:r>
+            <a:endParaRPr sz="2000" dirty="0">
+              <a:latin typeface="Trebuchet MS"/>
+              <a:cs typeface="Trebuchet MS"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+    <p:extLst>
+      <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
+        <p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1528463883"/>
+      </p:ext>
+    </p:extLst>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+  <p:transition/>
+</p:sld>

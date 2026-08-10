@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+  <Template/>
+  <TotalTime>73123</TotalTime>
+  <Words>5733</Words>
+  <Application>Microsoft Office PowerPoint</Application>
+  <PresentationFormat>全屏显示(4:3)</PresentationFormat>
+  <Paragraphs>1485</Paragraphs>
+  <Slides>86</Slides>
+  <Notes>11</Notes>
+  <HiddenSlides>0</HiddenSlides>
+  <MMClips>0</MMClips>
+  <ScaleCrop>false</ScaleCrop>
+  <HeadingPairs>
+    <vt:vector size="6" baseType="variant">
+      <vt:variant>
+        <vt:lpstr>已用的字体</vt:lpstr>
+      </vt:variant>
+      <vt:variant>
+        <vt:i4>16</vt:i4>
+      </vt:variant>
+      <vt:variant>
+        <vt:lpstr>主题</vt:lpstr>
+      </vt:variant>
+      <vt:variant>
+        <vt:i4>4</vt:i4>
+      </vt:variant>
+      <vt:variant>
+        <vt:lpstr>幻灯片标题</vt:lpstr>
+      </vt:variant>
+      <vt:variant>
+        <vt:i4>86</vt:i4>
+      </vt:variant>
+    </vt:vector>
+  </HeadingPairs>
+  <TitlesOfParts>
+    <vt:vector size="106" baseType="lpstr">
+      <vt:lpstr>Abadi MT Condensed Light</vt:lpstr>
+      <vt:lpstr>ArialMT</vt:lpstr>
+      <vt:lpstr>DINPro-Bold</vt:lpstr>
+      <vt:lpstr>Monaco</vt:lpstr>
+      <vt:lpstr>等线</vt:lpstr>
+      <vt:lpstr>SimSun</vt:lpstr>
+      <vt:lpstr>微软雅黑</vt:lpstr>
+      <vt:lpstr>Arial</vt:lpstr>
+      <vt:lpstr>Arial Narrow</vt:lpstr>
+      <vt:lpstr>Bahnschrift Condensed</vt:lpstr>
+      <vt:lpstr>Calibri</vt:lpstr>
+      <vt:lpstr>Garamond</vt:lpstr>
+      <vt:lpstr>Tahoma</vt:lpstr>
+      <vt:lpstr>Times New Roman</vt:lpstr>
+      <vt:lpstr>Trebuchet MS</vt:lpstr>
+      <vt:lpstr>Wingdings</vt:lpstr>
+      <vt:lpstr>Edge</vt:lpstr>
+      <vt:lpstr>10_Edge</vt:lpstr>
+      <vt:lpstr>1_Edge</vt:lpstr>
+      <vt:lpstr>3_Edge</vt:lpstr>
+      <vt:lpstr> Computer Arch. &amp; AI System  Lecture 14:  Parallel Training</vt:lpstr>
+      <vt:lpstr>Recall: Overall Architecture of DLP-S</vt:lpstr>
+      <vt:lpstr>Recall: Cambricon DLP ISA</vt:lpstr>
+      <vt:lpstr>Recall: DLP-M Architecture</vt:lpstr>
+      <vt:lpstr>Recall: AI Architecture</vt:lpstr>
+      <vt:lpstr>Recall: MindSpore</vt:lpstr>
+      <vt:lpstr>Recall: 关键技术4：AI+科学计算</vt:lpstr>
+      <vt:lpstr>PowerPoint 演示文稿</vt:lpstr>
+      <vt:lpstr>AI System: Four Components</vt:lpstr>
+      <vt:lpstr>Neural Network Training:  An Example</vt:lpstr>
+      <vt:lpstr>An example: Network of 3 Linear Layers</vt:lpstr>
+      <vt:lpstr>Network of 3 Linear Layers: Forward Pass</vt:lpstr>
+      <vt:lpstr>Network of 3 Linear Layers: Forward Pass</vt:lpstr>
+      <vt:lpstr>Network of 3 Linear Layers: Forward Pass</vt:lpstr>
+      <vt:lpstr>Forward Pass: A Minibatch of 2 Samples</vt:lpstr>
+      <vt:lpstr>Forward Pass: A Minibatch of 2 Samples</vt:lpstr>
+      <vt:lpstr>Forward Pass: Compute Loss</vt:lpstr>
+      <vt:lpstr>Backward Pass</vt:lpstr>
+      <vt:lpstr>Backward Pass: Compute dW</vt:lpstr>
+      <vt:lpstr>Weight Update</vt:lpstr>
+      <vt:lpstr>One Iteration for a Layer</vt:lpstr>
+      <vt:lpstr>Outline</vt:lpstr>
+      <vt:lpstr>Why Distributed Training?</vt:lpstr>
+      <vt:lpstr>PowerPoint 演示文稿</vt:lpstr>
+      <vt:lpstr>NVIDIA A100 Block Diagram</vt:lpstr>
+      <vt:lpstr>Why Distributed Training?</vt:lpstr>
+      <vt:lpstr>Outline</vt:lpstr>
+      <vt:lpstr>Parallelism Taxonomy</vt:lpstr>
+      <vt:lpstr>Data Parallel Training</vt:lpstr>
+      <vt:lpstr>Data Parallel: Forward Pass</vt:lpstr>
+      <vt:lpstr>Data Parallel: Backward Pass</vt:lpstr>
+      <vt:lpstr>Data Parallel Training: Weight Update</vt:lpstr>
+      <vt:lpstr>AI System: Four Components</vt:lpstr>
+      <vt:lpstr>AI System: Network</vt:lpstr>
+      <vt:lpstr>AllReduce Implementation Choices</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Initial States</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Results</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Initial States</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Reduce_scatter iter. 0</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Reduce_scatter iter. 1</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Reduce_scatter iter. 2</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Reduce_scatter iter. 3</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Allgather iter. 0</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Allgather iter. 1</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Allgather iter. 2</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Allgather iter. 3</vt:lpstr>
+      <vt:lpstr>&#x201C;Ring&#x201D; AllReduce: Results</vt:lpstr>
+      <vt:lpstr>AllReduce Implementation Choices</vt:lpstr>
+      <vt:lpstr>Data Parallel: Challenges</vt:lpstr>
+      <vt:lpstr>Workload Increasing with Batch Size</vt:lpstr>
+      <vt:lpstr>Workload Increasing with Batch Size</vt:lpstr>
+      <vt:lpstr>Outline</vt:lpstr>
+      <vt:lpstr>Parallelism Taxonomy</vt:lpstr>
+      <vt:lpstr>Model Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training: GPipe</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel Training: GPipe</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel: Communication</vt:lpstr>
+      <vt:lpstr>Pipeline Parallel: Challenges</vt:lpstr>
+      <vt:lpstr>Outline</vt:lpstr>
+      <vt:lpstr>Tensor Parallel</vt:lpstr>
+      <vt:lpstr>Row-wise Partitioning: Allgather between Layers  </vt:lpstr>
+      <vt:lpstr>Column-wise Partitioning: ReduceScatter between Layers  </vt:lpstr>
+      <vt:lpstr>Reducing Synchronization By Alternating Partitioning</vt:lpstr>
+      <vt:lpstr>Reducing Synchronization By Alternating Partitioning</vt:lpstr>
+      <vt:lpstr>Reducing Synchronization By Alternating Partitioning</vt:lpstr>
+      <vt:lpstr>Intra-Layer Parallel: Communication</vt:lpstr>
+      <vt:lpstr>Tensor Parallelism for Transformer Block</vt:lpstr>
+      <vt:lpstr>Outline</vt:lpstr>
+      <vt:lpstr>Communication Pattern Summary</vt:lpstr>
+      <vt:lpstr>Memory Size for a Huge Model</vt:lpstr>
+      <vt:lpstr>基于transformer的模型的显存占用</vt:lpstr>
+      <vt:lpstr>AI System: Four Components</vt:lpstr>
+      <vt:lpstr>AI System: Storage</vt:lpstr>
+      <vt:lpstr>ZeRO: Zero Redundancy Optimizer</vt:lpstr>
+      <vt:lpstr>ZeRO: Zero Redundancy Optimizer</vt:lpstr>
+      <vt:lpstr>Overhead of ZeRO: More Communication</vt:lpstr>
+      <vt:lpstr>Summary</vt:lpstr>
+      <vt:lpstr>Batch Size Limitation of LLM Training</vt:lpstr>
+    </vt:vector>
+  </TitlesOfParts>
+  <Company>Microsoft</Company>
+  <LinksUpToDate>false</LinksUpToDate>
+  <SharedDoc>false</SharedDoc>
+  <HyperlinksChanged>false</HyperlinksChanged>
+  <AppVersion>16.0000</AppVersion>
+</Properties>

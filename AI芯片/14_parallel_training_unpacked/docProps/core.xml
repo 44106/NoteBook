@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <dc:title>18-741  Advanced Computer Architecture Lecture 1: Intro and Basics</dc:title>
+  <dc:creator>Onur Mutlu</dc:creator>
+  <cp:lastModifiedBy>DELL</cp:lastModifiedBy>
+  <cp:revision>1462</cp:revision>
+  <cp:lastPrinted>2017-05-26T10:00:55Z</cp:lastPrinted>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2010-09-08T00:51:32Z</dcterms:created>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2026-06-08T04:55:30Z</dcterms:modified>
+</cp:coreProperties>

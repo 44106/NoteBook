@@ -1,0 +1,14 @@
+[
+  {
+    "file": "6-gpus-architecture.pptx",
+    "slides": 91,
+    "json": "extracted\\6-gpus-architecture.json",
+    "markdown": "extracted\\6-gpus-architecture_raw_extract.md"
+  },
+  {
+    "file": "7-gpus-optimization.pptx",
+    "slides": 120,
+    "json": "extracted\\7-gpus-optimization.json",
+    "markdown": "extracted\\7-gpus-optimization_raw_extract.md"
+  }
+]

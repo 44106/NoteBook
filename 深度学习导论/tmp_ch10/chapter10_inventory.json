@@ -1,0 +1,7055 @@
+[
+  {
+    "slide": 1,
+    "blocks": [
+      {
+        "kind": "grpSp",
+        "name": "组 5",
+        "placeholder": "",
+        "text": [
+          "第十章：语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "主讲教师：毛玉仁"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "课程名称：深度学习导论"
+        ]
+      }
+    ],
+    "notes": [
+      "1"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 2,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "DeepSeek V4"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image2.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image3.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "2"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 3,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "大语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image4.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 7",
+        "placeholder": "",
+        "text": [
+          "引领本轮人工智能浪潮的大模型，是大语言模型。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image5.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 8",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image6.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 12",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image7.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 14",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image8.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 16",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image9.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 18",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image10.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 20",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image11.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 2",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      }
+    ],
+    "notes": [
+      "3"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 4,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "大语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 2",
+        "placeholder": "",
+        "text": [
+          "为什么是语言激发了新智能？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image12.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "4"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 5,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之于人类"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "智人之所以能征服世界，是因为有独特的语言。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image13.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "图片来源：Rudolph Zallinger名为《进步的行进》（March of Progress）的插画。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "人类曾经仅仅位于食物链的中间位置，但凭借着人类语言灵活的表述方式，社群的 “八卦”习惯，使得人类可以传承经验、并进行大规模的集体作战，一跃占据食物链的顶端。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "《人类简史：从动物到上帝》，尤瓦尔·赫拉利 ，中信出版社。"
+        ]
+      }
+    ],
+    "notes": [
+      "7"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 6,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之于演化"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "七万年前的认知革命之后，智人拥有了用语言“虚构”的能力。该能力帮助人类可以构思出社会制度、法律、互联网等自然界不存在的概念，并不断思辨找到更优的演化方向。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言助力人类绕过“基因演化” ，步入“文化演化”的快车道。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image14.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image15.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "图片来源：端传媒。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "图片来源：路透社。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "《人类简史：从动物到上帝》，尤瓦尔·赫拉利 ，中信出版社。"
+        ]
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "9"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 7,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之于智能"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "a system of communication that uses symbols in a regular way to create meaning.（用符号来创造意义的沟通系统）"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "the ability to think, to learn from experience, to solve problems, and to adapt to new situations. （思考、学习经验来解决问题并可以适应新场景中的能力）"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 13",
+        "placeholder": "",
+        "text": [
+          "从认知心理学的角度，可以分别对语言和智能进行定性的定义。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image16.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "语言的定义"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "智能的定义"
+        ]
+      }
+    ],
+    "notes": [
+      "10"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 8,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之于智能"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 8",
+        "placeholder": "",
+        "text": [
+          "在认知层面，语言和智能紧密相连，语言是智能的载体。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image17.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image18.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 8",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image19.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "我语言的界限意味着我的世界的界限。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "语言是认知学皇冠上的明珠。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "语言仅仅载有小部分人类知识。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 10",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image20.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "在过去五年中，你研究出了什么‘科学’？"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 16",
+        "placeholder": "",
+        "text": [
+          "维特根斯坦"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 18",
+        "placeholder": "",
+        "text": [
+          "史迪芬·平克"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 19",
+        "placeholder": "",
+        "text": [
+          "杨立昆"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 20",
+        "placeholder": "",
+        "text": [
+          "马斯克"
+        ]
+      }
+    ],
+    "notes": [
+      "12"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 9,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "大语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 2",
+        "placeholder": "",
+        "text": [
+          "为什么掌握语言需要大模型？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image12.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "13"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 10,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之复杂"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image21.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image22.jpg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 5",
+        "placeholder": "",
+        "text": [
+          "世界上约有7,000种语言。巴布亚新几内亚（Papua New Guinea）是拥有语言种类数量最多的国家，有839种不同的“现行语言”, 数量是欧洲各国语言总和的近三倍。 我国约有300种以上的语言。"
+        ]
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "15"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 11,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之复杂"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image23.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image24.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "腌制鱼酱",
+          "（ke-tchup）"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "闽南话"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "16世纪，福建商船将其带到东南亚，并开设中国酱汁工厂，发酵制作。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 21",
+        "placeholder": "",
+        "text": [
+          "18世纪，英国东印度公司带回英国。在英国，尝试加入了蘑菇、走汽啤酒、肉豆蔻等，最终加番茄。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 27",
+        "placeholder": "",
+        "text": [
+          "在美国，更浓稠，并加入大量的糖。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 21",
+        "placeholder": "",
+        "text": [
+          "不同语言间也存在联系。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image25.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image26.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "《食物语言学》，上海文艺出版社，任韶堂。"
+        ]
+      }
+    ],
+    "notes": [
+      "22"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 12,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之复杂"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言在语音、词法、语法、语用等各个方面都可能存在歧义。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "他说:“她这个人真有意思”。她说:“他这个人怪有意思的”。于是人们以为他们有了意思，并让他向她意思意思。他火了:“我根本没有那个意思” ！她也生气了:“你们这么说是什么意思”？事后有人说:“真有意思”。也有人说：“真没意思”。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "词法:几个意思"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "石室诗士施氏，嗜狮，誓食十狮。氏时时适市视狮，十时，适十狮适市，是时，适施氏适市，施氏视是十狮，拭矢试，使是十狮逝世，适石室，石室湿，氏使侍拭石室，石室拭，始食是十狮尸，始识是十狮尸，实十石狮尸，试释是事。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "语音:施氏食狮史"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image27.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image28.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "P_{n \\text{-} grams}(w_{i-n+1 \\ : \\ i}) =  \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})}",
+      "23"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 13,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之复杂"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言在语音、词法、语法、语用等各个方面都可能存在歧义。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "门/ 把/ 手/ 弄/ 坏/ 了",
+          "门把手/ 弄/ 坏/ 了"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "语法:门把手"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "语用:不同语境"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "选课之前：我为什么要选这门课？",
+          "上课过程中：我为什么要选这门课？",
+          "课程结束后：我为什么要选这门课？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image29.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image30.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "24"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 14,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言之复杂"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "不断产生大量的未知的语言现象。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "新词"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "通义千问、文心一言、I人、E人 ……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 21",
+        "placeholder": "",
+        "text": [
+          "新含义"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "抽象、上头、躺平……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 25",
+        "placeholder": "",
+        "text": [
+          "新用法、新句型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 28",
+        "placeholder": "",
+        "text": [
+          "小孩哥，离离原上普、看似很危险，实则也不安全 ……"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image31.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 8",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image32.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image33.jpg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "26"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 15,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言建模"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 2",
+        "placeholder": "",
+        "text": [
+          "如何建模语言？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image12.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "27"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 16,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言的建模"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "将语言建模为一系列词元（Token）组成的序列数据。其中，词元是不可再拆分的最小语义单位。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "{我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "可能的词元序列"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "我为什么要选这门课"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "原句子"
+        ]
+      }
+    ],
+    "notes": [
+      "33"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 17,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言模型旨在预测一个词元或词元序列出现的概率。现有语言模型通常基于规则、统计或学习来构建。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 2",
+        "placeholder": "",
+        "text": [
+          "{我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 3",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "0.66666"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image34.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image35.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 16",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image36.jpg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "流程图: 接点 18",
+        "placeholder": "",
+        "text": [
+          "基于规则的模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "流程图: 接点 8",
+        "placeholder": "",
+        "text": [
+          "基于统计的模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "流程图: 接点 9",
+        "placeholder": "",
+        "text": [
+          "基于学习的模型"
+        ]
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "34"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 18,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言模型的概率预测与上下文和语料库息息相关。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "上下文"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "语料库"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 17",
+        "placeholder": "",
+        "text": [
+          "{这，课，好，难，我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 18",
+        "placeholder": "",
+        "text": [
+          "{这，课，真，简，单，我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 19",
+        "placeholder": "",
+        "text": [
+          "0.9"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 20",
+        "placeholder": "",
+        "text": [
+          "0.2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 21",
+        "placeholder": "",
+        "text": [
+          "{我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "{我，为，什么，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 23",
+        "placeholder": "",
+        "text": [
+          "{我，为，啥子，要，选，这，门，课}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 24",
+        "placeholder": "",
+        "text": [
+          "0.6"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 25",
+        "placeholder": "",
+        "text": [
+          "0.6"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 26",
+        "placeholder": "",
+        "text": [
+          "0.2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 27",
+        "placeholder": "",
+        "text": [
+          "普通话语料库："
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 28",
+        "placeholder": "",
+        "text": [
+          "四川话语料库："
+        ]
+      }
+    ],
+    "notes": [
+      "\\begin{equation}",
+      "\\begin{aligned}",
+      "P_{n \\text{-} grams}(w_{1:N}) &= \\prod_{i=n}^{N} \\frac{C(w_{i-n+1 \\ : \\ i})}{ C(w_{i-n+1 \\ : \\ i-1})} \\\\",
+      "&=  \\frac{C(w_{1 \\ : \\ n})}{ C(w_{1 \\ : \\ n-1})} \\cdot  \\frac{C(w_{2 \\ : \\ n+1})}{ C(w_{2 \\ : \\ n})} \\cdot \\cdot \\cdot \\frac{C(w_{N-i+1 \\ : \\ N})}{ C(w_{N-i+1\\ : \\ N-1})}",
+      "\\end{aligned}",
+      "\\end{equation}",
+      "35"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 19,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "条件概率链式法则"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "设词元序列为                               ，其概率可由条件概率的链式法则进行计算。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image37.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 8",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image38.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "条件概率链式法则"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 20",
+        "placeholder": "",
+        "text": [
+          "语料库"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 21",
+        "placeholder": "",
+        "text": [
+          "上下文"
+        ]
+      }
+    ],
+    "notes": [
+      "56"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 20,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-阶马尔科夫假设"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "当前状态只与前面n个状态有关。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image39.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image40.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "n-阶马尔科夫假设"
+        ]
+      }
+    ],
+    "notes": [
+      "58"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 21,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型的发展历史"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言模型经历了基于规则的时代，基于统计的时代，当前处于基于学习的时代。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "1966"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "1975"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "2003"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "2018"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "2022"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "ELIZA"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 13",
+        "placeholder": "",
+        "text": [
+          "n-grams"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "Neural Probabilistic Language Model"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 16",
+        "placeholder": "",
+        "text": [
+          "GPT",
+          "Bert"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 17",
+        "placeholder": "",
+        "text": [
+          "chatGPT"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 18",
+        "placeholder": "",
+        "text": [
+          "规则时代"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 19",
+        "placeholder": "",
+        "text": [
+          "统计时代"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 20",
+        "placeholder": "",
+        "text": [
+          "学习时代"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image41.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image42.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 25",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image43.jpg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "59"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 22,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "01 基于统计的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "灯片编号占位符 1",
+        "placeholder": "sldNum",
+        "text": [
+          "22"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "软件学院"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "School of Software Technology"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 83",
+        "placeholder": "",
+        "text": [
+          "02 RNN与Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "03 语言模型采样与评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "04 大语言模型崛起"
+        ]
+      }
+    ],
+    "notes": [
+      "62"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 23,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "统计语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "n-grams 语言模型中的n-gram 指的是长度为n 的词序列。n-grams 语言模型通过依次统计文本中的n-gram 及其对应的(n-1)-gram 在语料库中出现的相对频率来计算文本                                ，记为            ，出现的概率。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image38.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image44.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "为词序列                              在语料库中出现的次数，",
+          "为词序列                                在语料库中出现的次数。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image45.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 15",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image46.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image47.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 19",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image48.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image49.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image50.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "65"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 24,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "统计语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "n-grams 语言模型中，n 为变量，当n = 1 时，称之为unigram，其不考虑文本的上下文关系。当n = 2 时，称之为bigrams，其对前一个词进行考虑。以此类推，当n = 3 时，称之为trigrams，其对前两个词进行考虑。以此类推。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image51.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image52.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "77"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 25,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "统计语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "虽然“长颈鹿脖子长”并没有直接出现在语料库中，但是bigrams 语言模型仍可以预测出“长颈鹿脖子长”出现的概率为2/15。由此可见，n-grams 具备对未知文本的泛化能力。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image51.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image52.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "78"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 26,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "统计语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 2",
+        "placeholder": "",
+        "text": [
+          "n的选择对n-grams有什么影响？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image12.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "83"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 27,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "统计语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image51.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "接下来对计算上述例子的trigrams。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image53.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "在自然语言处理的前沿领域，大语言模型正以其庞大的模型规模、海量数据的吞吐能力和卓越的模型性能，推动着一场技术革新的浪潮。",
+      "当我们谈论“大语言模型”之大时，所指的不仅仅是模型规模的庞大，也涵盖了训练数据规模的庞大，以及由此衍生出的模型能力的强大。",
+      "84"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 28,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-grams中的 n"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 2",
+        "placeholder": "",
+        "text": [
+          "n的选择会影响n-grams模型的泛化性能和计算复杂度。实际中n通常小于等于5。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "泛化性"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "计算量"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 23",
+        "placeholder": "",
+        "text": [
+          "在n-grams 语言模型中，n 代表了拟合语料库的能力与对未知文本的泛化能力之间的权衡。当n 过大时，语料库中难以找到与n-gram 一模一样的词序列，可能出现大量“零概率”现象；在n 过小时，n-gram 难以承载足够的语言信息，不足以反应语料库的特性。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "随着n的增大，n-gram模型的参数呈指数级增长。假设语料库中包含1000个词汇，则unigram的参数量为1000，而bigrams的参数量则为1000*1000。"
+        ]
+      }
+    ],
+    "notes": [
+      "在自然语言处理的前沿领域，大语言模型正以其庞大的模型规模、海量数据的吞吐能力和卓越的模型性能，推动着一场技术革新的浪潮。",
+      "当我们谈论“大语言模型”之大时，所指的不仅仅是模型规模的庞大，也涵盖了训练数据规模的庞大，以及由此衍生出的模型能力的强大。",
+      "85"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 29,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-grams中的 统计学原理"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 2",
+        "placeholder": "",
+        "text": [
+          "n-grams 语言模型是在n 阶马尔可夫假设下，对语料库中出现的长度为n 的词序列出现概率的极大似然估计。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image54.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 13",
+        "placeholder": "",
+        "text": [
+          "应用n-grams可以最大概率生成当前语料库。"
+        ]
+      }
+    ],
+    "notes": [
+      "在自然语言处理的前沿领域，大语言模型正以其庞大的模型规模、海量数据的吞吐能力和卓越的模型性能，推动着一场技术革新的浪潮。",
+      "当我们谈论“大语言模型”之大时，所指的不仅仅是模型规模的庞大，也涵盖了训练数据规模的庞大，以及由此衍生出的模型能力的强大。",
+      "86"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 30,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-grams语料及数据"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 5",
+        "placeholder": "",
+        "text": [
+          "n-gram的效果与语料库息息相关。Google在2005年开始Google Books Library Project项目，试图囊括自现代印刷术发明以来的全世界所有的书刊。其提供了unigram到5-gram的数据。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image55.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "模型训练数据规模以及参数数量的不断提升，不仅带来了上述学习能力的稳步增强，还为大模型“解锁”了一系列新的能力，例如上下文学习能力、常识推理能力、数学运算能力、代码生成能力等。",
+      "值得注意的是，这些新能力并非通过在特定下游任务上通过训练获得，而是随着模型复杂度的提升凭空自然涌现。这些能力因此被称为大语言模型的涌现能力（Emergent Abilities）。",
+      "87"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 31,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-grams的应用"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image56.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 5",
+        "placeholder": "",
+        "text": [
+          "n-gram不仅在输入法、拼写纠错、机器翻译等任务上得到广泛应用。其还推动了Culturomics（文化组学）的诞生。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image57.png",
+        "text": []
+      }
+    ],
+    "notes": [
+      "上下文学习：上下文学习（In-Context Learning）是指大语言模型在推理过程中，能够利用输入文本的上下文信息来执行特定任务的能力。具备了上下文学习能力的模型，在很多任务中无需额外的训练，仅通过示例或提示即可理解任务要求并生成恰当的输出。",
+      "在 GPT 系列中，不同版本的模型在上下文学习能力上有显著差异。早期的 GPT-1 和 GPT-2 在上下文学习方面的能力非常有限，通常无法直接利用上下文信息进行准确的推理和回答。GPT-3 的 130 亿参数版本则在上下文学习方面取得了显著进步，能在提供的上下文提示下完成一些常见任务。然而，对于更加复杂或特定领域的任务，其性能仍有限。具有 1750 亿参数的 GPT-3 最大版本以及后续的 GPT-4 模型展现出强大的上下文理解和学习能力，可以基于少量示例完成各类高度复杂的任务。",
+      "88"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 32,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "n-grams的缺点"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "观测长度有限"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "无法解决捕捉长程依赖"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "泛化能力不足"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "逐字匹配，不能适应语言的复杂性"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 16",
+        "placeholder": "",
+        "text": [
+          "n-gram因为观测长度有限，无法捕捉长程依赖。此外，其是逐字匹配的，不能很好地适应语言的复杂性。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 17",
+        "placeholder": "",
+        "text": [
+          "这门课有点儿难，我为什么要选这门课？",
+          "这门课有点儿难，我为什么要选这家店？"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 18",
+        "placeholder": "",
+        "text": [
+          "我为什么要选这门课？为什么我要选这门课？这门课我为什么要选？",
+          "选这门课，我是为什么？为什么啊，我要选这门课？这门课为什么我要选？"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 19",
+        "placeholder": "",
+        "text": [
+          "Bigrams下这句概率更高"
+        ]
+      }
+    ],
+    "notes": [
+      "上下文学习：上下文学习（In-Context Learning）是指大语言模型在推理过程中，能够利用输入文本的上下文信息来执行特定任务的能力。具备了上下文学习能力的模型，在很多任务中无需额外的训练，仅通过示例或提示即可理解任务要求并生成恰当的输出。",
+      "在 GPT 系列中，不同版本的模型在上下文学习能力上有显著差异。早期的 GPT-1 和 GPT-2 在上下文学习方面的能力非常有限，通常无法直接利用上下文信息进行准确的推理和回答。GPT-3 的 130 亿参数版本则在上下文学习方面取得了显著进步，能在提供的上下文提示下完成一些常见任务。然而，对于更加复杂或特定领域的任务，其性能仍有限。具有 1750 亿参数的 GPT-3 最大版本以及后续的 GPT-4 模型展现出强大的上下文理解和学习能力，可以基于少量示例完成各类高度复杂的任务。",
+      "89"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 33,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "01 基于统计的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "灯片编号占位符 1",
+        "placeholder": "sldNum",
+        "text": [
+          "33"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "软件学院"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "School of Software Technology"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 83",
+        "placeholder": "",
+        "text": [
+          "02 RNN与Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "03 语言模型采样与评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "04 大语言模型崛起"
+        ]
+      }
+    ],
+    "notes": [
+      "上下文学习：上下文学习（In-Context Learning）是指大语言模型在推理过程中，能够利用输入文本的上下文信息来执行特定任务的能力。具备了上下文学习能力的模型，在很多任务中无需额外的训练，仅通过示例或提示即可理解任务要求并生成恰当的输出。",
+      "在 GPT 系列中，不同版本的模型在上下文学习能力上有显著差异。早期的 GPT-1 和 GPT-2 在上下文学习方面的能力非常有限，通常无法直接利用上下文信息进行准确的推理和回答。GPT-3 的 130 亿参数版本则在上下文学习方面取得了显著进步，能在提供的上下文提示下完成一些常见任务。然而，对于更加复杂或特定领域的任务，其性能仍有限。具有 1750 亿参数的 GPT-3 最大版本以及后续的 GPT-4 模型展现出强大的上下文理解和学习能力，可以基于少量示例完成各类高度复杂的任务。",
+      "90"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 34,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "如何输入"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "对话气泡: 矩形 2",
+        "placeholder": "",
+        "text": [
+          "如何将自然语言输入给模型？"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image12.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "在自然语言处理的前沿领域，大语言模型正以其庞大的模型规模、海量数据的吞吐能力和卓越的模型性能，推动着一场技术革新的浪潮。",
+      "当我们谈论“大语言模型”之大时，所指的不仅仅是模型规模的庞大，也涵盖了训练数据规模的庞大，以及由此衍生出的模型能力的强大。",
+      "91"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 35,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "如何将上下文输入给语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "将下文输入进语言模型时，可以是“一个字接一个字”的串行输入，也可以“一股脑” 的并行输入。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "一个字接一个字"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "一股脑的输入"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 20",
+        "placeholder": "",
+        "text": [
+          "我"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 21",
+        "placeholder": "",
+        "text": [
+          "为"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "什么"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 23",
+        "placeholder": "",
+        "text": [
+          "要"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 24",
+        "placeholder": "",
+        "text": [
+          "选"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 26",
+        "placeholder": "",
+        "text": [
+          "这"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 27",
+        "placeholder": "",
+        "text": [
+          "门"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 28",
+        "placeholder": "",
+        "text": [
+          "课"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 29",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 87",
+        "placeholder": "",
+        "text": [
+          "我"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 88",
+        "placeholder": "",
+        "text": [
+          "为"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 89",
+        "placeholder": "",
+        "text": [
+          "什么"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 90",
+        "placeholder": "",
+        "text": [
+          "要"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 91",
+        "placeholder": "",
+        "text": [
+          "选"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 92",
+        "placeholder": "",
+        "text": [
+          "这"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 93",
+        "placeholder": "",
+        "text": [
+          "门"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 94",
+        "placeholder": "",
+        "text": [
+          "课"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 95",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 123",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image58.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 125",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image59.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 126",
+        "placeholder": "",
+        "text": [
+          "RNN"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 127",
+        "placeholder": "",
+        "text": [
+          "Transformer"
+        ]
+      }
+    ],
+    "notes": [
+      "在数字化浪潮的推动下，数据如同汇聚的洪流，而模型则如同乘风破浪的巨舰。数据规模的增长为模型提供了更丰富的信息源，意味着模型可以学习到更多样化的语言模式和深层次的语义关系。而模型规模的不断扩大，极大地增加了模型的表达能力，使其能够捕捉到更加细微的语言特征和复杂的语言结构。在如此庞大的模型参数规模以及多样化的训练数据共同作用下，模型内在对数据分布的拟合能力不断提升，从而在复杂多变的数据环境中表现出更高的适应性和有效性。",
+      "然而模型规模和数据规模的增长并非没有代价，它们带来了更高的计算成本和存储需求，这要求我们在模型设计时必须在资源消耗和性能提升之间找到一个恰当的平衡点。为了应对这一挑战，大语言模型的扩展法则（Scaling Laws）应运而生。这些法则揭示了模型的能力随模型和数据规模的变化关系，为大语言模型的设计和优化提供了宝贵的指导和参考。本章节将深入介绍两种扩展法则：OpenAI 提出的 Kaplan-McCandlish 扩展法则以及 DeepMind 提出的 Chinchilla 扩展法则。",
+      "92"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 36,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "RNN"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "典型的串行输入的语言模型是循环神经网络（Recurrent Neural Network, RNN），其是一类网络连接中包含环路的神经网络的总称。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image58.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "不记忆历史输入"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "循环记忆历史输入"
+        ]
+      }
+    ],
+    "notes": [
+      "2020 年，OpenAI 团队的 Jared Kaplan 和 Sam McCandlish 等人首次探究了神经网络的性能与数据规模 D 以及模型规模 N 之间的函数关系。他们在不同规模的数据集（从 2200 万到 230 亿个 Token）和不同规模的模型下（从 768 到 15 亿个参数）进行实验，并根据实验结果拟合出了两个基本公式.",
+      "其中L的值表示交叉熵损失，衡量了模型拟合数据分布的准确性，值越小表明模型对数据分布的拟合越精确，其自身学习能力也就越强大。",
+      "93"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 37,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "RNN"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "RNN在串行输入的过程中，前面的元素会被循环编码成隐状态，并叠加到当前的输入上面。其在t时刻的输出如下："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image60.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "在时间维度上“各种”嵌套的复合函数。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "记忆历史的压缩器。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image61.gif",
+        "text": []
+      }
+    ],
+    "notes": [
+      "实验结果和相关公式表明，模型的性能与模型模型以及数据规模这两个因素均高度正相关。然而，在模型规模相同的情况下，模型的具体架构对其性能的影响相对较小。因此，扩大模型规模和丰富数据集成为了提升大型模型性能的两个关键策略。",
+      "此外，OpenAI 在进一步研究计算预算的最优分配时发现，总计算量 C 与数据量 D 和模型规模 N 的乘积近似成正比，即 C ≈ 6ND。在这一条件下，如果计算预算增加，为了达到最优模型性能，数据集的规模 D 以及模型规模 N 都应同步增加。但是模型规模的增长速度应该略快于数据规模的增长速度。具体而言，两者的最优配置比例应当为 Nopt ∝ C0.73, Dopt ∝ C0.27。这意味着，如果总计算预算增加了 10 倍，模型规模应扩大约 5.37 倍，而数据规模应扩大约 1.86 倍，以实现模型的最佳性能。",
+      "OpenAI 提出的这一扩展法则不仅定量地揭示了数据规模和模型规模对模型能力的重要影响，还指出了在模型规模上的投入应当略高于数据规模上的投入。这一发现不仅为理解语言模型的内在工作机制提供了新的见解，也为如何高效地训练这些模型提供了宝贵的指导意见。",
+      "94"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 38,
+    "blocks": [
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image62.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "RNN"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "RNN可以将历史状态以隐变量的形式循环叠加到当前状态上，对历史信息进行考虑，呈现出螺旋式前进的模式。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image61.gif",
+        "text": []
+      }
+    ],
+    "notes": [
+      "谷歌旗下 DeepMind 团队对“模型规模的增长速度应该略高于数据规模的增长速度”这一观点提出了不同的看法。在 2022 年，他们对更大范围的模型规模（从7000 万到 1600 亿个参数）以及数据规模（从 50 亿到 5000 亿个 Token）进行了深入的实验研究，并据此提出了 Chinchilla 扩展法则",
+      "其中L的值表示交叉熵损失，衡量了模型拟合数据分布的准确性，值越小表明模型对数据分布的拟合越精确，其自身学习能力也就越强大。",
+      "95"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 39,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "梯度爆炸"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "在训练RNN时，涉及大量的矩阵联乘操作，容易引发梯度衰减或梯度爆炸问题。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "梯度爆炸/消失"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "设RNN语言模型的训练损失为:"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image63.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image64.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 13",
+        "placeholder": "",
+        "text": [
+          "其关于隐藏状态的梯度为:"
+        ]
+      },
+      {
+        "kind": "AlternateContent",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "当的最大特征值小于1时，会发生梯度消失；当的最大特征值大于1时，会发生梯度爆炸。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image65.gif",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image66.gif",
+        "text": []
+      }
+    ],
+    "notes": [
+      "Chinchilla扩展法则同样指出了模型性能与数据集以及模型规模之间的正相关关系。",
+      "但是在计算预算的最优分配问题上，Chinchilla扩展法则提出，数据集量D与模型规模N几乎同等重要，强调了数据规模在提升模型性能中的重要性。",
+      "Chinchilla扩展法则是对OpenAI先前研究的补充和优化，同时还开创了大语言模型发展的一个新方向：不再单纯追求模型规模的增加，而是优化模型规模与数据规模的比例。",
+      "96"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 40,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image67.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image68.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "为解决经典RNN的梯度衰减/爆炸问题，带有门控机制的LSTM被提出。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 2",
+        "placeholder": "",
+        "text": [
+          "经典RNN"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image69.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image70.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [
+      "随着数据资源和计算能力的爆发式增长，语言模型的参数规模和性能表现实现了质的飞跃，迈入了大语言模型（Large Language Model, LLM）的新时代。",
+      "CNN 跟大脑类比",
+      "97"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 41,
+    "blocks": [
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image71.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "LSTM将经典RNN中的通过复合函数传递隐藏状态的方式，解耦为状态累加。隐藏状态通过遗忘门、输入门来实现合理的状态累加，同过输出门实现合理整合。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image72.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "遗忘门"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "输入门"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "输出门"
+        ]
+      }
+    ],
+    "notes": [
+      "98"
+    ],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 42,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "LSTM中采用遗忘门来适度忘记“往事”。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image73.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 43,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "LSTM采用输入门来对 “新闻”进行选择性聆听。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image74.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 44,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "将 “往事”与“新闻”相加得到当前状态。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image75.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 45,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "LSTM"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "LSTM采用输出门，考虑“人情世故”，将当前状态适度输出。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image76.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 46,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "GRU"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image77.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "为降低LSTM的计算成本，GRU将遗忘门与输入门进行合并。"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 47,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "RNN的缺陷"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "1. 慢；2. 健忘。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image78.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image79.gif",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 48,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "RNN的困境"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "2015年，Ilya离开谷歌加入OpenAI研究通用语言模型。这个问题是当时困扰Ilya的一大问题。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image80.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image81.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "We were using recurrent neural networks..…… the limitations of recurrent neural networks, of learning long-term dependencies."
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 49,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Transformer提出"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "2017年谷歌提出Transformer，将上下文一股脑的并行输入，对相关信息按重要度加权。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image82.gif",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image83.gif",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "研表究明，汉字序顺并不定一影响读阅!"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "Transformer 并行"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "RNN串行"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 50,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "典型的支持并行输入的模型是Transformer，其是一类基于注意力机制（Attention）的模块化构建的神经网络结构。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image59.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image84.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 51,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "Transformer中两种主要模块为（1）注意力模块；（2）全连接前馈模块。其中，注意力模块负责对上下文进行通盘考虑。全连接前馈模块占据了Transformer近三分之二的参数，掌管着Transformer模型的记忆。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image85.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image86.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 52,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "注意力模块由自注意力层、残差连接和层正则化组成。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image85.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "残差连接"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 53,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "注意力层"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "注意力层采用加权平均的思想将前文信息叠加到当前状态上。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image87.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image88.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image89.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image90.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 54,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "层正则化与残差连接"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "层正则化用以加速神经网络训练过程并取得更好的泛化性能；引入残差连接可以有效解决梯度消失问题。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "层正则化"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "设输入到层正则化层的向量为                       。层正则化层将在     的每一维度     上都进行层正则化操作。具体地，层正则化操作可以表示为下列公式："
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "其中，𝛼和𝛽为可学习参数。𝜇和𝜎分别是隐藏状态的均值和方差，可由下列公式分别计算。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image91.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image92.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 15",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image93.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image94.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 19",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image95.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image85.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 55,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型的输出"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "通常，语言模型在一次预测中，输出的是一个概率向量。其中的每一维代表了词表中对应词出现的概率。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "{我，为}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 12",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 18",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image96.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 17",
+        "placeholder": "",
+        "text": [
+          "什么：0.066"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 20",
+        "placeholder": "",
+        "text": [
+          "大家：0.027"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 56,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "基于RNN和Transformer的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "以预测下一词出现的概率为目标，解释基于RNN和Transformer的语言模型的训练流程及推理过程。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "训练下一词预测模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "对词序列                                 ，基于RNN/Transformer的语言模型根据                          预测下一个词            出现的概率。输出为一个向量，其中每一维代表着词典中对应词的概率。设词典D中共有|D|个词                             。输出可表示为                           ，其中，        表示词典中的词       出现的概率。",
+          "选用下列训练损失："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image97.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image98.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image99.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 15",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image100.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image101.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 19",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image102.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image103.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 23",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image104.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 25",
+        "placeholder": "",
+        "rel_id": "rId11",
+        "target": "../media/image105.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 57,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "自回归"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "将输出向量                         解码为对应的单词，然后“自回归” 的不断生成新的词，最终组成一段文本。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image101.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "自回归过程"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 6",
+        "placeholder": "",
+        "text": [
+          "在自回归中，第一轮，我们首先将第一个词输入给RNN/Transformer语言模型，经过解码，得到一个输出词。然后，我们将第一轮输出的词与第一轮输入的词拼接，作为第二轮的输入，然后解码得到第二轮的输出。接着，将第二轮的输出和输入拼接，作为第三轮的输入，以此类推。每次将本轮预测到的词拼接到本轮的输入上，输入给语言模型，完成下一轮预测。在循环迭代的“自回归”过程中，我们不断生成新的词，这些词便构成了一段文本。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image106.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 58,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "自回归"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "自回归面临着错误级联放大和串行效率低两个主要问题。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "错误级联放大"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "串行效率低"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "选用模型自己生成的词作为输入可能会有错误，这样的错误循环输入，将会不断的放大错误，导致模型不能很好拟合训练集。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "因为下一个要预测的词依赖上一次的预测，每次预测之间是串行的，难以进行并行加速。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image107.gif",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 14",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image108.gif",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 59,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Teacher Forcing"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "为了解决上述两个问题，Teacher Forcing在语言模型预训练过程中被广泛应用。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image109.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "无Teacher Forcing"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "有Teacher Forcing"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image110.gif",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 60,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "训练RNN/Transformer的过程"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "在自监督学习范式下，基于训练预料，利用学习算法，从受归纳偏置限制的假设类中选取出可以达到预测下一词的假设，该假设可以泛化到语料库以外的数据上。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image111.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 10",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image112.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 16",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image113.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 16",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image114.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 12",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image115.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image116.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image117.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 5",
+        "placeholder": "",
+        "text": [
+          "Teacher Forcing"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 6",
+        "placeholder": "",
+        "text": [
+          "自监督"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 7",
+        "placeholder": "",
+        "text": [
+          "RNN/Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 8",
+        "placeholder": "",
+        "text": [
+          "公开语料"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 9",
+        "placeholder": "",
+        "text": [
+          "梯度下降"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形: 圆角 10",
+        "placeholder": "",
+        "text": [
+          "下一词预测"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 61,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "曝光偏差"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "Teacher Forcing的训练方式将导致曝光偏差（Exposure Bias）：训练模型的过程和模型在推理过程存在差异。其易导致模型幻觉问题。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image118.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image119.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 62,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "01 基于统计的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "灯片编号占位符 1",
+        "placeholder": "sldNum",
+        "text": [
+          "62"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "软件学院"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "School of Software Technology"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 83",
+        "placeholder": "",
+        "text": [
+          "02 RNN与Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "03 语言模型采样与评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "04 大语言模型崛起"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 63,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型的采样"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言模型每轮预测输出的是一个概率向量。我们需要根据概率值从词表中选出本轮输出的词元，选择词元的过程被称为采样。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "{我, 为}"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 12",
+        "placeholder": "",
+        "text": [
+          "语言模型"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 18",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image96.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 17",
+        "placeholder": "",
+        "text": [
+          "什么：0.066"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 20",
+        "placeholder": "",
+        "text": [
+          "大家：0.027"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image96.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 23",
+        "placeholder": "",
+        "text": [
+          "啊：0.026"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 24",
+        "placeholder": "",
+        "text": [
+          "选：0.057"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 25",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image96.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 31",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 32",
+        "placeholder": "",
+        "text": [
+          "这家：0.016"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "标注: 弯曲线形 33",
+        "placeholder": "",
+        "text": [
+          "这课：0.033"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image120.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image120.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image120.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 59",
+        "placeholder": "",
+        "text": [
+          "什么"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 60",
+        "placeholder": "",
+        "text": [
+          "选"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 61",
+        "placeholder": "",
+        "text": [
+          "这课"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 62",
+        "placeholder": "",
+        "text": [
+          "采样"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 64,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型的采样"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "两类主流的采样方法可以总结为 (1). 概率最大化方法; (2). 随机采样方法。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "随机采样方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法旨在最大化："
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "在每轮预测时，其先选出一组可能性高的候选词， 然后按照其概率分布进行随机采样。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image121.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image122.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image123.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 65,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法"
+        ]
+      },
+      {
+        "kind": "AlternateContent",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "假设生成M个词元，概率最大化方法的搜索空间为是NP-Hard问题。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "贪心搜索法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "波束搜索法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "贪心搜索在在每轮预测中都选择概率最大的词，即："
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "波束搜索在每轮预测中都先保留b个可能性最高的词                                      ，即："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image124.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image125.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 16",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image126.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 18",
+        "placeholder": "",
+        "text": [
+          "在结束搜索时，得到M个集合，即             。 找出最优组合使得联合概率最大。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 20",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image127.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image128.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 6",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image129.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 66,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "贪心搜索只顾“眼前利益”，忽略了“远期效益”。当前概率大的词有可能导致后续的词概率都很小。贪心搜索容易陷入局部最优，难以达到全局最优解。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image130.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image131.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 67,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "波束搜索在每轮预测中考虑了更多的可能性，从而可以在一定程度上减少陷入局部最优的情况。达到全局最优的可能性更高。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image130.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image132.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 68,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "概率最大化方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "概率最大的文本通常是最为常见的文本。这些文本会略显平庸。在开放式文本生成中， 贪心搜索和波束搜索都容易生成一些“废话文学”---重复且平庸的文本。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image130.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image133.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 69,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "随机采样方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "为了增加生成文本的多样性，随机采样的方法在预测时增加了随机性。在每轮预测时，其先选出一组可能性高的候选词， 然后按照其概率分布进行随机采样。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image130.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image122.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 70,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Top-k采样方法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "Top-K采样在每轮预测中都选取K个概率最高的词                                  作为本轮的候选词集合，然后依照如下概率分别对这些词进行采样。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image134.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image135.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image136.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image137.jpeg",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 11",
+        "placeholder": "",
+        "text": [
+          "√"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "√"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 13",
+        "placeholder": "",
+        "text": [
+          "√"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 71,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Top-k采样的问题"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "当候选词的分布的方差较大的时候，可能会导致本轮预测选到概率较小、不符合常理的词，从而产生“胡言乱语”。而当候选词的分布的方差较小的时候，固定尺寸的候选集中无法容纳更多的具有相近概率的词，导致候选集不够丰富。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image138.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image138.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image137.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image137.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 72,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Top-P采样方法"
+        ]
+      },
+      {
+        "kind": "AlternateContent",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "Top-P设定阈值p来对候选集进行选取，其候选集可表示为                                         ，",
+          "其中，对有，                。候选集中元素的分布服从下述分布"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image139.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image140.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image141.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image142.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image137.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 73,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Top-P的优势"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "应用阈值作为候选集选取的标准之后，Top-P采样可以避免选到概率较小、不符合常理的词，从而减少“胡言乱语”。其还可以容纳更多的具有相近概率的词，增加文本的丰富度，改善“枯燥无味”。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image138.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 74,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Temperature机制"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "Top-K采样和Top-P采样的随机性由语言模型输出的概率决定，不可自由调整。但在不同场景中，我们对于随机性的要求可能不同。引入Temperature机制可以对解码随机性进行调节。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image143.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image144.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "引入Temperature后，Top-K 采样的候选集的分布如下所示："
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "引入Temperature后，Top-P采样的候选集的分布如下所示："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image122.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image122.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image122.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image122.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 75,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "得到一个语言模型后，我们需要对其生成能力进行评测，以判断其优劣。评测语言模型生成能力的方法可以分为两类: (1) 内在评测，(2) 外在评测。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "内在评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "外在评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "测试文本通常由与预训练中所用的文本独立同分布的文本构成，不依赖于具体任务。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 16",
+        "placeholder": "",
+        "text": [
+          "在外在评测中，测试文本通常包括该任务上的问题和对应的标准答案，其依赖于具体任务。通过外在评测，我们可以评判语言模型处理特定任务的能力。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image145.gif",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image146.gif",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 76,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "内在评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "最为常用的内部评测指标是困惑度（Perplexity）。其度量了语言模型对测试文本感到“困惑”的程度。设测试文本为                    。 语言模型在测试文本        上的困惑度PPL可由下式计算："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image147.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image148.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image149.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 17",
+        "placeholder": "",
+        "text": [
+          "困惑度减小也意味着熵减，意味着模型“胡言乱语”的可能性降低。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image150.jpeg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 77,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "外在评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "外在评测方法通常可以分为基于统计指标的评测方法和基于语言模型的评测方法两类。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "基于统计指标的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "基于语言模型的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "基于统计指标的方法构造统计指标来评测语言模型的输出与标准答案间的契合程度。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "基于语言模型的方法从语义理解的层面来判断待测试的语言模型的输出与标准答案间的契合程度。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image151.jpg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image152.jpg",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 78,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "基于统计指标的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "BLEU（BiLingual Evaluation Understudy）是应用最为广泛统计指标之一。其最早被提出用于评价模型在机器翻译（Machine Translation, MT）任务上的效果。BLEU计算了多层次n-gram匹配精度的几何平均。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image153.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "例如，MT模型将“大语言模型”翻译成英文，生成的翻译为“big language models”，而参考文本为“large language models”。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image154.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 19",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image155.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image156.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 79,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "基于语言模型的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "目前基于语言模型的评测方法主要分为两类：（1）基于上下文词嵌入（Contextual Embeddings）的评测方法；（2）基于生成模型的评测方法。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "基于上下文词嵌入"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "基于生成模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 8",
+        "placeholder": "",
+        "text": [
+          "在上下文词嵌入向量的基础上，计算生成文本和参考文本间的相似度来对生成内容进行评测。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "依赖于大语言模型的强大能力，直接用能力强大的大语言模型对生成内容进行评测，可以不依赖于标准答案。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image157.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image158.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 80,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "基于上下文嵌入的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "典型的基于上下文词嵌入的评测方法是BERTScore。BERTScore从精度(Precision)，召回(Recall)和F1量度三个方面对生成文档进行评测。其定义分别如下："
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image159.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image160.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 15",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image161.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image162.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 81,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "基于生成模型的评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "G-EVAL利用GPT-4在没有参考文本的情况下对生成文本进行评分。通过提示工程（Prompt Engineering）引导GPT-4输出评测分数。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image163.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 82,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "语言模型的应用"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 1",
+        "placeholder": "",
+        "text": [
+          "语言模型的输出值以及中间结果可以直接或间接地解决各类自然语言处理任务。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "间接应用"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "直接应用"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId2",
+        "target": "../media/image164.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image165.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image166.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 19",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image167.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 22",
+        "placeholder": "",
+        "text": [
+          "……"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 23",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image168.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 25",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image169.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 26",
+        "placeholder": "",
+        "text": [
+          "机器翻译"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 27",
+        "placeholder": "",
+        "text": [
+          "输入法"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 28",
+        "placeholder": "",
+        "text": [
+          "对话"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 29",
+        "placeholder": "",
+        "text": [
+          "实体识别"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 30",
+        "placeholder": "",
+        "text": [
+          "实体对齐"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 31",
+        "placeholder": "",
+        "text": [
+          "文本检索"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 32",
+        "placeholder": "",
+        "text": [
+          "语言模型输出的概率值可以直接应用于输入法、机器翻译、对话等任务。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 33",
+        "placeholder": "",
+        "text": [
+          "语言模型中间产出的文本嵌入可以应用于实体识别、实体检测、文本检索等任务。"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 83,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "01 基于统计的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "灯片编号占位符 1",
+        "placeholder": "sldNum",
+        "text": [
+          "83"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "软件学院"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "School of Software Technology"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 83",
+        "placeholder": "",
+        "text": [
+          "02 RNN与Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "03 语言模型采样与评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "04 大语言模型崛起"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 84,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "浪潮之巅"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 1",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image170.jpeg",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image171.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image172.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image174.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image175.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image176.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image177.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 12",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image177.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image178.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image178.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 2",
+        "placeholder": "",
+        "text": [
+          "2022年，ChatGPT开启了本轮人工智能浪潮，科技巨头纷纷推出自己的大语言模型以博得一席之地。目前，GPT系列模型在其中仍然 “遥遥领先”。"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 85,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "纵观GPT系列模型的发展，从早期能力较为有限的GPT-1和GPT-2等，到如今在各领域表现突出的ChatGPT、GPT-4o等模型，GPT系列模型在持续的迭代更新中，展示出了显著的能力提升。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 28",
+        "placeholder": "",
+        "text": [
+          "鲁迅为什么要打周树人"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image179.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image180.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "GPT-2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 59",
+        "placeholder": "",
+        "text": [
+          "鲁迅为什么要打周树人"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 60",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image179.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 62",
+        "placeholder": "",
+        "text": [
+          "GPT-3"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 67",
+        "placeholder": "",
+        "text": [
+          "鲁迅为什么要打周树人"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 68",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image179.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 73",
+        "placeholder": "",
+        "text": [
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 78",
+        "placeholder": "",
+        "text": [
+          "这个问题实际上是一个幽默的网络梗。鲁迅和周树人是同一个人，鲁迅是周树人的笔名。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 8",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image181.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image182.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 80",
+        "placeholder": "",
+        "text": [
+          "鲁迅和周树人之间有过一些争论和矛盾，但没有确凿的证据表明鲁迅曾经打过周树人。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 14",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image183.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 16",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image184.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 23",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image185.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 82",
+        "placeholder": "",
+        "text": [
+          "我不知道。我只知道他是一个非常强壮的人。我不知道他为什么这样做。我只知道他这样做了。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "能耐变大"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 86,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "此外，随着GPT系列模型的不断迭代更新，能解决的问题也越来越丰富。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 29",
+        "placeholder": "",
+        "text": [
+          "更强的文本生成：生成连贯且符合语境的文本。",
+          "强大推理能力：能够解决复杂的逻辑推理问题。",
+          "多模态能力：处理文本和图像。",
+          "编程能力：生成复杂代码来解决编程问题。",
+          "......"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 30",
+        "placeholder": "",
+        "text": [
+          "简单文本生成：能生成文本段落，但不保证人能看得懂。",
+          "语言翻译：可以进行简单的翻译任务。",
+          "文本填充：补全未完成的句子，但不一定合适。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 37",
+        "placeholder": "",
+        "text": [
+          "GPT-2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 38",
+        "placeholder": "",
+        "text": [
+          "大规模文本生成：能生成连贯且复杂的文本。",
+          "语言翻译：对于复杂的翻译任务也能顺利完成。",
+          "推理能力：能够给予用户输入进行一定程度的简单推理。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 40",
+        "placeholder": "",
+        "text": [
+          "GPT-3"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 43",
+        "placeholder": "",
+        "text": [
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "本领变多"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 87,
+    "blocks": [
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image186.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "涌现能力"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "实验发现这些新能力随着模型规模提升凭空自然涌现出来，因此将其称为涌现能力（Emergent Abilities），例如上下文学习、逻辑推理和常识推理等能力。"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 88,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "上下文学习（In-Context Learning）指大语言模型在某些任务中无需额外的训练，仅通过上下文信息中的示例或提示即可理解任务并生成输出。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "GPT-2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "GPT-3",
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image187.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 30",
+        "placeholder": "",
+        "text": [
+          "这款手机的电池续航不太行，只能使用三个小时左右。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 32",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image188.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 36",
+        "placeholder": "",
+        "text": [
+          "负面评价。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 39",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image190.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 42",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image191.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 44",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image192.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "圆角矩形标注 23",
+        "placeholder": "",
+        "text": [
+          "判断输入为“正面评价”或“负面评价”",
+          "以下展示了两个例子：",
+          "- 示例1:  这家餐厅的服务太棒了  => 正面评价",
+          "- 示例2:  这电影浪费了我两小时  => 负面评价",
+          "输入：“这款手机的电池续航不太行”"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "上下文学习"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 89,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "常识推理（Commonsense Reasoning）指大语言模型基于常识知识和逻辑进行理解和推断的能力。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "GPT-2"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "GPT-3 13B",
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image187.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 30",
+        "placeholder": "",
+        "text": [
+          "小明跑步时掉进了水里，衣服都湿了。为了让衣服干，小明应该继续跑步。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 32",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image188.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 36",
+        "placeholder": "",
+        "text": [
+          "为了让衣服干，小明可以想办法把衣服晾起来或者去换一件干衣服。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 39",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image190.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 42",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image191.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 44",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image192.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "常识推理"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 2",
+        "placeholder": "",
+        "text": [
+          "小明跑步时掉进了水里，衣服都湿了。为了让衣服干，小明应该做什么？"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 90,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "逻辑推理（Logical Reasoning）指大语言模型基于给定信息和规则进行行合乎逻辑的推断和结论的能力。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "GPT-2",
+          "GPT-3 75B"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 10",
+        "placeholder": "",
+        "text": [
+          "GPT-3 175B",
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image187.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 30",
+        "placeholder": "",
+        "text": [
+          "小明比小红高，小红比小强高，那么谁最高？小红比小强高。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 32",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image188.png",
+        "text": []
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 36",
+        "placeholder": "",
+        "text": [
+          "小明最高，因为小明比小红高，而小红比小强高，所以根据逻辑推理，小明最高。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 39",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image190.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 42",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image191.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 44",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image192.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "圆角矩形标注 23",
+        "placeholder": "",
+        "text": [
+          "小明比小红高，小红比小强高，那么谁最高？"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "逻辑推理"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 91,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 4",
+        "placeholder": "",
+        "text": [
+          "上述GPT系列模型的能力拓展和增强，主要得益于模型规模和数据规模的增长。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 1",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image193.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 10",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image194.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 13",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image195.tiff",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 17",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image196.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 31",
+        "placeholder": "",
+        "text": [
+          "GPT-2"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 69",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image196.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 70",
+        "placeholder": "",
+        "text": [
+          "GPT-3"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 75",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image196.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 76",
+        "placeholder": "",
+        "text": [
+          "GPT-4"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId7",
+        "target": "../media/image197.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 19",
+        "placeholder": "",
+        "rel_id": "rId8",
+        "target": "../media/image198.tiff",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 20",
+        "placeholder": "",
+        "rel_id": "rId9",
+        "target": "../media/image199.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 11",
+        "placeholder": "",
+        "rel_id": "rId10",
+        "target": "../media/image200.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 21",
+        "placeholder": "",
+        "rel_id": "rId11",
+        "target": "../media/image201.tiff",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 22",
+        "placeholder": "",
+        "rel_id": "rId12",
+        "target": "../media/image202.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 77",
+        "placeholder": "",
+        "rel_id": "rId13",
+        "target": "../media/image203.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 79",
+        "placeholder": "",
+        "rel_id": "rId14",
+        "target": "../media/image204.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 81",
+        "placeholder": "",
+        "rel_id": "rId15",
+        "target": "../media/image205.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "大模型+大数据→新智能"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 92,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "而上述GPT系列模型的性能提升，有着一系列关于模型能力与参数/数据规模之间的定量关系作为理论支撑，即扩展法则（Scaling Law）。其中以OpenAI提出的Kaplan-McCandlish法则以及DeepMind提出的Chinchilla法则最为著名。"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image206.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 3",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image207.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 4",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image208.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "扩展法则"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 93,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "2020 年，OpenAI团队的Jared Kaplan和Sam McCandlish等人首次通过实验拟合了神经网络模型的性能L与数据规模D以及模型规模N之间的函数关系，提出了Kaplan-McCandlish扩展法则。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Kaplan-McCandlish扩展法则"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image209.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image210.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 7",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image211.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 8",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image212.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "数据规模D"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 13",
+        "placeholder": "",
+        "text": [
+          "损失函数L"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 14",
+        "placeholder": "",
+        "text": [
+          "损失函数L"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 15",
+        "placeholder": "",
+        "text": [
+          "模型规模N"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 94,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "Kaplan-McCandlish扩展法则的提出有着非常重要的意义，为大语言模型的训练过程提供了指导，也为OpenAI指明了未来前进的方向和路线。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 9",
+        "placeholder": "",
+        "text": [
+          "模型性能与模型规模和数据规模两个因素均高度正相关。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 10",
+        "placeholder": "",
+        "text": [
+          "模型数据缺一不可"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "为了提高模型性能，模型规模和数据规模应当同步增加。但相对而言，模型规模的优先级更高。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 13",
+        "placeholder": "",
+        "text": [
+          "模型规模更为重要"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Kaplan-McCandlish扩展法则"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 95,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "2022 年，谷歌旗下DeepMind团队在Kaplan-McCandlish扩展法则的基础上进行了更大范围的实验探索，提出了Chinchilla扩展法则。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Chinchilla扩展法则"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "图片 2",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image213.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 6",
+        "placeholder": "",
+        "rel_id": "rId4",
+        "target": "../media/image214.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 8",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image215.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 9",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image216.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 12",
+        "placeholder": "",
+        "text": [
+          "模型规模N"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 13",
+        "placeholder": "",
+        "text": [
+          "损失函数L"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 17",
+        "placeholder": "",
+        "text": [
+          "总计算量",
+          "等于6ND"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 96,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "文本框 7",
+        "placeholder": "",
+        "text": [
+          "Chinchilla扩展法则可以视为对OpenAI先前研究的补充和优化，指出模型规模与参数规模几乎同等重要，为DeepMind在数据规模上的不断探索提供了依据。"
+        ]
+      },
+      {
+        "kind": "graphicFrame",
+        "name": "表格 3",
+        "placeholder": "",
+        "text": [
+          "OpenAI",
+          "Kaplan-McCandlish法则",
+          "DeepMind",
+          "Chinchilla法则",
+          "模型性能与模型规模和数据规模两个因素均高度正相关。",
+          "模型性能与模型规模和数据规模两个因素均高度正相关。",
+          "模型规模比参数规模更为重要。",
+          "模型规模与参数规模几乎同等重要。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "Chinchilla扩展法则"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  },
+  {
+    "slide": 97,
+    "blocks": [
+      {
+        "kind": "chart",
+        "name": "图表 26",
+        "uri": "http://schemas.openxmlformats.org/drawingml/2006/chart",
+        "rel_id": "rId3",
+        "target": "../charts/chart1.xml",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 29",
+        "placeholder": "",
+        "text": [
+          "2018             2019             2020             2021             2022             2023"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "object 5",
+        "placeholder": "",
+        "text": [
+          "发展之路"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 1",
+        "placeholder": "",
+        "text": [
+          "语言模型的发展见证了扩展法则。"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "矩形 31",
+        "placeholder": "",
+        "text": [
+          "1000TB"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 32",
+        "placeholder": "",
+        "text": [
+          "年份"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 36",
+        "placeholder": "",
+        "text": [
+          "模型预训练数据量"
+        ]
+      },
+      {
+        "kind": "grpSp",
+        "name": "组合 2",
+        "placeholder": "",
+        "text": [
+          "2018             2019             2020             2021             2022             2023",
+          "1012",
+          "1011",
+          "1010",
+          "109",
+          "108",
+          "模型参数数量",
+          "年份"
+        ]
+      },
+      {
+        "kind": "chart",
+        "name": "组合 2",
+        "uri": "http://schemas.openxmlformats.org/drawingml/2006/chart",
+        "rel_id": "rId4",
+        "target": "../charts/chart2.xml",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 40",
+        "placeholder": "",
+        "rel_id": "rId5",
+        "target": "../media/image217.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 5",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image218.png",
+        "text": []
+      },
+      {
+        "kind": "pic",
+        "name": "图片 25",
+        "placeholder": "",
+        "rel_id": "rId6",
+        "target": "../media/image218.png",
+        "text": []
+      }
+    ],
+    "notes": [],
+    "chart_paths": [
+      "ppt/charts/chart1.xml",
+      "ppt/charts/chart2.xml"
+    ],
+    "chart_text": [
+      "Y 值",
+      "0.7",
+      "1.8",
+      "2.6",
+      "2.7",
+      "3.2",
+      "0.8"
+    ]
+  },
+  {
+    "slide": 98,
+    "blocks": [
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "01 基于统计的语言模型"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "灯片编号占位符 1",
+        "placeholder": "sldNum",
+        "text": [
+          "98"
+        ]
+      },
+      {
+        "kind": "pic",
+        "name": "Picture 4",
+        "placeholder": "",
+        "rel_id": "rId3",
+        "target": "../media/image1.png",
+        "text": []
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 3",
+        "placeholder": "",
+        "text": [
+          "软件学院"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "文本框 5",
+        "placeholder": "",
+        "text": [
+          "School of Software Technology"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 83",
+        "placeholder": "",
+        "text": [
+          "02 RNN与Transformer"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "03 语言模型采样与评测"
+        ]
+      },
+      {
+        "kind": "sp",
+        "name": "TextBox 81",
+        "placeholder": "",
+        "text": [
+          "04 大语言模型崛起"
+        ]
+      }
+    ],
+    "notes": [],
+    "chart_paths": [],
+    "chart_text": []
+  }
+]

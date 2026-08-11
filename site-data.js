@@ -80,9 +80,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-11"
   },
   {
-    "title": "suian_全课程内容汇总",
-    "fileName": "suian_全课程内容汇总.md",
-    "path": "大二春夏/人工智能芯片与系统，3.5学分/suian_全课程内容汇总.md",
+    "title": "suianwu_suian_全课程内容汇总",
+    "fileName": "suianwu_suian_全课程内容汇总.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/suianwu_suian_全课程内容汇总.md",
     "semester": "大二春夏",
     "course": "人工智能芯片与系统，3.5学分",
     "type": "md",
@@ -90,9 +90,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "suian_cheating_paper",
-    "fileName": "suian_cheating_paper.pdf",
-    "path": "大二春夏/人工智能芯片与系统，3.5学分/suian_cheating_paper.pdf",
+    "title": "suianwu_suian_cheating_paper",
+    "fileName": "suianwu_suian_cheating_paper.pdf",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/suianwu_suian_cheating_paper.pdf",
     "semester": "大二春夏",
     "course": "人工智能芯片与系统，3.5学分",
     "type": "pdf",
@@ -240,9 +240,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-06-12"
   },
   {
-    "title": "考前概念复习_名词解释汇总",
-    "fileName": "考前概念复习_名词解释汇总.pdf",
-    "path": "大二春夏/人工智能逻辑，3学分/考前概念复习_名词解释汇总.pdf",
+    "title": "suianwu_考前概念复习_名词解释汇总",
+    "fileName": "suianwu_考前概念复习_名词解释汇总.pdf",
+    "path": "大二春夏/人工智能逻辑，3学分/suianwu_考前概念复习_名词解释汇总.pdf",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "pdf",
@@ -250,9 +250,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第01讲_导言",
-    "fileName": "第01讲_导言.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第01讲_导言.md",
+    "title": "suianwu_第01讲_导言",
+    "fileName": "suianwu_第01讲_导言.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第01讲_导言.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -260,9 +260,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第02讲_人工智能逻辑的研究方法",
-    "fileName": "第02讲_人工智能逻辑的研究方法.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第02讲_人工智能逻辑的研究方法.md",
+    "title": "suianwu_第02讲_人工智能逻辑的研究方法",
+    "fileName": "suianwu_第02讲_人工智能逻辑的研究方法.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第02讲_人工智能逻辑的研究方法.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -270,9 +270,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第03讲_预备知识",
-    "fileName": "第03讲_预备知识.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第03讲_预备知识.md",
+    "title": "suianwu_第03讲_预备知识",
+    "fileName": "suianwu_第03讲_预备知识.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第03讲_预备知识.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -280,9 +280,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第04讲_命题逻辑",
-    "fileName": "第04讲_命题逻辑.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第04讲_命题逻辑.md",
+    "title": "suianwu_第04讲_命题逻辑",
+    "fileName": "suianwu_第04讲_命题逻辑.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第04讲_命题逻辑.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -290,9 +290,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第05讲_一阶逻辑",
-    "fileName": "第05讲_一阶逻辑.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第05讲_一阶逻辑.md",
+    "title": "suianwu_第05讲_一阶逻辑",
+    "fileName": "suianwu_第05讲_一阶逻辑.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第05讲_一阶逻辑.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -300,9 +300,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第06讲_知识图谱与描述逻辑",
-    "fileName": "第06讲_知识图谱与描述逻辑.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第06讲_知识图谱与描述逻辑.md",
+    "title": "suianwu_第06讲_知识图谱与描述逻辑",
+    "fileName": "suianwu_第06讲_知识图谱与描述逻辑.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第06讲_知识图谱与描述逻辑.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -310,9 +310,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第07讲_缺省逻辑",
-    "fileName": "第07讲_缺省逻辑.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第07讲_缺省逻辑.md",
+    "title": "suianwu_第07讲_缺省逻辑",
+    "fileName": "suianwu_第07讲_缺省逻辑.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第07讲_缺省逻辑.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -320,9 +320,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第08讲_经典抽象论辩理论",
-    "fileName": "第08讲_经典抽象论辩理论.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第08讲_经典抽象论辩理论.md",
+    "title": "suianwu_第08讲_经典抽象论辩理论",
+    "fileName": "suianwu_第08讲_经典抽象论辩理论.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第08讲_经典抽象论辩理论.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -330,9 +330,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第09讲_论证博弈",
-    "fileName": "第09讲_论证博弈.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第09讲_论证博弈.md",
+    "title": "suianwu_第09讲_论证博弈",
+    "fileName": "suianwu_第09讲_论证博弈.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第09讲_论证博弈.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -340,9 +340,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第10讲_结构化论辩理论",
-    "fileName": "第10讲_结构化论辩理论.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第10讲_结构化论辩理论.md",
+    "title": "suianwu_第10讲_结构化论辩理论",
+    "fileName": "suianwu_第10讲_结构化论辩理论.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第10讲_结构化论辩理论.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -350,9 +350,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第11讲_概率理论与贝叶斯网络",
-    "fileName": "第11讲_概率理论与贝叶斯网络.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第11讲_概率理论与贝叶斯网络.md",
+    "title": "suianwu_第11讲_概率理论与贝叶斯网络",
+    "fileName": "suianwu_第11讲_概率理论与贝叶斯网络.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第11讲_概率理论与贝叶斯网络.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -360,9 +360,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第12讲_归纳推理与归纳逻辑编程",
-    "fileName": "第12讲_归纳推理与归纳逻辑编程.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第12讲_归纳推理与归纳逻辑编程.md",
+    "title": "suianwu_第12讲_归纳推理与归纳逻辑编程",
+    "fileName": "suianwu_第12讲_归纳推理与归纳逻辑编程.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第12讲_归纳推理与归纳逻辑编程.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -370,9 +370,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第13讲_因果推理",
-    "fileName": "第13讲_因果推理.md",
-    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/第13讲_因果推理.md",
+    "title": "suianwu_第13讲_因果推理",
+    "fileName": "suianwu_第13讲_因果推理.md",
+    "path": "大二春夏/人工智能逻辑，3学分/每章笔记/suianwu_第13讲_因果推理.md",
     "semester": "大二春夏",
     "course": "人工智能逻辑，3学分",
     "type": "md",
@@ -550,9 +550,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-04-24"
   },
   {
-    "title": "内容汇总2",
-    "fileName": "内容汇总2.pdf",
-    "path": "大二春夏/因果推理，2.5学分/内容汇总2.pdf",
+    "title": "suianwu_内容汇总2",
+    "fileName": "suianwu_内容汇总2.pdf",
+    "path": "大二春夏/因果推理，2.5学分/suianwu_内容汇总2.pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -560,9 +560,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "PPT内容汇总1",
-    "fileName": "PPT内容汇总1.md",
-    "path": "大二春夏/因果推理，2.5学分/PPT内容汇总1.md",
+    "title": "suianwu_PPT内容汇总1",
+    "fileName": "suianwu_PPT内容汇总1.md",
+    "path": "大二春夏/因果推理，2.5学分/suianwu_PPT内容汇总1.md",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "md",
@@ -570,9 +570,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "PPT内容汇总1",
-    "fileName": "PPT内容汇总1.pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT内容汇总1.pdf",
+    "title": "suianwu_PPT内容汇总1",
+    "fileName": "suianwu_PPT内容汇总1.pdf",
+    "path": "大二春夏/因果推理，2.5学分/suianwu_PPT内容汇总1.pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -580,9 +580,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第二章 因果推断(1)",
-    "fileName": "第二章 因果推断(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/第二章 因果推断(1).pdf",
+    "title": "suianwu_第二章 因果推断(1)",
+    "fileName": "suianwu_第二章 因果推断(1).pdf",
+    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第二章 因果推断(1).pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -590,9 +590,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第三章 因果赋能机器学习(1)",
-    "fileName": "第三章 因果赋能机器学习(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/第三章 因果赋能机器学习(1).pdf",
+    "title": "suianwu_第三章 因果赋能机器学习(1)",
+    "fileName": "suianwu_第三章 因果赋能机器学习(1).pdf",
+    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第三章 因果赋能机器学习(1).pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -600,9 +600,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第四章 因果与大模型",
-    "fileName": "第四章 因果与大模型.pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/第四章 因果与大模型.pdf",
+    "title": "suianwu_第四章 因果与大模型",
+    "fileName": "suianwu_第四章 因果与大模型.pdf",
+    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第四章 因果与大模型.pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -610,9 +610,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第五章 大模型赋能因果推断与发现",
-    "fileName": "第五章 大模型赋能因果推断与发现.pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/第五章 大模型赋能因果推断与发现.pdf",
+    "title": "suianwu_第五章 大模型赋能因果推断与发现",
+    "fileName": "suianwu_第五章 大模型赋能因果推断与发现.pdf",
+    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第五章 大模型赋能因果推断与发现.pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -620,9 +620,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第一章 因果人工智能-绪论(1)",
-    "fileName": "第一章 因果人工智能-绪论(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/第一章 因果人工智能-绪论(1).pdf",
+    "title": "suianwu_第一章 因果人工智能-绪论(1)",
+    "fileName": "suianwu_第一章 因果人工智能-绪论(1).pdf",
+    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第一章 因果人工智能-绪论(1).pdf",
     "semester": "大二春夏",
     "course": "因果推理，2.5学分",
     "type": "pdf",
@@ -640,9 +640,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-06-27"
   },
   {
-    "title": "深度模型-考试知识点完整版（老师画的重点）",
-    "fileName": "深度模型-考试知识点完整版（老师画的重点）.md",
-    "path": "大二春夏/深度学习导论，3.5学分/深度模型-考试知识点完整版（老师画的重点）.md",
+    "title": "suianwu_深度模型-考试知识点完整版（老师画的重点）",
+    "fileName": "suianwu_深度模型-考试知识点完整版（老师画的重点）.md",
+    "path": "大二春夏/深度学习导论，3.5学分/suianwu_深度模型-考试知识点完整版（老师画的重点）.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -650,9 +650,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "深度学习导论内容汇总",
-    "fileName": "深度学习导论内容汇总.pdf",
-    "path": "大二春夏/深度学习导论，3.5学分/深度学习导论内容汇总.pdf",
+    "title": "suianwu_深度学习导论内容汇总",
+    "fileName": "suianwu_深度学习导论内容汇总.pdf",
+    "path": "大二春夏/深度学习导论，3.5学分/suianwu_深度学习导论内容汇总.pdf",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "pdf",
@@ -660,9 +660,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第10章-语言模型-逐页详解",
-    "fileName": "第10章-语言模型-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第10章-语言模型-逐页详解.md",
+    "title": "suianwu_第10章-语言模型-逐页详解",
+    "fileName": "suianwu_第10章-语言模型-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第10章-语言模型-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -670,9 +670,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第八章-表征学习-逐页详解",
-    "fileName": "第八章-表征学习-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第八章-表征学习-逐页详解.md",
+    "title": "suianwu_第八章-表征学习-逐页详解",
+    "fileName": "suianwu_第八章-表征学习-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第八章-表征学习-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -680,9 +680,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第九章-扩散模型与流匹配-逐页详解",
-    "fileName": "第九章-扩散模型与流匹配-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第九章-扩散模型与流匹配-逐页详解.md",
+    "title": "suianwu_第九章-扩散模型与流匹配-逐页详解",
+    "fileName": "suianwu_第九章-扩散模型与流匹配-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第九章-扩散模型与流匹配-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -690,9 +690,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第九章-生成式模型-逐页详解",
-    "fileName": "第九章-生成式模型-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第九章-生成式模型-逐页详解.md",
+    "title": "suianwu_第九章-生成式模型-逐页详解",
+    "fileName": "suianwu_第九章-生成式模型-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第九章-生成式模型-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -700,9 +700,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第六章-深度视觉模型-讲稿",
-    "fileName": "第六章-深度视觉模型-讲稿.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第六章-深度视觉模型-讲稿.md",
+    "title": "suianwu_第六章-深度视觉模型-讲稿",
+    "fileName": "suianwu_第六章-深度视觉模型-讲稿.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第六章-深度视觉模型-讲稿.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -710,9 +710,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第六章-深度视觉模型-课程整理",
-    "fileName": "第六章-深度视觉模型-课程整理.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第六章-深度视觉模型-课程整理.md",
+    "title": "suianwu_第六章-深度视觉模型-课程整理",
+    "fileName": "suianwu_第六章-深度视觉模型-课程整理.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第六章-深度视觉模型-课程整理.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -720,9 +720,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第六章-深度视觉模型-逐页详解",
-    "fileName": "第六章-深度视觉模型-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第六章-深度视觉模型-逐页详解.md",
+    "title": "suianwu_第六章-深度视觉模型-逐页详解",
+    "fileName": "suianwu_第六章-深度视觉模型-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第六章-深度视觉模型-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -730,9 +730,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第七章-深度视觉模型2-逐页详解",
-    "fileName": "第七章-深度视觉模型2-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第七章-深度视觉模型2-逐页详解.md",
+    "title": "suianwu_第七章-深度视觉模型2-逐页详解",
+    "fileName": "suianwu_第七章-深度视觉模型2-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第七章-深度视觉模型2-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -740,9 +740,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第十二课-检索增强-逐页详解",
-    "fileName": "第十二课-检索增强-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第十二课-检索增强-逐页详解.md",
+    "title": "suianwu_第十二课-检索增强-逐页详解",
+    "fileName": "suianwu_第十二课-检索增强-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第十二课-检索增强-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -750,9 +750,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "第十一章-大语言模型架构-逐页详解",
-    "fileName": "第十一章-大语言模型架构-逐页详解.md",
-    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/第十一章-大语言模型架构-逐页详解.md",
+    "title": "suianwu_第十一章-大语言模型架构-逐页详解",
+    "fileName": "suianwu_第十一章-大语言模型架构-逐页详解.md",
+    "path": "大二春夏/深度学习导论，3.5学分/逐章讲解/suianwu_第十一章-大语言模型架构-逐页详解.md",
     "semester": "大二春夏",
     "course": "深度学习导论，3.5学分",
     "type": "md",
@@ -1430,9 +1430,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-06-26"
   },
   {
-    "title": "01_C++入门与课程介绍",
-    "fileName": "01_C++入门与课程介绍.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/01_C++入门与课程介绍.md",
+    "title": "suianwu_01_C++入门与课程介绍",
+    "fileName": "suianwu_01_C++入门与课程介绍.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_01_C++入门与课程介绍.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1440,9 +1440,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "02_使用对象",
-    "fileName": "02_使用对象.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/02_使用对象.md",
+    "title": "suianwu_02_使用对象",
+    "fileName": "suianwu_02_使用对象.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_02_使用对象.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1450,9 +1450,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "03_类",
-    "fileName": "03_类.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/03_类.md",
+    "title": "suianwu_03_类",
+    "fileName": "suianwu_03_类.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_03_类.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1460,9 +1460,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "04_对象交互",
-    "fileName": "04_对象交互.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/04_对象交互.md",
+    "title": "suianwu_04_对象交互",
+    "fileName": "suianwu_04_对象交互.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_04_对象交互.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1470,9 +1470,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "05_组合与继承",
-    "fileName": "05_组合与继承.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/05_组合与继承.md",
+    "title": "suianwu_05_组合与继承",
+    "fileName": "suianwu_05_组合与继承.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_05_组合与继承.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1480,9 +1480,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "06_多态",
-    "fileName": "06_多态.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/06_多态.md",
+    "title": "suianwu_06_多态",
+    "fileName": "suianwu_06_多态.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_06_多态.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1490,9 +1490,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "07_拷贝构造函数",
-    "fileName": "07_拷贝构造函数.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/07_拷贝构造函数.md",
+    "title": "suianwu_07_拷贝构造函数",
+    "fileName": "suianwu_07_拷贝构造函数.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_07_拷贝构造函数.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1500,9 +1500,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "08_运算符重载",
-    "fileName": "08_运算符重载.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/08_运算符重载.md",
+    "title": "suianwu_08_运算符重载",
+    "fileName": "suianwu_08_运算符重载.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_08_运算符重载.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1510,9 +1510,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "09_流",
-    "fileName": "09_流.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/09_流.md",
+    "title": "suianwu_09_流",
+    "fileName": "suianwu_09_流.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_09_流.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1520,9 +1520,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "10_模板_期末复习版",
-    "fileName": "10_模板_期末复习版.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/10_模板_期末复习版.md",
+    "title": "suianwu_10_模板_期末复习版",
+    "fileName": "suianwu_10_模板_期末复习版.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_10_模板_期末复习版.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1530,9 +1530,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "10_模板",
-    "fileName": "10_模板.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/10_模板.md",
+    "title": "suianwu_10_模板",
+    "fileName": "suianwu_10_模板.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_10_模板.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1540,9 +1540,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "11_STL",
-    "fileName": "11_STL.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/11_STL.md",
+    "title": "suianwu_11_STL",
+    "fileName": "suianwu_11_STL.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_11_STL.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1550,9 +1550,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "12_迭代器_期末复习版",
-    "fileName": "12_迭代器_期末复习版.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/12_迭代器_期末复习版.md",
+    "title": "suianwu_12_迭代器_期末复习版",
+    "fileName": "suianwu_12_迭代器_期末复习版.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_12_迭代器_期末复习版.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1560,9 +1560,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "12_迭代器",
-    "fileName": "12_迭代器.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/12_迭代器.md",
+    "title": "suianwu_12_迭代器",
+    "fileName": "suianwu_12_迭代器.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_12_迭代器.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1570,9 +1570,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "13_异常处理",
-    "fileName": "13_异常处理.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/13_异常处理.md",
+    "title": "suianwu_13_异常处理",
+    "fileName": "suianwu_13_异常处理.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_13_异常处理.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1580,9 +1580,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "14_智能指针",
-    "fileName": "14_智能指针.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/14_智能指针.md",
+    "title": "suianwu_14_智能指针",
+    "fileName": "suianwu_14_智能指针.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_14_智能指针.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",
@@ -1590,9 +1590,9 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "15_杂项要点",
-    "fileName": "15_杂项要点.md",
-    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/15_杂项要点.md",
+    "title": "suianwu_15_杂项要点",
+    "fileName": "suianwu_15_杂项要点.md",
+    "path": "大二春夏/面向对象程序设计，2.5学分/面向hyc的课件_讲解/suianwu_15_杂项要点.md",
     "semester": "大二春夏",
     "course": "面向对象程序设计，2.5学分",
     "type": "md",

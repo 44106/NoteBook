@@ -1,0 +1,8532 @@
+[
+  {
+    "slide": 1,
+    "title": "第五章：神经网络基础（二）",
+    "items": [
+      {
+        "path": "2/0",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "第五章：神经网络基础（二）",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "主讲教师：王文冠",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "课程名称：深度学习导论",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "3",
+        "left": 237122,
+        "top": 185775,
+        "width": 1856758,
+        "height": 537276,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 11122,
+        "size": [
+          235,
+          68
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "GROUP (6)": 1,
+      "TEXT_BOX (17)": 5,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "第五章：神经网络基础（二）",
+      "主讲教师：王文冠",
+      "课程",
+      "名称：深度学习导论"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???1.PNG"
+  },
+  {
+    "slide": 2,
+    "title": "基本流程",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "2",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "基本流程",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化）。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "归一化（Normalization）",
+            "level": 1
+          },
+          {
+            "text": "数据增强（Augmentation）",
+            "level": 1
+          },
+          {
+            "text": "类型转换",
+            "level": 1
+          },
+          {
+            "text": "…",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "https://keras.io/examples/vision/mnist_convnet/",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 548640,
+        "top": 2673286,
+        "width": 5131108,
+        "height": 3644596,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 198916,
+        "size": [
+          1360,
+          966
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "2",
+      "基本流程",
+      "神经网络模型训练的基本流程通常包括",
+      "数据准备",
+      "、",
+      "模型构建",
+      "、",
+      "训练与优化",
+      "、模型评估（与超参数优化）。",
+      "数据准备",
+      "归一化（",
+      "Normalization",
+      "）",
+      "数据增强（",
+      "Augmentation",
+      "）",
+      "类型转换",
+      "…",
+      "https://keras.io/examples/vision/mnist_convnet/"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???2.PNG"
+  },
+  {
+    "slide": 3,
+    "title": "基本流程",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "3",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "基本流程",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建",
+            "level": 0
+          },
+          {
+            "text": "输入层",
+            "level": 1
+          },
+          {
+            "text": "隐藏层",
+            "level": 1
+          },
+          {
+            "text": "丢弃层（Dropout Layer）",
+            "level": 2
+          },
+          {
+            "text": "批归一化（Batch Normalization）",
+            "level": 2
+          },
+          {
+            "text": "层归一化（Layer Normalization）",
+            "level": 2
+          },
+          {
+            "text": "输出层",
+            "level": 1
+          },
+          {
+            "text": "初始化",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "https://keras.io/examples/vision/mnist_convnet/",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 510512,
+        "top": 2980224,
+        "width": 5152383,
+        "height": 2786230,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 120848,
+        "size": [
+          1202,
+          650
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "3",
+      "基本流程",
+      "神经网络模型训练的基本流程通常包括",
+      "数据准备",
+      "、",
+      "模型构建",
+      "、",
+      "训练与优化",
+      "、模型评估（与超参数优化） 。",
+      "模型构建",
+      "输入层",
+      "隐藏层",
+      "丢弃层（",
+      "Dropout",
+      "Layer",
+      "）",
+      "批归一化（",
+      "Batch",
+      "Normalization",
+      "）",
+      "层归一化（",
+      "Layer",
+      "Normalization",
+      "）",
+      "输出层",
+      "初始化",
+      "https://keras.io/examples/vision/mnist_convnet/"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???3.PNG"
+  },
+  {
+    "slide": 4,
+    "title": "基本流程",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "4",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "基本流程",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化",
+            "level": 0
+          },
+          {
+            "text": "损失函数",
+            "level": 1
+          },
+          {
+            "text": "正则化项（与传统机器学习类似）",
+            "level": 2
+          },
+          {
+            "text": "优化器：SGD（随机梯度下降）、Momentum、AdaGrad、RMSProp、Adam",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "https://keras.io/examples/vision/mnist_convnet/",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 1311649,
+        "top": 2922629,
+        "width": 8224237,
+        "height": 1849109,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 60704,
+        "size": [
+          1530,
+          344
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "4",
+      "基本流程",
+      "神经网络模型训练的基本流程通常包括",
+      "数据准备",
+      "、",
+      "模型构建",
+      "、",
+      "训练与优化",
+      "、模型评估（与超参数优化） 。",
+      "训练与优化",
+      "损失函数",
+      "正则化项（",
+      "与传统机器学习类似",
+      "）",
+      "优化器：",
+      "SGD",
+      "（随机梯度下降）、",
+      "Momentum",
+      "、",
+      "AdaGrad",
+      "、",
+      "RMSProp",
+      "、",
+      "Adam",
+      "https://keras.io/examples/vision/mnist_convnet/"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???4.PNG"
+  },
+  {
+    "slide": 5,
+    "title": "基本流程",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "5",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "基本流程",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化",
+            "level": 0
+          },
+          {
+            "text": "模型评估",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "https://keras.io/examples/vision/mnist_convnet/",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 1311649,
+        "top": 2922629,
+        "width": 8224237,
+        "height": 1849109,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 60704,
+        "size": [
+          1530,
+          344
+        ]
+      },
+      {
+        "path": "7",
+        "left": 1311649,
+        "top": 5517526,
+        "width": 8224237,
+        "height": 894641,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 38884,
+        "size": [
+          1526,
+          166
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "5",
+      "基本流程",
+      "神经网络模型训练的基本流程通常包括",
+      "数据准备",
+      "、",
+      "模型构建",
+      "、",
+      "训练与优化",
+      "、模型评估（与超参数优化） 。",
+      "训练与优化",
+      "模型评估",
+      "https://keras.io/examples/vision/mnist_convnet/"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???5.PNG"
+  },
+  {
+    "slide": 6,
+    "title": "课程思路",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "6",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "课程思路",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "深度神经网络训练的基本流程：",
+            "level": 0
+          },
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "模型架构",
+            "level": 0
+          },
+          {
+            "text": "训练方法",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 1,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "6",
+      "课程思路",
+      "深度神经网络训练的基本流程：",
+      "数据准备",
+      "模型架构",
+      "训练方法"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???6.PNG"
+  },
+  {
+    "slide": 7,
+    "title": "课程思路",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "7",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "课程思路",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "深度神经网络训练的基本流程：",
+            "level": 0
+          },
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "模型架构",
+            "level": 0
+          },
+          {
+            "text": "训练方法",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 1,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "7",
+      "课程思路",
+      "深度神经网络训练的基本流程：",
+      "数据准备",
+      "模型架构",
+      "训练方法"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???7.PNG"
+  },
+  {
+    "slide": 8,
+    "title": "数据准备：归一化（normalization）",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "8",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：归一化（normalization）",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "实例：是否捐款预测",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Zigzag",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 946953,
+        "top": 2960723,
+        "width": 4045314,
+        "height": 3661707,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 28764,
+        "size": [
+          348,
+          315
+        ]
+      },
+      {
+        "path": "7",
+        "left": 7565607,
+        "top": 4042775,
+        "width": 1410900,
+        "height": 4045315,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 85117,
+        "size": [
+          256,
+          734
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "8",
+      "数据准备：归一化（",
+      "normalization",
+      "）",
+      "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+      "实例：是否捐款预测",
+      "逻辑回归",
+      "关于单个数据",
+      "的梯度",
+      "Zigzag"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???8.PNG"
+  },
+  {
+    "slide": 9,
+    "title": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "9",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "实例：是否捐款预测",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：归一化（normalization）",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 946953,
+        "top": 2960723,
+        "width": 4045314,
+        "height": 3661707,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 28764,
+        "size": [
+          348,
+          315
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "9",
+      "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+      "实例：是否捐款预测",
+      "常用归一化方法",
+      "标准化（",
+      "Standardization",
+      "）：假设第",
+      "个特征的均值和方差分别为",
+      "和",
+      "Min-Max",
+      "归一化（对异常值较为敏感）：",
+      "将特征映射到",
+      "数据准备：归一化（",
+      "normalization",
+      "）"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???9.PNG"
+  },
+  {
+    "slide": 10,
+    "title": "数据准备：归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "10",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "实例：是否捐款预测",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "逻辑回归",
+            "level": 0
+          },
+          {
+            "text": "归一化前",
+            "level": 1
+          },
+          {
+            "text": "归一化后",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 946953,
+        "top": 2960723,
+        "width": 4045314,
+        "height": 3661707,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 28764,
+        "size": [
+          348,
+          315
+        ]
+      },
+      {
+        "path": "8",
+        "left": 7713018,
+        "top": 4946241,
+        "width": 2529993,
+        "height": 1864966,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 95464,
+        "size": [
+          700,
+          516
+        ]
+      },
+      {
+        "path": "9",
+        "left": 8373554,
+        "top": 2326576,
+        "width": 1182780,
+        "height": 3391254,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 85117,
+        "size": [
+          256,
+          734
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 3
+    },
+    "xml_texts": [
+      "10",
+      "数据准备：归一化",
+      "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+      "实例：是否捐款预测",
+      "逻辑回归",
+      "归一化前",
+      "归一化后"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???10.PNG"
+  },
+  {
+    "slide": 11,
+    "title": "数据准备：数据增强",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "11",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：数据增强",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "图像变换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "增强训练数据的多样性",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "path": "5",
+        "rows": [
+          [
+            "方法",
+            "描述"
+          ],
+          [
+            "翻转",
+            "将图像水平翻转、垂直翻转或同时翻转"
+          ],
+          [
+            "旋转",
+            "以某一个角度旋转图像"
+          ],
+          [
+            "缩放",
+            "增大或减小图像尺寸"
+          ],
+          [
+            "噪声注入",
+            "在图像中加入噪声"
+          ],
+          [
+            "颜色空间",
+            "改变图像颜色通道"
+          ],
+          [
+            "对比度",
+            "改变图像对比度"
+          ],
+          [
+            "锐化",
+            "修改图像清晰度"
+          ],
+          [
+            "平移",
+            "将图像水平移动、垂直移动或同时移动"
+          ],
+          [
+            "裁剪",
+            "裁剪图像的一个子区域"
+          ]
+        ]
+      }
+    ],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 6929781,
+        "top": 3431594,
+        "width": 4751707,
+        "height": 2021249,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 490514,
+        "size": [
+          537,
+          228
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "TABLE (19)": 1,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "11",
+      "数据准备：数据增强",
+      "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声",
+      "等变换",
+      "，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+      "图像变换",
+      "方法",
+      "描述",
+      "翻转",
+      "将图像水平翻转、垂直翻转或同时翻转",
+      "旋转",
+      "以某一个角度旋转图像",
+      "缩放",
+      "增大或减小图像尺寸",
+      "噪声注入",
+      "在图像中加入噪声",
+      "颜色空间",
+      "改变图像颜色通道",
+      "对比度",
+      "改变图像对比度",
+      "锐化",
+      "修改图像清晰度",
+      "平移",
+      "将图像水平移动、垂直移动或同时移动",
+      "裁剪",
+      "裁剪图像的一个子区域",
+      "增强训练数据的多样性"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???11.PNG"
+  },
+  {
+    "slide": 12,
+    "title": "数据准备：数据增强",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "12",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：数据增强",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "图像擦除：从训练图像中抹去一部分信息，迫使模型关注其它相关部分，而不仅仅是最具判别力的部分",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 2866494,
+        "top": 3275538,
+        "width": 6497139,
+        "height": 3445937,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 3155710,
+        "size": [
+          1219,
+          647
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "12",
+      "数据准备：数据增强",
+      "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声",
+      "等变换",
+      "，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+      "图像擦除：从训练图像中抹去一部分信息，迫使模型关注其它相关部分，而不仅仅是最具判别力的部分"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???12.PNG"
+  },
+  {
+    "slide": 13,
+    "title": "数据准备：数据增强",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "13",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：数据增强",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "图像混合：混合多个图像样本，模拟多目标或多标签场景",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "将一张图的一部分贴到另一张图上",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "按比例像素融合",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "多种增强操作的加权组合",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "9",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "通过频率空间操作，生成",
+            "level": 0
+          },
+          {
+            "text": "形状光滑自然的掩码",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 1827371,
+        "top": 2951027,
+        "width": 8575386,
+        "height": 3770448,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 2795298,
+        "size": [
+          1261,
+          554
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 6,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "13",
+      "数据准备：数据增强",
+      "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声",
+      "等变换",
+      "，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+      "图像混合：混合多个图像样本，模拟多目标或多标签场景",
+      "将一张图的一部分贴到另一张图上",
+      "按比例像素融合",
+      "多种增强操作的加权组合",
+      "通过频率空间操作，生成",
+      "形状光滑自然的掩码"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???13.PNG"
+  },
+  {
+    "slide": 14,
+    "title": "数据准备：数据增强",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "14",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：数据增强",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据：回译法",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 825486,
+        "top": 3126558,
+        "width": 10502900,
+        "height": 1231900,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 83459,
+        "size": [
+          1654,
+          194
+        ]
+      },
+      {
+        "path": "6",
+        "left": 784860,
+        "top": 4686162,
+        "width": 10401300,
+        "height": 1841500,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 108315,
+        "size": [
+          1638,
+          290
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "14",
+      "数据准备：数据增强",
+      "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声",
+      "等变换",
+      "，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+      "文本数据：回译法"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???14.PNG"
+  },
+  {
+    "slide": 15,
+    "title": "数据准备：数据增强",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "15",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：数据增强",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据：回译法",
+            "level": 0
+          },
+          {
+            "text": "文本数据：随机词替换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "原始文本：",
+            "level": 0
+          },
+          {
+            "text": "今天天气很好。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "同意词替换：",
+            "level": 0
+          },
+          {
+            "text": "今天天气不错。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "随机插入：",
+            "level": 0
+          },
+          {
+            "text": "今天不错天气很好。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "9",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "随机交换：",
+            "level": 0
+          },
+          {
+            "text": "今天很好天气。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "10",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "随机删除：",
+            "level": 0
+          },
+          {
+            "text": "今天天气好。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 825486,
+        "top": 3126558,
+        "width": 10502900,
+        "height": 1231900,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 83459,
+        "size": [
+          1654,
+          194
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 7,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "15",
+      "数据准备：数据增强",
+      "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声",
+      "等变换",
+      "，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+      "文本数据：回译法",
+      "文本数据：随机词替换",
+      "原始文本：",
+      "今天天气很好。",
+      "同意词替换：",
+      "今天天气",
+      "不错",
+      "。",
+      "随机插入：",
+      "今天",
+      "不错",
+      "天气很好。",
+      "随机交换：",
+      "今天",
+      "很好天气",
+      "。",
+      "随机删除：",
+      "今天天气",
+      "好",
+      "。"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???15.PNG"
+  },
+  {
+    "slide": 16,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "16",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数值型数据（Numerical Data）：连续有序",
+            "level": 0
+          },
+          {
+            "text": "图像数据的像素值",
+            "level": 1
+          },
+          {
+            "text": "类别型数据（Categorical Data）：离散无序",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5/0",
+        "left": 966274,
+        "top": 1289332,
+        "width": 6995429,
+        "height": 1279803,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 126395,
+        "size": [
+          1126,
+          206
+        ]
+      },
+      {
+        "path": "6/0",
+        "left": 966274,
+        "top": 1289332,
+        "width": 6995429,
+        "height": 1279803,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 126395,
+        "size": [
+          1126,
+          206
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "GROUP (6)": 2,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "16",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "数值型数据（",
+      "Numerical Data",
+      "）：连续有序",
+      "图像数据的像素值",
+      "类别型数据（",
+      "Categorical Data",
+      "）：离散无序"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???16.PNG"
+  },
+  {
+    "slide": 17,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "17",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "二值化！",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "1st  Category",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "9",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "2nd Category",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "11",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "3rd  Category",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4/0",
+        "left": 966274,
+        "top": 1289332,
+        "width": 6995429,
+        "height": 1279803,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 126395,
+        "size": [
+          1126,
+          206
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4,
+      "GROUP (6)": 1,
+      "PICTURE (13)": 1,
+      "LINE (9)": 3
+    },
+    "xml_texts": [
+      "17",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "类别型数据（",
+      "Categorical Data",
+      "）：离散无序",
+      "二类：",
+      "或",
+      "类：独热（",
+      "One-Hot",
+      "）编码",
+      "维指示向量",
+      "其中取值为",
+      "1",
+      "的位置表示具体类",
+      "二值化！",
+      "1",
+      "st",
+      "Category",
+      "2",
+      "nd",
+      "Category",
+      "3",
+      "rd",
+      "Category"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???17.PNG"
+  },
+  {
+    "slide": 18,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "18",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）：",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "分词（Tokenization）：将一段连续的文本（字符串）切分成更小的语义单位，确定了模型处理的最小信息单位",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "\"John likes to watch movies.\"   →",
+            "level": 0
+          },
+          {
+            "text": "[\"John\", \"likes\", \"to\", \"watch\", \"movies\", \".\"]",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "18",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）：",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "分词（",
+      "Tokenization",
+      "）：",
+      "将一段连续的文本（字符串）切分成更小的语义单位，确定了模型处理的最小信息单位",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”",
+      "\"John likes to watch movies.\"   →",
+      "[\"John\", \"likes\", \"to\", \"watch\", \"movies\", \".\"]"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???18.PNG"
+  },
+  {
+    "slide": 19,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "19",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）：",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "分词（Tokenization）",
+            "level": 2
+          },
+          {
+            "text": "移除停止词：删除文本中频率极高但携带语义信息极少的词，如英文中的 \"the\", \"a\", \"is\", \"at\", \"to\"；中文中的“的”、“了”、“在”。",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "19",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）：",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "分词（",
+      "Tokenization",
+      "）",
+      "移除停止词：",
+      "删除文本中频率极高但携带语义信息极少的词，如英文中的",
+      "\"the\", \"a\", \"is\", \"at\", \"to\"",
+      "；中文中的“的”、“了”、“在”。",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???19.PNG"
+  },
+  {
+    "slide": 20,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "20",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）：",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "分词（Tokenization）",
+            "level": 2
+          },
+          {
+            "text": "移除停止词",
+            "level": 2
+          },
+          {
+            "text": "提取词干：\"running\", \"runs\", \"ran\" → \"run\"",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "20",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）：",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "分词（",
+      "Tokenization",
+      "）",
+      "移除停止词",
+      "提取词干：",
+      "\"running\", \"runs\", \"ran\" → \"run\"",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???20.PNG"
+  },
+  {
+    "slide": 21,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "21",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）：",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "分词（Tokenization）、移除停止词、提取词干",
+            "level": 2
+          },
+          {
+            "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+            "level": 2
+          },
+          {
+            "text": "词袋模型（Bag-of-Words）：记录该文本中出现的单词（加权）频率",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "21",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）：",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "分词（",
+      "Tokenization",
+      "）、移除停止词、提取词干",
+      "词典：",
+      "{John, likes, to, watch, movies, Mary, too}",
+      "词袋模型（",
+      "Bag-of-Words",
+      "）：记录该文本中出现的单词（加权）频率",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”",
+      "“",
+      "John likes to watch movies.",
+      "”"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???21.PNG"
+  },
+  {
+    "slide": 22,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "22",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）：",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "词袋模型（Bag-of-Words）：记录该文本中出现的单词（加权）频率",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "丢失语序：\"I love you\" 和 \"You love me\" 的 BoW 向量是一模一样的",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "22",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）：",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "词袋模型（",
+      "Bag-of-Words",
+      "）：记录该文本中出现的单词（加权）频率",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”",
+      "“",
+      "John likes to watch movies.",
+      "”",
+      "丢失语序",
+      "：",
+      "\"I love you\"",
+      "和",
+      "\"You love me\"",
+      "的",
+      "BoW",
+      "向量是一模一样的"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???22.PNG"
+  },
+  {
+    "slide": 23,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "23",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+            "level": 2
+          },
+          {
+            "text": "嵌入（Embedding）：将文本中每个词映射为向量，再整合成矩阵",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "以独热编码为例",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "如何处理长短不一的文本？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "23",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "词典：",
+      "{John, likes, to, watch, movies, Mary, too}",
+      "嵌入（",
+      "Embedding",
+      "）：将文本中每个词映射为向量，再整合成矩阵",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”",
+      "“",
+      "Mary likes movies too.",
+      "”",
+      "以独热编码为例",
+      "如何处理长短不一的文本？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???23.PNG"
+  },
+  {
+    "slide": 24,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "24",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）",
+            "level": 0
+          },
+          {
+            "text": "原始数据：字符串",
+            "level": 1
+          },
+          {
+            "text": "自然语言处理（Natural Language Processing）",
+            "level": 1
+          },
+          {
+            "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+            "level": 2
+          },
+          {
+            "text": "嵌入（Embedding）：将文本中每个词映射为向量，再整合成矩阵",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "填充（Padding）：设定一个最大长度（Max_Len），短句子后面补 0（或特定的 [PAD] 标识）。",
+            "level": 0
+          },
+          {
+            "text": "截断（Truncation）：过长的句子直接砍掉尾部。",
+            "level": 0
+          },
+          {
+            "text": "池化（Pooling）：对 Embedding 矩阵进行平均或取最大值，将其压缩为固定长度的向量。",
+            "level": 0
+          },
+          {
+            "text": "循环神经网络 (RNN) / Transformer：这些架构原生支持处理变长序列（通过 Masking 技术忽略填充位）。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "24",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）",
+      "原始数据：字符串",
+      "自然语言处理（",
+      "Natural Language Processing",
+      "）",
+      "词典：",
+      "{John, likes, to, watch, movies, Mary, too}",
+      "嵌入（",
+      "Embedding",
+      "）：将文本中每个词映射为向量，再整合成矩阵",
+      "“",
+      "John likes to watch movies.",
+      "”、“",
+      "Mary likes movies too.",
+      "”",
+      "填充（",
+      "Padding",
+      "）",
+      "：设定一个最大长度（",
+      "Max_Len",
+      "），短句子后面补",
+      "0",
+      "（或特定的",
+      "[PAD]",
+      "标识）。",
+      "截断（",
+      "Truncation",
+      "）",
+      "：过长的句子直接砍掉尾部。",
+      "池化（",
+      "Pooling",
+      "）",
+      "：对",
+      "Embedding",
+      "矩阵进行平均或取最大值，将其压缩为固定长度的向量。",
+      "循环神经网络",
+      "(RNN) / Transformer",
+      "：这些架构原生支持处理变长序列（通过",
+      "Masking",
+      "技术忽略填充位）。"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???24.PNG"
+  },
+  {
+    "slide": 25,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "25",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）",
+            "level": 0
+          },
+          {
+            "text": "BPE（Byte Pair Encoding，字节对编码）：目前最主流",
+            "level": 1
+          },
+          {
+            "text": "子词（Subword）分词法：介于“按单词分”和“按字母分”之间，取两者长处",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "BPE 核心逻辑：不断合并出现频率最高的相邻字符对",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 1661648,
+        "top": 4037459,
+        "width": 7912023,
+        "height": 1218939,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 74038,
+        "size": [
+          1428,
+          220
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "25",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）",
+      "BPE",
+      "（",
+      "Byte Pair Encoding",
+      "，字节对编码）：",
+      "目前最主流",
+      "子词（",
+      "Subword",
+      "）分词法",
+      "：介于“按单词分”和“按字母分”之间，取两者长处",
+      "BPE",
+      "核心逻辑：不断合并出现频率最高的相邻字符对"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???25.PNG"
+  },
+  {
+    "slide": 26,
+    "title": "数据准备：类型转换",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "26",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备：类型转换",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "文本数据（Text Data）",
+            "level": 0
+          },
+          {
+            "text": "BPE 核心逻辑：不断合并出现频率最高的相邻字符对",
+            "level": 1
+          },
+          {
+            "text": "语料库：“hug”: 10次、“pug”: 5次、“pun”: 12次、\"bun\": 4次",
+            "level": 0
+          },
+          {
+            "text": "1.拆分成基础字符：词表目前是：h, u, g, p, n, b",
+            "level": 0
+          },
+          {
+            "text": "2.统计相邻字符对的频率：u和n经常连在一起；u, n 出现了 12 + 4 = 16 次。",
+            "level": 0
+          },
+          {
+            "text": "3.合并频率最高的字符对：把u和n合并成新Token：un。词表变成：h, u, g, p, n, b, un",
+            "level": 0
+          },
+          {
+            "text": "4.重复上述过程：u和g经常在一起，出现10+5=15次。词表变成：h, u, g, p, n, b, un, ug",
+            "level": 0
+          },
+          {
+            "text": "5.直到达到预设的词表大小",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "解决“未知词”（OOV）问题、词表大小可控、高效的语义压缩",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "其他还有： WordPiece、 SentencePiece",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "26",
+      "数据准备：类型转换",
+      "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+      "文本数据（",
+      "Text",
+      "Data",
+      "）",
+      "BPE",
+      "核心逻辑：不断合并出现频率最高的相邻字符对",
+      "语料库：",
+      "“hug”",
+      ": 10",
+      "次、",
+      "“pug”",
+      ": 5",
+      "次、",
+      "“pun”",
+      ": 12",
+      "次、",
+      "\"bun\"",
+      ": 4",
+      "次",
+      "1.",
+      "拆分成基础字符：",
+      "词表目前是：",
+      "h, u, g, p, n, b",
+      "2.",
+      "统计相邻字符对的频率：",
+      "u",
+      "和",
+      "n",
+      "经常连在一起；",
+      "u, n",
+      "出现了",
+      "12 + 4 = 16",
+      "次。",
+      "3.",
+      "合并频率最高的字符对：",
+      "把",
+      "u",
+      "和",
+      "n",
+      "合并成新",
+      "Token",
+      "：",
+      "un",
+      "。词表变成：",
+      "h, u, g, p,",
+      "n,",
+      "b, un",
+      "4.",
+      "重复",
+      "上述过程：",
+      "u",
+      "和",
+      "g",
+      "经常在一起，出现",
+      "10+5=15",
+      "次。词表变成：",
+      "h, u, g, p,",
+      "n,",
+      "b, un, ug",
+      "5.",
+      "直到达到预设的词表大小",
+      "解决“未知词”（",
+      "OOV",
+      "）问题、词表大小可控、高效的语义压缩",
+      "其他还有：",
+      "WordPiece",
+      "、",
+      "SentencePiece"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???26.PNG"
+  },
+  {
+    "slide": 27,
+    "title": "课程思路",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "27",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "课程思路",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "深度神经网络训练的基本流程：",
+            "level": 0
+          },
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "模型架构",
+            "level": 0
+          },
+          {
+            "text": "训练方法",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 1,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "27",
+      "课程思路",
+      "深度神经网络训练的基本流程：",
+      "数据准备",
+      "模型架构",
+      "训练方法"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???27.PNG"
+  },
+  {
+    "slide": 28,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "28",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“共适应” (Co-adaptation)",
+            "level": 0
+          },
+          {
+            "text": "在深度神经网络中，如果某些神经元总是协同工作，它们可能会产生一种依赖性，即一个神经元的权重是为了弥补另一个神经元的错误而存在的。这种现象称为“共适应”，会导致模型过于依赖训练数据的特定组合，产生严重的过拟合",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "28",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "“共适应”",
+      "(Co-adaptation)",
+      "在深度神经网络中，如果某些神经元总是协同工作，它们可能会产生一种依赖性，即一个神经元的权重是为了弥补另一个神经元的错误而存在的。这种现象称为“共适应”，会导致模型过于依赖训练数据的特定组合，产生严重的",
+      "过拟合"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???28.PNG"
+  },
+  {
+    "slide": 29,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "29",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "示意图",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 899926,
+        "top": 3057193,
+        "width": 5118100,
+        "height": 2717800,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 87430,
+        "size": [
+          806,
+          428
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "29",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "示意图",
+      "Srivastava",
+      "et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+      "常规隐藏层（第",
+      "层）",
+      "和",
+      "表示参数",
+      "假设第",
+      "层使用",
+      "Dropout",
+      "，则"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???29.PNG"
+  },
+  {
+    "slide": 30,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "30",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "示意图",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 899926,
+        "top": 3057193,
+        "width": 5118100,
+        "height": 2717800,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 87430,
+        "size": [
+          806,
+          428
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "30",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "示意图",
+      "Srivastava",
+      "et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+      "训练：假设第",
+      "层使用",
+      "Dropout",
+      "，则",
+      "作用：",
+      "降低拟合训练集的模型容量",
+      "破坏神经元间的关联性",
+      "近似于训练大量不同的“子网络”"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???30.PNG"
+  },
+  {
+    "slide": 31,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "31",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "示意图",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "为何缩放？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 899926,
+        "top": 3057193,
+        "width": 5118100,
+        "height": 2717800,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 87430,
+        "size": [
+          806,
+          428
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "31",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "示意图",
+      "Srivastava",
+      "et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+      "训练：假设第",
+      "层使用",
+      "Dropout",
+      "，则",
+      "测试：对",
+      "Dropout",
+      "层输出进行缩放",
+      "为何缩放？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???31.PNG"
+  },
+  {
+    "slide": 32,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "32",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Dropout层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Dropout层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "测试时缩放会使输出范围与训练时对齐！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 847440,
+        "top": 3311362,
+        "width": 8379692,
+        "height": 3069566,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 152677,
+        "size": [
+          1496,
+          548
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "32",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "算例：假设",
+      "，对于仅有一个隐藏层的神经网络，在其隐藏层后接",
+      "Dropout",
+      "层，训练和测试时的神经元计算分别如左右图所示",
+      "Dropout",
+      "层",
+      "Dropout",
+      "层",
+      "测试时缩放会使输出范围与训练时对齐！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???32.PNG"
+  },
+  {
+    "slide": 33,
+    "title": "模型构建：丢弃层",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "33",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：丢弃层",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014.",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 3990272,
+        "top": 2505008,
+        "width": 4570307,
+        "height": 3698349,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 86516,
+        "size": [
+          1102,
+          454
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "33",
+      "模型构建：丢弃层",
+      "Dropout",
+      "是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+      "Srivastava",
+      "et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014."
+    ],
+    "screenshot": "tmp/ch5_slides_png/???33.PNG"
+  },
+  {
+    "slide": 34,
+    "title": "模型构建：批归一化（batch normalization）",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "34",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化（batch normalization）",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "34",
+      "模型构建：批归一化（",
+      "batch normalization",
+      "）",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）",
+      "多层感知机第",
+      "层梯度",
+      "训练过程中，前层参数改变导致后层神经元输入分布发生变化",
+      "网络层数的增加会加剧这种影响",
+      "仅考虑关于",
+      "的部分"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???34.PNG"
+  },
+  {
+    "slide": 35,
+    "title": "模型构建：批归一化（batch normalization）",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "35",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化（batch normalization）",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "35",
+      "模型构建：批归一化（",
+      "batch normalization",
+      "）",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）",
+      "多层感知机第",
+      "层梯度",
+      "训练过程中，前层参数改变导致后层神经元输入分布发生变化",
+      "需不断适应新的输入分布、速度变慢；出现梯度爆炸",
+      "/",
+      "消失、不稳定",
+      "仅考虑关于",
+      "的部分"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???35.PNG"
+  },
+  {
+    "slide": 36,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "36",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "如何推广到层输出？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "36",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）",
+      "多层感知机第",
+      "层梯度",
+      "回顾数据的标准化方法：",
+      "假设第",
+      "个特征的均值和方差分别为",
+      "和",
+      "，计算",
+      "仅考虑关于",
+      "的部分",
+      "如何推广到层输出？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???36.PNG"
+  },
+  {
+    "slide": 37,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "37",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "削弱了非线性激活函数带来的表达能力",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "37",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "考虑基于小批量（",
+      "Mini-batch",
+      "）数据进行参数随机优化，假设批大小为",
+      "令",
+      "表示神经网络某层原本的加权求和输入，例如",
+      "首先计算小批量均值和方差",
+      "一种朴素的标准化方案：令",
+      "，",
+      "削弱了非线性激活函数带来的表达能力"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???37.PNG"
+  },
+  {
+    "slide": 38,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "38",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "38",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "考虑基于小批量（",
+      "Mini-batch",
+      "）数据进行参数随机优化，假设批大小为",
+      "令",
+      "表示神经网络某层原本的加权求和输入，例如",
+      "首先计算小批量均值和方差",
+      "可学习的标准化方案：令",
+      "，并引入缩放参数",
+      "、偏移参数"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???38.PNG"
+  },
+  {
+    "slide": 39,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "39",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "ICS和网络性能的关系并不大：向使用了BN的网络加入随机噪声，目的是使这个网络的ICS更加严重。实验结果表明虽然加入了随机噪声的BN的ICS问题更加严重，但它的性能要优于没有使用BN的普通网络",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 252500,
+        "top": 2888734,
+        "width": 8201025,
+        "height": 3533775,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 146405,
+        "size": [
+          861,
+          371
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "39",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）？？？",
+      "ICS",
+      "和网络性能的关系并不大：向使用了",
+      "BN",
+      "的网络加入随机噪声，目的是使这个网络的",
+      "ICS",
+      "更加严重。实验结果表明虽然加入了随机噪声的",
+      "BN",
+      "的",
+      "ICS",
+      "问题更加严重，但它的性能要优于没有使用",
+      "BN",
+      "的普通网络",
+      "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???39.PNG"
+  },
+  {
+    "slide": 40,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "40",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "BN和ICS的关系并不是很大",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "7",
+        "left": 0,
+        "top": 3306204,
+        "width": 8424854,
+        "height": 2031326,
+        "filename": "image.jpeg",
+        "content_type": "image/jpeg",
+        "bytes": 85326,
+        "size": [
+          900,
+          217
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "40",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）？？？",
+      "BN",
+      "和",
+      "ICS",
+      "的关系并不是很大",
+      "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???40.PNG"
+  },
+  {
+    "slide": 41,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "41",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "BN处理之后的损失函数满足Lipschitz连续，即损失函数的梯度小于一个常量：",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "而且损失函数的梯度也满足Lipschitz连续，即斜率的斜率也不会超过一个常量：",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "7",
+        "left": 472384,
+        "top": 2916788,
+        "width": 6937823,
+        "height": 3168273,
+        "filename": "image.jpeg",
+        "content_type": "image/jpeg",
+        "bytes": 135826,
+        "size": [
+          900,
+          411
+        ]
+      },
+      {
+        "path": "9",
+        "left": 7605020,
+        "top": 3747044,
+        "width": 4006811,
+        "height": 598240,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 8356,
+        "size": [
+          576,
+          86
+        ]
+      },
+      {
+        "path": "10",
+        "left": 7671252,
+        "top": 5456164,
+        "width": 3940579,
+        "height": 625489,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 11000,
+        "size": [
+          630,
+          100
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 5,
+      "PICTURE (13)": 3
+    },
+    "xml_texts": [
+      "41",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "内部协变量偏移（",
+      "Internal",
+      "Covariate",
+      "Shift",
+      "）？？？",
+      "BN",
+      "处理之后的损失函数满足",
+      "Lipschitz",
+      "连续，即损失函数的梯度小于一个常量：",
+      "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+      "而且损失函数的梯度也满足",
+      "Lipschitz",
+      "连续，即斜率的斜率也不会超过一个常量："
+    ],
+    "screenshot": "tmp/ch5_slides_png/???41.PNG"
+  },
+  {
+    "slide": 42,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "42",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "42",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "链式法则：",
+      "中同样包含"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???42.PNG"
+  },
+  {
+    "slide": 43,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "43",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "分路径求导，最后求和",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "43",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "多元函数链式法则：若",
+      "，且",
+      "，则",
+      "分路径求导，最后求和"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???43.PNG"
+  },
+  {
+    "slide": 44,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "44",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "44",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "关于",
+      "有",
+      "1",
+      "）",
+      "；",
+      "2",
+      "）",
+      "；",
+      "3",
+      "）"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???44.PNG"
+  },
+  {
+    "slide": 45,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "45",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "45",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "关于",
+      "有",
+      "1",
+      "）",
+      "；",
+      "2",
+      "）",
+      "；",
+      "3",
+      "）"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???45.PNG"
+  },
+  {
+    "slide": 46,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "46",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "46",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "关于",
+      "有",
+      "1",
+      "）",
+      "；",
+      "2",
+      "）",
+      "；",
+      "3",
+      "）"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???46.PNG"
+  },
+  {
+    "slide": 47,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "47",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "47",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "反向传播：令",
+      "表示单个数据上的损失函数，需计算",
+      "等",
+      "关于",
+      "和",
+      "有"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???47.PNG"
+  },
+  {
+    "slide": 48,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "48",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "48",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "测试阶段：利用训练阶段获取的均值与方差信息",
+      "均值：",
+      "，其中",
+      "表示训练阶段某批次的均值，",
+      "表示对训练阶段所有批次求（滑动）平均",
+      "方差：",
+      "，其中",
+      "表示训练阶段某批次的方差"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???48.PNG"
+  },
+  {
+    "slide": 49,
+    "title": "模型构建：批归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "49",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：批归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "49",
+      "模型构建：批归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "批归一化",
+      "测试阶段：利用训练阶段获取的均值与方差信息",
+      "均值和方差：",
+      "批归一化层输出",
+      "如果",
+      "太小会如何？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???49.PNG"
+  },
+  {
+    "slide": 50,
+    "title": "模型构建：层归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "50",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：层归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "适用于任意批大小！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "50",
+      "模型构建：层归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "层归一化：对某层不同神经元的输入进行归一化",
+      "令",
+      "表示某层原本的加权求和输入，例如",
+      "计算该层神经元输入的均值和方差",
+      "可学习的标准化方案：",
+      "适用于任意批大小！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???50.PNG"
+  },
+  {
+    "slide": 51,
+    "title": "模型构建：实例归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "51",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：实例归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "51",
+      "模型构建：实例归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "为便于讨论，假设考虑输入为",
+      "个图片，其中每个图片大小为",
+      "表示通道数，例如彩色图片的",
+      "R",
+      "、",
+      "G",
+      "、",
+      "B",
+      "通道；",
+      "和",
+      "表示图片高度和宽度",
+      "所有输入可以表示为",
+      "实例归一化（",
+      "Instance",
+      "Normalization",
+      "）：对每个样本及通道的",
+      "个取值进行归一化",
+      "可以是任意特征图！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???51.PNG"
+  },
+  {
+    "slide": 52,
+    "title": "模型构建：实例归一化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "52",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：实例归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "多用于图像风格迁移：IN有助于消除内容图原风格",
+            "level": 0
+          },
+          {
+            "text": "BN进一步混淆不同数据",
+            "level": 1
+          },
+          {
+            "text": "LN进一步混淆不同通道",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Ulyanov et al. Improved Texture Networks: Maximizing Quality and Diversity in Feed-forward Stylization and Texture Synthesis. In CVPR, 2017.",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 6115064,
+        "top": 2455876,
+        "width": 4857550,
+        "height": 3578338,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 514926,
+        "size": [
+          562,
+          414
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "52",
+      "模型构建：实例归一化",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "多用于图像风格迁移：",
+      "IN",
+      "有助于消除内容图原风格",
+      "BN",
+      "进一步混淆不同数据",
+      "LN",
+      "进一步混淆不同通道",
+      "Ulyanov",
+      "et al.",
+      "Improved Texture Networks: Maximizing Quality and Diversity in Feed-forward Stylization and Texture Synthesis. In CVPR, 2017."
+    ],
+    "screenshot": "tmp/ch5_slides_png/???52.PNG"
+  },
+  {
+    "slide": 53,
+    "title": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "53",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：组归一化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Wu and He. Group Normalization. In ECCV, 2018.",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 1650498,
+        "top": 5059307,
+        "width": 5843003,
+        "height": 1681186,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 97436,
+        "size": [
+          994,
+          286
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "53",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "为便于讨论，假设考虑输入为",
+      "个图片，其中每个图片大小为",
+      "表示通道数，例如彩色图片的",
+      "R",
+      "、",
+      "G",
+      "、",
+      "B",
+      "通道；",
+      "和",
+      "表示图片高度和宽度",
+      "所有输入可以表示为",
+      "组归一化（",
+      "Group",
+      "Normalization",
+      "）：将特征通道等分为",
+      "组，对每个样本在组内进行归一化",
+      "模型构建：组归一化",
+      "Wu and He. Group Normalization. In ECCV, 2018."
+    ],
+    "screenshot": "tmp/ch5_slides_png/???53.PNG"
+  },
+  {
+    "slide": 54,
+    "title": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "54",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "ImageNet数据集",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：归一化方法对比",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Wu and He. Group Normalization. In ECCV, 2018.",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "不同批大小",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 548640,
+        "top": 3047875,
+        "width": 7536581,
+        "height": 2744023,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 110327,
+        "size": [
+          1192,
+          434
+        ]
+      },
+      {
+        "path": "7",
+        "left": 8085221,
+        "top": 3090969,
+        "width": 3403762,
+        "height": 2422113,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 1159418,
+        "size": [
+          638,
+          454
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "54",
+      "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+      "ImageNet",
+      "数据集",
+      "模型构建：归一化方法对比",
+      "Wu and He. Group Normalization. In ECCV, 2018.",
+      "固定批大小为",
+      "不同批大小"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???54.PNG"
+  },
+  {
+    "slide": 55,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "55",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "不同初始化参数可能导致不同的局部最优解",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 1747563,
+        "top": 2958392,
+        "width": 8696873,
+        "height": 3507186,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 3488970,
+        "size": [
+          1469,
+          593
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "55",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "不同初始化参数可能导致不同的局部最优解"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???55.PNG"
+  },
+  {
+    "slide": 56,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "56",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "不同初始化参数可能导致不同的局部最优解",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "https://www.deeplearning.ai/ai-notes/initialization/index.html",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "9",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "全0初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "10",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "合适的初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "11",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "网络结构",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 4946919,
+        "top": 3020527,
+        "width": 2515155,
+        "height": 3128026,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 77531,
+        "size": [
+          632,
+          786
+        ]
+      },
+      {
+        "path": "6",
+        "left": 8194760,
+        "top": 3002638,
+        "width": 2441184,
+        "height": 3128026,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 109291,
+        "size": [
+          590,
+          756
+        ]
+      },
+      {
+        "path": "7",
+        "left": 667003,
+        "top": 3734742,
+        "width": 3547230,
+        "height": 1954486,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 127564,
+        "size": [
+          1314,
+          724
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 6,
+      "PICTURE (13)": 3
+    },
+    "xml_texts": [
+      "56",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "不同初始化参数可能导致不同的局部最优解",
+      "https://www.deeplearning.ai/ai-notes/initialization/index.html",
+      "全",
+      "0",
+      "初始化",
+      "合适的初始化",
+      "网络结构"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???56.PNG"
+  },
+  {
+    "slide": 57,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "57",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "为什么不能使用全0初始化？",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "“对称权重”：同一层神经元参数初始化相同，则前向传播与反向梯度都相同，等价于该层只有一个神经元。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 736822,
+        "top": 3002365,
+        "width": 6849262,
+        "height": 3536547,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 1746822,
+        "size": [
+          919,
+          474
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "57",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "为什么不能使用全",
+      "0",
+      "初始化？",
+      "“对称权重”：同一层神经元参数初始化相同，则前向传播与反向梯度都相同，等价于该层只有一个神经元。"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???57.PNG"
+  },
+  {
+    "slide": 58,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "58",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "梯度爆炸",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "梯度消失",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "58",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "回顾多层感知机的",
+      "第",
+      "层梯度：",
+      "过大的初始化容易导致梯度爆炸",
+      "过小的初始化容易导致梯度消失",
+      "梯度爆炸",
+      "梯度消失"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???58.PNG"
+  },
+  {
+    "slide": 59,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "59",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "随着层数增加，激活值逐渐趋向于0",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 1082843,
+        "top": 4053813,
+        "width": 7210926,
+        "height": 2734549,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 160674,
+        "size": [
+          2368,
+          898
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "59",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "小随机数初始化",
+      "方法",
+      "1",
+      "：对于任意参数",
+      "，从区间",
+      "中均匀采样选取初始值",
+      "方法",
+      "2",
+      "：对于任意参数",
+      "，从均值为",
+      "、方差为",
+      "的高斯分布中采样初始值",
+      "50",
+      "层、每层",
+      "256",
+      "神经元、",
+      "的高斯分布",
+      "随着层数增加，激活值逐渐趋向于",
+      "0"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???59.PNG"
+  },
+  {
+    "slide": 60,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "60",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "60",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "小随机数初始化的方差传播",
+      "首先考虑无偏置项的线性层，假设其输入为",
+      "，则输出为",
+      "假设输入的每个维度",
+      "独立同分布，且均值为",
+      "、方差为",
+      "假设每个权重参数",
+      "独立同分布，且均值为",
+      "0",
+      "、方差为",
+      "容易验证：",
+      "，以及"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???60.PNG"
+  },
+  {
+    "slide": 61,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "61",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "61",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "小随机数初始化的方差传播",
+      "首先考虑无偏置项的线性层，假设其输入为",
+      "，则输出为",
+      "假设输入的每个维度",
+      "独立同分布，且均值为",
+      "、方差为",
+      "假设每个权重参数",
+      "独立同分布，且均值为",
+      "0",
+      "、方差为",
+      "容易验证：",
+      "，以及",
+      "按比例衰减"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???61.PNG"
+  },
+  {
+    "slide": 62,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "62",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "62",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "小随机数初始化的方差传播",
+      "首先考虑无偏置项的线性层，假设其输入为",
+      "，则输出为",
+      "基于独立同分布假设：",
+      "，以及",
+      "对于",
+      "tanh",
+      "激活函数：其在",
+      "0",
+      "附近的取值满足",
+      "基于独立同分布假设：",
+      "，以及"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???62.PNG"
+  },
+  {
+    "slide": 63,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "63",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "能否改进？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "63",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "小随机数初始化的方差传播",
+      "首先考虑无偏置项的线性层，假设其输入为",
+      "，则输出为",
+      "基于独立同分布假设：",
+      "，以及",
+      "对于",
+      "ReLU",
+      "激活函数：",
+      "基于独立同分布假设：",
+      "能否改进？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???63.PNG"
+  },
+  {
+    "slide": 64,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "64",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Xavier初始化",
+            "level": 0
+          },
+          {
+            "text": "首先对于tanh等对称或近线性激活函数，控制前向传播方差衰减",
+            "level": 1
+          },
+          {
+            "text": "同理，考虑反向传播过程等方差控制",
+            "level": 1
+          },
+          {
+            "text": "两者结合得到Xavier初始化",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "64",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "Xavier",
+      "初始化",
+      "首先对于",
+      "tanh",
+      "等对称或近线性激活函数，控制前向传播方差衰减",
+      "同理，考虑反向传播过程等方差控制",
+      "两者结合得到",
+      "Xavier",
+      "初始化",
+      "均匀分布",
+      "或高斯分布"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???64.PNG"
+  },
+  {
+    "slide": 65,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "65",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "He初始化",
+            "level": 0
+          },
+          {
+            "text": "对于ReLU这种非对称激活函数，控制前向传播方差衰减",
+            "level": 1
+          },
+          {
+            "text": "同样可以考虑反向传播影响，但实践中上述改变已足够有效",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "65",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "He",
+      "初始化",
+      "对于",
+      "ReLU",
+      "这种非对称激活函数，控制前向传播方差衰减",
+      "同样可以考虑反向传播影响，但实践中上述改变已足够有效",
+      "均匀分布",
+      "或高斯分布"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???65.PNG"
+  },
+  {
+    "slide": 66,
+    "title": "模型构建：初始化",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "66",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建：初始化",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "基于方差控制的初始化方法对比",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "合理控制方差后，即使层数增加，激活值仍远大于0",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 510511,
+        "top": 3058307,
+        "width": 8100089,
+        "height": 3035831,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 205401,
+        "size": [
+          2380,
+          892
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "66",
+      "模型构建：初始化",
+      "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+      "基于方差控制的初始化方法对比",
+      "50",
+      "层、每层",
+      "256",
+      "神经元、",
+      "的高斯分布",
+      "合理控制方差后，即使层数增加，激活值仍远大于",
+      "0"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???66.PNG"
+  },
+  {
+    "slide": 67,
+    "title": "课程思路",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "67",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "课程思路",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "深度神经网络训练的基本流程：",
+            "level": 0
+          },
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "模型架构",
+            "level": 0
+          },
+          {
+            "text": "训练方法",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 1,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "67",
+      "课程思路",
+      "深度神经网络训练的基本流程：",
+      "数据准备",
+      "模型架构",
+      "训练方法"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???67.PNG"
+  },
+  {
+    "slide": 68,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "68",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "批量梯度，而非全量梯度",
+            "level": 0
+          },
+          {
+            "text": "提高计算效率，引入随机性",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "沿负梯度方向更新参数",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "如何选择学习率？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 6,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "68",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "批量梯度，而非全量梯度",
+      "提高计算效率，引入随机性",
+      "沿负梯度方向更新参数",
+      "如何选择学习率？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???68.PNG"
+  },
+  {
+    "slide": 69,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "69",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "批量梯度，而非全量梯度",
+            "level": 0
+          },
+          {
+            "text": "提高计算效率，引入随机性",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "沿负梯度方向更新参数",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 5,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "69",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "批量梯度，而非全量梯度",
+      "提高计算效率，引入随机性",
+      "沿负梯度方向更新参数",
+      "虽然深度学习的目标函数是",
+      "高度非凸",
+      "的，但",
+      "SGD",
+      "及其变体的收敛性理论最早是在凸优化中建立起来的",
+      "在凸优化中，可以严格证明",
+      "SGD",
+      "能够收敛到全局最优解，并给出",
+      "收敛速度",
+      "（",
+      "如",
+      "）",
+      "利用凸优化理论可以为",
+      "SGD",
+      "学习率选择提供数学依据和解释"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???69.PNG"
+  },
+  {
+    "slide": 70,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "70",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "70",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "学习率的选择",
+      "取决于目标函数的性质",
+      "（在线或随机凸优化理论）",
+      "非平滑函数：",
+      "或",
+      "，其中",
+      "为总迭代次数",
+      "平滑函数：",
+      "，其中",
+      "为某些常数"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???70.PNG"
+  },
+  {
+    "slide": 71,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "71",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "71",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "学习率的选择",
+      "取决于目标函数的性质",
+      "（在线或随机凸优化理论）",
+      "非平滑函数：梯度可能剧烈变化，如果学习率不衰减，容易在最优解附",
+      "近震荡，无法收敛",
+      "平滑函数：",
+      "梯度变化有界，固定学习率可以在保证收敛的同时，实现更",
+      "快的迭代速度"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???71.PNG"
+  },
+  {
+    "slide": 72,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "72",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "参数无区分：",
+            "level": 0
+          },
+          {
+            "text": "对所有参数使用同一个全局学习率，不会根据参数的重要性、更新频率或梯度大小来区别对待",
+            "level": 0
+          },
+          {
+            "text": "如果模型参数在尺度上差异很大（比如某些层参数范围很大，某些层很小），全局学习率很难同时适配所有参数",
+            "level": 0
+          },
+          {
+            "text": "对于出现频率较低的特征（如稀疏数据中的罕见词），其参数更新次数少，若学习率太小则更新缓慢；若学习率太大则容易过调",
+            "level": 0
+          },
+          {
+            "text": "深层网络中，不同层的梯度大小可能相差几个数量级，统一学习率会导致某些层更新过快或过慢",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "72",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "学习率的选择",
+      "取决于目标函数的性质",
+      "（在线或随机凸优化理论）",
+      "非平滑函数：梯度可能剧烈变化，如果学习率不衰减，容易在最优解附",
+      "近震荡，无法收敛",
+      "平滑函数：",
+      "梯度变化有界，固定学习率可以在保证收敛的同时，实现更",
+      "快的迭代速度",
+      "参数无区分：",
+      "对所有参数使用",
+      "同一个全局学习率",
+      "，",
+      "不会根据参数的重要性、更新频率或梯度大小来区别对待",
+      "如果模型参数在尺度上差异很大（比如某些层参数范围很大，某些层很小），全局学习率很难同时适配所有参数",
+      "对于出现频率较低的特征（如稀疏数据中的罕见词），其参数更新次数少，若学习率太小则更新缓慢；若学习率太大则容易过调",
+      "深层网络中，不同层的梯度大小可能相差几个数量级，统一学习率会导致某些层更新过快或过慢"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???72.PNG"
+  },
+  {
+    "slide": 73,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "73",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "随机梯度方差较大：",
+            "level": 0
+          },
+          {
+            "text": "每次只基于一个 mini-batch 计算梯度，而非全量数据 → 得到的梯度是真实梯度的有噪声估计，这个噪声的方差随批量大小变化",
+            "level": 0
+          },
+          {
+            "text": "方差大会导致更新方向不稳定，损失曲线震荡严重",
+            "level": 0
+          },
+          {
+            "text": "为了稳定收敛，往往需要较小的学习率，但又会减慢收敛速度",
+            "level": 0
+          },
+          {
+            "text": "即使理论上最终能收敛，在非平滑区域（如尖锐极小值附近），梯度噪声可能使参数无法稳定落点",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "73",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "随机梯度下降（",
+      "Stochastic Gradient Descent",
+      "，",
+      "SGD",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新",
+      "学习率的选择",
+      "取决于目标函数的性质",
+      "（在线或随机凸优化理论）",
+      "非平滑函数：梯度可能剧烈变化，如果学习率不衰减，容易在最优解附",
+      "近震荡，无法收敛",
+      "平滑函数：",
+      "梯度变化有界，固定学习率可以在保证收敛的同时，实现更",
+      "快的迭代速度",
+      "随机梯度方差较大：",
+      "每次只基于一个",
+      "mini-batch",
+      "计算梯度，而非全量数据",
+      "→",
+      "得到的梯度是真实梯度的",
+      "有噪声估计",
+      "，这个噪声的方差随批量大小变化",
+      "方差大会导致",
+      "更新方向不稳定",
+      "，损失曲线震荡严重",
+      "为了稳定收敛，往往需要较小的学习率，但又会减慢收敛速度",
+      "即使理论上最终能收敛，在非平滑区域（如尖锐极小值附近），梯度噪声可能使参数无法稳定落点"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???73.PNG"
+  },
+  {
+    "slide": 74,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "74",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "根据每个参数的历史梯度大小，动态调整其学习率",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "74",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "针对",
+      "“",
+      "所有参数共享同一学习率”问题的早期重要改进：",
+      "自适应梯度（",
+      "Adaptive Gradient",
+      "，",
+      "AdaGrad",
+      "）：给不同参数分配自适应的学习率",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "根据每个参数的",
+      "历史梯度大小",
+      "，",
+      "动态调整",
+      "其学习率"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???74.PNG"
+  },
+  {
+    "slide": 75,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "75",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "75",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "针对",
+      "“",
+      "所有参数共享同一学习率”问题的早期重要改进：",
+      "自适应梯度（",
+      "Adaptive Gradient",
+      "，",
+      "AdaGrad",
+      "）：给不同参数分配自适应的学习率",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???75.PNG"
+  },
+  {
+    "slide": 76,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "76",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "学习率逐渐收敛至0！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "76",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "自适应梯度（",
+      "Adaptive Gradient",
+      "，",
+      "AdaGrad",
+      "）：给不同参数分配自适应的学习率",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "每个参数的学习率由其累计梯度大小自适应调节",
+      "→",
+      "全局学习率",
+      "可以设为",
+      "常数，真正的参数级学习率由",
+      "自动决定",
+      "（累计梯度平方）",
+      "学习率逐渐收敛至",
+      "0",
+      "！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???76.PNG"
+  },
+  {
+    "slide": 77,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "77",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "仍面临SGD的学习率问题！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "77",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "基于动量法（",
+      "Momentum",
+      "）的",
+      "SGD",
+      "：保留一部分之前的更新方向",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "相对更稳定",
+      "仍面临",
+      "SGD",
+      "的学习率问题！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???77.PNG"
+  },
+  {
+    "slide": 78,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "78",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "78",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "针对",
+      "“",
+      "所有参数共享同一学习率”问题的早期重要改进：",
+      "自适应梯度（",
+      "Adaptive Gradient",
+      "，",
+      "AdaGrad",
+      "）：给不同参数分配自适应的学习率",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+      "自适应机制：",
+      "对于经常被更新的参数，其累积的",
+      "较大，因此",
+      "较小，学习率自动降低",
+      "对于很少被更新的参数，",
+      "较小，学习率相对较大，从而在出现梯度时能更快调整",
+      "这种机制使得",
+      "AdaGrad",
+      "在稀疏数据（如自然语言处理、推荐系统）中表现优异"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???78.PNG"
+  },
+  {
+    "slide": 79,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "79",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 4,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "79",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "针对",
+      "“",
+      "所有参数共享同一学习率”问题的早期重要改进：",
+      "自适应梯度（",
+      "Adaptive Gradient",
+      "，",
+      "AdaGrad",
+      "）：给不同参数分配自适应的学习率",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+      "优点：",
+      "无需手动调整每个参数的学习率",
+      "，自动适应参数频率",
+      "对稀疏数据友好，能有效处理不同特征出现频率差异大的情况",
+      "局限性：",
+      "单调递增（始终累加正数），因此学习率会",
+      "持续单调下降",
+      "，甚至趋向于零",
+      "在深度学习中，如果训练过程很长，学习率可能过早变得过小，导致模型无法继续学习",
+      "后续的优化器（如",
+      "RMSprop",
+      "、",
+      "Adam",
+      "）",
+      "通过引入",
+      "指数衰减",
+      "来缓解这一问题"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???79.PNG"
+  },
+  {
+    "slide": 80,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "80",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "学习率不再单调递减！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "80",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "均方根传递（",
+      "Root Mean Square Prop",
+      "，",
+      "RMSProp",
+      "）",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "可被视为带有（近似）二阶动量的",
+      "AdaGrad",
+      "学习率不再单调递减！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???80.PNG"
+  },
+  {
+    "slide": 81,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "81",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "81",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "RMSPro",
+      "p",
+      "+",
+      "一阶动量",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "偏向于",
+      "0"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???81.PNG"
+  },
+  {
+    "slide": 82,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "82",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "去偏",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "最为广泛使用的优化器！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 5,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "82",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "Adam",
+      "：一阶矩动量",
+      "+",
+      "二阶矩自适应",
+      "+",
+      "去偏",
+      "计算随机梯度：",
+      "表示批大小",
+      "进行参数更新：",
+      "去偏",
+      "最为广泛使用的优化器！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???82.PNG"
+  },
+  {
+    "slide": 83,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "83",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "83",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "Adam",
+      "：",
+      "实践技巧：",
+      "简单设置",
+      "和",
+      "即可，且原文推荐使用",
+      "理论分析：",
+      "需要设置",
+      "及",
+      "（学习率及一阶动量系数随时间衰减；但工程实践中很少使用）"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???83.PNG"
+  },
+  {
+    "slide": 84,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "84",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 1586496,
+        "top": 5335063,
+        "width": 8904724,
+        "height": 817938,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 27368,
+        "size": [
+          1154,
+          106
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "84",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "Adam",
+      "：",
+      "令",
+      "及",
+      "，原文给出了在线凸优化设定下的遗憾界",
+      "直觉上，",
+      "和",
+      "等数据相关项表明",
+      "Adam",
+      "能够利用数据结构特性"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???84.PNG"
+  },
+  {
+    "slide": 85,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "85",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Adam原文的理论分析存在错误",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "10",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Kingma, and Ba. Adam: A Method for Stochastic Optimization. In ICLR, 2015.",
+            "level": 2
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 838200,
+        "top": 2910563,
+        "width": 8153400,
+        "height": 2273300,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 179074,
+        "size": [
+          1284,
+          358
+        ]
+      },
+      {
+        "path": "7",
+        "left": 797506,
+        "top": 5445822,
+        "width": 8281362,
+        "height": 1281165,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 132132,
+        "size": [
+          1456,
+          204
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 5,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3,
+      "PICTURE (13)": 2
+    },
+    "xml_texts": [
+      "85",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "Adam",
+      "原文的理论分析存在错误",
+      "并不一定单调递增",
+      "Kingma",
+      ", and Ba. Adam: A Method for Stochastic Optimization. In ICLR, 2015."
+    ],
+    "screenshot": "tmp/ch5_slides_png/???85.PNG"
+  },
+  {
+    "slide": 86,
+    "title": "训练与优化：优化器",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "86",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "S. J. Reddi, S. Kale, and S. Kumar. On the Convergence of Adam and Beyond. In ICLR, 2018. (Best Paper, 1/3)",
+            "level": 2
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "有效学习率单调递减",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 3
+    },
+    "xml_texts": [
+      "86",
+      "训练与优化：优化器",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "AMSGrad",
+      "：",
+      "令",
+      "，下式成立",
+      "（历史最大二阶矩）",
+      "S. J.",
+      "Reddi",
+      ", S. Kale, and S. Kumar. On the Convergence of Adam and Beyond. In ICLR, 2018. (",
+      "Best Paper, 1/3",
+      ")",
+      "有效学习率单调递减"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???86.PNG"
+  },
+  {
+    "slide": 87,
+    "title": "训练与优化：优化器 + 权重衰减",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "87",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 权重衰减",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "标准SGD",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2
+    },
+    "xml_texts": [
+      "87",
+      "训练与优化：优化器",
+      "+",
+      "权重衰减",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "权重衰减（",
+      "Weight",
+      "Decay",
+      "）：除执行更新",
+      "之外，以",
+      "的比例调低权重",
+      "结合",
+      "SGD",
+      "，即",
+      "：",
+      "当",
+      "为常数",
+      "时等价于对损失函数做二范数正则",
+      "标准",
+      "SGD"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???87.PNG"
+  },
+  {
+    "slide": 88,
+    "title": "训练与优化：优化器 + 权重衰减",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "88",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 权重衰减",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "88",
+      "训练与优化：优化器",
+      "+",
+      "权重衰减",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "AdamW",
+      "：",
+      "Adam +",
+      "权重衰减",
+      "即使",
+      "不再等价于对损失函数做二范数正则",
+      "实践中优于标准",
+      "Adam +"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???88.PNG"
+  },
+  {
+    "slide": 89,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "89",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "学习率技巧：固定衰减",
+            "level": 0
+          },
+          {
+            "text": "优化早期使用较大的学习率以确保收敛速度，随后逐渐调低学习率",
+            "level": 1
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 7351005,
+        "top": 3429000,
+        "width": 3790936,
+        "height": 3151173,
+        "filename": "image.tiff",
+        "content_type": "image/tiff",
+        "bytes": 4130954,
+        "size": [
+          1115,
+          926
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 2,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "89",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：固定衰减",
+      "优化早期使用较大的学习率以确保收敛速度，随后逐渐调低学习率",
+      "分段衰减：每经过一定迭代次数，调低学习率",
+      "逆时衰减：",
+      "指数衰减：",
+      "自然指数衰减：",
+      "余弦衰减（当前大模型训练主流）："
+    ],
+    "screenshot": "tmp/ch5_slides_png/???89.PNG"
+  },
+  {
+    "slide": 90,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "90",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "降低前期随机性影响！",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 5256547,
+        "top": 2763983,
+        "width": 6097253,
+        "height": 3667352,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 237999,
+        "size": [
+          1626,
+          978
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "90",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：预热（",
+      "Warmup",
+      "）",
+      "设定预热步数",
+      "，对于前",
+      "步，设定学习率",
+      "预热阶段结束后，再执行学习率衰减方法",
+      "降低前期随机性影响！"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???90.PNG"
+  },
+  {
+    "slide": 91,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "91",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1
+    },
+    "xml_texts": [
+      "91",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：周期性学习率（",
+      "Cyclical Learning Rate, CLR",
+      "）",
+      "动机：神经网络训练可能陷入局部最优或鞍点区域，周期性地增大学习率有助于跳出这些区域",
+      "令",
+      "分别表示学习率上下界，在",
+      "之间周期性变化"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???91.PNG"
+  },
+  {
+    "slide": 92,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "92",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "4",
+        "left": 2477950,
+        "top": 2874935,
+        "width": 6790741,
+        "height": 3895843,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 202531,
+        "size": [
+          1384,
+          794
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "92",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：周期性学习率（",
+      "Cyclical Learning Rate, CLR",
+      "）",
+      "动机：神经网络训练可能陷入局部最优或鞍点区域，周期性地增大学习率有助于跳出这些区域",
+      "令",
+      "分别表示学习率上下界，在",
+      "之间周期性变化"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???92.PNG"
+  },
+  {
+    "slide": 93,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "93",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "5",
+        "left": 2473036,
+        "top": 2891277,
+        "width": 6779123,
+        "height": 3785010,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 113698,
+        "size": [
+          1800,
+          1007
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 1,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "93",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：周期性学习率（",
+      "Cyclical Learning Rate, CLR",
+      "）",
+      "动机：神经网络训练可能陷入局部最优或鞍点区域，周期性地增大学习率有助于跳出这些区域",
+      "令",
+      "分别表示学习率上下界，在",
+      "之间周期性变化"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???93.PNG"
+  },
+  {
+    "slide": 94,
+    "title": "训练与优化：优化器 + 学习率技巧",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "94",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化：优化器 + 学习率技巧",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "学习率技巧：周期性学习率（Cyclical Learning Rate, CLR）",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "7",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "Huang et al. Snapshot Ensembles: Train 1, get M for free. In ICLR, 2017.",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "8",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "普通学习率调整，容易陷入局部极值",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "9",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "CLR有助于逃离局部极值",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [
+      {
+        "path": "6",
+        "left": 1458753,
+        "top": 3145442,
+        "width": 7542998,
+        "height": 3103320,
+        "filename": "image.png",
+        "content_type": "image/png",
+        "bytes": 310428,
+        "size": [
+          1016,
+          418
+        ]
+      }
+    ],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 3,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 5,
+      "PICTURE (13)": 1
+    },
+    "xml_texts": [
+      "94",
+      "训练与优化：优化器",
+      "+",
+      "学习率技巧",
+      "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+      "学习率技巧：周期性学习率（",
+      "Cyclical Learning Rate, CLR",
+      "）",
+      "Huang et al. Snapshot Ensembles: Train 1, get M for free. In ICLR, 2017.",
+      "普通学习率调整，容易陷入局部极值",
+      "CLR",
+      "有助于逃离局部极值"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???94.PNG"
+  },
+  {
+    "slide": 95,
+    "title": "总结",
+    "items": [
+      {
+        "path": "1",
+        "type": "PLACEHOLDER (14)",
+        "paragraphs": [
+          {
+            "text": "95",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "2",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "总结",
+            "level": 0
+          }
+        ]
+      },
+      {
+        "path": "3",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "数据准备",
+            "level": 0
+          },
+          {
+            "text": "归一化",
+            "level": 1
+          },
+          {
+            "text": "数据增强",
+            "level": 1
+          },
+          {
+            "text": "类型转换",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "4",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "模型构建",
+            "level": 0
+          },
+          {
+            "text": "丢弃层",
+            "level": 1
+          },
+          {
+            "text": "批归一化、层归一化、…",
+            "level": 1
+          },
+          {
+            "text": "初始化",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "5",
+        "type": "TEXT_BOX (17)",
+        "paragraphs": [
+          {
+            "text": "训练与优化",
+            "level": 0
+          },
+          {
+            "text": "优化器",
+            "level": 1
+          },
+          {
+            "text": "权重衰减",
+            "level": 1
+          },
+          {
+            "text": "学习率技巧",
+            "level": 1
+          }
+        ]
+      },
+      {
+        "path": "6",
+        "type": "AUTO_SHAPE (1)",
+        "paragraphs": [
+          {
+            "text": "Q&A？",
+            "level": 0
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "pictures": [],
+    "shape_counts": {
+      "AUTO_SHAPE (1)": 2,
+      "PLACEHOLDER (14)": 1,
+      "TEXT_BOX (17)": 4
+    },
+    "xml_texts": [
+      "95",
+      "总结",
+      "数据准备",
+      "归一化",
+      "数据增强",
+      "类型转换",
+      "模型构建",
+      "丢弃层",
+      "批归一化、层归一化、",
+      "…",
+      "初始化",
+      "训练与优化",
+      "优化器",
+      "权重衰减",
+      "学习率技巧",
+      "Q&A",
+      "？"
+    ],
+    "screenshot": "tmp/ch5_slides_png/???95.PNG"
+  }
+]

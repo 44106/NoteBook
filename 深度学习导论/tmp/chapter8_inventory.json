@@ -1,0 +1,4938 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "left": 9.0,
+      "top": 0.28,
+      "width": 4.02,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "课程名称：深度学习导论",
+          "alignment": "CENTER",
+          "font_name": "Calibri",
+          "font_size": 24.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": -2.19,
+      "top": 3.24,
+      "width": 10.47,
+      "height": 1.23,
+      "paragraphs": [
+        {
+          "text": "第八章：表征学习",
+          "font_name": "微软雅黑",
+          "font_size": 54.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 2.69,
+      "top": 5.42,
+      "width": 8.31,
+      "height": 0.57,
+      "paragraphs": [
+        {
+          "text": "主讲教师：王文冠",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 28.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 3.49,
+      "width": 13.01,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "一、图像的表征学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-2": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.66,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "什么是表征？",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "表征是对数据含义的编码，是对原始数据的映射",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.79,
+      "top": 3.68,
+      "width": 1.41,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "表征提取",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.46,
+      "top": 5.29,
+      "width": 1.99,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "表征向量空间",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.6,
+      "top": 6.41,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "好的表征使得“语义相似”=“几何接近”",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 7.17,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "传统表征提取模式：特征工程",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 7.56,
+      "top": 4.03,
+      "width": 5.05,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Scale-Invariant Feature Transform (SIFT)",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.31,
+      "top": 6.76,
+      "width": 5.32,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Histogram of Oriented Gradients (HOG)",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 7.17,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "传统表征提取模式：特征工程",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.04,
+      "width": 12.18,
+      "height": 2.86,
+      "paragraphs": [
+        {
+          "text": "特征工程的缺陷：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "需要人工设计特征模式，需要领域经验，设计成本高",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "只能表达局部语义，难以捕捉复杂语义，难以建模非线性结构",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "泛化能力弱，需要对任务针对性的设计特征",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 5.11,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "现代范式：表征学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.65,
+      "top": 1.67,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "数据驱动代替人工设计，用模型来学习表征",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.89,
+      "top": 4.49,
+      "width": 1.41,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "表征 z=f(x)",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.6,
+      "top": 5.03,
+      "width": 1.41,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "原始数据 x",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.03,
+      "top": 5.32,
+      "width": 1.8,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Encoder f",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 0.65,
+      "top": 6.1,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "常见范式：监督学习（依赖下游任务标注）、自监督学习（依赖数据自身特性）",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "left": 0.35,
+      "top": 0.6,
+      "width": 12.81,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "为什么需要表征学习？",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.45,
+      "top": 1.87,
+      "width": 2.69,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "① 降低数据维度",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 4.77,
+      "top": 1.67,
+      "width": 2.66,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "② 捕获数据语义",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 4.77,
+      "top": 4.83,
+      "width": 2.66,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "③ 提升泛化能力",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.15,
+      "top": 5.31,
+      "width": 1.23,
+      "height": 1.48,
+      "paragraphs": [
+        {
+          "text": "人工设计表征",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.64,
+      "top": 5.31,
+      "width": 2.0,
+      "height": 0.42,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.08
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "下游任务1",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 11.2,
+      "top": 5.31,
+      "width": 1.23,
+      "height": 1.48,
+      "paragraphs": [
+        {
+          "text": "表征",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        },
+        {
+          "text": "学习",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 7.64,
+      "top": 5.85,
+      "width": 2.0,
+      "height": 0.42,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.08
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "下游任务2",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 7.64,
+      "top": 6.37,
+      "width": 2.0,
+      "height": 0.42,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.08
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "下游任务3",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "left": 0.35,
+      "top": 0.6,
+      "width": 12.81,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "如何评估表征的好坏？",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.95,
+      "top": 1.76,
+      "width": 5.11,
+      "height": 1.45,
+      "paragraphs": [
+        {
+          "text": "① Linear Probing：",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "在下游任务上，用学好的表征和标签来训练一个线性分类器，用分类效果来评判表征的语义表达能力",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.03,
+      "top": 1.8,
+      "width": 5.46,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "② 可视化观察聚类效果：",
+          "font_name": "微软雅黑",
+          "bold": true
+        },
+        {
+          "text": "可以对高维表征进行降维可视化，观察是否形成自然的聚类，类间是否分离，类内是否紧凑（PCA、T-SNE算法）",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.22,
+      "top": 3.35,
+      "width": 0.45,
+      "height": 0.4,
+      "paragraphs": [
+        {
+          "text": "y",
+          "font_name": "微软雅黑",
+          "font_size": 18.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 2.08,
+      "top": 4.41,
+      "width": 2.61,
+      "height": 0.42,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.08
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Linear Classifier",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 2.39,
+      "top": 5.33,
+      "width": 2.0,
+      "height": 0.81,
+      "paragraphs": [
+        {
+          "text": "Encoder",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 3.28,
+      "top": 6.14,
+      "width": 0.45,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "x",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "left": 0.35,
+      "top": 0.6,
+      "width": 12.81,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "有监督表征学习 vs 无监督/自监督学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.65,
+      "top": 1.5,
+      "width": 0.58,
+      "height": 2.46,
+      "paragraphs": [
+        {
+          "text": "有监督表征学习",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.94,
+      "top": 2.07,
+      "width": 1.8,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Encoder f",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.6,
+      "top": 2.07,
+      "width": 1.8,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Classifier g",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 11.48,
+      "top": 2.33,
+      "width": 1.34,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "Dog",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 6.75,
+      "top": 2.92,
+      "width": 2.19,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "表征 z=f(x)",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 11.48,
+      "top": 3.05,
+      "width": 1.34,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "标签 y",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 2.13,
+      "top": 3.46,
+      "width": 1.81,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "原始数据 x",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 0.65,
+      "top": 4.47,
+      "width": 0.58,
+      "height": 2.46,
+      "paragraphs": [
+        {
+          "text": "无监督表征学习",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 3.94,
+      "top": 4.35,
+      "width": 1.8,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Encoder f",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 9.52,
+      "top": 4.45,
+      "width": 1.8,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Classifier g",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 11.32,
+      "top": 4.57,
+      "width": 0.93,
+      "height": 2.06,
+      "paragraphs": [
+        {
+          "text": "0°",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "90°",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "180°",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "270°",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 4.15,
+      "top": 5.52,
+      "width": 0.96,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "…",
+          "alignment": "CENTER",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 6.75,
+      "top": 6.0,
+      "width": 2.19,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "表征 z=f(x)",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 10.02,
+      "top": 5.54,
+      "width": 0.96,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "…",
+          "alignment": "CENTER",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 2.18,
+      "top": 6.78,
+      "width": 1.81,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "原始数据 x",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 11.06,
+      "top": 6.78,
+      "width": 1.55,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "自监督标签",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "left": 0.35,
+      "top": 0.6,
+      "width": 12.81,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "有监督表征学习 vs 无监督/自监督学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.28,
+      "top": 6.32,
+      "width": 10.94,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "本节主要专注于无监督/自监督表征学习",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-10": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "什么是 Pretext 任务？",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.85,
+      "width": 12.48,
+      "height": 1.37,
+      "paragraphs": [
+        {
+          "text": "核心思想：摒弃人工标注，以数据自身属性为“伪标签”，通过解决人为设计的代理任务，间接习得数据的语义特征。",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.31,
+      "top": 8.0,
+      "width": 1.7,
+      "height": 0.24,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.09
+        },
+        "slide": {
+          "overflow_bottom": 0.74
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "原始图像",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "0F172A"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.33,
+      "top": 8.36,
+      "width": 1.66,
+      "height": 0.4,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "未标注数据",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 11.5,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 3.86,
+      "top": 8.0,
+      "width": 1.7,
+      "height": 0.24,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.09
+        },
+        "slide": {
+          "overflow_bottom": 0.74
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "自动变换",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "0F172A"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 3.88,
+      "top": 8.36,
+      "width": 1.66,
+      "height": 0.4,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "旋转 / 打乱 / 灰度化 / 取 patch",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 11.5,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 6.41,
+      "top": 8.0,
+      "width": 1.7,
+      "height": 0.24,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.09
+        },
+        "slide": {
+          "overflow_bottom": 0.74
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "伪标签",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "0F172A"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 6.43,
+      "top": 8.36,
+      "width": 1.66,
+      "height": 0.4,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "角度 / 排列 / 相对位置 / 颜色",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 11.5,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 8.96,
+      "top": 8.0,
+      "width": 1.7,
+      "height": 0.24,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.09
+        },
+        "slide": {
+          "overflow_bottom": 0.74
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "预训练模型",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "0F172A"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 8.98,
+      "top": 8.36,
+      "width": 1.66,
+      "height": 0.4,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "学习视觉表示",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 11.5,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 11.51,
+      "top": 8.0,
+      "width": 1.4,
+      "height": 0.24,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.09
+        },
+        "slide": {
+          "overflow_bottom": 0.74
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "下游任务",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 16.0,
+          "bold": true,
+          "color": "0F172A"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 11.53,
+      "top": 8.36,
+      "width": 1.36,
+      "height": 0.4,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 1.26
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "分类 / 检测",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 11.5,
+          "color": "475569"
+        }
+      ]
+    }
+  },
+  "slide-11": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务---旋转预测（Rotation Prediction）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.81,
+      "top": 2.06,
+      "width": 3.41,
+      "height": 4.14,
+      "paragraphs": [
+        {
+          "text": "训练方式：把一张自然图像随机旋转为 0°、90°、180°、270°，再让模型预测旋转角度（4分类问题）",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "line_spacing": 18.0
+        },
+        {
+          "text": "模型通常需要识别主体轮廓、部件朝向与场景重力方向，才能判断角度",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "color": "7030A0",
+          "line_spacing": 18.0
+        }
+      ]
+    }
+  },
+  "slide-12": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务---旋转预测（Rotation Prediction）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 7.88,
+      "top": 2.33,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "训练",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "使用构造的标签训练",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.63,
+      "top": 2.33,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "训练",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "使用下游任务标签训练",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 7.88,
+      "top": 3.87,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "模型层",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "常规Backbone（如RestNet）",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.94,
+      "top": 3.65,
+      "width": 0.7,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "迁移"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 10.63,
+      "top": 3.87,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "模型层",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "微调已经训练的Backbone",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 7.88,
+      "top": 5.46,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据层",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "构造pretext数据集",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 10.63,
+      "top": 5.46,
+      "width": 1.89,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据层",
+          "alignment": "CENTER",
+          "bold": true
+        },
+        {
+          "text": "下游任务数据",
+          "alignment": "CENTER"
+        }
+      ]
+    }
+  },
+  "slide-13": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务---相对位置预测（Context Prediction）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.02,
+      "top": 1.91,
+      "width": 11.69,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "从同一张图像中采样两个 patch，让模型预测第二个 patch 相对第一个 patch 位于哪个方向（8分类）",
+          "font_name": "微软雅黑",
+          "line_spacing": 18.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.02,
+      "top": 6.39,
+      "width": 7.9,
+      "height": 0.51,
+      "paragraphs": [
+        {
+          "text": "如果认识这个物体，那判断相对位置应该很简单",
+          "font_name": "微软雅黑",
+          "color": "7030A0",
+          "line_spacing": 18.0
+        }
+      ]
+    }
+  },
+  "slide-14": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务---拼图游戏（Jigsaw Puzzle）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.95,
+      "top": 1.85,
+      "width": 11.76,
+      "height": 0.96,
+      "paragraphs": [
+        {
+          "text": "对图片进行分块并打乱，训练模型进行permutation的分类（排列空间从9!=362,880，选择100种）",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "line_spacing": 18.0
+        },
+        {
+          "text": "帮助模型学习局部之间的空间关系，以及从局部推断全局物体结构的能力",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "color": "7030A0",
+          "line_spacing": 18.0
+        }
+      ]
+    }
+  },
+  "slide-15": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务---着色（Colorization）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.95,
+      "top": 1.92,
+      "width": 11.15,
+      "height": 1.42,
+      "paragraphs": [
+        {
+          "text": "把彩色图变成灰度图，再让模型恢复颜色",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "line_spacing": 18.0
+        },
+        {
+          "text": "颜色往往依赖语义：天空通常偏蓝，植被偏绿，皮肤、道路、海面也各有统计规律；着色任务使模型关注纹理与材质、区域类别与场景上下文、同一物体内部的颜色连续性",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "color": "7030A0",
+          "line_spacing": 18.0
+        }
+      ]
+    }
+  },
+  "slide-16": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "不同 Pretext 任务的效果比较",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 2.63,
+      "top": 6.4,
+      "width": 8.09,
+      "height": 0.35,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.14
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "不同的无监督方法在ImageNet-1000分类任务上的效果（冻结表征+MLP）",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "64748B"
+        }
+      ]
+    }
+  },
+  "slide-17": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务的局限性",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.79,
+      "top": 1.94,
+      "width": 11.75,
+      "height": 2.71,
+      "paragraphs": [
+        {
+          "text": "局限性：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "泛化性有限：模型可能学会“如何解这道题”，却不一定得到对下游任务最有用的通用表示",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "可能出现学习捷径：例如通过边缘连续性、颜色分布或相机伪影取巧，而不是理解高层语义",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "自监督学习的发展：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.36,
+      "top": 4.85,
+      "width": 0.91,
+      "height": 0.32,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2016",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.11,
+      "top": 4.87,
+      "width": 0.78,
+      "height": 0.29,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.2
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2016",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.91,
+      "top": 4.87,
+      "width": 0.78,
+      "height": 0.29,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.2
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2018",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 6.86,
+      "top": 4.87,
+      "width": 0.7,
+      "height": 0.29,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.2
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2020",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 8.76,
+      "top": 4.9,
+      "width": 0.8,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.22
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2021",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 10.73,
+      "top": 4.9,
+      "width": 0.78,
+      "height": 0.27,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.22
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2022",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 1.35,
+      "top": 6.09,
+      "width": 1.0,
+      "height": 0.15,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "空间关系",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 1.37,
+      "top": 5.7,
+      "width": 0.95,
+      "height": 0.16,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.34
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Jigsaw",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 2.73,
+      "top": 5.7,
+      "width": 1.54,
+      "height": 0.2,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.3
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Colorization",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 3.01,
+      "top": 6.09,
+      "width": 1.0,
+      "height": 0.15,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "语义颜色",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 4.84,
+      "top": 6.08,
+      "width": 1.0,
+      "height": 0.15,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "角度标签",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 4.87,
+      "top": 5.73,
+      "width": 0.95,
+      "height": 0.16,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.34
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "RotNet",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 6.26,
+      "top": 5.7,
+      "width": 1.95,
+      "height": 0.16,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.34
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "SimCLR / BYOL",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 6.56,
+      "top": 6.08,
+      "width": 1.33,
+      "height": 0.15,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "视角一致性",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 8.47,
+      "top": 5.94,
+      "width": 1.37,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "教师-学生",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-17": {
+      "left": 8.74,
+      "top": 5.7,
+      "width": 0.95,
+      "height": 0.16,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.34
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "DINO",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    },
+    "shape-18": {
+      "left": 10.62,
+      "top": 6.01,
+      "width": 1.0,
+      "height": 0.15,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "掩码重建",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "color": "475569"
+        }
+      ]
+    },
+    "shape-19": {
+      "left": 10.65,
+      "top": 5.7,
+      "width": 0.95,
+      "height": 0.16,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.34
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "MAE",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "bold": true,
+          "color": "111827"
+        }
+      ]
+    }
+  },
+  "slide-18": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 3.49,
+      "width": 13.01,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "二、对比学习：从依赖标签到实例判别",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-19": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "对比学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.61,
+      "width": 12.59,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "Pretext 任务教会了模型“如何玩游戏”，但我们真正需要的是模型能“区分谁是谁”",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "-> 对比学习：在特征空间中，拉近同类事物，推远不同事物，让模型学会区分万物。",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 5.11,
+      "top": 4.43,
+      "width": 1.32,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "回归本质",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 11.37,
+      "top": 4.34,
+      "width": 1.6,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "拉近本源",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        },
+        {
+          "text": "推开异源",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        },
+        {
+          "text": "直击语义",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-20": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "对比学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.76,
+      "width": 12.59,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "监督对比学习：需要人工标注哪些属于同类事物，哪些属于不同类事物 -> 成本太高",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "自监督对比学习：通过数据变换自动构建正负样本对用于模型训练 -> free lunch!",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "TEXT_1",
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-21": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.52,
+      "width": 12.59,
+      "height": 1.19,
+      "paragraphs": [
+        {
+          "text": "SimCLR 框架: 对每张图施加两种不同的数据增强，形成一对互为“正样本”的分身。模型的目标就是识别出这些分身属于同一母体，并同时排斥 batch 内的所有其他图片。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.75,
+      "top": 3.83,
+      "width": 2.04,
+      "height": 1.78,
+      "paragraphs": [
+        {
+          "text": "展示出自监督特征仅用 1% 标签微调就能超越 AlexNet 的惊人潜力！",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "color": "FF0000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.66,
+      "top": 6.23,
+      "width": 4.19,
+      "height": 1.01,
+      "paragraphs": [
+        {
+          "text": "A Simple Framework for Contrastive Learning of Visual Representations. ICML2020.",
+          "italic": true
+        }
+      ]
+    }
+  },
+  "slide-22": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.52,
+      "width": 12.59,
+      "height": 1.19,
+      "paragraphs": [
+        {
+          "text": "数据增强（Data augmentation）: 在保留数据原本含义的前提下，通过旋转、翻转等方式对现有数据进行变换，从而创造出更多新样本。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.58,
+      "top": 3.47,
+      "width": 3.38,
+      "height": 2.51,
+      "paragraphs": [
+        {
+          "text": "关键发现：",
+          "font_size": 20.0,
+          "bold": true,
+          "color": "FF0000"
+        },
+        {
+          "text": "- 数据增强组合对自监督学习质量起决定性作用",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "color": "FF0000",
+          "line_spacing": 25.0
+        },
+        {
+          "text": "- 单纯的随机裁剪往往效果不佳（模型作弊），必须与 “颜色抖动” 结合使用",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "color": "FF0000",
+          "line_spacing": 25.0
+        }
+      ]
+    }
+  },
+  "slide-23": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.52,
+      "width": 12.59,
+      "height": 1.19,
+      "paragraphs": [
+        {
+          "text": "基础编码器（Base Encoder）: 通常采用经典的卷积神经网络（如 ResNet），作为模型的“主干”负责将原始图像转化为高维特征向量，旨在捕捉图像中核心的语义内容。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-24": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.52,
+      "width": 12.59,
+      "height": 1.19,
+      "paragraphs": [
+        {
+          "text": "投影头（Projector）: 专门负责吸收和过滤掉那些对对比任务有用、但对通用识别没用的冗余信息（颜色、位置），保护前面的编码器能学到更纯净、更本质的语义特征。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-25": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.78,
+      "width": 12.59,
+      "height": 1.32,
+      "paragraphs": [
+        {
+          "text": "对比损失（NT-Xent 损失）: 最大化同一图像不同增强视图（正样本对）之间的相似度，同时最小化不同图像（负样本对）之间的相似度。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-26": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimCLR",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.58,
+      "width": 12.59,
+      "height": 1.32,
+      "paragraphs": [
+        {
+          "text": "下游任务应用: 经过 SimCLR 训练之后的模型可以用于迁移学习。为此，使用来自基础编码器的表示，这些表示可以很好地应用于像 ImageNet 分类这样的下游任务。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-27": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "MoCo——动量更新Encoder",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.58,
+      "width": 12.59,
+      "height": 1.65,
+      "paragraphs": [
+        {
+          "text": "需要更多负样本的另一种解决方案:引入样本队列记住负样本的特征；使用非对称更新的方式，让其中一个Encoder以动量的形式进行更新",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "注：SimCLR发表更晚消融更全面，发现算力充足不如直接开大Batch",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0,
+          "color": "FF0000",
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.84,
+      "top": 3.73,
+      "width": 5.86,
+      "height": 0.55,
+      "paragraphs": [
+        {
+          "text": "1. 引入一个队列记住mini-batch的负样本",
+          "font_size": 20.0,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 6.84,
+      "top": 4.51,
+      "width": 5.86,
+      "height": 1.06,
+      "paragraphs": [
+        {
+          "text": "2. 让右侧的Encoder以Exponential Moving Average的方式逐步更新：",
+          "font_size": 20.0,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 6.84,
+      "top": 6.32,
+      "width": 5.86,
+      "height": 0.55,
+      "paragraphs": [
+        {
+          "text": "3. 把当前的key feature压入队列中",
+          "font_size": 20.0,
+          "line_spacing": 30.0
+        }
+      ]
+    }
+  },
+  "slide-28": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "对比学习家族",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-29": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 3.49,
+      "width": 13.01,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "三、单词的表征学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-30": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "One-hot向量",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.04,
+      "width": 12.18,
+      "height": 3.66,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 4.88
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "在传统NLP中，每个单词可以被看作离散的符号，这些符号可以被表示为One-hot向量形式：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "该向量的维度=词表Vocabulary中词汇的数量（如，500000个）",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 4.34,
+      "top": 3.37,
+      "width": 5.36,
+      "height": 0.91,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 4.88
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "火车 = [0, 0, 0, 0, 0, 1, 0, 0]",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "7030A0"
+        },
+        {
+          "text": "高铁 = [0, 0, 0, 1, 0, 0, 0, 0]",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "7030A0"
+        }
+      ]
+    }
+  },
+  "slide-31": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "从One-hot到Embedding",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.04,
+      "width": 12.18,
+      "height": 2.81,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 4.6
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "当我们想要搜索“去杭州的火车”时，也隐含了我们想搜索“去杭州的高铁”，但是在One-hot表征下“火车”和“高铁”是正交的——One-hot向量无法体现语义相似度",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 4.44,
+      "top": 3.63,
+      "width": 5.06,
+      "height": 0.91,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 4.6
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "火车 = [0, 0, 0, 0, 0, 1, 0, 0]",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "7030A0"
+        },
+        {
+          "text": "高铁 = [0, 0, 0, 1, 0, 0, 0, 0]",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "7030A0"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.6,
+      "top": 5.43,
+      "width": 12.18,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "解决方案：通过表征学习得到能够包含词汇语义的表征",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-32": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "通过上下文表示单词",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.04,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "一个词的含义是由经常出现在它附近的词语决定的",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-33": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.95,
+      "top": 5.94,
+      "width": 6.54,
+      "height": 0.4,
+      "paragraphs": [
+        {
+          "text": "Word2vec (Mikolov et al. 2013, ICLR Workshop)",
+          "font_name": "微软雅黑",
+          "font_size": 18.0
+        }
+      ]
+    }
+  },
+  "slide-34": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的思想",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.66,
+      "top": 1.47,
+      "width": 12.18,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "统计语言模型——最大化文本语料的概率",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 4.91,
+      "top": 6.81,
+      "width": 4.01,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "词表为N次共有N^T的可能性！！",
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-35": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的思想",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.04,
+      "width": 12.18,
+      "height": 4.54,
+      "paragraphs": [
+        {
+          "text": "前提：有一个大的语料库",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词表Vocabulary中每个单词由一个向量表示",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "对于文本中的每个位置t，有一个中心词c和上下文o",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "可以通过c和o的向量相似度，来计算当中心词是c时上下文是o的概率（或当上下文是o时中心词是c的概率）",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "通过调整单词的向量，使得语料库中上述概率最大化",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-36": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的思想",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.66,
+      "top": 1.47,
+      "width": 12.18,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "两种变体：Skip-gram（中心词预测上下文）；CBOW（上下文预测中心词）",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.0,
+      "top": 6.49,
+      "width": 3.3,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "下面以Skip-gram为例介绍",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        },
+        {
+          "text": "（避免高频词淹没）",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-37": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的思想",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-38": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的思想",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-39": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的目标函数",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 9.15,
+      "top": 2.48,
+      "width": 3.45,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "t：单词在文本中的位置",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        },
+        {
+          "text": "m：上下文窗口的大小，如5",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 5.55,
+      "top": 4.01,
+      "width": 3.56,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "求log平均，得到损失函数",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-40": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的目标函数",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 8.22,
+      "top": 4.16,
+      "width": 4.21,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "中心词向量和上下文向量分开更加灵活，有利于模型优化",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.22,
+      "top": 5.0,
+      "width": 4.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "V表示词表Vocabulary中的所有单词",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        }
+      ]
+    }
+  },
+  "slide-41": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的优化——Negative Sampling",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.05,
+      "top": 2.02,
+      "width": 11.38,
+      "height": 2.98,
+      "paragraphs": [
+        {
+          "text": "问题：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "对于每一个上下文o，需要计算其与词表V中所有单词的相似度，复杂度极高",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "如何解决？",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "无需计算词表中所有单词，采样负样本",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "多分类 → 多个二分类",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.6,
+      "top": 6.13,
+      "width": 9.95,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "鼓励真实的上下文其向量相似度与中心词高，其他的负样本向量相似度与中心词低",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-42": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Word2vec算法的优化——层次Softmax",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.05,
+      "top": 2.02,
+      "width": 5.82,
+      "height": 4.91,
+      "paragraphs": [
+        {
+          "text": "另一个解决方案：",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "多分类 → 多个二分类",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "构建二叉树，每个叶子节点对应词表中的一个单词，非叶子节点为二分类器",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "将Softmax转化为中心词向量从根节点一直到叶子节点二分类概率的连乘",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "优化：使用基于词频的Huffman树，高词频对应更短的路径，加快速度",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "7030A0",
+          "line_spacing": 28.8
+        }
+      ]
+    }
+  },
+  "slide-43": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "从局部上下文预测到全局统计",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.66,
+      "top": 1.72,
+      "width": 12.18,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "语义关系是否可以直接从“全局统计结构”中恢复？——GloVe",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 4.32,
+      "top": 5.74,
+      "width": 6.54,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "GloVe (Pennington et al. 2014, EMNLP)",
+          "font_name": "微软雅黑"
+        }
+      ]
+    }
+  },
+  "slide-44": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "从局部上下文预测到全局统计",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.66,
+      "top": 1.72,
+      "width": 12.18,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "现象：单词共现矩阵（co-occurrence matrix）蕴含了相似度语义",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-45": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "GloVe算法的思想与目标函数",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.88,
+      "top": 2.04,
+      "width": 11.38,
+      "height": 4.55,
+      "paragraphs": [
+        {
+          "text": "核心思想：学习表征向量使单词之间的向量相似度拟合共现次数",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "目标函数：最小化",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "X：共现矩阵",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "i：中心词",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "j：上下文词",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "v：可学习的单词向量",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "对词频进行log缩小频率差距；b：偏置项，提高拟合的灵活性",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        },
+        {
+          "text": "f是权重参数，平衡高频词和低频词的训练比重",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 28.8
+        }
+      ]
+    }
+  },
+  "slide-46": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "表征的线性结构",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.66,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.63,
+      "paragraphs": [
+        {
+          "text": "woman – man + king = queen",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-47": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 3.49,
+      "width": 13.01,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "四、文本数据的自监督学习",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-48": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.08,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "RNN和LSTM基本概念",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.92,
+      "top": 1.96,
+      "width": 5.44,
+      "height": 1.78,
+      "paragraphs": [
+        {
+          "text": "① RNN (Recurrent Neural Networks)：",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "需要针对序列数据的上下文连续建模能力",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        },
+        {
+          "text": "当前时刻的输出同时取决于当前输入和前一时刻的隐藏状态，递归传递历史信息",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.03,
+      "top": 1.8,
+      "width": 5.46,
+      "height": 2.22,
+      "paragraphs": [
+        {
+          "text": "② LSTM (Long Short-Term Memory)",
+          "font_name": "微软雅黑",
+          "bold": true
+        },
+        {
+          "text": "针对长序列数据，普通RNN梯度会指数级衰减或膨胀，导致遗忘久远历史信息",
+          "font_name": "微软雅黑"
+        },
+        {
+          "text": "LSTM引入遗忘门、输入门和输出门改进了RNN的隐藏状态传递方式。进而可以有选择地保留关键信息，丢弃无关内容",
+          "font_name": "微软雅黑"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.73,
+      "top": 6.99,
+      "width": 5.75,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "注：本节课我们不关注具体架构细节",
+          "alignment": "CENTER",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-49": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 10.83,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Transformer——可扩展序列建模基座",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.89,
+      "top": 1.85,
+      "width": 7.43,
+      "height": 4.98,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.38
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "RNN/CNN序列建模并行性、长程依赖差",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "color": "C00000"
+        },
+        {
+          "text": "Self-Attention+并行训练 → “规模化预训练”",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "突破并行瓶颈：允许序列中所有位置同时计算。",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.8,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "解决长程依赖：任意两个词的距离都被视为 1.",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.8,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "开启Scaling Law：使得利用海量数据训练超大参数模型成为可能。",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.8,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "Attention Is All You Need",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "核心思想：不再需要复杂的循环神经网络或卷积神经网络来提取表征。",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.8,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.97,
+      "top": 6.59,
+      "width": 5.75,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 1.38
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "注：本节课我们不关注具体架构细节",
+          "alignment": "CENTER",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-50": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "ELMo",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "Word2Vec为每个词赋予唯一向量，无法解决一词多义，下游依赖大量人工标注。",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.1,
+      "top": 2.62,
+      "width": 10.22,
+      "height": 1.18,
+      "paragraphs": [
+        {
+          "text": "ELMo (Embeddings from Language Models)",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        },
+        {
+          "text": "训练两个独立方向LSTM（左→右和右→左），将同一词在两组LSTM顶层产生的隐藏状态与原始词向量拼接，形成随上下文动态变化的深层语境化表征",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.47,
+      "top": 6.21,
+      "width": 10.24,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "局限：由于两个LSTM独立训练、参数不共享，上下文信息仅在最后阶段进行浅层拼接，无法实现词语间的深层双向交互与融合。",
+          "font_name": "微软雅黑",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-51": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "BERT动机",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.98,
+      "top": 1.73,
+      "width": 11.51,
+      "height": 1.43,
+      "paragraphs": [
+        {
+          "text": "BERT (Bidirectional Encoder Representations from Transformers) 旨在通过自注意力使每一层都同时编码两侧上下文，实现更深层的双向理解",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": false,
+          "theme_color": "TEXT_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.32,
+      "top": 6.74,
+      "width": 2.57,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "早期LSTM-序列预测"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.5,
+      "top": 6.76,
+      "width": 3.03,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Transformer-双向全连接",
+          "alignment": "CENTER"
+        },
+        {
+          "text": "（更兼容预训练）",
+          "alignment": "CENTER"
+        }
+      ]
+    }
+  },
+  "slide-52": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "BERT核心机制",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "去噪自编码：随机15%掩码，利用上下文重建（完形填空！）",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.1,
+      "top": 2.62,
+      "width": 10.86,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "随机选择输入序列中15%的token进行遮挡处理，迫使模型利用被遮挡位置左右的所有可见上下文来预测原始词汇",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.52,
+      "top": 6.34,
+      "width": 10.3,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "通过去噪自编码机制，强制模型深度整合上下文进行语义推理，而非依赖单侧序列",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-53": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "BERT核心机制",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "双向掩码预测：每个被遮挡位置基于双向上下文输出词表概率分布",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.1,
+      "top": 2.77,
+      "width": 10.85,
+      "height": 0.98,
+      "paragraphs": [
+        {
+          "text": "在Transformer Encoder输出层，被遮挡位置对应的隐藏向量经简单分类头映射到词表空间，通过softmax分布预测原始token",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.22,
+      "top": 4.1,
+      "width": 4.21,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "M 是被遮挡位置的索引集合，x\\M 为其余可见token",
+          "font_name": "Cambria Math",
+          "bold": true,
+          "italic": true,
+          "color": "7030A0"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.68,
+      "top": 6.11,
+      "width": 7.28,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "单向生成 → 双向去噪，为深度语义理解表征奠定基础",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-54": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "BERT优势与应用",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.9,
+      "top": 1.99,
+      "width": 10.85,
+      "height": 0.98,
+      "paragraphs": [
+        {
+          "text": "优势：BERT通过双向去噪自编码预训练，在多项语言理解基准上显著超越此前的静态词向量与单向模型",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.53,
+      "top": 6.11,
+      "width": 10.22,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "通过为不同理解任务设计简单的输出层（如分类头或起止位置预测），BERT表征可直接支持情感分析、语义推理、问答抽取与实体识别等任务",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-55": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "BERT局限",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.33,
+      "width": 0.02,
+      "height": 0.0,
+      "paragraphs": [
+        {
+          "text": "训练规模保守，模型潜力尚未激发——Scaling Law",
+          "bullet": true,
+          "level": 2,
+          "space_before": 15.0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 31.2
+        },
+        {
+          "text": "引入的句级NSP (Next Sentence Prediction)辅助任务以及输入格式可能分散核心掩码——消融实验探究",
+          "bullet": true,
+          "level": 2,
+          "space_before": 15.0,
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 31.2
+        }
+      ]
+    }
+  },
+  "slide-56": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "RoBERTa——Scaling Law",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.15,
+      "top": 1.75,
+      "width": 10.07,
+      "height": 1.95,
+      "paragraphs": [
+        {
+          "text": "RoBERTa (Robustly optimized BERT approach) 在保持BERT架构完全不变的前提下，改变了训练规模：",
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "训练数据：16GB → 160GB",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "步数：100K → 500K",
+          "bullet": true,
+          "level": 1,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.53,
+      "top": 6.11,
+      "width": 10.22,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "Scaling Law：架构不变的情况下，仅通过扩大数据规模、增加训练步数，可收获明显性能提升。说明训练充分性比架构创新更能决定预训练模型上限。",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-57": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 12.92,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "RoBERTa——消融探究",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.76,
+      "top": 1.92,
+      "width": 10.85,
+      "height": 1.09,
+      "paragraphs": [
+        {
+          "text": "RoBERTa 移除NSP辅助任务，改变输入格式，进行了消融实验探究",
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.53,
+      "top": 6.11,
+      "width": 10.22,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "聚焦学习目标：预训练任务的设计应聚焦于核心表征学习目标，冗余的辅助任务不仅非必需，还可能干扰模型对深层语义结构的捕捉",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-58": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "NTP回归——从理解到生成",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.98,
+      "top": 1.5,
+      "width": 11.51,
+      "height": 1.04,
+      "paragraphs": [
+        {
+          "text": "BERT双向去噪——理解路线",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "NTP (Next Token Prediction)单向预测下一个token——生成路线",
+          "bullet": true,
+          "level": 0,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.1,
+      "top": 2.68,
+      "width": 10.86,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "NTP将序列建模为条件概率的连乘积，模型只能依赖左侧已生成内容来推断后续token，这种单向约束使其在生成流畅文本上具有先天优势",
+          "font_name": "微软雅黑",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.53,
+      "top": 6.37,
+      "width": 9.64,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "NTP确立了自回归生成的训练范式，为GPT系列将技术路线从理解转变为生成奠定了目标函数基础",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-59": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "GPT系列",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.01,
+      "top": 1.61,
+      "width": 11.51,
+      "height": 0.68,
+      "paragraphs": [
+        {
+          "text": "NTP的规模化与能力涌现：GPT (Generative Pre-trained Transformer)系列",
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.23,
+      "top": 2.41,
+      "width": 10.74,
+      "height": 1.21,
+      "paragraphs": [
+        {
+          "text": "从GPT-1到GPT-3，OpenAI坚持decoder-only自回归架构，通过参数与数据规模的指数级扩展，证明规模化本身足以驱动性能从“需要微调”提升至“上下文即学习”",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.53,
+      "top": 5.99,
+      "width": 10.12,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "GPT系列将NTP从学术验证推向工程化规模化，以175B参数宣告大模型时代来临，并催生了以提示驱动模型的新交互范式",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-60": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "ChatGPT",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.06,
+      "top": 1.57,
+      "width": 10.74,
+      "height": 0.91,
+      "paragraphs": [
+        {
+          "text": "在GPT-3.5基础上引入RLHF (Reinforcement Learning from Human Feedback)，将模型输出与人类偏好对齐",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.68,
+      "top": 5.36,
+      "width": 10.12,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "ChatGPT证明，在规模化预训练之后，对齐技术是激发生成模型实用价值的一个里程碑，为后续大模型产品化确立了预训练+对齐的标准路径",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-61": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Chinchilla动机",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.01,
+      "top": 1.61,
+      "width": 11.51,
+      "height": 0.68,
+      "paragraphs": [
+        {
+          "text": "基于Scaling Law，GPT-3后大模型普遍进行盲目扩参。性能提升唯一解法？",
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "bold": false,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.23,
+      "top": 2.41,
+      "width": 10.74,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "Chinchilla以与Gopher相同的计算预算、仅1/4的参数和4.7倍的数据，在广泛下游任务上全面超越Gopher、GPT-3、Jurassic-1及MT-NLG 530B",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 6.38,
+      "width": 10.29,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "结论：在相同计算预算下，主流大模型严重训练不足。缩小模型规模并等比例增加数据量，可获得更优的下游性能",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-62": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Chinchilla最优配比",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.23,
+      "top": 1.7,
+      "width": 10.54,
+      "height": 1.21,
+      "paragraphs": [
+        {
+          "text": "Chinchilla通过对400余个模型（70M~16B参数）的训练曲线进行三种独立拟合，发现计算最优条件下模型规模与训练token数应近似等比例增长。推翻了此前结论“扩参远快于扩数据”",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.71,
+      "top": 6.38,
+      "width": 9.58,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "模型规模与数据规模应随计算预算近似等比例扩展，约20:1的token-参数比成为计算最优训练的核心约束",
+          "font_name": "微软雅黑",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-63": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Chinchilla启示",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.23,
+      "top": 1.49,
+      "width": 10.54,
+      "height": 1.06,
+      "paragraphs": [
+        {
+          "text": "Chinchilla表明，在固定计算预算下追求更大模型导致严重欠训练",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "line_spacing": 28.6
+        },
+        {
+          "text": "预训练的竞争指标应该从参数量转变为单位计算量的性能效率",
+          "bullet": true,
+          "level": 2,
+          "font_name": "微软雅黑",
+          "font_size": 22.0,
+          "line_spacing": 28.6
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.21,
+      "top": 3.29,
+      "width": 3.95,
+      "height": 1.92,
+      "paragraphs": [
+        {
+          "text": "图中标注了Chinchilla(70B)、Gopher(280B)、GPT-3(175B)及MT-NLG(530B)的位置",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        },
+        {
+          "text": "显示当前主流大模型均显著偏离最优前沿",
+          "font_name": "微软雅黑",
+          "color": "7030A0"
+        }
+      ]
+    }
+  },
+  "slide-64": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 9.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Chinchilla工程优势与伦理挑战",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "Chinchilla不仅以更小模型获得更强性能，还显著降低了推理与微调的计算开销",
+          "font_name": "微软雅黑",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.1,
+      "top": 2.62,
+      "width": 10.22,
+      "height": 3.42,
+      "paragraphs": [
+        {
+          "text": "工程优势",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "line_spacing": 31.2
+        },
+        {
+          "text": "更优的模型并不一定需要更大的部署开销",
+          "bullet": true,
+          "level": 3,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 26.0
+        },
+        {
+          "text": "伦理挑战",
+          "font_name": "微软雅黑",
+          "font_size": 24.0,
+          "theme_color": "TEXT_1",
+          "line_spacing": 31.2
+        },
+        {
+          "text": "更大规模的数据将不可避免地包含有毒信息、社会偏见与私人信息。随着训练数据量级不断提高，数据集的质量控制、训练-测试重叠检测以及伦理审查变得至关重要",
+          "bullet": true,
+          "level": 3,
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "theme_color": "TEXT_1",
+          "line_spacing": 26.0
+        }
+      ]
+    }
+  },
+  "slide-65": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 12.75,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "图像与文本自监督学习的区别",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.42,
+      "top": 1.65,
+      "width": 6.0,
+      "height": 1.42,
+      "paragraphs": [
+        {
+          "text": "语言 NLP：离散符号与天然序列\u000b文本由离散 Token 组成，天然具备顺序、句法和上下文依赖，模型可直接通过掩码预测学习深层语义。",
+          "bold": true,
+          "line_spacing": 18.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.88,
+      "top": 1.65,
+      "width": 6.0,
+      "height": 1.42,
+      "paragraphs": [
+        {
+          "text": "图像 CV：连续信号与语义鸿沟\u000b图像是连续像素信号，局部像素相似性并不代表语义理解，所以我们考虑了构造代理任务来帮助表征学习。",
+          "bold": true,
+          "line_spacing": 18.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 2.1,
+      "top": 3.85,
+      "width": 8.71,
+      "height": 0.64,
+      "paragraphs": [
+        {
+          "text": "但是……图像能不能也像文本那样学习呢？",
+          "alignment": "CENTER",
+          "font_size": 32.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-66": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 10.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "图像掩码重建（Masked Image Modeling）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.45,
+      "width": 12.18,
+      "height": 1.6,
+      "paragraphs": [
+        {
+          "text": "核心思想：基于掩码的重建与理解 -> “通过残缺理解整体”",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "通过遮挡图像75%的区域，迫使模型利用仅存的可见部分去重建全局内容，从而跳出局部纹理的局限，真正习得物体结构与语义关联。",
+          "font_size": 24.0,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.67,
+      "top": 3.6,
+      "width": 5.06,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "BERT：mask 15% token → 预测缺失词",
+          "bold": true
+        },
+        {
+          "text": "MIM：mask 75% patches → 重建缺失图像块",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-67": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 10.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "MAE",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.41,
+      "top": 2.09,
+      "width": 6.84,
+      "height": 1.65,
+      "paragraphs": [
+        {
+          "text": "计算聚焦策略：利用 75% 的高比例遮挡，让 Encoder 仅处理 25% 的可见图块，将计算资源集中在对核心语义的理解上，避免算力浪费",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.41,
+      "top": 4.07,
+      "width": 6.84,
+      "height": 1.65,
+      "paragraphs": [
+        {
+          "text": "非对称高效架构：重型 Encoder 学习强表征，轻型 Decoder 仅负责像素重建，解耦了学习与重建，将训练速度提升了 3-5 倍。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 2.02,
+      "top": 6.11,
+      "width": 8.65,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "说明了：高比例 Mask 不仅能够学习到更强的表征，还能提高效率！",
+          "font_name": "微软雅黑",
+          "font_size": 20.0,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-68": {
+    "shape-0": {
+      "left": 0.33,
+      "top": 0.6,
+      "width": 11.09,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "图像序列预测（Image Sequence Prediction）",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.68,
+      "width": 12.18,
+      "height": 1.02,
+      "paragraphs": [
+        {
+          "text": "iGPT：将图像展平为像素序列，类比文本生成逻辑，采用 Transformer Decoder 架构，通过自回归方式依据前序像素预测下一像素，实现图像序列的生成式建模。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.49,
+      "top": 6.2,
+      "width": 10.86,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "问题：计算量极大（序列太长），且像素级的自回归预测在视觉上不如掩码重建有效！",
+          "font_size": 20.0,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-69": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 10.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SimMIM",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.45,
+      "width": 12.33,
+      "height": 1.09,
+      "paragraphs": [
+        {
+          "text": "直接对图像块进行随机掩码并通过轻量预测头回归原始像素值。这种无需离散化或复杂结构的方案，不仅大幅降低了计算成本，还能适配 ViT、Swin 等多种骨干网络。",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-70": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 3.49,
+      "width": 13.01,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "自监督表征学习总结",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-71": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 10.3,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "广泛应用",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.37,
+      "top": 1.58,
+      "width": 12.59,
+      "height": 1.13,
+      "paragraphs": [
+        {
+          "text": "自监督学习的核心就在于表征学习，即不依赖人工标注，而是通过从数据内部挖掘结构来自动生成监督信号，从而训练模型提取出能抓住数据本质的通用特征表示。",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.37,
+      "top": 6.69,
+      "width": 4.24,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "视觉领域的爆发",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 6.06,
+      "top": 6.69,
+      "width": 6.9,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "大模型的核心引擎",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-72": {
+    "shape-0": {
+      "left": 0.37,
+      "top": 0.6,
+      "width": 10.3,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "发展历程",
+          "space_before": 1.0,
+          "font_name": "微软雅黑",
+          "font_size": 36.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.79,
+      "top": 1.93,
+      "width": 3.7,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "早期 (2015-2018)",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "核心：设计各种手工 Pretext 任务帮助模型理解",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        },
+        {
+          "text": "代表方法：Rotation, Jigsaw",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 5.64,
+      "top": 1.97,
+      "width": 3.86,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "融合期 (2021-2022)",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "核心：遮蔽图像建模（MIM），视觉与 NLP 架构大统一",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        },
+        {
+          "text": "代表方法：MAE, BEiT",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 2.91,
+      "top": 4.91,
+      "width": 3.7,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "爆发期 (2019-2020)",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "核心：对比学习，实例判别，从本质上学习核心特征",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        },
+        {
+          "text": "代表方法：SimCLR,  MoCo",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 8.24,
+      "top": 4.92,
+      "width": 3.86,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "现代 (2023-Present)",
+          "font_size": 24.0,
+          "bold": true,
+          "line_spacing": 30.0
+        },
+        {
+          "text": "核心：多模态表征，通向通用人工智能（AGI）",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        },
+        {
+          "text": "代表方法：LLM, VLM",
+          "font_size": 20.0,
+          "bold": true,
+          "line_spacing": 25.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,639 @@
+[
+  {
+    "slide": 1,
+    "file": "tmp\\chapter7_rendered_approx\\slide_001.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "主讲教师：王文冠"
+  },
+  {
+    "slide": 2,
+    "file": "tmp\\chapter7_rendered_approx\\slide_002.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "目标检测（Object Detection）"
+  },
+  {
+    "slide": 3,
+    "file": "tmp\\chapter7_rendered_approx\\slide_003.png",
+    "texts": 16,
+    "pics": 2,
+    "title": "单目标检测"
+  },
+  {
+    "slide": 4,
+    "file": "tmp\\chapter7_rendered_approx\\slide_004.png",
+    "texts": 8,
+    "pics": 1,
+    "title": "多目标检测"
+  },
+  {
+    "slide": 5,
+    "file": "tmp\\chapter7_rendered_approx\\slide_005.png",
+    "texts": 3,
+    "pics": 0,
+    "title": "多目标检测"
+  },
+  {
+    "slide": 6,
+    "file": "tmp\\chapter7_rendered_approx\\slide_006.png",
+    "texts": 4,
+    "pics": 2,
+    "title": "多目标检测"
+  },
+  {
+    "slide": 7,
+    "file": "tmp\\chapter7_rendered_approx\\slide_007.png",
+    "texts": 6,
+    "pics": 0,
+    "title": "R-CNN"
+  },
+  {
+    "slide": 8,
+    "file": "tmp\\chapter7_rendered_approx\\slide_008.png",
+    "texts": 7,
+    "pics": 1,
+    "title": "R-CNN"
+  },
+  {
+    "slide": 9,
+    "file": "tmp\\chapter7_rendered_approx\\slide_009.png",
+    "texts": 8,
+    "pics": 1,
+    "title": "R-CNN"
+  },
+  {
+    "slide": 10,
+    "file": "tmp\\chapter7_rendered_approx\\slide_010.png",
+    "texts": 6,
+    "pics": 2,
+    "title": "Fast R-CNN"
+  },
+  {
+    "slide": 11,
+    "file": "tmp\\chapter7_rendered_approx\\slide_011.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "Fast R-CNN"
+  },
+  {
+    "slide": 12,
+    "file": "tmp\\chapter7_rendered_approx\\slide_012.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "Fast R-CNN"
+  },
+  {
+    "slide": 13,
+    "file": "tmp\\chapter7_rendered_approx\\slide_013.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "Fast R-CNN"
+  },
+  {
+    "slide": 14,
+    "file": "tmp\\chapter7_rendered_approx\\slide_014.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "Faster R-CNN"
+  },
+  {
+    "slide": 15,
+    "file": "tmp\\chapter7_rendered_approx\\slide_015.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "Faster R-CNN"
+  },
+  {
+    "slide": 16,
+    "file": "tmp\\chapter7_rendered_approx\\slide_016.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "Faster R-CNN"
+  },
+  {
+    "slide": 17,
+    "file": "tmp\\chapter7_rendered_approx\\slide_017.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "Faster R-CNN"
+  },
+  {
+    "slide": 18,
+    "file": "tmp\\chapter7_rendered_approx\\slide_018.png",
+    "texts": 3,
+    "pics": 2,
+    "title": "训练与推理"
+  },
+  {
+    "slide": 19,
+    "file": "tmp\\chapter7_rendered_approx\\slide_019.png",
+    "texts": 2,
+    "pics": 3,
+    "title": "两阶段 vs. 单阶段"
+  },
+  {
+    "slide": 20,
+    "file": "tmp\\chapter7_rendered_approx\\slide_020.png",
+    "texts": 2,
+    "pics": 0,
+    "title": "单阶段目标检测器"
+  },
+  {
+    "slide": 21,
+    "file": "tmp\\chapter7_rendered_approx\\slide_021.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "YOLO"
+  },
+  {
+    "slide": 22,
+    "file": "tmp\\chapter7_rendered_approx\\slide_022.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "YOLO"
+  },
+  {
+    "slide": 23,
+    "file": "tmp\\chapter7_rendered_approx\\slide_023.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "SSD: 多尺度特征融合"
+  },
+  {
+    "slide": 24,
+    "file": "tmp\\chapter7_rendered_approx\\slide_024.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "SSD vs. YOLO"
+  },
+  {
+    "slide": 25,
+    "file": "tmp\\chapter7_rendered_approx\\slide_025.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "单阶段检测器的挑战"
+  },
+  {
+    "slide": 26,
+    "file": "tmp\\chapter7_rendered_approx\\slide_026.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "单阶段检测器的挑战"
+  },
+  {
+    "slide": 27,
+    "file": "tmp\\chapter7_rendered_approx\\slide_027.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "DETR"
+  },
+  {
+    "slide": 28,
+    "file": "tmp\\chapter7_rendered_approx\\slide_028.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "密集预测"
+  },
+  {
+    "slide": 29,
+    "file": "tmp\\chapter7_rendered_approx\\slide_029.png",
+    "texts": 4,
+    "pics": 2,
+    "title": "语义分割（Semantic Segmentation）"
+  },
+  {
+    "slide": 30,
+    "file": "tmp\\chapter7_rendered_approx\\slide_030.png",
+    "texts": 6,
+    "pics": 4,
+    "title": "语义分割的应用"
+  },
+  {
+    "slide": 31,
+    "file": "tmp\\chapter7_rendered_approx\\slide_031.png",
+    "texts": 6,
+    "pics": 1,
+    "title": "语义分割的应用"
+  },
+  {
+    "slide": 32,
+    "file": "tmp\\chapter7_rendered_approx\\slide_032.png",
+    "texts": 5,
+    "pics": 4,
+    "title": "语义分割的应用"
+  },
+  {
+    "slide": 33,
+    "file": "tmp\\chapter7_rendered_approx\\slide_033.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "语义分割的引入"
+  },
+  {
+    "slide": 34,
+    "file": "tmp\\chapter7_rendered_approx\\slide_034.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "语义分割的网络架构思考"
+  },
+  {
+    "slide": 35,
+    "file": "tmp\\chapter7_rendered_approx\\slide_035.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "语义分割的网络架构思考"
+  },
+  {
+    "slide": 36,
+    "file": "tmp\\chapter7_rendered_approx\\slide_036.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "语义分割的网络架构思考"
+  },
+  {
+    "slide": 37,
+    "file": "tmp\\chapter7_rendered_approx\\slide_037.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "语义分割的网络架构思考"
+  },
+  {
+    "slide": 38,
+    "file": "tmp\\chapter7_rendered_approx\\slide_038.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "语义分割的网络架构思考"
+  },
+  {
+    "slide": 39,
+    "file": "tmp\\chapter7_rendered_approx\\slide_039.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "上采样"
+  },
+  {
+    "slide": 40,
+    "file": "tmp\\chapter7_rendered_approx\\slide_040.png",
+    "texts": 6,
+    "pics": 2,
+    "title": "上采样"
+  },
+  {
+    "slide": 41,
+    "file": "tmp\\chapter7_rendered_approx\\slide_041.png",
+    "texts": 6,
+    "pics": 3,
+    "title": "上采样"
+  },
+  {
+    "slide": 42,
+    "file": "tmp\\chapter7_rendered_approx\\slide_042.png",
+    "texts": 5,
+    "pics": 4,
+    "title": "上采样"
+  },
+  {
+    "slide": 43,
+    "file": "tmp\\chapter7_rendered_approx\\slide_043.png",
+    "texts": 5,
+    "pics": 0,
+    "title": "上采样"
+  },
+  {
+    "slide": 44,
+    "file": "tmp\\chapter7_rendered_approx\\slide_044.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "FCN: 从图像分类到图像分割"
+  },
+  {
+    "slide": 45,
+    "file": "tmp\\chapter7_rendered_approx\\slide_045.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "FCN: 从图像分类到图像分割"
+  },
+  {
+    "slide": 46,
+    "file": "tmp\\chapter7_rendered_approx\\slide_046.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "U-Net"
+  },
+  {
+    "slide": 47,
+    "file": "tmp\\chapter7_rendered_approx\\slide_047.png",
+    "texts": 3,
+    "pics": 2,
+    "title": "U-Net"
+  },
+  {
+    "slide": 48,
+    "file": "tmp\\chapter7_rendered_approx\\slide_048.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "U-Net"
+  },
+  {
+    "slide": 49,
+    "file": "tmp\\chapter7_rendered_approx\\slide_049.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "DeepLab系列"
+  },
+  {
+    "slide": 50,
+    "file": "tmp\\chapter7_rendered_approx\\slide_050.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "DeepLab系列"
+  },
+  {
+    "slide": 51,
+    "file": "tmp\\chapter7_rendered_approx\\slide_051.png",
+    "texts": 4,
+    "pics": 2,
+    "title": "DeepLab系列"
+  },
+  {
+    "slide": 52,
+    "file": "tmp\\chapter7_rendered_approx\\slide_052.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "SegFormer"
+  },
+  {
+    "slide": 53,
+    "file": "tmp\\chapter7_rendered_approx\\slide_053.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "SegFormer"
+  },
+  {
+    "slide": 54,
+    "file": "tmp\\chapter7_rendered_approx\\slide_054.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "SegFormer"
+  },
+  {
+    "slide": 55,
+    "file": "tmp\\chapter7_rendered_approx\\slide_055.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "MaskFormer"
+  },
+  {
+    "slide": 56,
+    "file": "tmp\\chapter7_rendered_approx\\slide_056.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "MaskFormer"
+  },
+  {
+    "slide": 57,
+    "file": "tmp\\chapter7_rendered_approx\\slide_057.png",
+    "texts": 4,
+    "pics": 1,
+    "title": "MaskFormer"
+  },
+  {
+    "slide": 58,
+    "file": "tmp\\chapter7_rendered_approx\\slide_058.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "大模型时代: SAM"
+  },
+  {
+    "slide": 59,
+    "file": "tmp\\chapter7_rendered_approx\\slide_059.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "大模型时代: SAM"
+  },
+  {
+    "slide": 60,
+    "file": "tmp\\chapter7_rendered_approx\\slide_060.png",
+    "texts": 4,
+    "pics": 2,
+    "title": "大模型时代: SAM"
+  },
+  {
+    "slide": 61,
+    "file": "tmp\\chapter7_rendered_approx\\slide_061.png",
+    "texts": 3,
+    "pics": 2,
+    "title": "常见框架"
+  },
+  {
+    "slide": 62,
+    "file": "tmp\\chapter7_rendered_approx\\slide_062.png",
+    "texts": 4,
+    "pics": 2,
+    "title": "常见工具"
+  },
+  {
+    "slide": 63,
+    "file": "tmp\\chapter7_rendered_approx\\slide_063.png",
+    "texts": 10,
+    "pics": 2,
+    "title": "实例分割"
+  },
+  {
+    "slide": 64,
+    "file": "tmp\\chapter7_rendered_approx\\slide_064.png",
+    "texts": 3,
+    "pics": 2,
+    "title": "Mask R-CNN"
+  },
+  {
+    "slide": 65,
+    "file": "tmp\\chapter7_rendered_approx\\slide_065.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "Mask R-CNN"
+  },
+  {
+    "slide": 66,
+    "file": "tmp\\chapter7_rendered_approx\\slide_066.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "Mask R-CNN"
+  },
+  {
+    "slide": 67,
+    "file": "tmp\\chapter7_rendered_approx\\slide_067.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "Mask R-CNN"
+  },
+  {
+    "slide": 68,
+    "file": "tmp\\chapter7_rendered_approx\\slide_068.png",
+    "texts": 5,
+    "pics": 2,
+    "title": "Mask R-CNN"
+  },
+  {
+    "slide": 69,
+    "file": "tmp\\chapter7_rendered_approx\\slide_069.png",
+    "texts": 7,
+    "pics": 3,
+    "title": "视频理解"
+  },
+  {
+    "slide": 70,
+    "file": "tmp\\chapter7_rendered_approx\\slide_070.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "视频理解"
+  },
+  {
+    "slide": 71,
+    "file": "tmp\\chapter7_rendered_approx\\slide_071.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "视频理解"
+  },
+  {
+    "slide": 72,
+    "file": "tmp\\chapter7_rendered_approx\\slide_072.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "视频理解"
+  },
+  {
+    "slide": 73,
+    "file": "tmp\\chapter7_rendered_approx\\slide_073.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "单帧 CNN"
+  },
+  {
+    "slide": 74,
+    "file": "tmp\\chapter7_rendered_approx\\slide_074.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "早期融合"
+  },
+  {
+    "slide": 75,
+    "file": "tmp\\chapter7_rendered_approx\\slide_075.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "早期融合"
+  },
+  {
+    "slide": 76,
+    "file": "tmp\\chapter7_rendered_approx\\slide_076.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "晚期融合"
+  },
+  {
+    "slide": 77,
+    "file": "tmp\\chapter7_rendered_approx\\slide_077.png",
+    "texts": 2,
+    "pics": 2,
+    "title": "晚期融合"
+  },
+  {
+    "slide": 78,
+    "file": "tmp\\chapter7_rendered_approx\\slide_078.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "晚期融合"
+  },
+  {
+    "slide": 79,
+    "file": "tmp\\chapter7_rendered_approx\\slide_079.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "3D CNN"
+  },
+  {
+    "slide": 80,
+    "file": "tmp\\chapter7_rendered_approx\\slide_080.png",
+    "texts": 2,
+    "pics": 3,
+    "title": "早期融合 vs. 晚期融合 vs. 3D CNN"
+  },
+  {
+    "slide": 81,
+    "file": "tmp\\chapter7_rendered_approx\\slide_081.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "运动识别"
+  },
+  {
+    "slide": 82,
+    "file": "tmp\\chapter7_rendered_approx\\slide_082.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "运动识别"
+  },
+  {
+    "slide": 83,
+    "file": "tmp\\chapter7_rendered_approx\\slide_083.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "长期时序建模"
+  },
+  {
+    "slide": 84,
+    "file": "tmp\\chapter7_rendered_approx\\slide_084.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "RNN/LSTM -> 序列建模的经典工具： |  | 核心思想：使用循环神经网络来处理由 CNN 提取的逐帧特征序列。 |  | 流程：(1) 使用 CNN 从视频中提取局部特征向量；(2) 将这些特征向量按时间顺序送入 RNN；(3) RNN 的最终状态或所有状态用于最终预测。 |  | 优势：理论上可以捕获任意长度的时序依赖。"
+  },
+  {
+    "slide": 85,
+    "file": "tmp\\chapter7_rendered_approx\\slide_085.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "循环卷积网络 (Recurrent Convolutional Networks)： |  | 核心思想：将 RNN 的递归思想与 CNN 的权重共享思想结合。 |  | 架构特点：网络由多层组成，每一层在时间步 t 的输出，不仅取决于当前时间步上一层的输出，还取决于同一层在上一时间步 t-1 的输出。"
+  },
+  {
+    "slide": 86,
+    "file": "tmp\\chapter7_rendered_approx\\slide_086.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "时空自注意力：并行化序列建模 |  | 核心思想：将自注意力机制应用于 3D CNN 的特征图上，以捕获长距离的时空依赖。"
+  },
+  {
+    "slide": 87,
+    "file": "tmp\\chapter7_rendered_approx\\slide_087.png",
+    "texts": 1,
+    "pics": 1,
+    "title": "长期时序建模"
+  },
+  {
+    "slide": 88,
+    "file": "tmp\\chapter7_rendered_approx\\slide_088.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "从 CNN 到 Transformer |  | 趋势：Vision Transformer 及其变体（如 MViT, VideoMAE）已成为当前视频理解的主流和 SOTA 架构。"
+  },
+  {
+    "slide": 89,
+    "file": "tmp\\chapter7_rendered_approx\\slide_089.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "超越分类：时序动作定位 / 检测"
+  },
+  {
+    "slide": 90,
+    "file": "tmp\\chapter7_rendered_approx\\slide_090.png",
+    "texts": 2,
+    "pics": 1,
+    "title": "超越分类：时序动作定位 / 检测"
+  },
+  {
+    "slide": 91,
+    "file": "tmp\\chapter7_rendered_approx\\slide_091.png",
+    "texts": 3,
+    "pics": 1,
+    "title": "前沿方向：视频大语言模型"
+  }
+]

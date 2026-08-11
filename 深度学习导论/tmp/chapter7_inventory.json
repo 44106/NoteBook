@@ -1,0 +1,6295 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "left": 9.0,
+      "top": 0.28,
+      "width": 4.02,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "课程名称：深度学习导论",
+          "alignment": "CENTER",
+          "font_name": "Calibri",
+          "font_size": 24.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": -2.19,
+      "top": 3.24,
+      "width": 10.47,
+      "height": 1.23,
+      "paragraphs": [
+        {
+          "text": "第七章：深度视觉模型（二）",
+          "font_name": "微软雅黑",
+          "font_size": 54.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 2.69,
+      "top": 5.42,
+      "width": 8.31,
+      "height": 0.57,
+      "paragraphs": [
+        {
+          "text": "主讲教师：王文冠",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 28.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "目标检测（Object Detection）",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.3,
+      "paragraphs": [
+        {
+          "text": "相比于只能判断整张图像类别的分类任务，目标检测则更进一步，它不仅能识别图像中存在哪些对象，还能用边界框精确定位每个对象的位置，实现分类与定位的结合，广泛应用于自动驾驶、异常行为检测、医疗影像分析等领域。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.99,
+      "top": 3.53,
+      "width": 2.54,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分类",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.66,
+      "top": 3.53,
+      "width": 2.54,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分类 + 定位",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 6.79,
+      "top": 3.56,
+      "width": 5.55,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "识别行人、车辆等不同对象",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-2": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "单目标检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "单目标检测是指图像中只存在或只需检测一个目标对象的情况，任务相对简单。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.5,
+      "width": 3.76,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "网络结构与损失函数",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.37,
+      "top": 3.17,
+      "width": 10.29,
+      "height": 1.31,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "共享的卷积特征提取器 + 两个并行的全连接头。"
+        },
+        {
+          "text": "分类头：输出类别得分（Class Scores），使用 Softmax Loss 作为分类损失。",
+          "bullet": true,
+          "level": 1,
+          "bold": true
+        },
+        {
+          "text": "回归头：输出边界框坐标 (x, y, w, h)，使用 L2 Loss 作为定位损失。",
+          "bullet": true,
+          "level": 3,
+          "bold": true
+        },
+        {
+          "text": "总损失 = 分类损失 + λ * 定位损失（多任务损失）"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.05,
+      "top": 4.88,
+      "width": 2.8,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "卷积特征提取器 (AlexNet)",
+          "font_size": 16.0
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.22,
+      "top": 4.9,
+      "width": 0.88,
+      "height": 0.3,
+      "paragraphs": [
+        {
+          "text": "特征向量",
+          "alignment": "CENTER",
+          "font_size": 12.0
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 7.74,
+      "top": 5.34,
+      "width": 1.07,
+      "height": 0.45,
+      "paragraphs": [
+        {
+          "text": "分类头:",
+          "alignment": "CENTER",
+          "font_size": 10.5
+        },
+        {
+          "text": "4096 -> 1000",
+          "alignment": "CENTER",
+          "font_size": 10.5
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 8.96,
+      "top": 5.14,
+      "width": 0.94,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "类别分数：",
+          "font_size": 11.0
+        },
+        {
+          "text": "Cat: 0.9",
+          "font_size": 11.0
+        },
+        {
+          "text": "Dog: 0.05",
+          "font_size": 11.0
+        },
+        {
+          "text": "......",
+          "font_size": 11.0
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 10.48,
+      "top": 5.31,
+      "width": 1.99,
+      "height": 0.3,
+      "paragraphs": [
+        {
+          "text": "分类损失：Softmax Loss",
+          "font_size": 12.0
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 10.77,
+      "top": 4.86,
+      "width": 1.22,
+      "height": 0.29,
+      "paragraphs": [
+        {
+          "text": "正确类别：Cat",
+          "font_size": 11.0
+        }
+      ]
+    },
+    "shape-10": {
+      "left": 7.91,
+      "top": 6.39,
+      "width": 0.84,
+      "height": 0.45,
+      "paragraphs": [
+        {
+          "text": "回归头:",
+          "alignment": "CENTER",
+          "font_size": 10.5
+        },
+        {
+          "text": "4096 -> 4",
+          "alignment": "CENTER",
+          "font_size": 10.5
+        }
+      ]
+    },
+    "shape-11": {
+      "left": 11.99,
+      "top": 5.92,
+      "width": 0.71,
+      "height": 0.3,
+      "paragraphs": [
+        {
+          "text": "总损失",
+          "font_size": 12.0
+        }
+      ]
+    },
+    "shape-12": {
+      "left": 7.37,
+      "top": 6.95,
+      "width": 0.44,
+      "height": 0.24,
+      "paragraphs": [
+        {
+          "text": "4096",
+          "font_size": 8.0
+        }
+      ]
+    },
+    "shape-13": {
+      "left": 8.96,
+      "top": 6.46,
+      "width": 1.04,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "边界框坐标：",
+          "font_size": 11.0
+        },
+        {
+          "text": "(x, y, w, h)",
+          "font_size": 11.0
+        }
+      ]
+    },
+    "shape-14": {
+      "left": 10.48,
+      "top": 6.5,
+      "width": 1.57,
+      "height": 0.3,
+      "paragraphs": [
+        {
+          "text": "定位损失：L2 Loss",
+          "font_size": 12.0
+        }
+      ]
+    },
+    "shape-15": {
+      "left": 10.52,
+      "top": 6.99,
+      "width": 1.72,
+      "height": 0.29,
+      "paragraphs": [
+        {
+          "text": "正确坐标：(x’, y’, w’, h’)",
+          "font_size": 11.0
+        }
+      ]
+    },
+    "shape-16": {
+      "left": 1.18,
+      "top": 9.65,
+      "width": 0.79,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 2.55
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "(x, y)",
+          "font_name": "Arial",
+          "bold": true,
+          "color": "FF3300"
+        }
+      ]
+    },
+    "shape-17": {
+      "left": 2.94,
+      "top": 10.68,
+      "width": 0.36,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 3.59
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "h",
+          "font_name": "Arial",
+          "bold": true,
+          "color": "FF3300"
+        }
+      ]
+    },
+    "shape-18": {
+      "left": 2.18,
+      "top": 11.78,
+      "width": 0.4,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 4.69
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "w",
+          "font_name": "Arial",
+          "bold": true,
+          "color": "FF3300"
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "多目标检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "多目标检测需要在同一图像中同时识别和定位多个目标，这些目标可能属于相同或不同类别，且常伴随目标重叠、尺度变化等复杂场景，技术难度显著增加。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "核心挑战",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.35,
+      "top": 3.31,
+      "width": 10.29,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "每张图片需要不同数量的输出，而深度学习模型通常期望输入和输出具有固定的维度。",
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 8.6,
+      "top": 3.85,
+      "width": 1.16,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "4 个输出",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 8.6,
+      "top": 5.19,
+      "width": 1.31,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "16 个输出",
+          "bold": true
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 10.22,
+      "top": 4.76,
+      "width": 2.22,
+      "height": 1.01,
+      "paragraphs": [
+        {
+          "text": "如何将单目标检测的方法扩展到多目标检测上呢？",
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 8.6,
+      "top": 6.32,
+      "width": 1.72,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "很多个输出！",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "多目标检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "朴素思路：在图像上滑动不同尺寸和长宽比的窗口，对每个窗口应用一个 CNN 分类器，判断其是否包含物体及物体类别。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.33,
+      "top": 4.19,
+      "width": 2.31,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "问题：需要将 CNN 应用于海量位置、尺度和宽高比，计算成本非常高！",
+          "alignment": "JUSTIFY",
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.58,
+      "top": 8.81,
+      "width": 2.9,
+      "height": 1.01,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.26
+        },
+        "slide": {
+          "overflow_bottom": 2.31
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Dog? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Cat? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Background? YES",
+          "alignment": "CENTER",
+          "color": "000000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.63,
+      "top": 8.79,
+      "width": 2.9,
+      "height": 1.01,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.26
+        },
+        "slide": {
+          "overflow_bottom": 2.3
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Dog? YES",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Cat? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Background? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.65,
+      "top": 8.79,
+      "width": 2.9,
+      "height": 1.01,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.26
+        },
+        "slide": {
+          "overflow_bottom": 2.3
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Dog? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Cat? YES",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "Background? NO",
+          "alignment": "CENTER",
+          "color": "000000"
+        }
+      ]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.7,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "多目标检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.63,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "解决方案",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.37,
+      "top": 2.31,
+      "width": 11.41,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "区域提议 (Region Proposals)：先快速找出图像中“可能包含物体”的候选区域。只需对这几百到几千个候选区域进行精细分类和定位，大幅减少计算量。",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.37,
+      "top": 3.15,
+      "width": 11.41,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "经典方法 Selective Search: 基于颜色、纹理、大小、形状等相似性，自底向上合并超像素，生成约2000个“blobby”区域。",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.84,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "R-CNN（Region-based CNN）：利用 Selective Search 生成候选区域，经 CNN 提取特征后分类并回归边界框，首次实现了高精度的多目标检测。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "特征提取",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.32,
+      "top": 3.69,
+      "width": 7.1,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "3. 将每个缩放后的 RoI 独立地通过一个预训练的 CNN 提取特征"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.99,
+      "top": 4.77,
+      "width": 5.97,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2. 将每个 RoI 独立地缩放到固定尺寸（如 224x224）"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 5.32,
+      "top": 5.73,
+      "width": 6.95,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "1. 使用 Selective Search 生成大约 2000 个感兴趣区域（RoI）"
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.84,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分类与精调",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.64,
+      "top": 1.91,
+      "width": 8.78,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "5. 为每个 RoI 的特征向量训练一个线性回归器，预测从当前 RoI 到真实边界框的微小修正量（dx, dy, dw, dh）。"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.32,
+      "top": 2.72,
+      "width": 5.88,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "4. 为每个 RoI 的特征向量训练一个线性 SVM 分类器"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.32,
+      "top": 3.56,
+      "width": 7.1,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "3. 将每个缩放后的 RoI 独立地通过一个预训练的 CNN 提取特征"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 4.99,
+      "top": 4.64,
+      "width": 5.97,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2. 将每个 RoI 独立地缩放到固定尺寸（如 224x224）"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 5.32,
+      "top": 5.59,
+      "width": 6.95,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "1. 使用 Selective Search 生成大约 2000 个感兴趣区域（RoI）"
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.84,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "效率瓶颈",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.64,
+      "top": 1.91,
+      "width": 8.78,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "5. 为每个 RoI 的特征向量训练一个线性回归器，预测从当前 RoI 到真实边界框的微小修正量（dx, dy, dw, dh）。"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.32,
+      "top": 2.72,
+      "width": 5.88,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "4. 为每个 RoI 的特征向量训练一个线性 SVM 分类器"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.32,
+      "top": 3.56,
+      "width": 7.1,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "3. 将每个缩放后的 RoI 独立地通过一个预训练的 CNN 提取特征"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 4.99,
+      "top": 4.64,
+      "width": 5.97,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2. 将每个 RoI 独立地缩放到固定尺寸（如 224x224）"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 5.35,
+      "top": 5.46,
+      "width": 6.95,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "1. 使用 Selective Search 生成大约 2000 个感兴趣区域（RoI）"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 5.54,
+      "top": 6.13,
+      "width": 7.1,
+      "height": 0.8,
+      "paragraphs": [
+        {
+          "text": "问题：速度极慢! 每个图像需要执行大约 2000 次独立的 CNN 前向传播。计算高度冗余，因为大部分 RoI 在空间上是重叠的。",
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.73,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN：先将整张图像通过 ConvNet 提取一个共享的稠密特征图，再将候选区域映射到该特征图上提取固定长度特征，显著提升了训练效率与推理速度。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "特征提取",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.91,
+      "top": 3.0,
+      "width": 1.56,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 10.15,
+      "top": 2.99,
+      "width": 1.93,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "\"Slow\" R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 0.65,
+      "top": 3.99,
+      "width": 3.18,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "整图输入 ConvNet，得到特征图 (如 conv5)",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "将 Selective Search 生成的 RoI 映射到特征图上",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "从特征图上裁剪 (Crop)出对应的 RoI 特征块",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-10": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.73,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.45,
+      "top": 1.91,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "RoI 池化",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.05,
+      "top": 2.18,
+      "width": 1.56,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.3,
+      "top": 2.17,
+      "width": 1.93,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "\"Slow\" R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.61,
+      "top": 2.87,
+      "width": 3.17,
+      "height": 3.13,
+      "paragraphs": [
+        {
+          "text": "裁剪出的 RoI 特征块尺寸不一，无法直接送入全连接层。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "RoI Pooling 层：将任意尺寸的 RoI 特征块池化成固定尺寸的特征图",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "实现了端到端的训练",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    }
+  },
+  "slide-11": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.73,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.45,
+      "top": 1.91,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分类与精调",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.05,
+      "top": 2.18,
+      "width": 1.56,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.3,
+      "top": 2.17,
+      "width": 1.93,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "\"Slow\" R-CNN",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.61,
+      "top": 2.87,
+      "width": 3.17,
+      "height": 3.13,
+      "paragraphs": [
+        {
+          "text": "将 RoI Pooling 后的固定尺寸特征送入全连接层",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "两个并行输出头：Softmax 分类器 & 边界框回归器",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "损失函数同样是分类损失与定位损失的加权和。",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    }
+  },
+  "slide-12": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.73,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Fast R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.57,
+      "top": 1.91,
+      "width": 3.15,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "优势与遗留问题",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.01,
+      "top": 2.87,
+      "width": 3.61,
+      "height": 2.83,
+      "paragraphs": [
+        {
+          "text": "优势：速度大幅提升（共享卷积计算），端到端训练，精度高",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "遗留问题：区域提议方法（Selective Search）仍然是一个外部、独立、耗时的步骤，且是在 CPU 上运行，成为整个系统的瓶颈。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.13,
+      "top": 3.63,
+      "width": 1.46,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "效率瓶颈！",
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-13": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.39,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN：引入区域提议网络（Region Proposal Network, RPN），与检测网络共享底层卷积特征。RPN 取代了 Selective Search，实现完全在 GPU 上的端到端训练和推理。",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-14": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "RPN 锚点机制：在卷积特征图的每个空间位置上，预设 K 个不同尺度和长宽比的锚点框（Anchor Boxes）。锚点框覆盖了图像中可能出现的物体的各种形态。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.46,
+      "top": 4.81,
+      "width": 0.96,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "锚点框",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-15": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.39,
+      "paragraphs": [
+        {
+          "text": "RPN 二分类任务：对于每个锚点框，RPN 预测一个“物体性”（Objectness）得分。这是一个二分类问题，即该锚点框是“前景”（包含物体）还是“背景”，输出一个 K x H x W 的概率图。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-16": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.39,
+      "paragraphs": [
+        {
+          "text": "RPN 边界框回归：对于被预测为“前景”的锚点框，RPN 同时预测一个 4 维的修正向量 (dx, dy, dw, dh)，这个向量用于将原始的锚点框精调到更接近真实物体的位置和尺寸，最终输出一个 4K x H x W 的概率图。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-17": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Faster R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.67,
+      "top": 1.7,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "训练与推理",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.57,
+      "top": 2.34,
+      "width": 10.99,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "训练：将与真实框 IoU 较高的锚点视为正样本，较低的视为负样本。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "推理：对所有 K x H x W 个锚点框，根据其“物体性”得分排序，选取得分最高的大约 300 个作为最终的区域提议（Proposals）。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-18": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.06,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "两阶段 vs. 单阶段",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.14,
+      "top": 3.49,
+      "width": 2.49,
+      "height": 1.78,
+      "paragraphs": [
+        {
+          "text": "两阶段 -> 单阶段：",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "能否摒弃区域提议阶段，直接从图像特征中预测物体类别和位置？",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-19": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.17,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "单阶段目标检测器",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.18,
+      "paragraphs": [
+        {
+          "text": "单阶段目标检测器：将检测问题转化为一个密集预测问题；在特征图的每个位置上，直接预测多个边界框及其类别。代表工作包括 YOLO / SSD / RetinaNet ......",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.37,
+      "top": 6.21,
+      "width": 3.62,
+      "height": 3.0,
+      "overflow": {
+        "slide": {
+          "overflow_right": 0.65,
+          "overflow_bottom": 1.71
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "在每个网格单元内：",
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "对每个 base boxes 回归出最终边界框的 5 个参数：(dx, dy, dh, dw, confidence)",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "预测 C 个类别（含背景类）的得分",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "看起来很像 RPN，但是是针对特定类别的！",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-20": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.57,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "YOLO",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.38,
+      "paragraphs": [
+        {
+          "text": "YOLO (You Only Look Once)：将输入图像划分为 𝑆×𝑆 的网格，每个网格直接预测边界框坐标、置信度及类别概率，仅需一次前向传播即可完成全图检测，真正实现了端到端的实时目标检测。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-21": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.57,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "YOLO",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.38,
+      "paragraphs": [
+        {
+          "text": "YOLO后处理：先经置信度筛选剔除低分框，再通过非极大值抑制（NMS）去除重复检测，保留最优结果。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 2.49,
+      "top": 6.35,
+      "width": 1.29,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "S x S 网格",
+          "color": "000000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.45,
+      "top": 6.19,
+      "width": 2.44,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "许多具有不同对象概率的边界框",
+          "alignment": "CENTER",
+          "color": "000000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.08,
+      "top": 6.19,
+      "width": 2.41,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "置信度筛选 +",
+          "alignment": "CENTER",
+          "color": "000000"
+        },
+        {
+          "text": "非极大值抑制",
+          "alignment": "CENTER",
+          "color": "000000"
+        }
+      ]
+    }
+  },
+  "slide-22": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.79,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SSD: 多尺度特征融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.54,
+      "top": 2.88,
+      "width": 4.16,
+      "height": 2.93,
+      "paragraphs": [
+        {
+          "text": "核心思想： 利用 CNN 不同层级的特征图来检测不同尺度的物体。",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "浅层特征图（高分辨率）用于检测小物体。",
+          "font_size": 20.0
+        },
+        {
+          "text": "深层特征图（低分辨率）用于检测大物体。",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-23": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.32,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SSD vs. YOLO",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.67,
+      "top": 3.2,
+      "width": 3.37,
+      "height": 2.46,
+      "paragraphs": [
+        {
+          "text": "YOLO 主要依赖最后的特征图，对小物体和密集物体检测效果不佳。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        },
+        {
+          "text": "SSD 通过多尺度特征融合，显著提升了对小物体的检测能力。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-24": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.64,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "单阶段检测器的挑战",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.59,
+      "top": 2.02,
+      "width": 3.12,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "正负样本不平衡",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.13,
+      "top": 3.25,
+      "width": 4.62,
+      "height": 2.76,
+      "paragraphs": [
+        {
+          "text": "在密集预测中，绝大多数锚点/位置都是背景（负样本）。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        },
+        {
+          "text": "这种极端的不平衡（长尾）会导致模型训练困难，梯度被大量简单的负样本主导，是阻碍单阶段检测器实现最先进精度的主要障碍。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-25": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.64,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "单阶段检测器的挑战",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.61,
+      "top": 1.92,
+      "width": 3.12,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "正负样本不平衡",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-26": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 1.57,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "DETR",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "核心架构：CNN 主干 + Transformer 编码器-解码器。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        },
+        {
+          "text": "简单的目标检测流程：直接从 Transformer 输出一组边界框，无需锚点框和回归边界框变换。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        },
+        {
+          "text": "使用二分匹配（匈牙利算法）将预测边界框与 GT 边界框进行匹配；训练以回归边界框坐标。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-27": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.35,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "密集预测",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.59,
+      "top": 1.64,
+      "width": 4.15,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "稀疏预测 -> 密集预测",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.27,
+      "top": 2.25,
+      "width": 12.35,
+      "height": 2.12,
+      "paragraphs": [
+        {
+          "text": "目前我们讨论了图像分类与目标检测，这两者主要关注图像整体或特定区域的稀疏预测（Sparse Prediction），输出的是类别标签或边界框。",
+          "font_size": 20.0
+        },
+        {
+          "text": "不同于这两者仅在图像级或对象级给出离散结果，密集预测（Dense Prediction Tasks）则更有挑战性，它要求模型对每一个像素都做出预测。我们将重点讨论：",
+          "font_size": 20.0
+        },
+        {
+          "text": "语义分割（Semantic Segmentation）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "实例分割（Instance Segmentation）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 2.17,
+      "top": 9.24,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 2.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "图像分类",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.16,
+      "top": 9.24,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 2.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "目标检测",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 8.28,
+      "top": 9.24,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 2.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "语义分割",
+          "bold": true
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 11.31,
+      "top": 9.24,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        },
+        "slide": {
+          "overflow_bottom": 2.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "实例分割",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-28": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 8.39,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割（Semantic Segmentation）",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.3,
+      "paragraphs": [
+        {
+          "text": "与图像分类任务只能判断整张图像的类别不同，语义分割能够为图像中的每一个像素点分配一个语义类别标签，从而实现对图像的精细化理解，被广泛应用于自动驾驶、医学影像分析、遥感图像分析等领域。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 2.26,
+      "top": 3.35,
+      "width": 2.54,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "原图",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 6.79,
+      "top": 3.37,
+      "width": 5.55,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分割图",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-29": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.0,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的应用",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "应用场景1：自动驾驶",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.51,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "语义分割在自动驾驶中的作用",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.88,
+      "top": 3.05,
+      "width": 11.86,
+      "height": 1.01,
+      "paragraphs": [
+        {
+          "text": "语义分割技术为自动驾驶车辆提供像素级的环境感知能力，能够精确识别可行驶区域、检测车辆与行人等动态障碍物、理解车道线与交通标志等道路要素，将摄像头采集的原始图像转化为结构化的场景理解，为后续的路径规划、避障决策和安全控制提供关键的环境信息支撑。",
+          "font_name": "system-ui",
+          "bold": false,
+          "italic": false,
+          "color": "1D1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.6,
+      "top": 4.35,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "示例：Cityscapes 数据集",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 1.06,
+      "top": 4.95,
+      "width": 11.86,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "城市街景语义分割标准数据集（19类像素级标注）",
+          "alignment": "CENTER",
+          "font_name": "system-ui",
+          "bold": false,
+          "italic": false,
+          "color": "1D1D1F"
+        }
+      ]
+    }
+  },
+  "slide-30": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.0,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的应用",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "应用场景2：医学影像",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.51,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "语义分割在医学影像中的作用",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.88,
+      "top": 3.05,
+      "width": 11.86,
+      "height": 1.01,
+      "paragraphs": [
+        {
+          "text": "语义分割技术在医学影像分析中发挥着关键作用，它能够对 CT、MRI 等医学扫描图像进行像素级的精细标注，自动分割出心脏、肝脏、肿瘤等特定器官或病灶区域，不仅辅助医生进行快速准确的诊断与量化分析，还为手术路径规划、治疗效果监测等提供了重要的客观依据。",
+          "font_name": "system-ui",
+          "bold": false,
+          "italic": false,
+          "color": "1D1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.6,
+      "top": 4.35,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "示例：BRATS 数据集",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 1.07,
+      "top": 5.27,
+      "width": 4.94,
+      "height": 1.62,
+      "paragraphs": [
+        {
+          "text": "模态：多模态脑部MRI图像",
+          "alignment": "JUSTIFY",
+          "font_name": "system-ui",
+          "bold": true,
+          "italic": false,
+          "color": "1D1D1F"
+        },
+        {
+          "text": "内容：健康组织、水肿区、坏死区等多区域标注",
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "临床意义：辅助医生快速定位肿瘤区域、量化肿瘤体积和生长速度、…",
+          "alignment": "JUSTIFY",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-31": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.0,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的应用",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 0.75,
+      "paragraphs": [
+        {
+          "text": "应用场景3：遥感图像",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.51,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "语义分割在遥感图像中的作用",
+          "alignment": "CENTER"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.88,
+      "top": 3.05,
+      "width": 11.86,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "语义分割技术能够对卫星遥感影像和航空摄影进行像素级的地物分类，自动识别并提取建筑物、道路、水体、植被、农田等地理要素，实现大范围的土地覆盖分类与变化检测。",
+          "font_name": "system-ui",
+          "bold": false,
+          "italic": false,
+          "color": "1D1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.6,
+      "top": 3.98,
+      "width": 3.79,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "示例：FoVx4 数据集",
+          "alignment": "CENTER"
+        }
+      ]
+    }
+  },
+  "slide-32": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的引入",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "如前所述，我们可以将语义分割理解为像素级的分类任务",
+          "font_size": 24.0
+        },
+        {
+          "text": "然而，单个像素缺乏上下文，无法独立判断类别",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-33": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 5.97,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的网络架构思考",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 2.31,
+      "top": 2.9,
+      "width": 7.09,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "像素级的分类也是分类任务，",
+          "alignment": "CENTER",
+          "font_size": 28.0,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "因此借鉴图像分类方法——",
+          "alignment": "CENTER",
+          "font_size": 28.0,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "先对图片下采样，然后做像素级预测？",
+          "alignment": "CENTER",
+          "font_size": 28.0,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    }
+  },
+  "slide-34": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.08,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的网络架构思考",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "朴素思路：对图片下采样，然后做像素级预测",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.05,
+      "top": 4.31,
+      "width": 3.23,
+      "height": 1.62,
+      "paragraphs": [
+        {
+          "text": "问题：图像分类的下采样是为了增大感受野，理解高层语义信息即可。",
+          "alignment": "JUSTIFY",
+          "color": "C00000"
+        },
+        {
+          "text": "而我们是像素级的预测！",
+          "alignment": "JUSTIFY",
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-35": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 5.97,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的网络架构思考",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 2.31,
+      "top": 2.9,
+      "width": 7.09,
+      "height": 1.84,
+      "paragraphs": [
+        {
+          "text": "可否不进行下采样，",
+          "alignment": "CENTER",
+          "font_size": 28.0,
+          "theme_color": "TEXT_1"
+        },
+        {
+          "text": "直接保持原分辨率做预测？",
+          "alignment": "CENTER",
+          "font_size": 28.0,
+          "theme_color": "TEXT_1"
+        }
+      ]
+    }
+  },
+  "slide-36": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.08,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的网络架构思考",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "朴素思路：直接保持原分辨率做预测",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.19,
+      "top": 3.92,
+      "width": 2.47,
+      "height": 1.92,
+      "paragraphs": [
+        {
+          "text": "问题：每张图的分辨率通常较大(512x512, 1024x1024, …)，这会导致计算量爆炸！",
+          "alignment": "JUSTIFY",
+          "color": "C00000"
+        },
+        {
+          "text": "不下采样也会影响上下文的理解",
+          "alignment": "JUSTIFY",
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-37": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.0,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "语义分割的网络架构思考",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.63,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "解决方案",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.37,
+      "top": 2.31,
+      "width": 11.41,
+      "height": 1.78,
+      "paragraphs": [
+        {
+          "text": "采用下采样-上采样的结构",
+          "font_size": 20.0
+        },
+        {
+          "text": "层次化特征提取：捕获多尺度上下文和语义信息",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "计算高效：瓶颈层压缩特征维度，降低后续解码开销",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "空间恢复可控：解码器上采样，兼顾定位精度与语义一致性",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "…",
+          "bullet": true,
+          "level": 1,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-38": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "上采样",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "上采样：重建像素级预测图，将低分辨率特征图恢复至原始空间尺寸",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "反池化方法",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 5.28,
+      "top": 3.18,
+      "width": 1.78,
+      "height": 1.21,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "最近邻插值",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "0-填充",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "…",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    }
+  },
+  "slide-39": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "上采样",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "上采样：重建像素级预测图，将低分辨率特征图恢复至原始空间尺寸",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "单线性插值",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 4.28,
+      "top": 2.83,
+      "width": 4.75,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "利用邻近已知点的加权平均估计未知点值"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.22,
+      "top": 3.68,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "公式推导"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.32,
+      "top": 3.7,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "几何意义"
+        }
+      ]
+    }
+  },
+  "slide-40": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "上采样",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "上采样：重建像素级预测图，将低分辨率特征图恢复至原始空间尺寸",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "双线性插值",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.38,
+      "top": 2.8,
+      "width": 9.17,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "两次线性插值，利用目标点周围4个相邻像素的加权平均值来计算新像素位置的值"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.22,
+      "top": 3.34,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "公式推导"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.0,
+      "top": 3.3,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "几何意义"
+        }
+      ]
+    }
+  },
+  "slide-41": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "上采样",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "上采样：重建像素级预测图，将低分辨率特征图恢复至原始空间尺寸",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "Max Unpooling",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.98,
+      "top": 3.36,
+      "width": 5.5,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Max Pooling：",
+          "bold": true
+        },
+        {
+          "text": "不仅要输出最大值，还要记住每个最大值的位置"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 7.02,
+      "top": 3.33,
+      "width": 5.76,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Max Unpooling：",
+          "bold": true
+        },
+        {
+          "text": "利用池化时记录的位置信息，把值放回原来的位置"
+        }
+      ]
+    }
+  },
+  "slide-42": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.04,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "上采样",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "上采样：重建像素级预测图，将低分辨率特征图恢复至原始空间尺寸",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "转置卷积",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.72,
+      "top": 3.6,
+      "width": 6.69,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "参数（示例）：3×3卷积核，stride=2，pad=1",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "机制：每个输入像素通过卷积核\"扩散\"到输出的3×3区域",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.8,
+      "top": 5.51,
+      "width": 6.58,
+      "height": 0.71,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.17
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "重叠求和：多个输入的影响区域重叠时，对应位置求和",
+          "bullet": true,
+          "level": 0
+        },
+        {
+          "text": "可学习：卷积核权重通过训练学习，实现自适应上采样",
+          "bullet": true,
+          "level": 0
+        }
+      ]
+    }
+  },
+  "slide-43": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.78,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "FCN: 从图像分类到图像分割",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "FCN vs 图像分类",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 3.62,
+      "width": 5.06,
+      "height": 1.45,
+      "paragraphs": [
+        {
+          "text": "核心思想： 全连接层 -> 卷积层",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "全连接层：整图分类",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "卷积层：像素级预测",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "支持任意尺寸输入，端到端训练",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.36,
+      "top": 6.18,
+      "width": 4.29,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "因此输出热力图(heatmap)，",
+          "font_size": 20.0
+        },
+        {
+          "text": "而不是单一类别",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-44": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.8,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "FCN: 从图像分类到图像分割",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.12,
+      "top": 2.12,
+      "width": 5.06,
+      "height": 2.12,
+      "paragraphs": [
+        {
+          "text": "流程：",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "特征提取",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "全卷积化",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "分类层",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "上采样",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "像素级分割图",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.6,
+      "top": 4.33,
+      "width": 2.53,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "多尺度特征融合",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.93,
+      "top": 4.99,
+      "width": 5.06,
+      "height": 1.45,
+      "paragraphs": [
+        {
+          "text": "深层特征：语义强，但位置模糊",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "浅层特征：位置准，但语义弱",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "因此，融合不同层的特征，",
+          "font_size": 20.0
+        },
+        {
+          "text": "兼顾语义和定位",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-45": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.09,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "U-Net",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "U-Net通过完全对称的编码器-解码器结构和密集的跳跃连接，在恢复分辨率的同时精确保留空间细节，成为小数据医学图像分割的标杆方法。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-46": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.09,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "U-Net",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "U-Net通过完全对称的编码器-解码器结构和密集的跳跃连接，在恢复分辨率的同时精确保留空间细节，成为小数据医学图像分割的标杆方法。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "下采样 & 上采样",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-47": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.09,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "U-Net",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "U-Net通过完全对称的编码器-解码器结构和密集的跳跃连接，在恢复分辨率的同时精确保留空间细节，成为小数据医学图像分割的标杆方法。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "跳跃连接",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.75,
+      "top": 3.36,
+      "width": 4.89,
+      "height": 3.74,
+      "paragraphs": [
+        {
+          "text": "将编码器对应阶段的特征图与解码器上采样后的特征图按通道拼接",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "保留空间细节：浅层的边缘、纹理信息直接传递到解码端，避免上采样丢失",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "精确定位：解码时能准确知道位置，提升分割边界精度",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "多尺度融合：深层语义 + 浅层细节，让网络自己学习如何组合",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-48": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.51,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "DeepLab系列",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "DeepLab是语义分割领域的经典系列工作，通过空洞卷积扩大感受野、ASPP模块建模多尺度上下文等设计，系统性解决了\"多尺度目标\"和\"边界模糊\"两大核心挑战。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "DeepLab v1/v2",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.97,
+      "top": 3.4,
+      "width": 4.89,
+      "height": 3.13,
+      "paragraphs": [
+        {
+          "text": "针对语义分割出现的两个挑战：",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "多尺度目标：同一类别物体大小差异大",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "边界模糊：深层特征及上采样带来的边界处挑战",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "DeepLab v1/v2 引入空洞卷积，扩大感受野，捕获更多上下文。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-49": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.51,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "DeepLab系列",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "DeepLab是语义分割领域的经典系列工作，通过空洞卷积扩大感受野、ASPP模块建模多尺度上下文等设计，系统性解决了\"多尺度目标\"和\"边界模糊\"两大核心挑战。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "DeepLab v3",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.96,
+      "top": 3.69,
+      "width": 4.89,
+      "height": 2.83,
+      "paragraphs": [
+        {
+          "text": "然而，单一眼洞率无法适应所有尺度目标",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "因此，DeepLab v3 提出 ASPP（Atrous Spatial Pyramid Pooling），并行多个不同空洞率的卷积 + 全局池化",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "从而同时捕获局部细节与全局上下文，适应不同大小目标，提升鲁棒性。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-50": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.51,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "DeepLab系列",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "DeepLab是语义分割领域的经典系列工作，通过空洞卷积扩大感受野、ASPP模块建模多尺度上下文等设计，系统性解决了\"多尺度目标\"和\"边界模糊\"两大核心挑战。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "DeepLab v3+",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.79,
+      "top": 3.81,
+      "width": 5.36,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "最终形态：DeepLab v3+ 架构图",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "改进ASPP，加入Batch Normalization层",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "实现Feature Map的跨Block融合",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-51": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.99,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SegFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "SegFormer：基于Transformer骨干网络的语义分割领域的代表性工作。通过引入层次化Mix Transformer Backbone和轻量级MLP Decoder，开创了高效灵活的新范式。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "性能与效率",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.97,
+      "top": 3.4,
+      "width": 4.89,
+      "height": 3.43,
+      "paragraphs": [
+        {
+          "text": "作为Transformer-based语义分割的代表作，SegFormer展现了纯Transformer架构的全面优势：",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "vs CNN方法",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "vs 其他Transformer方法",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "SegFormer在参数效率和推理速度上实现数量级提升，成为语义分割从CNN向Transformer范式转变的关键里程碑。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-52": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.99,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SegFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "SegFormer：基于Transformer骨干网络的语义分割领域的代表性工作。通过引入层次化Mix Transformer Backbone和轻量级MLP Decoder，开创了高效灵活的新范式。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.63,
+      "top": 4.21,
+      "width": 4.89,
+      "height": 1.62,
+      "paragraphs": [
+        {
+          "text": "SegFormer由两部分组成：",
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "层次化Transformer-based Encoder",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "仅由几个FC构成的Decoder",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-53": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.99,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "SegFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "MiT-Bx Backbone",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 20.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.65,
+      "top": 2.5,
+      "width": 5.06,
+      "height": 1.78,
+      "paragraphs": [
+        {
+          "text": "层次化特征提取",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "重叠 Patch Embedding",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "混合前馈网络 Mix-FFN",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "相比传统baseline，具备更大感受野",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.61,
+      "top": 4.91,
+      "width": 2.53,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "All-MLP Decoder",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.3,
+      "top": 5.74,
+      "width": 5.06,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "由于MiT Backbone具备更大感受野，解码器无需复杂结构",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-54": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.2,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "MaskFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "MaskFormer提出掩码分类新范式，将问题转化为\"预测一组{掩码, 类别}对\"的集合预测问题，通过Query机制与匈牙利匹配实现端到端训练，无需复杂后处理。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "范式更改",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 4.07,
+      "top": 3.62,
+      "width": 4.89,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "分类范式的更改：不再是逐像素分类，而是Mask Classification",
+          "alignment": "JUSTIFY",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-55": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.2,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "MaskFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "MaskFormer提出掩码分类新范式，将问题转化为\"预测一组{掩码, 类别}对\"的集合预测问题，通过Query机制与匈牙利匹配实现端到端训练，无需复杂后处理。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.15,
+      "top": 2.88,
+      "width": 8.45,
+      "height": 1.62,
+      "paragraphs": [
+        {
+          "text": "Backbone+Pixel Decoder 生成像素级嵌入，Transformer Decoder 处理 N 个 Query 生成对象级嵌入",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "通过计算 Query 嵌入与像素嵌入的相似度，直接生成 N 个候选掩码",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "并行输出类别预测和掩码预测，语义分割推理时聚合同类掩码生成最终分割图",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-56": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.2,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "MaskFormer",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "MaskFormer提出掩码分类新范式，将问题转化为\"预测一组{掩码, 类别}对\"的集合预测问题，通过Query机制与匈牙利匹配实现端到端训练，无需复杂后处理。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.43,
+      "top": 3.03,
+      "width": 6.04,
+      "height": 1.62,
+      "paragraphs": [
+        {
+          "text": "Object Queries: 使用 N 个可学习的 query 向量",
+          "alignment": "JUSTIFY",
+          "bold": true
+        },
+        {
+          "text": "每个 query 独立预测一个语义 mask 和一个全局类别标签",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "通过 Transformer 解码器并行生成所有 mask",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        },
+        {
+          "text": "无需预定义类别数量，自然适应不同场景",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-57": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.5,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "大模型时代: SAM",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "SAM (Segment Anything Model) 是 Meta 发布的分割基础模型，通过提示式交互（点/框/文本）实现 zero-shot 通用分割，开创了\"一个模型分割万物\"的新范式。",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 2.74,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "架构图",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.27,
+      "top": 4.04,
+      "width": 0.61,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "v1",
+          "alignment": "JUSTIFY"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.27,
+      "top": 5.73,
+      "width": 0.61,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "v2",
+          "alignment": "JUSTIFY"
+        }
+      ]
+    }
+  },
+  "slide-58": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.55,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "大模型时代: SAM",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "可提示分割",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.76,
+      "top": 2.51,
+      "width": 5.36,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "点 Prompt",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "框 Prompt",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "文本 Prompt",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.6,
+      "top": 4.33,
+      "width": 2.53,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "SA-1B 数据集",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.93,
+      "top": 4.99,
+      "width": 5.06,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "模型+人工 构建数据集",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "包含11亿+掩码，1100万+图片",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "为编码器提供海量数据支持",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-59": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 4.45,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "大模型时代: SAM",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "实验结果",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.59,
+      "top": 3.06,
+      "width": 5.06,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "突破闭集限制：SAM未在某些多样化数据上训练，却能有效分割训练集中未充分出现的物体类别",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.56,
+      "top": 4.82,
+      "width": 5.06,
+      "height": 2.12,
+      "paragraphs": [
+        {
+          "text": "突破单一任务限制：",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "分割相关任务很多，如交互式分割、边缘检测、前景分割、语义分割、实例分割、全景分割…",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "SAM 可在推理时充当更大系统中的组件",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-60": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.77,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "常见框架",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.63,
+      "top": 1.54,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "MMEngine",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 4.33,
+      "width": 2.53,
+      "height": 0.49,
+      "paragraphs": [
+        {
+          "text": "Detectron 2",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 22.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-61": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.73,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "常见工具",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.45,
+      "top": 1.91,
+      "width": 2.5,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "WandB",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.78,
+      "top": 2.51,
+      "width": 3.17,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "结果曲线、Loss曲线等监控",
+          "alignment": "JUSTIFY"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.06,
+      "top": 2.51,
+      "width": 3.17,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "结果可视化对比",
+          "alignment": "CENTER"
+        }
+      ]
+    }
+  },
+  "slide-62": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "实例分割",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.44,
+      "top": 1.74,
+      "width": 12.45,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "为图像中的每一个物体实例生成一个二值掩码（Binary Mask），精确到像素级别。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0
+        },
+        {
+          "text": "需要同时解决检测（定位和分类）和分割（像素级描绘）两个子任务，对空间对齐精度要求极高。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 1.49,
+      "top": 5.59,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "图像分类",
+          "bold": true
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 4.48,
+      "top": 5.59,
+      "width": 1.2,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "目标检测",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 7.6,
+      "top": 5.59,
+      "width": 1.2,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "语义分割",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 10.63,
+      "top": 5.59,
+      "width": 1.2,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "实例分割",
+          "bold": true
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 0.61,
+      "top": 6.11,
+      "width": 2.97,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "只知道图片里面有什么物体",
+          "font_size": 16.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 3.7,
+      "top": 6.11,
+      "width": 2.97,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "不知道每个物体的精确轮廓",
+          "font_size": 16.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-8": {
+      "left": 6.98,
+      "top": 6.11,
+      "width": 2.46,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "不区分同一类别的个体",
+          "font_size": 16.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-9": {
+      "left": 9.88,
+      "top": 6.11,
+      "width": 2.71,
+      "height": 0.37,
+      "paragraphs": [
+        {
+          "text": "区分同一类别的不同个体",
+          "font_size": 16.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-63": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 2.67,
+      "width": 5.03,
+      "height": 3.47,
+      "paragraphs": [
+        {
+          "text": "核心思想：在 Faster R-CNN 的基础上，增加一个预测掩码的分支。",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "架构详解：",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "共享主干和 RPN：与 Faster R-CNN 相同。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "三个并行输出头：分类头、边界框回归头、掩码头。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "RoI Align：替换 RoI Pooling，以保证掩码预测的像素级对齐精度。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0,
+          "color": "FF0000"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 11.3,
+      "top": 3.24,
+      "width": 0.77,
+      "height": 0.27,
+      "paragraphs": [
+        {
+          "text": "RoI Align",
+          "font_name": "Arial",
+          "font_size": 10.0,
+          "color": "000000"
+        }
+      ]
+    }
+  },
+  "slide-64": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.44,
+      "top": 1.74,
+      "width": 12.45,
+      "height": 1.07,
+      "paragraphs": [
+        {
+          "text": "问题：RoI Pooling 在映射和池化过程中存在两次量化（取整）操作，导致特征与原始 RoI 位置不对齐，对像素级任务（如实例分割）影响显著。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.65,
+      "top": 3.94,
+      "width": 4.22,
+      "height": 2.46,
+      "paragraphs": [
+        {
+          "text": "举例：图中 4×5 的 RoI（蓝色框）要池化为 2 x 2 的输出，理想情况下每个 bin 应当为 2 x 2.5，但是 RoI Pooling 会将高度取整为 2 或 3，导致实际池化区域偏离等分位置，最终使实例分割的 mask 边界错位。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-65": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.44,
+      "top": 1.74,
+      "width": 12.45,
+      "height": 1.07,
+      "paragraphs": [
+        {
+          "text": "解决方案 (RoI Align)：移除量化操作，使用双线性插值来精确地从特征图上采样 RoI 所需的值。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.63,
+      "top": 3.77,
+      "width": 3.81,
+      "height": 2.79,
+      "paragraphs": [
+        {
+          "text": "举例：RoI Align 保留浮点坐标，如第一个 bin 左上角在 (0, 0)，右下角在 (2, 2.5)。对于 bin 内的特征值，通过双线性插值从四个最近邻像素，如 (0, 0), (0, 1), (1, 0), (1, 1) 计算得到，确保每个特征值准确反映其实际覆盖区域。",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-66": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.58,
+      "top": 1.51,
+      "width": 2.94,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "掩码预测策略",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.37,
+      "top": 2.13,
+      "width": 11.05,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "逐类掩码：掩码头为每个类别都输出一个二值掩码。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "掩码选择：根据分类头的预测结果，只选择对应类别的掩码通道作为最终输出。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.56,
+      "top": 3.1,
+      "width": 2.94,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "训练目标",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.37,
+      "top": 3.87,
+      "width": 4.39,
+      "height": 2.32,
+      "paragraphs": [
+        {
+          "text": "分类和边界框损失：与 Faster R-CNN 相同。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "掩码损失：对 RoI 内的真实掩码进行下采样，与网络预测的 28x28 掩码计算逐像素的 sigmoid 交叉熵损失。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-67": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.58,
+      "top": 1.51,
+      "width": 2.17,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "多功能性",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.25,
+      "top": 2.13,
+      "width": 12.47,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "除了实例分割，Mask R-CNN 稍作修改即可用于 人体姿态估计（Human Pose Estimation）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "将关键点（如关节）视为一种特殊的“实例”，用类似掩码的方式预测。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.58,
+      "top": 5.44,
+      "width": 2.17,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "Note",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.25,
+      "top": 6.05,
+      "width": 12.47,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "Mask R-CNN 是两阶段实例分割的典范，精度高。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        },
+        {
+          "text": "也存在单阶段的实例分割方法（如 YOLACT, SOLO），追求速度。",
+          "bullet": true,
+          "level": 1,
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-68": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.35,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "视频理解",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.59,
+      "top": 1.64,
+      "width": 4.15,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "静态图像 -> 动态视频",
+          "alignment": "CENTER",
+          "font_name": "Times New Roman",
+          "font_size": 24.0,
+          "bold": true,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.27,
+      "top": 2.25,
+      "width": 12.35,
+      "height": 4.21,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.48,
+          "shape-4": 0.48,
+          "shape-5": 0.48,
+          "shape-6": 0.48
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "回顾：目前我们已经学习了四大关于 2D 图像的基础性任务。",
+          "font_size": 20.0
+        },
+        {
+          "text": "现在，我们进一步从静态图像识别迈向动态视频理解。",
+          "font_size": 20.0
+        },
+        {
+          "text": "视频理解在现实世界中的应用场景：监控、人机交互、内容审核等。",
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.47,
+      "top": 4.8,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.48
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "图像分类",
+          "bold": true
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.46,
+      "top": 4.8,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.48
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "目标检测",
+          "bold": true
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 7.58,
+      "top": 4.8,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.48
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "语义分割",
+          "bold": true
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 10.61,
+      "top": 4.8,
+      "width": 1.21,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.48
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "实例分割",
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-69": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "视频理解",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.44,
+      "top": 1.74,
+      "width": 12.58,
+      "height": 1.67,
+      "paragraphs": [
+        {
+          "text": "视频的本质：一连串按时间顺序排列的图像帧（视频 = 2D + 时间）。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "数据表示：一个 4D 张量，通常为 T x 3 x H x W 或 3 x T x H x W，其中 T 是帧数。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心挑战：如何有效建模和利用时间维度上的信息。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-70": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "视频理解",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.78,
+      "width": 11.79,
+      "height": 1.67,
+      "paragraphs": [
+        {
+          "text": "任务定义：给定一个视频片段，预测其所属的动作类别。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "关键区别：图像识别“物体”，视频识别“动作”或“事件”。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "输入：视频片段 (T x 3 x H x W)；输出：一个动作类别。",
+          "bullet": true,
+          "level": 0,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-71": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "视频理解",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 1.69,
+      "width": 11.86,
+      "height": 2.93,
+      "paragraphs": [
+        {
+          "text": "核心挑战：视频数据量巨大。未压缩的视频标清约 1.5 GB/分钟，高清约 10 GB/分钟。",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "解决方案：基于短片段训练",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "实践策略：不在完整长视频上训练，而是采样短片段（clips）。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 20.0
+        },
+        {
+          "text": "训练阶段： 模型学习对这些短片段进行分类。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 20.0
+        },
+        {
+          "text": "测试阶段： 对多个片段进行推理，取平均预测结果作为最终视频级预测。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-72": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.98,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "单帧 CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 2.54,
+      "paragraphs": [
+        {
+          "text": "基线方法：单帧 CNN",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：将视频分类问题简化为对每一帧独立进行图像分类。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "流程：使用一个标准的 2D CNN 分别处理视频中的每一帧，得到每帧的类别概率，最后在时间维度上取平均。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "优点：实现简单，常作为强有力的基线。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-73": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "早期融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "早期融合：在输入层融合时间信息",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：在模型的第一层就将时间信息融合进来。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "实现方式：将 T 帧的 RGB 通道堆叠，形成一个 (3T) x H x W 的“超图像”，然后送入标准的 2D CNN。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "直觉：让第一个卷积层直接比较不同帧之间的像素差异。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-74": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "早期融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 2.39,
+      "paragraphs": [
+        {
+          "text": "早期融合的局限性",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "关键问题：第一个2D卷积层会将所有时间信息压缩掉（输出为 D x H x W），后续网络无法再访问原始的时间结构。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "后果：仅有一层进行时间处理，对于复杂的、长时序的动作可能不足以捕获足够的动态信息。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-75": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "晚期融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 1.99,
+      "paragraphs": [
+        {
+          "text": "晚期融合：在高层特征融合时间信息",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：先独立提取每帧的高层特征，再在特征层面进行时间融合。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "实现方式A（MLP）：对每帧用 2D CNN 提取特征，将所有帧的特征向量拼接成一个长向量，送入全连接层（MLP）进行分类。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-76": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "晚期融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 1.85,
+      "paragraphs": [
+        {
+          "text": "晚期融合：在高层特征融合时间信息",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "实现方式B（Pooling）：对每帧用 2D CNN 提取特征后，在时间和空间维度上进行全局平均池化，得到一个紧凑的视频级特征向量，再送入线性分类器。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-77": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "晚期融合",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.77,
+      "top": 1.6,
+      "width": 11.79,
+      "height": 1.99,
+      "paragraphs": [
+        {
+          "text": "晚期融合的局限性",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "关键问题：由于每帧是独立处理的，模型难以直接比较帧与帧之间的底层运动信息（如像素位移）。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "后果：虽然能捕捉到每帧的变化，但对精细、局部的运动模式建模能力弱。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-78": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "3D CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 1.6,
+      "width": 12.07,
+      "height": 2.12,
+      "paragraphs": [
+        {
+          "text": "3D CNN：时空慢速融合",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：使用 3D 卷积核在整个网络中逐步、同步地融合空间和时间信息。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "实现方式：将 2D CNN 中的卷积和池化操作全部替换为 3D 版本。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "直觉：每一层的特征图都是一个 4D 张量，保留了完整的时空结构。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-79": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 7.68,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "早期融合 vs. 晚期融合 vs. 3D CNN",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 9.36,
+      "top": 5.09,
+      "width": 3.23,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "3D卷积精度更高，但是计算开销也极其高昂！",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-80": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "运动识别",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 1.9,
+      "width": 4.02,
+      "height": 1.57,
+      "paragraphs": [
+        {
+          "text": "从运动识别人类行为",
+          "alignment": "JUSTIFY",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "运动信息是视频理解中至关重要的线索，有时甚至比外观信息更重要。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-81": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 2.27,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "运动识别",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.21,
+      "top": 2.41,
+      "width": 5.09,
+      "height": 3.47,
+      "paragraphs": [
+        {
+          "text": "融合策略：在预测阶段，将两个流的 softmax 分数进行平均，或使用 SVM 等方法进行融合。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "性能优势：在双流网络显著超越了仅使用空间信息或早期/晚期融合的方法，证明了显式建模运动的有效性。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-82": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 1.6,
+      "width": 12.07,
+      "height": 2.42,
+      "paragraphs": [
+        {
+          "text": "局限性：前述方法（3D CNN, 双流网络）主要处理短片段（~2-5秒），只能捕获局部的时序动态。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "现实需求：许多复杂活动（如“做早餐”、“打篮球比赛”）包含跨越数十秒甚至数分钟的长期依赖和事件顺序。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "问题：如何建模这种长距离的时序结构？",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-83": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.73,
+      "top": 1.6,
+      "width": 12.07,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "RNN/LSTM -> 序列建模的经典工具：",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：使用循环神经网络来处理由 CNN 提取的逐帧特征序列。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "流程：(1) 使用 CNN 从视频中提取局部特征向量；(2) 将这些特征向量按时间顺序送入 RNN；(3) RNN 的最终状态或所有状态用于最终预测。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "优势：理论上可以捕获任意长度的时序依赖。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.19,
+      "top": 5.11,
+      "width": 2.62,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "我们是否可以把 RNN 和 CNN 结合起来呢？",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-84": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.73,
+      "top": 1.6,
+      "width": 12.07,
+      "height": 1.99,
+      "paragraphs": [
+        {
+          "text": "循环卷积网络 (Recurrent Convolutional Networks)：",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：将 RNN 的递归思想与 CNN 的权重共享思想结合。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "架构特点：网络由多层组成，每一层在时间步 t 的输出，不仅取决于当前时间步上一层的输出，还取决于同一层在上一时间步 t-1 的输出。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.89,
+      "top": 4.35,
+      "width": 3.0,
+      "height": 1.94,
+      "paragraphs": [
+        {
+          "text": "优势：相比标准RNN，参数更少，且保留了空间局部性。",
+          "font_size": 20.0,
+          "bold": true
+        },
+        {
+          "text": "问题：RNN的计算是顺序依赖的，难以并行！",
+          "font_size": 20.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-85": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.29,
+      "top": 1.59,
+      "width": 10.53,
+      "height": 1.45,
+      "paragraphs": [
+        {
+          "text": "时空自注意力：并行化序列建模",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "核心思想：将自注意力机制应用于 3D CNN 的特征图上，以捕获长距离的时空依赖。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-86": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.02,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-87": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 3.21,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "长期时序建模",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 1.31,
+      "top": 1.59,
+      "width": 10.53,
+      "height": 1.85,
+      "paragraphs": [
+        {
+          "text": "从 CNN 到 Transformer",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "趋势：Vision Transformer 及其变体（如 MViT, VideoMAE）已成为当前视频理解的主流和 SOTA 架构。",
+          "bullet": true,
+          "level": 1,
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-88": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 7.2,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "超越分类：时序动作定位 / 检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 2.05,
+      "width": 11.86,
+      "height": 2.05,
+      "paragraphs": [
+        {
+          "text": "时序动作定位：",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "给定一个未修剪的长视频，不仅要识别出其中发生的动作类别，还要精确定位每个动作发生的起止时间（帧）。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0
+        },
+        {
+          "text": "这是视频领域的“目标检测”任务，只不过是在一维时间轴上进行。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-89": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 7.2,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "超越分类：时序动作定位 / 检测",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 2.05,
+      "width": 11.86,
+      "height": 1.99,
+      "paragraphs": [
+        {
+          "text": "时空动作检测：",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "在未修剪的长视频中，同时在空间（定位人物边界框）和时间（定位动作起止）上检测并识别人物执行的原子动作。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0
+        },
+        {
+          "text": "挑战：需要同时处理复杂的外观、姿态、运动以及精确的时空定位。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    }
+  },
+  "slide-90": {
+    "shape-0": {
+      "left": 0.13,
+      "top": 0.6,
+      "width": 6.1,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "前沿方向：视频大语言模型",
+          "space_before": 1.0,
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.62,
+      "top": 1.6,
+      "width": 12.07,
+      "height": 1.04,
+      "paragraphs": [
+        {
+          "text": "趋势：将强大的视频编码器（如ViViT, VideoMAE）与大语言模型（LLM）相结合。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        },
+        {
+          "text": "能力：实现开放词汇的视频问答、视频描述生成、基于指令的视频内容理解等。",
+          "alignment": "JUSTIFY",
+          "font_size": 24.0,
+          "bold": true
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.14,
+      "top": 4.2,
+      "width": 2.64,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "通向通用人工智能（AGI）的重要一步！",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  }
+}

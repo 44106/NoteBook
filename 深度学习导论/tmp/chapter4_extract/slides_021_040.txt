@@ -1,0 +1,218 @@
+
+===== Slide 21 =====
+21
+多层感知机
+多层感知机(Multi-layer Perceptron, MLP) ：由输入层、一个或多个隐藏层、输出层组成的前馈神经网络。
+
+===== Slide 22 =====
+22
+多层感知机
+多层感知机(Multi-layer Perceptron, MLP) ：由输入层、一个或多个隐藏层、输出层组成的前馈神经网络。
+
+===== Slide 23 =====
+23
+多层感知机
+𝜎𝑧
+𝑧
+𝜎𝑧=11+𝑒−𝑧
+Sigmoid Function
+𝜎𝑧
+𝑧
+Sigmoid Function
+1
+-1
+1
+-2
+1
+-1
+1
+0
+4
+-2
+0.98
+0.12
+
+===== Slide 24 =====
+24
+多层感知机
+1
+-2
+1
+-1
+1
+1
+0
+0
+4
+-2
+0.98
+0.12
+2
+-1
+-1
+-2
+3
+-1
+4
+-1
+0.86
+0.11
+0.62
+0.83
+0
+0
+0
+0
+-2
+-2
+2
+2
+1
+-1
+
+===== Slide 25 =====
+25
+多层感知机
+1
+-2
+1
+-1
+1
+0
+0.73
+0.5
+2
+-1
+-1
+-2
+3
+-1
+4
+-1
+0.72
+0.12
+0.51
+0.85
+0
+0
+-2
+2
+0
+0
+This is a function.
+Input vector, output vector
+
+===== Slide 26 =====
+26
+多层感知机
+Each forward operation in the NN is just a Matrix Multiplication  (followed by an activation function).
+Characterizations of MM
+Parallelism
+ChatGPT-175B requires a month of training using ~1400 GPUs (A100, $10K+ per card).
+GPU for Parallel Computation
+
+===== Slide 27 =====
+27
+多层感知机
+一个很自然的问题：FAT or DEEP?
+
+===== Slide 28 =====
+28
+多层感知机
+1989年，George Cybenko证明了，当激活函数是sigmoid型函数时，只有单隐层的多层感知机就可以在任意精度下逼近定义在紧集上的任意连续函数。
+——通用近似定理
+George Cybenko. Approximation by Superpositions of a Sigmoidal Function. Mathematics of Control, Signals, and Systems, 2(4): 303–314, 1989.
+其它激活函数亦可！
+
+===== Slide 29 =====
+29
+多层感知机
+1989年，George Cybenko证明了，当激活函数是sigmoid型函数时，只有单隐层的多层感知机就可以在任意精度下逼近定义在紧集上的任意连续函数。
+——通用近似定理
+回答了一个非常根本的问题：一个简单的神经网络结构，在理论上有没有能力表示足够复杂的函数？
+足够宽在理论上能够保证能力：只要一个前馈神经网络拥有 一个隐藏层（且神经元数量足够多），激活函数采用连续的 sigmoid 型函数（或其他满足条件的非线性函数），它就可以 以任意精度 逼近 定义在紧集上的任何连续函数
+非线性激活函数的关键作用：只要加入一个非线性激活函数（如 sigmoid、tanh、ReLU 的某些变体），并在隐藏层给予足够的自由度，神经网络就不再受限于线性模型，而成为 一种通用的函数逼近器
+
+===== Slide 30 =====
+30
+多层感知机
+1989年，George Cybenko证明了，当激活函数是sigmoid型函数时，只有单隐层的多层感知机就可以在任意精度下逼近定义在紧集上的任意连续函数。
+——通用近似定理
+
+===== Slide 31 =====
+31
+多层感知机：深度 vs. 宽度
+Ronen Eldan and Ohad Shamir. The Power of Depth for Feedforward Neural Networks. In COLT, pp. 907 – 940, 2016.
+
+===== Slide 32 =====
+32
+多层感知机：深度 vs. 宽度
+证明了 深度 在神经网络表达能力中起着关键作用——深度可以指数级地减少表示某些函数所需的参数量。
+
+===== Slide 33 =====
+33
+多层感知机：深度 vs. 宽度
+通用近似定理（Cybenko 等）
+结论：单隐层网络（宽度足够大）可以以任意精度逼近紧集上的任意连续函数。
+性质：
+回答的是存在性（“能不能”）
+不关心达到该精度需要多少神经元
+对 所有连续函数 都成立
+Telgarsky（2016）与 Eldan & Shamir（2016）
+结论：存在某些函数，用深层网络（比如 3 层或 O(k3) 层）可以高效表示（多项式级参数），但用浅层网络（如 2 层）表示时，所需的宽度必须是指数级（相对于某个复杂度参数）。
+性质：
+回答的是效率性（“好不好/省不省”）
+只针对某些特定的函数，不是所有函数
+对比的是不同深度下的参数复杂度
+足够宽的单隐层网络具有通用逼近能力，但深度可以在某些函数上指数级地节省参数
+
+===== Slide 34 =====
+34
+多层感知机：深度 vs. 宽度
+许多实验结果(例如ImageNet数据集上的错误率)也表明，增大深度有助于提升神经网络的性能。
+8 层
+19层
+AlexNet (2012)
+VGG (2014)
+GoogleNet (2014)
+16.4%
+7.3%
+6.7%
+ResNet (2015)
+152层
+3.57%
+22层
+
+===== Slide 35 =====
+35
+课程思路
+[diagram] Step 1: define a set of function; Step 2: goodness of function; Step 3: pick the best function
+
+===== Slide 36 =====
+36
+尽管多层感知机具有强大的函数逼近能力，但要从“能够表示”走向“学到目标映射”，仍需要通过损失函数来度量预测输出与真实目标之间的差异，并据此优化参数。
+多层感知机：损失函数
+
+===== Slide 37 =====
+37
+尽管多层感知机具有强大的函数逼近能力，但要从“能够表示”走向“学到目标映射”，仍需要通过损失函数来度量预测输出与真实目标之间的差异，并据此优化参数。
+多层感知机：损失函数
+Regression is the problem of how to model one or more variables/responses Y by a set of predictors X.
+Classification is the problem of identifying which of a set of categories (sub-populations) an observation (or observations) belongs to.
+机器学习领域的两大核心任务：
+
+===== Slide 38 =====
+38
+尽管多层感知机具有强大的函数逼近能力，但要从“能够表示”走向“学到目标映射”，仍需要通过损失函数来度量预测输出与真实目标之间的差异，并据此优化参数。
+多层感知机：损失函数
+
+===== Slide 39 =====
+39
+尽管多层感知机具有强大的函数逼近能力，但要从“能够表示”走向“学到目标映射”，仍需要通过损失函数来度量预测输出与真实目标之间的差异，并据此优化参数。
+多层感知机：损失函数
+
+===== Slide 40 =====
+40
+尽管多层感知机具有强大的函数逼近能力，但要从“能够表示”走向“学到目标映射”，仍需要通过损失函数来度量预测输出与真实目标之间的差异，并据此优化参数。
+多层感知机：损失函数
+概率映射！

@@ -1,0 +1,1538 @@
+[
+  {
+    "file": "ppt/media/image169.png",
+    "bytes": 310428,
+    "ext": ".png",
+    "width": 1016,
+    "height": 418,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1.png",
+    "bytes": 11122,
+    "ext": ".png",
+    "width": 235,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image2.png",
+    "bytes": 198916,
+    "ext": ".png",
+    "width": 1360,
+    "height": 966,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image3.png",
+    "bytes": 120848,
+    "ext": ".png",
+    "width": 1202,
+    "height": 650,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image4.png",
+    "bytes": 60704,
+    "ext": ".png",
+    "width": 1530,
+    "height": 344,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image5.png",
+    "bytes": 38884,
+    "ext": ".png",
+    "width": 1526,
+    "height": 166,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image6.png",
+    "bytes": 28764,
+    "ext": ".png",
+    "width": 348,
+    "height": 315,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image8.png",
+    "bytes": 85117,
+    "ext": ".png",
+    "width": 256,
+    "height": 734,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image10.png",
+    "bytes": 95464,
+    "ext": ".png",
+    "width": 700,
+    "height": 516,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image11.tiff",
+    "bytes": 490514,
+    "ext": ".tiff",
+    "width": 537,
+    "height": 228,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image12.tiff",
+    "bytes": 3155710,
+    "ext": ".tiff",
+    "width": 1219,
+    "height": 647,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image13.tiff",
+    "bytes": 2795298,
+    "ext": ".tiff",
+    "width": 1261,
+    "height": 554,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image14.png",
+    "bytes": 83459,
+    "ext": ".png",
+    "width": 1654,
+    "height": 194,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image15.png",
+    "bytes": 108315,
+    "ext": ".png",
+    "width": 1638,
+    "height": 290,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image16.png",
+    "bytes": 126395,
+    "ext": ".png",
+    "width": 1126,
+    "height": 206,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image19.png",
+    "bytes": 74038,
+    "ext": ".png",
+    "width": 1428,
+    "height": 220,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image22.png",
+    "bytes": 87430,
+    "ext": ".png",
+    "width": 806,
+    "height": 428,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image27.png",
+    "bytes": 152677,
+    "ext": ".png",
+    "width": 1496,
+    "height": 548,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image28.png",
+    "bytes": 86516,
+    "ext": ".png",
+    "width": 1102,
+    "height": 454,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image35.png",
+    "bytes": 146405,
+    "ext": ".png",
+    "width": 861,
+    "height": 371,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image36.jpeg",
+    "bytes": 85326,
+    "ext": ".jpeg",
+    "width": 900,
+    "height": 217,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image37.jpeg",
+    "bytes": 135826,
+    "ext": ".jpeg",
+    "width": 900,
+    "height": 411,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image48.png",
+    "bytes": 8356,
+    "ext": ".png",
+    "width": 576,
+    "height": 86,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image49.png",
+    "bytes": 11000,
+    "ext": ".png",
+    "width": 630,
+    "height": 100,
+    "mode": "RGB"
+  },
+  {
+    "file": "ppt/media/image77.png",
+    "bytes": 514926,
+    "ext": ".png",
+    "width": 562,
+    "height": 414,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image78.png",
+    "bytes": 97436,
+    "ext": ".png",
+    "width": 994,
+    "height": 286,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image84.png",
+    "bytes": 110327,
+    "ext": ".png",
+    "width": 1192,
+    "height": 434,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image85.tiff",
+    "bytes": 1159418,
+    "ext": ".tiff",
+    "width": 638,
+    "height": 454,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image86.tiff",
+    "bytes": 3488970,
+    "ext": ".tiff",
+    "width": 1469,
+    "height": 593,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image88.png",
+    "bytes": 77531,
+    "ext": ".png",
+    "width": 632,
+    "height": 786,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image89.png",
+    "bytes": 109291,
+    "ext": ".png",
+    "width": 590,
+    "height": 756,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image90.png",
+    "bytes": 127564,
+    "ext": ".png",
+    "width": 1314,
+    "height": 724,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image91.tiff",
+    "bytes": 1746822,
+    "ext": ".tiff",
+    "width": 919,
+    "height": 474,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image92.png",
+    "bytes": 160674,
+    "ext": ".png",
+    "width": 2368,
+    "height": 898,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image99.png",
+    "bytes": 205401,
+    "ext": ".png",
+    "width": 2380,
+    "height": 892,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image119.png",
+    "bytes": 33109,
+    "ext": ".png",
+    "width": 1848,
+    "height": 589,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image121.png",
+    "bytes": 3747,
+    "ext": ".png",
+    "width": 1001,
+    "height": 132,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image124.png",
+    "bytes": 6059,
+    "ext": ".png",
+    "width": 1113,
+    "height": 145,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image125.png",
+    "bytes": 2239,
+    "ext": ".png",
+    "width": 1000,
+    "height": 84,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image126.png",
+    "bytes": 45913,
+    "ext": ".png",
+    "width": 1846,
+    "height": 749,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image128.png",
+    "bytes": 38445,
+    "ext": ".png",
+    "width": 1821,
+    "height": 298,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image131.png",
+    "bytes": 57294,
+    "ext": ".png",
+    "width": 1822,
+    "height": 552,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image142.png",
+    "bytes": 27368,
+    "ext": ".png",
+    "width": 1154,
+    "height": 106,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image147.png",
+    "bytes": 179074,
+    "ext": ".png",
+    "width": 1284,
+    "height": 358,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image148.png",
+    "bytes": 132132,
+    "ext": ".png",
+    "width": 1456,
+    "height": 204,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image149.tiff",
+    "bytes": 4130954,
+    "ext": ".tiff",
+    "width": 1115,
+    "height": 926,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image166.png",
+    "bytes": 237999,
+    "ext": ".png",
+    "width": 1626,
+    "height": 978,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image167.png",
+    "bytes": 202531,
+    "ext": ".png",
+    "width": 1384,
+    "height": 794,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image168.png",
+    "bytes": 113698,
+    "ext": ".png",
+    "width": 1800,
+    "height": 1007,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image9.png",
+    "bytes": 26011,
+    "ext": ".png",
+    "width": 1096,
+    "height": 746,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image11.png",
+    "bytes": 8297,
+    "ext": ".png",
+    "width": 1004,
+    "height": 172,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image12.png",
+    "bytes": 9938,
+    "ext": ".png",
+    "width": 412,
+    "height": 166,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image20.png",
+    "bytes": 85270,
+    "ext": ".png",
+    "width": 1841,
+    "height": 758,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image21.png",
+    "bytes": 5988,
+    "ext": ".png",
+    "width": 285,
+    "height": 208,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image17.png",
+    "bytes": 4930,
+    "ext": ".png",
+    "width": 1641,
+    "height": 120,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image18.png",
+    "bytes": 4926,
+    "ext": ".png",
+    "width": 1641,
+    "height": 120,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image23.png",
+    "bytes": 9734,
+    "ext": ".png",
+    "width": 943,
+    "height": 120,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image24.png",
+    "bytes": 8608,
+    "ext": ".png",
+    "width": 287,
+    "height": 218,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image220.png",
+    "bytes": 17330,
+    "ext": ".png",
+    "width": 853,
+    "height": 707,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image25.png",
+    "bytes": 4503,
+    "ext": ".png",
+    "width": 569,
+    "height": 137,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image26.png",
+    "bytes": 7536,
+    "ext": ".png",
+    "width": 569,
+    "height": 200,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image29.png",
+    "bytes": 76127,
+    "ext": ".png",
+    "width": 877,
+    "height": 729,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image30.png",
+    "bytes": 23925,
+    "ext": ".png",
+    "width": 568,
+    "height": 204,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image31.png",
+    "bytes": 46284,
+    "ext": ".png",
+    "width": 864,
+    "height": 483,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image32.png",
+    "bytes": 21983,
+    "ext": ".png",
+    "width": 568,
+    "height": 206,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image33.png",
+    "bytes": 70518,
+    "ext": ".png",
+    "width": 1847,
+    "height": 447,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image36.png",
+    "bytes": 100950,
+    "ext": ".png",
+    "width": 1847,
+    "height": 727,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image37.png",
+    "bytes": 15989,
+    "ext": ".png",
+    "width": 787,
+    "height": 156,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image38.png",
+    "bytes": 16979,
+    "ext": ".png",
+    "width": 1004,
+    "height": 87,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image39.png",
+    "bytes": 18485,
+    "ext": ".png",
+    "width": 741,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image40.png",
+    "bytes": 14213,
+    "ext": ".png",
+    "width": 472,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image34.png",
+    "bytes": 38025,
+    "ext": ".png",
+    "width": 1846,
+    "height": 727,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image41.png",
+    "bytes": 83204,
+    "ext": ".png",
+    "width": 1847,
+    "height": 620,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image42.png",
+    "bytes": 13533,
+    "ext": ".png",
+    "width": 1002,
+    "height": 395,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image43.png",
+    "bytes": 122559,
+    "ext": ".png",
+    "width": 1849,
+    "height": 658,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image44.png",
+    "bytes": 27296,
+    "ext": ".png",
+    "width": 1339,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image45.png",
+    "bytes": 8695,
+    "ext": ".png",
+    "width": 533,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image46.png",
+    "bytes": 133909,
+    "ext": ".png",
+    "width": 1849,
+    "height": 658,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image47.png",
+    "bytes": 9303,
+    "ext": ".png",
+    "width": 766,
+    "height": 93,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image480.png",
+    "bytes": 64799,
+    "ext": ".png",
+    "width": 1841,
+    "height": 652,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image490.png",
+    "bytes": 8880,
+    "ext": ".png",
+    "width": 531,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image50.png",
+    "bytes": 5461,
+    "ext": ".png",
+    "width": 766,
+    "height": 91,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image51.png",
+    "bytes": 12261,
+    "ext": ".png",
+    "width": 781,
+    "height": 164,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image52.png",
+    "bytes": 27263,
+    "ext": ".png",
+    "width": 1339,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image53.png",
+    "bytes": 11790,
+    "ext": ".png",
+    "width": 474,
+    "height": 108,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image54.png",
+    "bytes": 82592,
+    "ext": ".png",
+    "width": 1841,
+    "height": 712,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image55.png",
+    "bytes": 9143,
+    "ext": ".png",
+    "width": 693,
+    "height": 141,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image56.png",
+    "bytes": 74039,
+    "ext": ".png",
+    "width": 1841,
+    "height": 660,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image57.png",
+    "bytes": 27795,
+    "ext": ".png",
+    "width": 1466,
+    "height": 160,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image165.png",
+    "bytes": 12762,
+    "ext": ".png",
+    "width": 999,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image63.png",
+    "bytes": 18439,
+    "ext": ".png",
+    "width": 535,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image64.png",
+    "bytes": 116364,
+    "ext": ".png",
+    "width": 1841,
+    "height": 702,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image65.png",
+    "bytes": 71980,
+    "ext": ".png",
+    "width": 1841,
+    "height": 683,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image66.png",
+    "bytes": 17218,
+    "ext": ".png",
+    "width": 1010,
+    "height": 162,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image67.png",
+    "bytes": 27453,
+    "ext": ".png",
+    "width": 558,
+    "height": 283,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image68.png",
+    "bytes": 100715,
+    "ext": ".png",
+    "width": 1841,
+    "height": 668,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image69.png",
+    "bytes": 25999,
+    "ext": ".png",
+    "width": 1339,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image70.png",
+    "bytes": 7212,
+    "ext": ".png",
+    "width": 533,
+    "height": 137,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image71.png",
+    "bytes": 8988,
+    "ext": ".png",
+    "width": 766,
+    "height": 93,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image72.png",
+    "bytes": 121299,
+    "ext": ".png",
+    "width": 1841,
+    "height": 600,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image73.png",
+    "bytes": 19331,
+    "ext": ".png",
+    "width": 675,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image74.png",
+    "bytes": 24121,
+    "ext": ".png",
+    "width": 870,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image75.png",
+    "bytes": 10877,
+    "ext": ".png",
+    "width": 468,
+    "height": 139,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image76.png",
+    "bytes": 10852,
+    "ext": ".png",
+    "width": 802,
+    "height": 93,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image350.png",
+    "bytes": 10051,
+    "ext": ".png",
+    "width": 580,
+    "height": 349,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image79.png",
+    "bytes": 14198,
+    "ext": ".png",
+    "width": 552,
+    "height": 454,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image80.png",
+    "bytes": 16643,
+    "ext": ".png",
+    "width": 687,
+    "height": 456,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image81.png",
+    "bytes": 13505,
+    "ext": ".png",
+    "width": 556,
+    "height": 454,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image82.png",
+    "bytes": 16772,
+    "ext": ".png",
+    "width": 677,
+    "height": 456,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image83.png",
+    "bytes": 121375,
+    "ext": ".png",
+    "width": 1841,
+    "height": 510,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image87.png",
+    "bytes": 8875,
+    "ext": ".png",
+    "width": 343,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image93.png",
+    "bytes": 77717,
+    "ext": ".png",
+    "width": 1847,
+    "height": 697,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image94.png",
+    "bytes": 16964,
+    "ext": ".png",
+    "width": 1372,
+    "height": 156,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image95.png",
+    "bytes": 26414,
+    "ext": ".png",
+    "width": 1004,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image96.png",
+    "bytes": 1787,
+    "ext": ".png",
+    "width": 127,
+    "height": 77,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image60.png",
+    "bytes": 44543,
+    "ext": ".png",
+    "width": 1233,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image97.png",
+    "bytes": 1758,
+    "ext": ".png",
+    "width": 124,
+    "height": 77,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image98.png",
+    "bytes": 89896,
+    "ext": ".png",
+    "width": 1847,
+    "height": 525,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image100.png",
+    "bytes": 14919,
+    "ext": ".png",
+    "width": 495,
+    "height": 139,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image101.png",
+    "bytes": 144980,
+    "ext": ".png",
+    "width": 1847,
+    "height": 814,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image102.png",
+    "bytes": 8460,
+    "ext": ".png",
+    "width": 487,
+    "height": 81,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image103.png",
+    "bytes": 46282,
+    "ext": ".png",
+    "width": 1789,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image104.png",
+    "bytes": 13736,
+    "ext": ".png",
+    "width": 641,
+    "height": 93,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image105.png",
+    "bytes": 20768,
+    "ext": ".png",
+    "width": 904,
+    "height": 114,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image106.png",
+    "bytes": 139734,
+    "ext": ".png",
+    "width": 1847,
+    "height": 635,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image107.png",
+    "bytes": 16763,
+    "ext": ".png",
+    "width": 999,
+    "height": 108,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image108.png",
+    "bytes": 124039,
+    "ext": ".png",
+    "width": 1847,
+    "height": 606,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image109.png",
+    "bytes": 20103,
+    "ext": ".png",
+    "width": 999,
+    "height": 137,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image110.png",
+    "bytes": 7056,
+    "ext": ".png",
+    "width": 320,
+    "height": 106,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image111.png",
+    "bytes": 9906,
+    "ext": ".png",
+    "width": 1002,
+    "height": 97,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image112.png",
+    "bytes": 8413,
+    "ext": ".png",
+    "width": 318,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image113.png",
+    "bytes": 9306,
+    "ext": ".png",
+    "width": 622,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image114.png",
+    "bytes": 10444,
+    "ext": ".png",
+    "width": 622,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image115.png",
+    "bytes": 14694,
+    "ext": ".png",
+    "width": 789,
+    "height": 124,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image116.png",
+    "bytes": 12004,
+    "ext": ".png",
+    "width": 1002,
+    "height": 139,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image117.png",
+    "bytes": 8801,
+    "ext": ".png",
+    "width": 318,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image118.png",
+    "bytes": 14200,
+    "ext": ".png",
+    "width": 720,
+    "height": 127,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image120.png",
+    "bytes": 14893,
+    "ext": ".png",
+    "width": 493,
+    "height": 139,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image13.png",
+    "bytes": 56445,
+    "ext": ".png",
+    "width": 1847,
+    "height": 439,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image156.png",
+    "bytes": 32340,
+    "ext": ".png",
+    "width": 1368,
+    "height": 498,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image122.png",
+    "bytes": 5840,
+    "ext": ".png",
+    "width": 1004,
+    "height": 83,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image58.png",
+    "bytes": 9996,
+    "ext": ".png",
+    "width": 329,
+    "height": 152,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image123.png",
+    "bytes": 25701,
+    "ext": ".png",
+    "width": 1002,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image210.png",
+    "bytes": 163025,
+    "ext": ".png",
+    "width": 1947,
+    "height": 289,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image310.png",
+    "bytes": 149478,
+    "ext": ".png",
+    "width": 1847,
+    "height": 775,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image410.png",
+    "bytes": 193767,
+    "ext": ".png",
+    "width": 1847,
+    "height": 766,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image610.png",
+    "bytes": 11438,
+    "ext": ".png",
+    "width": 1004,
+    "height": 133,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image710.png",
+    "bytes": 26961,
+    "ext": ".png",
+    "width": 1114,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image85.png",
+    "bytes": 7783,
+    "ext": ".png",
+    "width": 1002,
+    "height": 83,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1250.png",
+    "bytes": 11490,
+    "ext": ".png",
+    "width": 1004,
+    "height": 133,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1260.png",
+    "bytes": 27028,
+    "ext": ".png",
+    "width": 1114,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1240.png",
+    "bytes": 5602,
+    "ext": ".png",
+    "width": 1000,
+    "height": 106,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image127.png",
+    "bytes": 27195,
+    "ext": ".png",
+    "width": 1846,
+    "height": 637,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image129.png",
+    "bytes": 5831,
+    "ext": ".png",
+    "width": 1004,
+    "height": 83,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image130.png",
+    "bytes": 9901,
+    "ext": ".png",
+    "width": 1002,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1310.png",
+    "bytes": 88523,
+    "ext": ".png",
+    "width": 1847,
+    "height": 712,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image132.png",
+    "bytes": 9534,
+    "ext": ".png",
+    "width": 1004,
+    "height": 133,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image133.png",
+    "bytes": 11310,
+    "ext": ".png",
+    "width": 1002,
+    "height": 87,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image134.png",
+    "bytes": 72322,
+    "ext": ".png",
+    "width": 1847,
+    "height": 743,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image135.png",
+    "bytes": 9635,
+    "ext": ".png",
+    "width": 1004,
+    "height": 133,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image136.png",
+    "bytes": 9072,
+    "ext": ".png",
+    "width": 1004,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image137.png",
+    "bytes": 7139,
+    "ext": ".png",
+    "width": 662,
+    "height": 87,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image1280.png",
+    "bytes": 26355,
+    "ext": ".png",
+    "width": 2014,
+    "height": 611,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image139.png",
+    "bytes": 12718,
+    "ext": ".png",
+    "width": 1002,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image140.png",
+    "bytes": 19014,
+    "ext": ".png",
+    "width": 1400,
+    "height": 325,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image138.png",
+    "bytes": 5370,
+    "ext": ".png",
+    "width": 1229,
+    "height": 84,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image141.png",
+    "bytes": 37761,
+    "ext": ".png",
+    "width": 1846,
+    "height": 797,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image143.png",
+    "bytes": 12666,
+    "ext": ".png",
+    "width": 1002,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image144.png",
+    "bytes": 18983,
+    "ext": ".png",
+    "width": 1400,
+    "height": 322,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image145.png",
+    "bytes": 19363,
+    "ext": ".png",
+    "width": 1231,
+    "height": 325,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image146.png",
+    "bytes": 95315,
+    "ext": ".png",
+    "width": 1847,
+    "height": 733,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image150.png",
+    "bytes": 9709,
+    "ext": ".png",
+    "width": 466,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image151.png",
+    "bytes": 6358,
+    "ext": ".png",
+    "width": 370,
+    "height": 325,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image152.png",
+    "bytes": 47196,
+    "ext": ".png",
+    "width": 1847,
+    "height": 708,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image153.png",
+    "bytes": 10554,
+    "ext": ".png",
+    "width": 1004,
+    "height": 145,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image154.png",
+    "bytes": 9792,
+    "ext": ".png",
+    "width": 1402,
+    "height": 89,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image155.png",
+    "bytes": 8973,
+    "ext": ".png",
+    "width": 1231,
+    "height": 95,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image149.png",
+    "bytes": 6179,
+    "ext": ".png",
+    "width": 1331,
+    "height": 106,
+    "mode": "P"
+  },
+  {
+    "file": "ppt/media/image157.png",
+    "bytes": 13099,
+    "ext": ".png",
+    "width": 891,
+    "height": 133,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image158.png",
+    "bytes": 92212,
+    "ext": ".png",
+    "width": 1847,
+    "height": 631,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image159.png",
+    "bytes": 6885,
+    "ext": ".png",
+    "width": 1002,
+    "height": 79,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image160.png",
+    "bytes": 12862,
+    "ext": ".png",
+    "width": 1004,
+    "height": 150,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image161.png",
+    "bytes": 13076,
+    "ext": ".png",
+    "width": 1004,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image162.png",
+    "bytes": 73251,
+    "ext": ".png",
+    "width": 1847,
+    "height": 745,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image163.png",
+    "bytes": 13970,
+    "ext": ".png",
+    "width": 1002,
+    "height": 147,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image164.png",
+    "bytes": 16672,
+    "ext": ".png",
+    "width": 1229,
+    "height": 325,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image7.png",
+    "bytes": 58362,
+    "ext": ".png",
+    "width": 1029,
+    "height": 672,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image177.png",
+    "bytes": 104135,
+    "ext": ".png",
+    "width": 1843,
+    "height": 368,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image59.png",
+    "bytes": 36341,
+    "ext": ".png",
+    "width": 1072,
+    "height": 675,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image61.png",
+    "bytes": 64550,
+    "ext": ".png",
+    "width": 1841,
+    "height": 660,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image175.png",
+    "bytes": 69234,
+    "ext": ".png",
+    "width": 795,
+    "height": 620,
+    "mode": "RGBA"
+  },
+  {
+    "file": "ppt/media/image62.png",
+    "bytes": 19074,
+    "ext": ".png",
+    "width": 543,
+    "height": 675,
+    "mode": "RGBA"
+  }
+]

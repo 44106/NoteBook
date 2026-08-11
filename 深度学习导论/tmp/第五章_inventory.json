@@ -1,0 +1,6011 @@
+{
+  "slide-0": {
+    "shape-0": {
+      "left": 9.0,
+      "top": 0.28,
+      "width": 4.02,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "课程名称：深度学习导论",
+          "alignment": "CENTER",
+          "font_name": "Calibri",
+          "font_size": 24.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-1": {
+      "left": -2.19,
+      "top": 3.24,
+      "width": 10.47,
+      "height": 1.23,
+      "paragraphs": [
+        {
+          "text": "第五章：神经网络基础（二）",
+          "font_name": "微软雅黑",
+          "font_size": 54.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 2.69,
+      "top": 5.42,
+      "width": 8.31,
+      "height": 0.57,
+      "paragraphs": [
+        {
+          "text": "主讲教师：王文冠",
+          "alignment": "CENTER",
+          "font_name": "微软雅黑",
+          "font_size": 28.0,
+          "theme_color": "BACKGROUND_1"
+        }
+      ]
+    }
+  },
+  "slide-1": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.16,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "基本流程",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化）。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.34,
+      "top": 2.72,
+      "width": 6.43,
+      "height": 3.53,
+      "paragraphs": [
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "归一化（Normalization）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "数据增强（Augmentation）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0
+        },
+        {
+          "text": "类型转换",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0
+        },
+        {
+          "text": "…",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.58,
+      "top": 6.96,
+      "width": 6.67,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "https://keras.io/examples/vision/mnist_convnet/"
+        }
+      ]
+    }
+  },
+  "slide-2": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.16,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "基本流程",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.34,
+      "top": 2.72,
+      "width": 6.43,
+      "height": 4.68,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.36
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "模型构建",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "输入层",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "隐藏层",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "丢弃层（Dropout Layer）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "批归一化（Batch Normalization）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "层归一化（Layer Normalization）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "输出层",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "初始化",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.56,
+      "top": 6.32,
+      "width": 6.67,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.36
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "https://keras.io/examples/vision/mnist_convnet/"
+        }
+      ]
+    }
+  },
+  "slide-3": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.16,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "基本流程",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.78,
+      "height": 4.68,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 2.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "训练与优化",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "损失函数",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "正则化项（与传统机器学习类似）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "优化器：SGD（随机梯度下降）、Momentum、AdaGrad、RMSProp、Adam",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.71,
+      "top": 4.61,
+      "width": 2.06,
+      "height": 1.0,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 2.06
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "https://keras.io/examples/vision/mnist_convnet/"
+        }
+      ]
+    }
+  },
+  "slide-4": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.16,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "基本流程",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型训练的基本流程通常包括数据准备、模型构建、训练与优化、模型评估（与超参数优化） 。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 6.43,
+      "height": 3.33,
+      "paragraphs": [
+        {
+          "text": "训练与优化",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "模型评估",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.71,
+      "top": 4.61,
+      "width": 2.06,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "https://keras.io/examples/vision/mnist_convnet/"
+        }
+      ]
+    }
+  },
+  "slide-5": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.18,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "课程思路",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.58,
+      "top": 1.84,
+      "width": 5.78,
+      "height": 2.86,
+      "paragraphs": [
+        {
+          "text": "深度神经网络训练的基本流程：",
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "模型架构",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "训练方法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        }
+      ]
+    }
+  },
+  "slide-6": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.18,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "课程思路",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.58,
+      "top": 1.84,
+      "width": 5.78,
+      "height": 2.86,
+      "paragraphs": [
+        {
+          "text": "深度神经网络训练的基本流程：",
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "color": "C00000",
+          "line_spacing": 42.0
+        },
+        {
+          "text": "模型架构",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "训练方法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        }
+      ]
+    }
+  },
+  "slide-7": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 8.02,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：归一化（normalization）",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "实例：是否捐款预测",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 11.39,
+      "top": 6.37,
+      "width": 1.38,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "Zigzag",
+          "font_size": 22.0,
+          "bold": false,
+          "italic": false,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-8": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 8.02,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：归一化（normalization）",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "实例：是否捐款预测",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-9": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据归一化是指将不同量纲或不同取值范围的特征变换到可比较的尺度上，从而避免大数值特征在模型训练中占主导，提高训练稳定性和特征利用的公平性。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.52,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 16.14
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "实例：是否捐款预测",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 6.3,
+      "top": 2.63,
+      "width": 6.67,
+      "height": 4.54,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 16.14
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "逻辑回归",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "归一化前",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "归一化后",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-10": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：数据增强",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "图像变换",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.49,
+      "top": 6.18,
+      "width": 3.93,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "增强训练数据的多样性",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-11": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：数据增强",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "图像擦除：从训练图像中抹去一部分信息，迫使模型关注其它相关部分，而不仅仅是最具判别力的部分",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-12": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：数据增强",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.12,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.54,
+          "shape-4": 1.09,
+          "shape-5": 3.8,
+          "shape-6": 0.81
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "图像混合：混合多个图像样本，模拟多目标或多标签场景",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 2.11,
+      "top": 3.52,
+      "width": 1.6,
+      "height": 0.34,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.54
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "按比例像素融合",
+          "font_name": "Inter",
+          "font_size": 14.0,
+          "bold": false,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 3.67,
+      "top": 3.46,
+      "width": 1.91,
+      "height": 0.57,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.09
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "将一张图的一部分贴到另一张图上",
+          "font_name": "Inter",
+          "font_size": 14.0,
+          "bold": false,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 5.67,
+      "top": 3.46,
+      "width": 6.67,
+      "height": 0.57,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.31
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 3.8,
+          "shape-6": 0.81
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "通过频率空间操作，生成"
+        },
+        {
+          "text": "形状光滑自然的掩码"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 8.71,
+      "top": 3.52,
+      "width": 2.39,
+      "height": 0.34,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.15
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.81,
+          "shape-5": 0.81
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "多种增强操作的加权组合"
+        }
+      ]
+    }
+  },
+  "slide-13": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：数据增强",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "文本数据：回译法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-14": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：数据增强",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "数据增强是通过对原始样本进行旋转、翻转、裁剪、加噪声等变换，构造更多训练样本的方法，旨在扩大数据分布、提升模型泛化能力。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.54,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 1.86,
+          "shape-4": 1.86,
+          "shape-5": 2.41,
+          "shape-6": 2.1,
+          "shape-7": 1.91
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据：回译法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "文本数据：随机词替换",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.6,
+      "top": 5.9,
+      "width": 2.21,
+      "height": 0.84,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.86
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "原始文本：",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        },
+        {
+          "text": "今天天气很好。",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 2.96,
+      "top": 5.9,
+      "width": 2.21,
+      "height": 0.84,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.86
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "同意词替换：",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        },
+        {
+          "text": "今天天气不错。",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 5.31,
+      "top": 5.9,
+      "width": 2.87,
+      "height": 0.84,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 2.41
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "随机插入：",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        },
+        {
+          "text": "今天不错天气很好。",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 8.18,
+      "top": 5.9,
+      "width": 2.5,
+      "height": 0.84,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 2.1,
+          "shape-7": 0.18
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "随机交换：",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        },
+        {
+          "text": "今天很好天气。",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-7": {
+      "left": 10.47,
+      "top": 5.9,
+      "width": 2.31,
+      "height": 0.84,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.91,
+          "shape-6": 0.18
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "随机删除：",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        },
+        {
+          "text": "今天天气好。",
+          "alignment": "CENTER",
+          "font_size": 22.0
+        }
+      ]
+    }
+  },
+  "slide-15": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.95,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 0.05
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "数值型数据（Numerical Data）：连续有序",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "图像数据的像素值",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0
+        },
+        {
+          "text": "类别型数据（Categorical Data）：离散无序",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-16": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.42,
+      "top": 4.28,
+      "width": 4.8,
+      "height": 1.74,
+      "paragraphs": [
+        {
+          "text": "二值化！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.3,
+      "top": 6.06,
+      "width": 1.58,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "1st  Category"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.32,
+      "top": 6.49,
+      "width": 1.45,
+      "height": 0.34,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "2nd Category"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 9.33,
+      "top": 6.94,
+      "width": 1.49,
+      "height": 0.34,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.15
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "3rd  Category"
+        }
+      ]
+    }
+  },
+  "slide-17": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 3.94,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11,
+          "shape-4": 2.87
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）：",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "分词（Tokenization）：将一段连续的文本（字符串）切分成更小的语义单位，确定了模型处理的最小信息单位",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 3.56,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 2.74,
+      "top": 6.11,
+      "width": 6.67,
+      "height": 0.91,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 2.87
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "\"John likes to watch movies.\"   →",
+          "font_size": 24.0
+        },
+        {
+          "text": "[\"John\", \"likes\", \"to\", \"watch\", \"movies\", \".\"]",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-18": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.08,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）：",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "分词（Tokenization）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "移除停止词：删除文本中频率极高但携带语义信息极少的词，如英文中的 \"the\", \"a\", \"is\", \"at\", \"to\"；中文中的“的”、“了”、“在”。",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 3.56,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-19": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.08,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）：",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "分词（Tokenization）",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "移除停止词",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "提取词干：\"running\", \"runs\", \"ran\" → \"run\"",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 3.56,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-20": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.95,
+      "overflow": {
+        "slide": {
+          "overflow_bottom": 0.05
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）：",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "分词（Tokenization）、移除停止词、提取词干",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词袋模型（Bag-of-Words）：记录该文本中出现的单词（加权）频率",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 3.56,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-21": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 3.74,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）：",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词袋模型（Bag-of-Words）：记录该文本中出现的单词（加权）频率",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.48,
+      "top": 3.56,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 2.44,
+      "top": 6.44,
+      "width": 7.7,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "丢失语序：\"I love you\" 和 \"You love me\" 的 BoW 向量是一模一样的",
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    }
+  },
+  "slide-22": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.34,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11,
+          "shape-4": 4.05
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "嵌入（Embedding）：将文本中每个词映射为向量，再整合成矩阵",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.61,
+      "top": 3.59,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 9.25,
+      "top": 4.65,
+      "width": 3.74,
+      "height": 1.16,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 4.05
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "如何处理长短不一的文本？",
+          "alignment": "CENTER",
+          "font_name": "Verdana",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 6.45,
+      "top": 6.99,
+      "width": 3.93,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "以独热编码为例",
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-23": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 4.34,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 7.11,
+          "shape-4": 9.71
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "原始数据：字符串",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "自然语言处理（Natural Language Processing）",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "词典：{John, likes, to, watch, movies, Mary, too}",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "嵌入（Embedding）：将文本中每个词映射为向量，再整合成矩阵",
+          "bullet": true,
+          "level": 2,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.61,
+      "top": 3.59,
+      "width": 10.94,
+      "height": 0.65,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 7.11
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“John likes to watch movies.”、“Mary likes movies too.”",
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.41,
+      "top": 6.11,
+      "width": 11.85,
+      "height": 1.31,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.35
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 9.71
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "填充（Padding）：设定一个最大长度（Max_Len），短句子后面补 0（或特定的 [PAD] 标识）。",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "截断（Truncation）：过长的句子直接砍掉尾部。",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "池化（Pooling）：对 Embedding 矩阵进行平均或取最大值，将其压缩为固定长度的向量。",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "循环神经网络 (RNN) / Transformer：这些架构原生支持处理变长序列（通过 Masking 技术忽略填充位）。",
+          "bullet": true,
+          "level": 0,
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    }
+  },
+  "slide-24": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 2.12,
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "BPE（Byte Pair Encoding，字节对编码）：目前最主流",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "子词（Subword）分词法：介于“按单词分”和“按字母分”之间，取两者长处",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "italic": false,
+          "color": "2B2D31",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.59,
+      "top": 6.06,
+      "width": 8.55,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "BPE 核心逻辑：不断合并出现频率最高的相邻字符对",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-25": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "数据准备：类型转换",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "神经网络模型通常要求输入数据的特征为连续数值型，因此对于其它类型的数据需要执行类型转换。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.19,
+      "top": 2.6,
+      "width": 12.97,
+      "height": 3.53,
+      "paragraphs": [
+        {
+          "text": "文本数据（Text Data）",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "BPE 核心逻辑：不断合并出现频率最高的相邻字符对",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "语料库：“hug”: 10次、“pug”: 5次、“pun”: 12次、\"bun\": 4次",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": false,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "1.拆分成基础字符：词表目前是：h, u, g, p, n, b",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "2.统计相邻字符对的频率：u和n经常连在一起；u, n 出现了 12 + 4 = 16 次。",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "3.合并频率最高的字符对：把u和n合并成新Token：un。词表变成：h, u, g, p, n, b, un",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "4.重复上述过程：u和g经常在一起，出现10+5=15次。词表变成：h, u, g, p, n, b, un, ug",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "2B2D31"
+        },
+        {
+          "text": "5.直到达到预设的词表大小",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "2B2D31"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.07,
+      "top": 6.29,
+      "width": 10.77,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "解决“未知词”（OOV）问题、词表大小可控、高效的语义压缩",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 3.73,
+      "top": 6.9,
+      "width": 6.67,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "其他还有： WordPiece、 SentencePiece",
+          "font_name": "Inter",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "FF0000"
+        }
+      ]
+    }
+  },
+  "slide-26": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.18,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "课程思路",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.58,
+      "top": 1.84,
+      "width": 5.78,
+      "height": 2.86,
+      "paragraphs": [
+        {
+          "text": "深度神经网络训练的基本流程：",
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "模型架构",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "color": "C00000",
+          "line_spacing": 42.0
+        },
+        {
+          "text": "训练方法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        }
+      ]
+    }
+  },
+  "slide-27": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 3.15,
+      "width": 11.82,
+      "height": 1.92,
+      "paragraphs": [
+        {
+          "text": "“共适应” (Co-adaptation)",
+          "font_name": "Inter",
+          "bold": true,
+          "italic": false,
+          "color": "2B2D31"
+        },
+        {
+          "text": "在深度神经网络中，如果某些神经元总是协同工作，它们可能会产生一种依赖性，即一个神经元的权重是为了弥补另一个神经元的错误而存在的。这种现象称为“共适应”，会导致模型过于依赖训练数据的特定组合，产生严重的过拟合",
+          "font_name": "Inter",
+          "bold": false,
+          "italic": false,
+          "color": "2B2D31"
+        }
+      ]
+    }
+  },
+  "slide-28": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 6.43,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "示意图",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.92,
+      "top": 6.6,
+      "width": 6.67,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014."
+        }
+      ]
+    }
+  },
+  "slide-29": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 6.43,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "示意图",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 0.92,
+      "top": 6.6,
+      "width": 6.67,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014."
+        }
+      ]
+    }
+  },
+  "slide-30": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 6.43,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "示意图",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.22,
+      "top": 3.88,
+      "width": 3.74,
+      "height": 1.16,
+      "paragraphs": [
+        {
+          "text": "为何缩放？",
+          "alignment": "CENTER",
+          "font_name": "Verdana",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 0.92,
+      "top": 6.6,
+      "width": 6.67,
+      "height": 0.71,
+      "paragraphs": [
+        {
+          "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014."
+        }
+      ]
+    }
+  },
+  "slide-31": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 10.44,
+      "top": 4.67,
+      "width": 2.32,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "测试时缩放会使输出范围与训练时对齐！",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 3.0,
+      "top": 6.98,
+      "width": 1.43,
+      "height": 0.4,
+      "paragraphs": [
+        {
+          "text": "Dropout层",
+          "font_size": 18.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 7.89,
+      "top": 6.98,
+      "width": 1.43,
+      "height": 0.4,
+      "paragraphs": [
+        {
+          "text": "Dropout层",
+          "font_size": 18.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-32": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：丢弃层",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "Dropout是一种缓解神经网络模型过拟合的关键技术，其核心思想是在训练过程中，随机丢弃神经网络中的一些神经元及其连接，防止神经元之间产生过强的共适应。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.92,
+      "top": 7.01,
+      "width": 11.05,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Srivastava et al. Dropout: A Simple Way to Prevent Neural Networks from Overfitting. In JMLR, 2014."
+        }
+      ]
+    }
+  },
+  "slide-33": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 9.53,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化（batch normalization）",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-34": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 9.53,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化（batch normalization）",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-35": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.98,
+      "top": 5.55,
+      "width": 3.74,
+      "height": 1.16,
+      "paragraphs": [
+        {
+          "text": "如何推广到层输出？",
+          "alignment": "CENTER",
+          "font_name": "Verdana",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-36": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.41,
+      "top": 6.53,
+      "width": 5.92,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "削弱了非线性激活函数带来的表达能力",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-37": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-38": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.61,
+      "width": 12.22,
+      "height": 1.05,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 0.3
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.45,
+      "top": 3.57,
+      "width": 3.76,
+      "height": 2.22,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.3
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "ICS和网络性能的关系并不大：向使用了BN的网络加入随机噪声，目的是使这个网络的ICS更加严重。实验结果表明虽然加入了随机噪声的BN的ICS问题更加严重，但它的性能要优于没有使用BN的普通网络",
+          "font_name": "Inter",
+          "bold": false,
+          "italic": false,
+          "color": "1C1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.47,
+      "top": 7.1,
+      "width": 10.18,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+          "font_name": "-apple-system",
+          "bold": false,
+          "italic": false,
+          "color": "191B1F"
+        }
+      ]
+    }
+  },
+  "slide-39": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.61,
+      "width": 12.22,
+      "height": 1.05,
+      "paragraphs": [
+        {
+          "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.47,
+      "top": 4.35,
+      "width": 3.76,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "BN和ICS的关系并不是很大",
+          "font_name": "Inter",
+          "bold": false,
+          "italic": false,
+          "color": "1C1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.47,
+      "top": 7.1,
+      "width": 10.18,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+          "font_name": "-apple-system",
+          "bold": false,
+          "italic": false,
+          "color": "191B1F"
+        }
+      ]
+    }
+  },
+  "slide-40": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.61,
+      "width": 12.22,
+      "height": 1.05,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 1.47
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "内部协变量偏移（Internal Covariate Shift）？？？",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.28,
+      "top": 3.33,
+      "width": 4.45,
+      "height": 0.71,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.47
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "BN处理之后的损失函数满足Lipschitz连续，即损失函数的梯度小于一个常量：",
+          "font_name": "Inter",
+          "bold": false,
+          "italic": false,
+          "color": "1C1D1F"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 8.32,
+      "top": 5.0,
+      "width": 4.38,
+      "height": 1.01,
+      "paragraphs": [
+        {
+          "text": "而且损失函数的梯度也满足Lipschitz连续，即斜率的斜率也不会超过一个常量：",
+          "font_name": "Inter",
+          "bold": false,
+          "italic": false,
+          "color": "1C1D1F"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 1.47,
+      "top": 7.1,
+      "width": 10.18,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "How Does Batch Normalization Help Optimization?(No, It Is Not About Internal Covariate Shift)",
+          "font_name": "-apple-system",
+          "bold": false,
+          "italic": false,
+          "color": "191B1F"
+        }
+      ]
+    }
+  },
+  "slide-41": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-42": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 6.38,
+      "top": 6.16,
+      "width": 3.57,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "分路径求导，最后求和",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-43": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-44": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-45": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-46": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-47": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-48": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：批归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-49": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：层归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.41,
+      "top": 4.24,
+      "width": 4.08,
+      "height": 1.96,
+      "overflow": {
+        "slide": {
+          "overflow_right": 0.16
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "适用于任意批大小！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-50": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 5.03,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：实例归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-51": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 5.03,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：实例归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.61,
+      "width": 6.01,
+      "height": 3.74,
+      "paragraphs": [
+        {
+          "text": "多用于图像风格迁移：IN有助于消除内容图原风格",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "BN进一步混淆不同数据",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "LN进一步混淆不同通道",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 6.76,
+      "top": 6.59,
+      "width": 5.31,
+      "height": 0.91,
+      "paragraphs": [
+        {
+          "text": "Ulyanov et al. Improved Texture Networks: Maximizing Quality and Diversity in Feed-forward Stylization and Texture Synthesis. In CVPR, 2017.",
+          "font_size": 16.0
+        }
+      ]
+    }
+  },
+  "slide-52": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.59,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：组归一化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.32,
+      "top": 6.07,
+      "width": 4.46,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "Wu and He. Group Normalization. In ECCV, 2018.",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-53": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 6.06,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：归一化方法对比",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "由于层状结构，除数据归一化外，神经网络模型还可以对每一层输出的激活值进行归一化，减小不同维度或不同样本之间的分布差异，从而稳定训练并加快收敛。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.6,
+      "top": 2.61,
+      "width": 12.18,
+      "height": 0.91,
+      "paragraphs": [
+        {
+          "text": "ImageNet数据集",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.21,
+      "top": 6.27,
+      "width": 2.2,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "不同批大小",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.33,
+      "top": 6.83,
+      "width": 6.34,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "Wu and He. Group Normalization. In ECCV, 2018.",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-54": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 7.34,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "不同初始化参数可能导致不同的局部最优解",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-55": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 7.34,
+      "height": 2.52,
+      "paragraphs": [
+        {
+          "text": "不同初始化参数可能导致不同的局部最优解",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 1.23,
+      "top": 6.38,
+      "width": 2.2,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "网络结构",
+          "alignment": "CENTER",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 5.5,
+      "top": 6.69,
+      "width": 2.2,
+      "height": 0.44,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-6": 0.18
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "全0初始化",
+          "alignment": "CENTER",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 8.95,
+      "top": 6.74,
+      "width": 2.2,
+      "height": 0.44,
+      "paragraphs": [
+        {
+          "text": "合适的初始化",
+          "alignment": "CENTER",
+          "font_size": 20.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-6": {
+      "left": 0.57,
+      "top": 7.05,
+      "width": 7.93,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-4": 0.18
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "https://www.deeplearning.ai/ai-notes/initialization/index.html"
+        }
+      ]
+    }
+  },
+  "slide-56": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 2.12,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 2.6
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "为什么不能使用全0初始化？",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.83,
+      "top": 3.96,
+      "width": 3.42,
+      "height": 2.52,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 2.6
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "“对称权重”：同一层神经元参数初始化相同，则前向传播与反向梯度都相同，等价于该层只有一个神经元。",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-57": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 5.22,
+      "top": 5.49,
+      "width": 1.55,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "梯度爆炸",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.26,
+      "top": 5.43,
+      "width": 1.55,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "梯度消失",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-58": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.39,
+      "top": 6.13,
+      "width": 3.03,
+      "height": 0.77,
+      "paragraphs": [
+        {
+          "text": "随着层数增加，激活值逐渐趋向于0",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-59": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-60": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-61": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-62": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.74,
+      "top": 5.02,
+      "width": 3.74,
+      "height": 1.16,
+      "paragraphs": [
+        {
+          "text": "能否改进？",
+          "alignment": "CENTER",
+          "font_name": "Verdana",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-63": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 4.28,
+      "paragraphs": [
+        {
+          "text": "Xavier初始化",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "首先对于tanh等对称或近线性激活函数，控制前向传播方差衰减",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "同理，考虑反向传播过程等方差控制",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "两者结合得到Xavier初始化",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 48.0
+        }
+      ]
+    }
+  },
+  "slide-64": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 4.68,
+      "paragraphs": [
+        {
+          "text": "He初始化",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "对于ReLU这种非对称激活函数，控制前向传播方差衰减",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "同样可以考虑反向传播影响，但实践中上述改变已足够有效",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-65": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.14,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "模型构建：初始化",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "一个好的模型参数初始化对于大多数优化算法的收敛都起到关键作用，尤其是神经网络模型所面临的非凸目标函数。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 1.05,
+      "paragraphs": [
+        {
+          "text": "基于方差控制的初始化方法对比",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.71,
+      "top": 5.34,
+      "width": 3.03,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "合理控制方差后，即使层数增加，激活值仍远大于0",
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-66": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 2.18,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "课程思路",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 3.58,
+      "top": 1.84,
+      "width": 5.78,
+      "height": 2.86,
+      "paragraphs": [
+        {
+          "text": "深度神经网络训练的基本流程：",
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "模型架构",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "line_spacing": 42.0
+        },
+        {
+          "text": "训练方法",
+          "bullet": true,
+          "level": 0,
+          "font_size": 28.0,
+          "color": "C00000",
+          "line_spacing": 42.0
+        }
+      ]
+    }
+  },
+  "slide-67": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.01,
+      "top": 3.58,
+      "width": 4.22,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "批量梯度，而非全量梯度",
+          "font_size": 22.0
+        },
+        {
+          "text": "提高计算效率，引入随机性",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.98,
+      "top": 4.83,
+      "width": 4.22,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "沿负梯度方向更新参数",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.8,
+      "top": 6.13,
+      "width": 4.22,
+      "height": 0.64,
+      "paragraphs": [
+        {
+          "text": "如何选择学习率？",
+          "alignment": "CENTER",
+          "font_size": 32.0
+        }
+      ]
+    }
+  },
+  "slide-68": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.01,
+      "top": 3.58,
+      "width": 4.22,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "批量梯度，而非全量梯度",
+          "font_size": 22.0
+        },
+        {
+          "text": "提高计算效率，引入随机性",
+          "font_size": 22.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.98,
+      "top": 4.83,
+      "width": 4.22,
+      "height": 0.47,
+      "paragraphs": [
+        {
+          "text": "沿负梯度方向更新参数",
+          "font_size": 22.0
+        }
+      ]
+    }
+  },
+  "slide-69": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-70": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-71": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.65,
+      "top": 3.37,
+      "width": 12.04,
+      "height": 3.65,
+      "paragraphs": [
+        {
+          "text": "参数无区分：",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "对所有参数使用同一个全局学习率，不会根据参数的重要性、更新频率或梯度大小来区别对待",
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "如果模型参数在尺度上差异很大（比如某些层参数范围很大，某些层很小），全局学习率很难同时适配所有参数",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "对于出现频率较低的特征（如稀疏数据中的罕见词），其参数更新次数少，若学习率太小则更新缓慢；若学习率太大则容易过调",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "深层网络中，不同层的梯度大小可能相差几个数量级，统一学习率会导致某些层更新过快或过慢",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        }
+      ]
+    }
+  },
+  "slide-72": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.65,
+      "top": 3.37,
+      "width": 12.04,
+      "height": 3.2,
+      "paragraphs": [
+        {
+          "text": "随机梯度方差较大：",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "每次只基于一个 mini-batch 计算梯度，而非全量数据 → 得到的梯度是真实梯度的有噪声估计，这个噪声的方差随批量大小变化",
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "方差大会导致更新方向不稳定，损失曲线震荡严重",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "为了稳定收敛，往往需要较小的学习率，但又会减慢收敛速度",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        },
+        {
+          "text": "即使理论上最终能收敛，在非平滑区域（如尖锐极小值附近），梯度噪声可能使参数无法稳定落点",
+          "bullet": true,
+          "level": 0,
+          "font_name": "quote-cjk-patch",
+          "font_size": 20.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115",
+          "line_spacing": 31.8
+        }
+      ]
+    }
+  },
+  "slide-73": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.59,
+      "top": 5.46,
+      "width": 4.22,
+      "height": 0.84,
+      "paragraphs": [
+        {
+          "text": "根据每个参数的历史梯度大小，动态调整其学习率",
+          "font_size": 22.0
+        }
+      ]
+    }
+  },
+  "slide-74": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.55,
+      "top": 5.07,
+      "width": 4.53,
+      "height": 1.58,
+      "paragraphs": [
+        {
+          "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+          "alignment": "JUSTIFY",
+          "font_name": "quote-cjk-patch",
+          "font_size": 22.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115"
+        }
+      ]
+    }
+  },
+  "slide-75": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.88,
+      "top": 4.32,
+      "width": 4.08,
+      "height": 1.96,
+      "paragraphs": [
+        {
+          "text": "学习率逐渐收敛至0！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-76": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.64,
+      "top": 4.46,
+      "width": 5.33,
+      "height": 1.96,
+      "paragraphs": [
+        {
+          "text": "仍面临SGD的学习率问题！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-77": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.55,
+      "top": 5.07,
+      "width": 4.53,
+      "height": 1.58,
+      "paragraphs": [
+        {
+          "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+          "alignment": "JUSTIFY",
+          "font_name": "quote-cjk-patch",
+          "font_size": 22.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115"
+        }
+      ]
+    }
+  },
+  "slide-78": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.55,
+      "top": 5.07,
+      "width": 4.53,
+      "height": 1.58,
+      "paragraphs": [
+        {
+          "text": "频繁更新的参数会获得较小的学习率，而稀疏更新的参数则能获得较大的学习率，从而更好地处理稀疏特征或不同尺度的问题",
+          "alignment": "JUSTIFY",
+          "font_name": "quote-cjk-patch",
+          "font_size": 22.0,
+          "bold": false,
+          "italic": false,
+          "color": "0F1115"
+        }
+      ]
+    }
+  },
+  "slide-79": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.6,
+      "top": 4.36,
+      "width": 4.36,
+      "height": 1.96,
+      "paragraphs": [
+        {
+          "text": "学习率不再单调递减！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-80": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-81": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.45
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.97,
+      "top": 2.19,
+      "width": 4.36,
+      "height": 1.96,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 1.45
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "最为广泛使用的优化器！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.61,
+      "top": 5.32,
+      "width": 0.88,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "去偏",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-82": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-83": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-84": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 3.07,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-3": 1.95
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Adam原文的理论分析存在错误",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 9.42,
+      "top": 5.08,
+      "width": 3.31,
+      "height": 1.45,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 1.95
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "Kingma, and Ba. Adam: A Method for Stochastic Optimization. In ICLR, 2015.",
+          "space_before": 4.32,
+          "font_size": 20.0
+        }
+      ]
+    }
+  },
+  "slide-85": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 4.65,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 7.76,
+      "top": 4.91,
+      "width": 5.09,
+      "height": 1.11,
+      "paragraphs": [
+        {
+          "text": "S. J. Reddi, S. Kale, and S. Kumar. On the Convergence of Adam and Beyond. In ICLR, 2018. (Best Paper, 1/3)",
+          "space_before": 4.32,
+          "font_size": 20.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.52,
+      "top": 6.69,
+      "width": 4.8,
+      "height": 0.4,
+      "paragraphs": [
+        {
+          "text": "有效学习率单调递减",
+          "font_size": 18.0
+        }
+      ]
+    }
+  },
+  "slide-86": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.33,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 权重衰减",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 9.73,
+      "top": 5.01,
+      "width": 1.19,
+      "height": 0.91,
+      "paragraphs": [
+        {
+          "text": "标准SGD",
+          "font_size": 24.0,
+          "bold": true,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-87": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.33,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 权重衰减",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-88": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.22,
+      "height": 1.66,
+      "paragraphs": [
+        {
+          "text": "学习率技巧：固定衰减",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        },
+        {
+          "text": "优化早期使用较大的学习率以确保收敛速度，随后逐渐调低学习率",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    }
+  },
+  "slide-89": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 8.6,
+      "top": 4.36,
+      "width": 4.36,
+      "height": 1.96,
+      "paragraphs": [
+        {
+          "text": "降低前期随机性影响！",
+          "alignment": "CENTER",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  },
+  "slide-90": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-91": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-92": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    }
+  },
+  "slide-93": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 7.54,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "训练与优化：优化器 + 学习率技巧",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.6,
+      "top": 1.57,
+      "width": 12.18,
+      "height": 1.0,
+      "paragraphs": [
+        {
+          "text": "尽管随机梯度下降能够用于深度神经网络模型的高效更新，但是其实践中的收敛速度仍存在一些问题。",
+          "alignment": "JUSTIFY",
+          "font_name": "Times New Roman",
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 0.56,
+      "top": 2.6,
+      "width": 12.18,
+      "height": 0.5,
+      "paragraphs": [
+        {
+          "text": "学习率技巧：周期性学习率（Cyclical Learning Rate, CLR）",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 10.15,
+      "top": 4.48,
+      "width": 2.62,
+      "height": 1.31,
+      "paragraphs": [
+        {
+          "text": "Huang et al. Snapshot Ensembles: Train 1, get M for free. In ICLR, 2017."
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 1.8,
+      "top": 6.97,
+      "width": 4.24,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "普通学习率调整，容易陷入局部极值"
+        }
+      ]
+    },
+    "shape-5": {
+      "left": 6.19,
+      "top": 6.95,
+      "width": 2.95,
+      "height": 0.4,
+      "overflow": {
+        "frame": {
+          "overflow_bottom": 0.1
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "CLR有助于逃离局部极值"
+        }
+      ]
+    }
+  },
+  "slide-94": {
+    "shape-0": {
+      "left": 0.41,
+      "top": 0.59,
+      "width": 1.12,
+      "height": 0.62,
+      "paragraphs": [
+        {
+          "text": "总结",
+          "space_before": 1.0,
+          "font_name": "Calibri",
+          "font_size": 36.0,
+          "theme_color": "BACKGROUND_1",
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-1": {
+      "left": 0.36,
+      "top": 1.47,
+      "width": 5.04,
+      "height": 2.46,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 3.53
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "数据准备",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "归一化",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "数据增强",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "类型转换",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-2": {
+      "left": 3.94,
+      "top": 1.43,
+      "width": 5.04,
+      "height": 2.46,
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-1": 3.53,
+          "shape-3": 0.47
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "模型构建",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "丢弃层",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "批归一化、层归一化、…",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "初始化",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-3": {
+      "left": 8.79,
+      "top": 1.43,
+      "width": 5.04,
+      "height": 2.46,
+      "overflow": {
+        "slide": {
+          "overflow_right": 0.49
+        }
+      },
+      "overlap": {
+        "overlapping_shapes": {
+          "shape-2": 0.47
+        }
+      },
+      "paragraphs": [
+        {
+          "text": "训练与优化",
+          "bullet": true,
+          "level": 0,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "优化器",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "权重衰减",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        },
+        {
+          "text": "学习率技巧",
+          "bullet": true,
+          "level": 1,
+          "font_size": 24.0,
+          "line_spacing": 36.0
+        }
+      ]
+    },
+    "shape-4": {
+      "left": 4.59,
+      "top": 4.87,
+      "width": 3.74,
+      "height": 1.16,
+      "paragraphs": [
+        {
+          "text": "Q&A？",
+          "alignment": "CENTER",
+          "font_name": "Verdana",
+          "font_size": 24.0,
+          "color": "C00000"
+        }
+      ]
+    }
+  }
+}

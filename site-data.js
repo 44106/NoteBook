@@ -630,526 +630,6 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "njb_扫描全能王 2026-4-29 22.12",
-    "fileName": "njb_扫描全能王 2026-4-29 22.12.pdf",
-    "path": "大二春夏/托福阅读/njb_扫描全能王 2026-4-29 22.12.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 2563034,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_扫描全能王 2026-5-6 22.48",
-    "fileName": "njb_扫描全能王 2026-5-6 22.48.pdf",
-    "path": "大二春夏/托福阅读/njb_扫描全能王 2026-5-6 22.48.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 1667413,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class1_notes",
-    "fileName": "njb_class1_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class1_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 99459,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class2_notes",
-    "fileName": "njb_class2_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class2_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 87497,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class3_notes",
-    "fileName": "njb_class3_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class3_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 122766,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class4_notes",
-    "fileName": "njb_class4_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class4_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 104815,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class5_notes",
-    "fileName": "njb_class5_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class5_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 128968,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class6_notes",
-    "fileName": "njb_class6_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class6_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 117206,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_class7_notes",
-    "fileName": "njb_class7_notes.pdf",
-    "path": "大二春夏/托福阅读/njb_class7_notes.pdf",
-    "semester": "大二春夏",
-    "course": "托福阅读",
-    "type": "pdf",
-    "size": 131829,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_20-21春夏",
-    "fileName": "njb_20-21春夏.pdf",
-    "path": "大二春夏/数值代数/njb_20-21春夏.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 43570,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_22-23春夏",
-    "fileName": "njb_22-23春夏.pdf",
-    "path": "大二春夏/数值代数/njb_22-23春夏.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 102717,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_23-24春夏",
-    "fileName": "njb_23-24春夏.pdf",
-    "path": "大二春夏/数值代数/njb_23-24春夏.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 950659,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_24-25春夏",
-    "fileName": "njb_24-25春夏.pdf",
-    "path": "大二春夏/数值代数/njb_24-25春夏.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 38635,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_第八讲 正交化方法_逐行讲解",
-    "fileName": "njb_第八讲 正交化方法_逐行讲解.md",
-    "path": "大二春夏/数值代数/njb_第八讲 正交化方法_逐行讲解.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 26806,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_总复习",
-    "fileName": "njb_总复习.pdf",
-    "path": "大二春夏/数值代数/njb_总复习.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 1585141,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework10(2)",
-    "fileName": "njb_Homework10(2).pdf",
-    "path": "大二春夏/数值代数/njb_Homework10(2).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 36242,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework11(2)",
-    "fileName": "njb_Homework11(2).pdf",
-    "path": "大二春夏/数值代数/njb_Homework11(2).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 33633,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework12(1)",
-    "fileName": "njb_Homework12(1).pdf",
-    "path": "大二春夏/数值代数/njb_Homework12(1).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 24369,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework13(1)",
-    "fileName": "njb_Homework13(1).pdf",
-    "path": "大二春夏/数值代数/njb_Homework13(1).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 11122,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework14",
-    "fileName": "njb_Homework14.pdf",
-    "path": "大二春夏/数值代数/njb_Homework14.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 24324,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework15",
-    "fileName": "njb_Homework15.pdf",
-    "path": "大二春夏/数值代数/njb_Homework15.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 17301,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework2(1)",
-    "fileName": "njb_Homework2(1).pdf",
-    "path": "大二春夏/数值代数/njb_Homework2(1).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 61148,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework3(2)",
-    "fileName": "njb_Homework3(2).pdf",
-    "path": "大二春夏/数值代数/njb_Homework3(2).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 107008,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework4(1)",
-    "fileName": "njb_Homework4(1).pdf",
-    "path": "大二春夏/数值代数/njb_Homework4(1).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 48482,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework5(1)",
-    "fileName": "njb_Homework5(1).pdf",
-    "path": "大二春夏/数值代数/njb_Homework5(1).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 31080,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework6",
-    "fileName": "njb_Homework6.pdf",
-    "path": "大二春夏/数值代数/njb_Homework6.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 10655,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework7(2)",
-    "fileName": "njb_Homework7(2).pdf",
-    "path": "大二春夏/数值代数/njb_Homework7(2).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 25847,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_Homework8(3)",
-    "fileName": "njb_Homework8(3).pdf",
-    "path": "大二春夏/数值代数/njb_Homework8(3).pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 48306,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw1",
-    "fileName": "njb_hw1.pdf",
-    "path": "大二春夏/数值代数/njb_hw1.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 460982,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw2",
-    "fileName": "njb_hw2.pdf",
-    "path": "大二春夏/数值代数/njb_hw2.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 86098,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw3",
-    "fileName": "njb_hw3.pdf",
-    "path": "大二春夏/数值代数/njb_hw3.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 89328,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw4",
-    "fileName": "njb_hw4.pdf",
-    "path": "大二春夏/数值代数/njb_hw4.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 99021,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw5_results_20260511083357",
-    "fileName": "njb_hw5_results_20260511083357.md",
-    "path": "大二春夏/数值代数/njb_hw5_results_20260511083357.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 2392,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw5_results",
-    "fileName": "njb_hw5_results.md",
-    "path": "大二春夏/数值代数/njb_hw5_results.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 2392,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw5",
-    "fileName": "njb_hw5.pdf",
-    "path": "大二春夏/数值代数/njb_hw5.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 91814,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw6_results",
-    "fileName": "njb_hw6_results.md",
-    "path": "大二春夏/数值代数/njb_hw6_results.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 1052,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw6",
-    "fileName": "njb_hw6.pdf",
-    "path": "大二春夏/数值代数/njb_hw6.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 101032,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw7_results",
-    "fileName": "njb_hw7_results.md",
-    "path": "大二春夏/数值代数/njb_hw7_results.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 680,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw7",
-    "fileName": "njb_hw7.pdf",
-    "path": "大二春夏/数值代数/njb_hw7.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 84275,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw8_results",
-    "fileName": "njb_hw8_results.md",
-    "path": "大二春夏/数值代数/njb_hw8_results.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 8257,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw8",
-    "fileName": "njb_hw8.pdf",
-    "path": "大二春夏/数值代数/njb_hw8.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 100509,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw9_results",
-    "fileName": "njb_hw9_results.md",
-    "path": "大二春夏/数值代数/njb_hw9_results.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 5610,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_hw9",
-    "fileName": "njb_hw9.pdf",
-    "path": "大二春夏/数值代数/njb_hw9.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 95318,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_lecture8_orthogonalization_formula",
-    "fileName": "njb_lecture8_orthogonalization_formula.md",
-    "path": "大二春夏/数值代数/njb_lecture8_orthogonalization_formula.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 29386,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_00_资料映射与预测",
-    "fileName": "njb_00_资料映射与预测.md",
-    "path": "大二春夏/数值代数/exam_prep/njb_00_资料映射与预测.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 9666,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_01_期末备考讲义",
-    "fileName": "njb_01_期末备考讲义.md",
-    "path": "大二春夏/数值代数/exam_prep/njb_01_期末备考讲义.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 13030,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_01_期末备考讲义",
-    "fileName": "njb_01_期末备考讲义.pdf",
-    "path": "大二春夏/数值代数/exam_prep/njb_01_期末备考讲义.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 176797,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_02_高频题库与预测卷",
-    "fileName": "njb_02_高频题库与预测卷.md",
-    "path": "大二春夏/数值代数/exam_prep/njb_02_高频题库与预测卷.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 7893,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_02_高频题库与预测卷",
-    "fileName": "njb_02_高频题库与预测卷.pdf",
-    "path": "大二春夏/数值代数/exam_prep/njb_02_高频题库与预测卷.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 126174,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_03_期末备考详细自学讲义",
-    "fileName": "njb_03_期末备考详细自学讲义.md",
-    "path": "大二春夏/数值代数/exam_prep/njb_03_期末备考详细自学讲义.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 41638,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_03_期末备考详细自学讲义",
-    "fileName": "njb_03_期末备考详细自学讲义.pdf",
-    "path": "大二春夏/数值代数/exam_prep/njb_03_期末备考详细自学讲义.pdf",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "pdf",
-    "size": 285804,
-    "modified": "2026-08-11"
-  },
-  {
-    "title": "njb_README",
-    "fileName": "njb_README.md",
-    "path": "大二春夏/数值代数/exam_prep/njb_README.md",
-    "semester": "大二春夏",
-    "course": "数值代数",
-    "type": "md",
-    "size": 452,
-    "modified": "2026-08-11"
-  },
-  {
     "title": "44106_深度学习导论知识点整理_复习课框架版",
     "fileName": "44106_深度学习导论知识点整理_复习课框架版.pdf",
     "path": "大二春夏/深度学习导论，3.5学分/44106_深度学习导论知识点整理_复习课框架版.pdf",
@@ -2848,5 +2328,525 @@ window.SITE_RESOURCES = [
     "type": "pdf",
     "size": 4667447,
     "modified": "2025-11-13"
+  },
+  {
+    "title": "njb_扫描全能王 2026-4-29 22.12",
+    "fileName": "njb_扫描全能王 2026-4-29 22.12.pdf",
+    "path": "非专业课/托福阅读/njb_扫描全能王 2026-4-29 22.12.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 2563034,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_扫描全能王 2026-5-6 22.48",
+    "fileName": "njb_扫描全能王 2026-5-6 22.48.pdf",
+    "path": "非专业课/托福阅读/njb_扫描全能王 2026-5-6 22.48.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 1667413,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class1_notes",
+    "fileName": "njb_class1_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class1_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 99459,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class2_notes",
+    "fileName": "njb_class2_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class2_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 87497,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class3_notes",
+    "fileName": "njb_class3_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class3_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 122766,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class4_notes",
+    "fileName": "njb_class4_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class4_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 104815,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class5_notes",
+    "fileName": "njb_class5_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class5_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 128968,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class6_notes",
+    "fileName": "njb_class6_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class6_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 117206,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_class7_notes",
+    "fileName": "njb_class7_notes.pdf",
+    "path": "非专业课/托福阅读/njb_class7_notes.pdf",
+    "semester": "非专业课",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 131829,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_20-21春夏",
+    "fileName": "njb_20-21春夏.pdf",
+    "path": "非专业课/数值代数/njb_20-21春夏.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 43570,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_22-23春夏",
+    "fileName": "njb_22-23春夏.pdf",
+    "path": "非专业课/数值代数/njb_22-23春夏.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 102717,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_23-24春夏",
+    "fileName": "njb_23-24春夏.pdf",
+    "path": "非专业课/数值代数/njb_23-24春夏.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 950659,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_24-25春夏",
+    "fileName": "njb_24-25春夏.pdf",
+    "path": "非专业课/数值代数/njb_24-25春夏.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 38635,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_第八讲 正交化方法_逐行讲解",
+    "fileName": "njb_第八讲 正交化方法_逐行讲解.md",
+    "path": "非专业课/数值代数/njb_第八讲 正交化方法_逐行讲解.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 26806,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_总复习",
+    "fileName": "njb_总复习.pdf",
+    "path": "非专业课/数值代数/njb_总复习.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 1585141,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework10(2)",
+    "fileName": "njb_Homework10(2).pdf",
+    "path": "非专业课/数值代数/njb_Homework10(2).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 36242,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework11(2)",
+    "fileName": "njb_Homework11(2).pdf",
+    "path": "非专业课/数值代数/njb_Homework11(2).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 33633,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework12(1)",
+    "fileName": "njb_Homework12(1).pdf",
+    "path": "非专业课/数值代数/njb_Homework12(1).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 24369,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework13(1)",
+    "fileName": "njb_Homework13(1).pdf",
+    "path": "非专业课/数值代数/njb_Homework13(1).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 11122,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework14",
+    "fileName": "njb_Homework14.pdf",
+    "path": "非专业课/数值代数/njb_Homework14.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 24324,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework15",
+    "fileName": "njb_Homework15.pdf",
+    "path": "非专业课/数值代数/njb_Homework15.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 17301,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework2(1)",
+    "fileName": "njb_Homework2(1).pdf",
+    "path": "非专业课/数值代数/njb_Homework2(1).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 61148,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework3(2)",
+    "fileName": "njb_Homework3(2).pdf",
+    "path": "非专业课/数值代数/njb_Homework3(2).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 107008,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework4(1)",
+    "fileName": "njb_Homework4(1).pdf",
+    "path": "非专业课/数值代数/njb_Homework4(1).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 48482,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework5(1)",
+    "fileName": "njb_Homework5(1).pdf",
+    "path": "非专业课/数值代数/njb_Homework5(1).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 31080,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework6",
+    "fileName": "njb_Homework6.pdf",
+    "path": "非专业课/数值代数/njb_Homework6.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 10655,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework7(2)",
+    "fileName": "njb_Homework7(2).pdf",
+    "path": "非专业课/数值代数/njb_Homework7(2).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 25847,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_Homework8(3)",
+    "fileName": "njb_Homework8(3).pdf",
+    "path": "非专业课/数值代数/njb_Homework8(3).pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 48306,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw1",
+    "fileName": "njb_hw1.pdf",
+    "path": "非专业课/数值代数/njb_hw1.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 460982,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw2",
+    "fileName": "njb_hw2.pdf",
+    "path": "非专业课/数值代数/njb_hw2.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 86098,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw3",
+    "fileName": "njb_hw3.pdf",
+    "path": "非专业课/数值代数/njb_hw3.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 89328,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw4",
+    "fileName": "njb_hw4.pdf",
+    "path": "非专业课/数值代数/njb_hw4.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 99021,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw5_results_20260511083357",
+    "fileName": "njb_hw5_results_20260511083357.md",
+    "path": "非专业课/数值代数/njb_hw5_results_20260511083357.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 2392,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw5_results",
+    "fileName": "njb_hw5_results.md",
+    "path": "非专业课/数值代数/njb_hw5_results.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 2392,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw5",
+    "fileName": "njb_hw5.pdf",
+    "path": "非专业课/数值代数/njb_hw5.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 91814,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw6_results",
+    "fileName": "njb_hw6_results.md",
+    "path": "非专业课/数值代数/njb_hw6_results.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 1052,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw6",
+    "fileName": "njb_hw6.pdf",
+    "path": "非专业课/数值代数/njb_hw6.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 101032,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw7_results",
+    "fileName": "njb_hw7_results.md",
+    "path": "非专业课/数值代数/njb_hw7_results.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 680,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw7",
+    "fileName": "njb_hw7.pdf",
+    "path": "非专业课/数值代数/njb_hw7.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 84275,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw8_results",
+    "fileName": "njb_hw8_results.md",
+    "path": "非专业课/数值代数/njb_hw8_results.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 8257,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw8",
+    "fileName": "njb_hw8.pdf",
+    "path": "非专业课/数值代数/njb_hw8.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 100509,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw9_results",
+    "fileName": "njb_hw9_results.md",
+    "path": "非专业课/数值代数/njb_hw9_results.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 5610,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_hw9",
+    "fileName": "njb_hw9.pdf",
+    "path": "非专业课/数值代数/njb_hw9.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 95318,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_lecture8_orthogonalization_formula",
+    "fileName": "njb_lecture8_orthogonalization_formula.md",
+    "path": "非专业课/数值代数/njb_lecture8_orthogonalization_formula.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 29386,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_00_资料映射与预测",
+    "fileName": "njb_00_资料映射与预测.md",
+    "path": "非专业课/数值代数/exam_prep/njb_00_资料映射与预测.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 9666,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_01_期末备考讲义",
+    "fileName": "njb_01_期末备考讲义.md",
+    "path": "非专业课/数值代数/exam_prep/njb_01_期末备考讲义.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 13030,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_01_期末备考讲义",
+    "fileName": "njb_01_期末备考讲义.pdf",
+    "path": "非专业课/数值代数/exam_prep/njb_01_期末备考讲义.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 176797,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_02_高频题库与预测卷",
+    "fileName": "njb_02_高频题库与预测卷.md",
+    "path": "非专业课/数值代数/exam_prep/njb_02_高频题库与预测卷.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 7893,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_02_高频题库与预测卷",
+    "fileName": "njb_02_高频题库与预测卷.pdf",
+    "path": "非专业课/数值代数/exam_prep/njb_02_高频题库与预测卷.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 126174,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_03_期末备考详细自学讲义",
+    "fileName": "njb_03_期末备考详细自学讲义.md",
+    "path": "非专业课/数值代数/exam_prep/njb_03_期末备考详细自学讲义.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 41638,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_03_期末备考详细自学讲义",
+    "fileName": "njb_03_期末备考详细自学讲义.pdf",
+    "path": "非专业课/数值代数/exam_prep/njb_03_期末备考详细自学讲义.pdf",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 285804,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "njb_README",
+    "fileName": "njb_README.md",
+    "path": "非专业课/数值代数/exam_prep/njb_README.md",
+    "semester": "非专业课",
+    "course": "数值代数",
+    "type": "md",
+    "size": 452,
+    "modified": "2026-08-11"
   }
 ];

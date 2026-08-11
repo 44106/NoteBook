@@ -4,7 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
-$knowledgeRoots = @("大二春夏", "大二秋冬")
+$knowledgeRoots = @("大二春夏", "大二秋冬", "非专业课")
 
 $resources = foreach ($semester in $knowledgeRoots) {
   $semesterPath = Join-Path $repositoryRoot $semester

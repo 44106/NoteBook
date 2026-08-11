@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="矩形 2">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{6DBA570A-0839-B7BA-53F6-BC6EFFD9B697}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="5610"/>
+            <a:ext cx="12192000" cy="6858000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="142C68"/>
+          </a:solidFill>
+          <a:ln>
+            <a:solidFill>
+              <a:srgbClr val="142C68"/>
+            </a:solidFill>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="2">
+            <a:schemeClr val="accent1">
+              <a:shade val="15000"/>
+            </a:schemeClr>
+          </a:lnRef>
+          <a:fillRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="0">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+              <a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="02164B"/>
+                </a:solidFill>
+              </a:ln>
+              <a:solidFill>
+                <a:srgbClr val="01164B"/>
+              </a:solidFill>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="矩形 12"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="4648611"/>
+            <a:ext cx="12192000" cy="1163111"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="5184BF">
+              <a:alpha val="56000"/>
+            </a:srgbClr>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="2">
+            <a:schemeClr val="accent1">
+              <a:shade val="50000"/>
+            </a:schemeClr>
+          </a:lnRef>
+          <a:fillRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="0">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:endParaRPr lang="zh-CN" altLang="en-US">
+              <a:solidFill>
+                <a:schemeClr val="bg1">
+                  <a:lumMod val="50000"/>
+                </a:schemeClr>
+              </a:solidFill>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:grpSp>
+        <p:nvGrpSpPr>
+          <p:cNvPr id="6" name="组 5"/>
+          <p:cNvGrpSpPr/>
+          <p:nvPr/>
+        </p:nvGrpSpPr>
+        <p:grpSpPr>
+          <a:xfrm>
+            <a:off x="807813" y="1971254"/>
+            <a:ext cx="10602700" cy="2755756"/>
+            <a:chOff x="-3816982" y="995824"/>
+            <a:chExt cx="10602700" cy="2755756"/>
+          </a:xfrm>
+        </p:grpSpPr>
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="17" name="标题 1"/>
+            <p:cNvSpPr txBox="1">
+              <a:spLocks/>
+            </p:cNvSpPr>
+            <p:nvPr/>
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="-3816982" y="995824"/>
+              <a:ext cx="10545131" cy="1122775"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+          </p:spPr>
+          <p:txBody>
+            <a:bodyPr vert="horz" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="b">
+              <a:noAutofit/>
+            </a:bodyPr>
+            <a:lstStyle>
+              <a:lvl1pPr algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:lnSpc>
+                  <a:spcPct val="90000"/>
+                </a:lnSpc>
+                <a:spcBef>
+                  <a:spcPct val="0"/>
+                </a:spcBef>
+                <a:buNone/>
+                <a:defRPr sz="6000" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1"/>
+                  </a:solidFill>
+                  <a:latin typeface="+mj-lt"/>
+                  <a:ea typeface="+mj-ea"/>
+                  <a:cs typeface="+mj-cs"/>
+                </a:defRPr>
+              </a:lvl1pPr>
+            </a:lstStyle>
+            <a:p>
+              <a:r>
+                <a:rPr lang="zh-CN" altLang="en-US" sz="5400">
+                  <a:solidFill>
+                    <a:schemeClr val="bg1"/>
+                  </a:solidFill>
+                  <a:latin typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                  <a:ea typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                </a:rPr>
+                <a:t>第十一章：大语言模型架构与训练</a:t>
+              </a:r>
+              <a:endParaRPr lang="zh-CN" altLang="en-US" sz="5400" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Weibei SC" charset="-122"/>
+              </a:endParaRPr>
+            </a:p>
+          </p:txBody>
+        </p:sp>
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="19" name="标题 1"/>
+            <p:cNvSpPr txBox="1">
+              <a:spLocks/>
+            </p:cNvSpPr>
+            <p:nvPr/>
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="5712822" y="2980471"/>
+              <a:ext cx="1072896" cy="771109"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+          </p:spPr>
+          <p:txBody>
+            <a:bodyPr vert="horz" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="b">
+              <a:noAutofit/>
+            </a:bodyPr>
+            <a:lstStyle>
+              <a:lvl1pPr algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:lnSpc>
+                  <a:spcPct val="90000"/>
+                </a:lnSpc>
+                <a:spcBef>
+                  <a:spcPct val="0"/>
+                </a:spcBef>
+                <a:buNone/>
+                <a:defRPr sz="6000" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1"/>
+                  </a:solidFill>
+                  <a:latin typeface="+mj-lt"/>
+                  <a:ea typeface="+mj-ea"/>
+                  <a:cs typeface="+mj-cs"/>
+                </a:defRPr>
+              </a:lvl1pPr>
+            </a:lstStyle>
+            <a:p>
+              <a:endParaRPr lang="zh-CN" altLang="en-US" sz="15000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:effectLst>
+                  <a:outerShdw blurRad="50800" dist="76200" dir="2700000" algn="tl" rotWithShape="0">
+                    <a:schemeClr val="bg1">
+                      <a:alpha val="40000"/>
+                    </a:schemeClr>
+                  </a:outerShdw>
+                </a:effectLst>
+                <a:latin typeface="Xingkai SC" charset="-122"/>
+                <a:ea typeface="Xingkai SC" charset="-122"/>
+                <a:cs typeface="Xingkai SC" charset="-122"/>
+              </a:endParaRPr>
+            </a:p>
+          </p:txBody>
+        </p:sp>
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="20" name="标题 1"/>
+            <p:cNvSpPr txBox="1">
+              <a:spLocks/>
+            </p:cNvSpPr>
+            <p:nvPr/>
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="4169664" y="2379501"/>
+              <a:ext cx="1072896" cy="771109"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+          </p:spPr>
+          <p:txBody>
+            <a:bodyPr vert="horz" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="b">
+              <a:noAutofit/>
+            </a:bodyPr>
+            <a:lstStyle>
+              <a:lvl1pPr algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:lnSpc>
+                  <a:spcPct val="90000"/>
+                </a:lnSpc>
+                <a:spcBef>
+                  <a:spcPct val="0"/>
+                </a:spcBef>
+                <a:buNone/>
+                <a:defRPr sz="6000" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1"/>
+                  </a:solidFill>
+                  <a:latin typeface="+mj-lt"/>
+                  <a:ea typeface="+mj-ea"/>
+                  <a:cs typeface="+mj-cs"/>
+                </a:defRPr>
+              </a:lvl1pPr>
+            </a:lstStyle>
+            <a:p>
+              <a:br>
+                <a:rPr lang="en-US" altLang="zh-CN" sz="15000" b="1" dirty="0">
+                  <a:solidFill>
+                    <a:schemeClr val="accent1">
+                      <a:lumMod val="75000"/>
+                    </a:schemeClr>
+                  </a:solidFill>
+                  <a:effectLst>
+                    <a:outerShdw blurRad="50800" dist="76200" dir="2700000" algn="tl" rotWithShape="0">
+                      <a:schemeClr val="bg1">
+                        <a:alpha val="40000"/>
+                      </a:schemeClr>
+                    </a:outerShdw>
+                  </a:effectLst>
+                  <a:latin typeface="Xingkai SC" charset="-122"/>
+                  <a:ea typeface="Xingkai SC" charset="-122"/>
+                  <a:cs typeface="Xingkai SC" charset="-122"/>
+                </a:rPr>
+              </a:br>
+              <a:r>
+                <a:rPr lang="en-US" altLang="zh-CN" sz="15000" b="1" dirty="0">
+                  <a:solidFill>
+                    <a:schemeClr val="accent1">
+                      <a:lumMod val="75000"/>
+                    </a:schemeClr>
+                  </a:solidFill>
+                  <a:effectLst>
+                    <a:outerShdw blurRad="50800" dist="76200" dir="2700000" algn="tl" rotWithShape="0">
+                      <a:schemeClr val="bg1">
+                        <a:alpha val="40000"/>
+                      </a:schemeClr>
+                    </a:outerShdw>
+                  </a:effectLst>
+                  <a:latin typeface="Xingkai SC" charset="-122"/>
+                  <a:ea typeface="Xingkai SC" charset="-122"/>
+                  <a:cs typeface="Xingkai SC" charset="-122"/>
+                </a:rPr>
+                <a:t>      </a:t>
+              </a:r>
+              <a:endParaRPr lang="zh-CN" altLang="en-US" sz="15000" b="1" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:effectLst>
+                  <a:outerShdw blurRad="50800" dist="76200" dir="2700000" algn="tl" rotWithShape="0">
+                    <a:schemeClr val="bg1">
+                      <a:alpha val="40000"/>
+                    </a:schemeClr>
+                  </a:outerShdw>
+                </a:effectLst>
+                <a:latin typeface="Xingkai SC" charset="-122"/>
+                <a:ea typeface="Xingkai SC" charset="-122"/>
+                <a:cs typeface="Xingkai SC" charset="-122"/>
+              </a:endParaRPr>
+            </a:p>
+          </p:txBody>
+        </p:sp>
+      </p:grpSp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="2" name="Picture 4" descr="浙江大学">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{A0FEC789-007D-C7E1-D7DF-BB58DBE4B5D1}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1"/>
+          </p:cNvPicPr>
+          <p:nvPr/>
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId3">
+            <a:extLst>
+              <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" val="0"/>
+              </a:ext>
+            </a:extLst>
+          </a:blip>
+          <a:srcRect/>
+          <a:stretch>
+            <a:fillRect/>
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="237122" y="185775"/>
+            <a:ext cx="1856758" cy="537276"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:extLst>
+            <a:ext uri="{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}">
+              <a14:hiddenFill xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF"/>
+                </a:solidFill>
+              </a14:hiddenFill>
+            </a:ext>
+          </a:extLst>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="11" name="文本框 10">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{FDF2B7BD-970D-B5F7-FAF7-A88ACF923A2C}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2455675" y="4956824"/>
+            <a:ext cx="7600684" cy="523220"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="2800" spc="-55" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>主讲教师：毛玉仁</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" altLang="zh-CN" sz="2800" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="bg1"/>
+              </a:solidFill>
+              <a:latin typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+              <a:ea typeface="微软雅黑" panose="020B0503020204020204" pitchFamily="34" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="文本框 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{80E0B13B-31D0-80DD-20B3-7C77931F645D}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8229601" y="254358"/>
+            <a:ext cx="3674790" cy="461665"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="2400" spc="-55" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="黑体" panose="02010609060101010101" pitchFamily="49" charset="-122"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>课程</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="2400" spc="-55">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="黑体" panose="02010609060101010101" pitchFamily="49" charset="-122"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>名称：深度学习导论</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" altLang="zh-CN" sz="2400" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="bg1"/>
+              </a:solidFill>
+              <a:latin typeface="黑体" panose="02010609060101010101" pitchFamily="49" charset="-122"/>
+              <a:ea typeface="黑体" panose="02010609060101010101" pitchFamily="49" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

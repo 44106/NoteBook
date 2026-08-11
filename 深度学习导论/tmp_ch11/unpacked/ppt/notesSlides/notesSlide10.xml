@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="幻灯片图像占位符 1"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldImg"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr/>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="备注占位符 2"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="body" idx="1"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr/>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClrTx/>
+              <a:buSzTx/>
+              <a:buFontTx/>
+              <a:buNone/>
+              <a:defRPr/>
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>由于各自独特的模型设计以及注意力矩阵上的差异，在同等参数规模下，这三种架构的模型在适用任务上也都各有倾向。</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+              <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClrTx/>
+              <a:buSzTx/>
+              <a:buFontTx/>
+              <a:buNone/>
+              <a:defRPr/>
+            </a:pPr>
+            <a:endParaRPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+              <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClrTx/>
+              <a:buSzTx/>
+              <a:buFontTx/>
+              <a:buNone/>
+              <a:defRPr/>
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Encoder-only </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>架构中的双向注意力机制允许模型在预测每个</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Token</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>时都充分考虑序列中的前后文信息，捕捉丰富的语义和依赖关系。</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+              <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClrTx/>
+              <a:buSzTx/>
+              <a:buFontTx/>
+              <a:buNone/>
+              <a:defRPr/>
+            </a:pPr>
+            <a:endParaRPr kumimoji="1" lang="en-US" altLang="zh-CN" dirty="0">
+              <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClrTx/>
+              <a:buSzTx/>
+              <a:buFontTx/>
+              <a:buNone/>
+              <a:defRPr/>
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>因此，</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-GB" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Encoder-only </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>架构的模型特别适合于自然语言理解（</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-GB" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Natural Language Understanding, NLU</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-GB">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>）</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>任务，如情感分析或文本分类等判别任务。然而，由于缺少解码器组件，</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-GB" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Encoder-only </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>架构的模型无法直接生成所需目标序列，因此在对话问答此类自然语言生成任务（</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="en-GB" altLang="zh-CN" dirty="0">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>Natural Language Generation, NLG</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-GB">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>）</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US">
+                <a:latin typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+                <a:ea typeface="微软雅黑" panose="020B0503020204020204" charset="-122"/>
+              </a:rPr>
+              <a:t>上可能表现不如专门设计的生成模型。</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="灯片编号占位符 3"/>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldNum" sz="quarter" idx="5"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr/>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:fld id="{B9501F51-E497-1449-8DC9-60B7BE2806BF}" type="slidenum">
+              <a:rPr kumimoji="1" lang="zh-CN" altLang="en-US" smtClean="0"/>
+              <a:t>10</a:t>
+            </a:fld>
+            <a:endParaRPr kumimoji="1" lang="zh-CN" altLang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:notes>

@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="35" name="矩形 34"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="491331"/>
+            <a:ext cx="12192000" cy="688925"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="142C68"/>
+          </a:solidFill>
+          <a:ln>
+            <a:solidFill>
+              <a:srgbClr val="142C68"/>
+            </a:solidFill>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="2">
+            <a:schemeClr val="accent1">
+              <a:shade val="50000"/>
+            </a:schemeClr>
+          </a:lnRef>
+          <a:fillRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="0">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:endParaRPr lang="zh-CN" altLang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="36" name="矩形 35"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="493839"/>
+            <a:ext cx="12192000" cy="688925"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="142C68"/>
+          </a:solidFill>
+          <a:ln>
+            <a:solidFill>
+              <a:srgbClr val="142C68"/>
+            </a:solidFill>
+          </a:ln>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="2">
+            <a:schemeClr val="accent1">
+              <a:shade val="50000"/>
+            </a:schemeClr>
+          </a:lnRef>
+          <a:fillRef idx="1">
+            <a:schemeClr val="accent1"/>
+          </a:fillRef>
+          <a:effectRef idx="0">
+            <a:schemeClr val="accent1"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="lt1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr"/>
+            <a:endParaRPr lang="zh-CN" altLang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="文本框 4"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="594000" y="1620000"/>
+            <a:ext cx="11070000" cy="990000"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:schemeClr val="bg1"/>
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:schemeClr val="tx1"/>
+            </a:solidFill>
+          </a:ln>
+          <a:effectLst>
+            <a:outerShdw blurRad="50800" dist="38100" dir="2700000" algn="tl" rotWithShape="0">
+              <a:prstClr val="black">
+                <a:alpha val="40000"/>
+              </a:prstClr>
+            </a:outerShdw>
+          </a:effectLst>
+        </p:spPr>
+        <p:style>
+          <a:lnRef idx="2">
+            <a:schemeClr val="accent4"/>
+          </a:lnRef>
+          <a:fillRef idx="1">
+            <a:schemeClr val="lt1"/>
+          </a:fillRef>
+          <a:effectRef idx="0">
+            <a:schemeClr val="accent4"/>
+          </a:effectRef>
+          <a:fontRef idx="minor">
+            <a:schemeClr val="dk1"/>
+          </a:fontRef>
+        </p:style>
+        <p:txBody>
+          <a:bodyPr rtlCol="0" anchor="ctr"/>
+          <a:lstStyle>
+            <a:defPPr>
+              <a:defRPr lang="zh-CN"/>
+            </a:defPPr>
+            <a:lvl1pPr algn="just">
+              <a:buClr>
+                <a:srgbClr val="C00000"/>
+              </a:buClr>
+              <a:defRPr kumimoji="1" sz="2400">
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+                <a:latin typeface="+mn-ea"/>
+                <a:cs typeface="Times New Roman" panose="02020603050405020304" pitchFamily="18" charset="0"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+            <a:lvl2pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl2pPr>
+            <a:lvl3pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl3pPr>
+            <a:lvl4pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl4pPr>
+            <a:lvl5pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl5pPr>
+            <a:lvl6pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl6pPr>
+            <a:lvl7pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl7pPr>
+            <a:lvl8pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl8pPr>
+            <a:lvl9pPr>
+              <a:defRPr>
+                <a:solidFill>
+                  <a:schemeClr val="dk1"/>
+                </a:solidFill>
+              </a:defRPr>
+            </a:lvl9pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>基于</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-GB" altLang="zh-CN" dirty="0"/>
+              <a:t>Encoder-Decoder</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>架构的大语言模型在</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="C00000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>模型结构</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>和</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="C00000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>参数规模</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>的双重优势下，不仅体现出了</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="C00000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>强大的语言理解能力</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>，在</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="C00000"/>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>生成任务</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" dirty="0"/>
+              <a:t>中也展示了良好的性能表现。</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="object 5"/>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="411249" y="552382"/>
+            <a:ext cx="6066175" cy="566822"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr vert="horz" wrap="square" lIns="0" tIns="12700" rIns="0" bIns="0" rtlCol="0" anchor="b">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle>
+            <a:lvl1pPr algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="90000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPct val="0"/>
+              </a:spcBef>
+              <a:buNone/>
+              <a:defRPr sz="6000" kern="1200">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="+mj-lt"/>
+                <a:ea typeface="+mj-ea"/>
+                <a:cs typeface="+mj-cs"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:pPr marL="12700" algn="l">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="100"/>
+              </a:spcBef>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" altLang="zh-CN" sz="3600" b="1" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="+mj-ea"/>
+                <a:cs typeface="Calibri" panose="020F0502020204030204"/>
+              </a:rPr>
+              <a:t>Encoder-Decoder</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="3600" b="1" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="bg1"/>
+                </a:solidFill>
+                <a:latin typeface="+mj-ea"/>
+                <a:cs typeface="Calibri" panose="020F0502020204030204"/>
+              </a:rPr>
+              <a:t>架构总结</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="3600" b="1" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="bg1"/>
+              </a:solidFill>
+              <a:latin typeface="+mj-ea"/>
+              <a:cs typeface="Calibri" panose="020F0502020204030204"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:graphicFrame>
+        <p:nvGraphicFramePr>
+          <p:cNvPr id="7" name="表格 6"/>
+          <p:cNvGraphicFramePr>
+            <a:graphicFrameLocks noGrp="1"/>
+          </p:cNvGraphicFramePr>
+          <p:nvPr/>
+        </p:nvGraphicFramePr>
+        <p:xfrm>
+          <a:off x="863007" y="2907954"/>
+          <a:ext cx="10465985" cy="3599998"/>
+        </p:xfrm>
+        <a:graphic>
+          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/table">
+            <a:tbl>
+              <a:tblPr firstRow="1" bandRow="1">
+                <a:tableStyleId>{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}</a:tableStyleId>
+              </a:tblPr>
+              <a:tblGrid>
+                <a:gridCol w="3069020">
+                  <a:extLst>
+                    <a:ext uri="{9D8B030D-6E8A-4147-A177-3AD203B41FA5}">
+                      <a16:colId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="20000"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:gridCol>
+                <a:gridCol w="2606566">
+                  <a:extLst>
+                    <a:ext uri="{9D8B030D-6E8A-4147-A177-3AD203B41FA5}">
+                      <a16:colId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="20001"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:gridCol>
+                <a:gridCol w="2480441">
+                  <a:extLst>
+                    <a:ext uri="{9D8B030D-6E8A-4147-A177-3AD203B41FA5}">
+                      <a16:colId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="20002"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:gridCol>
+                <a:gridCol w="2309958">
+                  <a:extLst>
+                    <a:ext uri="{9D8B030D-6E8A-4147-A177-3AD203B41FA5}">
+                      <a16:colId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="20003"/>
+                    </a:ext>
+                  </a:extLst>
+                </a:gridCol>
+              </a:tblGrid>
+              <a:tr h="580173">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>模型</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>发布时间</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>参数量</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>语料规模</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10000"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+              <a:tr h="603965">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>T5</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>2019.10</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>0.6-110</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>亿</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>750GB</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10001"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+              <a:tr h="603965">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>mT5</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>（多语言版本）</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>2020.10</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>3-130</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>亿</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>9.7TB</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10002"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+              <a:tr h="603965">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>T0</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>（更强的零样本能力）</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>2021.10</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>30-110</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>亿</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>约</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>400GB</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10003"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+              <a:tr h="603965">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>BART</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>2019.10</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>1.4-4</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>亿</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>约</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>20GB</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10004"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+              <a:tr h="603965">
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0" err="1">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>mBART</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>（多语言版本）</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>2020.06</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>0.4-6.1</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>亿</a:t>
+                      </a:r>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:tc>
+                  <a:txBody>
+                    <a:bodyPr/>
+                    <a:lstStyle/>
+                    <a:p>
+                      <a:pPr algn="ctr"/>
+                      <a:r>
+                        <a:rPr lang="zh-CN" altLang="en-US" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>约</a:t>
+                      </a:r>
+                      <a:r>
+                        <a:rPr lang="en-US" altLang="zh-CN" dirty="0">
+                          <a:latin typeface="+mn-ea"/>
+                          <a:ea typeface="+mn-ea"/>
+                        </a:rPr>
+                        <a:t>1TB</a:t>
+                      </a:r>
+                      <a:endParaRPr lang="zh-CN" altLang="en-US" dirty="0">
+                        <a:latin typeface="+mn-ea"/>
+                        <a:ea typeface="+mn-ea"/>
+                      </a:endParaRPr>
+                    </a:p>
+                  </a:txBody>
+                  <a:tcPr anchor="ctr"/>
+                </a:tc>
+                <a:extLst>
+                  <a:ext uri="{0D108BD9-81ED-4DB2-BD59-A6C34878D82A}">
+                    <a16:rowId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" val="10005"/>
+                  </a:ext>
+                </a:extLst>
+              </a:tr>
+            </a:tbl>
+          </a:graphicData>
+        </a:graphic>
+      </p:graphicFrame>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

@@ -1730,16 +1730,6 @@ window.SITE_RESOURCES = [
     "modified": "2026-01-04"
   },
   {
-    "title": "ADS2025期末考试座位表",
-    "fileName": "ADS2025期末考试座位表.xlsx",
-    "path": "大二秋冬/ADS，4.0学分/期中期末真题/ADS2025期末考试座位表.xlsx",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "xlsx",
-    "size": 27516,
-    "modified": "2026-01-06"
-  },
-  {
     "title": "R6-1 Decode - ADSAA MOOC 2025 - Final Exam",
     "fileName": "R6-1 Decode - ADSAA MOOC 2025 - Final Exam.html",
     "path": "大二秋冬/ADS，4.0学分/期中期末真题/R6-1 Decode - ADSAA MOOC 2025 - Final Exam.html",

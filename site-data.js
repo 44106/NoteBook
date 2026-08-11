@@ -560,76 +560,6 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
-    "title": "suianwu_PPT内容汇总1",
-    "fileName": "suianwu_PPT内容汇总1.md",
-    "path": "大二春夏/因果推理，2.5学分/suianwu_PPT内容汇总1.md",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "md",
-    "size": 30949,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_PPT内容汇总1",
-    "fileName": "suianwu_PPT内容汇总1.pdf",
-    "path": "大二春夏/因果推理，2.5学分/suianwu_PPT内容汇总1.pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 13141216,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_第二章 因果推断(1)",
-    "fileName": "suianwu_第二章 因果推断(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第二章 因果推断(1).pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 8141471,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_第三章 因果赋能机器学习(1)",
-    "fileName": "suianwu_第三章 因果赋能机器学习(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第三章 因果赋能机器学习(1).pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 11651854,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_第四章 因果与大模型",
-    "fileName": "suianwu_第四章 因果与大模型.pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第四章 因果与大模型.pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 21433597,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_第五章 大模型赋能因果推断与发现",
-    "fileName": "suianwu_第五章 大模型赋能因果推断与发现.pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第五章 大模型赋能因果推断与发现.pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 3679514,
-    "modified": "2026-08-04"
-  },
-  {
-    "title": "suianwu_第一章 因果人工智能-绪论(1)",
-    "fileName": "suianwu_第一章 因果人工智能-绪论(1).pdf",
-    "path": "大二春夏/因果推理，2.5学分/PPT/suianwu_第一章 因果人工智能-绪论(1).pdf",
-    "semester": "大二春夏",
-    "course": "因果推理，2.5学分",
-    "type": "pdf",
-    "size": 14468105,
-    "modified": "2026-08-04"
-  },
-  {
     "title": "44106_深度学习导论知识点整理_复习课框架版",
     "fileName": "44106_深度学习导论知识点整理_复习课框架版.pdf",
     "path": "大二春夏/深度学习导论，3.5学分/44106_深度学习导论知识点整理_复习课框架版.pdf",
@@ -878,96 +808,6 @@ window.SITE_RESOURCES = [
     "type": "md",
     "size": 111087,
     "modified": "2026-08-11"
-  },
-  {
-    "title": "第八讲     异常",
-    "fileName": "第八讲     异常.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第八讲     异常.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 1755775,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "第六讲  运算符重载",
-    "fileName": "第六讲  运算符重载.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第六讲  运算符重载.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 1711576,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "第七讲  模板与STL",
-    "fileName": "第七讲  模板与STL.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第七讲  模板与STL.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 3588630,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "第三讲     类与对象",
-    "fileName": "第三讲     类与对象.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第三讲     类与对象.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 3673520,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "第十讲     流和文件",
-    "fileName": "第十讲     流和文件.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第十讲     流和文件.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 1608321,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "第五讲     多态",
-    "fileName": "第五讲     多态.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第五讲     多态.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 2627903,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "面向对象程序设计",
-    "fileName": "面向对象程序设计.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/面向对象程序设计.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 1774148,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "aty5g1c2",
-    "fileName": "aty5g1c2.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/aty5g1c2.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 3673520,
-    "modified": "2026-06-03"
-  },
-  {
-    "title": "teismrz0",
-    "fileName": "teismrz0.pdf",
-    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/teismrz0.pdf",
-    "semester": "大二春夏",
-    "course": "面向对象程序设计，2.5学分",
-    "type": "pdf",
-    "size": 2668090,
-    "modified": "2026-06-03"
   },
   {
     "title": "2005-2006",
@@ -1670,6 +1510,96 @@ window.SITE_RESOURCES = [
     "modified": "2025-09-16"
   },
   {
+    "title": "红黑树_delet2",
+    "fileName": "红黑树_delet2.jpg",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/红黑树_delet2.jpg",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "jpg",
+    "size": 304459,
+    "modified": "2025-09-23"
+  },
+  {
+    "title": "红黑树_deletjpg",
+    "fileName": "红黑树_deletjpg.jpg",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/红黑树_deletjpg.jpg",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "jpg",
+    "size": 1551802,
+    "modified": "2025-09-23"
+  },
+  {
+    "title": "ADS Lecture 1",
+    "fileName": "ADS Lecture 1.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/ADS Lecture 1.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 8457,
+    "modified": "2025-09-23"
+  },
+  {
+    "title": "ADS Lecture 2",
+    "fileName": "ADS Lecture 2.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/ADS Lecture 2.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 12743,
+    "modified": "2025-09-28"
+  },
+  {
+    "title": "ADS Lecture 3",
+    "fileName": "ADS Lecture 3.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/ADS Lecture 3.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 475,
+    "modified": "2025-09-28"
+  },
+  {
+    "title": "Lecture 4 Leftist Heaps and Skew Heaps",
+    "fileName": "Lecture 4 Leftist Heaps and Skew Heaps.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/Lecture 4 Leftist Heaps and Skew Heaps.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 1698,
+    "modified": "2025-09-30"
+  },
+  {
+    "title": "Lecture 5 Binomial Queue1",
+    "fileName": "Lecture 5 Binomial Queue1.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/Lecture 5 Binomial Queue1.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 2481,
+    "modified": "2025-10-14"
+  },
+  {
+    "title": "Lecture 6 backtracking",
+    "fileName": "Lecture 6 backtracking.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/Lecture 6 backtracking.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 28,
+    "modified": "2025-10-22"
+  },
+  {
+    "title": "Lecture 7 Divide and Conquer",
+    "fileName": "Lecture 7 Divide and Conquer.md",
+    "path": "大二秋冬/ADS，4.0学分/44106随堂笔记/Lecture 7 Divide and Conquer.md",
+    "semester": "大二秋冬",
+    "course": "ADS，4.0学分",
+    "type": "md",
+    "size": 339,
+    "modified": "2025-10-28"
+  },
+  {
     "title": "程序填空题 - 题目列表 - ADSAA MOOC 2025 - Final Exam",
     "fileName": "程序填空题 - 题目列表 - ADSAA MOOC 2025 - Final Exam.html",
     "path": "大二秋冬/ADS，4.0学分/期中期末真题/程序填空题 - 题目列表 - ADSAA MOOC 2025 - Final Exam.html",
@@ -2088,96 +2018,6 @@ window.SITE_RESOURCES = [
     "type": "html",
     "size": 589539,
     "modified": "2024-11-13"
-  },
-  {
-    "title": "红黑树_delet2",
-    "fileName": "红黑树_delet2.jpg",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/红黑树_delet2.jpg",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "jpg",
-    "size": 304459,
-    "modified": "2025-09-23"
-  },
-  {
-    "title": "红黑树_deletjpg",
-    "fileName": "红黑树_deletjpg.jpg",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/红黑树_deletjpg.jpg",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "jpg",
-    "size": 1551802,
-    "modified": "2025-09-23"
-  },
-  {
-    "title": "ADS Lecture 1",
-    "fileName": "ADS Lecture 1.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/ADS Lecture 1.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 8457,
-    "modified": "2025-09-23"
-  },
-  {
-    "title": "ADS Lecture 2",
-    "fileName": "ADS Lecture 2.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/ADS Lecture 2.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 12743,
-    "modified": "2025-09-28"
-  },
-  {
-    "title": "ADS Lecture 3",
-    "fileName": "ADS Lecture 3.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/ADS Lecture 3.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 475,
-    "modified": "2025-09-28"
-  },
-  {
-    "title": "Lecture 4 Leftist Heaps and Skew Heaps",
-    "fileName": "Lecture 4 Leftist Heaps and Skew Heaps.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/Lecture 4 Leftist Heaps and Skew Heaps.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 1698,
-    "modified": "2025-09-30"
-  },
-  {
-    "title": "Lecture 5 Binomial Queue1",
-    "fileName": "Lecture 5 Binomial Queue1.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/Lecture 5 Binomial Queue1.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 2481,
-    "modified": "2025-10-14"
-  },
-  {
-    "title": "Lecture 6 backtracking",
-    "fileName": "Lecture 6 backtracking.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/Lecture 6 backtracking.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 28,
-    "modified": "2025-10-22"
-  },
-  {
-    "title": "Lecture 7 Divide and Conquer",
-    "fileName": "Lecture 7 Divide and Conquer.md",
-    "path": "大二秋冬/ADS，4.0学分/随堂笔记/Lecture 7 Divide and Conquer.md",
-    "semester": "大二秋冬",
-    "course": "ADS，4.0学分",
-    "type": "md",
-    "size": 339,
-    "modified": "2025-10-28"
   },
   {
     "title": "44106_《人工智能引论》 复习文档",

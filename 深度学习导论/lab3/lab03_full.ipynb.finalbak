@@ -1,0 +1,944 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "689c82cc",
+   "metadata": {},
+   "source": [
+    "# 实验三：从 NumPy 卷积到 PyTorch 流水线、U-Net 与 3D 卷积\n",
+    "\n",
+    "**课程**：深度学习导论  \n",
+    "**类型**：PyTorch 完整应用（CIFAR-10 分类 + 合成数据分割玩具 + 3D 时序差分）  \n",
+    "**输出**：训练曲线、**CIFAR 验证集分类样例图**、形状断言、分割三联图、3D 热力图、`【结果锚定】`/`【理论锚定】`/`【现象锚定】` 作答、思考与附加题。\n",
+    "\n",
+    "---\n",
+    "\n",
+    "**AI使用说明**：本实验允许并鼓励负责任地使用 AI 辅助理解、查文档、调试、润色表达。不设抽查答辩、不禁止长段 AI 生成。\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3c1f6c69",
+   "metadata": {},
+   "source": [
+    "## 1. 环境与依赖\n",
+    "\n",
+    "- 需 **Python 3**、**PyTorch**、**torchvision**、**Matplotlib**（与实验一、二一致，由 Notebook 内 `import` 检查）。\n",
+    "- **记号与形状（最小约定）**：\n",
+    "  - 图像分类：输入常为 $\\mathbf{X}\\in\\mathbb{R}^{B\\times 3\\times 32\\times 32}$，类别数 $C=10$。\n",
+    "  - 分割：`logits` 为 $(B, C_{cls}, H, W)$；`nn.CrossEntropyLoss` 的 `target` 为 **类别索引** $(B, H, W)$（**不是** $(B,C,H,W)$ one-hot）。\n",
+    "  - 3D 卷积：输入 $(B, C, T, H, W)$；本实验时间核用于相邻帧差分。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38d0d8a9",
+   "metadata": {},
+   "source": [
+    "## 2. 数据加载（CIFAR-10）\n",
+    "\n",
+    "在训练集 5 万张上按 **40000 / 10000** 划分训练与验证；训练集使用随机增强，验证集仅用 `ToTensor`+归一化。默认 **`epochs_act1=10`**、**`batch_size=128`**。算力或内存不足时可自行减小 `batch_size` 或 `epochs_act1`。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3c07cd92",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m在当前单元格或上一个单元格中执行代码时 Kernel 崩溃。\n",
+      "\u001b[1;31m请查看单元格中的代码，以确定故障的可能原因。\n",
+      "\u001b[1;31m单击<a href='https://aka.ms/vscodeJupyterKernelCrash'>此处</a>了解详细信息。\n",
+      "\u001b[1;31m有关更多详细信息，请查看 Jupyter <a href='command:jupyter.viewOutput'>log</a>。"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "os.environ[\"KMP_DUPLICATE_LIB_OK\"] = \"TRUE\"\n",
+    "import time\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "from torch.utils.data import DataLoader, random_split\n",
+    "from torchvision import datasets, transforms\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "device = torch.device(\n",
+    "    \"cuda\"\n",
+    "    if torch.cuda.is_available()\n",
+    "    else \"mps\"\n",
+    "    if torch.backends.mps.is_available()\n",
+    "    else \"cpu\"\n",
+    ")\n",
+    "print(\"device:\", device)\n",
+    "\n",
+    "data_root = \"./data\"\n",
+    "transform_train = transforms.Compose(\n",
+    "    [\n",
+    "        transforms.RandomCrop(32, padding=4),\n",
+    "        transforms.RandomHorizontalFlip(),\n",
+    "        transforms.ToTensor(),\n",
+    "        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2470, 0.2435, 0.2616)),\n",
+    "    ]\n",
+    ")\n",
+    "transform_val = transforms.Compose(\n",
+    "    [\n",
+    "        transforms.ToTensor(),\n",
+    "        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2470, 0.2435, 0.2616)),\n",
+    "    ]\n",
+    ")\n",
+    "\n",
+    "full_train_dataset = datasets.CIFAR10(\n",
+    "    root=data_root, train=True, download=True, transform=transform_train\n",
+    ")\n",
+    "clean_val_dataset = datasets.CIFAR10(\n",
+    "    root=data_root, train=True, download=True, transform=transform_val\n",
+    ")\n",
+    "\n",
+    "n_train, n_val = 40000, 10000\n",
+    "train_set, _ = random_split(\n",
+    "    full_train_dataset, [n_train, n_val], generator=torch.Generator().manual_seed(42)\n",
+    ")\n",
+    "_, val_set = random_split(\n",
+    "    clean_val_dataset, [n_train, n_val], generator=torch.Generator().manual_seed(42)\n",
+    ")\n",
+    "\n",
+    "epochs_act1 = 10\n",
+    "batch_size = 128\n",
+    "workers = 2 if os.name != \"nt\" else 0\n",
+    "_pin = torch.cuda.is_available()\n",
+    "\n",
+    "train_loader = DataLoader(\n",
+    "    train_set,\n",
+    "    batch_size=batch_size,\n",
+    "    shuffle=True,\n",
+    "    num_workers=workers,\n",
+    "    pin_memory=_pin,\n",
+    ")\n",
+    "val_loader = DataLoader(\n",
+    "    val_set,\n",
+    "    batch_size=batch_size,\n",
+    "    shuffle=False,\n",
+    "    num_workers=workers,\n",
+    "    pin_memory=_pin,\n",
+    ")\n",
+    "print(\n",
+    "    f\"train: {len(train_set)} images, {len(train_loader)} batches | \"\n",
+    "    f\"val: {len(val_set)} images, {len(val_loader)} batches\"\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f129408d",
+   "metadata": {},
+   "source": [
+    "## 3. 模型定义（CIFARCNN）\n",
+    "\n",
+    "**【请填写】** 在下方定义 `CIFARCNN`，结构与实验二 CNN 一致：**Conv $\\rightarrow$ ReLU $\\rightarrow$ Pool $\\rightarrow$ Flatten $\\rightarrow$ Linear**。在 `__init__` 中用 `nn.Sequential` 或逐层均可；"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2f5dc36e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class CIFARCNN(nn.Module):\n",
+    "    \"\"\"Small CNN for CIFAR-10 classification.\"\"\"\n",
+    "\n",
+    "    def __init__(self, num_classes: int = 10):\n",
+    "        super().__init__()\n",
+    "        self.flatten = nn.Flatten()\n",
+    "        self.features = nn.Sequential(\n",
+    "            nn.Conv2d(3, 16, kernel_size=3, padding=1),\n",
+    "            nn.ReLU(),\n",
+    "            nn.MaxPool2d(2),\n",
+    "            nn.Conv2d(16, 32, kernel_size=3, padding=1),\n",
+    "            nn.ReLU(),\n",
+    "            nn.MaxPool2d(2),\n",
+    "        )\n",
+    "        self.fc = nn.Linear(32 * 8 * 8, num_classes)\n",
+    "\n",
+    "    def forward(self, x: torch.Tensor) -> torch.Tensor:\n",
+    "        out = self.features(x)\n",
+    "        out = self.flatten(out)\n",
+    "        out = self.fc(out)\n",
+    "        return out\n",
+    "\n",
+    "\n",
+    "model = CIFARCNN().to(device)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d09d8e73",
+   "metadata": {},
+   "source": [
+    "**【形状自检】**\n",
+    "\n",
+    "给定假输入，检查输出 logits 形状为 `(B, 10)`。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2cf0f01b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "_x = torch.randn(2, 3, 32, 32, device=device)\n",
+    "try:\n",
+    "    _y = model(_x)\n",
+    "    assert _y.shape == (2, 10), _y.shape\n",
+    "    print(\"shape check ok:\", _y.shape)\n",
+    "except Exception as e:\n",
+    "    print(\"shape check failed — 请先完成 CIFARCNN:\", e)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "89e62a52",
+   "metadata": {},
+   "source": [
+    "## 4. 训练与验证\n",
+    "\n",
+    "**【请填写】** 在下方完成 `criterion`、`optimizer`；实现每个 batch 的训练步（`zero_grad`、前向、`loss`、`backward`、`step`）及指标累计，并完成 **val** 前向与正确数累计。默认 `epochs_act1=10`（与上一节一致）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d6537b90",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "criterion = nn.CrossEntropyLoss()\n",
+    "optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)\n",
+    "\n",
+    "history = {\"loss\": [], \"train_acc\": [], \"val_acc\": []}\n",
+    "\n",
+    "for epoch in range(epochs_act1):\n",
+    "    model.train()\n",
+    "    running_loss = 0.0\n",
+    "    correct = total = 0\n",
+    "    t0 = time.perf_counter()\n",
+    "    for inputs, targets in train_loader:\n",
+    "        inputs = inputs.to(device)\n",
+    "        targets = targets.to(device)\n",
+    "\n",
+    "        optimizer.zero_grad()\n",
+    "        logits = model(inputs)\n",
+    "        loss = criterion(logits, targets)\n",
+    "        loss.backward()\n",
+    "        optimizer.step()\n",
+    "\n",
+    "        running_loss += loss.item() * inputs.size(0)\n",
+    "        pred = logits.argmax(dim=1)\n",
+    "        correct += (pred == targets).sum().item()\n",
+    "        total += inputs.size(0)\n",
+    "\n",
+    "    dt = time.perf_counter() - t0\n",
+    "    train_acc = correct / max(total, 1)\n",
+    "    avg_loss = running_loss / max(total, 1)\n",
+    "    history[\"loss\"].append(avg_loss)\n",
+    "    history[\"train_acc\"].append(train_acc)\n",
+    "\n",
+    "    model.eval()\n",
+    "    v_correct = v_total = 0\n",
+    "    with torch.no_grad():\n",
+    "        for inputs, targets in val_loader:\n",
+    "            inputs = inputs.to(device)\n",
+    "            targets = targets.to(device)\n",
+    "\n",
+    "            logits = model(inputs)\n",
+    "            pred = logits.argmax(dim=1)\n",
+    "            v_correct += (pred == targets).sum().item()\n",
+    "            v_total += inputs.size(0)\n",
+    "\n",
+    "    val_acc = v_correct / max(v_total, 1)\n",
+    "    history[\"val_acc\"].append(val_acc)\n",
+    "    print(\n",
+    "        f\"Epoch {epoch+1}/{epochs_act1}  loss={avg_loss:.4f}  train_acc={train_acc:.4f}  val_acc={val_acc:.4f}  epoch_time={dt:.2f}s\"\n",
+    "    )\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2b5f57dd",
+   "metadata": {},
+   "source": [
+    "在下方绘制 `loss`、`train_acc`、`val_acc`。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5613ab0b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "plt.figure(figsize=(12, 4))\n",
+    "plt.subplot(1, 2, 1)\n",
+    "plt.plot(history[\"loss\"])\n",
+    "plt.xlabel(\"epoch\")\n",
+    "plt.title(\"Training Loss\")\n",
+    "plt.subplot(1, 2, 2)\n",
+    "plt.plot(history[\"train_acc\"], label=\"train\")\n",
+    "plt.plot(history[\"val_acc\"], label=\"val\")\n",
+    "plt.xlabel(\"epoch\")\n",
+    "plt.legend()\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cifar_vis_md",
+   "metadata": {},
+   "source": [
+    "### 4.1 验证集分类样例可视化\n",
+    "\n",
+    "从 `val_loader` 取一批图像，在 **eval** 模式下前向得到预测；对 `ToTensor`+`Normalize` 后的张量做**反归一化**再 `imshow`。子图标题为 **真值类名 / 预测类名**（英文类名与 CIFAR-10 一致）；**绿色**表示预测正确，**红色**表示错误。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cifar_vis_code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "CIFAR_CLASSES = (\n",
+    "    \"plane\",\n",
+    "    \"car\",\n",
+    "    \"bird\",\n",
+    "    \"cat\",\n",
+    "    \"deer\",\n",
+    "    \"dog\",\n",
+    "    \"frog\",\n",
+    "    \"horse\",\n",
+    "    \"ship\",\n",
+    "    \"truck\",\n",
+    ")\n",
+    "CIFAR_MEAN = (0.4914, 0.4822, 0.4465)\n",
+    "CIFAR_STD = (0.2470, 0.2435, 0.2616)\n",
+    "\n",
+    "\n",
+    "def _denorm_cifar(img_chw: torch.Tensor) -> torch.Tensor:\n",
+    "    \"\"\"(3,H,W) 反归一化到 [0,1]，便于 imshow。\"\"\"\n",
+    "    mean = torch.tensor(CIFAR_MEAN, device=img_chw.device, dtype=img_chw.dtype).view(3, 1, 1)\n",
+    "    std = torch.tensor(CIFAR_STD, device=img_chw.device, dtype=img_chw.dtype).view(3, 1, 1)\n",
+    "    return (img_chw * std + mean).clamp(0, 1)\n",
+    "\n",
+    "\n",
+    "model.eval()\n",
+    "n_show = min(16, batch_size)\n",
+    "with torch.no_grad():\n",
+    "    inputs, targets = next(iter(val_loader))\n",
+    "    inputs = inputs.to(device)\n",
+    "    targets = targets.to(device)\n",
+    "    logits = model(inputs)\n",
+    "    pred = logits.argmax(dim=1)\n",
+    "\n",
+    "cols = 4\n",
+    "rows = int(np.ceil(n_show / cols))\n",
+    "fig, axes = plt.subplots(rows, cols, figsize=(cols * 2.5, rows * 2.6))\n",
+    "axes_flat = np.atleast_1d(axes).ravel()\n",
+    "for i in range(n_show):\n",
+    "    ax = axes_flat[i]\n",
+    "    img = _denorm_cifar(inputs[i]).permute(1, 2, 0).cpu().numpy()\n",
+    "    ax.imshow(img)\n",
+    "    ok = pred[i].item() == targets[i].item()\n",
+    "    color = \"green\" if ok else \"red\"\n",
+    "    tname = CIFAR_CLASSES[targets[i].item()]\n",
+    "    pname = CIFAR_CLASSES[pred[i].item()]\n",
+    "    ax.set_title(f\"{tname} / {pname}\", color=color, fontsize=9)\n",
+    "    ax.axis(\"off\")\n",
+    "for j in range(n_show, len(axes_flat)):\n",
+    "    axes_flat[j].axis(\"off\")\n",
+    "plt.suptitle(\"CIFAR-10 validation: ground truth / pred\", fontsize=12, y=1.02)\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aa69dc1e",
+   "metadata": {},
+   "source": [
+    "**【结果锚定】**\n",
+    "\n",
+    "1. 在 **40000/10000** 划分、`epochs_act1=10` 下，**单 epoch 墙钟时间**约多少？与实验二 NumPy 手写训练相比，PyTorch 在数量级上是否更快？若用 GPU（或 MPS），相对 CPU 约几倍？\n",
+    "2. 验证集准确率大致区间？曲线是否出现过拟合（训练明显高于验证）？"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "db198862",
+   "metadata": {},
+   "source": [
+    "**【请填写】** 在下方 Markdown cell 中作答。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "27d72535",
+   "metadata": {},
+   "source": [
+    "In this experiment, CIFAR-10 is trained with the 40000/10000 split and `epochs_act1=10`. The single-epoch wall-clock time should be filled according to the actual `epoch_time` printed by the training log. On CUDA, PyTorch is usually much faster than the NumPy manual implementation from Lab 2 because it uses optimized tensor kernels, automatic differentiation, and GPU acceleration; if no separate CPU-vs-GPU benchmark is run, I should not invent an exact speedup number.\n",
+    "\n",
+    "The validation accuracy should also be reported from the actual printed `val_acc`. For this small CNN, the final validation accuracy is expected to be a basic but not state-of-the-art CIFAR-10 result. If `train_acc` is much higher than `val_acc`, the curve indicates overfitting; if the two curves stay close, overfitting is not obvious. In the validation sample figure, green titles indicate correct predictions and red titles indicate wrong predictions, which helps show which classes are confused by the model.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "78ea95f8",
+   "metadata": {},
+   "source": [
+    "## 5. U-Net 模块与合成分割数据\n",
+    "\n",
+    "**维度**：Toy 默认 **$64\\times 64$**（或 2 的幂），降低上采样与 skip 拼接时的**奇数边长**错配；若改尺寸，请用 `F.interpolate` 对齐空间尺寸后再 `torch.cat`。\n",
+    "\n",
+    "**损失**：`nn.CrossEntropyLoss` 的 `target` 须为 **类别索引** $(N, H, W)$ 的 **long**，取值 $0..C-1$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9420c047",
+   "metadata": {},
+   "source": [
+    "### 5.1 上采样原理解析 (Upsampling Bridge)\n",
+    "\n",
+    "对比**转置卷积**与**双线性插值**将 $2\\times2$ 特征放大到 $4\\times4$ 的数值模式。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "52a064ff",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 【演示】转置卷积 vs 双线性插值\n",
+    "import torch.nn.functional as F\n",
+    "\n",
+    "toy_feat = torch.tensor([[[[1.0, 2.0], [3.0, 4.0]]]])  # (1, 1, 2, 2)\n",
+    "up_conv = nn.ConvTranspose2d(1, 1, kernel_size=2, stride=2, bias=False)\n",
+    "nn.init.constant_(up_conv.weight, 1.0)\n",
+    "print(\"转置卷积输出:\\n\", up_conv(toy_feat).squeeze())\n",
+    "print(\n",
+    "    \"双线性插值输出:\\n\",\n",
+    "    F.interpolate(toy_feat, scale_factor=2, mode=\"bilinear\", align_corners=False).squeeze(),\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "606874d9",
+   "metadata": {},
+   "source": [
+    "以下 `DoubleConv` 与 `DownBlock` 已完整给出；**仅补全 `UpBlock.forward` 中**（`torch.cat([...], dim=1)` 与对齐）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3f11a1cf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import torch.nn.functional as F\n",
+    "from torch.utils.data import Dataset\n",
+    "\n",
+    "\n",
+    "class DoubleConv(nn.Module):\n",
+    "    \"\"\"(3x3 Conv -> ReLU) x 2.\"\"\"\n",
+    "\n",
+    "    def __init__(self, in_ch: int, out_ch: int):\n",
+    "        super().__init__()\n",
+    "        self.net = nn.Sequential(\n",
+    "            nn.Conv2d(in_ch, out_ch, 3, padding=1),\n",
+    "            nn.ReLU(inplace=True),\n",
+    "            nn.Conv2d(out_ch, out_ch, 3, padding=1),\n",
+    "            nn.ReLU(inplace=True),\n",
+    "        )\n",
+    "\n",
+    "    def forward(self, x: torch.Tensor) -> torch.Tensor:\n",
+    "        return self.net(x)\n",
+    "\n",
+    "\n",
+    "class DownBlock(nn.Module):\n",
+    "    \"\"\"DoubleConv followed by MaxPool; returns pooled output and skip.\"\"\"\n",
+    "\n",
+    "    def __init__(self, in_ch: int, out_ch: int):\n",
+    "        super().__init__()\n",
+    "        self.conv = DoubleConv(in_ch, out_ch)\n",
+    "        self.pool = nn.MaxPool2d(2)\n",
+    "\n",
+    "    def forward(self, x: torch.Tensor):\n",
+    "        skip = self.conv(x)\n",
+    "        x_down = self.pool(skip)\n",
+    "        return x_down, skip\n",
+    "\n",
+    "\n",
+    "class UpBlock(nn.Module):\n",
+    "    \"\"\"Transpose-conv upsampling, skip concatenation, then DoubleConv.\"\"\"\n",
+    "\n",
+    "    def __init__(self, in_ch: int, skip_ch: int, out_ch: int):\n",
+    "        super().__init__()\n",
+    "        self.up = nn.ConvTranspose2d(in_ch, out_ch, kernel_size=2, stride=2)\n",
+    "        self.conv = DoubleConv(out_ch + skip_ch, out_ch)\n",
+    "\n",
+    "    def forward(self, x: torch.Tensor, skip: torch.Tensor) -> torch.Tensor:\n",
+    "        x_up = self.up(x)\n",
+    "        if x_up.shape[-2:] != skip.shape[-2:]:\n",
+    "            x_up = F.interpolate(x_up, size=skip.shape[-2:], mode=\"nearest\")\n",
+    "        x_cat = torch.cat([x_up, skip], dim=1)\n",
+    "        out = self.conv(x_cat)\n",
+    "        return out\n",
+    "\n",
+    "\n",
+    "class MiniUNet(nn.Module):\n",
+    "    \"\"\"One-channel grayscale input and two-class segmentation output.\"\"\"\n",
+    "\n",
+    "    def __init__(self, num_classes: int = 2):\n",
+    "        super().__init__()\n",
+    "        self.down1 = DownBlock(1, 32)\n",
+    "        self.down2 = DownBlock(32, 64)\n",
+    "        self.bot = DoubleConv(64, 128)\n",
+    "        self.up1 = UpBlock(128, 64, 64)\n",
+    "        self.up2 = UpBlock(64, 32, 32)\n",
+    "        self.head = nn.Conv2d(32, num_classes, kernel_size=1)\n",
+    "\n",
+    "    def forward(self, x: torch.Tensor) -> torch.Tensor:\n",
+    "        x, skip1 = self.down1(x)\n",
+    "        x, skip2 = self.down2(x)\n",
+    "        x = self.bot(x)\n",
+    "        x = self.up1(x, skip2)\n",
+    "        x = self.up2(x, skip1)\n",
+    "        return self.head(x)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bb6b8ce8",
+   "metadata": {},
+   "source": [
+    "**合成 Toy 数据集**（离线、无下载）：黑色背景上随机矩形或圆盘前景；`image` $(1,64,64)$，`mask` $(64,64)$ long。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e8199c27",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class ToySegDataset(Dataset):\n",
+    "    def __init__(self, n: int = 256, size: int = 64, seed: int = 0):\n",
+    "        super().__init__()\n",
+    "        torch.manual_seed(seed)\n",
+    "        self.size = size\n",
+    "        self.images = []\n",
+    "        self.masks = []\n",
+    "        for _ in range(n):\n",
+    "            img = torch.zeros(1, size, size)\n",
+    "            mask = torch.zeros(size, size, dtype=torch.long)\n",
+    "            if torch.rand(1).item() > 0.5:\n",
+    "                x0 = int(torch.randint(8, size - 24, (1,)).item())\n",
+    "                y0 = int(torch.randint(8, size - 24, (1,)).item())\n",
+    "                w = int(torch.randint(10, 20, (1,)).item())\n",
+    "                h = int(torch.randint(10, 20, (1,)).item())\n",
+    "                img[:, y0 : y0 + h, x0 : x0 + w] = 1.0\n",
+    "                mask[y0 : y0 + h, x0 : x0 + w] = 1\n",
+    "            else:\n",
+    "                cx = int(torch.randint(16, size - 16, (1,)).item())\n",
+    "                cy = int(torch.randint(16, size - 16, (1,)).item())\n",
+    "                r = int(torch.randint(6, 14, (1,)).item())\n",
+    "                yy, xx = torch.meshgrid(\n",
+    "                    torch.arange(size), torch.arange(size), indexing=\"ij\"\n",
+    "                )\n",
+    "                circ = ((xx - cx) ** 2 + (yy - cy) ** 2) <= r * r\n",
+    "                img[:, circ] = 1.0\n",
+    "                mask[circ] = 1\n",
+    "            self.images.append(img)\n",
+    "            self.masks.append(mask)\n",
+    "\n",
+    "    def __len__(self):\n",
+    "        return len(self.images)\n",
+    "\n",
+    "    def __getitem__(self, i):\n",
+    "        return self.images[i], self.masks[i]\n",
+    "\n",
+    "\n",
+    "toy_train = ToySegDataset(n=200, size=64, seed=1)\n",
+    "toy_val = ToySegDataset(n=40, size=64, seed=2)\n",
+    "toy_train_loader = DataLoader(toy_train, batch_size=8, shuffle=True)\n",
+    "toy_val_loader = DataLoader(toy_val, batch_size=8, shuffle=False)\n",
+    "seg_model = MiniUNet(num_classes=2).to(device)\n",
+    "seg_opt = torch.optim.Adam(seg_model.parameters(), lr=1e-3)\n",
+    "seg_crit = nn.CrossEntropyLoss()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8a308e0",
+   "metadata": {},
+   "source": [
+    "### 5.2 二分类 Dice Loss\n",
+    "\n",
+    "对前景/背景二值掩码，分割训练**仅使用** `CrossEntropyLoss` 作为优化目标。下方需要手动实现**Dice Loss**，用于从重叠度角度与交叉熵目标对照理解。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f374066a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def dice_loss(logits: torch.Tensor, masks: torch.Tensor, smooth: float = 1e-5):\n",
+    "    \"\"\"Binary Dice loss. logits: (N,C,H,W), masks: (N,H,W), foreground class is 1.\"\"\"\n",
+    "    probs = torch.softmax(logits, dim=1)[:, 1]\n",
+    "    targets = (masks == 1).float()\n",
+    "    intersection = (probs * targets).sum(dim=(1, 2))\n",
+    "    denom = probs.sum(dim=(1, 2)) + targets.sum(dim=(1, 2))\n",
+    "    dice = (2 * intersection + smooth) / (denom + smooth)\n",
+    "    loss_dice = 1 - dice.mean()\n",
+    "    return loss_dice\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f672036b",
+   "metadata": {},
+   "source": [
+    "### 5.3 分割训练与三联图\n",
+    "\n",
+    "**【请填写】** 在下方围栏内完成分割训练若干 epoch（`epochs_seg` 可取 3～5）。`seg_crit(logits, masks)` 中 `logits` 为 $(N,C,H,W)$，`masks` 为 $(N,H,W)$ long。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ec5d49b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "epochs_seg = 4\n",
+    "\n",
+    "for ep in range(epochs_seg):\n",
+    "    seg_model.train()\n",
+    "    for imgs, masks in toy_train_loader:\n",
+    "        imgs = imgs.to(device)\n",
+    "        masks = masks.to(device)\n",
+    "\n",
+    "        seg_opt.zero_grad()\n",
+    "        logits = seg_model(imgs)\n",
+    "        loss = seg_crit(logits, masks)\n",
+    "        loss.backward()\n",
+    "        seg_opt.step()\n",
+    "\n",
+    "    print(\"seg epoch\", ep + 1, \"done\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2b22c7bd",
+   "metadata": {},
+   "source": [
+    "### 5.4 验证集可视化\n",
+    "\n",
+    "在下方 code cell 中绘制 **1×3** 子图：Input | Ground Truth | Prediction（预测为 `logits.argmax(dim=1)`；代码已给出，运行即可）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f6d09e33",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "seg_model.eval()\n",
+    "imgs, masks = next(iter(toy_val_loader))\n",
+    "imgs = imgs.to(device)\n",
+    "masks = masks.to(device)\n",
+    "with torch.no_grad():\n",
+    "    logits = seg_model(imgs)\n",
+    "pred = logits.argmax(dim=1)\n",
+    "\n",
+    "idx = 0\n",
+    "plt.figure(figsize=(9, 3))\n",
+    "plt.subplot(1, 3, 1)\n",
+    "plt.imshow(imgs[idx, 0].cpu(), cmap=\"gray\")\n",
+    "plt.title(\"Input\")\n",
+    "plt.axis(\"off\")\n",
+    "plt.subplot(1, 3, 2)\n",
+    "plt.imshow(masks[idx].cpu(), cmap=\"tab10\", vmin=0, vmax=1)\n",
+    "plt.title(\"GT\")\n",
+    "plt.axis(\"off\")\n",
+    "plt.subplot(1, 3, 3)\n",
+    "plt.imshow(pred[idx].cpu(), cmap=\"tab10\", vmin=0, vmax=1)\n",
+    "plt.title(\"Pred\")\n",
+    "plt.axis(\"off\")\n",
+    "plt.tight_layout()\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "122b68ea",
+   "metadata": {},
+   "source": [
+    "\n",
+    "**【理论锚定】**\n",
+    "\n",
+    "若解码路径**没有**来自编码器的高分辨率 skip、仅反复上采样，分割边界往往会变糊。请结合浅层位置信息与高层语义，解释 skip 在 U-Net 中的作用（2～4 句），并**指回**上方三联图的边缘清晰度。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba524db2",
+   "metadata": {},
+   "source": [
+    "**【请填写】** 在下方 Markdown cell 中作答。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "88cca1ce",
+   "metadata": {},
+   "source": [
+    "Deep encoder features in U-Net carry stronger semantic information, but repeated downsampling loses precise spatial location and boundary details. Skip connections pass high-resolution shallow features from the encoder directly to the decoder, so the decoder can combine semantic information with fine positional details. In the `Input | GT | Pred` triplet above, this should make the predicted foreground boundary closer to the rectangle or circle edge instead of only recovering a blurry coarse region. Without skip connections, repeated upsampling from low-resolution features would usually produce less accurate and blurrier segmentation boundaries.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "93d51d53",
+   "metadata": {},
+   "source": [
+    "## 6. 3D convolution output size\n",
+    "\n",
+    "For a 3D convolution, each output dimension follows the same form as the 2D convolution formula:\n",
+    "\n",
+    "$$\n",
+    "\\begin{aligned}\n",
+    "T_{out} &= \\left\\lfloor \\frac{T + 2p_T - k_T}{s_T} + 1 \\right\\rfloor,\\\\\n",
+    "H_{out} &= \\left\\lfloor \\frac{H + 2p_H - k_H}{s_H} + 1 \\right\\rfloor,\\\\\n",
+    "W_{out} &= \\left\\lfloor \\frac{W + 2p_W - k_W}{s_W} + 1 \\right\\rfloor.\n",
+    "\\end{aligned}\n",
+    "$$\n",
+    "\n",
+    "Substituting $T=5,H=W=32$, $k_T=2,k_H=k_W=1$, $s=1$, and $p=0$:\n",
+    "\n",
+    "$$\n",
+    "T_{out}=\\left\\lfloor\\frac{5+0-2}{1}+1\\right\\rfloor=4,\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "H_{out}=\\left\\lfloor\\frac{32+0-1}{1}+1\\right\\rfloor=32,\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "W_{out}=\\left\\lfloor\\frac{32+0-1}{1}+1\\right\\rfloor=32.\n",
+    "$$\n",
+    "\n",
+    "Therefore, the spatiotemporal output size is $(T_{out},H_{out},W_{out})=(4,32,32)$, and the full output shape is `(1, 1, 4, 32, 32)`, matching the printed shape in the next cell.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72c542d2",
+   "metadata": {},
+   "source": [
+    "## 7. 合成运动序列与 `Conv3d` 差分\n",
+    "\n",
+    "构造 $T=5,H=W=32$ 的单通道序列：**静态网格/方块背景**上叠加**每帧沿右下方向移动的白块**，便于观察「静态结构 vs 时序差分」的差异。\n",
+    "\n",
+    "使用 `nn.Conv3d(1, 1, kernel_size=(2, 1, 1), bias=False)`，时间维权重 $-1$、$+1$，等价于相邻帧差分（空间核 $1\\times1$，仅沿时间混合）。\n",
+    "\n",
+    "**【请填写】** 在围栏内完成 `motion_conv` 前向，并构造用于可视化的 `feat_for_plot`。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4a81c00e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def make_moving_object_sequence(t: int = 5, h: int = 32, w: int = 32) -> torch.Tensor:\n",
+    "    \"\"\"Create a synthetic video with static background and a moving foreground block.\"\"\"\n",
+    "    vid = torch.zeros(1, 1, t, h, w)\n",
+    "\n",
+    "    # Static background: grid lines and a fixed bright square.\n",
+    "    bg = torch.zeros(h, w)\n",
+    "    bg[::4, :] = 0.4\n",
+    "    bg[:, ::4] = 0.4\n",
+    "    bg[10:15, 20:25] = 0.7\n",
+    "\n",
+    "    # Moving foreground: a white block moving down-right frame by frame.\n",
+    "    for i in range(t):\n",
+    "        vid[0, 0, i] = bg.clone()\n",
+    "        r, c = 4 + i * 4, 4 + i * 4\n",
+    "        vid[0, 0, i, r : r + 4, c : c + 4] = 1.0\n",
+    "\n",
+    "    return vid\n",
+    "\n",
+    "\n",
+    "vid = make_moving_object_sequence().to(device)\n",
+    "\n",
+    "motion_conv = nn.Conv3d(1, 1, kernel_size=(2, 1, 1), bias=False).to(device)\n",
+    "with torch.no_grad():\n",
+    "    motion_conv.weight.zero_()\n",
+    "    motion_conv.weight[0, 0, 0, 0, 0] = -1.0\n",
+    "    motion_conv.weight[0, 0, 1, 0, 0] = 1.0\n",
+    "\n",
+    "out = motion_conv(vid)\n",
+    "feat_for_plot = out.abs().sum(dim=2).squeeze()\n",
+    "\n",
+    "if feat_for_plot is not None:\n",
+    "    fig, axes = plt.subplots(1, 3, figsize=(12, 4))\n",
+    "\n",
+    "    axes[0].imshow(vid[0, 0, 0].cpu(), cmap=\"gray\", vmin=0, vmax=1)\n",
+    "    axes[0].set_title(\"Frame 0 (With Static BG)\")\n",
+    "\n",
+    "    axes[1].imshow(vid[0, 0, 1].cpu(), cmap=\"gray\", vmin=0, vmax=1)\n",
+    "    axes[1].set_title(\"Frame 1 (Object Moved)\")\n",
+    "\n",
+    "    axes[2].imshow(feat_for_plot.detach().cpu().float(), cmap=\"hot\")\n",
+    "    axes[2].set_title(\"3D Temporal Diff (Motion Trajectory)\")\n",
+    "\n",
+    "    for ax in axes:\n",
+    "        ax.axis(\"off\")\n",
+    "    plt.tight_layout()\n",
+    "    plt.show()\n",
+    "\n",
+    "with torch.no_grad():\n",
+    "    _o = motion_conv(vid)\n",
+    "    print(\"=> 3D Convolution output shape:\", _o.shape)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8605715c",
+   "metadata": {},
+   "source": [
+    "**【现象锚定】**\n",
+    "\n",
+    "对比原视频帧（存在复杂的静态网格与干扰块）与 3D 时序差分热力图，你观察到了什么极其显著的现象？与 2D Sobel（侧重提取空间静态边缘）相比，这枚在时间维采用 `[-1, 1]` 权重的 3D 卷积核，提取到了什么信息，又忽略了什么信息？（2～4 句）"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1ca2b886",
+   "metadata": {},
+   "source": [
+    "**【请填写】** 在下方 Markdown cell 中作答。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bc58ebfc",
+   "metadata": {},
+   "source": [
+    "The original frames contain strong static grid lines and a fixed bright square, but these static structures are mostly suppressed in the 3D temporal-difference heatmap. The 3D kernel with temporal weights `[-1, 1]` extracts changes between adjacent frames, so it highlights motion information or temporal differences. Compared with a 2D Sobel operator, which mainly detects spatial edges inside a single image, this 3D convolution focuses on locations that change over time rather than static edges. It ignores most unchanged background interference, but it does not directly understand object category or high-level semantics.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "33365c5d",
+   "metadata": {},
+   "source": [
+    "## 8. 思考与附加题\n",
+    "\n",
+    "### 8.1 代码分析题\n",
+    "\n",
+    "**题目**：将 PyTorch 训练一步与实验二手动反向传播对应：`loss.backward()` 与手写 `dscores`、`dflat`（或你代码中的命名）的关系？`optimizer.step()` 与 $W \\leftarrow W - \\eta \\nabla_W$？请写 3～6 句，且须出现「计算图」「梯度累积」「参数 `.grad`」中**至少两个**术语。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b6d17e73",
+   "metadata": {},
+   "source": [
+    "**【请填写】** 在下方 Markdown cell 中作答。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "af13d722",
+   "metadata": {},
+   "source": [
+    "In PyTorch, the forward pass dynamically builds a computational graph, and `loss.backward()` applies the chain rule along this graph. This corresponds to the manual backpropagation in Lab 2, such as computing `dscores`, `dflat`, and then propagating gradients back to earlier layers and parameters. The resulting gradients are stored in each learnable parameter's `.grad` tensor, such as convolution kernels and linear-layer weights. Because PyTorch accumulates gradients by default, each batch should call `optimizer.zero_grad()` before the next backward pass. Finally, `optimizer.step()` updates parameters using their `.grad`, which is essentially the same idea as $W \\leftarrow W - \\eta \\nabla_W$, although optimizers such as Adam also keep extra state such as momentum and adaptive learning-rate estimates.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "61118160",
+   "metadata": {},
+   "source": [
+    "### 8.2 附加题\n",
+    "\n",
+    "下载 **Oxford-IIIT Pet**（`torchvision.datasets.OxfordIIITPet` 等），在**同一 `MiniUNet` 骨架**上训练更多 epoch，保存最佳三联图与简短笔记（路径、随机种子）。\n",
+    "\n",
+    "若算力不足：可仅完成**数据加载与单 batch 前向 shape 检查**，并简述全图分割还需哪些改动。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9cedc239",
+   "metadata": {},
+   "source": [
+    "**【请填写】**（选做）"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b20cbb0",
+   "metadata": {},
+   "source": [
+    "Optional task not completed. This submission focuses on the required CIFAR-10 classification pipeline, MiniUNet toy segmentation, and 3D temporal-difference convolution. To finish Oxford-IIIT Pet later, I would need to download the image and segmentation-mask dataset, resize images and masks consistently, map mask values to class indices, adjust the input channel if using RGB images, create train/validation splits, train for more epochs, and save the best triplet visualization with the path and random seed.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ddbd3a44",
+   "metadata": {},
+   "source": [
+    "*实验三到此结束。请确认所有必填项已完成并提交本 Notebook。*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "deeplearning",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

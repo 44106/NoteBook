@@ -810,6 +810,96 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-11"
   },
   {
+    "title": "第八讲     异常",
+    "fileName": "第八讲     异常.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第八讲     异常.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 1755775,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第六讲  运算符重载",
+    "fileName": "第六讲  运算符重载.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第六讲  运算符重载.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 1711576,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第七讲  模板与STL",
+    "fileName": "第七讲  模板与STL.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第七讲  模板与STL.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 3588630,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第三讲     类与对象",
+    "fileName": "第三讲     类与对象.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第三讲     类与对象.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 3673520,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第十讲     流和文件",
+    "fileName": "第十讲     流和文件.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第十讲     流和文件.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 1608321,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第五讲     多态",
+    "fileName": "第五讲     多态.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/第五讲     多态.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 2627903,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "面向对象程序设计",
+    "fileName": "面向对象程序设计.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/面向对象程序设计.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 1774148,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "aty5g1c2",
+    "fileName": "aty5g1c2.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/aty5g1c2.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 3673520,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "teismrz0",
+    "fileName": "teismrz0.pdf",
+    "path": "大二春夏/面向对象程序设计，2.5学分/ljj_PPT/teismrz0.pdf",
+    "semester": "大二春夏",
+    "course": "面向对象程序设计，2.5学分",
+    "type": "pdf",
+    "size": 2668090,
+    "modified": "2026-08-11"
+  },
+  {
     "title": "2005-2006",
     "fileName": "2005-2006.pdf",
     "path": "大二春夏/面向对象程序设计，2.5学分/oop历年卷/2005-2006.pdf",

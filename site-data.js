@@ -20,6 +20,26 @@ window.SITE_RESOURCES = [
     "modified": "2026-07-06"
   },
   {
+    "title": "12-13-davinci-tpu-cann-mindspore-完整零基础讲义",
+    "fileName": "12-13-davinci-tpu-cann-mindspore-完整零基础讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/12-13-davinci-tpu-cann-mindspore-完整零基础讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 66360,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "14-parallel-training-完整讲义",
+    "fileName": "14-parallel-training-完整讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/14-parallel-training-完整讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 48508,
+    "modified": "2026-08-11"
+  },
+  {
     "title": "44106 cheating paper反面",
     "fileName": "44106 cheating paper反面.jpg",
     "path": "大二春夏/人工智能芯片与系统，3.5学分/44106 cheating paper反面.jpg",
@@ -50,6 +70,16 @@ window.SITE_RESOURCES = [
     "modified": "2026-07-01"
   },
   {
+    "title": "6-7-gpus-architecture-optimization-完整零基础讲义",
+    "fileName": "6-7-gpus-architecture-optimization-完整零基础讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/6-7-gpus-architecture-optimization-完整零基础讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 68152,
+    "modified": "2026-08-11"
+  },
+  {
     "title": "suian_全课程内容汇总",
     "fileName": "suian_全课程内容汇总.md",
     "path": "大二春夏/人工智能芯片与系统，3.5学分/suian_全课程内容汇总.md",
@@ -68,6 +98,116 @@ window.SITE_RESOURCES = [
     "type": "pdf",
     "size": 3404878,
     "modified": "2026-08-04"
+  },
+  {
+    "title": "00_使用说明与知识地图",
+    "fileName": "00_使用说明与知识地图.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/00_使用说明与知识地图.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 3162,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "01_完整零基础讲义",
+    "fileName": "01_完整零基础讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/01_完整零基础讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 42261,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "02_重点题型与例题详解",
+    "fileName": "02_重点题型与例题详解.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/02_重点题型与例题详解.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 11349,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "03_自测题与闪卡",
+    "fileName": "03_自测题与闪卡.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/03_自测题与闪卡.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 8222,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "04_逐讲图示与细节补充讲义",
+    "fileName": "04_逐讲图示与细节补充讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/04_逐讲图示与细节补充讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 107464,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "05_逐页图文索引",
+    "fileName": "05_逐页图文索引.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/05_逐页图文索引.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 516359,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "07_第16讲总复习到前15讲重点映射",
+    "fileName": "07_第16讲总复习到前15讲重点映射.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/07_第16讲总复习到前15讲重点映射.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 75752,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "08_完整知识点讲解版",
+    "fileName": "08_完整知识点讲解版.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/08_完整知识点讲解版.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 106287,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "09_完整细节覆盖版",
+    "fileName": "09_完整细节覆盖版.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/09_完整细节覆盖版.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 639050,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "10_完整细致学习笔记版",
+    "fileName": "10_完整细致学习笔记版.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/10_完整细致学习笔记版.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 924841,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "11-accelerator_motivation-完整讲义",
+    "fileName": "11-accelerator_motivation-完整讲义.md",
+    "path": "大二春夏/人工智能芯片与系统，3.5学分/期末复习资料/11-accelerator_motivation-完整讲义.md",
+    "semester": "大二春夏",
+    "course": "人工智能芯片与系统，3.5学分",
+    "type": "md",
+    "size": 138370,
+    "modified": "2026-08-11"
   },
   {
     "title": "《人工智能逻辑》书稿",
@@ -490,6 +630,526 @@ window.SITE_RESOURCES = [
     "modified": "2026-08-04"
   },
   {
+    "title": "扫描全能王 2026-4-29 22.12",
+    "fileName": "扫描全能王 2026-4-29 22.12.pdf",
+    "path": "大二春夏/托福阅读/扫描全能王 2026-4-29 22.12.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 2563034,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "扫描全能王 2026-5-6 22.48",
+    "fileName": "扫描全能王 2026-5-6 22.48.pdf",
+    "path": "大二春夏/托福阅读/扫描全能王 2026-5-6 22.48.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 1667413,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class1_notes",
+    "fileName": "class1_notes.pdf",
+    "path": "大二春夏/托福阅读/class1_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 99459,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class2_notes",
+    "fileName": "class2_notes.pdf",
+    "path": "大二春夏/托福阅读/class2_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 87497,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class3_notes",
+    "fileName": "class3_notes.pdf",
+    "path": "大二春夏/托福阅读/class3_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 122766,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class4_notes",
+    "fileName": "class4_notes.pdf",
+    "path": "大二春夏/托福阅读/class4_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 104815,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class5_notes",
+    "fileName": "class5_notes.pdf",
+    "path": "大二春夏/托福阅读/class5_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 128968,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class6_notes",
+    "fileName": "class6_notes.pdf",
+    "path": "大二春夏/托福阅读/class6_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 117206,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "class7_notes",
+    "fileName": "class7_notes.pdf",
+    "path": "大二春夏/托福阅读/class7_notes.pdf",
+    "semester": "大二春夏",
+    "course": "托福阅读",
+    "type": "pdf",
+    "size": 131829,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "20-21春夏",
+    "fileName": "20-21春夏.pdf",
+    "path": "大二春夏/数值代数/20-21春夏.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 43570,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "22-23春夏",
+    "fileName": "22-23春夏.pdf",
+    "path": "大二春夏/数值代数/22-23春夏.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 102717,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "23-24春夏",
+    "fileName": "23-24春夏.pdf",
+    "path": "大二春夏/数值代数/23-24春夏.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 950659,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "24-25春夏",
+    "fileName": "24-25春夏.pdf",
+    "path": "大二春夏/数值代数/24-25春夏.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 38635,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "第八讲 正交化方法_逐行讲解",
+    "fileName": "第八讲 正交化方法_逐行讲解.md",
+    "path": "大二春夏/数值代数/第八讲 正交化方法_逐行讲解.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 26806,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "总复习",
+    "fileName": "总复习.pdf",
+    "path": "大二春夏/数值代数/总复习.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 1585141,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework10(2)",
+    "fileName": "Homework10(2).pdf",
+    "path": "大二春夏/数值代数/Homework10(2).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 36242,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework11(2)",
+    "fileName": "Homework11(2).pdf",
+    "path": "大二春夏/数值代数/Homework11(2).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 33633,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework12(1)",
+    "fileName": "Homework12(1).pdf",
+    "path": "大二春夏/数值代数/Homework12(1).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 24369,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework13(1)",
+    "fileName": "Homework13(1).pdf",
+    "path": "大二春夏/数值代数/Homework13(1).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 11122,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework14",
+    "fileName": "Homework14.pdf",
+    "path": "大二春夏/数值代数/Homework14.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 24324,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework15",
+    "fileName": "Homework15.pdf",
+    "path": "大二春夏/数值代数/Homework15.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 17301,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework2(1)",
+    "fileName": "Homework2(1).pdf",
+    "path": "大二春夏/数值代数/Homework2(1).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 61148,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework3(2)",
+    "fileName": "Homework3(2).pdf",
+    "path": "大二春夏/数值代数/Homework3(2).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 107008,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework4(1)",
+    "fileName": "Homework4(1).pdf",
+    "path": "大二春夏/数值代数/Homework4(1).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 48482,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework5(1)",
+    "fileName": "Homework5(1).pdf",
+    "path": "大二春夏/数值代数/Homework5(1).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 31080,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework6",
+    "fileName": "Homework6.pdf",
+    "path": "大二春夏/数值代数/Homework6.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 10655,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework7(2)",
+    "fileName": "Homework7(2).pdf",
+    "path": "大二春夏/数值代数/Homework7(2).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 25847,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "Homework8(3)",
+    "fileName": "Homework8(3).pdf",
+    "path": "大二春夏/数值代数/Homework8(3).pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 48306,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw1",
+    "fileName": "hw1.pdf",
+    "path": "大二春夏/数值代数/hw1.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 460982,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw2",
+    "fileName": "hw2.pdf",
+    "path": "大二春夏/数值代数/hw2.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 86098,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw3",
+    "fileName": "hw3.pdf",
+    "path": "大二春夏/数值代数/hw3.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 89328,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw4",
+    "fileName": "hw4.pdf",
+    "path": "大二春夏/数值代数/hw4.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 99021,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw5_results_20260511083357",
+    "fileName": "hw5_results_20260511083357.md",
+    "path": "大二春夏/数值代数/hw5_results_20260511083357.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 2392,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw5_results",
+    "fileName": "hw5_results.md",
+    "path": "大二春夏/数值代数/hw5_results.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 2392,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw5",
+    "fileName": "hw5.pdf",
+    "path": "大二春夏/数值代数/hw5.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 91814,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw6_results",
+    "fileName": "hw6_results.md",
+    "path": "大二春夏/数值代数/hw6_results.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 1052,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw6",
+    "fileName": "hw6.pdf",
+    "path": "大二春夏/数值代数/hw6.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 101032,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw7_results",
+    "fileName": "hw7_results.md",
+    "path": "大二春夏/数值代数/hw7_results.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 680,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw7",
+    "fileName": "hw7.pdf",
+    "path": "大二春夏/数值代数/hw7.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 84275,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw8_results",
+    "fileName": "hw8_results.md",
+    "path": "大二春夏/数值代数/hw8_results.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 8257,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw8",
+    "fileName": "hw8.pdf",
+    "path": "大二春夏/数值代数/hw8.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 100509,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw9_results",
+    "fileName": "hw9_results.md",
+    "path": "大二春夏/数值代数/hw9_results.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 5610,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hw9",
+    "fileName": "hw9.pdf",
+    "path": "大二春夏/数值代数/hw9.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 95318,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "lecture8_orthogonalization_formula",
+    "fileName": "lecture8_orthogonalization_formula.md",
+    "path": "大二春夏/数值代数/lecture8_orthogonalization_formula.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 29386,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "00_资料映射与预测",
+    "fileName": "00_资料映射与预测.md",
+    "path": "大二春夏/数值代数/exam_prep/00_资料映射与预测.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 9666,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "01_期末备考讲义",
+    "fileName": "01_期末备考讲义.md",
+    "path": "大二春夏/数值代数/exam_prep/01_期末备考讲义.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 13030,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "01_期末备考讲义",
+    "fileName": "01_期末备考讲义.pdf",
+    "path": "大二春夏/数值代数/exam_prep/01_期末备考讲义.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 176797,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "02_高频题库与预测卷",
+    "fileName": "02_高频题库与预测卷.md",
+    "path": "大二春夏/数值代数/exam_prep/02_高频题库与预测卷.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 7893,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "02_高频题库与预测卷",
+    "fileName": "02_高频题库与预测卷.pdf",
+    "path": "大二春夏/数值代数/exam_prep/02_高频题库与预测卷.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 126174,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "03_期末备考详细自学讲义",
+    "fileName": "03_期末备考详细自学讲义.md",
+    "path": "大二春夏/数值代数/exam_prep/03_期末备考详细自学讲义.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 41638,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "03_期末备考详细自学讲义",
+    "fileName": "03_期末备考详细自学讲义.pdf",
+    "path": "大二春夏/数值代数/exam_prep/03_期末备考详细自学讲义.pdf",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "pdf",
+    "size": 285804,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "README",
+    "fileName": "README.md",
+    "path": "大二春夏/数值代数/exam_prep/README.md",
+    "semester": "大二春夏",
+    "course": "数值代数",
+    "type": "md",
+    "size": 452,
+    "modified": "2026-08-11"
+  },
+  {
     "title": "44106_深度学习导论知识点整理_复习课框架版",
     "fileName": "44106_深度学习导论知识点整理_复习课框架版.pdf",
     "path": "大二春夏/深度学习导论，3.5学分/44106_深度学习导论知识点整理_复习课框架版.pdf",
@@ -638,6 +1298,106 @@ window.SITE_RESOURCES = [
     "type": "jpg",
     "size": 6484452,
     "modified": "2026-07-04"
+  },
+  {
+    "title": "chapter3_memory_hierarchy_zero_base_notes",
+    "fileName": "chapter3_memory_hierarchy_zero_base_notes.md",
+    "path": "大二春夏/计算机系统3,5.5学分/chapter3_memory_hierarchy_zero_base_notes.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 54492,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "chapter5_DLP_TLP_零基础完整讲解",
+    "fileName": "chapter5_DLP_TLP_零基础完整讲解.md",
+    "path": "大二春夏/计算机系统3,5.5学分/chapter5_DLP_TLP_零基础完整讲解.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 87163,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "lab3",
+    "fileName": "lab3.md",
+    "path": "大二春夏/计算机系统3,5.5学分/lab3.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 35168,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "22-23",
+    "fileName": "22-23.md",
+    "path": "大二春夏/计算机系统3,5.5学分/22-23硬件/22-23.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 21481,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "hardware_exam_review_predictions",
+    "fileName": "hardware_exam_review_predictions.md",
+    "path": "大二春夏/计算机系统3,5.5学分/exam_practice/hardware_exam_review_predictions.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 25115,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "software_mock_exams",
+    "fileName": "software_mock_exams.md",
+    "path": "大二春夏/计算机系统3,5.5学分/exam_practice/software_mock_exams.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 52931,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "sys3_ch1_ch2_ilp_zero_base",
+    "fileName": "sys3_ch1_ch2_ilp_zero_base.md",
+    "path": "大二春夏/计算机系统3,5.5学分/notes/sys3_ch1_ch2_ilp_zero_base.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 62340,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "09_10_main_memory_segmentation_paging_virtual_memory_linux_zero_base_detailed",
+    "fileName": "09_10_main_memory_segmentation_paging_virtual_memory_linux_zero_base_detailed.md",
+    "path": "大二春夏/计算机系统3,5.5学分/study_notes/09_10_main_memory_segmentation_paging_virtual_memory_linux_zero_base_detailed.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 43407,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "11_mass_storage_12_io_zero_base_detailed",
+    "fileName": "11_mass_storage_12_io_zero_base_detailed.md",
+    "path": "大二春夏/计算机系统3,5.5学分/study_notes/11_mass_storage_12_io_zero_base_detailed.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 54522,
+    "modified": "2026-08-11"
+  },
+  {
+    "title": "13_14_file_system_zero_base_detailed",
+    "fileName": "13_14_file_system_zero_base_detailed.md",
+    "path": "大二春夏/计算机系统3,5.5学分/study_notes/13_14_file_system_zero_base_detailed.md",
+    "semester": "大二春夏",
+    "course": "计算机系统3,5.5学分",
+    "type": "md",
+    "size": 111087,
+    "modified": "2026-08-11"
   },
   {
     "title": "第八讲     异常",

@@ -5,7 +5,7 @@ const REPO_NAME = "NoteBook";
 const REPO_BRANCH = "main";
 const API_TREE_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_BRANCH}?recursive=1`;
 const RAW_FILE_BASE_URL = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}`;
-const KNOWLEDGE_ROOTS = new Set(["大二春夏", "大二秋冬", "非专业课"]);
+const KNOWLEDGE_ROOTS = new Set(["大二春夏", "大二秋冬", "其他课程"]);
 
 const state = {
   query: "",
